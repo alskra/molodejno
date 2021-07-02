@@ -4,6 +4,7 @@ import '../css/base.scss';
 import '../css/helpers.scss';
 
 import Alpine from 'alpinejs';
+import 'focus-visible';
 import '../components/icon-svg/icon-svg';
 import '../components/button/button';
 

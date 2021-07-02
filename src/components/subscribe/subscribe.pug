@@ -1,4 +1,17 @@
 mixin subscribe()
-	form.subscribe(action="")&attributes(attributes)
-		input.subscribe__input(type="email" name="email")
-		button.subscribe__button(type="submit")
+	form.subscribe(
+		action=""
+		x-data
+	)&attributes(attributes)
+		.container.subscribe__container
+			.subscribe__body
+				.subscribe__input
+					input.subscribe__input-el(
+						type="email"
+						name="email"
+						x-on:input="$refs.placeholder.hidden = $event.target.value"
+					)
+					.subscribe__input-placeholder(
+						x-ref="placeholder"
+					) #[strong Введите e-mail,] чтобы подписаться на новости
+				button.subscribe__button(type="submit")

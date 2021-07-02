@@ -134,6 +134,14 @@ iframe {
 }
 /* stylelint-enable */
 
+:focus:not(.focus-visible) {
+	outline: none;
+}
+
+[hidden] {
+	display: none !important; // stylelint-disable
+}
+
 .container {
 	position: relative;
 	z-index: 1;
