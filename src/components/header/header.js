@@ -1,12 +1,23 @@
+import Alpine from 'alpinejs';
+import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 import '../soc-network/soc-network';
 import '../nav/nav';
 import './header.scss';
 
-export default () => ({
+Alpine.data('header', () => ({
 	isSticky: false,
 	mobMenuIsOpen: false,
 	init() {
 		this.updateStick();
+		this.$watch('mobMenuIsOpen', (val) => {
+			if (val) {
+				disableBodyScroll(this.$el, {
+					reserveScrollBarGap: true,
+				});
+			} else {
+				enableBodyScroll(this.$el);
+			}
+		});
 	},
 	updateStick() {
 		if (this.$store.isDesktop) {
@@ -23,4 +34,4 @@ export default () => ({
 	toggleMobMenu() {
 		this.mobMenuIsOpen = !this.mobMenuIsOpen;
 	},
-});
+}));

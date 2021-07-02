@@ -1,3 +1,6 @@
+include ../subscribe/subscribe
+
 mixin footer()
 	footer.footer&attributes(attributes)
-		| Footer
+		+subscribe()
+

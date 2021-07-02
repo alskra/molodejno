@@ -19,7 +19,10 @@ mixin header()
 				x-on:click="toggleMobMenu"
 			): span
 
-		.header__main(x-show="mobMenuIsOpen || $store.isDesktop")
+		.header__main(
+			x-show="mobMenuIsOpen || $store.isDesktop"
+			x-transition.opacity
+		)
 			.container.header__grid
 				a.header__visually(href="")
 					icon-svg(name="visually")
