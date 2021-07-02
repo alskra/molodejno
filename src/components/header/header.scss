@@ -5,6 +5,7 @@
 }
 
 .header {
+	z-index: 100;
 	display: flex;
 	flex-flow: column;
 	height: 140rem;
@@ -90,7 +91,6 @@
 
 .header__button-menu {
 	position: relative;
-	z-index: 101;
 	flex-shrink: 0;
 	margin-left: auto;
 	border: 0;
@@ -149,7 +149,6 @@
 		right: 0;
 		top: 60rem;
 		bottom: 0;
-		z-index: 100;
 	}
 }
 
