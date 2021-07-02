@@ -9,10 +9,11 @@ mixin subscribe()
 					input.subscribe__input-el(
 						type="email"
 						name="email"
-						x-on:input="$refs.placeholder.hidden = $event.target.value"
+						x-on:focus="$refs.placeholder.hidden = true"
+						x-on:blur="$refs.placeholder.hidden = $event.target.value"
 					)
 					.subscribe__input-placeholder(
 						x-ref="placeholder"
-					) #[strong Введите e-mail,] чтобы подписаться на новости
+					) #[strong Введите e-mail,] чтобы подписаться на&nbsp;новости
 				button.subscribe__button(type="submit")
 					icon-svg(name="arrow-right")
