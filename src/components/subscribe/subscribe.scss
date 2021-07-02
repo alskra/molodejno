@@ -45,3 +45,21 @@
 	border-color: transparent;
 	pointer-events: none;
 }
+
+.subscribe__button {
+	border: 0;
+	padding: 0;
+	height: 25rem;
+	background: none;
+
+	icon-svg {
+		transition: transform $transition-duration;
+	}
+
+	&:hover,
+	&:focus {
+		icon-svg {
+			transform: translate(20rem);
+		}
+	}
+}
