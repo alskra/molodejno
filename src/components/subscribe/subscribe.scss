@@ -11,8 +11,8 @@
 
 .subscribe__body {
 	display: grid;
+	column-gap: 20rem;
 	align-items: center;
-	grid-column-gap: 20rem;
 	grid-template-columns: 1fr 63rem;
 	margin: 0 auto;
 	width: 100%;

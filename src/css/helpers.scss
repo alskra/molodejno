@@ -1,6 +1,15 @@
-.hidden-lg-up {
-	// stylelint-disable-next-line
-	display: none !important;
+@include media-breakpoint-up(lg) {
+	.hidden-lg-up {
+		// stylelint-disable-next-line
+		display: none !important;
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.hidden-lg-down {
+		// stylelint-disable-next-line
+		display: none !important;
+	}
 }
 
 .color-silver {

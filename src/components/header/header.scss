@@ -56,8 +56,8 @@
 		}
 
 		.header__soc-network {
+			column-gap: 40rem;
 			grid-column: 3;
-			grid-column-gap: 40rem;
 		}
 
 		.header__nav {
@@ -80,8 +80,8 @@
 
 .header__mob {
 	display: flex;
+	column-gap: 20rem;
 	align-items: center;
-	grid-column-gap: 20rem;
 	height: 100%;
 
 	@include media-breakpoint-up(lg) {
@@ -160,12 +160,12 @@
 
 	@include media-breakpoint-down(lg) {
 		align-items: stretch;
-		grid-row-gap: 28rem;
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr auto auto;
 		padding-top: 26px;
 		padding-bottom: 26px;
 		height: 100%;
+		row-gap: 28rem;
 	}
 }
 
@@ -173,7 +173,6 @@
 	display: grid;
 	align-items: center;
 	justify-self: start;
-	grid-gap: 10rem;
 	grid-template-columns: 41rem 1fr;
 	font-family: $headings-font-family;
 	font-weight: 700;
@@ -182,6 +181,7 @@
 	text-transform: uppercase;
 	color: $color;
 	transition: color $transition-duration;
+	gap: 10rem;
 
 	&:hover {
 		color: $color-primary;
@@ -200,7 +200,7 @@
 	grid-template-columns: 228fr 250fr 228fr;
 
 	@include media-breakpoint-down(lg) {
-		grid-column-gap: 20rem;
+		column-gap: 20rem;
 		grid-template-columns: 1fr 1fr;
 		border-top: 1px solid $headings-color;
 		border-bottom: 1px solid $headings-color;

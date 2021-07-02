@@ -1,8 +1,8 @@
 .nav {
 	display: flex;
+	column-gap: 20rem;
 	align-items: center;
 	justify-content: space-between;
-	grid-column-gap: 20rem;
 	border-top: 1px solid $headings-color;
 	border-bottom: 1px solid $headings-color;
 
@@ -10,8 +10,8 @@
 		flex-flow: column;
 		align-items: stretch;
 		justify-content: flex-start;
-		grid-row-gap: 18rem;
 		border: 0;
+		row-gap: 18rem;
 	}
 }
 

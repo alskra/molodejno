@@ -6,12 +6,23 @@
 .footer__body {
 	padding-top: 74rem;
 	padding-bottom: 37rem;
+
+	@include media-breakpoint-down(lg) {
+		padding-top: 26rem;
+		padding-bottom: 30rem;
+	}
 }
 
 .footer__grid {
 	display: grid;
-	grid-gap: 24rem 30rem;
 	grid-template-columns: repeat(3, 350fr);
+	gap: 24rem 30rem;
+
+	@include media-breakpoint-down(lg) {
+		column-gap: 24rem;
+		justify-items: center;
+		grid-template-columns: 1fr;
+	}
 }
 
 .footer__section {
@@ -65,11 +76,16 @@
 
 .footer__soc-network {
 	justify-content: center;
+
+	@include media-breakpoint-down(lg) {
+		grid-row: 3;
+	}
 }
 
 .footer__info {
 	font-size: 14rem;
 	line-height: 1.43;
+	color: $color;
 
 	a {
 		transition: color $transition-duration;
@@ -94,6 +110,23 @@
 		icon-svg {
 			margin: auto 15rem auto 0;
 			width: 49rem;
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		font-size: 13rem;
+		text-align: center;
+
+		&:last-child {
+			grid-column: 1;
+		}
+
+		&:nth-child(3n + 1):not(:last-child) {
+			text-align: center;
+		}
+
+		&--dev {
+			text-align: left;
 		}
 	}
 }
