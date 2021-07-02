@@ -1,0 +1,35 @@
+include ../soc-network/soc-network
+include ../nav/nav
+
+mixin header()
+	header.header(
+		x-data="header"
+		x-bind:class="{'is-sticky': isSticky}"
+		x-on:scroll.window="updateStick"
+		x-on:resize.window="updateStick(); updateMobMenu()"
+	)&attributes(attributes)
+		.container.header__mob
+			a.header__logo.header__logo--mob(href="index.html" x-show="!mobMenuIsOpen")
+				icon-svg(name="logo-mob")
+			a.header__visually.header__visually--mob(href="" x-show="mobMenuIsOpen")
+				icon-svg(name="visually")
+				| Слабовидящим
+			button.header__button-menu(
+				x-bind:class="{'is-open': mobMenuIsOpen}"
+				x-on:click="toggleMobMenu"
+			): span
+
+		.header__main(x-show="mobMenuIsOpen || $store.isDesktop")
+			.container.header__grid
+				a.header__visually(href="")
+					icon-svg(name="visually")
+					| Слабовидящим
+
+				.header__info
+					a.header__info-item(href="" target="_blank") Дом&nbsp;молодёжи#[br] Новгородской#[br(class="hidden-lg-up")] области
+					a.header__logo(href="index.html")
+						icon-svg(x-bind:name="isSticky ? 'logo-sticky' : 'logo'")
+					a.header__info-item(href="" target="_blank") Администрация#[br] Новгородской#[br(class="hidden-lg-up")] области
+
+				+soc-network().header__soc-network
+				+nav().header__nav

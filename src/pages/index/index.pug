@@ -1,0 +1,12 @@
+extends ../../pug/base
+include ../../components/header/header
+include ../../components/footer/footer
+
+append variables
+	-
+		title = 'Молодёжно - Frontend';
+
+block body
+	+header()
+	main.app__main(style={'flex-basis': '1000px'})
+	+footer()

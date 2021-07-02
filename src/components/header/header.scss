@@ -1,0 +1,279 @@
+@keyframes header-show {
+	0% {
+		transform: translateY(-50rem);
+	}
+}
+
+.header {
+	display: flex;
+	flex-flow: column;
+	height: 140rem;
+	background: $background-color;
+
+	&.is-sticky {
+		position: sticky;
+		top: -90rem;
+		animation: header-show 0.2s;
+
+		.header__main {
+			margin-top: auto;
+		}
+
+		.header__grid {
+			grid-template-columns: 94fr 830fr 186fr;
+			grid-template-rows: 50rem;
+			padding-top: 1px;
+			padding-bottom: 1px;
+		}
+
+		.header__grid::after {
+			content: "";
+			position: absolute;
+			left: 15rem;
+			right: 15rem;
+			bottom: 0;
+			grid-column: span 3;
+			border-top: 1px solid $headings-color;
+		}
+
+		.header__visually {
+			display: none;
+		}
+
+		.header__info {
+			grid-template-columns: 1fr;
+		}
+
+		.header__info-item {
+			display: none;
+		}
+
+		.header__logo {
+			justify-self: start;
+			margin-bottom: 0;
+			width: 35rem;
+		}
+
+		.header__soc-network {
+			grid-column: 3;
+			grid-column-gap: 40rem;
+		}
+
+		.header__nav {
+			grid-column: 2;
+			grid-row: 1;
+			border: none;
+		}
+
+		.nav__item {
+			font-size: 16rem;
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		position: sticky;
+		top: 0;
+		height: 60rem;
+	}
+}
+
+.header__mob {
+	display: flex;
+	align-items: center;
+	grid-column-gap: 20rem;
+	height: 100%;
+
+	@include media-breakpoint-up(lg) {
+		display: none;
+	}
+}
+
+.header__button-menu {
+	position: relative;
+	z-index: 101;
+	flex-shrink: 0;
+	margin-left: auto;
+	border: 0;
+	width: 37rem;
+	height: 24rem;
+	background: none;
+
+	&::before,
+	&::after,
+	span {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		border-top: 1px solid $headings-color;
+		width: 100%;
+		transition: $transition-duration;
+	}
+
+	&::before {
+		transform: translate(-50%, -12rem);
+	}
+
+	&::after {
+		transform: translate(-50%, 12rem);
+	}
+
+	span {
+		transform: translate(-50%);
+	}
+
+	&.is-open {
+		&::before {
+			width: 44rem;
+			transform: translate(-50%, 0) rotate(32deg);
+		}
+
+		&::after {
+			width: 44rem;
+			transform: translate(-50%, 0) rotate(-32deg);
+		}
+
+		span {
+			width: 0;
+			opacity: 0;
+		}
+	}
+}
+
+.header__main {
+	background: $background-color;
+
+	@include media-breakpoint-down(lg) {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 60rem;
+		bottom: 0;
+		z-index: 100;
+	}
+}
+
+.header__grid {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 202fr 228fr + 250fr + 228fr 202fr;
+	grid-template-rows: 90rem 50rem;
+
+	@include media-breakpoint-down(lg) {
+		align-items: stretch;
+		grid-row-gap: 28rem;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr auto auto;
+		padding-top: 26px;
+		padding-bottom: 26px;
+		height: 100%;
+	}
+}
+
+.header__visually {
+	display: grid;
+	align-items: center;
+	justify-self: start;
+	grid-gap: 10rem;
+	grid-template-columns: 41rem 1fr;
+	font-family: $headings-font-family;
+	font-weight: 700;
+	font-size: 14rem;
+	line-height: math.div(17, 14);
+	text-transform: uppercase;
+	color: $color;
+	transition: color $transition-duration;
+
+	&:hover {
+		color: $color-primary;
+	}
+
+	@include media-breakpoint-down(lg) {
+		&:not(&--mob) {
+			display: none;
+		}
+	}
+}
+
+.header__info {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 228fr 250fr 228fr;
+
+	@include media-breakpoint-down(lg) {
+		grid-column-gap: 20rem;
+		grid-template-columns: 1fr 1fr;
+		border-top: 1px solid $headings-color;
+		border-bottom: 1px solid $headings-color;
+		padding-top: 23px;
+		padding-bottom: 23px;
+	}
+}
+
+.header__info-item {
+	margin-left: 48rem;
+	font-size: 9rem;
+	line-height: math.div(11, 9);
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	color: $color-cerulean-blue;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+	&:first-child {
+		margin-right: 48rem;
+		margin-left: 0;
+		text-align: right;
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin: 0;
+		font-size: 12rem;
+		line-height: 1.5;
+
+		&:first-child {
+			margin: 0;
+			text-align: left;
+		}
+	}
+}
+
+.header__logo {
+	justify-self: center;
+	margin-bottom: -6rem;
+	width: 250rem;
+	max-width: 100%;
+
+	&--mob {
+		margin: 0;
+		width: 180rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		&:not(&--mob) {
+			display: none;
+		}
+	}
+}
+
+.header__soc-network {
+	justify-self: end;
+
+	@include media-breakpoint-down(lg) {
+		justify-self: start;
+	}
+}
+
+.header__nav {
+	align-self: stretch;
+	grid-column: span 3;
+	overflow-y: auto;
+	height: 100%;
+
+	@include media-breakpoint-down(lg) {
+		grid-column: 1;
+		grid-row: 1;
+	}
+}

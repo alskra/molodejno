@@ -1,0 +1,16 @@
+mixin nav()
+	-
+		const data = [
+			'Деятельность',
+			'Форумы',
+			'Проекты',
+			'Гранты',
+			'Афиша',
+			'Пресс-центр',
+			'О нас',
+			'Контакты',
+		];
+
+	nav.nav&attributes(attributes)
+		each item in data
+			a.nav__item(href="")= item

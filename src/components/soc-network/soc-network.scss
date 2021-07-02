@@ -1,0 +1,28 @@
+.soc-network {
+	display: flex;
+	flex-flow: wrap;
+	align-items: center;
+	grid-gap: 10rem 60rem;
+}
+
+.soc-network__item {
+	flex-shrink: 0;
+	color: $color-black;
+	transition: color $transition-duration;
+
+	&:hover {
+		color: $color-primary;
+	}
+
+	&--vk {
+		width: 18rem;
+	}
+
+	&--instagram {
+		width: 16rem;
+	}
+
+	&--facebook {
+		width: 8rem;
+	}
+}

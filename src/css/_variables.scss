@@ -1,0 +1,32 @@
+// Colors
+$color-black: #000;
+$color-white: #fff;
+$color-cod-gray: #131313;
+$color-cerulean-blue: #4147d2;
+$color-royal-blue: #595fe4;
+
+// Fonts
+$font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji";
+$font-family-helvetica-neue: "Helvetica Neue", sans-serif, $font-family-emoji;
+$font-family-stolzl: "Stolzl", sans-serif, $font-family-emoji;
+
+// Breakpoints
+$breakpoints: (
+	xs: 360px,
+	sm: 576px,
+	md: 768px,
+	lg: 1025px,
+	xl: 1200px,
+	xxl: 2560px
+);
+
+// Base
+$color: $color-black;
+$color-primary: $color-royal-blue;
+$background-color: $color-white;
+$font-family: $font-family-helvetica-neue;
+$transition-duration: 0.2s;
+
+// Headings
+$headings-color: $color-cod-gray;
+$headings-font-family: $font-family-stolzl;
