@@ -1,7 +1,7 @@
 .app {
 	display: flex;
 	flex-flow: column;
-	min-height: 100vh;
+	min-height: vh(100);
 	font-family: $font-family;
 	font-size: 16rem;
 	line-height: 1.25;

@@ -105,9 +105,12 @@
 	}
 
 	&--dev {
-		display: flex;
+		a {
+			display: flex;
+		}
 
 		icon-svg {
+			flex-shrink: 0;
 			margin: auto 15rem auto 0;
 			width: 49rem;
 		}

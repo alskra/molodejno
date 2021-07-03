@@ -10,7 +10,7 @@ mixin footer()
 					.footer__header
 						h4.footer__title Министерство спорта и&nbsp;молодёжной политики
 					.footer__content
-						p Телефон: #[strong #[a(href="tel:+78000000000") +7 (800) 000-00-00]]
+						p Телефон: #[strong +7 (800) 000-00-00]
 						p Адрес: #[strong Москва, ул. Ленина, 123]
 						p E-mail: #[strong #[a(href="mailto:info@u.university") info@u.university]]
 						p Сайт: #[strong #[a(href="") www.site.ru]]
@@ -21,17 +21,21 @@ mixin footer()
 					.footer__header
 						h4.footer__title Дом Молодёжи Новгородской области
 					.footer__content
-						p Телефон: #[strong #[a(href="tel:+78000000000") +7 (800) 000-00-00]]
+						p Телефон: #[strong +7 (800) 000-00-00]
 						p Адрес: #[strong Москва, ул. Ленина, 123]
 						p E-mail: #[strong #[a(href="mailto:info@u.university") info@u.university]]
 						p Сайт: #[strong #[a(href="") www.site.ru]]
 
 				p.footer__info: span.color-silver &copy;&nbsp;2020. Информационно-познавательный портал для молодёжи Новгородской области
+
 				+soc-network().footer__soc-network
+
 				p.footer__info.footer__info--dev
-					icon-svg.color-silver(name="renaissance")
-					span.color-silver Разработка сайта:#[br] #[strong #[a(href="https://renart.ru/" target="_blank") Renaissance Art Group]]
+					a.color-silver(href="https://renart.ru/" target="_blank")
+						icon-svg(name="renaissance")
+						span Разработка сайта:#[br] #[strong Renaissance Art Group]
+
 				p.footer__info.
 					По&nbsp;вопросам сотрудничества обращайтесь
-					по&nbsp;#[strong #[a(href="tel:+71234567890") +7&nbsp;(123)&nbsp;456-78-90]]
+					по&nbsp;#[strong +7&nbsp;(123)&nbsp;456-78-90]
 					или пишите на&nbsp;#[strong #[a(href="mailto:friendship@molodejno.ru") friendship@molodejno.ru]]

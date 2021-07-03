@@ -11,3 +11,7 @@
 
 	@return $number;
 }
+
+@function vh($number) {
+	@return calc(#{$number} * var(--vh, 1vh));
+}

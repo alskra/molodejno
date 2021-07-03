@@ -5,6 +5,7 @@ import '../css/helpers.scss';
 
 import Alpine from 'alpinejs';
 import 'focus-visible';
+import './vh-fix';
 import '../components/icon-svg/icon-svg';
 import '../components/button/button';
 
