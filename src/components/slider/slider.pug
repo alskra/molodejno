@@ -1,0 +1,19 @@
+mixin slider()
+	.slider&attributes(attributes)
+		.swiper-container.slider__container
+			.swiper-wrapper
+				.swiper-slide.slider__item
+					.slider__image
+						img.slider__image-el(
+							src="../../images/content/slider/slide-1.jpg"
+							srcset=`
+								../../images/content/slider/slide-1.jpg,
+								../../images/content/slider/slide-1@2x.jpg 2x
+							`
+							alt=""
+						)
+					.slider__main
+						.container.slider__container
+							.slider__content
+								.slider__bg-bottom
+								.slider__bg-top

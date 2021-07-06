@@ -1,6 +1,7 @@
 extends ../../pug/base
 include ../../components/header/header
 include ../../components/footer/footer
+include ../../components/slider/slider
 
 append variables
 	-
@@ -9,4 +10,5 @@ append variables
 block body
 	+header()
 	main.app__main(style={'flex-basis': '1000px'})
+		+slider()
 	+footer()

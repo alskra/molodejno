@@ -60,6 +60,7 @@
     "core-js": "^3.12.1",
     "focus-visible": "^5.2.0",
     "lodash": "^4.17.21",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "swiper": "^6.7.5"
   }
 }
