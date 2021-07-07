@@ -1,6 +1,12 @@
 mixin slider()
-	.slider&attributes(attributes)
-		.swiper-container.slider__container
+	.slider(
+		x-data="slider"
+		navigation="true"
+	)&attributes(attributes)
+		.swiper-container(
+			x-ref="container"
+			data-swiper-autoplay="3000"
+		)
 			.swiper-wrapper
 				.swiper-slide.slider__item
 					.slider__image
@@ -31,9 +37,9 @@ mixin slider()
 						img.slider__image-el(
 							src="../../images/content/slider/slide-1.jpg"
 							srcset=`
-												../../images/content/slider/slide-1.jpg,
-												../../images/content/slider/slide-1@2x.jpg 2x
-											`
+								../../images/content/slider/slide-1.jpg,
+								../../images/content/slider/slide-1@2x.jpg 2x
+							`
 							alt=""
 						)
 					.slider__main
@@ -41,12 +47,18 @@ mixin slider()
 							.slider__content
 								.slider__header
 									.slider__date
-										.slider__day-month 26.08
-										| 2020
+										.slider__day-month 04.12
+										| 2021
 									.slider__header-group
 										.slider__type Региональное
 										.slider__place
 											span Тёсово-Нетыльский
 
-								h2.slider-title Новый проект#[br] &laquo;Время возможностей&raquo; объединит молодёжь Новгородской области
+								h2.slider-title Молодёжно — это информационно-познавательный портал для молодёжи Новгородской области
 
+			.slider__nav
+				.container.slider__container-nav
+					button.slider__button.slider__button--prev(x-ref="buttonPrev")
+						icon-svg(name="arrow-left")
+					button.slider__button.slider__button--next(x-ref="buttonNext")
+						icon-svg(name="arrow-right")

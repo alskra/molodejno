@@ -1,14 +1,23 @@
+import Alpine from 'alpinejs';
 import 'swiper/swiper-bundle.css';
-import Swiper, {EffectFade} from 'swiper';
+import Swiper, {EffectFade, Navigation, Autoplay} from 'swiper';
 import './slider.scss';
 
-Swiper.use([EffectFade]);
+Swiper.use([EffectFade, Navigation, Autoplay]);
 
-const swiper = new Swiper('.swiper-container', {
-	effect: 'fade',
-	fadeEffect: {
-		crossFade: true,
+Alpine.data('slider', () => ({
+	init() {
+		this.swiper = new Swiper(this.$refs.container, {
+			effect: 'fade',
+			fadeEffect: {
+				crossFade: false,
+			},
+			navigation: {
+				prevEl: this.$refs.buttonPrev,
+				nextEl: this.$refs.buttonNext,
+			},
+			autoplay: true,
+			loop: true,
+		});
 	},
-});
-
-export default swiper;
+}));
