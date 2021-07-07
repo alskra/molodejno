@@ -1,6 +1,6 @@
-//.slider {
-//
-//}
+.slider {
+	margin-top: -1px;
+}
 
 .slider__item {
 	padding-bottom: 52rem;
@@ -8,7 +8,11 @@
 
 .slider__image {
 	position: relative;
-	padding-top: 507rem;
+	height: 507rem;
+
+	@include media-breakpoint-down(lg) {
+		height: 300rem;
+	}
 }
 
 .slider__image-el {
@@ -24,45 +28,223 @@
 	position: absolute;
 	left: 0;
 	top: 0;
+	overflow: hidden;
 	width: 100%;
 	height: 100%;
+
+	@include media-breakpoint-down(lg) {
+		position: relative;
+		display: flex;
+		min-height: 280rem;
+	}
 }
 
 .slider__container {
 	height: 100%;
+
+	@include media-breakpoint-down(lg) {
+		height: auto;
+	}
 }
 
 .slider__content {
 	position: relative;
-	margin-left: -15rem;
-	width: percentage(621 / 1110);
+	padding: 110rem 93rem 0 0;
+	width: percentage(math.div((621 - 45), 1110));
 	height: 100%;
+	color: $color-white;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: calc(-15rem - (100vw - min(100vw, 1140rem)) / 2);
+		right: 0;
+		top: 10rem;
+		bottom: 0;
+		z-index: -1;
+		border: 1px solid $color-black;
+		border-left: 0;
+		border-radius: 0 math.div(549rem, 2) math.div(549rem, 2) 0;
+		background: $color-white;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: calc(-15rem - (100vw - min(100vw, 1140rem)) / 2);
+		right: 6rem;
+		top: 0;
+		bottom: 10rem;
+		z-index: -1;
+		border-radius: 0 math.div(549rem, 2) math.div(549rem, 2) 0;
+		background:
+			conic-gradient(
+				from 46.69deg at calc(100% - #{math.div(549rem, 2)}) 50%,
+				$color-royal-blue-2 0deg,
+				$color-cerulean-blue 359.45deg,
+				$color-royal-blue-2 360deg
+			);
+	}
+
+	@include media-breakpoint-down(lg) {
+		padding: 26rem 0;
+		width: auto;
+
+		&::before,
+		&::after {
+			position: absolute;
+			left: -20rem;
+			right: calc(-20rem - #{percentage(math.div((506 - 360), 320))});
+			border-radius: 0;
+		}
+
+		&::after {
+			background:
+				conic-gradient(
+					from 46.69deg at 50% 50%,
+					$color-royal-blue-2 0deg,
+					$color-cerulean-blue 359.45deg,
+					$color-royal-blue-2 360deg
+				);
+		}
+	}
 }
 
-.slider__bg-top {
-	position: absolute;
-	left: calc((-100vw + min(100vw, 1140rem)) / 2);
-	right: 6rem;
-	top: 0;
-	bottom: 10rem;
-	border-radius: 0 math.div(549rem, 2) math.div(549rem, 2) 0;
-	background:
-		conic-gradient(
-			from 46.69deg at calc(100% - #{math.div(549rem, 2)}) 50%,
-			$color-royal-blue-2 0deg,
-			$color-cerulean-blue 359.45deg,
-			$color-royal-blue-2 360deg
-		);
+.slider__header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 18rem;
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 22rem;
+	}
 }
 
-.slider__bg-bottom {
-	position: absolute;
-	left: calc((-100vw + min(100vw, 1140rem)) / 2);
-	right: 0;
-	top: 10rem;
-	bottom: 0;
-	border: 1px solid $color-black;
-	border-left: 0;
-	border-radius: 0 math.div(549rem, 2) math.div(549rem, 2) 0;
-	background: $color-white;
+.slider__date {
+	flex-shrink: 0;
+	font-family: $headings-font-family;
+	font-weight: 300;
+	font-size: 20rem;
+	line-height: math.div(24, 20);
+	text-transform: uppercase;
+
+	@include media-breakpoint-down(lg) {
+		font-size: 13rem;
+		line-height: math.div(16, 13);
+	}
+}
+
+.slider__day-month {
+	margin-bottom: -5rem;
+	font-weight: 700;
+	font-size: 36rem;
+	line-height: math.div(43, 36);
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 0.5px $color-white;
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: -4rem;
+		font-size: 18rem;
+		line-height: math.div(22, 18);
+	}
+}
+
+.slider__header-group {
+	margin-left: 27rem;
+	border-left: 1px solid;
+	padding-left: 30rem;
+	min-width: 0;
+
+	> :first-child {
+		margin-top: -2rem;
+	}
+
+	> :last-child {
+		margin-bottom: -2rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin-left: 5rem;
+		padding-left: 20rem;
+
+		> :first-child {
+			margin-top: -3rem;
+		}
+
+		> :last-child {
+			margin-bottom: -3rem;
+		}
+	}
+}
+
+.slider__type {
+	overflow: hidden;
+	margin-bottom: 13rem;
+	font-family: $headings-font-family;
+	font-weight: 350;
+	font-size: 16rem;
+	line-height: math.div(19, 16);
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 3rem;
+		font-size: 12rem;
+		line-height: math.div(14, 12);
+	}
+}
+
+.slider__place {
+	display: flex;
+	align-items: center;
+	font-family: $headings-font-family;
+	font-weight: 500;
+	font-size: 16rem;
+	line-height: math.div(21, 16);
+
+	&::before {
+		content: "";
+		flex-shrink: 0;
+		margin-right: 9rem;
+		border: 1px solid;
+		border-radius: 50%;
+		width: 15rem;
+		height: 15rem;
+	}
+
+	> span {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	@include media-breakpoint-down(lg) {
+		font-size: 12rem;
+		line-height: math.div(16, 12);
+
+		&::before {
+			width: 10rem;
+			height: 10rem;
+		}
+	}
+}
+
+.slider-title {
+	$line-height: math.div(39, 35);
+
+	overflow: hidden;
+	margin: 0;
+	max-height: 4em * $line-height;
+	font-family: $headings-font-family;
+	font-weight: 500;
+	font-size: 35rem;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(lg) {
+		$line-height: math.div(24, 22);
+
+		max-height: 4em * $line-height;
+		font-size: 22rem;
+		line-height: $line-height;
+	}
 }

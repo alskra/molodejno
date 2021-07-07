@@ -1,7 +1,14 @@
 import 'swiper/swiper-bundle.css';
-import Swiper from 'swiper';
+import Swiper, {EffectFade} from 'swiper';
 import './slider.scss';
 
-const swiper = new Swiper('.swiper-container');
+Swiper.use([EffectFade]);
+
+const swiper = new Swiper('.swiper-container', {
+	effect: 'fade',
+	fadeEffect: {
+		crossFade: true,
+	},
+});
 
 export default swiper;
