@@ -17,6 +17,11 @@
 	margin: 0 auto;
 	width: 100%;
 	max-width: 729rem;
+
+	@include media-breakpoint-down(lg) {
+		grid-template-columns: 1fr 57rem;
+		max-width: none;
+	}
 }
 
 .subscribe__input {
@@ -68,11 +73,12 @@
 .subscribe__button {
 	border: 0;
 	padding: 0;
-	height: 25rem;
+	height: 27px;
 	color: $color-white;
 	background: none;
 
 	icon-svg {
+		height: 100%;
 		transition: transform $transition-duration;
 	}
 
