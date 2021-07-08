@@ -10,7 +10,7 @@ module.exports = merge(common, {
 	devtool: 'eval-source-map',
 	devServer: {
 		historyApiFallback: true,
-		contentBase: paths.build,
+		contentBase: [paths.build, paths.src],
 		open: true,
 		compress: true,
 		hot: true,
