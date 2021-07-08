@@ -7,8 +7,12 @@
 	line-height: 1.25;
 	color: $color;
 	background: $background-color;
+}
 
-	&__main {
-		flex: 1;
-	}
+.app__main {
+	flex: 1;
+}
+
+.app__group {
+	background: linear-gradient(180deg, $color-aero-blue 51.03%, $color-onahau 100%);
 }

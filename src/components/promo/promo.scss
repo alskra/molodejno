@@ -1,0 +1,28 @@
+.promo {
+	padding-top: 134rem;
+	padding-bottom: 107rem;
+}
+
+.promo__container {
+	display: grid;
+	grid-template-columns: 570fr 510fr;
+	gap: 30rem;
+}
+
+.promo__image {
+	margin-top: -15rem - 134rem;
+}
+
+.promo__title {
+	margin: 0 0 31rem;
+	font-family: $headings-font-family;
+	font-weight: 350;
+	font-size: 60rem;
+	line-height: 1.25;
+	color: $color;
+
+	small {
+		display: block;
+		font-size: 40rem;
+	}
+}
