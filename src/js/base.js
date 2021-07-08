@@ -8,6 +8,7 @@ import 'focus-visible';
 import './vh-fix';
 import '../components/icon-svg/icon-svg';
 import '../components/button/button';
+import '../components/more-link/more-link';
 
 window.Alpine = Alpine;
 

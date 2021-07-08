@@ -1,16 +1,39 @@
 .promo {
 	padding-top: 134rem;
-	padding-bottom: 107rem;
+	padding-bottom: 66rem;
+
+	@include media-breakpoint-down(lg) {
+		padding-top: 40rem;
+		padding-bottom: 27rem;
+	}
 }
 
 .promo__container {
 	display: grid;
 	grid-template-columns: 570fr 510fr;
 	gap: 30rem;
+
+	@include media-breakpoint-down(lg) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.promo__body {
+	min-width: 0;
+
+	> :last-child {
+		margin-bottom: 0;
+	}
 }
 
 .promo__image {
 	margin-top: -15rem - 134rem;
+	min-width: 0;
+
+	@include media-breakpoint-down(lg) {
+		margin: 0 auto;
+		max-height: calc(#{vh(100)} - 100rem);
+	}
 }
 
 .promo__title {
@@ -25,4 +48,37 @@
 		display: block;
 		font-size: 40rem;
 	}
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 22rem;
+		font-size: 44rem;
+
+		small {
+			font-size: 24rem;
+		}
+	}
+}
+
+.promo__content {
+	margin-bottom: 31rem;
+	font-size: 20rem;
+	line-height: 1.5;
+	color: $headings-color;
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+
+	p {
+		margin-bottom: 1em;
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 28rem;
+		font-size: 18rem;
+	}
+}
+
+.promo__more {
+	color: $color;
 }

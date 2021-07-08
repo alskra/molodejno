@@ -1,0 +1,10 @@
+mixin more-link({dir = 'right', flow = 'column'} = {})
+	a.more-link(
+		href=""
+		class={'more-link--row': flow === 'row'}
+	)&attributes(attributes)
+		.more-link__icon
+			icon-svg(name=`arrow-${dir}`)
+		if block
+			.more-link__content
+				block
