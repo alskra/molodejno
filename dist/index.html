@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Молодёжно - Frontend</title>
+	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/index.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/index.css" rel="stylesheet"></head>
+	<body>
+		<div class="app">
+			<header class="header header--no-border-bottom" x-data="header" x-bind:class="{'is-sticky': isSticky}" x-on:scroll.window="updateStick" x-on:resize.window="updateStick(); updateMobMenu()">
+				<div class="container header__mob"><a class="header__logo header__logo--mob" href="index.html" x-show="!mobMenuIsOpen">
+						<icon-svg name="logo-mob"></icon-svg></a><a class="header__visually header__visually--mob" href="" x-show="mobMenuIsOpen">
+						<icon-svg name="visually"></icon-svg>Слабовидящим</a>
+					<button class="header__button-menu" x-bind:class="{'is-open': mobMenuIsOpen}" x-on:click="toggleMobMenu"><span></span></button>
+				</div>
+				<div class="header__main" x-show="mobMenuIsOpen || $store.isDesktop" x-transition.opacity x-ref="main">
+					<div class="container header__grid"><a class="header__visually" href="">
+							<icon-svg name="visually"></icon-svg>Слабовидящим</a>
+						<div class="header__info"><a class="header__info-item" href="" target="_blank">Дом&nbsp;молодёжи<br> Новгородской<br class="hidden-lg-up"> области</a><a class="header__logo" href="index.html">
+								<icon-svg x-bind:name="isSticky ? 'logo-sticky' : 'logo'"></icon-svg></a><a class="header__info-item" href="" target="_blank">Администрация<br> Новгородской<br class="hidden-lg-up"> области</a></div>
+						<div class="soc-network header__soc-network"><a class="soc-network__item soc-network__item--vk" href="" target="_blank">
+								<icon-svg name="vk"></icon-svg></a><a class="soc-network__item soc-network__item--instagram" href="" target="_blank">
+								<icon-svg name="instagram"></icon-svg></a><a class="soc-network__item soc-network__item--facebook" href="" target="_blank">
+								<icon-svg name="facebook"></icon-svg></a></div>
+						<nav class="nav header__nav"><a class="nav__item" href="">Деятельность</a><a class="nav__item" href="">Форумы</a><a class="nav__item" href="">Проекты</a><a class="nav__item" href="">Гранты</a><a class="nav__item" href="">Афиша</a><a class="nav__item" href="">Пресс-центр</a><a class="nav__item" href="">О нас</a><a class="nav__item" href="">Контакты</a>
+						</nav>
+					</div>
+				</div>
+			</header>
+			<main class="app__main">
+				<div class="slider" x-data="slider">
+					<div class="swiper-container" x-ref="container" data-swiper-autoplay="3000">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide slider__item">
+								<div class="slider__image"><img class="slider__image-el" src="images/content/slider/slide-1.jpg" srcset="
+								images/content/slider/slide-1.jpg,
+								images/content/slider/slide-1@2x.jpg 2x
+							" alt=""></div>
+								<div class="slider__main">
+									<div class="container slider__container">
+										<div class="slider__content">
+											<div class="slider__header">
+												<div class="slider__date">
+													<div class="slider__day-month">26.08</div>2020
+												</div>
+												<div class="slider__header-group">
+													<div class="slider__type">Региональное</div>
+													<div class="slider__place"><span>Тёсово-Нетыльский</span></div>
+												</div>
+											</div>
+											<h2 class="slider-title">Новый проект<br> &laquo;Время возможностей&raquo; объединит молодёжь Новгородской области</h2>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide slider__item">
+								<div class="slider__image"><img class="slider__image-el" src="images/content/slider/slide-2.jpg" srcset="
+								images/content/slider/slide-2.jpg,
+								images/content/slider/slide-2@2x.jpg 2x
+							" alt=""></div>
+								<div class="slider__main">
+									<div class="container slider__container">
+										<div class="slider__content">
+											<div class="slider__header">
+												<div class="slider__date">
+													<div class="slider__day-month">04.12</div>2021
+												</div>
+												<div class="slider__header-group">
+													<div class="slider__type">Региональное</div>
+													<div class="slider__place"><span>Тёсово-Нетыльский</span></div>
+												</div>
+											</div>
+											<h2 class="slider-title">Молодёжно — это информационно-познавательный портал для молодёжи Новгородской области</h2>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="slider__nav">
+							<div class="container slider__container-nav">
+								<button class="slider__button slider__button--prev" x-ref="buttonPrev">
+									<icon-svg name="arrow-left"></icon-svg>
+								</button>
+								<button class="slider__button slider__button--next" x-ref="buttonNext">
+									<icon-svg name="arrow-right"></icon-svg>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="app__group">
+					<section class="promo">
+						<div class="container promo__container">
+							<div class="promo__body">
+								<h2 class="promo__title"><strong>Молодёжно</strong>&nbsp;&mdash;
+									<small>это информационно-познавательный портал для молодёжи Новгородской области</small>
+								</h2>
+								<div class="promo__content">
+									<p>
+										Портал реализован инициативами Дома Молодёжи Новгородской области, цель которого&nbsp;&mdash;
+										это реализация молодёжной политики во&nbsp;всех актуальных и&nbsp;действующих направлениях
+										данной отрасли
+									</p>
+								</div><a class="more-link more-link--row promo__more" href="">
+									<div class="more-link__icon">
+										<icon-svg name="arrow-right"></icon-svg>
+									</div>
+									<div class="more-link__content">Подробнее
+									</div></a>
+							</div><img class="promo__image" src="images/design/molodejno.svg" alt="">
+						</div>
+					</section>
+				</div>
+			</main>
+			<footer class="footer">
+				<form class="subscribe" action="" x-data>
+					<div class="container subscribe__container">
+						<div class="subscribe__body">
+							<div class="subscribe__input">
+								<input class="subscribe__input-el" type="email" name="email" x-on:focus="$refs.placeholder.hidden = true" x-on:blur="$refs.placeholder.hidden = $event.target.value">
+								<div class="subscribe__input-placeholder" x-ref="placeholder"><strong>Введите e-mail,</strong> чтобы подписаться на&nbsp;новости</div>
+							</div>
+							<button class="subscribe__button" type="submit">
+								<icon-svg name="arrow-right"></icon-svg>
+							</button>
+						</div>
+					</div>
+				</form>
+				<div class="footer__body">
+					<div class="container footer__grid">
+						<div class="footer__section hidden-lg-down">
+							<div class="footer__header">
+								<h4 class="footer__title">Министерство спорта и&nbsp;молодёжной политики</h4>
+							</div>
+							<div class="footer__content">
+								<p>Телефон: <strong>+7 (800) 000-00-00</strong></p>
+								<p>Адрес: <strong>Москва, ул. Ленина, 123</strong></p>
+								<p>E-mail: <strong><a href="mailto:info@u.university">info@u.university</a></strong></p>
+								<p>Сайт: <strong><a href="">www.site.ru</a></strong></p>
+							</div>
+						</div><img class="footer__logo hidden-lg-down" src="images/design/logo.svg" alt="Молодёжно">
+						<div class="footer__section hidden-lg-down">
+							<div class="footer__header">
+								<h4 class="footer__title">Дом Молодёжи Новгородской области</h4>
+							</div>
+							<div class="footer__content">
+								<p>Телефон: <strong>+7 (800) 000-00-00</strong></p>
+								<p>Адрес: <strong>Москва, ул. Ленина, 123</strong></p>
+								<p>E-mail: <strong><a href="mailto:info@u.university">info@u.university</a></strong></p>
+								<p>Сайт: <strong><a href="">www.site.ru</a></strong></p>
+							</div>
+						</div>
+						<p class="footer__info"><span class="color-silver">&copy;&nbsp;2020. Информационно-познавательный портал для молодёжи Новгородской области</span></p>
+						<div class="soc-network footer__soc-network"><a class="soc-network__item soc-network__item--vk" href="" target="_blank">
+								<icon-svg name="vk"></icon-svg></a><a class="soc-network__item soc-network__item--instagram" href="" target="_blank">
+								<icon-svg name="instagram"></icon-svg></a><a class="soc-network__item soc-network__item--facebook" href="" target="_blank">
+								<icon-svg name="facebook"></icon-svg></a></div>
+						<p class="footer__info footer__info--dev"><a class="color-silver" href="https://renart.ru/" target="_blank">
+								<icon-svg name="renaissance"></icon-svg><span>Разработка сайта:<br> <strong>Renaissance Art Group</strong></span></a></p>
+						<p class="footer__info">
+							По&nbsp;вопросам сотрудничества обращайтесь
+							по&nbsp;<strong>+7&nbsp;(123)&nbsp;456-78-90</strong>
+							или пишите на&nbsp;<strong><a href="mailto:friendship@molodejno.ru">friendship@molodejno.ru</a></strong>
+						</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
