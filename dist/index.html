@@ -28,8 +28,8 @@
 					</div>
 				</div>
 			</header>
-			<main class="app__main" style="flex-basis:1000px;">
-				<div class="slider" x-data="slider" navigation="true">
+			<main class="app__main">
+				<div class="slider" x-data="slider">
 					<div class="swiper-container" x-ref="container" data-swiper-autoplay="3000">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide slider__item">
@@ -88,6 +88,29 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="app__group">
+					<section class="promo">
+						<div class="container promo__container">
+							<div class="promo__body">
+								<h2 class="promo__title"><strong>Молодёжно</strong>&nbsp;&mdash;
+									<small>это информационно-познавательный портал для молодёжи Новгородской области</small>
+								</h2>
+								<div class="promo__content">
+									<p>
+										Портал реализован инициативами Дома Молодёжи Новгородской области, цель которого&nbsp;&mdash;
+										это реализация молодёжной политики во&nbsp;всех актуальных и&nbsp;действующих направлениях
+										данной отрасли
+									</p>
+								</div><a class="more-link more-link--row promo__more" href="">
+									<div class="more-link__icon">
+										<icon-svg name="arrow-right"></icon-svg>
+									</div>
+									<div class="more-link__content">Подробнее
+									</div></a>
+							</div><img class="promo__image" src="images/design/molodejno.svg" alt="">
+						</div>
+					</section>
 				</div>
 			</main>
 			<footer class="footer">
