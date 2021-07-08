@@ -22,6 +22,7 @@ mixin header()
 		.header__main(
 			x-show="mobMenuIsOpen || $store.isDesktop"
 			x-transition.opacity
+			x-ref="main"
 		)
 			.container.header__grid
 				a.header__visually(href="")

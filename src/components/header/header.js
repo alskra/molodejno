@@ -21,7 +21,7 @@ Alpine.data('header', () => ({
 	},
 	updateStick() {
 		if (this.$store.isDesktop) {
-			this.isSticky = scrollY >= this.$el.offsetHeight;
+			this.isSticky = scrollY > 90 / 140 * this.$el.offsetHeight;
 		} else {
 			this.isSticky = false;
 		}
