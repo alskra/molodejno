@@ -6,12 +6,16 @@ mixin header()
 		x-data="header"
 		x-bind:class="{'is-sticky': isSticky}"
 		x-on:scroll.window="updateStick"
-		x-on:resize.window="updateStick(); updateMobMenu()"
+		x-on:resize.window="updateStick(); updateMobMenu();"
 	)&attributes(attributes)
-		.container.header__mob
-			a.header__logo.header__logo--mob(href="index.html" x-show="!mobMenuIsOpen")
-				icon-svg(name="logo-mob")
-			a.header__visually.header__visually--mob(href="" x-show="mobMenuIsOpen")
+		.container.header__mob(x-show="!$store.isDesktop")
+			a.header__logo(href="index.html" x-show="!mobMenuIsOpen")
+				img(
+					src="../../images/design/logo-mob.png"
+					srcset="../../images/design/logo-mob.png, ../../images/design/logo-mob@2x.png 2x"
+					alt="Молодёжно"
+				)
+			a.header__visually(href="" x-show="mobMenuIsOpen")
 				icon-svg(name="visually")
 				| Слабовидящим
 			button.header__button-menu(
@@ -25,14 +29,22 @@ mixin header()
 			x-ref="main"
 		)
 			.container.header__grid
-				a.header__visually(href="")
+				a.header__visually(href="" x-show="$store.isDesktop")
 					icon-svg(name="visually")
 					| Слабовидящим
 
 				.header__info
 					a.header__info-item(href="" target="_blank") Дом&nbsp;молодёжи#[br] Новгородской#[br(class="hidden-lg-up")] области
-					a.header__logo(href="index.html")
-						icon-svg(x-bind:name="isSticky ? 'logo-sticky' : 'logo'")
+
+					a.header__logo(href="index.html" x-show="$store.isDesktop")
+						img(
+							src="../../images/design/logo.png"
+							srcset="../../images/design/logo.png, ../../images/design/logo@2x.png 2x"
+							alt="Молодёжно"
+							x-show="!isSticky"
+						)
+						icon-svg(name="logo-sticky" x-show="isSticky")
+
 					a.header__info-item(href="" target="_blank") Администрация#[br] Новгородской#[br(class="hidden-lg-up")] области
 
 				+soc-network().header__soc-network

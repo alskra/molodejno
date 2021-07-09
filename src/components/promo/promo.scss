@@ -10,7 +10,7 @@
 
 .promo__container {
 	display: grid;
-	grid-template-columns: 570fr 510fr;
+	grid-template-columns: 568fr 512fr;
 	gap: 30rem;
 
 	@include media-breakpoint-down(lg) {

@@ -51,8 +51,7 @@
 
 		.header__logo {
 			justify-self: start;
-			margin-bottom: 0;
-			width: 35rem;
+			width: 36rem;
 		}
 
 		.header__soc-network {
@@ -88,10 +87,6 @@
 	column-gap: 20rem;
 	align-items: center;
 	height: 100%;
-
-	@include media-breakpoint-up(lg) {
-		display: none;
-	}
 }
 
 .header__button-menu {
@@ -191,12 +186,6 @@
 	&:hover {
 		color: $color-primary;
 	}
-
-	@include media-breakpoint-down(lg) {
-		&:not(&--mob) {
-			display: none;
-		}
-	}
 }
 
 .header__info {
@@ -246,19 +235,16 @@
 
 .header__logo {
 	justify-self: center;
-	margin-bottom: -6rem;
 	width: 250rem;
 	max-width: 100%;
 
-	&--mob {
-		margin: 0;
-		width: 180rem;
+	img {
+		display: block;
+		width: 100%;
 	}
 
 	@include media-breakpoint-down(lg) {
-		&:not(&--mob) {
-			display: none;
-		}
+		width: 180rem;
 	}
 }
 

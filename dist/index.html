@@ -8,17 +8,16 @@
 	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/index.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/index.css" rel="stylesheet"></head>
 	<body>
 		<div class="app">
-			<header class="header header--no-border-bottom" x-data="header" x-bind:class="{'is-sticky': isSticky}" x-on:scroll.window="updateStick" x-on:resize.window="updateStick(); updateMobMenu()">
-				<div class="container header__mob"><a class="header__logo header__logo--mob" href="index.html" x-show="!mobMenuIsOpen">
-						<icon-svg name="logo-mob"></icon-svg></a><a class="header__visually header__visually--mob" href="" x-show="mobMenuIsOpen">
+			<header class="header header--no-border-bottom" x-data="header" x-bind:class="{'is-sticky': isSticky}" x-on:scroll.window="updateStick" x-on:resize.window="updateStick(); updateMobMenu();">
+				<div class="container header__mob" x-show="!$store.isDesktop"><a class="header__logo" href="index.html" x-show="!mobMenuIsOpen"><img src="images/design/logo-mob.png" srcset="images/design/logo-mob.png, images/design/logo-mob@2x.png 2x" alt="Молодёжно"></a><a class="header__visually" href="" x-show="mobMenuIsOpen">
 						<icon-svg name="visually"></icon-svg>Слабовидящим</a>
 					<button class="header__button-menu" x-bind:class="{'is-open': mobMenuIsOpen}" x-on:click="toggleMobMenu"><span></span></button>
 				</div>
 				<div class="header__main" x-show="mobMenuIsOpen || $store.isDesktop" x-transition.opacity x-ref="main">
-					<div class="container header__grid"><a class="header__visually" href="">
+					<div class="container header__grid"><a class="header__visually" href="" x-show="$store.isDesktop">
 							<icon-svg name="visually"></icon-svg>Слабовидящим</a>
-						<div class="header__info"><a class="header__info-item" href="" target="_blank">Дом&nbsp;молодёжи<br> Новгородской<br class="hidden-lg-up"> области</a><a class="header__logo" href="index.html">
-								<icon-svg x-bind:name="isSticky ? 'logo-sticky' : 'logo'"></icon-svg></a><a class="header__info-item" href="" target="_blank">Администрация<br> Новгородской<br class="hidden-lg-up"> области</a></div>
+						<div class="header__info"><a class="header__info-item" href="" target="_blank">Дом&nbsp;молодёжи<br> Новгородской<br class="hidden-lg-up"> области</a><a class="header__logo" href="index.html" x-show="$store.isDesktop"><img src="images/design/logo.png" srcset="images/design/logo.png, images/design/logo@2x.png 2x" alt="Молодёжно" x-show="!isSticky">
+								<icon-svg name="logo-sticky" x-show="isSticky"></icon-svg></a><a class="header__info-item" href="" target="_blank">Администрация<br> Новгородской<br class="hidden-lg-up"> области</a></div>
 						<div class="soc-network header__soc-network"><a class="soc-network__item soc-network__item--vk" href="" target="_blank">
 								<icon-svg name="vk"></icon-svg></a><a class="soc-network__item soc-network__item--instagram" href="" target="_blank">
 								<icon-svg name="instagram"></icon-svg></a><a class="soc-network__item soc-network__item--facebook" href="" target="_blank">
@@ -108,7 +107,7 @@
 									</div>
 									<div class="more-link__content">Подробнее
 									</div></a>
-							</div><img class="promo__image" src="images/design/molodejno.svg" alt="">
+							</div><img class="promo__image" src="images/design/molodejno.png" srcset="images/design/molodejno.png, images/design/molodejno@2x.png 2x" alt="">
 						</div>
 					</section>
 				</div>
@@ -139,7 +138,7 @@
 								<p>E-mail: <strong><a href="mailto:info@u.university">info@u.university</a></strong></p>
 								<p>Сайт: <strong><a href="">www.site.ru</a></strong></p>
 							</div>
-						</div><img class="footer__logo hidden-lg-down" src="images/design/logo.svg" alt="Молодёжно">
+						</div><img class="footer__logo hidden-lg-down" src="images/design/logo-footer.png" srcset="images/design/logo-footer.png, images/design/logo-footer@2x.png 2x" alt="Молодёжно">
 						<div class="footer__section hidden-lg-down">
 							<div class="footer__header">
 								<h4 class="footer__title">Дом Молодёжи Новгородской области</h4>

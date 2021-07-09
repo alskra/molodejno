@@ -15,7 +15,11 @@ mixin footer()
 						p E-mail: #[strong #[a(href="mailto:info@u.university") info@u.university]]
 						p Сайт: #[strong #[a(href="") www.site.ru]]
 
-				img.footer__logo.hidden-lg-down(src="../../images/design/logo.svg" alt="Молодёжно")
+				img.footer__logo.hidden-lg-down(
+					src="../../images/design/logo-footer.png"
+					srcset="../../images/design/logo-footer.png, ../../images/design/logo-footer@2x.png 2x"
+					alt="Молодёжно"
+				)
 
 				.footer__section.hidden-lg-down
 					.footer__header
