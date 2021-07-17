@@ -28,6 +28,7 @@
 
 .promo__image {
 	margin: -15rem - 134rem auto 0;
+	//width: 100%;
 
 	@include media-breakpoint-down(lg) {
 		margin-top: 0;

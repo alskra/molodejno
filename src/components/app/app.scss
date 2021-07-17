@@ -15,5 +15,12 @@
 }
 
 .app__group {
+	display: flex;
+	flex-flow: column;
+	margin-bottom: 125rem;
 	background: linear-gradient(180deg, $color-aero-blue 51.03%, $color-onahau 100%);
+
+	.quote {
+		margin-bottom: -125rem;
+	}
 }
