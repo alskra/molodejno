@@ -1,7 +1,8 @@
+const {merge} = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-
-const {merge} = require('webpack-merge');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const {extendDefaultPlugins} = require('svgo');
 
 const common = require('./webpack.common');
 
@@ -47,6 +48,59 @@ module.exports = merge(common, {
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].css',
 			chunkFilename: '[id].css',
+		}),
+		new ImageMinimizerPlugin({
+			test: /\.(jpe?g|png|gif|svg)$/i,
+			minimizerOptions: {
+				// Lossless optimization with custom option
+				// Feel free to experiment with options for better result for you
+				plugins: [
+					[
+						'gifsicle',
+						{interlaced: true},
+					],
+					[
+						'mozjpeg',
+						{
+							progressive: true,
+							quality: 80,
+						},
+					],
+					[
+						'optipng',
+						{optimizationLevel: 5},
+					],
+					[
+						'svgo',
+						{
+							plugins: extendDefaultPlugins([
+								{
+									name: 'removeDimensions',
+								},
+								{
+									name: 'removeViewBox',
+									active: false,
+								},
+								{
+									name: 'sortAttrs',
+								},
+								{
+									name: 'cleanupIDs',
+									params: {
+										prefix: {
+											toString() {
+												this.counter = this.counter || 0;
+
+												return `id-${this.counter++}`;
+											},
+										},
+									},
+								},
+							]),
+						},
+					],
+				],
+			},
 		}),
 	],
 	optimization: {

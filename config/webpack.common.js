@@ -1,9 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const svgToMiniDataURI = require('mini-svg-data-uri');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
@@ -115,55 +114,6 @@ module.exports = {
 					noErrorOnMissing: true,
 				},
 			],
-		}),
-		new ImageMinimizerPlugin({
-			test: /\.(jpe?g|png|gif|svg)$/i,
-			minimizerOptions: {
-				// Lossless optimization with custom option
-				// Feel free to experiment with options for better result for you
-				plugins: [
-					['gifsicle', {interlaced: true}],
-					[
-						'mozjpeg',
-						{
-							progressive: true,
-							quality: 80,
-						},
-					],
-					['optipng', {optimizationLevel: 5}],
-					[
-						'svgo',
-						{
-							plugins: [
-								{
-									name: 'removeDimensions',
-									active: true,
-								},
-								{
-									name: 'removeViewBox',
-									active: false,
-								},
-								{
-									name: 'sortAttrs',
-									active: true,
-								},
-								{
-									name: 'cleanupIDs',
-									params: {
-										prefix: {
-											toString() {
-												this.counter = this.counter || 0;
-
-												return `id-${this.counter++}`;
-											},
-										},
-									},
-								},
-							],
-						},
-					],
-				],
-			},
 		}),
 		new StylelintPlugin({
 			files: '**/*.?(s)css',

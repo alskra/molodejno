@@ -1,5 +1,7 @@
 const {merge} = require('webpack-merge');
 const chokidar = require('chokidar');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const {extendDefaultPlugins} = require('svgo');
 
 const common = require('./webpack.common');
 const paths = require('./paths');
@@ -48,4 +50,44 @@ module.exports = merge(common, {
 			},
 		],
 	},
+	plugins: [
+		new ImageMinimizerPlugin({
+			test: /\.svg$/i,
+			minimizerOptions: {
+				// Lossless optimization with custom option
+				// Feel free to experiment with options for better result for you
+				plugins: [
+					[
+						'svgo',
+						{
+							plugins: extendDefaultPlugins([
+								{
+									name: 'removeDimensions',
+								},
+								{
+									name: 'removeViewBox',
+									active: false,
+								},
+								{
+									name: 'sortAttrs',
+								},
+								{
+									name: 'cleanupIDs',
+									params: {
+										prefix: {
+											toString() {
+												this.counter = this.counter || 0;
+
+												return `id-${this.counter++}`;
+											},
+										},
+									},
+								},
+							]),
+						},
+					],
+				],
+			},
+		}),
+	],
 });
