@@ -1,4 +1,14 @@
 :root {
+	--body-width: calc(100vw - var(--scrollbar-width));
+	--container-gap: 15rem;
+	--container-gap-negative: calc(-1 * var(--container-gap));
+	--container-max-width: 1140rem;
+	--container-to-edge:
+		calc(
+			var(--container-gap-negative) -
+			(var(--body-width) - min(var(--body-width), var(--container-max-width))) / 2
+		);
+
 	font-size: 1px;
 
 	@include media-breakpoint-down(xl) {
@@ -6,6 +16,9 @@
 	}
 
 	@include media-breakpoint-down(lg) {
+		--container-gap: 20rem;
+		--container-max-width: var(--body-width);
+
 		font-size: calc(0.5 / 360 * 100vmin + 0.5px);
 	}
 }
@@ -146,11 +159,7 @@ iframe {
 	position: relative;
 	z-index: 1;
 	margin: 0 auto;
-	padding: 0 15rem;
+	padding: 0 var(--container-gap);
 	width: 100%;
-	max-width: 1140rem;
-
-	@include media-breakpoint-down(lg) {
-		padding: 0 20rem;
-	}
+	max-width: var(--container-max-width);
 }

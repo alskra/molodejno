@@ -3,9 +3,13 @@ import 'normalize.css';
 import '../css/base.scss';
 import '../css/helpers.scss';
 
-import Alpine from 'alpinejs';
+import 'ninelines-ua-parser';
 import 'focus-visible';
 import './vh-fix';
+import './scrollbar-width';
+
+import Alpine from 'alpinejs';
+
 import '../components/icon-svg/icon-svg';
 import '../components/button/button';
 import '../components/more-link/more-link';

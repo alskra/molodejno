@@ -62,29 +62,30 @@
 	height: 100%;
 	color: $color-white;
 
-	&::before {
+	&::before,
+	&::after {
 		content: "";
 		position: absolute;
-		left: calc(-15rem - (100vw - min(100vw, 1140rem)) / 2);
+		left: var(--container-to-edge);
+		z-index: -1;
+		border-radius: 0 math.div(549rem, 2) math.div(549rem, 2) 0;
+	}
+
+	&::before {
 		right: 0;
 		top: 10rem;
 		bottom: 0;
-		z-index: -1;
 		border: 1px solid $color-black;
 		border-left: 0;
-		border-radius: 0 math.div(549rem, 2) math.div(549rem, 2) 0;
 		background: $color-white;
 	}
 
 	&::after {
-		content: "";
-		position: absolute;
-		left: calc(-15rem - (100vw - min(100vw, 1140rem)) / 2);
 		right: 6rem;
 		top: 0;
 		bottom: 10rem;
-		z-index: -1;
-		border-radius: 0 math.div(549rem, 2) math.div(549rem, 2) 0;
+		background: $color-cerulean-blue;
+		// stylelint-disable-next-line
 		background:
 			conic-gradient(
 				from 46.69deg at calc(100% - #{math.div(549rem, 2)}) 50%,
@@ -101,12 +102,13 @@
 		&::before,
 		&::after {
 			position: absolute;
-			left: -20rem;
-			right: calc(-20rem - #{percentage(math.div((506 - 360), 320))});
+			right: calc(var(--container-gap-negative) - #{percentage(math.div((506 - 360), 320))});
 			border-radius: 0;
 		}
 
 		&::after {
+			background: $color-cerulean-blue;
+			// stylelint-disable-next-line
 			background:
 				conic-gradient(
 					from 46.69deg at 50% 50%,

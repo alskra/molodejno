@@ -4,6 +4,7 @@ include ../../components/footer/footer
 include ../../components/slider/slider
 include ../../components/promo/promo
 include ../../components/quote/quote
+include ../../components/infographics/infographics
 
 append variables
 	-
@@ -15,6 +16,7 @@ block body
 		+slider()
 		.app__group
 			+promo()
+			+infographics()
 			+quote('Молодёжно')
 				p Сегодня Дом молодёжи&nbsp;&mdash; это команда профессионалов, которые отвечают за&nbsp;основные направления современной молодёжной политики.
 	+footer()

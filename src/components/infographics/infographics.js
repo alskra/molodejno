@@ -1,0 +1,12 @@
+import Alpine from 'alpinejs';
+import 'swiper/swiper-bundle.css';
+import Swiper from 'swiper';
+import './infographics.scss';
+
+Alpine.data('infographics', () => ({
+	init() {
+		this.swiper = new Swiper(this.$refs.container, {
+			slidesPerView: 'auto',
+		});
+	},
+}));

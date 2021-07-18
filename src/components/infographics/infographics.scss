@@ -1,0 +1,28 @@
+.infographics {
+	margin-bottom: 100rem;
+}
+
+.infographics__items {
+	overflow: hidden;
+	margin-right: var(--container-to-edge);
+
+	.swiper-container {
+		margin: 0 -15rem;
+	}
+}
+
+.infographics__item {
+	margin: 0 15rem;
+	border-bottom: 1px solid $headings-color;
+	width: 445rem;
+}
+
+.infographics__image {
+	display: block;
+	margin-top: 46rem;
+	width: 100%;
+
+	@include media-breakpoint-down(lg) {
+		margin-top: 20rem;
+	}
+}

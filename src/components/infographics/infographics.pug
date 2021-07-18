@@ -1,0 +1,44 @@
+mixin infographics()
+	-
+		const items = [
+			{
+				title: 'Выигранных грантов',
+				content: '12500',
+			},
+			{
+				title: 'Участников ежегодно',
+				content: '3500',
+			},
+			{
+				title: 'Выигранных грантов',
+				content: '12500',
+			},
+			{
+				title: 'Участников ежегодно',
+				content: '3500',
+			},
+			{
+				title: 'Выигранных грантов',
+				content: '12500',
+			},
+			{
+				title: 'Участников ежегодно',
+				content: '3500',
+			},
+		];
+
+	section.infographics(x-data="infographics")&attributes(attributes)
+		.container
+			.infographics__items
+				.swiper-container(x-ref="container")
+					.swiper-wrapper
+						each item in items
+							.swiper-slide.infographics__item
+								.infographics__title= item.title
+								.infographics__content= item.content
+
+			img.infographics__image(
+				src="../../images/design/infographics.png"
+				srcset="../../images/design/infographics@2x.png 2x"
+				alt=""
+			)
