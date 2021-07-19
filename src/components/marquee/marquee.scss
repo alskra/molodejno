@@ -54,3 +54,20 @@
 		}
 	}
 }
+
+.marquee__tooltip {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 50%;
+	width: 200rem;
+	height: 200rem;
+	background: $headings-color;
+	transition: opacity, visibility;
+	transition-duration: $transition-duration;
+
+	&.is-hidden {
+		opacity: 0;
+		visibility: hidden;
+	}
+}

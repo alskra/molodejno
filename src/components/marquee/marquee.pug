@@ -8,7 +8,10 @@ mixin marquee()
 			'Инновационная деятельность',
 		];
 
-	.marquee(x-data="marquee")&attributes(attributes)
+	.marquee(
+		x-data="marquee"
+		x-on:mouseenter="stop"
+	)&attributes(attributes)
 		.marquee__container(x-ref="container")
 			template(x-for="list in listCount")
 				.marquee__list
@@ -16,4 +19,7 @@ mixin marquee()
 						a.marquee__item(
 							href=""
 							data-content=item
+							x-on:mouseenter="showTooltip"
+							x-on:mouseleave="hideTooltip"
 						)= item
+							.marquee__tooltip.is-hidden
