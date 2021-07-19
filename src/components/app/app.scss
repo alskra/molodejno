@@ -12,15 +12,26 @@
 .app__main {
 	flex: 1;
 	overflow: hidden;
+	padding-bottom: 125rem;
+
+	@include media-breakpoint-down(lg) {
+		padding-bottom: 70rem;
+	}
 }
 
 .app__group {
 	display: flex;
 	flex-flow: column;
-	margin-bottom: 125rem;
 	background: linear-gradient(180deg, $color-aero-blue 51.03%, $color-onahau 100%);
 
 	.quote {
+		z-index: 2;
 		margin-bottom: -125rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		.quote {
+			margin-bottom: -70rem;
+		}
 	}
 }

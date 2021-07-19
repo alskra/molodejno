@@ -1,9 +1,9 @@
 .infographics {
 	overflow: hidden;
-	margin-bottom: 100rem;
+	padding-bottom: 100rem;
 
 	@include media-breakpoint-down(lg) {
-		margin-bottom: 68rem;
+		padding-bottom: 68rem;
 	}
 }
 
@@ -44,7 +44,7 @@
 		left: -61rem;
 		top: 0;
 		z-index: -1;
-		border: (134 - 52) / 2 * 1rem solid $color-white;
+		border: math.div(134 - 52, 2) * 1rem solid $color-white;
 		border-radius: 50%;
 		width: 134rem;
 		height: 134rem;
@@ -57,7 +57,7 @@
 
 		&::before {
 			left: -56rem;
-			border-width: (94 - 36) / 2 * 1rem;
+			border-width: math.div(94 - 36, 2) * 1rem;
 			width: 94rem;
 			height: 94rem;
 		}

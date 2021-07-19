@@ -1,0 +1,11 @@
+include ../../components/marquee/marquee
+
+mixin directions()
+	section.directions&attributes(attributes)
+		header.container.directions__header
+			h2.heading.directions__heading Направления
+		+marquee()(x-data="marquee({startPos: 100})")
+		+marquee()(x-data="marquee({speed: 1, startPos: 200})")
+		+marquee()(x-data="marquee({speed: 3, startPos: 300})")
+		footer.container.directions__footer
+			+more-link() Смотреть все

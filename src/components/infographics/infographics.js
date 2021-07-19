@@ -17,7 +17,7 @@ Alpine.data('infographics', () => ({
 			scrollTrigger: {
 				trigger: '.infographics__items',
 				start: 'top bottom-=120',
-				toggleActions: 'play pause resume reverse', // onEnter, onLeave, onEnterBack, and onLeaveBack
+				toggleActions: 'play pause resume none', // onEnter, onLeave, onEnterBack, and onLeaveBack
 			},
 		});
 
@@ -26,7 +26,7 @@ Alpine.data('infographics', () => ({
 			duration: 0.2,
 		}).from('.infographics__number', {
 			textContent: 0,
-			duration: 1.2,
+			duration: 1.4,
 			onUpdate() {
 				this.targets().forEach((target) => {
 					target.innerHTML = Math.ceil(target.textContent).toLocaleString('ru');

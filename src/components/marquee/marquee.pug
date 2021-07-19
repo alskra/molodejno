@@ -1,0 +1,19 @@
+mixin marquee()
+	-
+		const items = [
+			'Научно-техническое творчество',
+			'Спорт и ЗОЖ',
+			'Культура и творчество',
+			'Предпринимательство',
+			'Инновационная деятельность',
+		];
+
+	.marquee(x-data="marquee")&attributes(attributes)
+		.marquee__container(x-ref="container")
+			template(x-for="list in listCount")
+				.marquee__list
+					each item in items
+						a.marquee__item(
+							href=""
+							data-content=item
+						)= item

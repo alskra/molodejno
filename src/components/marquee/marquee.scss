@@ -1,0 +1,56 @@
+.marquee {
+	overflow: hidden;
+
+	& + & {
+		margin-top: 15rem;
+
+		.marquee__item {
+			font-size: 40rem;
+		}
+	}
+
+	& + & + & {
+		.marquee__item {
+			font-size: 35rem;
+		}
+	}
+}
+
+.marquee__container {
+	display: flex;
+}
+
+.marquee__list {
+	display: flex;
+}
+
+.marquee__item {
+	position: relative;
+	margin: 0 30rem;
+	font-family: $headings-font-family;
+	font-weight: 700;
+	font-size: 45rem;
+	line-height: 1.1;
+	white-space: nowrap;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 1px currentColor;
+	text-transform: uppercase;
+	color: $color-governor-bay;
+
+	&::before {
+		content: attr(data-content);
+		position: absolute;
+		left: 0;
+		top: 0;
+		-webkit-text-fill-color: initial;
+		-webkit-text-stroke: initial;
+		color: transparent;
+		transition: color $transition-duration;
+	}
+
+	&:hover {
+		&::before {
+			color: $color-governor-bay;
+		}
+	}
+}

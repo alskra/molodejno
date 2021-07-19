@@ -151,8 +151,14 @@ iframe {
 	outline: none;
 }
 
-[hidden] {
+[hidden],
+[x-cloak] {
 	display: none !important; // stylelint-disable
+}
+
+::selection {
+	color: $color-white;
+	background: $color-primary;
 }
 
 .container {
@@ -162,4 +168,13 @@ iframe {
 	padding: 0 var(--container-gap);
 	width: 100%;
 	max-width: var(--container-max-width);
+}
+
+.heading {
+	margin: 0 0 15rem;
+	font-family: $headings-font-family;
+	font-weight: 700;
+	font-size: 60rem;
+	line-height: 1.25;
+	color: $headings-color;
 }
