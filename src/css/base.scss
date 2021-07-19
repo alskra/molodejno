@@ -3,7 +3,7 @@
 	--container-gap: 15rem;
 	--container-gap-negative: calc(-1 * var(--container-gap));
 	--container-max-width: 1140rem;
-	--container-to-edge:
+	--container-content-offset-x:
 		calc(
 			var(--container-gap-negative) -
 			(var(--body-width) - min(var(--body-width), var(--container-max-width))) / 2
@@ -33,7 +33,7 @@ html {
 	position: relative;
 	//overflow-x: hidden;
 	//min-height: 100vh;
-	scroll-behavior: smooth;
+	//scroll-behavior: smooth;
 
 	&.has-cursor,
 	&.has-cursor * {

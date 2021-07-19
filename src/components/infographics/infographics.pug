@@ -3,27 +3,27 @@ mixin infographics()
 		const items = [
 			{
 				title: 'Выигранных грантов',
-				content: '12500',
+				number: '12500',
 			},
 			{
 				title: 'Участников ежегодно',
-				content: '3500',
+				number: '3500',
 			},
 			{
 				title: 'Выигранных грантов',
-				content: '12500',
+				number: '12500',
 			},
 			{
 				title: 'Участников ежегодно',
-				content: '3500',
+				number: '3500',
 			},
 			{
 				title: 'Выигранных грантов',
-				content: '12500',
+				number: '12500',
 			},
 			{
 				title: 'Участников ежегодно',
-				content: '3500',
+				number: '3500',
 			},
 		];
 
@@ -35,7 +35,9 @@ mixin infographics()
 						each item in items
 							.swiper-slide.infographics__item
 								.infographics__title= item.title
-								.infographics__content= item.content
+								.infographics__content
+									.infographics__number= item.number
+									.infographics__plus +
 
 			img.infographics__image(
 				src="../../images/design/infographics.png"

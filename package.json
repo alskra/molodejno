@@ -59,6 +59,7 @@
     "body-scroll-lock": "^4.0.0-beta.0",
     "core-js": "^3.12.1",
     "focus-visible": "^5.2.0",
+    "gsap": "^3.7.1",
     "lodash": "^4.17.21",
     "ninelines-ua-parser": "^1.1.6",
     "normalize.css": "^8.0.1",
