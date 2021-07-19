@@ -75,6 +75,10 @@ module.exports = merge(common, {
 						{
 							plugins: extendDefaultPlugins([
 								{
+									name: 'removeUnknownsAndDefaults',
+									active: false,
+								},
+								{
 									name: 'removeDimensions',
 								},
 								{
