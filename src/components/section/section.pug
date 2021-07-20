@@ -1,6 +1,11 @@
 mixin section(data)
 	section.section&attributes(attributes)
+		.section__design
+			.container
+				.section__design-inner
+					.section__design-bg
 		header.container.section__header
 			.section__header-body
 				h2.heading.section__heading= data.title
 				.section__desc!= data.desc
+
