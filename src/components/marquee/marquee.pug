@@ -11,6 +11,7 @@ mixin marquee()
 	.marquee(
 		x-data="marquee"
 		x-on:mouseenter="stop"
+		x-on:mouseleave="play"
 	)&attributes(attributes)
 		.marquee__container(x-ref="container")
 			template(x-for="list in listCount")

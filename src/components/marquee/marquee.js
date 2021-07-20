@@ -2,9 +2,26 @@ import Alpine from 'alpinejs';
 import ResizeObserver from 'resize-observer-polyfill';
 import './marquee.scss';
 
+let itemHoverEl;
+let itemHoverRect;
+let tooltipCoords = {
+	prevX: 0,
+	prevY: 0,
+	x: 0,
+	y: 0,
+};
+let tooltipTimerId;
+let tooltipEl;
+let tooltipRect;
+let tooltipFrameId;
+
 Alpine.data('marquee', ({speed = 2} = {}) => ({
 	listCount: 1,
+	listEl: undefined,
 	pos: 0,
+	maxPos: 0,
+	frameId: undefined,
+
 	init() {
 		const resizeObserver = new ResizeObserver(() => this.update());
 
@@ -21,8 +38,7 @@ Alpine.data('marquee', ({speed = 2} = {}) => ({
 
 		this.maxPos = listWidth;
 		this.listCount = Math.ceil(this.$refs.container.offsetWidth / listWidth) + 1;
-
-		// this.play();
+		this.updatePosition();
 	},
 	updatePosition() {
 		if (this.pos >= this.maxPos) {
@@ -32,40 +48,61 @@ Alpine.data('marquee', ({speed = 2} = {}) => ({
 		this.$refs.container.style.transform = `translateX(${speed > 0 ? -this.pos : -this.maxPos + this.pos}px)`;
 	},
 	play() {
+		cancelAnimationFrame(this.frameId);
 		this.pos += Math.abs(speed);
 		this.updatePosition();
-		cancelAnimationFrame(this.frameId);
 		this.frameId = requestAnimationFrame(() => this.play());
 	},
 	stop() {
 		cancelAnimationFrame(this.frameId);
 	},
 	showTooltip(evt) {
-		this.itemEl = evt.currentTarget;
+		itemHoverEl = evt.currentTarget;
+		itemHoverRect = itemHoverEl.getBoundingClientRect();
+		itemHoverEl.addEventListener('mousemove', this.posTooltipBind);
 
-		this.tooltipTimer = setTimeout(() => {
-			this.itemRect = this.itemEl.getBoundingClientRect();
-			this.tooltipEl = this.itemEl.querySelector('.marquee__tooltip');
-			this.tooltipRect = this.tooltipEl.getBoundingClientRect();
-			document.body.append(this.tooltipEl);
-			this.tooltipEl.classList.remove('is-hidden');
-			this.itemEl.addEventListener('mousemove', this.posTooltipBind);
-		}, 150);
+		tooltipTimerId = setTimeout(() => {
+			tooltipEl = itemHoverEl.querySelector('.marquee__tooltip');
+			document.body.append(tooltipEl);
+			tooltipEl.classList.remove('is-hidden');
+			tooltipRect = tooltipEl.getBoundingClientRect();
+			tooltipCoords.prevX = tooltipCoords.prevX || scrollX + itemHoverRect.left + itemHoverRect.width / 2;
+			tooltipCoords.prevY = tooltipCoords.prevY || scrollY + itemHoverRect.top;
+			this.updateTooltipPos();
+		}, 100);
+	},
+	updateTooltipPos() {
+		const deltaX = tooltipCoords.x - tooltipCoords.prevX;
+		const deltaY = tooltipCoords.y - tooltipCoords.prevY;
+
+		if (Math.abs(deltaX) > 0.1 || Math.abs(deltaY) > 0.1) {
+			tooltipCoords.prevX += deltaX * 0.1;
+			tooltipCoords.prevY += deltaY * 0.1;
+		} else {
+			tooltipCoords.prevX = tooltipCoords.x;
+			tooltipCoords.prevY = tooltipCoords.y;
+		}
+
+		tooltipEl.style.transform = `translate(
+			${tooltipCoords.prevX - tooltipRect.width / 2}px,
+			${tooltipCoords.prevY - tooltipRect.height}px
+		)`;
+
+		tooltipFrameId = requestAnimationFrame(() => this.updateTooltipPos());
 	},
 	posTooltip(evt) {
-		this.tooltipEl.style.transform = `translate(
-			${scrollX + evt.clientX - this.tooltipRect.width / 2}px,
-			${scrollY + this.itemRect.top - this.tooltipRect.height}px
-		)`;
+		tooltipCoords.x = scrollX + evt.clientX;
+		tooltipCoords.y = scrollY + itemHoverRect.top;
 	},
 	hideTooltip(evt) {
-		clearTimeout(this.tooltipTimer);
+		clearTimeout(tooltipTimerId);
+		cancelAnimationFrame(tooltipFrameId);
+		itemHoverEl.removeEventListener('mousemove', this.posTooltipBind);
 
-		if (this.tooltipEl) {
-			this.tooltipEl.classList.add('is-hidden');
-			this.itemEl.removeEventListener('mousemove', this.posTooltipBind);
-			evt.currentTarget.append(this.tooltipEl);
-			this.tooltipEl = null;
+		if (tooltipEl) {
+			tooltipEl.classList.add('is-hidden');
+			evt.currentTarget.append(tooltipEl);
+			tooltipEl = null;
 		}
 	},
 }));
