@@ -1,5 +1,5 @@
 :root {
-	--body-width: calc(100vw - var(--scrollbar-width));
+	--body-width: calc(100vw - var(--scrollbar-width, 0));
 	--container-gap: 15rem;
 	--container-gap-negative: calc(-1 * var(--container-gap));
 	--container-max-width: 1140rem;
@@ -171,7 +171,7 @@ iframe {
 }
 
 .heading {
-	margin: 0 0 20rem;
+	margin: 0 0 25rem;
 	font-family: $headings-font-family;
 	font-weight: 700;
 	font-size: 60rem;
@@ -179,6 +179,7 @@ iframe {
 	color: $headings-color;
 
 	@include media-breakpoint-down(lg) {
+		margin-bottom: 20rem;
 		font-size: 40rem;
 	}
 }

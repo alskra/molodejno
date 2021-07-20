@@ -23,8 +23,8 @@ Alpine.data('marquee', ({speed = 2} = {}) => ({
 		this.update();
 		this.$watch('$store.isDesktop', () => this.update());
 	},
-	update(isDesktop = this.$store.isDesktop) {
-		if (isDesktop) {
+	update() {
+		if (this.$store.isDesktop) {
 			this.updateLayout();
 			this.play();
 		} else {
