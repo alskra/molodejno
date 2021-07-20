@@ -43,7 +43,7 @@
 	font-weight: 350;
 	font-size: 60rem;
 	line-height: 1.25;
-	color: $color;
+	color: $color-black;
 
 	small {
 		display: block;
@@ -64,7 +64,7 @@
 	margin-bottom: 31rem;
 	font-size: 20rem;
 	line-height: 1.5;
-	color: $headings-color;
+	color: $color;
 
 	> :last-child {
 		margin-bottom: 0;
@@ -81,5 +81,5 @@
 }
 
 .promo__more {
-	color: $color;
+	color: $color-black;
 }

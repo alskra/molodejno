@@ -9,7 +9,7 @@
 	font-size: 20rem;
 	line-height: math.div(27, 20);
 	white-space: nowrap;
-	color: $headings-color;
+	color: $color;
 	transition: color $transition-duration;
 
 	&:hover {

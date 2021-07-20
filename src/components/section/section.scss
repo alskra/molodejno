@@ -1,3 +1,11 @@
 .section {
+	padding-top: 134rem;
+}
 
+.section__header {
+	margin-bottom: 20rem;
+}
+
+.section__header-body {
+	width: percentage(math.div(541, 1110));
 }

@@ -48,13 +48,13 @@
 	font-size: 26rem;
 	line-height: 1.15;
 	letter-spacing: -0.02em;
-	color: $color;
+	color: $color-black;
 }
 
 .footer__content {
 	font-size: 16rem;
 	line-height: 1.5;
-	color: $color;
+	color: $color-black;
 
 	p {
 		margin: 0 0 8rem;
@@ -85,7 +85,7 @@
 .footer__info {
 	font-size: 14rem;
 	line-height: 1.43;
-	color: $color;
+	color: $color-black;
 
 	a {
 		transition: color $transition-duration;

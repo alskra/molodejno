@@ -1,0 +1,6 @@
+mixin section(data)
+	section.section&attributes(attributes)
+		header.container.section__header
+			.section__header-body
+				h2.heading.section__heading= data.title
+				.section__desc!= data.desc

@@ -6,6 +6,7 @@ include ../../components/promo/promo
 include ../../components/quote/quote
 include ../../components/infographics/infographics
 include ../../components/directions/directions
+include ../../components/section/section
 
 append variables
 	-
@@ -21,4 +22,5 @@ block body
 			+quote('Молодёжно')
 				p Сегодня Дом молодёжи&nbsp;&mdash; это команда профессионалов, которые отвечают за&nbsp;основные направления современной молодёжной политики.
 		+directions()
+		+section(sections.forums)
 	+footer()

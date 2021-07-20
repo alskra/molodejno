@@ -8,6 +8,7 @@ import '../../components/promo/promo';
 import '../../components/quote/quote';
 import '../../components/infographics/infographics';
 import '../../components/directions/directions';
+import '../../components/section/section';
 import '../../components/app/app';
 
 Alpine.start();

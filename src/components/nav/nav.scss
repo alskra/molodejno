@@ -23,7 +23,7 @@
 	line-height: math.div(22, 18);
 	white-space: nowrap;
 	text-overflow: ellipsis;
-	color: $color;
+	color: $color-black;
 	transition: color $transition-duration;
 
 	&:hover {

@@ -70,7 +70,7 @@
 	font-weight: 500;
 	font-size: 18rem;
 	line-height: 1.8;
-	color: $color;
+	color: $color-black;
 
 	@include media-breakpoint-down(lg) {
 		margin-bottom: -12rem;
@@ -104,7 +104,7 @@
 	line-height: math.div(119, 100);
 	-webkit-text-fill-color: transparent;
 	-webkit-text-stroke: 1px currentColor;
-	color: $color;
+	color: $color-black;
 
 	@include media-breakpoint-down(lg) {
 		margin-left: 5rem;

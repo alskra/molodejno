@@ -14,7 +14,7 @@
 
 .directions__heading {
 	text-align: center;
-	color: $color;
+	color: $color-black;
 
 	@include media-breakpoint-down(lg) {
 		text-align: left;
@@ -30,4 +30,8 @@
 		justify-content: flex-start;
 		margin-top: 38rem;
 	}
+}
+
+.directions__more {
+	color: $color-black;
 }
