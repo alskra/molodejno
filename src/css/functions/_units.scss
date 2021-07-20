@@ -15,3 +15,7 @@
 @function vh($number) {
 	@return calc(#{$number} * var(--vh, 1vh));
 }
+
+@function cw($number, $base: 1110) {
+	@return percentage(math.div($number, $base));
+}
