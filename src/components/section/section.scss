@@ -1,3 +1,7 @@
+@function cw($number) {
+	@return percentage(math.div($number, 1110));
+}
+
 .section {
 	position: relative;
 	padding: 134rem 0 160rem;
@@ -8,7 +12,7 @@
 }
 
 .section__header-body {
-	width: percentage(math.div(541, 1110));
+	width: cw(541);
 }
 
 .section__desc {
@@ -31,26 +35,104 @@
 
 .section__design-inner {
 	position: relative;
+	padding-top: 100%;
+}
+
+.section__design-box {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 
 .section__design-bg {
-	$size: percentage(math.div(750, 1110));
+	$size: cw(750);
 
 	position: absolute;
-	right: 0;
+	right: 13rem;
 	top: 0;
 	border-radius: 50% 0 0 50%;
-	padding-top: $size;
 	width: $size;
-	background: $color-onahau;
+	height: $size;
 
 	&::before {
 		content: "";
 		position: absolute;
 		left: 100%;
-		right: var(--container-content-offset-x);
+		right: calc(-13rem + var(--container-content-offset-x));
 		top: 0;
 		bottom: 0;
 		background: inherit;
 	}
+
+	&--color-1 {
+		background: $color-onahau;
+	}
+}
+
+.section__img-1 {
+	position: absolute;
+	right: cw(13);
+	top: cw(201);
+	width: cw(415);
+}
+
+.section__ellipses-1 {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.section__ellipse-1 {
+	position: absolute;
+	right: cw(347);
+	top: cw(149);
+	border-radius: 50%;
+	width: cw(109.1);
+	height: cw(109.1);
+	background: conic-gradient(from 224.41deg at 50% 50%, #6a70fd 0deg, #3338ad 360deg);
+}
+
+.section__ellipse-2 {
+	position: absolute;
+	right: cw(50);
+	top: cw(61);
+	border-radius: 50%;
+	width: cw(212.84);
+	height: cw(212.84);
+	background: conic-gradient(from 135deg at 50% 50%, #6a70fd 0deg, #3338ad 360deg);
+}
+
+.section__ellipse-3 {
+	position: absolute;
+	right: cw(234);
+	top: cw(303);
+	border-radius: 50%;
+	width: cw(109.1);
+	height: cw(109.1);
+	background: conic-gradient(from -44.29deg at 50% 50%, #6a70fd 0deg, #3338ad 360deg);
+}
+
+.section__img-2 {
+	position: absolute;
+	right: cw(60);
+	top: cw(-89);
+	width: cw(546);
+}
+
+.section__img-3 {
+	position: absolute;
+	right: cw(507);
+	top: cw(-103);
+	width: cw(222);
+}
+
+.section__img-4 {
+	position: absolute;
+	right: cw(204);
+	top: cw(-114);
+	width: cw(150);
 }
