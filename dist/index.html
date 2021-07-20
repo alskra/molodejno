@@ -169,6 +169,57 @@
 						</blockquote>
 					</div>
 				</div>
+				<section class="directions">
+					<header class="container directions__header">
+						<h2 class="heading directions__heading">Направления</h2>
+					</header>
+					<div class="marquee" x-data="marquee" x-on:mouseenter="$store.isDesktop ? pause : null" x-on:mouseleave="$store.isDesktop ? play : null" x-on:resize.window.debounce="$store.isDesktop ? updateLayout : null">
+						<div class="marquee__container" x-ref="container">
+							<template x-for="list in listCount">
+								<div class="marquee__list"><a class="marquee__item" href="" data-content="Научно-техническое творчество" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Научно-техническое творчество
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Спорт и ЗОЖ" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Спорт и ЗОЖ
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-1.jpg" srcset="images/content/directions/dir-1@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Культура и творчество" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Культура и творчество
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Предпринимательство" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Предпринимательство
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-1.jpg" srcset="images/content/directions/dir-1@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Инновационная деятельность" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Инновационная деятельность
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a>
+								</div>
+							</template>
+						</div>
+					</div>
+					<div class="marquee" x-data="marquee({speed: -1})" x-on:mouseenter="$store.isDesktop ? pause : null" x-on:mouseleave="$store.isDesktop ? play : null" x-on:resize.window.debounce="$store.isDesktop ? updateLayout : null" x-show="$store.isDesktop">
+						<div class="marquee__container" x-ref="container">
+							<template x-for="list in listCount">
+								<div class="marquee__list"><a class="marquee__item" href="" data-content="Научно-техническое творчество" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Научно-техническое творчество
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Спорт и ЗОЖ" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Спорт и ЗОЖ
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-1.jpg" srcset="images/content/directions/dir-1@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Культура и творчество" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Культура и творчество
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Предпринимательство" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Предпринимательство
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-1.jpg" srcset="images/content/directions/dir-1@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Инновационная деятельность" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Инновационная деятельность
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a>
+								</div>
+							</template>
+						</div>
+					</div>
+					<div class="marquee" x-data="marquee({speed: 3})" x-on:mouseenter="$store.isDesktop ? pause : null" x-on:mouseleave="$store.isDesktop ? play : null" x-on:resize.window.debounce="$store.isDesktop ? updateLayout : null" x-show="$store.isDesktop">
+						<div class="marquee__container" x-ref="container">
+							<template x-for="list in listCount">
+								<div class="marquee__list"><a class="marquee__item" href="" data-content="Научно-техническое творчество" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Научно-техническое творчество
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Спорт и ЗОЖ" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Спорт и ЗОЖ
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-1.jpg" srcset="images/content/directions/dir-1@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Культура и творчество" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Культура и творчество
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Предпринимательство" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Предпринимательство
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-1.jpg" srcset="images/content/directions/dir-1@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Инновационная деятельность" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Инновационная деятельность
+										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a>
+								</div>
+							</template>
+						</div>
+					</div>
+					<footer class="container directions__footer"><a class="more-link" href="">
+							<div class="more-link__icon">
+								<icon-svg name="arrow-right"></icon-svg>
+							</div>
+							<div class="more-link__content">Смотреть все
+							</div></a>
+					</footer>
+				</section>
 			</main>
 			<footer class="footer">
 				<form class="subscribe" action="" x-data>
