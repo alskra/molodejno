@@ -1,5 +1,4 @@
 import Alpine from 'alpinejs';
-import ResizeObserver from 'resize-observer-polyfill';
 import './marquee.scss';
 
 let itemHoverEl;
@@ -17,30 +16,30 @@ let tooltipFrameId;
 
 Alpine.data('marquee', ({speed = 2} = {}) => ({
 	listCount: 1,
-	listEl: undefined,
 	pos: 0,
 	maxPos: 0,
-	frameId: undefined,
 
 	init() {
-		const resizeObserver = new ResizeObserver(() => this.update());
-
+		this.update();
+		this.$watch('$store.isDesktop', () => this.update());
+	},
+	update(isDesktop = this.$store.isDesktop) {
+		if (isDesktop) {
+			this.updateLayout();
+			this.play();
+		} else {
+			this.listCount = 1;
+			this.reset();
+		}
+	},
+	updateLayout() {
 		this.$nextTick(() => {
-			this.listEl = this.$el.querySelector('.marquee__list');
-			resizeObserver.observe(this.$refs.container);
-			resizeObserver.observe(this.listEl);
+			this.maxPos = this.$el.querySelector('.marquee__list').offsetWidth;
+			this.listCount = Math.ceil(this.$refs.container.offsetWidth / this.maxPos) + 1;
+			this.$nextTick(() => this.updatePos());
 		});
-
-		this.posTooltipBind = this.posTooltip.bind(this);
 	},
-	update() {
-		const listWidth = this.listEl.offsetWidth;
-
-		this.maxPos = listWidth;
-		this.listCount = Math.ceil(this.$refs.container.offsetWidth / listWidth) + 1;
-		this.updatePosition();
-	},
-	updatePosition() {
+	updatePos() {
 		if (this.pos >= this.maxPos) {
 			this.pos = 0;
 		}
@@ -50,16 +49,20 @@ Alpine.data('marquee', ({speed = 2} = {}) => ({
 	play() {
 		cancelAnimationFrame(this.frameId);
 		this.pos += Math.abs(speed);
-		this.updatePosition();
+		this.updatePos();
 		this.frameId = requestAnimationFrame(() => this.play());
 	},
-	stop() {
+	pause() {
 		cancelAnimationFrame(this.frameId);
+	},
+	reset() {
+		cancelAnimationFrame(this.frameId);
+		this.$refs.container.style.transform = '';
 	},
 	showTooltip(evt) {
 		itemHoverEl = evt.currentTarget;
 		itemHoverRect = itemHoverEl.getBoundingClientRect();
-		itemHoverEl.addEventListener('mousemove', this.posTooltipBind);
+		itemHoverEl.addEventListener('mousemove', this.posTooltip);
 
 		tooltipTimerId = setTimeout(() => {
 			tooltipEl = itemHoverEl.querySelector('.marquee__tooltip');
@@ -97,7 +100,7 @@ Alpine.data('marquee', ({speed = 2} = {}) => ({
 	hideTooltip(evt) {
 		clearTimeout(tooltipTimerId);
 		cancelAnimationFrame(tooltipFrameId);
-		itemHoverEl.removeEventListener('mousemove', this.posTooltipBind);
+		itemHoverEl.removeEventListener('mousemove', this.posTooltip);
 
 		if (tooltipEl) {
 			tooltipEl.classList.add('is-hidden');

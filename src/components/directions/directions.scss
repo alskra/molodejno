@@ -1,6 +1,11 @@
 .directions {
 	padding-top: 228rem;
 	padding-bottom: 200rem;
+
+	@include media-breakpoint-down(lg) {
+		padding-top: 115rem;
+		padding-bottom: 50rem;
+	}
 }
 
 .directions__header {
@@ -10,10 +15,19 @@
 .directions__heading {
 	text-align: center;
 	color: $color;
+
+	@include media-breakpoint-down(lg) {
+		text-align: left;
+	}
 }
 
 .directions__footer {
 	display: flex;
 	justify-content: center;
 	margin-top: 32rem;
+
+	@include media-breakpoint-down(lg) {
+		justify-content: flex-start;
+		margin-top: 38rem;
+	}
 }

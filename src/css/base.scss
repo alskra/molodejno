@@ -177,4 +177,8 @@ iframe {
 	font-size: 60rem;
 	line-height: 1.25;
 	color: $headings-color;
+
+	@include media-breakpoint-down(lg) {
+		font-size: 40rem;
+	}
 }

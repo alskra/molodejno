@@ -10,17 +10,23 @@ mixin marquee()
 
 	.marquee(
 		x-data="marquee"
-		x-on:mouseenter="stop"
-		x-on:mouseleave="play"
+		x-on:mouseenter="$store.isDesktop ? pause : null"
+		x-on:mouseleave="$store.isDesktop ? play : null"
+		x-on:resize.window.debounce="$store.isDesktop ? updateLayout : null"
 	)&attributes(attributes)
 		.marquee__container(x-ref="container")
 			template(x-for="list in listCount")
 				.marquee__list
-					each item in items
+					each item, index in items
 						a.marquee__item(
 							href=""
 							data-content=item
-							x-on:mouseenter="showTooltip"
-							x-on:mouseleave="hideTooltip"
+							x-on:mouseenter="$store.isDesktop ? showTooltip : null"
+							x-on:mouseleave="$store.isDesktop ? hideTooltip : null"
 						)= item
 							.marquee__tooltip.is-hidden
+								img.marquee__image(
+									src=`../../images/content/directions/dir-${index % 2 > 0 ? 1 : 2}.jpg`
+									srcset=`../../images/content/directions/dir-${index % 2 > 0 ? 1 : 2}@2x.jpg`
+									alt=""
+								)

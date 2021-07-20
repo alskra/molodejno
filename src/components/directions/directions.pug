@@ -5,7 +5,13 @@ mixin directions()
 		header.container.directions__header
 			h2.heading.directions__heading Направления
 		+marquee()
-		+marquee()(x-data="marquee({speed: -1})")
-		+marquee()(x-data="marquee({speed: 3})")
+		+marquee()(
+			x-data="marquee({speed: -1})"
+			x-show="$store.isDesktop"
+		)
+		+marquee()(
+			x-data="marquee({speed: 3})"
+			x-show="$store.isDesktop"
+		)
 		footer.container.directions__footer
 			+more-link() Смотреть все
