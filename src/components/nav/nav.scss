@@ -20,13 +20,13 @@
 	font-family: $headings-font-family;
 	font-weight: 500;
 	font-size: 18rem;
-	line-height: math.div(22, 18);
+	line-height: div(22, 18);
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	color: $color-black;
 	transition: color $transition-duration;
 
-	&:hover {
+	@include hover {
 		color: $color-primary;
 	}
 

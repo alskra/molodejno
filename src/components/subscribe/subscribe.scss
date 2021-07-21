@@ -84,8 +84,7 @@
 		transition: transform $transition-duration;
 	}
 
-	&:hover,
-	&:focus {
+	@include hover {
 		icon-svg {
 			transform: translate(20rem);
 		}

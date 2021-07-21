@@ -17,5 +17,5 @@
 }
 
 @function cw($number, $base: 1110) {
-	@return percentage(math.div($number, $base));
+	@return percentage(div($number, $base));
 }

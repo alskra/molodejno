@@ -7,16 +7,16 @@
 	font-family: $headings-font-family;
 	font-weight: 700;
 	font-size: 20rem;
-	line-height: math.div(27, 20);
+	line-height: div(27, 20);
 	white-space: nowrap;
 	color: $color;
 	transition: color $transition-duration;
 
-	&:hover {
+	@include hover {
 		color: $color-primary;
 
 		.more-link__icon icon-svg {
-			width: percentage(math.div(492, 592));
+			width: percentage(div(492, 592));
 		}
 	}
 

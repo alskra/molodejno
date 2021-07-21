@@ -7,7 +7,7 @@
 
 	@include media-breakpoint-down(lg) {
 		right: -6rem;
-		font-size: math.div(315, 716) * 1rem;
+		font-size: div(315, 716) * 1rem;
 	}
 }
 

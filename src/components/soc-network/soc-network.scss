@@ -10,7 +10,7 @@
 	color: $color-black;
 	transition: color $transition-duration;
 
-	&:hover {
+	@include hover {
 		color: $color-primary;
 	}
 

@@ -63,7 +63,7 @@
 	a {
 		transition: color $transition-duration;
 
-		&:hover {
+		@include hover {
 			color: $color-primary;
 		}
 	}
@@ -90,7 +90,7 @@
 	a {
 		transition: color $transition-duration;
 
-		&:hover {
+		@include hover {
 			color: $color-primary;
 		}
 	}

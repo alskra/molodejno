@@ -61,7 +61,7 @@
 		transition: color $transition-duration;
 	}
 
-	&:hover {
+	@include hover {
 		&::before {
 			color: $color-governor-bay;
 		}

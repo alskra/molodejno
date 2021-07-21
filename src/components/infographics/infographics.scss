@@ -44,7 +44,7 @@
 		left: -61rem;
 		top: 0;
 		z-index: -1;
-		border: math.div(134 - 52, 2) * 1rem solid $color-white;
+		border: div(134 - 52, 2) * 1rem solid $color-white;
 		border-radius: 50%;
 		width: 134rem;
 		height: 134rem;
@@ -57,7 +57,7 @@
 
 		&::before {
 			left: -56rem;
-			border-width: math.div(94 - 36, 2) * 1rem;
+			border-width: div(94 - 36, 2) * 1rem;
 			width: 94rem;
 			height: 94rem;
 		}
@@ -88,7 +88,7 @@
 	font-family: $headings-font-family;
 	font-weight: 700;
 	font-size: 90rem;
-	line-height: math.div(108, 90);
+	line-height: div(108, 90);
 	color: $color-cerulean-blue;
 
 	@include media-breakpoint-down(lg) {
@@ -101,7 +101,7 @@
 	font-family: $font-family-gilroy;
 	font-weight: 600;
 	font-size: 100rem;
-	line-height: math.div(119, 100);
+	line-height: div(119, 100);
 	-webkit-text-fill-color: transparent;
 	-webkit-text-stroke: 1px currentColor;
 	color: $color-black;
