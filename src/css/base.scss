@@ -1,13 +1,5 @@
 :root {
 	--body-width: calc(100vw - var(--scrollbar-width, 0));
-	--container-gap: 15rem;
-	--container-gap-negative: calc(-1 * var(--container-gap));
-	--container-max-width: 1140rem;
-	--container-content-offset-x:
-		calc(
-			var(--container-gap-negative) -
-			(var(--body-width) - min(var(--body-width), var(--container-max-width))) / 2
-		);
 
 	font-size: 1px;
 
@@ -16,9 +8,6 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		--container-gap: 20rem;
-		--container-max-width: var(--body-width);
-
 		font-size: calc(0.5 / 360 * 100vmin + 0.5px);
 	}
 }
@@ -159,26 +148,4 @@ iframe {
 ::selection {
 	color: $color-white;
 	background: $color-primary;
-}
-
-.container {
-	position: relative;
-	z-index: 1;
-	margin: 0 auto;
-	padding: 0 var(--container-gap);
-	width: 100%;
-	max-width: var(--container-max-width);
-}
-
-.heading {
-	margin: 0 0 20rem;
-	font-family: $headings-font-family;
-	font-weight: 700;
-	font-size: 60rem;
-	line-height: 1.25;
-	color: $headings-color;
-
-	@include media-breakpoint-down(lg) {
-		font-size: 40rem;
-	}
 }

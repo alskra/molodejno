@@ -1,0 +1,20 @@
+:root {
+	--heading-margin-bottom: 20rem;
+
+	@include media-breakpoint-down(lg) {
+		--heading-margin-bottom: 15rem;
+	}
+}
+
+.heading {
+	margin: 0 0 var(--heading-margin-bottom);
+	font-family: $headings-font-family;
+	font-weight: 700;
+	font-size: 60rem;
+	line-height: 1.25;
+	color: $headings-color;
+
+	@include media-breakpoint-down(lg) {
+		font-size: 40rem;
+	}
+}

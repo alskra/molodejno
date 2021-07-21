@@ -10,6 +10,8 @@ import './scrollbar-width';
 
 import Alpine from 'alpinejs';
 
+import '../components/container/container.scss';
+import '../components/heading/heading.scss';
 import '../components/icon-svg/icon-svg';
 import '../components/button/button';
 import '../components/more-link/more-link';

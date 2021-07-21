@@ -8,14 +8,12 @@
 }
 
 .section__header {
-	margin-bottom: 20rem;
+	margin-bottom: var(--heading-margin-bottom);
 }
 
 .section__header-body {
-	width: cw(541);
-
-	@include media-breakpoint-down(lg) {
-		width: auto;
+	@include media-breakpoint-up(lg) {
+		width: cw(541);
 	}
 }
 
@@ -23,10 +21,16 @@
 	font-size: 20rem;
 	line-height: 1.5;
 
+	> :last-child {
+		margin-bottom: 0;
+	}
+
 	p {
-		&:not(:last-child) {
-			margin-bottom: 1em;
-		}
+		margin-bottom: 1em;
+	}
+
+	@include media-breakpoint-down(lg) {
+		font-size: 16rem;
 	}
 }
 
