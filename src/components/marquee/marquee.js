@@ -26,7 +26,7 @@ Alpine.data('marquee', ({speed = 2} = {}) => ({
 		this.$watch('$store.isDesktop', (val) => {
 			if (val) {
 				if (this.$el.closest('html')) {
-					this.initMarquee();
+					this.$nextTick(() => this.initMarquee());
 				}
 			} else {
 				this.destroyMarquee();
