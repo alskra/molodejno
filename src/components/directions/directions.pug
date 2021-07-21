@@ -1,17 +1,10 @@
 include ../../components/marquee/marquee
 
 mixin directions()
-	section.directions&attributes(attributes)
+	section.directions(x-data="directions([{}, {speed: -1}, {speed: 3}])")&attributes(attributes)
 		header.container.directions__header
 			h2.heading.directions__heading Направления
-		+marquee()
-		+marquee()(
-			x-data="marquee({speed: -1})"
-			x-show="$store.isDesktop"
-		)
-		+marquee()(
-			x-data="marquee({speed: 3})"
-			x-show="$store.isDesktop"
-		)
+		template(x-for="marqueeOptions in marqueeOptionsList")
+			+marquee()(x-data="marquee(marqueeOptions)")
 		footer.container.directions__footer
 			+more-link().directions__more Смотреть все

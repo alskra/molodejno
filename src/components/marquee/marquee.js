@@ -18,25 +18,43 @@ Alpine.data('marquee', ({speed = 2} = {}) => ({
 	listCount: 1,
 	pos: 0,
 	maxPos: 0,
-
 	init() {
-		this.update();
-		this.$watch('$store.isDesktop', () => this.update());
-	},
-	update() {
 		if (this.$store.isDesktop) {
-			this.updateLayout();
-			this.play();
-		} else {
-			this.listCount = 1;
-			this.reset();
+			this.$nextTick(() => this.initMarquee());
 		}
+
+		this.$watch('$store.isDesktop', (val) => {
+			if (val) {
+				if (this.$el.closest('html')) {
+					this.initMarquee();
+				}
+			} else {
+				this.destroyMarquee();
+			}
+		});
+	},
+	destroy() {
+		this.reset();
+	},
+	async initMarquee() {
+		await this.updateLayout();
+		this.play();
+	},
+	async updateMarquee() {
+		await this.updateLayout();
+	},
+	destroyMarquee() {
+		this.listCount = 1;
+		this.reset();
 	},
 	updateLayout() {
-		this.$nextTick(() => {
+		return new Promise((resolve) => {
 			this.maxPos = this.$el.querySelector('.marquee__list').offsetWidth;
 			this.listCount = Math.ceil(this.$refs.container.offsetWidth / this.maxPos) + 1;
-			this.$nextTick(() => this.updatePos());
+			this.$nextTick(() => {
+				this.updatePos();
+				resolve();
+			});
 		});
 	},
 	updatePos() {
