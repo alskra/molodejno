@@ -7,12 +7,16 @@
 }
 
 .heading {
-	margin: 0 0 var(--heading-margin-bottom);
+	margin: 0;
 	font-family: $headings-font-family;
 	font-weight: 700;
 	font-size: 60rem;
 	line-height: 1.25;
 	color: $headings-color;
+
+	&:not(:last-child) {
+		margin-bottom: var(--heading-margin-bottom);
+	}
 
 	@include media-breakpoint-down(lg) {
 		font-size: 40rem;
