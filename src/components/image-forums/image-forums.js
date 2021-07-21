@@ -1,0 +1,1 @@
+import './image-forums.scss';

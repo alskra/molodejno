@@ -1,29 +1,17 @@
-mixin section(data)
-	section.section&attributes(attributes)
+include ../image-forums/image-forums
+
+mixin section(type = 'forums')
+	-
+		const data = sections[type];
+
+	section.section(class=`section--${type}`)&attributes(attributes)
 		.section__design
 			.container
 				.section__design-box
-					.section__design-bg.section__design-bg--color-1
-					.section__group-1
-						img.section__img-1(src="../../images/design/section/forums/ellipse.svg" alt="")
-
-						.section__ellipses-1
-							.section__ellipse-1
-							.section__ellipse-2
-							.section__ellipse-3
-
-						img.section__img-2(
-							src="../../images/design/section/forums/el.png"
-							srcset="../../images/design/section/forums/el@2x.png"
-							alt=""
-						)
-						img.section__img-3(
-							src="../../images/design/section/forums/people.png"
-							srcset="../../images/design/section/forums/people@2x.png"
-							alt=""
-						)
-						img.section__img-4(src="../../images/design/section/forums/cloud-1.svg" alt="")
-						img.section__img-5(src="../../images/design/section/forums/cloud-2.svg" alt="")
+					case type
+						when 'forums'
+							.section__design-bg.section__design-bg--color-1
+							+image-forums().section__design-image.section__design-image--forums
 
 		header.container.section__header
 			.section__header-body

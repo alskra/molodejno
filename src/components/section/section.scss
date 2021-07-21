@@ -67,90 +67,12 @@
 	}
 }
 
-.section__group-1 {
-	position: absolute;
-	right: 13rem;
-	top: -114rem;
-	width: 716em;
-	height: 721em;
-	font-size: 1rem;
+.section__design-image {
+	&--forums {
+		top: -114rem;
+	}
 
 	@include media-breakpoint-down(lg) {
-		right: -6rem;
 		top: -86rem;
-		font-size: 315 / 716 * 1rem;
 	}
-}
-
-.section__img-1 {
-	position: absolute;
-	left: 95em;
-	top: 301em;
-	width: 623em;
-}
-
-.section__ellipses-1 {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-}
-
-.section__ellipse-1 {
-	position: absolute;
-	left: 273em;
-	top: 149em + 114em;
-	border-radius: 50%;
-	width: 109.1em;
-	height: 109.1em;
-	background: conic-gradient(from 224.41deg at 50% 50%, #6a70fd 0deg, #3338ad 360deg);
-}
-
-.section__ellipse-2 {
-	position: absolute;
-	left: 467em;
-	top: 61em + 114em;
-	border-radius: 50%;
-	width: 212.84em;
-	height: 212.84em;
-	background: conic-gradient(from 135deg at 50% 50%, #6a70fd 0deg, #3338ad 360deg);
-}
-
-.section__ellipse-3 {
-	position: absolute;
-	left: 386em;
-	top: 302em + 114em;
-	border-radius: 50%;
-	width: 109.1em;
-	height: 109.1em;
-	background: conic-gradient(from -44.29deg at 50% 50%, #6a70fd 0deg, #3338ad 360deg);
-}
-
-.section__img-2 {
-	position: absolute;
-	left: 292em;
-	top: 475em;
-	width: 353em;
-}
-
-.section__img-3 {
-	position: absolute;
-	left: 122em;
-	top: -88em + 114em;
-	width: 546em;
-}
-
-.section__img-4 {
-	position: absolute;
-	left: 0;
-	top: 11em;
-	width: 222em;
-}
-
-.section__img-5 {
-	position: absolute;
-	left: 375em;
-	top: 0;
-	width: 150em;
 }
