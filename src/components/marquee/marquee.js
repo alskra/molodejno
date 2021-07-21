@@ -1,4 +1,5 @@
 import Alpine from 'alpinejs';
+import ResizeObserver from 'resize-observer-polyfill';
 import './marquee.scss';
 
 let itemHoverEl;
@@ -34,9 +35,12 @@ Alpine.data('marquee', ({speed = 2} = {}) => ({
 		});
 	},
 	destroy() {
-		this.reset();
+		this.destroyMarquee();
 	},
 	async initMarquee() {
+		this.firstListEl = this.$el.querySelector('.marquee__list');
+		this.resizeObserver = new ResizeObserver(() => this.updateMarquee());
+		this.resizeObserver.observe(this.firstListEl);
 		await this.updateLayout();
 		this.play();
 	},
@@ -45,11 +49,12 @@ Alpine.data('marquee', ({speed = 2} = {}) => ({
 	},
 	destroyMarquee() {
 		this.listCount = 1;
-		this.reset();
+		this.resizeObserver.disconnect();
+		setTimeout(() => this.reset());
 	},
 	updateLayout() {
 		return new Promise((resolve) => {
-			this.maxPos = this.$el.querySelector('.marquee__list').offsetWidth;
+			this.maxPos = this.firstListEl.offsetWidth;
 			this.listCount = Math.ceil(this.$refs.container.offsetWidth / this.maxPos) + 1;
 			this.$nextTick(() => {
 				this.updatePos();
@@ -75,6 +80,7 @@ Alpine.data('marquee', ({speed = 2} = {}) => ({
 	},
 	reset() {
 		cancelAnimationFrame(this.frameId);
+		this.pos = 0;
 		this.$refs.container.style.transform = '';
 	},
 	showTooltip(evt) {

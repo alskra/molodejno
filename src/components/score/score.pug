@@ -1,0 +1,11 @@
+mixin score(title)
+	.score(x-data="scoreAnimated")&attributes(attributes)
+		if title
+			.score__title= title
+		.score__content
+			.score__number(x-ref="number")
+				if block
+					block
+				else
+					| 100
+			.score__plus(x-ref="plus") +

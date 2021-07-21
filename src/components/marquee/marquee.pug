@@ -12,10 +12,9 @@ mixin marquee()
 		x-data="marquee"
 		x-on:mouseenter="$store.isDesktop ? pause : null"
 		x-on:mouseleave="$store.isDesktop ? play : null"
-		x-on:resize.window.debounce="$store.isDesktop ? updateMarquee : null"
 	)&attributes(attributes)
 		.marquee__container(x-ref="container")
-			template(x-for="list in listCount")
+			template(x-for="list in listCount || 1")
 				.marquee__list
 					each item, index in items
 						a.marquee__item(
