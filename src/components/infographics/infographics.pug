@@ -33,11 +33,11 @@ mixin infographics()
 				.swiper-container(x-ref="container")
 					.swiper-wrapper
 						each item in items
-							.swiper-slide.infographics__item
+							.swiper-slide.infographics__item(x-data="scoreAnimated")
 								.infographics__title= item.title
 								.infographics__content
-									.infographics__number= item.number
-									.infographics__plus +
+									.infographics__number(x-ref="number")= item.number
+									.infographics__plus(x-ref="plus") +
 
 			img.infographics__image(
 				src="../../images/design/infographics.png"

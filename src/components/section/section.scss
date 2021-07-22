@@ -1,6 +1,6 @@
 .section {
 	position: relative;
-	padding: 130rem 0 160rem;
+	padding: 127rem 0 160rem;
 
 	@include media-breakpoint-down(lg) {
 		padding: 290rem 0 50rem;
@@ -77,4 +77,8 @@
 
 .section__score {
 	margin-top: 40rem;
+
+	@include media-breakpoint-down(lg) {
+		margin-top: 22rem;
+	}
 }

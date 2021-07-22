@@ -35,7 +35,9 @@ Alpine.data('marquee', ({speed = 2} = {}) => ({
 		});
 	},
 	destroy() {
-		this.destroyMarquee();
+		if (this.$store.isDesktop) {
+			this.destroyMarquee();
+		}
 	},
 	async initMarquee() {
 		this.firstListEl = this.$el.querySelector('.marquee__list');
