@@ -1,7 +1,8 @@
-mixin more-link({dir = 'right', flow = 'column'} = {})
+mixin more-link({dir = 'right'} = {})
 	a.more-link(
 		href=""
-		class={'more-link--row': flow === 'row'}
+		x-data
+		x-bind:class="{'more-link--row': !$store.isDesktop}"
 	)&attributes(attributes)
 		.more-link__icon
 			icon-svg(name=`arrow-${dir}`)

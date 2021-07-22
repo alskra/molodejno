@@ -7,4 +7,4 @@ mixin directions()
 		template(x-for="marqueeOptions in marqueeOptionsList")
 			+marquee()(x-data="marquee(marqueeOptions)")
 		footer.container.directions__footer
-			+more-link().directions__more(x-bind:class="{'more-link--row': !$store.isDesktop}") Смотреть все
+			+more-link().directions__more() Смотреть все
