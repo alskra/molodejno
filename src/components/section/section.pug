@@ -1,10 +1,8 @@
 include ../image-forums/image-forums
 include ../score/score
+include ../events/events
 
-mixin section(type = 'forums')
-	-
-		const data = sections[type];
-
+mixin section({type, title, desc, score: {title: scoreTitle, number: scoreNumber}})
 	section.section(class=`section--${type}`)&attributes(attributes)
 		.section__design
 			.container
@@ -16,6 +14,8 @@ mixin section(type = 'forums')
 
 		header.container.section__header
 			.section__header-body
-				h2.heading.section__heading= data.title
-				.section__desc!= data.desc
-				+score('Деловых событий').section__score
+				h2.heading.section__heading= title
+				.section__desc!= desc
+				+score(scoreTitle).section__score= scoreNumber
+		.section__main
+			+events()

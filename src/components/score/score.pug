@@ -4,7 +4,7 @@ mixin score(title)
 			.score__title= title
 		.score__content
 			.score__number(x-ref="number")
-				if block
+				if block && block()
 					block
 				else
 					| 100

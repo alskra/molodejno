@@ -2,10 +2,11 @@
 	--container-gap: 15rem;
 	--container-gap-negative: calc(-1 * var(--container-gap));
 	--container-max-width: 1140rem;
+	--container-width: min(var(--body-width), var(--container-max-width));
 	--container-content-offset-x:
 		calc(
 			var(--container-gap-negative) -
-			(var(--body-width) - min(var(--body-width), var(--container-max-width))) / 2
+			(var(--body-width) - var(--container-width)) / 2
 		);
 
 	@include media-breakpoint-down(lg) {
@@ -19,6 +20,5 @@
 	z-index: 1;
 	margin: 0 auto;
 	padding: 0 var(--container-gap);
-	width: 100%;
-	max-width: var(--container-max-width);
+	width: var(--container-width);
 }

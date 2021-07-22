@@ -16,43 +16,53 @@ let tooltipRect;
 let tooltipFrameId;
 
 Alpine.data('marquee', ({speed = 2} = {}) => ({
+	marqueeIsInit: false,
 	listCount: 1,
 	pos: 0,
 	maxPos: 0,
+	get isDesktop() {
+		return this.$store.isDesktop;
+	},
 	init() {
-		if (this.$store.isDesktop) {
-			this.$nextTick(() => this.initMarquee());
-		}
-
-		this.$watch('$store.isDesktop', (val) => {
-			if (val) {
-				if (this.$el.closest('html')) {
-					this.$nextTick(() => this.initMarquee());
-				}
+		const marquee = () => {
+			if (this.isDesktop) {
+				this.$nextTick(() => this.initMarquee());
 			} else {
 				this.destroyMarquee();
 			}
-		});
+		};
+
+		marquee();
+		this.$watch('isDesktop', marquee);
 	},
 	destroy() {
-		if (this.$store.isDesktop) {
-			this.destroyMarquee();
-		}
+		this.destroyMarquee();
+		Object.defineProperty(this, 'isDesktop', {value: null});
 	},
 	async initMarquee() {
-		this.firstListEl = this.$el.querySelector('.marquee__list');
-		this.resizeObserver = new ResizeObserver(() => this.updateMarquee());
-		this.resizeObserver.observe(this.firstListEl);
-		await this.updateLayout();
-		this.play();
+		if (!this.marqueeIsInit) {
+			this.firstListEl = this.$el.querySelector('.marquee__list');
+			this.resizeObserver = new ResizeObserver(() => this.updateMarquee());
+			this.resizeObserver.observe(this.firstListEl);
+			await this.updateLayout();
+			this.play();
+			this.marqueeIsInit = true;
+		}
 	},
 	async updateMarquee() {
-		await this.updateLayout();
+		if (this.marqueeIsInit) {
+			await this.updateLayout();
+		}
 	},
 	destroyMarquee() {
-		this.listCount = 1;
-		this.resizeObserver.disconnect();
-		setTimeout(() => this.reset());
+		if (this.marqueeIsInit) {
+			this.listCount = 1;
+			this.resizeObserver.disconnect();
+			setTimeout(() => {
+				this.reset();
+				this.marqueeIsInit = false;
+			});
+		}
 	},
 	updateLayout() {
 		return new Promise((resolve) => {
