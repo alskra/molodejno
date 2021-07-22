@@ -14,7 +14,7 @@ mixin marquee()
 		x-on:mouseleave="$store.isDesktop ? play : null"
 	)&attributes(attributes)
 		.marquee__container(x-ref="container")
-			template(x-for="list in listCount || 1")
+			template(x-for="list in listCount")
 				.marquee__list
 					each item, index in items
 						a.marquee__item(
