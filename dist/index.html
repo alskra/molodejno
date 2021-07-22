@@ -169,49 +169,25 @@
 						</blockquote>
 					</div>
 				</div>
-				<section class="directions">
+				<section class="directions" x-data="directions([{}, {speed: -1}, {speed: 3}])">
 					<header class="container directions__header">
 						<h2 class="heading directions__heading">Направления</h2>
 					</header>
-					<div class="marquee" x-data="marquee" x-on:mouseenter="$store.isDesktop ? pause : null" x-on:mouseleave="$store.isDesktop ? play : null" x-on:resize.window.debounce="$store.isDesktop ? updateLayout : null">
-						<div class="marquee__container" x-ref="container">
-							<template x-for="list in listCount">
-								<div class="marquee__list"><a class="marquee__item" href="" data-content="Научно-техническое творчество" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Научно-техническое творчество
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Спорт и ЗОЖ" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Спорт и ЗОЖ
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-1.jpg" srcset="images/content/directions/dir-1@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Культура и творчество" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Культура и творчество
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Предпринимательство" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Предпринимательство
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-1.jpg" srcset="images/content/directions/dir-1@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Инновационная деятельность" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Инновационная деятельность
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a>
-								</div>
-							</template>
+					<template x-for="marqueeOptions in marqueeOptionsList">
+						<div class="marquee" x-data="marquee(marqueeOptions)" x-on:mouseenter="$store.isDesktop ? pause : null" x-on:mouseleave="$store.isDesktop ? play : null">
+							<div class="marquee__container" x-ref="container">
+								<template x-for="list in listCount || 1">
+									<div class="marquee__list"><a class="marquee__item" href="" data-content="Научно-техническое творчество" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Научно-техническое творчество
+											<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Спорт и ЗОЖ" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Спорт и ЗОЖ
+											<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-1.jpg" srcset="images/content/directions/dir-1@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Культура и творчество" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Культура и творчество
+											<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Предпринимательство" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Предпринимательство
+											<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-1.jpg" srcset="images/content/directions/dir-1@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Инновационная деятельность" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Инновационная деятельность
+											<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a>
+									</div>
+								</template>
+							</div>
 						</div>
-					</div>
-					<div class="marquee" x-data="marquee({speed: -1})" x-on:mouseenter="$store.isDesktop ? pause : null" x-on:mouseleave="$store.isDesktop ? play : null" x-on:resize.window.debounce="$store.isDesktop ? updateLayout : null" x-show="$store.isDesktop">
-						<div class="marquee__container" x-ref="container">
-							<template x-for="list in listCount">
-								<div class="marquee__list"><a class="marquee__item" href="" data-content="Научно-техническое творчество" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Научно-техническое творчество
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Спорт и ЗОЖ" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Спорт и ЗОЖ
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-1.jpg" srcset="images/content/directions/dir-1@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Культура и творчество" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Культура и творчество
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Предпринимательство" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Предпринимательство
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-1.jpg" srcset="images/content/directions/dir-1@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Инновационная деятельность" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Инновационная деятельность
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a>
-								</div>
-							</template>
-						</div>
-					</div>
-					<div class="marquee" x-data="marquee({speed: 3})" x-on:mouseenter="$store.isDesktop ? pause : null" x-on:mouseleave="$store.isDesktop ? play : null" x-on:resize.window.debounce="$store.isDesktop ? updateLayout : null" x-show="$store.isDesktop">
-						<div class="marquee__container" x-ref="container">
-							<template x-for="list in listCount">
-								<div class="marquee__list"><a class="marquee__item" href="" data-content="Научно-техническое творчество" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Научно-техническое творчество
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Спорт и ЗОЖ" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Спорт и ЗОЖ
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-1.jpg" srcset="images/content/directions/dir-1@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Культура и творчество" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Культура и творчество
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Предпринимательство" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Предпринимательство
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-1.jpg" srcset="images/content/directions/dir-1@2x.jpg" alt=""></div></a><a class="marquee__item" href="" data-content="Инновационная деятельность" x-on:mouseenter="$store.isDesktop ? showTooltip : null" x-on:mouseleave="$store.isDesktop ? hideTooltip : null">Инновационная деятельность
-										<div class="marquee__tooltip is-hidden"><img class="marquee__image" src="images/content/directions/dir-2.jpg" srcset="images/content/directions/dir-2@2x.jpg" alt=""></div></a>
-								</div>
-							</template>
-						</div>
-					</div>
+					</template>
 					<footer class="container directions__footer"><a class="more-link directions__more" href="">
 							<div class="more-link__icon">
 								<icon-svg name="arrow-right"></icon-svg>
@@ -220,17 +196,17 @@
 							</div></a>
 					</footer>
 				</section>
-				<section class="section">
+				<section class="section section--forums">
 					<div class="section__design">
 						<div class="container">
-							<div class="section__design-inner">
-								<div class="section__design-box">
-									<div class="section__design-bg section__design-bg--color-1"></div><img class="section__img-1" src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 272 141'%3e%3cmask id='id-2a' width='209' height='140' x='63' y='0' mask-type='alpha' maskUnits='userSpaceOnUse'%3e%3cpath fill='%23C4C4C4' d='M63.936.295h207.502v139.656H63.936z'/%3e%3c/mask%3e%3cg mask='url(%23id-2a)'%3e%3cpath fill='white' stroke='black' d='M89.107 94.574c0 49.106 40.694 88.933 90.916 88.933 50.221 0 90.915-39.827 90.915-88.933 0-49.106-40.694-88.933-90.915-88.933-50.222 0-90.916 39.827-90.916 88.933z'/%3e%3c/g%3e%3cpath stroke='black' d='M255.138 125.032H52.483m218.955 15.419H.936m166.971-78.098h77.097m-77.098 9.529h77.098m-77.098 9.415h77.098'/%3e%3c/svg%3e" alt="">
-									<div class="section__ellipses-1">
-										<div class="section__ellipse-1"></div>
-										<div class="section__ellipse-2"></div>
-										<div class="section__ellipse-3"></div>
-									</div><img class="section__img-2" src="images/design/section/forums/el.png" srcset="images/design/section/forums/el@2x.png" alt=""><img class="section__img-3" src="images/design/section/forums/people.png" srcset="images/design/section/forums/people@2x.png" alt=""><img class="section__img-4" src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 222 151'%3e%3cpath stroke='black' d='M.5 75.172c0 41.139 42.097 74.673 94.283 74.673 52.185 0 94.282-33.534 94.282-74.673C189.065 34.034 146.968.5 94.783.5 42.597.5.5 34.034.5 75.172z'/%3e%3cpath fill='white' d='m168.001 118 10-4 14.5-16-4.5-7.5-2.5-1h-1l-5.5.5-11 28z'/%3e%3cpath stroke='black' d='M127.468 55.291H62.101m65.367 20.226H62.101M127.468 95.5H62.101m158.785 1.987-34-8m34.299 7.978-48 19'/%3e%3c/svg%3e" alt=""><img class="section__img-5" src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 150 107'%3e%3cpath stroke='black' d='M1.215 53.5c0 29.17 29.863 53 66.956 53 37.094 0 66.957-23.83 66.957-53S105.265.5 68.171.5C31.078.5 1.215 24.33 1.215 53.5zm90.218-14.294H44.911M91.433 53.6H44.911m46.522 14.223H44.911m104.225 29.121L127.5 78.5m21.908 18.568-36.469-4.46'/%3e%3c/svg%3e" alt="">
+							<div class="section__design-box">
+								<div class="section__design-bg section__design-bg--color-1"></div>
+								<div class="image-forums section__design-image section__design-image--forums"><img class="image-forums__img-1" src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 272 141'%3e%3cmask id='id-2a' width='209' height='140' x='63' y='0' mask-type='alpha' maskUnits='userSpaceOnUse'%3e%3cpath fill='%23C4C4C4' d='M63.936.295h207.502v139.656H63.936z'/%3e%3c/mask%3e%3cg mask='url(%23id-2a)'%3e%3cpath fill='white' stroke='black' d='M89.107 94.574c0 49.106 40.694 88.933 90.916 88.933 50.221 0 90.915-39.827 90.915-88.933 0-49.106-40.694-88.933-90.915-88.933-50.222 0-90.916 39.827-90.916 88.933z'/%3e%3c/g%3e%3cpath stroke='black' d='M255.138 125.032H52.483m218.955 15.419H.936m166.971-78.098h77.097m-77.098 9.529h77.098m-77.098 9.415h77.098'/%3e%3c/svg%3e" alt="">
+									<div class="image-forums__ellipses-1">
+										<div class="image-forums__ellipse-1"></div>
+										<div class="image-forums__ellipse-2"></div>
+										<div class="image-forums__ellipse-3"></div>
+									</div><img class="image-forums__img-2" src="images/design/section/forums/el.png" srcset="images/design/section/forums/el@2x.png" alt=""><img class="image-forums__img-3" src="images/design/section/forums/people.png" srcset="images/design/section/forums/people@2x.png" alt=""><img class="image-forums__img-4" src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 222 151'%3e%3cpath stroke='black' d='M.5 75.172c0 41.139 42.097 74.673 94.283 74.673 52.185 0 94.282-33.534 94.282-74.673C189.065 34.034 146.968.5 94.783.5 42.597.5.5 34.034.5 75.172z'/%3e%3cpath fill='white' d='m168.001 118 10-4 14.5-16-4.5-7.5-2.5-1h-1l-5.5.5-11 28z'/%3e%3cpath stroke='black' d='M127.468 55.291H62.101m65.367 20.226H62.101M127.468 95.5H62.101m158.785 1.987-34-8m34.299 7.978-48 19'/%3e%3c/svg%3e" alt=""><img class="image-forums__img-5" src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 150 107'%3e%3cpath stroke='black' d='M1.215 53.5c0 29.17 29.863 53 66.956 53 37.094 0 66.957-23.83 66.957-53S105.265.5 68.171.5C31.078.5 1.215 24.33 1.215 53.5zm90.218-14.294H44.911M91.433 53.6H44.911m46.522 14.223H44.911m104.225 29.121L127.5 78.5m21.908 18.568-36.469-4.46'/%3e%3c/svg%3e" alt="">
 								</div>
 							</div>
 						</div>
@@ -239,9 +215,17 @@
 						<div class="section__header-body">
 							<h2 class="heading section__heading">Форумы</h2>
 							<div class="section__desc">
-			<p>Реализацией молодёжной политики во&nbsp;всех актуальных и&nbsp;действующих
-			направлениях данной отрасли</p>
+			<p>Портал для молодёжи занимающийся реализацией молодёжной политики во&nbsp;всех актуальных и&nbsp;
+			действующих направлениях данной отрасли</p>
 		</div>
+							<div class="score section__score" x-data="scoreAnimated">
+								<div class="score__title">Деловых событий</div>
+								<div class="score__content">
+									<div class="score__number" x-ref="number">100
+									</div>
+									<div class="score__plus" x-ref="plus">+</div>
+								</div>
+							</div>
 						</div>
 					</header>
 				</section>
