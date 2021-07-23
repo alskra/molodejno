@@ -1,3 +1,5 @@
-.events {
-
+.events__forums {
+	display: grid;
+	column-gap: 30rem;
+	grid-template-columns: repeat(auto-fit, minmax(320rem, 1fr));
 }

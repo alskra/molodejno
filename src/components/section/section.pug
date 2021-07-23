@@ -7,15 +7,21 @@ mixin section({type, title, desc, score: {title: scoreTitle, number: scoreNumber
 		.section__design
 			.container
 				.section__design-box
+					.section__design-bg(class=`section__design-bg--${type}`)
 					case type
 						when 'forums'
-							.section__design-bg.section__design-bg--color-1
-							+image-forums().section__design-image.section__design-image--forums
+							+image-forums().section__design-image(class=`section__design-image--${type}`)
 
 		header.container.section__header
 			.section__header-body
 				h2.heading.section__heading= title
 				.section__desc!= desc
 				+score(scoreTitle).section__score= scoreNumber
+
 		.section__main
-			+events()
+			if block
+				block
+			else
+				case type
+					when 'forums'
+						+events(type)

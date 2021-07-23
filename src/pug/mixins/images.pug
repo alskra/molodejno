@@ -1,0 +1,11 @@
+mixin img-sizes(url)
+	img(
+		src=url
+		srcset=`
+			${url} 320w,
+			${url} 640w,
+			${url} 768w,
+			${url} 1024w,
+			${url} 1280w
+		`
+	)&attributes(attributes)

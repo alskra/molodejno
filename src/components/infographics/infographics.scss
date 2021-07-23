@@ -9,7 +9,7 @@
 
 .infographics__items {
 	overflow: hidden;
-	margin-right: var(--container-content-offset-x);
+	margin-right: calc(-1 * var(--container-content-offset-x));
 	margin-left: -61rem;
 	padding-left: 61rem;
 
@@ -19,7 +19,7 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		margin-left: var(--container-gap-negative);
+		margin-left: calc(-1 * var(--container-gap));
 		padding-left: var(--container-gap);
 
 		.swiper-container {

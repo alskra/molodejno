@@ -2,7 +2,7 @@
 	display: inline-flex;
 	flex-flow: column;
 	vertical-align: top;
-	width: calc((var(--container-width) - 2 * var(--container-gap)) / 2 - 15rem);
+	width: calc(var(--container-content-width) / 2 - 15rem);
 	max-width: 100%;
 	font-family: $headings-font-family;
 	font-weight: 700;

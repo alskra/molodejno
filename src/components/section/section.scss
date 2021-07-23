@@ -50,12 +50,12 @@
 .section__design-bg {
 	position: absolute;
 	left: cw(1110 - 763);
-	right: var(--container-content-offset-x);
+	right: calc(-1 * var(--container-content-offset-x));
 	top: 0;
 	border-radius: 550rem 0 0 550rem;
 	height: 750rem;
 
-	&--color-1 {
+	&--forums {
 		background: $color-onahau;
 	}
 
@@ -81,4 +81,9 @@
 	@include media-breakpoint-down(lg) {
 		margin-top: 22rem;
 	}
+}
+
+.section__main {
+	position: relative;
+	z-index: 1;
 }
