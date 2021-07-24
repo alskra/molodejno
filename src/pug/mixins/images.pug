@@ -10,22 +10,24 @@ mixin img-sizes(src)
 		`
 	)&attributes(attributes)
 
-mixin picture(src, srcset)
+mixin picture-webp(src, srcset, sizes)
 	-
-		const ext = src.match(/\.\w+$/)[0];
+		let ext;
+		const srcWithoutExt = src.replace(/\.\w+$/, (match) => {
+			ext = match;
 
-		src = src.replace(ext, '');
+			return '';
+		});
+
 		srcset = srcset.split(',').map((item) => item.trim());
+		srcset = srcset.map((item) => `${srcWithoutExt}@${item}${ext} ${item}`).join(', ')
 
-		let webp = srcset.map((item) => `${src}@${item}.webp ${item}`).join(', ');
+		let srcsetWebp = srcset.replace(new RegExp(`\\${ext}(?= )`, 'g'), '.webp');
 
-		if (!attributes.sizes) {
-			webp = `${src}.webp, ${webp}`;
+		if (!sizes) {
+			srcsetWebp = `${srcWithoutExt}.webp, ${srcsetWebp}`;
 		}
 
-		srcset = srcset.map((item) => `${src}@${item}${ext} ${item}`).join(', ');
-		src = `${src}${ext}`;
-
 	picture&attributes(attributes)
-		source(type="image/webp" srcset=webp)
+		source(type="image/webp" srcset=srcsetWebp)
 		img(src=src srcset=srcset)

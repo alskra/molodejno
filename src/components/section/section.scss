@@ -9,6 +9,10 @@
 
 .section__header {
 	margin-bottom: 25rem;
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 15rem;
+	}
 }
 
 .section__header-body {
