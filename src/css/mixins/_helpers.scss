@@ -43,3 +43,17 @@
 		@content;
 	}
 }
+
+@mixin line-clamp($number, $line-height) {
+	--line-clamp-number: #{$number};
+	--line-clamp-line-height: #{$line-height};
+
+	// stylelint-disable
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: var(--line-clamp-number);
+	overflow: hidden;
+	line-height: var(--line-clamp-line-height);
+	max-height: calc(var(--line-clamp-number) * var(--line-clamp-line-height) * 1em);
+	// stylelint-enable
+}

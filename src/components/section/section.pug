@@ -2,7 +2,7 @@ include ../image-forums/image-forums
 include ../score/score
 include ../events/events
 
-mixin section({type, title, desc, score: {title: scoreTitle, number: scoreNumber}})
+mixin section({type, title, desc, score})
 	section.section(class=`section--${type}`)&attributes(attributes)
 		.section__design
 			.container
@@ -16,7 +16,7 @@ mixin section({type, title, desc, score: {title: scoreTitle, number: scoreNumber
 			.section__header-body
 				h2.heading.section__heading= title
 				.section__desc!= desc
-				+score(scoreTitle).section__score= scoreNumber
+				+score(score).section__score
 
 		.section__main
 			if block

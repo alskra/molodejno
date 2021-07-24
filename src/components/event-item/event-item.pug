@@ -1,3 +1,14 @@
-mixin event-item()
+mixin event-item(data)
 	a.event-item(href="")&attributes(attributes)
-
+		.event-item__image
+			img.event-item__image-el(
+				src=data.image
+				srcset=`${data.image.replace(/\.\w+$/, '@2x$&')} 2x`
+				alt=""
+			)
+		.event-item__body
+			.event-item__main
+				.event-item__group
+					+location(data.location).event-item__location
+				+date(data.date).event-item__date
+				h3.event-item__title!= data.title

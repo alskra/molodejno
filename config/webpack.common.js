@@ -60,7 +60,7 @@ module.exports = {
 				use: 'babel-loader',
 			},
 			{
-				test: /\.(jpe?g|png|gif)$/i,
+				test: /\.(jpe?g|png|gif|webp)$/i,
 				type: 'asset',
 				generator: {
 					filename: '[path][name][ext][query]',

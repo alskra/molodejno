@@ -1,11 +1,31 @@
-mixin img-sizes(url)
+mixin img-sizes(src)
 	img(
-		src=url
+		src=src
 		srcset=`
-			${url} 320w,
-			${url} 640w,
-			${url} 768w,
-			${url} 1024w,
-			${url} 1280w
+			${src} 320w,
+			${src} 640w,
+			${src} 768w,
+			${src} 1024w,
+			${src} 1280w
 		`
 	)&attributes(attributes)
+
+mixin picture(src, srcset)
+	-
+		const ext = src.match(/\.\w+$/)[0];
+
+		src = src.replace(ext, '');
+		srcset = srcset.split(',').map((item) => item.trim());
+
+		let webp = srcset.map((item) => `${src}@${item}.webp ${item}`).join(', ');
+
+		if (!attributes.sizes) {
+			webp = `${src}.webp, ${webp}`;
+		}
+
+		srcset = srcset.map((item) => `${src}@${item}${ext} ${item}`).join(', ');
+		src = `${src}${ext}`;
+
+	picture&attributes(attributes)
+		source(type="image/webp" srcset=webp)
+		img(src=src srcset=srcset)

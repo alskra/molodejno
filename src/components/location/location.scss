@@ -1,0 +1,29 @@
+.location {
+	display: flex;
+	align-items: center;
+	font-family: $headings-font-family;
+	font-size: 14rem;
+	line-height: 1.32;
+	white-space: nowrap;
+	color: $color;
+
+	&::before {
+		content: "";
+		flex-shrink: 0;
+		margin-top: -1rem;
+		margin-right: 9rem;
+		border: 1px solid currentColor;
+		border-radius: 50%;
+		width: 15rem;
+		height: 15rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		font-size: 12rem;
+	}
+}
+
+.location__content {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

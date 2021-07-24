@@ -1,0 +1,33 @@
+.date {
+	display: inline-block;
+	vertical-align: top;
+	font-family: $headings-font-family;
+	font-weight: 350;
+	font-size: 16rem;
+	line-height: div(19, 16);
+	white-space: nowrap;
+	text-align: right;
+	color: var(--date-color, $color-black);
+}
+
+.date__day-month {
+	display: flex;
+	align-items: center;
+	margin-bottom: -3rem;
+	font-weight: 700;
+	font-size: 30rem;
+	line-height: div(36, 30);
+	color: var(--date-color, $color);
+
+	&::before {
+		content: "";
+		margin-top: -1rem;
+		margin-right: 12rem;
+		border-radius: 50%;
+		width: 25rem;
+		height: 25rem;
+		background: $color-governor-bay-2;
+		// stylelint-disable-next-line
+		background: conic-gradient(from 135deg at 50% 50%, $color-cornflower-blue 0deg, $color-governor-bay-2 360deg);
+	}
+}

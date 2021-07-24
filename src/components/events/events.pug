@@ -1,8 +1,10 @@
+include ../event-item/event-item
+
 mixin events(type)
 	.events&attributes(attributes)
 		case type
 			when 'forums'
 				.container.events__forums
-					each eventItem in events[type]
-						.event-item!= eventItem.title
+					each item in events[type]
+						+event-item(item)
 
