@@ -9,7 +9,7 @@
 	width: 100%;
 	max-width: 730rem;
 	box-shadow: 10rem 10rem $color-cerulean-blue;
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 500;
 	font-size: 30rem;
 	line-height: 1.2;
@@ -35,7 +35,7 @@
 	position: relative;
 	display: block;
 	margin-top: 53rem;
-	border-top: 1px solid $headings-color;
+	border-top: 1px solid $heading-color;
 	padding-top: 45rem;
 	font-weight: 700;
 	font-style: normal;
@@ -49,7 +49,7 @@
 		position: absolute;
 		left: 50%;
 		top: 0;
-		border-left: 1px solid $headings-color;
+		border-left: 1px solid $heading-color;
 		height: 35rem;
 	}
 

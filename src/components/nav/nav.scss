@@ -3,8 +3,8 @@
 	column-gap: 20rem;
 	align-items: center;
 	justify-content: space-between;
-	border-top: 1px solid $headings-color;
-	border-bottom: 1px solid $headings-color;
+	border-top: 1px solid $heading-color;
+	border-bottom: 1px solid $heading-color;
 
 	@include media-breakpoint-down(lg) {
 		flex-flow: column;
@@ -17,7 +17,7 @@
 
 .nav__item {
 	overflow: hidden;
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 500;
 	font-size: 18rem;
 	line-height: div(22, 18);

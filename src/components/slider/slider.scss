@@ -131,7 +131,7 @@
 
 .slider__date {
 	flex-shrink: 0;
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 300;
 	font-size: 20rem;
 	line-height: div(24, 20);
@@ -189,7 +189,7 @@
 .slider__type {
 	overflow: hidden;
 	margin-bottom: 13rem;
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 350;
 	font-size: 16rem;
 	line-height: div(19, 16);
@@ -206,7 +206,7 @@
 .slider__place {
 	display: flex;
 	align-items: center;
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 500;
 	font-size: 16rem;
 	line-height: div(21, 16);
@@ -244,7 +244,7 @@
 	overflow: hidden;
 	margin: 0;
 	max-height: 4em * $line-height;
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 500;
 	font-size: 35rem;
 	line-height: $line-height;

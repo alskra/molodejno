@@ -8,11 +8,11 @@
 
 .heading {
 	margin: 0;
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 700;
 	font-size: 60rem;
 	line-height: 1.25;
-	color: $headings-color;
+	color: $heading-color;
 
 	&:not(:last-child) {
 		margin-bottom: var(--heading-margin-bottom);

@@ -1,4 +1,4 @@
-mixin more-link({dir = 'right'} = {})
+mixin more-link({content, dir = 'right'} = {})
 	a.more-link(
 		href=""
 		x-data
@@ -6,6 +6,5 @@ mixin more-link({dir = 'right'} = {})
 	)&attributes(attributes)
 		.more-link__icon
 			icon-svg(name=`arrow-${dir}`)
-		if block
-			.more-link__content
-				block
+		if content
+			.more-link__content(x-text=content)

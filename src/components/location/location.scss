@@ -1,7 +1,8 @@
 .location {
-	display: flex;
+	display: inline-flex;
 	align-items: center;
-	font-family: $headings-font-family;
+	vertical-align: top;
+	font-family: $heading-font-family;
 	font-size: 14rem;
 	line-height: 1.32;
 	white-space: nowrap;

@@ -1,13 +1,17 @@
 .date {
 	display: inline-block;
 	vertical-align: top;
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 350;
 	font-size: 16rem;
 	line-height: div(19, 16);
 	white-space: nowrap;
 	text-align: right;
 	color: var(--date-color, $color-black);
+
+	@include media-breakpoint-down(lg) {
+		font-size: 12rem;
+	}
 }
 
 .date__day-month {
@@ -29,5 +33,16 @@
 		background: $color-governor-bay-2;
 		// stylelint-disable-next-line
 		background: conic-gradient(from 135deg at 50% 50%, $color-cornflower-blue 0deg, $color-governor-bay-2 360deg);
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: -1rem;
+		font-size: 20rem;
+
+		&::before {
+			margin-right: 5rem;
+			width: 15rem;
+			height: 15rem;
+		}
 	}
 }

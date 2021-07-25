@@ -5,7 +5,7 @@
 .score__title {
 	display: flex;
 	align-items: flex-start;
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 700;
 	font-size: 18rem;
 	line-height: 1.25;
@@ -52,7 +52,6 @@
 .score__plus {
 	@include text-stroke(1px, $color-black);
 
-	margin-left: -8rem;
 	font-family: $font-family-gilroy;
 	font-weight: 600;
 	font-size: 100rem;

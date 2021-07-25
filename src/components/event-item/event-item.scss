@@ -37,7 +37,7 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	transition: transform 3s;
+	transition: $image-transition;
 }
 
 .event-item__body {
@@ -46,9 +46,13 @@
 	top: 0;
 	display: flex;
 	flex-flow: column;
-	padding: 33rem 48rem;
+	padding: 45rem 48rem;
 	width: 100%;
 	height: 100%;
+
+	@include media-breakpoint-down(lg) {
+		padding: 25rem 28rem;
+	}
 }
 
 .event-item__main {
@@ -60,9 +64,16 @@
 	padding-top: 12rem;
 	color: $color-white;
 	gap: 11rem 15rem;
+
+	@include media-breakpoint-down(lg) {
+		padding-top: 5rem;
+		row-gap: 9rem;
+	}
 }
 
 .event-item__group {
+	display: flex;
+	flex-flow: column;
 	min-width: 0;
 }
 
@@ -77,11 +88,15 @@
 }
 
 .event-item__title {
-	@include line-clamp(4, div(28, 24));
+	@include line-clamp(4, 1.2);
 
 	grid-column: span 2;
 	margin: 0;
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 500;
 	font-size: 24rem;
+
+	@include media-breakpoint-down(lg) {
+		font-size: 20rem;
+	}
 }

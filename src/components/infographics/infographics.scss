@@ -33,7 +33,7 @@
 	display: flex;
 	flex-flow: column;
 	margin: 0 15rem;
-	border-bottom: 1px solid $headings-color;
+	border-bottom: 1px solid $heading-color;
 	padding: 51rem 0 12rem;
 	width: 445rem;
 	height: auto;
@@ -67,7 +67,7 @@
 
 .infographics__title {
 	margin-bottom: -18rem;
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 500;
 	font-size: 18rem;
 	line-height: 1.8;
@@ -86,7 +86,7 @@
 }
 
 .infographics__number {
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 700;
 	font-size: 90rem;
 	line-height: div(108, 90);

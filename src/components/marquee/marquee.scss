@@ -38,7 +38,7 @@
 	position: relative;
 	display: block;
 	margin: 0 30rem;
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 700;
 	font-size: 45rem;
 	line-height: 1.1;
@@ -84,7 +84,7 @@
 	border-radius: 50%;
 	width: 200rem;
 	height: 200rem;
-	background: $headings-color;
+	background: $heading-color;
 	transition: opacity, visibility;
 	transition-duration: $transition-duration;
 	pointer-events: none;

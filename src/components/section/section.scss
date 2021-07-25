@@ -1,6 +1,6 @@
 .section {
 	position: relative;
-	padding: 127rem 0 160rem;
+	padding: 130rem 0 160rem;
 
 	@include media-breakpoint-down(lg) {
 		padding: 290rem 0 50rem;
@@ -8,10 +8,14 @@
 }
 
 .section__header {
-	margin-bottom: 25rem;
+	&:not(:last-child) {
+		margin-bottom: 25rem;
+	}
 
 	@include media-breakpoint-down(lg) {
-		margin-bottom: 15rem;
+		&:not(:last-child) {
+			margin-bottom: 15rem;
+		}
 	}
 }
 
@@ -63,6 +67,10 @@
 		background: $color-onahau;
 	}
 
+	&--projects {
+		background: $color-aero-blue;
+	}
+
 	@include media-breakpoint-down(lg) {
 		left: cw(36, 320);
 		height: 372rem;
@@ -70,7 +78,10 @@
 }
 
 .section__design-image {
+	position: absolute;
+
 	&--forums {
+		right: 13rem;
 		top: -114rem;
 	}
 
@@ -90,4 +101,16 @@
 .section__main {
 	position: relative;
 	z-index: 1;
+}
+
+.section__footer {
+	&:not(:first-child) {
+		margin-top: 50rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		&:not(:first-child) {
+			margin-top: 38rem;
+		}
+	}
 }

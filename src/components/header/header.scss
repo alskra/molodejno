@@ -25,7 +25,7 @@
 		}
 
 		.header__grid::after {
-			background: $headings-color;
+			background: $heading-color;
 		}
 
 		.header__visually {
@@ -96,7 +96,7 @@
 		position: absolute;
 		left: 50%;
 		top: 50%;
-		border-top: 1px solid $headings-color;
+		border-top: 1px solid $heading-color;
 		width: 100%;
 		transition: $transition-duration;
 	}
@@ -162,17 +162,18 @@
 
 .header__visually {
 	display: grid;
+	column-gap: 10rem;
 	align-items: center;
 	justify-self: start;
 	grid-template-columns: 41rem 1fr;
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 700;
 	font-size: 14rem;
 	line-height: div(17, 14);
 	text-transform: uppercase;
 	color: $color-black;
 	transition: color $transition-duration;
-	gap: 10rem;
+	user-select: none;
 
 	@include hover {
 		color: $color-primary;
@@ -187,8 +188,8 @@
 	@include media-breakpoint-down(lg) {
 		column-gap: 20rem;
 		grid-template-columns: 1fr 1fr;
-		border-top: 1px solid $headings-color;
-		border-bottom: 1px solid $headings-color;
+		border-top: 1px solid $heading-color;
+		border-bottom: 1px solid $heading-color;
 		padding-top: 23px;
 		padding-bottom: 23px;
 	}

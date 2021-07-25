@@ -11,6 +11,8 @@ mixin section({type, title, desc, score})
 					case type
 						when 'forums'
 							+image-forums().section__design-image(class=`section__design-image--${type}`)
+						when 'projects'
+							+image-forums().section__design-image(class=`section__design-image--${type}`)
 
 		header.container.section__header
 			.section__header-body
@@ -25,3 +27,6 @@ mixin section({type, title, desc, score})
 				case type
 					when 'forums'
 						+events(type)
+
+		footer.container.section__footer
+			+more-link({content: "'Смотреть все'"})

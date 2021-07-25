@@ -4,13 +4,14 @@
 	vertical-align: top;
 	width: calc(var(--container-content-width) / 2 - 15rem);
 	max-width: 100%;
-	font-family: $headings-font-family;
+	font-family: $heading-font-family;
 	font-weight: 700;
 	font-size: 20rem;
-	line-height: div(27, 20);
+	line-height: 1.25;
 	white-space: nowrap;
 	color: $color;
 	transition: color $transition-duration;
+	user-select: none;
 
 	@include hover {
 		color: $color-primary;
@@ -38,6 +39,12 @@
 	@include media-breakpoint-down(lg) {
 		width: 100%;
 		font-size: 16rem;
+
+		&--row {
+			.more-link__content {
+				margin-right: 18rem;
+			}
+		}
 	}
 }
 
