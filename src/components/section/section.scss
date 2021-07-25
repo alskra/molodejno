@@ -80,9 +80,27 @@
 .section__design-image {
 	position: absolute;
 
+	img {
+		display: block;
+		width: 100%;
+
+		&:last-child {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+
 	&--forums {
 		right: 13rem;
 		top: -114rem;
+		width: 716rem;
+	}
+
+	&--projects {
+		right: 0;
+		top: -186rem;
+		width: 635rem;
 	}
 
 	@include media-breakpoint-down(lg) {

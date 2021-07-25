@@ -1,4 +1,3 @@
-include ../image-forums/image-forums
 include ../score/score
 include ../events/events
 
@@ -8,11 +7,17 @@ mixin section({type, title, desc, score})
 			.container
 				.section__design-box
 					.section__design-bg(class=`section__design-bg--${type}`)
-					case type
-						when 'forums'
-							+image-forums().section__design-image(class=`section__design-image--${type}`)
-						when 'projects'
-							+image-forums().section__design-image(class=`section__design-image--${type}`)
+					.section__design-image(class=`section__design-image--${type}`)
+						img(
+							src=`../../images/design/section/${type}/back.png`
+							srcset=`../../images/design/section/${type}/back@2x.png 2x`
+							alt=""
+						)
+						img(
+							src=`../../images/design/section/${type}/front.png`
+							srcset=`../../images/design/section/${type}/front@2x.png 2x`
+							alt=""
+						)
 
 		header.container.section__header
 			.section__header-body
