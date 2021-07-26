@@ -56,9 +56,9 @@
 }
 
 .event-item__main {
-	display: grid;
-	align-items: end;
-	grid-template-columns: 1fr auto;
+	display: flex;
+	flex-flow: wrap;
+	align-items: flex-end;
 	margin-top: auto;
 	border-top: 1px solid $color-white;
 	padding-top: 12rem;
@@ -73,6 +73,7 @@
 
 .event-item__group {
 	display: flex;
+	flex: 1;
 	flex-flow: column;
 	min-width: 0;
 }
@@ -84,13 +85,14 @@
 .event-item__date {
 	--date-color: currentColor;
 
-	justify-self: end;
+	flex-shrink: 0;
+	margin-left: auto;
 }
 
 .event-item__title {
 	@include line-clamp(4, 1.2);
 
-	grid-column: span 2;
+	flex: 0 0 100%;
 	margin: 0;
 	font-family: $heading-font-family;
 	font-weight: 500;

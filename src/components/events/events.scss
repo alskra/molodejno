@@ -1,5 +1,9 @@
-.events__forums {
+.events__grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(280rem, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 	gap: 20rem 30rem;
+
+	@include media-breakpoint-down(xs) {
+		grid-template-columns: 1fr;
+	}
 }

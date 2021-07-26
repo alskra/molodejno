@@ -45,10 +45,6 @@
 	left: 0;
 	right: 0;
 	top: 0;
-
-	@include media-breakpoint-down(lg) {
-		top: 86rem;
-	}
 }
 
 .section__design-box {
@@ -73,6 +69,7 @@
 
 	@include media-breakpoint-down(lg) {
 		left: cw(36, 320);
+		top: 85rem;
 		height: 372rem;
 	}
 }
@@ -104,7 +101,17 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		top: -86rem;
+		top: 0;
+
+		&--forums {
+			right: -6rem;
+			width: 315rem;
+		}
+
+		&--projects {
+			right: -19rem;
+			width: 284rem;
+		}
 	}
 }
 

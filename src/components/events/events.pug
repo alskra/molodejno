@@ -4,7 +4,7 @@ mixin events(type)
 	.events&attributes(attributes)
 		case type
 			when 'forums'
-				.container.events__forums
+				.container.events__grid
 					each item in events[type]
 						+event-item(item)
 
