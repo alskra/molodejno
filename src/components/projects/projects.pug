@@ -21,9 +21,9 @@ mixin projects()
 			},
 		];
 
-	.projects&attributes(attributes)
+	.projects(x-data="projects")&attributes(attributes)
 		.container
-			.swiper-container
+			.swiper-container(x-ref="swiperContainer")
 				.swiper-wrapper
 					each projectItem in projects
 						+project-item(projectItem).swiper-slide.projects__item

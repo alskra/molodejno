@@ -1,7 +1,15 @@
 mixin project-item({title, image})
 	a.project-item(href="")&attributes(attributes)
 		.project-item__group
+			.project-item__group-title Ресурсный Молодежный центр
+			img.project-item__group-logo(
+				src="../../images/content/projects/logo.png"
+				srcset="../../images/content/projects/logo@2x.png 2x"
+				alt=""
+			)
+
 		.project-item__title!=title
+
 		.project-item__image
 			img.project-item__image-el(
 				src=image

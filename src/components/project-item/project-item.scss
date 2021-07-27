@@ -1,6 +1,9 @@
 .project-item {
 	display: flex;
 	flex-flow: column;
+	border-top: 1px solid $color-black;
+	padding-top: 26rem;
+	color: $color;
 
 	@include hover {
 		.project-item__image-el {
@@ -23,6 +26,28 @@
 
 .project-item__group {
 	display: flex;
+	align-items: center;
+	height: 54rem;
+
+	&:not(:last-child) {
+		margin-bottom: 23rem;
+	}
+}
+
+.project-item__group-title {
+	@include line-clamp(3, 1.29);
+
+	flex: 1;
+	margin-right: 10rem;
+	font-size: 14rem;
+	word-wrap: break-word;
+}
+
+.project-item__group-logo {
+	width: 152rem;
+	height: 49rem;
+	object-fit: contain;
+	object-position: 100%;
 }
 
 .project-item__title {
