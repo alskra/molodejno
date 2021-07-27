@@ -4,7 +4,7 @@
 
 	@include hover {
 		.event-item__image-el {
-			transform: scale(1.1);
+			transform: $image-hover-transform;
 		}
 	}
 }
@@ -97,6 +97,7 @@
 	font-family: $heading-font-family;
 	font-weight: 500;
 	font-size: 24rem;
+	word-wrap: break-word;
 
 	@include media-breakpoint-down(lg) {
 		font-size: 20rem;

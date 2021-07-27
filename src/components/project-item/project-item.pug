@@ -1,0 +1,10 @@
+mixin project-item({title, image})
+	a.project-item(href="")&attributes(attributes)
+		.project-item__group
+		.project-item__title!=title
+		.project-item__image
+			img.project-item__image-el(
+				src=image
+				srcset=`${image.replace(/\.\w+$/, '@2x$&')} 2x`
+				alt=""
+			)

@@ -1,0 +1,29 @@
+include ../project-item/project-item
+
+mixin projects()
+	-
+		const projects = [
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-1.jpg',
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-2.jpg',
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-3.jpg',
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-1.jpg',
+			},
+		];
+
+	.projects&attributes(attributes)
+		.container
+			.swiper-container
+				.swiper-wrapper
+					each projectItem in projects
+						+project-item(projectItem).swiper-slide.projects__item

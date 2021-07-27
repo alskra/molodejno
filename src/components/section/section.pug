@@ -1,5 +1,6 @@
 include ../score/score
 include ../events/events
+include ../projects/projects
 
 mixin section({type, title, desc, score})
 	section.section(class=`section--${type}`)&attributes(attributes)
@@ -32,6 +33,8 @@ mixin section({type, title, desc, score})
 				case type
 					when 'forums'
 						+events(type)
+					when 'projects'
+						+projects()
 
 		footer.container.section__footer
 			+more-link({content: "'Смотреть все'"})
