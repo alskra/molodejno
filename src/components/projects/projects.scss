@@ -1,5 +1,24 @@
+.projects__swiper-box {
+	overflow: hidden;
+
+	.swiper-container {
+		margin: 0 -15rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		.swiper-container {
+			margin: 0 -10rem;
+		}
+	}
+}
+
 .projects__item {
-	margin-right: 30rem;
-	width: calc((100% - 30rem * 3) / 4);
+	margin: 0 15rem;
+	width: calc(25% - 30rem);
 	height: auto;
+
+	@include media-breakpoint-down(lg) {
+		margin: 0 10rem;
+		width: 265rem;
+	}
 }

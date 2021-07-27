@@ -22,6 +22,10 @@
 			border-radius: 50% 0 0 50%;
 		}
 	}
+
+	@include media-breakpoint-down(lg) {
+		padding-top: 17rem;
+	}
 }
 
 .project-item__group {
@@ -32,6 +36,14 @@
 	&:not(:last-child) {
 		margin-bottom: 23rem;
 	}
+
+	@include media-breakpoint-down(lg) {
+		height: 42rem;
+
+		&:not(:last-child) {
+			margin-bottom: 16rem;
+		}
+	}
 }
 
 .project-item__group-title {
@@ -41,6 +53,13 @@
 	margin-right: 10rem;
 	font-size: 14rem;
 	word-wrap: break-word;
+
+	@include media-breakpoint-down(lg) {
+		--line-clamp-line-height: 1.2;
+
+		margin-right: 20rem;
+		font-size: 12rem;
+	}
 }
 
 .project-item__group-logo {
@@ -48,6 +67,11 @@
 	height: 49rem;
 	object-fit: contain;
 	object-position: 100%;
+
+	@include media-breakpoint-down(lg) {
+		width: 114rem;
+		height: 36rem;
+	}
 }
 
 .project-item__title {
@@ -60,6 +84,16 @@
 
 	&:not(:last-child) {
 		margin-bottom: 23rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		--line-clamp-line-height: 1.2;
+
+		font-size: 18rem;
+
+		&:not(:last-child) {
+			margin-bottom: 15rem;
+		}
 	}
 }
 
