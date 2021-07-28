@@ -32,11 +32,11 @@ Alpine.data('projects', () => ({
 	},
 	initSwiper() {
 		if (!this.swiperIsInit) {
-			this.swiper.on('init', () => {
+			this.swiper.once('init', () => {
 				this.swiper.destroyed = false;
 				this.swiperIsInit = true;
 			});
-			this.swiper.on('destroy', () => {
+			this.swiper.once('destroy', () => {
 				this.swiper.destroyed = true;
 				this.swiperIsInit = false;
 			});
