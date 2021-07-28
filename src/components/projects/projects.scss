@@ -1,16 +1,16 @@
-.projects__swiper-box {
+.projects__swiper {
 	overflow: hidden;
-
-	.swiper-container {
-		margin: 0 -15rem;
-	}
 
 	@include media-breakpoint-down(lg) {
 		margin-right: calc(-1 * var(--container-content-offset-x));
+	}
+}
 
-		.swiper-container {
-			margin: 0 -10rem;
-		}
+.projects__swiper-container {
+	margin: 0 -15rem;
+
+	@include media-breakpoint-down(lg) {
+		margin: 0;
 	}
 }
 
@@ -20,7 +20,7 @@
 	height: auto;
 
 	@include media-breakpoint-down(lg) {
-		margin: 0 10rem;
+		margin: 0 20rem 0 0;
 		width: 265rem;
 	}
 }

@@ -1,4 +1,4 @@
-include ../project-item/project-item
+include ../card-item/card-item
 
 mixin projects()
 	-
@@ -6,25 +6,41 @@ mixin projects()
 			{
 				title: 'Кадры будущего для регионов',
 				image: '../../images/content/projects/img-1.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
 				image: '../../images/content/projects/img-2.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
 			},
 			{
 				title: 'Кадры будущего для регионов',
 				image: '../../images/content/projects/img-3.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
-				image: '../../images/content/projects/img-1.jpg',
+				image: '../../images/content/projects/img-4.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
 			},
 		];
 
 	.projects(x-data="projects")&attributes(attributes)
 		.container
-			.projects__swiper-box
-				.swiper-container(x-ref="swiperContainer")
+			.projects__swiper
+				.swiper-container.projects__swiper-container(x-ref="swiperContainer")
 					.swiper-wrapper
 						each projectItem in projects
-							+project-item(projectItem).swiper-slide.projects__item
+							+card-item(projectItem).card-item--project.swiper-slide.projects__item

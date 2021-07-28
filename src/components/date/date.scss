@@ -1,12 +1,13 @@
 .date {
-	display: inline-block;
+	display: inline-flex;
+	flex-flow: column;
+	align-items: flex-end;
 	vertical-align: top;
 	font-family: $heading-font-family;
 	font-weight: 350;
 	font-size: 16rem;
 	line-height: div(19, 16);
 	white-space: nowrap;
-	text-align: right;
 	color: var(--date-color, $color-black);
 
 	@include media-breakpoint-down(lg) {
@@ -26,7 +27,7 @@
 	&::before {
 		content: "";
 		margin-top: -1rem;
-		margin-right: 12rem;
+		margin-right: 7rem;
 		border-radius: 50%;
 		width: 25rem;
 		height: 25rem;
@@ -40,7 +41,6 @@
 		font-size: 20rem;
 
 		&::before {
-			margin-right: 5rem;
 			width: 15rem;
 			height: 15rem;
 		}

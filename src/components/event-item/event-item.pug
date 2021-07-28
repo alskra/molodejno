@@ -1,4 +1,4 @@
-mixin event-item({title, location, date, image})
+mixin event-item({title, image, date, location})
 	a.event-item(href="")&attributes(attributes)
 		.event-item__image
 			img.event-item__image-el(
@@ -8,7 +8,8 @@ mixin event-item({title, location, date, image})
 			)
 		.event-item__body
 			.event-item__main
-				.event-item__group
-					+location(location).event-item__location
+				if location
+					.event-item__group
+						+location(location).event-item__location
 				+date(date).event-item__date
 				h3.event-item__title!= title

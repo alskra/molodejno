@@ -32,6 +32,8 @@ mixin section({type, title, desc, score})
 			else
 				case type
 					when 'forums'
+					when 'playbill'
+					when 'news'
 						+events(type)
 					when 'projects'
 					when 'contests'

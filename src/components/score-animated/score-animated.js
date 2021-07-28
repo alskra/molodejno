@@ -10,6 +10,7 @@ Alpine.data('scoreAnimated', () => ({
 			scrollTrigger: {
 				trigger: this.$el,
 				start: 'top bottom-=120',
+				end: 'bottom top+=120',
 				toggleActions: 'play pause play pause', // onEnter, onLeave, onEnterBack, and onLeaveBack
 			},
 		});

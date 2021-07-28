@@ -1,10 +1,20 @@
+:root {
+	--header-height: 140rem;
+	--header-sticky-height: 50rem;
+
+	@include media-breakpoint-down(lg) {
+		--header-height: 60rem;
+		--header-sticky-height: var(--header-height);
+	}
+}
+
 .header {
 	position: sticky;
-	top: -90rem;
+	top: calc(var(--header-sticky-height) - var(--header-height));
 	z-index: 100;
 	display: flex;
 	flex-flow: column;
-	height: 140rem;
+	height: var(--header-height);
 	background: $background-color;
 
 	&.is-sticky {
@@ -14,7 +24,7 @@
 
 		.header__grid {
 			grid-template-columns: 94fr 830fr 186fr;
-			grid-template-rows: 1px calc(50rem - 2px) 1px;
+			grid-template-rows: 1px calc(var(--header-sticky-height) - 2px) 1px;
 		}
 
 		.header__grid::before,
@@ -69,7 +79,6 @@
 
 	@include media-breakpoint-down(lg) {
 		top: 0;
-		height: 60rem;
 	}
 }
 
@@ -138,7 +147,7 @@
 		position: fixed;
 		left: 0;
 		right: 0;
-		top: 60rem;
+		top: var(--header-height);
 		bottom: 0;
 	}
 }
@@ -147,7 +156,7 @@
 	display: grid;
 	align-items: center;
 	grid-template-columns: 202fr 228fr + 250fr + 228fr 202fr;
-	grid-template-rows: 90rem 50rem;
+	grid-template-rows: calc(var(--header-height) - var(--header-sticky-height)) var(--header-sticky-height);
 
 	@include media-breakpoint-down(lg) {
 		align-items: stretch;

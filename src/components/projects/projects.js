@@ -1,7 +1,7 @@
 import Alpine from 'alpinejs';
 import 'swiper/swiper-bundle.css';
 import Swiper from 'swiper';
-import '../project-item/project-item';
+import '../card-item/card-item';
 import './projects.scss';
 
 Alpine.data('projects', () => ({

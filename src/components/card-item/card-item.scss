@@ -1,52 +1,84 @@
-.project-item {
+.card-item {
+	position: relative;
 	display: flex;
 	flex-flow: column;
-	border-top: 1px solid $color-black;
-	padding-top: 26rem;
+	padding-top: 25rem;
+	min-width: 0;
 	color: $color;
 
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 1px;
+		background: $color-black;
+		transition: height $transition-duration;
+	}
+
 	@include hover {
-		.project-item__image-el {
+		&::before {
+			height: 3px;
+		}
+
+		.card-item__title {
+			color: $color-primary;
+		}
+
+		.card-item__image-el {
 			transform: $image-hover-transform;
 		}
 	}
 
-	&:nth-child(4n + 2) {
-		.project-item__image {
+	&--project {
+		&:nth-child(4n + 2) .card-item__image {
 			border-radius: 50%;
 		}
-	}
 
-	&:nth-child(4n + 3) {
-		.project-item__image {
+		&:nth-child(4n + 3) .card-item__image {
 			border-radius: 50% 0 0 50%;
 		}
 	}
 
+	&--event {
+		&:nth-child(4n + 1) .card-item__image {
+			border-radius: 50% 0 0 50%;
+		}
+
+		&:nth-child(4n + 4) .card-item__image {
+			border-radius: 50%;
+		}
+	}
+
 	@include media-breakpoint-down(lg) {
-		padding-top: 17rem;
+		padding-top: 20rem;
 	}
 }
 
-.project-item__group {
+.card-item__date {
+	margin-left: auto;
+}
+
+.card-item__group {
 	display: flex;
 	align-items: center;
 	height: 54rem;
 
 	&:not(:last-child) {
-		margin-bottom: 23rem;
+		margin-bottom: 20rem;
 	}
 
 	@include media-breakpoint-down(lg) {
 		height: 42rem;
 
 		&:not(:last-child) {
-			margin-bottom: 16rem;
+			margin-bottom: 15rem;
 		}
 	}
 }
 
-.project-item__group-title {
+.card-item__ref-title {
 	@include line-clamp(3, 1.29);
 
 	flex: 1;
@@ -57,12 +89,11 @@
 	@include media-breakpoint-down(lg) {
 		--line-clamp-line-height: 1.2;
 
-		margin-right: 20rem;
 		font-size: 12rem;
 	}
 }
 
-.project-item__group-logo {
+.card-item__ref-image {
 	width: 152rem;
 	height: 49rem;
 	object-fit: contain;
@@ -74,16 +105,17 @@
 	}
 }
 
-.project-item__title {
+.card-item__title {
 	@include line-clamp(4, 1.4);
 
 	font-family: $heading-font-family;
 	font-weight: 500;
 	font-size: 20rem;
 	word-wrap: break-word;
+	transition: color $transition-duration;
 
 	&:not(:last-child) {
-		margin-bottom: 23rem;
+		margin-bottom: 20rem;
 	}
 
 	@include media-breakpoint-down(lg) {
@@ -97,7 +129,7 @@
 	}
 }
 
-.project-item__image {
+.card-item__image {
 	position: relative;
 	overflow: hidden;
 	margin-top: auto;
@@ -109,7 +141,7 @@
 	}
 }
 
-.project-item__image-el {
+.card-item__image-el {
 	position: absolute;
 	left: 0;
 	top: 0;

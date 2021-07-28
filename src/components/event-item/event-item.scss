@@ -1,6 +1,7 @@
 .event-item {
 	position: relative;
 	display: block;
+	min-width: 0;
 
 	@include hover {
 		.event-item__image-el {
@@ -85,7 +86,6 @@
 .event-item__date {
 	--date-color: currentColor;
 
-	flex-shrink: 0;
 	margin-left: auto;
 }
 
