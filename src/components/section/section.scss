@@ -79,6 +79,10 @@
 		background: $color-blue-chalk;
 	}
 
+	&--news {
+		background: $color-watusi;
+	}
+
 	@include media-breakpoint-down(lg) {
 		left: cw(36, 320);
 		height: 372rem;
@@ -129,6 +133,12 @@
 		width: 643rem;
 	}
 
+	&--news {
+		right: -11rem;
+		top: -119rem;
+		width: 658rem;
+	}
+
 	@include media-breakpoint-down(lg) {
 		top: 186rem;
 		transform: translateY(-100%);
@@ -156,6 +166,11 @@
 		&--playbill {
 			right: -63rem;
 			width: 327rem;
+		}
+
+		&--news {
+			right: -44rem;
+			width: 314rem;
 		}
 	}
 }

@@ -1,7 +1,7 @@
 mixin score({title, number})
 	.score(x-data="scoreAnimated")&attributes(attributes)
 		if title
-			.score__title= title
+			.score__title!= title
 		.score__content
 			.score__number(x-ref="number")= number
 			.score__plus(x-ref="plus") +
