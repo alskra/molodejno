@@ -32,7 +32,12 @@
 }
 
 .events__item-main {
-	@include media-breakpoint-up(805px) {
+	@include media-breakpoint-up(lg) {
+		position: sticky;
+		top: var(--header-sticky-height);
+	}
+
+	@media (min-aspect-ratio: 834 / 497) {
 		position: sticky;
 		top: var(--header-sticky-height);
 	}
