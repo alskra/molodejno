@@ -13,8 +13,8 @@ Alpine.data('projects', () => ({
 		this.swiper = new Swiper(this.$refs.swiperContainer, {
 			init: false,
 			slidesPerView: 'auto',
-			freeMode: true,
-			freeModeMomentum: false,
+			// freeMode: true,
+			// freeModeMomentum: false,
 		});
 
 		const swiper = () => {

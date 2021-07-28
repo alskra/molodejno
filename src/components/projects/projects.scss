@@ -6,6 +6,8 @@
 	}
 
 	@include media-breakpoint-down(lg) {
+		margin-right: calc(-1 * var(--container-content-offset-x));
+
 		.swiper-container {
 			margin: 0 -10rem;
 		}

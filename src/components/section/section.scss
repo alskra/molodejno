@@ -75,6 +75,10 @@
 		background: $color-dolly;
 	}
 
+	&--playbill {
+		background: $color-blue-chalk;
+	}
+
 	@include media-breakpoint-down(lg) {
 		left: cw(36, 320);
 		height: 372rem;
@@ -119,6 +123,12 @@
 		width: 635rem;
 	}
 
+	&--playbill {
+		right: -35rem;
+		top: -78rem;
+		width: 643rem;
+	}
+
 	@include media-breakpoint-down(lg) {
 		top: 186rem;
 		transform: translateY(-100%);
@@ -141,6 +151,11 @@
 		&--grants {
 			right: -61rem;
 			width: 325rem;
+		}
+
+		&--playbill {
+			right: -63rem;
+			width: 327rem;
 		}
 	}
 }
