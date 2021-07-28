@@ -1,9 +1,9 @@
 .section {
 	position: relative;
-	padding: 130rem 0 160rem;
+	padding: 134rem 0 160rem;
 
 	@include media-breakpoint-down(lg) {
-		padding: 290rem 0 50rem;
+		padding: 204rem 0 132rem;
 	}
 }
 
@@ -60,7 +60,7 @@
 	height: 750rem;
 
 	&--forums {
-		background: $color-onahau;
+		background: $color-onahau-2;
 	}
 
 	&--projects {
@@ -71,9 +71,12 @@
 		background: $color-tidal;
 	}
 
+	&--grants {
+		background: $color-dolly;
+	}
+
 	@include media-breakpoint-down(lg) {
 		left: cw(36, 320);
-		top: 85rem;
 		height: 372rem;
 	}
 }
@@ -110,8 +113,15 @@
 		width: 614rem;
 	}
 
+	&--grants {
+		right: 0;
+		top: -127rem;
+		width: 635rem;
+	}
+
 	@include media-breakpoint-down(lg) {
-		top: 0;
+		top: 186rem;
+		transform: translateY(-100%);
 
 		&--forums {
 			right: -6rem;
@@ -126,6 +136,11 @@
 		&--contests {
 			right: -30rem;
 			width: 294rem;
+		}
+
+		&--grants {
+			right: -61rem;
+			width: 325rem;
 		}
 	}
 }

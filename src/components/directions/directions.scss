@@ -1,10 +1,8 @@
 .directions {
-	padding-top: 228rem;
-	padding-bottom: 200rem;
+	padding: 228rem 0 200rem;
 
 	@include media-breakpoint-down(lg) {
-		padding-top: 115rem;
-		padding-bottom: 50rem;
+		padding: 115rem 0 136rem;
 	}
 }
 
