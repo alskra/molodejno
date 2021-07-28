@@ -32,7 +32,7 @@
 }
 
 .events__item-main {
-	@include media-breakpoint-up(837px) {
+	@include media-breakpoint-up(805px) {
 		position: sticky;
 		top: var(--header-sticky-height);
 	}
