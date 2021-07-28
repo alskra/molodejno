@@ -67,6 +67,10 @@
 		background: $color-aero-blue;
 	}
 
+	&--contests {
+		background: $color-tidal;
+	}
+
 	@include media-breakpoint-down(lg) {
 		left: cw(36, 320);
 		top: 85rem;
@@ -100,6 +104,12 @@
 		width: 635rem;
 	}
 
+	&--contests {
+		right: 1rem;
+		top: -155rem;
+		width: 614rem;
+	}
+
 	@include media-breakpoint-down(lg) {
 		top: 0;
 
@@ -111,6 +121,11 @@
 		&--projects {
 			right: -19rem;
 			width: 284rem;
+		}
+
+		&--contests {
+			right: -30rem;
+			width: 294rem;
 		}
 	}
 }
