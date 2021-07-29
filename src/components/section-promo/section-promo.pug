@@ -1,0 +1,22 @@
+mixin section-promo(type)
+	-
+		const promo = {
+			projects: {
+				title: 'Реализованные<br> проекты',
+				image: '../../images/design/section-promo/projects.png',
+			},
+		};
+
+		const {title, image} = promo[type];
+
+	.section-promo(class=`section-promo--${type}`)&attributes(attributes)
+		.container.section-promo__container
+			.section-promo__image
+				img(
+					src=image
+					srcset=`${image.replace(/\.\w+$/, '@2x$&')} 2x`
+					alt=""
+				).section-promo__image-el
+			.section-promo__body
+				.section-promo__title!= title
+				+more-link({content: "$store.isDesktop ? 'Смотреть все' : 'Подробнее'"})

@@ -1,5 +1,8 @@
 mixin event-item({title, image, date, location})
-	a.event-item(href="")&attributes(attributes)
+	a.event-item(
+		href=""
+		title!=title
+	)&attributes(attributes)
 		.event-item__image
 			img.event-item__image-el(
 				src=image

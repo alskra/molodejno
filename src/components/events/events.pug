@@ -74,7 +74,7 @@ mixin events(type)
 			],
 		};
 
-	.events(x-data="events")&attributes(attributes)
+	.events&attributes(attributes)
 		case type
 			when 'forums'
 				.container.events__grid
@@ -84,7 +84,7 @@ mixin events(type)
 			when 'news'
 				.container.events__grid
 					+event-item(events[type][0]).events__item-main
-					.events__swiper
+					.events__swiper(x-data="swiperCards")
 						.swiper-container.events__swiper-container(x-ref="swiperContainer")
 							.swiper-wrapper.events__swiper-wrapper
 								each eventItem in events[type].slice(1)

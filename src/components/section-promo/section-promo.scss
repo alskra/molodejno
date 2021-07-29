@@ -1,0 +1,49 @@
+.section-promo {
+	&--projects {
+		background: $color-aero-blue;
+	}
+}
+
+.section-promo__container {
+	display: grid;
+	column-gap: 30rem;
+	align-items: center;
+	grid-template-columns: 1fr 1fr;
+}
+
+.section-promo__image {
+	position: relative;
+	align-self: flex-end;
+	background: url("../../images/design/section-promo/bg.svg") no-repeat 50% / contain;
+
+	&::before {
+		content: "";
+		display: block;
+		padding-top: percentage(div(350, 540));
+	}
+}
+
+.section-promo__image-el {
+	position: absolute;
+	left: percentage(div(118, 540));
+	top: 0;
+	width: percentage(div(422, 540));
+	height: 100%;
+}
+
+.section-promo__body {
+	padding: 35rem 0;
+	color: $color;
+}
+
+.section-promo__title {
+	margin: 0;
+	font-family: $heading-font-family;
+	font-weight: 700;
+	font-size: 40rem;
+	line-height: 1;
+
+	&:not(:last-child) {
+		margin-bottom: 32rem;
+	}
+}

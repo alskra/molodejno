@@ -37,9 +37,9 @@ mixin projects()
 			},
 		];
 
-	.projects(x-data="projects")&attributes(attributes)
+	.projects&attributes(attributes)
 		.container
-			.projects__swiper
+			.projects__swiper(x-data="swiperCards")
 				.swiper-container.projects__swiper-container(x-ref="swiperContainer")
 					.swiper-wrapper
 						each projectItem in projects
