@@ -1,9 +1,11 @@
 .section {
 	position: relative;
-	padding: 134rem 0 160rem;
+	margin-top: 180rem;
+	padding-top: 134rem;
 
 	@include media-breakpoint-down(lg) {
-		padding: 204rem 0 132rem;
+		margin-top: 130rem;
+		padding-top: 204rem;
 	}
 }
 

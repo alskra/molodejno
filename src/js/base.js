@@ -10,12 +10,13 @@ import './scrollbar-width';
 
 import Alpine from 'alpinejs';
 
+import '../components/icon-svg/icon-svg';
 import '../components/container/container.scss';
 import '../components/heading/heading.scss';
-import '../components/icon-svg/icon-svg';
 import '../components/date/date.scss';
 import '../components/location/location.scss';
 import '../components/more-link/more-link';
+import '../components/integration/integration.scss';
 
 window.Alpine = Alpine;
 

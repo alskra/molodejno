@@ -1,8 +1,8 @@
 .directions {
-	padding: 228rem 0 200rem;
+	margin-top: 228rem;
 
 	@include media-breakpoint-down(lg) {
-		padding: 115rem 0 136rem;
+		margin-top: 115rem;
 	}
 }
 

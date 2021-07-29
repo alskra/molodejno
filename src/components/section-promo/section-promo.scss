@@ -1,18 +1,37 @@
 .section-promo {
+	--margin-y: 50rem;
+
+	&:not(:first-child) {
+		margin-top: var(--margin-y);
+	}
+
+	&:not(:last-child) {
+		margin-bottom: var(--margin-y);
+	}
+
 	&--projects {
 		background: $color-aero-blue;
+	}
+
+	&--contests {
+		background: $color-tidal;
+	}
+
+	&--grants {
+		background: $color-dolly;
 	}
 }
 
 .section-promo__container {
-	display: grid;
+	display: flex;
 	column-gap: 30rem;
+	flex-flow: wrap;
 	align-items: center;
-	grid-template-columns: 1fr 1fr;
 }
 
 .section-promo__image {
 	position: relative;
+	flex: 320rem;
 	align-self: flex-end;
 	background: url("../../images/design/section-promo/bg.svg") no-repeat 50% / contain;
 
@@ -20,6 +39,11 @@
 		content: "";
 		display: block;
 		padding-top: percentage(div(350, 540));
+	}
+
+	@include media-breakpoint-down(lg) {
+		order: 1;
+		max-width: 400rem;
 	}
 }
 
@@ -32,6 +56,7 @@
 }
 
 .section-promo__body {
+	flex: 320rem;
 	padding: 35rem 0;
 	color: $color;
 }
@@ -41,9 +66,21 @@
 	font-family: $heading-font-family;
 	font-weight: 700;
 	font-size: 40rem;
-	line-height: 1;
+	line-height: 1.1;
 
 	&:not(:last-child) {
-		margin-bottom: 32rem;
+		margin-bottom: 30rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		font-size: 30rem;
+
+		br {
+			display: none;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 20rem;
+		}
 	}
 }

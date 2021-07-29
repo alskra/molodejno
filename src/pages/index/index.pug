@@ -44,6 +44,7 @@ block body
 			},
 		})
 		+section-promo('projects')
+		+integration()
 		+section({
 			type: 'contests',
 			title: 'Конкурсы',
@@ -54,6 +55,7 @@ block body
 				number: 100,
 			},
 		})
+		+section-promo('contests')
 		+section({
 			type: 'grants',
 			title: 'Гранты',
@@ -64,6 +66,8 @@ block body
 				number: 100,
 			},
 		})
+		+section-promo('grants')
+		+integration()
 		+section({
 			type: 'playbill',
 			title: 'Афиша',
@@ -74,6 +78,7 @@ block body
 				number: 10,
 			},
 		})
+		+integration()
 		+section({
 			type: 'news',
 			title: 'Новости',
@@ -84,5 +89,5 @@ block body
 				number: 100,
 			},
 		})
-		+picture-webp('../../images/content/slider/slide-1.jpg', '2x')
+		//-+picture-webp('../../images/content/slider/slide-1.jpg', '2x')
 	+footer()
