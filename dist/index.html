@@ -212,8 +212,8 @@
 						</div>
 					</header>
 					<div class="section__main">
-						<div class="events" x-data="events">
-							<div class="container events__grid"><a class="event-item" href="">
+						<div class="events">
+							<div class="container events__grid"><a class="event-item" href="" title="Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;. Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;.">
 									<div class="event-item__image"><img class="event-item__image-el" src="images/content/events/forums/img-1.jpg" srcset="images/content/events/forums/img-1@2x.jpg 2x" alt=""></div>
 									<div class="event-item__body">
 										<div class="event-item__main">
@@ -227,7 +227,7 @@
 											</time>
 											<h3 class="event-item__title">Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;. Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;.</h3>
 										</div>
-									</div></a><a class="event-item" href="">
+									</div></a><a class="event-item" href="" title="От&nbsp;малого к&nbsp;Великому">
 									<div class="event-item__image"><img class="event-item__image-el" src="images/content/events/forums/img-2.jpg" srcset="images/content/events/forums/img-2@2x.jpg 2x" alt=""></div>
 									<div class="event-item__body">
 										<div class="event-item__main">
@@ -276,9 +276,9 @@
 						</div>
 					</header>
 					<div class="section__main">
-						<div class="projects" x-data="projects">
+						<div class="projects">
 							<div class="container">
-								<div class="projects__swiper">
+								<div class="projects__swiper" x-data="swiperCards">
 									<div class="swiper-container projects__swiper-container" x-ref="swiperContainer">
 										<div class="swiper-wrapper"><a class="card-item card-item--project swiper-slide projects__item" href="">
 												<div class="card-item__group">
@@ -314,6 +314,21 @@
 							<div class="more-link__content" x-text="'Смотреть все'"></div></a>
 					</footer>
 				</section>
+				<div class="section-promo section-promo--projects">
+					<div class="container section-promo__container">
+						<div class="section-promo__image"><img class="section-promo__image-el" src="images/design/section-promo/projects.png" srcset="images/design/section-promo/projects@2x.png 2x" alt=""></div>
+						<div class="section-promo__body">
+							<div class="section-promo__title">Реализованные<br> проекты</div><a class="more-link" href="" x-data x-bind:class="{'more-link--row': !$store.isDesktop}">
+								<div class="more-link__icon">
+									<icon-svg name="arrow-right"></icon-svg>
+								</div>
+								<div class="more-link__content" x-text="$store.isDesktop ? 'Смотреть все' : 'Подробнее'"></div></a>
+						</div>
+					</div>
+				</div>
+				<div class="integration">
+					<div class="container"><a class="integration__body" href="" target="_blank"><img class="integration__image" src="images/content/w.jpg" srcset="images/content/w@2x.jpg 2x" alt=""></a></div>
+				</div>
 				<section class="section section--contests">
 					<div class="section__design">
 						<div class="container">
@@ -338,9 +353,9 @@
 						</div>
 					</header>
 					<div class="section__main">
-						<div class="projects" x-data="projects">
+						<div class="projects">
 							<div class="container">
-								<div class="projects__swiper">
+								<div class="projects__swiper" x-data="swiperCards">
 									<div class="swiper-container projects__swiper-container" x-ref="swiperContainer">
 										<div class="swiper-wrapper"><a class="card-item card-item--project swiper-slide projects__item" href="">
 												<div class="card-item__group">
@@ -376,6 +391,18 @@
 							<div class="more-link__content" x-text="'Смотреть все'"></div></a>
 					</footer>
 				</section>
+				<div class="section-promo section-promo--contests">
+					<div class="container section-promo__container">
+						<div class="section-promo__image"><img class="section-promo__image-el" src="images/design/section-promo/contests.png" srcset="images/design/section-promo/contests@2x.png 2x" alt=""></div>
+						<div class="section-promo__body">
+							<div class="section-promo__title">Победители<br> конкурсов</div><a class="more-link" href="" x-data x-bind:class="{'more-link--row': !$store.isDesktop}">
+								<div class="more-link__icon">
+									<icon-svg name="arrow-right"></icon-svg>
+								</div>
+								<div class="more-link__content" x-text="$store.isDesktop ? 'Смотреть все' : 'Подробнее'"></div></a>
+						</div>
+					</div>
+				</div>
 				<section class="section section--grants">
 					<div class="section__design">
 						<div class="container">
@@ -400,9 +427,9 @@
 						</div>
 					</header>
 					<div class="section__main">
-						<div class="projects" x-data="projects">
+						<div class="projects">
 							<div class="container">
-								<div class="projects__swiper">
+								<div class="projects__swiper" x-data="swiperCards">
 									<div class="swiper-container projects__swiper-container" x-ref="swiperContainer">
 										<div class="swiper-wrapper"><a class="card-item card-item--project swiper-slide projects__item" href="">
 												<div class="card-item__group">
@@ -438,6 +465,21 @@
 							<div class="more-link__content" x-text="'Смотреть все'"></div></a>
 					</footer>
 				</section>
+				<div class="section-promo section-promo--grants">
+					<div class="container section-promo__container">
+						<div class="section-promo__image"><img class="section-promo__image-el" src="images/design/section-promo/grants.png" srcset="images/design/section-promo/grants@2x.png 2x" alt=""></div>
+						<div class="section-promo__body">
+							<div class="section-promo__title">Гранты<br> получили</div><a class="more-link" href="" x-data x-bind:class="{'more-link--row': !$store.isDesktop}">
+								<div class="more-link__icon">
+									<icon-svg name="arrow-right"></icon-svg>
+								</div>
+								<div class="more-link__content" x-text="$store.isDesktop ? 'Смотреть все' : 'Подробнее'"></div></a>
+						</div>
+					</div>
+				</div>
+				<div class="integration">
+					<div class="container"><a class="integration__body" href="" target="_blank"><img class="integration__image" src="images/content/w.jpg" srcset="images/content/w@2x.jpg 2x" alt=""></a></div>
+				</div>
 				<section class="section section--playbill">
 					<div class="section__design">
 						<div class="container">
@@ -462,8 +504,8 @@
 						</div>
 					</header>
 					<div class="section__main">
-						<div class="events" x-data="events">
-							<div class="container events__grid"><a class="event-item events__item-main" href="">
+						<div class="events">
+							<div class="container events__grid"><a class="event-item events__item-main" href="" title="Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;">
 									<div class="event-item__image"><img class="event-item__image-el" src="images/content/events/playbill/img-1.jpg" srcset="images/content/events/playbill/img-1@2x.jpg 2x" alt=""></div>
 									<div class="event-item__body">
 										<div class="event-item__main">
@@ -473,7 +515,7 @@
 											<h3 class="event-item__title">Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;</h3>
 										</div>
 									</div></a>
-								<div class="events__swiper">
+								<div class="events__swiper" x-data="swiperCards">
 									<div class="swiper-container events__swiper-container" x-ref="swiperContainer">
 										<div class="swiper-wrapper events__swiper-wrapper"><a class="card-item card-item--event swiper-slide events__item" href="">
 												<div class="card-item__group">
@@ -517,6 +559,9 @@
 							<div class="more-link__content" x-text="'Смотреть все'"></div></a>
 					</footer>
 				</section>
+				<div class="integration">
+					<div class="container"><a class="integration__body" href="" target="_blank"><img class="integration__image" src="images/content/w.jpg" srcset="images/content/w@2x.jpg 2x" alt=""></a></div>
+				</div>
 				<section class="section section--news">
 					<div class="section__design">
 						<div class="container">
@@ -541,8 +586,8 @@
 						</div>
 					</header>
 					<div class="section__main">
-						<div class="events" x-data="events">
-							<div class="container events__grid"><a class="event-item events__item-main" href="">
+						<div class="events">
+							<div class="container events__grid"><a class="event-item events__item-main" href="" title="Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;">
 									<div class="event-item__image"><img class="event-item__image-el" src="images/content/events/news/img-1.jpg" srcset="images/content/events/news/img-1@2x.jpg 2x" alt=""></div>
 									<div class="event-item__body">
 										<div class="event-item__main">
@@ -552,7 +597,7 @@
 											<h3 class="event-item__title">Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;</h3>
 										</div>
 									</div></a>
-								<div class="events__swiper">
+								<div class="events__swiper" x-data="swiperCards">
 									<div class="swiper-container events__swiper-container" x-ref="swiperContainer">
 										<div class="swiper-wrapper events__swiper-wrapper"><a class="card-item card-item--event swiper-slide events__item" href="">
 												<div class="card-item__group">
@@ -596,9 +641,6 @@
 							<div class="more-link__content" x-text="'Смотреть все'"></div></a>
 					</footer>
 				</section>
-				<picture>
-					<source type="image/webp" srcset="images/content/slider/slide-1.webp, images/content/slider/slide-1@2x.webp 2x"><img src="images/content/slider/slide-1.jpg" srcset="images/content/slider/slide-1@2x.jpg 2x">
-				</picture>
 			</main>
 			<footer class="footer">
 				<form class="subscribe" action="" x-data>
