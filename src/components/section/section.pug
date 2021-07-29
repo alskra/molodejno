@@ -7,22 +7,27 @@ mixin section({type, title, desc, score})
 		.section__design
 			.container
 				.section__design-box
-					.section__design-bg(class=`section__design-bg--${type}`)
+					.section__design-bg.section__rellax(
+						class=`section__design-bg--${type}`
+						data-rellax-speed="-3"
+					)
 					.section__design-image(class=`section__design-image--${type}`)
-						img(
+						img.section__rellax(
 							src=`../../images/design/section/${type}/back.png`
 							srcset=`../../images/design/section/${type}/back@2x.png 2x`
 							alt=""
+							data-rellax-speed="-2"
 						)
-						img(
+						img.section__rellax(
 							src=`../../images/design/section/${type}/front.png`
 							srcset=`../../images/design/section/${type}/front@2x.png 2x`
 							alt=""
+							data-rellax-speed="-1"
 						)
 
 		header.container.section__header
 			.section__header-body
-				h2.heading.section__heading= title
+				h2.heading.section__heading(data-aos="fade-up" data-aos-duration="800")= title
 				.section__desc!= desc
 				+score(score).section__score
 

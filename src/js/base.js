@@ -7,6 +7,8 @@ import 'ninelines-ua-parser';
 import 'focus-visible';
 import './vh-fix';
 import './scrollbar-width';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 import Alpine from 'alpinejs';
 
@@ -25,3 +27,5 @@ Alpine.store('isDesktop', innerWidth >= 1025);
 window.addEventListener('resize', () => {
 	Alpine.store('isDesktop', innerWidth >= 1025);
 });
+
+AOS.init();
