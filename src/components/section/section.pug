@@ -9,20 +9,20 @@ mixin section({type, title, desc, score})
 				.section__design-box
 					.section__design-bg.section__rellax(
 						class=`section__design-bg--${type}`
-						data-rellax-speed="-3"
+						data-rellax-speed="-2"
 					)
 					.section__design-image(class=`section__design-image--${type}`)
 						img.section__rellax(
 							src=`../../images/design/section/${type}/back.png`
 							srcset=`../../images/design/section/${type}/back@2x.png 2x`
 							alt=""
-							data-rellax-speed="-2"
+							data-rellax-speed="0"
 						)
 						img.section__rellax(
 							src=`../../images/design/section/${type}/front.png`
 							srcset=`../../images/design/section/${type}/front@2x.png 2x`
 							alt=""
-							data-rellax-speed="-1"
+							data-rellax-speed="1"
 						)
 
 		header.container.section__header
