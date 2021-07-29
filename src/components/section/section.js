@@ -9,6 +9,6 @@ import './section.scss';
 // 	center: true,
 // });
 
-document.addEventListener('DOMContentLoaded', () => setTimeout(() => new Rellax('.section__rellax', {
+window.addEventListener('load', () => new Rellax('.section__rellax', {
 	center: true,
-})));
+}));
