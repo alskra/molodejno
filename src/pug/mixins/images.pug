@@ -10,8 +10,15 @@ mixin img-sizes(src)
 		`
 	)&attributes(attributes)
 
-mixin picture-webp(src, srcset, sizes)
+mixin picture-webp()
 	-
+		let {src, srcset, sizes, alt = ''} = attributes;
+
+		delete attributes.src;
+		delete attributes.srcset;
+		delete attributes.sizes;
+		delete attributes.alt;
+
 		let ext;
 		const srcWithoutExt = src.replace(/\.\w+$/, (match) => {
 			ext = match;
@@ -29,5 +36,5 @@ mixin picture-webp(src, srcset, sizes)
 		}
 
 	picture&attributes(attributes)
-		source(type="image/webp" srcset=srcsetWebp)
-		img(src=src srcset=srcset)
+		source(type="image/webp" srcset=srcsetWebp sizes=sizes)
+		img(src=src srcset=srcset sizes=sizes alt=alt)
