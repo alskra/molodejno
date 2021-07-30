@@ -9,6 +9,10 @@ import './section.scss';
 // 	center: true,
 // });
 
+// document.addEventListener('DOMContentLoaded', () => new Rellax('.section__rellax', {
+// 	center: true,
+// }));
+
 window.addEventListener('load', () => new Rellax('.section__rellax', {
 	center: true,
 }));
