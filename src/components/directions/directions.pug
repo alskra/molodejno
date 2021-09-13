@@ -1,7 +1,7 @@
 include ../../components/marquee/marquee
 
 mixin directions()
-	section.directions(x-data="directions([{}, {speed: -1}, {speed: 3}])")&attributes(attributes)
+	section.directions(x-data="directions(undefined, -1, 3)")&attributes(attributes)
 		header.container.directions__header
 			h2.heading.directions__heading Направления
 		template(x-for="marqueeOptions in marqueeOptionsList")

@@ -10,9 +10,9 @@ mixin header()
 	)&attributes(attributes)
 		.container.header__mob(x-show="!$store.isDesktop")
 			a.header__logo(href="index.html" x-show="!mobMenuIsOpen")
-				img(
+				+picture-webp.header__logo-image(
 					src="../../images/design/logo-mob.png"
-					srcset="../../images/design/logo-mob@2x.png 2x"
+					srcset="2x"
 					alt="Молодёжно"
 				)
 			a.header__visually(href="" x-show="mobMenuIsOpen")
@@ -37,9 +37,9 @@ mixin header()
 					a.header__info-item(href="" target="_blank") Дом&nbsp;молодёжи#[br] Новгородской#[br(class="hidden-lg-up")] области
 
 					a.header__logo(href="index.html" x-show="$store.isDesktop")
-						img(
+						+picture-webp.header__logo-image(
 							src="../../images/design/logo.png"
-							srcset="../../images/design/logo@2x.png 2x"
+							srcset="2x"
 							alt="Молодёжно"
 							x-show="!isSticky"
 						)

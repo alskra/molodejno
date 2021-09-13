@@ -34,6 +34,10 @@ class IconSvg extends HTMLElement {
 
 	update() {
 		this.shadowRoot.innerHTML = icons[this.name];
+		Object.assign(this.shadowRoot.querySelector('svg').style, {
+			width: '100%',
+			height: '100%',
+		});
 	}
 
 	attributeChangedCallback(name) {

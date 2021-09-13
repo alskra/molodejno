@@ -30,7 +30,7 @@ mixin infographics()
 	section.infographics(x-data="infographics")&attributes(attributes)
 		.container
 			.infographics__items
-				.swiper-container(x-ref="container")
+				.swiper(x-ref="container")
 					.swiper-wrapper
 						each item in items
 							.swiper-slide.infographics__item(x-data="scoreAnimated")

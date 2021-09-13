@@ -2,8 +2,6 @@ const {merge} = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-const {extendDefaultPlugins} = require('svgo');
-
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -50,10 +48,9 @@ module.exports = merge(common, {
 			chunkFilename: '[id].css',
 		}),
 		new ImageMinimizerPlugin({
-			test: /\.(jpe?g|png|gif|svg)$/i,
+			// test: /\.(jpe?g|png|gif|svg)$/i,
+			test: /\.(jpe?g|gif|svg)$/i,
 			minimizerOptions: {
-				// Lossless optimization with custom option
-				// Feel free to experiment with options for better result for you
 				plugins: [
 					[
 						'gifsicle',
@@ -73,34 +70,28 @@ module.exports = merge(common, {
 					[
 						'svgo',
 						{
-							plugins: extendDefaultPlugins([
+							plugins: [
 								{
-									name: 'removeUnknownsAndDefaults',
-									active: false,
-								},
-								{
-									name: 'removeDimensions',
-								},
-								{
-									name: 'removeViewBox',
-									active: false,
-								},
-								{
-									name: 'sortAttrs',
-								},
-								{
-									name: 'cleanupIDs',
+									name: 'preset-default',
 									params: {
-										prefix: {
-											toString() {
-												this.counter = this.counter || 0;
+										overrides: {
+											removeUnknownsAndDefaults: false,
+											removeViewBox: false,
+											cleanupIDs: {
+												prefix: {
+													toString() {
+														this.counter = this.counter || 0;
 
-												return `id-${this.counter++}`;
+														return `id-${this.counter++}`;
+													},
+												},
 											},
 										},
 									},
 								},
-							]),
+								'removeDimensions',
+								'sortAttrs',
+							],
 						},
 					],
 				],

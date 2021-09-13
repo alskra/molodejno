@@ -239,14 +239,13 @@
 	width: 250rem;
 	max-width: 100%;
 
-	img {
-		display: block;
-		width: 100%;
-	}
-
 	@include media-breakpoint-down(lg) {
 		width: 180rem;
 	}
+}
+
+.header__logo-image {
+	width: 100%;
 }
 
 .header__soc-network {

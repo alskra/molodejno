@@ -89,5 +89,23 @@ block body
 				number: 100,
 			},
 		})
-		//-+picture-webp('../../images/content/slider/slide-1.jpg', '2x')
+
+		+picture-webp(
+			src="../../images/design/logo.png"
+			srcset="2x"
+			alt="Молодёжно"
+		)
+
+		div(@click="console.log('click!')") 123
+		div(x-init @click="console.log('click!')") 123
+
+		div(x-effect="console.log('effect!')") 123
+		div(x-init x-effect="console.log('effect!')") 123
+
+		div(x-data="{count: 0, init() {this.$el.alpine = this; this.$watch('count', (val) => console.log('Watch value is ' + val))}}")
+			<div @click="count++" x-text="'Watch value is ' + count" x-effect="console.log('Effect value is ' + count)">123</div>
+
+		div(x-data="{count: 0, init() {this.$el.alpine = this; this.$watch('count', (val) => console.log('Watch value is ' + val))}}")
+			<div @click="count++" x-text="'Watch value is ' + count" x-effect="console.log('Text value is ' + $el.textContent)">123</div>
+
 	+footer()

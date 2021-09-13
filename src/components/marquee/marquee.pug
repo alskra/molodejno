@@ -10,6 +10,7 @@ mixin marquee()
 
 	.marquee(
 		x-data="marquee"
+		x-effect="$store.isDesktop ? $nextTick(() => initMarquee()) : destroyMarquee(true)"
 		x-on:mouseenter="$store.isDesktop ? pause : null"
 		x-on:mouseleave="$store.isDesktop ? play : null"
 	)&attributes(attributes)

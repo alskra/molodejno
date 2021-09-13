@@ -1,10 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg">
 	<defs>
-		<marker id="arrowhead" markerWidth="17" markerHeight="27"
-				refX="16" refY="13.5" orient="auto">
+		<marker id="arrowhead" markerWidth="17" markerHeight="27" refX="16" refY="13.5" orient="0">
 			<path d="M1.2793 1L16 13.6848M1.2793 26L16 13.3152" stroke="currentColor"/>
 		</marker>
 	</defs>
-	<line x1="0" y1="13.5" x2="100%" y2="13.5" stroke="currentColor"
-		  stroke-width="1" marker-end="url(#arrowhead)"/>
+	<line x1="0" y1="13.5" x2="100%" y2="13.5" stroke="currentColor" marker-end="url(#arrowhead)"/>
 </svg>

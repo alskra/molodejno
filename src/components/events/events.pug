@@ -85,7 +85,7 @@ mixin events(type)
 				.container.events__grid
 					+event-item(events[type][0]).events__item-main
 					.events__swiper(x-data="swiperCards")
-						.swiper-container.events__swiper-container(x-ref="swiperContainer")
+						.swiper.events__swiper-container(x-ref="swiperContainer")
 							.swiper-wrapper.events__swiper-wrapper
 								each eventItem in events[type].slice(1)
 									+card-item(eventItem).card-item--event.swiper-slide.events__item

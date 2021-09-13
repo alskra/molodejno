@@ -40,7 +40,7 @@ mixin projects()
 	.projects&attributes(attributes)
 		.container
 			.projects__swiper(x-data="swiperCards")
-				.swiper-container.projects__swiper-container(x-ref="swiperContainer")
+				.swiper.projects__swiper-container(x-ref="swiperContainer")
 					.swiper-wrapper
 						each projectItem in projects
 							+card-item(projectItem).card-item--project.swiper-slide.projects__item

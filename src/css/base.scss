@@ -18,10 +18,15 @@
 	box-sizing: border-box;
 }
 
+html,
+body {
+	//overflow-x: hidden;
+	//height: vh(100);
+	//display: none;
+}
+
 html {
 	position: relative;
-	//overflow-x: hidden;
-	//min-height: 100vh;
 	//scroll-behavior: smooth;
 
 	&.has-cursor,
@@ -37,7 +42,6 @@ html {
 }
 
 body {
-	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
 	text-decoration-skip: objects;
 	text-rendering: optimizeLegibility;
@@ -73,17 +77,6 @@ a {
 //	fill: currentColor;
 //}
 
-figure,
-picture {
-	display: inline-block;
-	margin: 0;
-	line-height: 0;
-
-	img {
-		width: 100%;
-	}
-}
-
 img {
 	vertical-align: top;
 	max-width: 100%;
@@ -94,6 +87,19 @@ img[draggable="false"] {
 	pointer-events: none;
 	// stylelint-disable-next-line
 	-webkit-user-drag: none;
+}
+
+figure,
+picture {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	max-width: 100%;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
 }
 
 fieldset {
