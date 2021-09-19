@@ -12,7 +12,10 @@ module.exports = merge(common, {
 		'historyApiFallback': true,
 		'static': [
 			paths.build,
-			// paths.src,
+			{
+				directory: paths.src,
+				watch: false,
+			},
 		],
 		'open': true,
 		'compress': true,

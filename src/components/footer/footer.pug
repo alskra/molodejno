@@ -30,7 +30,10 @@ mixin footer()
 						p E-mail: #[strong #[a(href="mailto:info@u.university") info@u.university]]
 						p Сайт: #[strong #[a(href="") www.site.ru]]
 
-				p.footer__info: span.color-silver &copy;&nbsp;2020. Информационно-познавательный портал для молодёжи Новгородской области
+				p.footer__info
+					span.color-silver.
+						&copy;&nbsp;#[span(x-init x-text="new Date().getFullYear()")].
+						Информационно-познавательный портал для молодёжи Новгородской области
 
 				+soc-network().footer__soc-network
 

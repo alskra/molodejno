@@ -23,7 +23,7 @@
 
 .section__header-body {
 	@include media-breakpoint-up(lg) {
-		width: cw(541);
+		width: calc(var(--container-content-width) / 2 - 15rem);
 	}
 }
 
@@ -42,18 +42,15 @@
 	}
 }
 
-.section__design {
+.section__bg {
 	position: absolute;
 	left: 0;
 	right: 0;
 	top: 0;
+	z-index: 0;
 }
 
-.section__design-box {
-	position: relative;
-}
-
-.section__design-bg {
+.section__bg-el {
 	position: absolute;
 	left: cw(1110 - 763);
 	right: calc(-1 * var(--container-content-offset-x));
@@ -91,54 +88,70 @@
 	}
 }
 
-.section__design-image {
+.section__img {
 	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 0;
 
 	img {
+		position: relative;
 		display: block;
-		width: 100%;
-
-		&:last-child {
-			position: absolute;
-			left: 0;
-			top: 0;
-		}
+		margin-left: auto;
 	}
 
 	&--forums {
-		right: 13rem;
 		top: -114rem;
-		width: 716rem;
+
+		img {
+			right: 13rem;
+			width: 716rem;
+		}
 	}
 
 	&--projects {
-		right: 0;
 		top: -186rem;
-		width: 635rem;
+
+		img {
+			right: 0;
+			width: 635rem;
+		}
 	}
 
 	&--contests {
-		right: 1rem;
 		top: -155rem;
-		width: 614rem;
+
+		img {
+			right: 1rem;
+			width: 614rem;
+		}
 	}
 
 	&--grants {
-		right: 0;
 		top: -127rem;
-		width: 635rem;
+
+		img {
+			right: 0;
+			width: 635rem;
+		}
 	}
 
 	&--playbill {
-		right: -35rem;
 		top: -78rem;
-		width: 643rem;
+
+		img {
+			right: -35rem;
+			width: 643rem;
+		}
 	}
 
 	&--news {
-		right: -11rem;
 		top: -119rem;
-		width: 658rem;
+
+		img {
+			right: -11rem;
+			width: 658rem;
+		}
 	}
 
 	@include media-breakpoint-down(lg) {
@@ -146,33 +159,45 @@
 		transform: translateY(-100%);
 
 		&--forums {
-			right: -6rem;
-			width: 315rem;
+			img {
+				right: -6rem;
+				width: 315rem;
+			}
 		}
 
 		&--projects {
-			right: -19rem;
-			width: 284rem;
+			img {
+				right: -19rem;
+				width: 284rem;
+			}
 		}
 
 		&--contests {
-			right: -30rem;
-			width: 294rem;
+			img {
+				right: -30rem;
+				width: 294rem;
+			}
 		}
 
 		&--grants {
-			right: -61rem;
-			width: 325rem;
+			img {
+				right: -61rem;
+				width: 325rem;
+			}
 		}
 
 		&--playbill {
-			right: -63rem;
-			width: 327rem;
+			img {
+				right: -63rem;
+				width: 327rem;
+			}
 		}
 
 		&--news {
-			right: -44rem;
-			width: 314rem;
+			img {
+				right: -44rem;
+				width: 314rem;
+			}
 		}
 	}
 }
