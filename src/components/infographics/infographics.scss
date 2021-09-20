@@ -1,9 +1,14 @@
 .infographics {
 	overflow: hidden;
-	padding-bottom: 100rem;
+
+	&:not(:last-child) {
+		margin-bottom: 100rem;
+	}
 
 	@include media-breakpoint-down(lg) {
-		padding-bottom: 68rem;
+		&:not(:last-child) {
+			margin-bottom: 68rem;
+		}
 	}
 }
 

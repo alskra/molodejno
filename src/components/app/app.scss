@@ -1,3 +1,11 @@
+:root {
+	--app__main-space-bottom: 100rem;
+
+	@include media-breakpoint-down(lg) {
+		--app__main-space-bottom: 50rem;
+	}
+}
+
 .app {
 	display: flex;
 	flex-flow: column;
@@ -12,26 +20,25 @@
 
 .app__main {
 	flex: 1;
-	padding-bottom: 125rem;
-
-	@include media-breakpoint-down(lg) {
-		padding-bottom: 70rem;
-	}
+	padding-bottom: var(--app__main-space-bottom);
 }
 
 .app__group {
+	--bg-end: calc(100% - 125rem);
+
 	display: flex;
 	flex-flow: column;
-	background: linear-gradient(180deg, $color-aero-blue 51.03%, $color-onahau 100%);
+	background: linear-gradient(180deg, $color-aero-blue 51.03%, $color-onahau var(--bg-end), transparent var(--bg-end));
 
-	.quote {
-		z-index: 2;
-		margin-bottom: -125rem;
+	&:not(:last-child) {
+		margin-bottom: 228rem - 125rem;
 	}
 
 	@include media-breakpoint-down(lg) {
-		.quote {
-			margin-bottom: -70rem;
+		--bg-end: calc(100% - 70rem);
+
+		&:not(:last-child) {
+			margin-bottom: 115rem - 70rem;
 		}
 	}
 }

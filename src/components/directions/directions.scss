@@ -1,11 +1,3 @@
-.directions {
-	margin-top: 228rem;
-
-	@include media-breakpoint-down(lg) {
-		margin-top: 115rem;
-	}
-}
-
 .directions__header {
 	margin-bottom: var(--heading-margin-bottom);
 }
