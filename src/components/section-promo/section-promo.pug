@@ -20,11 +20,10 @@ mixin section-promo(type)
 	.section-promo(class=`section-promo--${type}`)&attributes(attributes)
 		.container.section-promo__container
 			.section-promo__image
-				img(
+				+picture-webp().section-promo__image-el(
 					src=image
-					srcset=`${image.replace(/\.\w+$/, '@2x$&')} 2x`
-					alt=""
-				).section-promo__image-el
+					srcset="2x"
+				)
 			.section-promo__body
 				.section-promo__title!= title
 				+more-link({content: "$store.isDesktop ? 'Смотреть все' : 'Подробнее'"})
