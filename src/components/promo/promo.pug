@@ -11,8 +11,7 @@ mixin promo()
 						это реализация молодёжной политики во&nbsp;всех актуальных и&nbsp;действующих направлениях
 						данной отрасли
 				+more-link({content: "'Подробнее'"}).promo__more(x-bind:class="'more-link--row'")
-			img.promo__image(
+			+picture-webp().promo__image(
 				src="../../images/design/molodejno.png"
-				srcset="../../images/design/molodejno@2x.png 2x"
-				alt=""
+				srcset="2x"
 			)

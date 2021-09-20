@@ -29,11 +29,17 @@
 .promo__image {
 	margin: -15rem - 134rem auto 0;
 	width: 100%;
-	object-fit: contain;
+
+	img {
+		object-fit: contain;
+	}
 
 	@include media-breakpoint-down(lg) {
 		margin-top: 0;
-		max-height: calc(#{vh(100)} - 100rem);
+
+		img {
+			max-height: calc(#{vh(100)} - 100rem);
+		}
 	}
 }
 

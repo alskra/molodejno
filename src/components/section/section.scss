@@ -88,22 +88,16 @@
 	}
 }
 
-.section__img {
+.section__image {
 	position: absolute;
 	left: 0;
 	right: 0;
 	z-index: 0;
 
-	img {
-		position: relative;
-		display: block;
-		margin-left: auto;
-	}
-
 	&--forums {
 		top: -114rem;
 
-		img {
+		.section__image-el {
 			right: 13rem;
 			width: 716rem;
 		}
@@ -112,7 +106,7 @@
 	&--projects {
 		top: -186rem;
 
-		img {
+		.section__image-el {
 			right: 0;
 			width: 635rem;
 		}
@@ -121,7 +115,7 @@
 	&--contests {
 		top: -155rem;
 
-		img {
+		.section__image-el {
 			right: 1rem;
 			width: 614rem;
 		}
@@ -130,7 +124,7 @@
 	&--grants {
 		top: -127rem;
 
-		img {
+		.section__image-el {
 			right: 0;
 			width: 635rem;
 		}
@@ -139,7 +133,7 @@
 	&--playbill {
 		top: -78rem;
 
-		img {
+		.section__image-el {
 			right: -35rem;
 			width: 643rem;
 		}
@@ -148,7 +142,7 @@
 	&--news {
 		top: -119rem;
 
-		img {
+		.section__image-el {
 			right: -11rem;
 			width: 658rem;
 		}
@@ -159,47 +153,53 @@
 		transform: translateY(-100%);
 
 		&--forums {
-			img {
+			.section__image-el {
 				right: -6rem;
 				width: 315rem;
 			}
 		}
 
 		&--projects {
-			img {
+			.section__image-el {
 				right: -19rem;
 				width: 284rem;
 			}
 		}
 
 		&--contests {
-			img {
+			.section__image-el {
 				right: -30rem;
 				width: 294rem;
 			}
 		}
 
 		&--grants {
-			img {
+			.section__image-el {
 				right: -61rem;
 				width: 325rem;
 			}
 		}
 
 		&--playbill {
-			img {
+			.section__image-el {
 				right: -63rem;
 				width: 327rem;
 			}
 		}
 
 		&--news {
-			img {
+			.section__image-el {
 				right: -44rem;
 				width: 314rem;
 			}
 		}
 	}
+}
+
+.section__image-el {
+	position: relative;
+	display: block;
+	margin-left: auto;
 }
 
 .section__score {

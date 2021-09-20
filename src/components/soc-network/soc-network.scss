@@ -10,10 +10,6 @@
 	color: $color-black;
 	transition: color $transition-duration;
 
-	icon-svg {
-		display: block;
-	}
-
 	@include hover {
 		color: $color-primary;
 	}

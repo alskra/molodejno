@@ -11,22 +11,20 @@ mixin section({type, title, desc, score})
 						class=`section__bg-el--${type}`
 						data-rellax-speed="-2"
 					)
-		.section__img(class=`section__img--${type}`)
+		.section__image(class=`section__image--${type}`)
 			.overflow-hidden.section__rellax(data-rellax-speed="0")
 				.container
-					img(
+					+picture-webp().section__image-el(
 						src=`../../images/design/section/${type}/back.png`
-						srcset=`../../images/design/section/${type}/back@2x.png 2x`
-						alt=""
+						srcset="2x"
 					)
-		.section__img(class=`section__img--${type}`)
+		.section__image(class=`section__image--${type}`)
 			.overflow-hidden.section__rellax(data-rellax-speed="1")
-					.container
-						img(
-							src=`../../images/design/section/${type}/front.png`
-							srcset=`../../images/design/section/${type}/front@2x.png 2x`
-							alt=""
-						)
+				.container
+					+picture-webp().section__image-el(
+						src=`../../images/design/section/${type}/front.png`
+						srcset="2x"
+					)
 
 		header.container.section__header
 			.section__header-body
