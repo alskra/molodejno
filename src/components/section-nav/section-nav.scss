@@ -24,7 +24,13 @@
 	color: $color;
 	transition: color $transition-duration;
 
-	@include hover("&.is-active") {
+	@include hover {
+		&:not(.is-active) {
+			color: $color-primary;
+		}
+	}
+
+	&.is-active {
 		color: $color-primary;
 	}
 }

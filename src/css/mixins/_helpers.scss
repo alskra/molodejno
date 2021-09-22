@@ -1,14 +1,7 @@
-@mixin hover($selectors...) {
+@mixin hover {
 	@media (hover: hover), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 		//Insert Styles for Hover-Devices and IE11 here.
 		&:hover {
-			@content;
-		}
-	}
-
-	@if length($selectors) != 0 {
-		// stylelint-disable-next-line
-		#{list-to-string($selectors)} {
 			@content;
 		}
 	}

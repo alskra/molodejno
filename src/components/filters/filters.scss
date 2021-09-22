@@ -37,7 +37,17 @@
 	transition: border-color, color, background-color;
 	transition-duration: $transition-duration;
 
-	@include hover("&.is-active") {
+	@include hover {
+		&:not(.is-active) {
+			color: $color-primary;
+
+			.filters__quantity {
+				color: $color-primary;
+			}
+		}
+	}
+
+	&.is-active {
 		border-color: $color-primary;
 		color: $color-white;
 		background: $color-primary;
@@ -66,4 +76,6 @@
 	font-size: 12rem;
 	color: $color-gray;
 	transform: translateY(-7rem);
+	transition: color;
+	transition-duration: $transition-duration;
 }
