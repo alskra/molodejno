@@ -1,0 +1,25 @@
+.tags {
+	display: flex;
+	flex-flow: wrap;
+	gap: 5rem 15rem;
+}
+
+.tags__item {
+	min-width: 0;
+	font-family: $font-family-stolzl;
+	font-size: 13rem;
+	line-height: div(17, 13);
+	color: $color-primary;
+
+	&::before {
+		content: "#\00A0";
+	}
+
+	@include hover {
+		text-decoration: underline;
+	}
+
+	@include media-breakpoint-down(lg) {
+		font-size: 12rem;
+	}
+}

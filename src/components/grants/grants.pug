@@ -10,6 +10,11 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
 			},
 			{
 				title: 'Кадры будущего для регионов',
@@ -18,6 +23,9 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Производство',
+				],
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -26,6 +34,9 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Образование',
+				],
 			},
 			{
 				title: 'Кадры будущего для регионов',
@@ -34,6 +45,9 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Производство',
+				],
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -42,6 +56,9 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Образование',
+				],
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -50,6 +67,11 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -58,6 +80,11 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
 			},
 			{
 				title: 'Кадры будущего для регионов',
@@ -66,6 +93,9 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Производство',
+				],
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -74,6 +104,9 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Образование',
+				],
 			},
 			{
 				title: 'Кадры будущего для регионов',
@@ -82,6 +115,9 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Производство',
+				],
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -90,6 +126,9 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Образование',
+				],
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -98,6 +137,11 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -106,6 +150,11 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
 			},
 			{
 				title: 'Кадры будущего для регионов',
@@ -114,6 +163,9 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Производство',
+				],
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -122,10 +174,14 @@ mixin grants(type = 'grants-all')
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
+				tags: [
+					'Образование',
+				],
 			},
 		];
 
 	.grants&attributes(attributes)
 		.grants__grid
 			each grant in grants
+				- grant.url = 'grant-detail.html';
 				+card-item(grant)

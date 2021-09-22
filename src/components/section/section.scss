@@ -256,7 +256,7 @@
 .section__grid {
 	display: grid;
 	align-items: start;
-	gap: var(--grid-gap);
+	gap: 30rem;
 
 	> * {
 		min-width: 0;

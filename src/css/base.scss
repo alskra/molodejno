@@ -9,6 +9,8 @@
 	}
 
 	@include media-breakpoint-down(lg) {
+		--grid-gap: 20rem;
+
 		font-size: calc(0.5 / 360 * 100vmin + 0.5px);
 	}
 }

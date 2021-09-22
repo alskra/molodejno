@@ -1,9 +1,36 @@
 .grants__grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: var(--grid-gap);
+	gap: 80rem var(--grid-gap);
 
-	> * {
-		min-width: 0;
+	@include media-breakpoint-up(lg) {
+		.card-item:nth-child(6n + 1) .card-item__image {
+			border-radius: 50% 0 0 50%;
+		}
+
+		.card-item:nth-child(6n + 3) .card-item__image {
+			border-radius: 50%;
+		}
+
+		.card-item:nth-child(6n + 5) .card-item__image {
+			border-radius: 50%;
+		}
+
+		.card-item:nth-child(6n + 6) .card-item__image {
+			border-radius: 50% 0 0 50%;
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		grid-template-columns: repeat(auto-fill, minmax(min(320rem, 100%), 1fr));
+		row-gap: 30rem;
+
+		.card-item:nth-child(4n + 1) .card-item__image {
+			border-radius: 50% 0 0 50%;
+		}
+
+		.card-item:nth-child(4n + 3) .card-item__image {
+			border-radius: 50%;
+		}
 	}
 }
