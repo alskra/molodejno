@@ -1,4 +1,5 @@
 include ../card-item/card-item
+include ../pagination/pagination
 
 mixin grants(type = 'grants-all')
 	-
@@ -185,3 +186,5 @@ mixin grants(type = 'grants-all')
 			each grant in grants
 				- grant.url = 'grant-detail.html';
 				+card-item(grant)
+
+		+pagination()
