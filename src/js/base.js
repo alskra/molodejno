@@ -19,6 +19,7 @@ import '../components/date/date.scss';
 import '../components/location/location.scss';
 import '../components/more-link/more-link';
 import '../components/integration/integration.scss';
+import '../components/breadcrumbs/breadcrumbs.scss';
 
 window.Alpine = Alpine;
 

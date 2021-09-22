@@ -84,8 +84,11 @@ mixin events(type)
 			when 'news'
 				.container.events__grid
 					+event-item(events[type][0]).events__item-main
-					.events__swiper(x-data="swiperCards")
-						.swiper.events__swiper-container(x-ref="swiperContainer")
+					.events__swiper(
+						x-data="swiperCards"
+						x-effect="effect"
+					)
+						.swiper.events__swiper-container(x-ref="swiper")
 							.swiper-wrapper.events__swiper-wrapper
 								each eventItem in events[type].slice(1)
 									+card-item(eventItem).card-item--event.swiper-slide.events__item

@@ -20,6 +20,10 @@
 	&--grants {
 		background: $color-dolly;
 	}
+
+	@include media-breakpoint-down(lg) {
+		--margin-y: 30rem;
+	}
 }
 
 .section-promo__container {

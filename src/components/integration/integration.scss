@@ -8,6 +8,10 @@
 	&:not(:last-child) {
 		margin-bottom: var(--margin-y);
 	}
+
+	@include media-breakpoint-down(lg) {
+		--margin-y: 30rem;
+	}
 }
 
 .integration__body {

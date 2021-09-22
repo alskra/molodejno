@@ -1,0 +1,10 @@
+mixin breadcrumbs(items)
+	nav.breadcrumbs&attributes(attributes)
+		span.breadcrumbs__item
+			a.breadcrumbs__link(href="index.html") Главная
+		each item, index in items
+			if index !== items.length - 1
+				span.breadcrumbs__item
+					a.breadcrumbs__link(href=item.url)= item.content
+			else
+				span.breadcrumbs__item= item

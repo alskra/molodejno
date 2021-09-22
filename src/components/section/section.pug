@@ -46,5 +46,6 @@ mixin section({type, title, desc, score})
 					when 'grants'
 						+projects()
 
-		footer.container.section__footer
-			+more-link({content: "'Смотреть все'"})
+		if !block
+			footer.container.section__footer
+				+more-link({url: `${type}.html`, content: "'Смотреть все'"})

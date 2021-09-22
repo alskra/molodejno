@@ -1,5 +1,6 @@
 :root {
 	--body-width: calc(100vw - var(--scrollbar-width, 0));
+	--grid-gap: 30rem;
 
 	font-size: 1px;
 
@@ -132,4 +133,9 @@ iframe {
 ::selection {
 	color: $color-white;
 	background: $color-primary;
+}
+
+:disabled,
+.is-disabled {
+	pointer-events: none;
 }

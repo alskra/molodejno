@@ -1,0 +1,23 @@
+.breadcrumbs {
+	font-size: 12rem;
+	line-height: div(20, 12);
+	color: $color-gray;
+}
+
+.breadcrumbs__item {
+	cursor: default;
+
+	&:not(:first-child) {
+		&::before {
+			content: " / ";
+		}
+	}
+}
+
+.breadcrumbs__link {
+	text-decoration: underline;
+
+	@include hover {
+		text-decoration: none;
+	}
+}

@@ -1,6 +1,6 @@
-mixin more-link({content, dir = 'right'} = {})
+mixin more-link({url = '', content, dir = 'right'} = {})
 	a.more-link(
-		href=""
+		href=url
 		x-data
 		x-bind:class="{'more-link--row': !$store.isDesktop}"
 	)&attributes(attributes)
