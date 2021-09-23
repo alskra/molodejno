@@ -2,8 +2,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-top: 50rem;
 	cursor: default;
+	user-select: none;
 	gap: 10rem;
 
 	@include media-breakpoint-down(lg) {
@@ -15,15 +15,19 @@
 	flex-shrink: 0;
 	width: 64px;
 	height: 27rem;
-	color: $color-black;
+	color: $color;
+	transition: color;
+	transition-duration: $transition-duration;
 
 	icon-svg {
 		height: 100%;
 		transition: transform;
-		transition-duration: $transition-duration;
+		transition-duration: inherit;
 	}
 
 	@include hover {
+		color: $color-primary;
+
 		icon-svg[name="arrow-left"] {
 			transform: translate(-$arrow-hover-translate);
 		}

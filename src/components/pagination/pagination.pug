@@ -1,6 +1,6 @@
 mixin pagination()
 	nav.pagination&attributes(attributes)
-		a.pagination__button.is-disabled
+		a.pagination__button.is-disabled(href="")
 			icon-svg(name="arrow-left")
 
 		.pagination__group
@@ -12,5 +12,5 @@ mixin pagination()
 			span.pagination__item.pagination__item--hellip &hellip;
 			a.pagination__item(href="") 18
 
-		a.pagination__button
+		a.pagination__button(href="")
 			icon-svg(name="arrow-right")

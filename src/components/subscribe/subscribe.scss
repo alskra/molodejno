@@ -13,10 +13,10 @@
 	display: grid;
 	column-gap: 20rem;
 	align-items: center;
-	grid-template-columns: 1fr 63rem;
+	grid-template-columns: 1fr 64rem;
 	margin: 0 auto;
 	width: 100%;
-	max-width: 729rem;
+	max-width: 730rem;
 
 	@include media-breakpoint-down(lg) {
 		grid-template-columns: 1fr 57rem;
@@ -40,10 +40,6 @@
 	line-height: 32rem;
 	color: $color-white;
 	background: none;
-
-	@include media-breakpoint-down(lg) {
-		padding-left: 36rem;
-	}
 }
 
 .subscribe__input-el {
@@ -59,7 +55,7 @@
 	left: 0;
 	top: 50%;
 	overflow: hidden;
-	border-color: transparent;
+	border-left-color: transparent;
 	white-space: nowrap;
 	transform: translateY(-50%);
 	pointer-events: none;
@@ -81,12 +77,13 @@
 
 	icon-svg {
 		height: 100%;
-		transition: transform $transition-duration;
+		transition: transform;
+		transition-duration: $transition-duration;
 	}
 
 	@include hover {
 		icon-svg {
-			transform: translate(20rem);
+			transform: translate($arrow-hover-translate);
 		}
 	}
 }

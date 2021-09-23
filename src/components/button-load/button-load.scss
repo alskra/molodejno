@@ -1,0 +1,30 @@
+.button-load {
+	display: inline-flex;
+	align-items: center;
+	vertical-align: top;
+	max-width: 100%;
+	font-weight: 700;
+	font-size: 20rem;
+	line-height: 1.25;
+	white-space: nowrap;
+	color: $color;
+	transition: color;
+	transition-duration: $transition-duration;
+	user-select: none;
+
+	@include hover {
+		color: $color-primary;
+	}
+}
+
+.button-load__content {
+	overflow: hidden;
+	margin-right: 20rem;
+	text-overflow: ellipsis;
+}
+
+.button-load__icon {
+	flex-shrink: 0;
+	width: 45rem;
+	height: 45rem;
+}

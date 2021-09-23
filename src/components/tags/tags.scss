@@ -10,13 +10,15 @@
 	font-size: 13rem;
 	line-height: div(17, 13);
 	color: $color-primary;
+	transition: color;
+	transition-duration: $transition-duration;
 
 	&::before {
 		content: "#\00A0";
 	}
 
 	@include hover {
-		text-decoration: underline;
+		color: $color-primary-hover;
 	}
 
 	@include media-breakpoint-down(lg) {

@@ -1,6 +1,7 @@
 :root {
 	--body-width: calc(100vw - var(--scrollbar-width, 0));
 	--grid-gap: 30rem;
+	--grid-gap-lg: 50rem;
 
 	font-size: 1px;
 
@@ -10,6 +11,7 @@
 
 	@include media-breakpoint-down(lg) {
 		--grid-gap: 20rem;
+		--grid-gap-lg: 30rem;
 
 		font-size: calc(0.5 / 360 * 100vmin + 0.5px);
 	}
