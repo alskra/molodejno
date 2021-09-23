@@ -1,16 +1,10 @@
 .integration {
-	--margin-y: 50rem;
-
 	&:not(:first-child) {
-		margin-top: var(--margin-y);
+		margin-top: var(--grid-gap-lg);
 	}
 
 	&:not(:last-child) {
-		margin-bottom: var(--margin-y);
-	}
-
-	@include media-breakpoint-down(lg) {
-		--margin-y: 30rem;
+		margin-bottom: var(--grid-gap-lg);
 	}
 }
 

@@ -23,6 +23,7 @@
 	padding-bottom: var(--app__main-space-bottom);
 
 	.promo:last-child {
+		margin-top: var(--app__main-space-bottom);
 		margin-bottom: calc(-1 * var(--app__main-space-bottom));
 	}
 }
