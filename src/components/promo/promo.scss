@@ -1,12 +1,10 @@
 .promo {
-	--margin-y: 50rem;
-
 	&:not(:first-child) {
-		margin-top: var(--margin-y);
+		margin-top: var(--grid-gap-lg);
 	}
 
 	&:not(:last-child) {
-		margin-bottom: var(--margin-y);
+		margin-bottom: var(--grid-gap-lg);
 	}
 
 	&--projects {
@@ -19,10 +17,6 @@
 
 	&--grants {
 		background: $color-dolly;
-	}
-
-	@include media-breakpoint-down(lg) {
-		--margin-y: 30rem;
 	}
 }
 

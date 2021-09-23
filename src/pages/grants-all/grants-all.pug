@@ -5,6 +5,7 @@ include ../../components/section/section
 include ../../components/section-nav/section-nav
 include ../../components/filters/filters
 include ../../components/grants/grants
+include ../../components/promo/promo
 
 append variables
 	-
@@ -68,5 +69,6 @@ block body
 
 				.section__grid-main
 					+grants()
+		+promo('grants')
 
 	+footer()

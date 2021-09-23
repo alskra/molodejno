@@ -7,6 +7,7 @@ import '../../components/section/section';
 import '../../components/section-nav/section-nav';
 import '../../components/filters/filters';
 import '../../components/grants/grants';
+import '../../components/promo/promo';
 import '../../components/app/app';
 
 Alpine.start();

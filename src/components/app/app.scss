@@ -21,6 +21,10 @@
 .app__main {
 	flex: 1;
 	padding-bottom: var(--app__main-space-bottom);
+
+	.promo:last-child {
+		margin-bottom: calc(-1 * var(--app__main-space-bottom));
+	}
 }
 
 .app__group {
