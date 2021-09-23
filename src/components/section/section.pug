@@ -48,4 +48,7 @@ mixin section({type, title, desc, score})
 
 		if !block
 			footer.container.section__footer
-				+more-link({url: `${type}.html`, content: "'Смотреть все'"})
+				+button-arrow({content: "'Смотреть все'"})(
+					href=`${type === 'grants' ? `${type}-all` : type}.html`
+					x-bind:class="{'button-arrow--row': !$store.isDesktop}"
+				)

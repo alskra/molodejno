@@ -17,7 +17,7 @@ import '../components/container/container.scss';
 import '../components/heading/heading.scss';
 import '../components/date/date.scss';
 import '../components/location/location.scss';
-import '../components/more-link/more-link';
+import '../components/button-arrow/button-arrow';
 import '../components/integration/integration.scss';
 import '../components/breadcrumbs/breadcrumbs.scss';
 

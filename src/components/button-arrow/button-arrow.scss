@@ -1,23 +1,23 @@
-.more-link {
+.button-arrow {
 	display: inline-flex;
 	flex-flow: column;
 	vertical-align: top;
-	width: calc(var(--container-content-width) / 2 - 15rem);
+	width: calc((var(--container-content-width) - var(--grid-gap)) / 2);
 	max-width: 100%;
-	font-family: $heading-font-family;
 	font-weight: 700;
 	font-size: 20rem;
 	line-height: 1.25;
 	white-space: nowrap;
 	color: $color;
-	transition: color $transition-duration;
+	transition: color;
+	transition-duration: $transition-duration;
 	user-select: none;
 
 	@include hover {
 		color: $color-primary;
 
-		.more-link__icon icon-svg {
-			width: percentage(div(492, 592));
+		.button-arrow__icon icon-svg {
+			width: percentage(div(492, 542));
 		}
 	}
 
@@ -25,13 +25,13 @@
 		flex-flow: row;
 		align-items: center;
 
-		.more-link__icon {
+		.button-arrow__icon {
 			flex: 1;
 			order: 1;
 			min-width: 50rem;
 		}
 
-		.more-link__content {
+		.button-arrow__content {
 			margin: 0 20rem 0 0;
 		}
 	}
@@ -41,24 +41,25 @@
 		font-size: 16rem;
 
 		&--row {
-			.more-link__content {
+			.button-arrow__content {
 				margin-right: 18rem;
 			}
 		}
 	}
 }
 
-.more-link__icon {
+.button-arrow__icon {
 	height: 27px;
 
 	icon-svg {
 		width: 100%;
 		height: 100%;
-		transition: width $transition-duration;
+		transition: width;
+		transition-duration: $transition-duration;
 	}
 }
 
-.more-link__content {
+.button-arrow__content {
 	overflow: hidden;
 	margin-top: 3rem;
 	text-overflow: ellipsis;
