@@ -2,50 +2,43 @@ import Alpine from 'alpinejs';
 import 'swiper/css/bundle';
 import Swiper from 'swiper';
 
-Alpine.data('swiperCards', () => ({
-	swiperIsInit: false,
-	get isDesktop() {
-		return this.$store.isDesktop;
-	},
-	init() {
-		this.swiper = new Swiper(this.$refs.swiperContainer, {
-			init: false,
-			slidesPerView: 'auto',
-			// freeMode: true,
-			// freeModeMomentum: false,
-		});
+Alpine.data('swiperCards', () => {
+	let inst;
 
-		const swiper = () => {
-			if (!this.isDesktop) {
-				this.initSwiper();
-			} else {
-				this.destroySwiper();
+	return {
+		swiperIsInit: false,
+		init() {
+			inst = this;
+		},
+		destroy() {
+			inst.destroySwiper();
+		},
+		initSwiper() {
+			if (!this.swiperIsInit) {
+				this.swiper = new Swiper(this.$refs.swiper, {
+					slidesPerView: 'auto',
+					on: {
+						init: () => {
+							this.swiperIsInit = true;
+						},
+						destroy: () => {
+							this.swiperIsInit = false;
+						},
+					},
+				});
 			}
-		};
-
-		swiper();
-		this.$watch('isDesktop', swiper);
-	},
-	destroy() {
-		Object.defineProperty(this, 'isDesktop', {value: false});
-		this.destroySwiper();
-	},
-	initSwiper() {
-		if (!this.swiperIsInit) {
-			this.swiper.once('init', () => {
-				this.swiper.destroyed = false;
-				this.swiperIsInit = true;
-			});
-			this.swiper.once('destroy', () => {
-				this.swiper.destroyed = true;
-				this.swiperIsInit = false;
-			});
-			this.swiper.init();
-		}
-	},
-	destroySwiper() {
-		if (this.swiperIsInit) {
-			this.swiper.destroy(false);
-		}
-	},
-}));
+		},
+		destroySwiper() {
+			if (this.swiperIsInit) {
+				this.swiper.destroy();
+			}
+		},
+		effect() {
+			if (this.$store.isDesktop) {
+				this.destroySwiper();
+			} else {
+				this.$nextTick(() => this.initSwiper());
+			}
+		},
+	};
+});

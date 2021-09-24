@@ -1,9 +1,5 @@
 :root {
-	--app__main-space-bottom: 100rem;
-
-	@include media-breakpoint-down(lg) {
-		--app__main-space-bottom: 50rem;
-	}
+	--app__main-gap-bottom: var(--gap-xxl);
 }
 
 .app {
@@ -20,7 +16,12 @@
 
 .app__main {
 	flex: 1;
-	padding-bottom: var(--app__main-space-bottom);
+	padding-bottom: var(--app__main-gap-bottom);
+
+	.promo:last-child {
+		margin-top: var(--app__main-gap-bottom);
+		margin-bottom: calc(-1 * var(--app__main-gap-bottom));
+	}
 }
 
 .app__group {
@@ -40,5 +41,14 @@
 		&:not(:last-child) {
 			margin-bottom: 115rem - 70rem;
 		}
+	}
+}
+
+.app__breadcrumbs {
+	margin-top: 24rem;
+	margin-bottom: 6rem;
+
+	@include media-breakpoint-down(lg) {
+		display: none;
 	}
 }

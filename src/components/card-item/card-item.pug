@@ -1,23 +1,34 @@
-mixin card-item({title, image, date, ref})
-	a.card-item(href="")&attributes(attributes)
-		if date || ref
-			.card-item__group
-				if date
-					+date(date).card-item__date
+include ../tags/tags
 
-				if ref
-					.card-item__ref-title!= ref.title
-					img.card-item__ref-image(
-						src=ref.image
-						srcset=`${ref.image.replace(/\.\w+$/, '@2x$&')} 2x`
-						alt=""
-					)
+mixin card-item({url, title, image, date, ref, tags, price})
+	article.card-item&attributes(attributes)
+		.card-item__body
+			if date || ref || price
+				.card-item__group(class={'card-item__group--ref': ref})
+					if date
+						+date(date).card-item__date
 
-		.card-item__title!=title
+					if ref
+						.card-item__ref-title!= ref.title
+						+img-2x().card-item__ref-image(
+							src=ref.image
+							alt!=ref.title
+						)
+
+					if price
+						+price(price).card-item__price
+
+			.card-item__title
+				a.card-item__link(
+					href=url || ""
+					title!=title
+				)!=title
+
+			if tags
+				+tags(tags).card__tags
 
 		.card-item__image
-			img.card-item__image-el(
+			+img-2x.card-item__image-el(
 				src=image
-				srcset=`${image.replace(/\.\w+$/, '@2x$&')} 2x`
-				alt=""
+				alt!=title
 			)

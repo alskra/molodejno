@@ -2,8 +2,11 @@ include mixins
 include data
 include ../components/date/date
 include ../components/location/location
-include ../components/more-link/more-link
+include ../components/button-arrow/button-arrow
+include ../components/button-load/button-load
 include ../components/integration/integration
+include ../components/breadcrumbs/breadcrumbs
+include ../components/price/price
 
 block variables
 	-
@@ -18,7 +21,9 @@ html(lang="ru")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
 		title= title
+		block head-end
 
 	body(class=bodyClassList)
+		block body-start
 		.app(class=appClassList)
 			block body

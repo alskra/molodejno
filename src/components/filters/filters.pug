@@ -1,0 +1,18 @@
+mixin filters(items)
+	nav.filters(
+		x-data="filters"
+		x-effect="effect"
+	)&attributes(attributes)
+		.filters__body.swiper(
+			x-bind:class="{swiper: !$store.isDesktop}"
+			x-ref="swiper"
+		)
+			.filters__wrapper.swiper-wrapper(x-bind:class="{'swiper-wrapper': !$store.isDesktop}")
+				each item, index in items
+					a.filters__item.swiper-slide(
+						class={'is-active': index === 0}
+						href=""
+						x-bind:class="{'swiper-slide': !$store.isDesktop}"
+					)
+						.filters__content= item.content
+						.filters__quantity= item.quantity

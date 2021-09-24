@@ -1,29 +1,18 @@
-mixin section-promo(type)
-	-
-		const promo = {
-			projects: {
-				title: 'Реализованные<br> проекты',
-				image: '../../images/design/section-promo/projects.png',
-			},
-			contests: {
-				title: 'Победители<br> конкурсов',
-				image: '../../images/design/section-promo/contests.png',
-			},
-			grants: {
-				title: 'Гранты<br> получили',
-				image: '../../images/design/section-promo/grants.png',
-			},
-		};
-
-		const {title, image} = promo[type];
-
-	.section-promo(class=`section-promo--${type}`)&attributes(attributes)
+mixin section-promo()
+	section.section-promo&attributes(attributes)
 		.container.section-promo__container
-			.section-promo__image
-				+picture-webp().section-promo__image-el(
-					src=image
-					srcset="2x"
-				)
 			.section-promo__body
-				.section-promo__title!= title
-				+more-link({content: "$store.isDesktop ? 'Смотреть все' : 'Подробнее'"})
+				h2.section-promo__title.
+					#[strong Молодёжно]&nbsp;&mdash;
+					#[small это информационно-познавательный портал для молодёжи Новгородской области]
+				.section-promo__content
+					p.
+						Портал реализован инициативами Дома Молодёжи Новгородской области, цель которого&nbsp;&mdash;
+						это реализация молодёжной политики во&nbsp;всех актуальных и&nbsp;действующих направлениях
+						данной отрасли
+				+button-arrow({content: "'Подробнее'"}).button-arrow--row.section-promo__more
+
+			+picture-webp().section-promo__image(
+				src="../../images/design/molodejno.png"
+				srcset="2x"
+			)

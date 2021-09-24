@@ -1,0 +1,216 @@
+include ../card-item/card-item
+include ../pagination/pagination
+
+mixin grants(type = 'all')
+	-
+		const grants = [
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-3.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
+				price: 1000000,
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-4.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Производство',
+				],
+				price: 70000,
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-2.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Образование',
+				],
+				price: 600000,
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-4.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Производство',
+				],
+				price: 70000,
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-2.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Образование',
+				],
+				price: 600000,
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-3.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
+				price: 1000000,
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-3.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
+				price: 1000000,
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-4.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Производство',
+				],
+				price: 70000,
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-2.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Образование',
+				],
+				price: 600000,
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-4.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Производство',
+				],
+				price: 70000,
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-2.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Образование',
+				],
+				price: 600000,
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-3.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
+				price: 1000000,
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-3.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
+				price: 1000000,
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-4.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Производство',
+				],
+				price: 70000,
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-2.jpg',
+				ref: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				tags: [
+					'Образование',
+				],
+				price: 600000,
+			},
+		];
+
+	.grants&attributes(attributes)
+		.grants__grid
+			each grant in grants
+				case type
+					when 'recipients'
+						-
+							grant.url = 'grant-recipient.html';
+							delete grant.ref;
+					default
+						-
+							grant.url = 'grant-detail.html';
+							delete grant.price;
+
+				+card-item(grant)
+
+		.grants__footer
+			+pagination().hidden-lg-down
+			+button-load().hidden-lg-up

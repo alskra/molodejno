@@ -1,0 +1,42 @@
+.price {
+	display: inline-flex;
+	align-items: center;
+	vertical-align: top;
+	font-family: $heading-font-family;
+	font-weight: 700;
+	font-size: 30rem;
+	line-height: 1.25;
+	white-space: nowrap;
+	color: $color;
+	gap: 10rem;
+
+	&::before {
+		content: "";
+		flex-shrink: 0;
+		border-radius: 50%;
+		width: 25rem;
+		height: 25rem;
+		background: $color-cornflower-blue;
+		// stylelint-disable-next-line
+		background:
+			conic-gradient(
+				from 135deg at 50% 50%,
+				$color-cornflower-blue 0deg,
+				$color-governor-bay-2 360deg
+			);
+	}
+
+	@include media-breakpoint-down(lg) {
+		font-size: 20rem;
+
+		&::before {
+			width: 15rem;
+			height: 15rem;
+		}
+	}
+}
+
+.price__content {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

@@ -7,7 +7,7 @@ mixin projects()
 				title: 'Кадры будущего для регионов',
 				image: '../../images/content/projects/img-1.jpg',
 				ref: {
-					title: 'Ресурсный Молодежный центр',
+					title: 'Ресурсный Молодежный центр Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 				},
 			},
@@ -39,8 +39,11 @@ mixin projects()
 
 	.projects&attributes(attributes)
 		.container
-			.projects__swiper(x-data="swiperCards")
-				.swiper.projects__swiper-container(x-ref="swiperContainer")
+			.projects__swiper(
+				x-data="swiperCards"
+				x-effect="effect"
+			)
+				.swiper.projects__swiper-container(x-ref="swiper")
 					.swiper-wrapper
 						each projectItem in projects
 							+card-item(projectItem).card-item--project.swiper-slide.projects__item

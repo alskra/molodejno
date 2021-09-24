@@ -1,6 +1,8 @@
 // Helvetica Neue
 @include font-face("/fonts/Helvetica Neue/HelveticaNeue-Regular", "Helvetica Neue", 400, normal);
 @include font-face("/fonts/Helvetica Neue/HelveticaNeue-Italic", "Helvetica Neue", 400, italic);
+@include font-face("/fonts/Helvetica Neue/HelveticaNeue-Medium", "Helvetica Neue", 500, normal);
+@include font-face("/fonts/Helvetica Neue/HelveticaNeue-MediumItalic", "Helvetica Neue", 500, italic);
 @include font-face("/fonts/Helvetica Neue/HelveticaNeue-Bold", "Helvetica Neue", 700, normal);
 @include font-face("/fonts/Helvetica Neue/HelveticaNeue-BoldItalic", "Helvetica Neue", 700, italic);
 

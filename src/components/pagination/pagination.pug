@@ -1,0 +1,16 @@
+mixin pagination()
+	nav.pagination&attributes(attributes)
+		a.pagination__button.is-disabled(href="")
+			icon-svg(name="arrow-left")
+
+		.pagination__group
+			span.pagination__item.is-active 1
+			a.pagination__item(href="") 2
+			a.pagination__item(href="") 3
+			a.pagination__item(href="") 4
+			a.pagination__item(href="") 5
+			span.pagination__item.pagination__item--hellip &hellip;
+			a.pagination__item(href="") 18
+
+		a.pagination__button(href="")
+			icon-svg(name="arrow-right")

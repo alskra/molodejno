@@ -2,8 +2,11 @@ include ../score/score
 include ../events/events
 include ../projects/projects
 
-mixin section({type, title, desc, score})
-	section.section(class=`section--${type}`)&attributes(attributes)
+mixin section({type, title, desc, score, withoutImage})
+	section.section(
+		class=`section--${type}`
+		class={'section--without-image': withoutImage}
+	)&attributes(attributes)
 		.section__bg
 			.container
 				.position-relative
@@ -11,26 +14,30 @@ mixin section({type, title, desc, score})
 						class=`section__bg-el--${type}`
 						data-rellax-speed="-2"
 					)
-		.section__image(class=`section__image--${type}`)
-			.overflow-hidden.section__rellax(data-rellax-speed="0")
-				.container
-					+picture-webp().section__image-el(
-						src=`../../images/design/section/${type}/back.png`
-						srcset="2x"
-					)
-		.section__image(class=`section__image--${type}`)
-			.overflow-hidden.section__rellax(data-rellax-speed="1")
-				.container
-					+picture-webp().section__image-el(
-						src=`../../images/design/section/${type}/front.png`
-						srcset="2x"
-					)
+
+		if !withoutImage
+			.section__image(class=`section__image--${type}`)
+				.overflow-hidden.section__rellax(data-rellax-speed="0")
+					.container
+						+picture-webp().section__image-el(
+							src=`../../images/design/section/${type}/back.png`
+							srcset="2x"
+						)
+			.section__image(class=`section__image--${type}`)
+				.overflow-hidden.section__rellax(data-rellax-speed="1")
+					.container
+						+picture-webp().section__image-el(
+							src=`../../images/design/section/${type}/front.png`
+							srcset="2x"
+						)
 
 		header.container.section__header
 			.section__header-body
 				h2.heading.section__heading(data-aos="fade-up" data-aos-duration="800")= title
-				.section__desc!= desc
-				+score(score).section__score
+				if desc
+					.section__desc!= desc
+				if score
+					+score(score).section__score
 
 		.section__main
 			if block
@@ -46,5 +53,9 @@ mixin section({type, title, desc, score})
 					when 'grants'
 						+projects()
 
-		footer.container.section__footer
-			+more-link({content: "'Смотреть все'"})
+		if !block
+			footer.container.section__footer
+				+button-arrow({content: "'Смотреть все'"})(
+					href=`${type === 'grants' ? `${type}-all` : type}.html`
+					x-bind:class="{'button-arrow--row': !$store.isDesktop}"
+				)

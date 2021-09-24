@@ -1,0 +1,4 @@
+mixin button-load({tag = 'a'} = {})
+	#{tag}.button-load(href=tag === 'a' ? "" : null)&attributes(attributes)
+		.button-load__content Загрузить еще
+		icon-svg.button-load__icon(name="plus")

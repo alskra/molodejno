@@ -6,6 +6,7 @@ $color-cerulean-blue: #4147d2;
 $color-royal-blue: #595fe4;
 $color-royal-blue-2: #5b61e7;
 $color-silver: #c7c7c7;
+$color-silver-2: #c4c4c4;
 $color-aero-blue: #cdffe1;
 $color-onahau: #c4e6ff;
 $color-onahau-2: #d0ebff;
@@ -16,6 +17,9 @@ $color-tidal: #e5ffac;
 $color-dolly: #fff386;
 $color-blue-chalk: #e8e0ff;
 $color-watusi: #ffd9cd;
+$color-gray: #939393;
+$color-mercury: #e7e7e7;
+$color-indigo: #4247ba;
 
 // Fonts
 $font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji";
@@ -37,6 +41,7 @@ $breakpoints: (
 // Base
 $color: $color-cod-gray;
 $color-primary: $color-royal-blue;
+$color-primary-hover: $color-indigo;
 $background-color: $color-white;
 $font-family: $font-family-helvetica-neue;
 $transition-duration: 0.2s;
@@ -48,3 +53,6 @@ $heading-font-family: $font-family-stolzl;
 // Image
 $image-transition: transform 3s;
 $image-hover-transform: scale(1.1);
+
+// Arrow
+$arrow-hover-translate: 20rem;

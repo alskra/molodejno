@@ -1,91 +1,84 @@
 .promo {
-	padding-top: 134rem;
-	padding-bottom: 66rem;
+	&:not(:first-child) {
+		margin-top: var(--gap-xl);
+	}
 
-	@include media-breakpoint-down(lg) {
-		padding-top: 40rem;
-		padding-bottom: 27rem;
+	&:not(:last-child) {
+		margin-bottom: var(--gap-xl);
+	}
+
+	&--projects {
+		background: $color-aero-blue;
+	}
+
+	&--contests {
+		background: $color-tidal;
+	}
+
+	&--grants {
+		background: $color-dolly;
 	}
 }
 
 .promo__container {
-	display: grid;
-	grid-template-columns: 568fr 512fr;
-	gap: 30rem;
-
-	@include media-breakpoint-down(lg) {
-		grid-template-columns: 1fr;
-	}
-}
-
-.promo__body {
-	min-width: 0;
-
-	> :last-child {
-		margin-bottom: 0;
-	}
+	display: flex;
+	column-gap: var(--gap);
+	flex-flow: wrap;
+	align-items: center;
 }
 
 .promo__image {
-	margin: -15rem - 134rem auto 0;
-	width: 100%;
+	position: relative;
+	flex: 320rem;
+	align-self: flex-end;
+	background: url("../../images/design/promo/bg.svg") no-repeat 50% / contain;
 
-	img {
-		object-fit: contain;
+	&::before {
+		content: "";
+		display: block;
+		padding-top: percentage(div(350, 540));
 	}
 
 	@include media-breakpoint-down(lg) {
-		margin-top: 0;
-
-		img {
-			max-height: calc(#{vh(100)} - 100rem);
-		}
+		order: 1;
+		max-width: 400rem;
 	}
+}
+
+.promo__image-el {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: percentage(div(422, 540));
+	height: 100%;
+}
+
+.promo__body {
+	flex: 320rem;
+	padding: 35rem 0;
+	color: $color;
 }
 
 .promo__title {
-	margin: 0 0 31rem;
+	margin: 0;
 	font-family: $heading-font-family;
-	font-weight: 350;
-	font-size: 60rem;
-	line-height: 1.25;
-	color: $color-black;
+	font-weight: 700;
+	font-size: 40rem;
+	line-height: 1.1;
 
-	small {
-		display: block;
-		font-size: 40rem;
+	&:not(:last-child) {
+		margin-bottom: 30rem;
 	}
 
 	@include media-breakpoint-down(lg) {
-		margin-bottom: 22rem;
-		font-size: 44rem;
+		font-size: 30rem;
 
-		small {
-			font-size: 24rem;
+		br {
+			display: none;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 20rem;
 		}
 	}
-}
-
-.promo__content {
-	margin-bottom: 31rem;
-	font-size: 20rem;
-	line-height: 1.5;
-	color: $color;
-
-	> :last-child {
-		margin-bottom: 0;
-	}
-
-	p {
-		margin-bottom: 1em;
-	}
-
-	@include media-breakpoint-down(lg) {
-		margin-bottom: 28rem;
-		font-size: 18rem;
-	}
-}
-
-.promo__more {
-	color: $color-black;
 }

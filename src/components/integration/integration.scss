@@ -1,12 +1,10 @@
 .integration {
-	--margin-y: 50rem;
-
 	&:not(:first-child) {
-		margin-top: var(--margin-y);
+		margin-top: var(--gap-xl);
 	}
 
 	&:not(:last-child) {
-		margin-bottom: var(--margin-y);
+		margin-bottom: var(--gap-xl);
 	}
 }
 

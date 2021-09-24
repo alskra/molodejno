@@ -2,7 +2,6 @@
 	position: relative;
 	display: flex;
 	flex-flow: column;
-	padding-top: 25rem;
 	min-width: 0;
 	color: $color;
 
@@ -54,8 +53,6 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		padding-top: 20rem;
-
 		&--event {
 			&:nth-child(4n + 1) .card-item__image {
 				border-radius: 50% 0 0 50%;
@@ -68,57 +65,21 @@
 	}
 }
 
-.card-item__date {
-	margin-left: auto;
-}
-
-.card-item__group {
-	display: flex;
-	align-items: center;
-	height: 54rem;
-
-	&:not(:last-child) {
-		margin-bottom: 20rem;
-	}
-
-	@include media-breakpoint-down(lg) {
-		height: 42rem;
-
-		&:not(:last-child) {
-			margin-bottom: 15rem;
-		}
-	}
-}
-
-.card-item__ref-title {
-	@include line-clamp(3, 1.29);
-
+.card-item__body {
 	flex: 1;
-	margin-right: 10rem;
-	font-size: 14rem;
-	word-wrap: break-word;
+	border-top: 1px solid transparent;
+	padding: 25rem 0;
 
 	@include media-breakpoint-down(lg) {
-		--line-clamp-line-height: 1.2;
-
-		font-size: 12rem;
-	}
-}
-
-.card-item__ref-image {
-	width: 152rem;
-	height: 49rem;
-	object-fit: contain;
-	object-position: 100%;
-
-	@include media-breakpoint-down(lg) {
-		width: 114rem;
-		height: 36rem;
+		padding: 20rem 0;
 	}
 }
 
 .card-item__title {
-	@include line-clamp(4, 1.4);
+	--line-clamp: 4;
+	--line-height: 1.4;
+
+	@include line-clamp;
 
 	font-family: $heading-font-family;
 	font-weight: 500;
@@ -127,24 +88,28 @@
 	transition: color $transition-duration;
 
 	&:not(:last-child) {
-		margin-bottom: 20rem;
+		margin-bottom: 10rem;
 	}
 
 	@include media-breakpoint-down(lg) {
 		--line-clamp-line-height: 1.2;
 
 		font-size: 18rem;
+	}
+}
 
-		&:not(:last-child) {
-			margin-bottom: 15rem;
-		}
+.card-item__link {
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		inset: 0;
 	}
 }
 
 .card-item__image {
 	position: relative;
 	overflow: hidden;
-	margin-top: auto;
 
 	&::before {
 		content: "";
@@ -161,4 +126,68 @@
 	height: 100%;
 	object-fit: cover;
 	transition: $image-transition;
+}
+
+.card-item__group {
+	display: flex;
+	align-items: center;
+
+	&:not(:last-child) {
+		margin-bottom: 20rem;
+	}
+
+	&--ref {
+		--line-clamp: 3;
+		--line-height: 1.25;
+		--ref-image-height: 49rem;
+
+		min-height: max(calc(var(--line-clamp) * var(--line-height) * 1em), var(--ref-image-height));
+		font-size: 14rem;
+		gap: 10rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		&:not(:last-child) {
+			margin-bottom: 15rem;
+		}
+
+		&--ref {
+			--ref-image-height: 36rem;
+
+			font-size: 12rem;
+		}
+	}
+}
+
+.card-item__date {
+	margin-left: auto;
+}
+
+.card-item__ref-title {
+	@include line-clamp;
+
+	flex: 1;
+	word-wrap: break-word;
+}
+
+.card-item__ref-image {
+	width: 152rem;
+	height: var(--ref-image-height);
+	min-width: 0;
+	object-fit: contain;
+	object-position: 100%;
+
+	@include media-breakpoint-down(lg) {
+		width: 114rem;
+	}
+}
+
+.card__tags {
+	position: relative;
+	z-index: 1;
+}
+
+.card-item__price {
+	margin-left: auto;
+	min-width: 0;
 }
