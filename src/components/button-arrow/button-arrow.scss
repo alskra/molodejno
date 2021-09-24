@@ -2,7 +2,7 @@
 	display: inline-flex;
 	flex-flow: column;
 	vertical-align: top;
-	width: calc((var(--container-content-width) - var(--grid-gap)) / 2);
+	width: calc((var(--container-content-width) - var(--gap)) / 2);
 	max-width: 100%;
 	font-weight: 700;
 	font-size: 20rem;

@@ -1,7 +1,7 @@
 .grants__grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 80rem var(--grid-gap);
+	gap: 80rem var(--gap);
 
 	@include media-breakpoint-up(lg) {
 		.card-item:nth-child(6n + 1) .card-item__image {
@@ -36,5 +36,5 @@
 }
 
 .grants__footer {
-	margin-top: var(--grid-gap-lg);
+	margin-top: var(--gap-xl);
 }
