@@ -45,7 +45,7 @@
 
 .section__header-body {
 	@include media-breakpoint-up(lg) {
-		width: calc(var(--container-content-width) / 2 - 15rem);
+		width: calc((var(--container-content-width) - var(--gap)) / 2);
 	}
 }
 

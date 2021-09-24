@@ -44,16 +44,13 @@
 	}
 }
 
-@mixin line-clamp($number, $line-height) {
-	--line-clamp-number: #{$number};
-	--line-clamp-line-height: #{$line-height};
-
+@mixin line-clamp {
 	// stylelint-disable
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
-	-webkit-line-clamp: var(--line-clamp-number);
+	-webkit-line-clamp: var(--line-clamp);
 	overflow: hidden;
-	line-height: var(--line-clamp-line-height);
-	max-height: calc(var(--line-clamp-number) * var(--line-clamp-line-height) * 1em);
+	line-height: var(--line-height);
+	max-height: calc(var(--line-clamp) * var(--line-height) * 1em);
 	// stylelint-enable
 }

@@ -76,7 +76,10 @@
 }
 
 .card-item__title {
-	@include line-clamp(4, 1.4);
+	--line-clamp: 4;
+	--line-height: 1.4;
+
+	@include line-clamp;
 
 	font-family: $heading-font-family;
 	font-weight: 500;
@@ -128,17 +131,30 @@
 .card-item__group {
 	display: flex;
 	align-items: center;
-	height: 54rem;
 
 	&:not(:last-child) {
 		margin-bottom: 20rem;
 	}
 
+	&--ref {
+		--line-clamp: 3;
+		--line-height: 1.25;
+		--ref-image-height: 49rem;
+
+		min-height: max(calc(var(--line-clamp) * var(--line-height) * 1em), var(--ref-image-height));
+		font-size: 14rem;
+		gap: 10rem;
+	}
+
 	@include media-breakpoint-down(lg) {
-		height: 42rem;
+		--ref-image-height: 36rem;
 
 		&:not(:last-child) {
 			margin-bottom: 15rem;
+		}
+
+		&--ref {
+			font-size: 12rem;
 		}
 	}
 }
@@ -148,30 +164,21 @@
 }
 
 .card-item__ref-title {
-	@include line-clamp(3, 1.29);
+	@include line-clamp;
 
 	flex: 1;
-	margin-right: 10rem;
-	font-size: 14rem;
 	word-wrap: break-word;
-
-	@include media-breakpoint-down(lg) {
-		--line-clamp-line-height: 1.2;
-
-		font-size: 12rem;
-	}
 }
 
 .card-item__ref-image {
 	width: 152rem;
-	height: 49rem;
+	height: var(--ref-image-height);
 	min-width: 0;
 	object-fit: contain;
 	object-position: 100%;
 
 	@include media-breakpoint-down(lg) {
 		width: 114rem;
-		height: 36rem;
 	}
 }
 

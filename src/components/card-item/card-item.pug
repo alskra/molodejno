@@ -4,7 +4,7 @@ mixin card-item({url, title, image, date, ref, tags})
 	article.card-item&attributes(attributes)
 		.card-item__body
 			if date || ref
-				.card-item__group
+				.card-item__group(class={'card-item__group--ref': ref})
 					if date
 						+date(date).card-item__date
 

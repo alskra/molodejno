@@ -1,0 +1,67 @@
+extends ../../pug/base
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/section/section
+include ../../components/section-nav/section-nav
+include ../../components/filters/filters
+include ../../components/grants/grants
+
+append variables
+	-
+		title = `${title} - Гранты получили`;
+
+block body
+	+header()
+
+	main.app__main
+		+breadcrumbs(['Гранты получили']).container.app__breadcrumbs
+		+section({
+			type: 'grants',
+			title: 'Гранты получили',
+			withoutImage: true,
+		}).section--advanced
+			.container.section__grid
+				aside.section__grid-aside
+					+section-nav([
+						{
+							url: 'grants-all.html',
+							content: 'Гранты',
+							isActive: false,
+						},
+						{
+							url: 'grants-recipients.html',
+							content: 'Гранты получили',
+							isActive: true,
+						},
+					])
+					+filters([
+						{
+							content: 'Все',
+							quantity: 991
+						},
+						{
+							content: 'Бизнес',
+							quantity: 132
+						},
+						{
+							content: 'Образование',
+							quantity: 53
+						},
+						{
+							content: 'HR',
+							quantity: 4
+						},
+						{
+							content: 'Производство',
+							quantity: 8
+						},
+						{
+							content: 'Творчество',
+							quantity: 76
+						},
+					])
+
+				.section__grid-main
+					+grants()
+
+	+footer()

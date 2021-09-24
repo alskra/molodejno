@@ -90,7 +90,10 @@
 }
 
 .event-item__title {
-	@include line-clamp(4, 1.2);
+	--line-clamp: 4;
+	--line-height: 1.2;
+
+	@include line-clamp;
 
 	flex: 0 0 100%;
 	margin: 0;
