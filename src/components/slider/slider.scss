@@ -271,11 +271,7 @@
 
 .slider__container-nav {
 	display: flex;
-	column-gap: 30rem;
-
-	@include media-breakpoint-down(lg) {
-		column-gap: 20rem;
-	}
+	column-gap: var(--gap);
 }
 
 .slider__button {
