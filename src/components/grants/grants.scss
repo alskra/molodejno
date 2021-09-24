@@ -22,7 +22,7 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		grid-template-columns: repeat(auto-fill, minmax(min(320rem, 100%), 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(min(280rem, 100%), 1fr));
 		row-gap: 30rem;
 
 		.card-item:nth-child(4n + 1) .card-item__image {
