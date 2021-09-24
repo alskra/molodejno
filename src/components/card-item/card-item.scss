@@ -139,9 +139,9 @@
 	&--ref {
 		--line-clamp: 3;
 		--line-height: 1.25;
-		--ref-image-height: 49rem;
+		--height: calc(var(--line-clamp) * var(--line-height) * 1em);
 
-		min-height: max(calc(var(--line-clamp) * var(--line-height) * 1em), var(--ref-image-height));
+		min-height: var(--height);
 		font-size: 14rem;
 		gap: 10rem;
 	}
@@ -161,6 +161,7 @@
 
 .card-item__date {
 	margin-left: auto;
+	min-width: 0;
 }
 
 .card-item__ref-title {
@@ -171,15 +172,10 @@
 }
 
 .card-item__ref-image {
-	width: 152rem;
-	height: var(--ref-image-height);
+	margin-left: auto;
 	min-width: 0;
-	object-fit: contain;
-	object-position: 100%;
-
-	@include media-breakpoint-down(lg) {
-		width: 114rem;
-	}
+	max-width: percentage(div(152, 255));
+	max-height: var(--height);
 }
 
 .card__tags {

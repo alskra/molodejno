@@ -1,16 +1,40 @@
 mixin nav()
 	-
-		const data = [
-			'Деятельность',
-			'Форумы',
-			'Проекты',
-			'Гранты',
-			'Афиша',
-			'Пресс-центр',
-			'О нас',
-			'Контакты',
+		const pages = [
+			{
+				url: '',
+				title: 'Деятельность',
+			},
+			{
+				url: 'forums.html',
+				title: 'Форумы',
+			},
+			{
+				url: 'projects.html',
+				title: 'Проекты',
+			},
+			{
+				url: 'grants-all.html',
+				title: 'Гранты',
+			},
+			{
+				url: 'playbill',
+				title: 'Афиша',
+			},
+			{
+				url: '',
+				title: 'Пресс-центр',
+			},
+			{
+				url: '',
+				title: 'О нас',
+			},
+			{
+				url: '',
+				title: 'Контакты',
+			},
 		];
 
 	nav.nav&attributes(attributes)
-		each item in data
-			a.nav__item(href="")= item
+		each page in pages
+			a.nav__item(href=page.url)= page.title

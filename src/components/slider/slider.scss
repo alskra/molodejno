@@ -281,14 +281,15 @@
 .slider__button {
 	border: 0;
 	padding: 0;
-	width: 66rem;
-	height: 27px;
+	width: 64rem;
+	height: 27rem;
 	color: $color-white;
 	background: none;
 
 	icon-svg {
 		height: 100%;
-		transition: transform $transition-duration;
+		transition: transform;
+		transition-duration: $transition-duration;
 	}
 
 	&:disabled {
@@ -298,7 +299,7 @@
 	&--prev {
 		@include hover {
 			icon-svg {
-				transform: translateX(-20rem);
+				transform: translate(-$arrow-hover-translate);
 			}
 		}
 	}
@@ -306,7 +307,7 @@
 	&--next {
 		@include hover {
 			icon-svg {
-				transform: translateX(20rem);
+				transform: translate($arrow-hover-translate);
 			}
 		}
 	}
