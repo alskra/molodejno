@@ -1,9 +1,9 @@
 include ../tags/tags
 
-mixin card-item({url, title, image, date, ref, tags})
+mixin card-item({url, title, image, date, ref, tags, price})
 	article.card-item&attributes(attributes)
 		.card-item__body
-			if date || ref
+			if date || ref || price
 				.card-item__group(class={'card-item__group--ref': ref})
 					if date
 						+date(date).card-item__date
@@ -14,6 +14,9 @@ mixin card-item({url, title, image, date, ref, tags})
 							src=ref.image
 							alt!=ref.title
 						)
+
+					if price
+						+price(price).card-item__price
 
 			.card-item__title
 				a.card-item__link(

@@ -1,0 +1,96 @@
+extends ../../pug/base
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/slider/slider
+include ../../components/section-promo/section-promo
+include ../../components/quote/quote
+include ../../components/infographics/infographics
+include ../../components/directions/directions
+include ../../components/section/section
+include ../../components/promo/promo
+
+append variables
+	-
+		title = `${title} - Главная`;
+
+block body
+	+header().header--no-border-bottom
+
+	main.app__main
+		+slider()
+
+		.app__group
+			+section-promo()
+			+infographics()
+			+quote('Молодёжно')
+				p Сегодня Дом молодёжи&nbsp;&mdash; это команда профессионалов, которые отвечают за&nbsp;основные направления современной молодёжной политики.
+
+		+directions()
+		+section({
+			type: 'forums',
+			title: 'Форумы',
+			desc: `<p>Портал для молодёжи занимающийся реализацией молодёжной политики во&nbsp;всех актуальных
+и&nbsp;действующих направлениях данной отрасли</p>`,
+			score: {
+				title: 'Деловых событий',
+				number: 100,
+			},
+		})
+		+section({
+			type: 'projects',
+			title: 'Проекты',
+			desc: `<p>Портал для молодёжи занимающийся реализацией молодёжной политики во&nbsp;всех актуальных
+и&nbsp;действующих направлениях данной отрасли</p>`,
+			score: {
+				title: 'Открытых проектов',
+				number: 100,
+			},
+		})
+		+promo('projects')
+		+integration()
+		+section({
+			type: 'contests',
+			title: 'Конкурсы',
+			desc: `<p>Портал для молодёжи занимающийся реализацией молодёжной политики во&nbsp;всех актуальных
+и&nbsp;действующих направлениях данной отрасли</p>`,
+			score: {
+				title: 'Открытых конкурсов',
+				number: 100,
+			},
+		})
+		+promo('contests')
+		+section({
+			type: 'grants',
+			title: 'Гранты',
+			desc: `<p>Портал для молодёжи занимающийся реализацией молодёжной политики во&nbsp;всех актуальных
+и&nbsp;действующих направлениях данной отрасли</p>`,
+			score: {
+				title: 'Открытых грантов',
+				number: 100,
+			},
+		})
+		+promo('grants')
+		+integration()
+		+section({
+			type: 'playbill',
+			title: 'Афиша',
+			desc: `<p>Портал для молодёжи занимающийся реализацией молодёжной политики во&nbsp;всех актуальных
+и&nbsp;действующих направлениях данной отрасли</p>`,
+			score: {
+				title: 'Событий',
+				number: 10,
+			},
+		})
+		+integration()
+		+section({
+			type: 'news',
+			title: 'Новости',
+			desc: `<p>Портал для молодёжи занимающийся реализацией молодёжной политики во&nbsp;всех актуальных
+и&nbsp;действующих направлениях данной отрасли</p>`,
+			score: {
+				title: 'Новостей в&nbsp;регионе',
+				number: 100,
+			},
+		})
+
+	+footer()

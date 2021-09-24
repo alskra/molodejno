@@ -1,7 +1,7 @@
 include ../card-item/card-item
 include ../pagination/pagination
 
-mixin grants(type = 'grants-all')
+mixin grants(type = 'all')
 	-
 		const grants = [
 			{
@@ -16,6 +16,7 @@ mixin grants(type = 'grants-all')
 					'Мастер-классы',
 					'Культура и искусство',
 				],
+				price: 1000000,
 			},
 			{
 				title: 'Кадры будущего для регионов',
@@ -27,6 +28,7 @@ mixin grants(type = 'grants-all')
 				tags: [
 					'Производство',
 				],
+				price: 70000,
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -38,6 +40,7 @@ mixin grants(type = 'grants-all')
 				tags: [
 					'Образование',
 				],
+				price: 600000,
 			},
 			{
 				title: 'Кадры будущего для регионов',
@@ -49,6 +52,7 @@ mixin grants(type = 'grants-all')
 				tags: [
 					'Производство',
 				],
+				price: 70000,
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -60,6 +64,7 @@ mixin grants(type = 'grants-all')
 				tags: [
 					'Образование',
 				],
+				price: 600000,
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -73,6 +78,7 @@ mixin grants(type = 'grants-all')
 					'Мастер-классы',
 					'Культура и искусство',
 				],
+				price: 1000000,
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -86,6 +92,7 @@ mixin grants(type = 'grants-all')
 					'Мастер-классы',
 					'Культура и искусство',
 				],
+				price: 1000000,
 			},
 			{
 				title: 'Кадры будущего для регионов',
@@ -97,6 +104,7 @@ mixin grants(type = 'grants-all')
 				tags: [
 					'Производство',
 				],
+				price: 70000,
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -108,6 +116,7 @@ mixin grants(type = 'grants-all')
 				tags: [
 					'Образование',
 				],
+				price: 600000,
 			},
 			{
 				title: 'Кадры будущего для регионов',
@@ -119,6 +128,7 @@ mixin grants(type = 'grants-all')
 				tags: [
 					'Производство',
 				],
+				price: 70000,
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -130,6 +140,7 @@ mixin grants(type = 'grants-all')
 				tags: [
 					'Образование',
 				],
+				price: 600000,
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -143,6 +154,7 @@ mixin grants(type = 'grants-all')
 					'Мастер-классы',
 					'Культура и искусство',
 				],
+				price: 1000000,
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -156,6 +168,7 @@ mixin grants(type = 'grants-all')
 					'Мастер-классы',
 					'Культура и искусство',
 				],
+				price: 1000000,
 			},
 			{
 				title: 'Кадры будущего для регионов',
@@ -167,6 +180,7 @@ mixin grants(type = 'grants-all')
 				tags: [
 					'Производство',
 				],
+				price: 70000,
 			},
 			{
 				title: 'Конкурс среди образовательных организаций высшего образования',
@@ -178,13 +192,23 @@ mixin grants(type = 'grants-all')
 				tags: [
 					'Образование',
 				],
+				price: 600000,
 			},
 		];
 
 	.grants&attributes(attributes)
 		.grants__grid
 			each grant in grants
-				- grant.url = 'grant-detail.html';
+				case type
+					when 'recipients'
+						-
+							grant.url = 'grant-recipient.html';
+							delete grant.ref;
+					default
+						-
+							grant.url = 'grant-detail.html';
+							delete grant.price;
+
 				+card-item(grant)
 
 		.grants__footer

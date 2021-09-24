@@ -1,0 +1,3 @@
+mixin price(price)
+	.price&attributes(attributes)
+		.price__content(x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&nbsp;&#8381;'")= price

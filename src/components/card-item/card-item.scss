@@ -147,13 +147,13 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		--ref-image-height: 36rem;
-
 		&:not(:last-child) {
 			margin-bottom: 15rem;
 		}
 
 		&--ref {
+			--ref-image-height: 36rem;
+
 			font-size: 12rem;
 		}
 	}
@@ -185,4 +185,9 @@
 .card__tags {
 	position: relative;
 	z-index: 1;
+}
+
+.card-item__price {
+	margin-left: auto;
+	min-width: 0;
 }
