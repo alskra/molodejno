@@ -1,4 +1,6 @@
 .promo {
+	user-select: none;
+
 	&:not(:first-child) {
 		margin-top: var(--gap-xl);
 	}

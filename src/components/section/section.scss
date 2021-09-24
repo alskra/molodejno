@@ -19,6 +19,12 @@
 				width: 522rem;
 			}
 		}
+
+		&--without-image {
+			.section__header-body {
+				width: auto;
+			}
+		}
 	}
 
 	@include media-breakpoint-down(lg) {

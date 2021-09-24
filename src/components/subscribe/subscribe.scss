@@ -59,6 +59,7 @@
 	white-space: nowrap;
 	transform: translateY(-50%);
 	pointer-events: none;
+	user-select: none;
 
 	@include media-breakpoint-down(lg) {
 		height: auto;

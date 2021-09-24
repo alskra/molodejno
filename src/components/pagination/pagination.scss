@@ -4,7 +4,7 @@
 	justify-content: space-between;
 	cursor: default;
 	user-select: none;
-	gap: 10rem;
+	gap: var(--gap);
 
 	@include media-breakpoint-down(lg) {
 		margin-top: 30rem;

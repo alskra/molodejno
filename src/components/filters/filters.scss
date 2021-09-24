@@ -1,5 +1,6 @@
 .filters {
 	overflow: hidden;
+	user-select: none;
 
 	@include media-breakpoint-down(lg) {
 		margin-right: calc(-1 * var(--container-content-offset-x));

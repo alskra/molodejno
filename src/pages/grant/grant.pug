@@ -1,0 +1,21 @@
+extends ../../pug/base
+include ../../components/header/header
+include ../../components/footer/footer
+
+append variables
+	-
+		title = `${title} - Грант`;
+
+block body
+	+header()
+
+	main.app__main
+		+breadcrumbs([
+			{
+				url: 'grants.html',
+				content: 'Гранты',
+			},
+			'Конкурс среди организаций высшего образования',
+		]).container.app__breadcrumbs
+
+	+footer()
