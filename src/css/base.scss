@@ -32,13 +32,13 @@
 body {
 	font-family: $font-family;
 	-webkit-font-smoothing: antialiased;
-	font-size: var(--content-font-size, 16rem);
-	line-height: var(--content-line-height, 1.5);
+	font-size: $font-size;
+	line-height: $line-height;
 	word-wrap: break-word;
 	text-decoration-skip: objects;
 	text-rendering: optimizeLegibility;
 	text-size-adjust: 100%;
-	color: var(--content-color, #{$color});
+	color: $color;
 	-webkit-tap-highlight-color: transparent;
 	background: $background-color;
 }

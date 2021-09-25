@@ -19,3 +19,7 @@
 @function cw($number, $base: strip-unit($container-max-width - $container-gap * 2)) {
 	@return percentage(div($number, $base));
 }
+
+@function em($number, $base: strip-unit($font-size)) {
+	@return div($number, $base) * 1em;
+}
