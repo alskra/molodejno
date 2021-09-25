@@ -1,0 +1,5 @@
+@mixin conic-gradient() {
+	background: $color-cornflower-blue;
+	// stylelint-disable-next-line
+	background: conic-gradient(from 135deg at 50% 50%, $color-cornflower-blue 0deg, $color-governor-bay-2 360deg);
+}

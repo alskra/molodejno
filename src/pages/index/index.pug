@@ -6,58 +6,48 @@ append variables
 	-
 		title = `${title} - Guide`;
 
-append body-start
-	style.
-		li {
-			margin: 0.5em 0;
-			list-style: decimal;
-		}
-
-		a {
-			color: #595fe4;
-		}
-
 block body
 	+header()
 
-	main.app__main
+	main.app__main(style={'padding': 'var(--gap) 0'})
 		.container
-			h2 Pages
-			-
-				const pages = [
-					{
-						url: 'home.html',
-						title: 'Главная',
-					},
-					{
-						url: 'grants.html',
-						title: 'Гранты',
-						pages: [
-							{
-								url: 'grant.html',
-								title: 'Грант'
-							},
-						],
-					},
-					{
-						url: 'grants-recipients.html',
-						title: 'Гранты получили',
-						pages: [
-							{
-								url: 'grant-recipient.html',
-								title: 'Грантополучатель',
-							},
-						],
-					},
-				];
+			.content
+				h2 Pages
+				-
+					const pages = [
+						{
+							url: 'home.html',
+							title: 'Главная',
+						},
+						{
+							url: 'grants.html',
+							title: 'Гранты',
+							pages: [
+								{
+									url: 'grant.html',
+									title: 'Грант'
+								},
+							],
+						},
+						{
+							url: 'grants-recipients.html',
+							title: 'Гранты получили',
+							pages: [
+								{
+									url: 'grant-recipient.html',
+									title: 'Грантополучатель',
+								},
+							],
+						},
+					];
 
-			if pages.length
-				ol
-					each page in pages
-						li: a(href=page.url)= page.title
-							if page.pages
-								ol
-									each subpage in page.pages
-										li: a(href=subpage.url)= subpage.title
+				if pages.length
+					ol
+						each page in pages
+							li: a(href=page.url)= page.title
+								if page.pages
+									ol
+										each subpage in page.pages
+											li: a(href=subpage.url)= subpage.title
 
 	+footer()

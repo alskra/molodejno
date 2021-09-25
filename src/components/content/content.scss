@@ -1,0 +1,132 @@
+@function em($number, $base: 16) {
+	@return div($number, $base) * 1em;
+}
+
+:root {
+	--content-font-size: 16rem;
+	--content-line-height: #{div(24, 16)};
+	--content-color: #{$color};
+	--content-gap: #{em(10)};
+}
+
+.content {
+	font-size: var(--content-font-size);
+	line-height: var(--content-line-height);
+	color: var(--content-color);
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	ul,
+	ol,
+	li {
+		&:not(:first-child) {
+			margin-top: var(--content-gap);
+		}
+
+		&:not(:last-child) {
+			margin-bottom: var(--content-gap);
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: $heading-font-family;
+		font-weight: 700;
+		line-height: 1.25;
+		color: $heading-color;
+	}
+
+	h1 {
+		font-size: 60rem;
+
+		@include media-breakpoint-down(lg) {
+			font-size: 40rem;
+		}
+	}
+
+	h2 {
+		font-size: 50rem;
+
+		@include media-breakpoint-down(lg) {
+			font-size: 35rem;
+		}
+	}
+
+	h3 {
+		font-size: 40rem;
+		color: $color-primary;
+
+		@include media-breakpoint-down(lg) {
+			font-size: 30rem;
+		}
+	}
+
+	h4 {
+		font-size: 35rem;
+
+		@include media-breakpoint-down(lg) {
+			font-size: 25rem;
+		}
+	}
+
+	h5 {
+		font-size: 25rem;
+
+		@include media-breakpoint-down(lg) {
+			font-size: 20rem;
+		}
+	}
+
+	h6 {
+		font-size: 20rem;
+
+		@include media-breakpoint-down(lg) {
+			font-size: 15rem;
+		}
+	}
+
+	a[href] {
+		color: $color-primary;
+		transition: color;
+		transition-duration: $transition-duration;
+
+		&:hover {
+			color: $color-primary-hover;
+		}
+	}
+
+	ol {
+		padding-left: em(64);
+	}
+
+	ul {
+		padding: 0;
+
+		> li {
+			display: grid;
+			align-items: start;
+			grid-template-columns: minmax(#{em(64)}, auto) 1fr;
+
+			&::before {
+				--marker-size: #{em(10)};
+
+				@include conic-gradient;
+
+				content: "";
+				margin-top: calc((var(--content-line-height) * 1em - var(--marker-size)) / 2);
+				border-radius: 50%;
+				width: var(--marker-size);
+				height: var(--marker-size);
+			}
+		}
+	}
+}
