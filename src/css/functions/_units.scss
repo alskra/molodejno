@@ -16,6 +16,6 @@
 	@return calc(#{$number} * var(--vh, 1vh));
 }
 
-@function cw($number, $base: 1110) {
+@function cw($number, $base: strip-unit($container-max-width - $container-gap * 2)) {
 	@return percentage(div($number, $base));
 }

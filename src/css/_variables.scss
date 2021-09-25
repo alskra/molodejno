@@ -28,7 +28,7 @@ $font-family-stolzl: "Stolzl", sans-serif, $font-family-emoji;
 $font-family-stolzl-display: "Stolzl Display", sans-serif, $font-family-emoji;
 $font-family-gilroy: "Gilroy", sans-serif, $font-family-emoji;
 
-// Breakpoints
+// Layout
 $breakpoints: (
 	xs: 360px,
 	sm: 576px,
@@ -37,6 +37,8 @@ $breakpoints: (
 	xl: 1200px,
 	xxl: 2560px
 );
+$container-gap: 15rem;
+$container-max-width: 1140rem;
 
 // Base
 $color: $color-cod-gray;

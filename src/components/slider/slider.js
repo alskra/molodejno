@@ -7,7 +7,7 @@ Swiper.use([EffectFade, Navigation, Autoplay]);
 
 Alpine.data('slider', () => ({
 	init() {
-		this.swiper = new Swiper(this.$refs.container, {
+		this.swiper = new Swiper(this.$refs.swiper, {
 			effect: 'fade',
 			fadeEffect: {
 				crossFade: false,
@@ -16,7 +16,7 @@ Alpine.data('slider', () => ({
 				prevEl: this.$refs.buttonPrev,
 				nextEl: this.$refs.buttonNext,
 			},
-			autoplay: true,
+			autoplay: false,
 			loop: true,
 		});
 	},

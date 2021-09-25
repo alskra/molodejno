@@ -1,6 +1,6 @@
 :root {
-	--container-gap: 15rem;
-	--container-max-width: 1140rem;
+	--container-gap: #{$container-gap};
+	--container-max-width: #{$container-max-width};
 	--container-width: min(var(--body-width), var(--container-max-width));
 	--container-content-width: calc(var(--container-width) - 2 * var(--container-gap));
 	--container-content-offset-x: calc((var(--body-width) - var(--container-content-width)) / 2);
