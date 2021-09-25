@@ -16,7 +16,7 @@ Alpine.data('slider', () => ({
 				prevEl: this.$refs.buttonPrev,
 				nextEl: this.$refs.buttonNext,
 			},
-			autoplay: false,
+			autoplay: true,
 			loop: true,
 		});
 	},
