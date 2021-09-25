@@ -44,6 +44,7 @@
 	position: absolute;
 	left: 0;
 	top: 0;
+	z-index: 0;
 	overflow: hidden;
 	width: 100%;
 	height: var(--body-height);
@@ -249,8 +250,6 @@
 	font-size: 35rem;
 
 	@include media-breakpoint-down(lg) {
-		//--line-clamp: 4;
-
 		font-size: 22rem;
 	}
 }
@@ -272,6 +271,8 @@
 }
 
 .slider__button {
+	position: relative;
+	z-index: 1;
 	border: 0;
 	padding: 0;
 	width: 64rem;

@@ -18,7 +18,7 @@ mixin card-item({url, title, image, date, ref, tags, price})
 					if price
 						+price(price).card-item__price
 
-			.card-item__title
+			h3.card-item__title
 				a.card-item__link(
 					href=url || ""
 					title!=title

@@ -80,7 +80,7 @@
 	left: 0;
 	right: 0;
 	top: 0;
-	z-index: 0;
+	z-index: -1;
 }
 
 .section__bg-el {
@@ -125,7 +125,7 @@
 	position: absolute;
 	left: 0;
 	right: 0;
-	z-index: 0;
+	z-index: -1;
 
 	&--forums {
 		top: -114rem;
@@ -241,11 +241,6 @@
 	@include media-breakpoint-down(lg) {
 		margin-top: 22rem;
 	}
-}
-
-.section__main {
-	position: relative;
-	z-index: 1;
 }
 
 .section__footer {

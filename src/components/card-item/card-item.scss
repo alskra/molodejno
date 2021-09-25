@@ -84,7 +84,6 @@
 	font-family: $heading-font-family;
 	font-weight: 500;
 	font-size: 20rem;
-	word-wrap: break-word;
 	transition: color $transition-duration;
 
 	&:not(:last-child) {
@@ -168,13 +167,12 @@
 	@include line-clamp;
 
 	flex: 1;
-	word-wrap: break-word;
 }
 
 .card-item__ref-image {
 	margin-left: auto;
 	min-width: 0;
-	max-width: percentage(div(152, 255));
+	max-width: cw(152, 255);
 	max-height: var(--height);
 }
 

@@ -6,12 +6,6 @@
 	display: flex;
 	flex-flow: column;
 	min-height: vh(100);
-	font-family: $font-family;
-	font-size: 16rem;
-	line-height: 1.25;
-	word-wrap: break-word;
-	color: $color;
-	background: $background-color;
 }
 
 .app__main {

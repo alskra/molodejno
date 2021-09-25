@@ -2,10 +2,13 @@ include ../score/score
 include ../events/events
 include ../projects/projects
 
-mixin section({type, title, desc, score, withoutImage})
+mixin section({type, title, desc, score, advanced, withoutImage})
 	section.section(
 		class=`section--${type}`
-		class={'section--without-image': withoutImage}
+		class={
+			'section--advanced': advanced,
+			'section--without-image': withoutImage,
+		}
 	)&attributes(attributes)
 		.section__bg
 			.container
@@ -33,7 +36,7 @@ mixin section({type, title, desc, score, withoutImage})
 
 		header.container.section__header
 			.section__header-body
-				h2.heading.section__heading(data-aos="fade-up" data-aos-duration="800")= title
+				#{advanced ? 'h1' : 'h2'}.heading.section__heading(data-aos="fade-up" data-aos-duration="800")= title
 				if desc
 					.section__desc!= desc
 				if score
