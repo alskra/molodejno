@@ -1,0 +1,37 @@
+.subsection {
+	@include media-breakpoint-up(lg) {
+		&--column-all,
+		&--column-header {
+			.subsection__header .subsection__grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: var(--gap);
+
+				> * {
+					min-width: 0;
+				}
+			}
+
+			.subsection__header .subsection__column {
+				grid-column: 2 / 5;
+			}
+		}
+
+		&--column-all,
+		&--column-main {
+			.subsection__main .subsection__grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: var(--gap);
+
+				> * {
+					min-width: 0;
+				}
+			}
+
+			.subsection__main .subsection__column {
+				grid-column: 2 / 5;
+			}
+		}
+	}
+}

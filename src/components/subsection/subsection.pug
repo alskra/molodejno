@@ -1,0 +1,10 @@
+mixin subsection({column, title})
+	section.subsection(class={[`subsection--column-${column}`]: column})&attributes(attributes)
+		header.subsection__header
+			.container.subsection__grid
+				.subsection__column
+					h2.subsection__title!= title
+		.subsection__main
+			.container.subsection__grid
+				.subsection__column
+					block

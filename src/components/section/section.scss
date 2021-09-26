@@ -262,7 +262,7 @@
 .section__grid {
 	display: grid;
 	align-items: start;
-	gap: 30rem;
+	gap: var(--gap);
 
 	> * {
 		min-width: 0;
@@ -270,6 +270,10 @@
 
 	@include media-breakpoint-up(lg) {
 		grid-template-columns: repeat(4, 1fr);
+	}
+
+	@include media-breakpoint-down(lg) {
+		gap: 30rem;
 	}
 }
 

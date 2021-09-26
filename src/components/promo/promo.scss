@@ -20,19 +20,45 @@
 	&--grants {
 		background: $color-dolly;
 	}
+
+	@include media-breakpoint-up(lg) {
+		&--column {
+			.promo__image {
+				grid-column: 3 / 5;
+			}
+
+			.promo__body {
+				grid-column: 2 / 3;
+				grid-row: 1;
+			}
+		}
+	}
 }
 
-.promo__container {
-	display: flex;
-	column-gap: var(--gap);
-	flex-flow: wrap;
-	align-items: center;
+.promo__grid {
+	--padding-y: 35rem;
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	padding-top: var(--padding-y);
+	padding-bottom: var(--padding-y);
+	gap: var(--gap);
+
+	> * {
+		min-width: 0;
+	}
+
+	@include media-breakpoint-down(lg) {
+		grid-template-columns: repeat(auto-fit, minmax(min(320rem, 100%), 1fr));
+		row-gap: var(--padding-y);
+	}
 }
 
 .promo__image {
 	position: relative;
-	flex: 320rem;
-	align-self: flex-end;
+	align-self: end;
+	grid-column: 1 / 3;
+	margin: calc(-1 * var(--padding-y)) 0;
 	background: url("../../images/design/promo/bg.svg") no-repeat 50% / contain;
 
 	&::before {
@@ -42,7 +68,7 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		order: 1;
+		grid-column: auto;
 		max-width: 400rem;
 	}
 }
@@ -51,20 +77,24 @@
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: percentage(div(422, 540));
+	width: cw(422, 540);
 	height: 100%;
 }
 
 .promo__body {
-	flex: 320rem;
-	padding: 35rem 0;
+	align-self: center;
+	grid-column: 3 / 5;
 	color: $color;
+
+	@include media-breakpoint-down(lg) {
+		grid-column: 1;
+		grid-row: 1;
+	}
 }
 
 .promo__title {
-	margin: 0;
 	font-family: $heading-font-family;
-	font-weight: 700;
+	font-weight: $heading-font-weight;
 	font-size: 40rem;
 	line-height: 1.1;
 

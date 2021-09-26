@@ -114,7 +114,7 @@ button {
 
 ::selection {
 	color: $color-white;
-	background: $color-primary;
+	background: rgba($color-primary-hover, 0.9);
 }
 
 /* stylelint-disable */

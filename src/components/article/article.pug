@@ -1,0 +1,6 @@
+mixin article({type, image})
+	article.article(class=`article--${type}`)&attributes(attributes)
+		.container.article__image
+			+img-2x().article__image-el(src="../../images/content/article/img-intro.jpg")
+
+		header.article__header
