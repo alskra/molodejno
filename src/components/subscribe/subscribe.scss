@@ -2,6 +2,7 @@
 	padding-top: 30rem;
 	padding-bottom: 30rem;
 	background: $color-primary;
+	user-select: none;
 
 	@include media-breakpoint-down(lg) {
 		padding-top: 20rem;
@@ -59,7 +60,6 @@
 	white-space: nowrap;
 	transform: translateY(-50%);
 	pointer-events: none;
-	user-select: none;
 
 	@include media-breakpoint-down(lg) {
 		height: auto;

@@ -22,7 +22,7 @@
 	}
 
 	@include media-breakpoint-up(lg) {
-		&--column {
+		&--offset-column {
 			.promo__image {
 				grid-column: 3 / 5;
 			}

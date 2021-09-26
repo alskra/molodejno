@@ -1,4 +1,4 @@
-mixin promo(type, column)
+mixin promo(type, offsetColumn)
 	-
 		const promo = {
 			projects: {
@@ -19,7 +19,7 @@ mixin promo(type, column)
 
 	.promo(
 		class=`promo--${type}`
-		class={'promo--column': column}
+		class={'promo--offset-column': offsetColumn}
 	)&attributes(attributes)
 		.container.promo__grid
 			.promo__image

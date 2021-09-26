@@ -1,6 +1,7 @@
 extends ../../pug/base
 include ../../components/header/header
 include ../../components/footer/footer
+include ../../components/article/article
 include ../../components/subsection/subsection
 
 append variables
@@ -11,6 +12,7 @@ block body
 	+header()
 
 	main.app__main
+		+article({type: 'grant'})
 		+breadcrumbs([
 			{
 				url: 'grants.html',
@@ -59,7 +61,7 @@ block body
 					Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
 					и действующих направлениях данной отрасли.
 
-		+subsection({column: 'header', title: 'О гранте'})
+		+subsection({offsetColumn: 'header', title: 'О гранте'})
 			.content
 				p.
 					Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
@@ -71,7 +73,7 @@ block body
 					Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
 					и действующих направлениях данной отрасли.
 
-		+subsection({column: 'main', title: 'О гранте'})
+		+subsection({offsetColumn: 'main', title: 'О гранте'})
 			.content
 				p.
 					Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
@@ -84,7 +86,7 @@ block body
 					и действующих направлениях данной отрасли.
 
 		+subsection({
-			column: 'all',
+			offsetColumn: 'all',
 			title: 'О гранте'
 		})
 			.content

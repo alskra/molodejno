@@ -1,6 +1,14 @@
-mixin article({type, image})
+mixin article({type})
 	article.article(class=`article--${type}`)&attributes(attributes)
-		.container.article__image
-			+img-2x().article__image-el(src="../../images/content/article/img-intro.jpg")
+		.container
+			.article__image
+				+img-2x().article__image-el(src="../../images/content/article/img-intro.jpg")
+		.article__body
+			.container.article__grid
+				div 1
+				div 2
+				.article__column-2 3
+				.article__row 4
+				.article__row-outside 5
 
 		header.article__header

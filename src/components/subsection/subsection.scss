@@ -1,37 +1,29 @@
+@mixin make-column($type) {
+	.subsection__#{$type} .subsection__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: var(--gap);
+
+		> * {
+			min-width: 0;
+		}
+	}
+
+	.subsection__#{$type} .subsection__column {
+		grid-column: 2 / 5;
+	}
+}
+
 .subsection {
 	@include media-breakpoint-up(lg) {
-		&--column-all,
-		&--column-header {
-			.subsection__header .subsection__grid {
-				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				gap: var(--gap);
-
-				> * {
-					min-width: 0;
-				}
-			}
-
-			.subsection__header .subsection__column {
-				grid-column: 2 / 5;
-			}
+		&--offset-column-all,
+		&--offset-column-header {
+			@include make-column(header);
 		}
 
-		&--column-all,
-		&--column-main {
-			.subsection__main .subsection__grid {
-				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				gap: var(--gap);
-
-				> * {
-					min-width: 0;
-				}
-			}
-
-			.subsection__main .subsection__column {
-				grid-column: 2 / 5;
-			}
+		&--offset-column-all,
+		&--offset-column-main {
+			@include make-column(main);
 		}
 	}
 }
