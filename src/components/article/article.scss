@@ -1,4 +1,6 @@
 .article {
+	--body-padding-top: 50rem;
+
 	position: relative;
 }
 
@@ -30,6 +32,8 @@
 }
 
 .article__body {
+	padding-top: var(--body-padding-top);
+
 	&::before {
 		content: "";
 		position: absolute;
@@ -39,6 +43,12 @@
 		width: 100%;
 		height: min(1300 / 1200 * var(--body-width), 100%);
 		background: linear-gradient(180deg, $color-dolly 81.03%, rgba(255, 243, 134, 0) 100%);
+	}
+
+	&:not(:first-child) {
+		--body-padding-top: 150rem;
+
+		margin-top: calc(-1 * var(--body-padding-top) + 50rem);
 	}
 
 	@include media-breakpoint-down(lg) {
@@ -82,4 +92,9 @@
 		position: sticky;
 		top: calc(var(--header-sticky-height) + 20rem);
 	}
+}
+
+.article__card-details {
+	position: relative;
+	margin-top: calc(-1 * var(--body-padding-top));
 }

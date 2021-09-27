@@ -1,4 +1,4 @@
-mixin article-nav({backUrl = "", items = []} = {})
+mixin article-nav({backUrl = "", items} = {})
 	nav.article-nav(
 		x-data="{hash: location.hash}"
 		x-on:popstate.window="hash = location.hash"
@@ -7,7 +7,7 @@ mixin article-nav({backUrl = "", items = []} = {})
 			content: "'Назад'",
 			dir: 'left',
 		}).article-nav__back(href=backUrl)
-		if items.length
+		if items
 			.article-nav__items
 				each item in items
 					a.article-nav__item(

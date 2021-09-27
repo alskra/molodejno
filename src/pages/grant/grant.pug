@@ -3,6 +3,7 @@ include ../../components/header/header
 include ../../components/footer/footer
 include ../../components/article/article
 include ../../components/article-nav/article-nav
+include ../../components/card-details/card-details
 include ../../components/subsection/subsection
 
 append variables
@@ -48,7 +49,9 @@ block body
 						},
 					]
 				})
-			div 2
+
+			+card-details().article__card-details card-details
+
 			.article__row
 				+breadcrumbs([
 					{
