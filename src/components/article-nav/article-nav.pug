@@ -1,0 +1,16 @@
+mixin article-nav({backUrl = "", items = []} = {})
+	nav.article-nav(
+		x-data="{hash: location.hash}"
+		x-on:popstate.window="hash = location.hash"
+	)&attributes(attributes)
+		+button-arrow({
+			content: "'Назад'",
+			dir: 'left',
+		}).article-nav__back(href=backUrl)
+		if items.length
+			.article-nav__items
+				each item in items
+					a.article-nav__item(
+						href=item.url
+						x-bind:class="{'is-active': $el.hash === hash}"
+					)= item.content

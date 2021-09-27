@@ -6,6 +6,12 @@ append variables
 	-
 		title = `${title} - Guide`;
 
+append body-start
+	style.
+		.content:not(:last-child) {
+			margin-bottom: var(--gap);
+		}
+
 block body
 	+header()
 
@@ -49,5 +55,20 @@ block body
 									ol
 										each subpage in page.pages
 											li: a(href=subpage.url)= subpage.title
+
+			.content
+				h2: code button-arrow
+			+button-arrow({content: "'Смотреть все'"})
+			br
+			br
+			+button-arrow({content: "'Смотреть все'", dir: 'left'})
+			br
+			br
+			+button-arrow({content: "'Смотреть все'"}).button-arrow--row
+			br
+			br
+			+button-arrow({content: "'Смотреть все'", dir: 'left'}).button-arrow--row
+			br
+			br
 
 	+footer()

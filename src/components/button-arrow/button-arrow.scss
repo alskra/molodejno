@@ -12,6 +12,7 @@
 	transition: color;
 	transition-duration: $transition-duration;
 	user-select: none;
+	gap: 3rem;
 
 	@include hover {
 		color: $color-primary;
@@ -21,18 +22,26 @@
 		}
 	}
 
+	&--dir-left {
+		text-align: right;
+
+		.button-arrow__icon icon-svg {
+			margin-left: auto;
+		}
+	}
+
 	&--row {
 		flex-flow: row;
 		align-items: center;
+		gap: 20rem;
 
 		.button-arrow__icon {
 			flex: 1;
-			order: 1;
 			min-width: 50rem;
 		}
 
-		.button-arrow__content {
-			margin: 0 20rem 0 0;
+		&:not(.button-arrow--dir-left) {
+			flex-direction: row-reverse;
 		}
 	}
 
@@ -41,9 +50,7 @@
 		font-size: 16rem;
 
 		&--row {
-			.button-arrow__content {
-				margin-right: 18rem;
-			}
+			gap: 18rem;
 		}
 	}
 }
@@ -61,6 +68,5 @@
 
 .button-arrow__content {
 	overflow: hidden;
-	margin-top: 3rem;
 	text-overflow: ellipsis;
 }

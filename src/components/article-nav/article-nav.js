@@ -1,0 +1,1 @@
+import './article-nav.scss';

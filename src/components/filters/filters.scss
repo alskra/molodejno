@@ -25,11 +25,10 @@
 
 .filters__item {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	border: 1px solid currentColor;
 	border-radius: 32.5rem;
-	padding: 0 24rem;
-	height: 50rem;
+	padding: calc((50rem - 1.25em - 2px) / 2) 24rem;
 	min-width: 0;
 	font-size: 16rem;
 	line-height: 1.25;
@@ -67,8 +66,6 @@
 .filters__content {
 	overflow: hidden;
 	font-weight: 500;
-	white-space: nowrap;
-	text-overflow: ellipsis;
 }
 
 .filters__quantity {
@@ -76,7 +73,7 @@
 	margin-left: 1rem;
 	font-size: 12rem;
 	color: $color-gray;
-	transform: translateY(-7rem);
+	transform: translateY(-4rem);
 	transition: color;
 	transition-duration: $transition-duration;
 }

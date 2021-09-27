@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /**
 * Remove the unit of a length
 *
@@ -6,7 +8,7 @@
 */
 @function strip-unit($number) {
 	@if type-of($number) == "number" and not unitless($number) {
-		@return $number / ($number * 0 + 1);
+		@return math.div($number, ($number * 0 + 1));
 	}
 
 	@return $number;
@@ -17,9 +19,9 @@
 }
 
 @function cw($number, $base: strip-unit($container-max-width - $container-gap * 2)) {
-	@return percentage(div($number, $base));
+	@return percentage(math.div($number, $base));
 }
 
 @function em($number, $base: strip-unit($font-size)) {
-	@return div($number, $base) * 1em;
+	@return math.div($number, $base) * 1em;
 }

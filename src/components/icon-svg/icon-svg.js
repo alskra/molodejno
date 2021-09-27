@@ -54,6 +54,8 @@ class IconSvg extends HTMLElement {
 			height: '100%',
 		});
 
+		resizeObserver.unobserve(this);
+
 		if (['arrow-left', 'arrow-right'].includes(this.name)) {
 			this.svgViewBoxHeight = +this.svgEl.getAttribute('viewBox').split(/\s+/).pop();
 			resizeObserver.observe(this);

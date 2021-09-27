@@ -1,0 +1,34 @@
+.article-nav {
+	user-select: none;
+}
+
+.article-nav__back {
+	&:not(:last-child) {
+		margin-bottom: 35rem;
+	}
+}
+
+.article-nav__items {
+	display: flex;
+	flex-flow: column;
+	gap: 15rem;
+}
+
+.article-nav__item {
+	font-size: 16rem;
+	line-height: 1.25;
+	color: $color;
+	transition: color;
+	transition-duration: $transition-duration;
+
+	@include hover {
+		&:not(.is-active) {
+			color: $color-primary;
+		}
+	}
+
+	&.is-active {
+		font-weight: 700;
+		color: $color-primary;
+	}
+}
