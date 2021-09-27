@@ -10,7 +10,10 @@ mixin section-promo()
 						Портал реализован инициативами Дома Молодёжи Новгородской области, цель которого&nbsp;&mdash;
 						это реализация молодёжной политики во&nbsp;всех актуальных и&nbsp;действующих направлениях
 						данной отрасли
-				+button-arrow({content: "'Подробнее'"}).button-arrow--row.section-promo__more
+				+button-arrow({
+					content: "'Подробнее'",
+					row: true,
+				}).section-promo__more
 
 			+picture-webp().section-promo__image(
 				src="../../images/design/molodejno.png"

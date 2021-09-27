@@ -1,6 +1,9 @@
-mixin button-arrow({tag = 'a', content, dir = 'right'} = {})
+mixin button-arrow({tag = 'a', content, dir = 'right', row = false} = {})
 	#{tag}.button-arrow(
-		class={'button-arrow--dir-left': dir === 'left'}
+		class={
+			'button-arrow--dir-left': dir === 'left',
+			'button-arrow--row': row,
+		}
 		href=tag === 'a' ? "" : null
 		x-init
 	)&attributes(attributes)
