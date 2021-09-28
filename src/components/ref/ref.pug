@@ -1,7 +1,0 @@
-mixin ref({title, image, lineClamp})
-	.ref(class={'ref--line-clamp': lineClamp})&attributes(attributes)
-		.ref__title!= title
-		+img-2x().ref__image(
-			src=image
-			alt!=title
-		)

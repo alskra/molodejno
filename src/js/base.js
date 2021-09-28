@@ -23,7 +23,7 @@ import '../components/button-load/button-load';
 import '../components/integration/integration.scss';
 import '../components/breadcrumbs/breadcrumbs.scss';
 import '../components/price/price';
-import '../components/ref/ref';
+import '../components/organizer/organizer';
 import '../components/content/content';
 
 window.Alpine = Alpine;

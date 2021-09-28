@@ -1,4 +1,4 @@
-.ref {
+.organizer {
 	--line-height: 1.25;
 	--image-height: 40rem;
 
@@ -19,13 +19,13 @@
 	}
 }
 
-.ref__title {
+.organizer__title {
 	@include line-clamp;
 
 	flex: 50%;
 }
 
-.ref__image {
+.organizer__image {
 	flex: 50%;
 	height: var(--image-height);
 	object-fit: contain;
