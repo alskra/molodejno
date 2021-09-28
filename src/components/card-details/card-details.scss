@@ -2,6 +2,10 @@
 	padding: 45rem 65rem 60rem 95rem;
 	background: $color-white;
 
+	&:not(:last-child) {
+		margin-bottom: var(--gap-2xl);
+	}
+
 	@include media-breakpoint-down(lg) {
 		padding: 25rem var(--container-gap) 30rem;
 	}
@@ -25,15 +29,16 @@
 
 .card-details__info {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 
 	&:not(:last-child) {
 		margin-bottom: 30rem;
 	}
 
-	@include media-breakpoint-down(lg) {
-		grid-template-columns: none;
+	@include media-breakpoint-up(lg) {
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	}
 
+	@include media-breakpoint-down(lg) {
 		&:not(:last-child) {
 			margin-bottom: 25rem;
 		}
@@ -84,12 +89,11 @@
 
 .card-details__content {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 	color: $color;
 	gap: 20rem 60rem;
 
-	@include media-breakpoint-down(lg) {
-		grid-template-columns: none;
+	@include media-breakpoint-up(lg) {
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 	}
 }
 
