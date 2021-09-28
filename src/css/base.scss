@@ -1,6 +1,7 @@
 *,
 ::before,
 ::after {
+	min-width: 0;
 	box-sizing: border-box;
 }
 

@@ -2,7 +2,6 @@
 	position: relative;
 	display: flex;
 	flex-flow: column;
-	min-width: 0;
 	color: $color;
 
 	&::before {
@@ -135,45 +134,19 @@
 		margin-bottom: 20rem;
 	}
 
-	&--ref {
-		--line-clamp: 3;
-		--line-height: 1.25;
-		--height: calc(var(--line-clamp) * var(--line-height) * 1em);
-
-		min-height: var(--height);
-		font-size: 14rem;
-		gap: 10rem;
-	}
-
 	@include media-breakpoint-down(lg) {
 		&:not(:last-child) {
 			margin-bottom: 15rem;
-		}
-
-		&--ref {
-			--ref-image-height: 36rem;
-
-			font-size: 12rem;
 		}
 	}
 }
 
 .card-item__date {
 	margin-left: auto;
-	min-width: 0;
 }
 
-.card-item__ref-title {
-	@include line-clamp;
-
+.card-item__ref {
 	flex: 1;
-}
-
-.card-item__ref-image {
-	margin-left: auto;
-	min-width: 0;
-	max-width: cw(152, 255);
-	max-height: var(--height);
 }
 
 .card__tags {
@@ -183,5 +156,4 @@
 
 .card-item__price {
 	margin-left: auto;
-	min-width: 0;
 }

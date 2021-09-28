@@ -1,0 +1,29 @@
+.ref {
+	--line-clamp: 3;
+	--line-height: 1.25;
+
+	display: flex;
+	height: calc(var(--line-clamp) * var(--line-height) * 1em);
+	font-size: 14rem;
+	gap: 10rem;
+
+	&--line-clamp-none {
+		--line-clamp: none;
+	}
+
+	@include media-breakpoint-down(lg) {
+		font-size: 12rem;
+	}
+}
+
+.ref__title {
+	@include line-clamp;
+
+	flex: 50%;
+	align-self: center;
+}
+
+.ref__image {
+	flex: 50%;
+	object-fit: contain;
+}

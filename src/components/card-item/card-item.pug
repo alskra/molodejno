@@ -4,16 +4,12 @@ mixin card-item({url, title, image, date, ref, tags, price})
 	article.card-item&attributes(attributes)
 		.card-item__body
 			if date || ref || price
-				.card-item__group(class={'card-item__group--ref': ref})
+				.card-item__group
 					if date
 						+date(date).card-item__date
 
 					if ref
-						.card-item__ref-title!= ref.title
-						+img-2x().card-item__ref-image(
-							src=ref.image
-							alt!=ref.title
-						)
+						+ref(ref).card-item__ref
 
 					if price
 						+price(price).card-item__price

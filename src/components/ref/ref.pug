@@ -1,0 +1,7 @@
+mixin ref({title, image})
+	.ref&attributes(attributes)
+		.ref__title!= title
+		+img-2x().ref__image(
+			src=image
+			alt!=title
+		)

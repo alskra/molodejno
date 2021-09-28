@@ -8,6 +8,10 @@ append variables
 
 append body-start
 	style.
+		section:not(:last-child) {
+			margin-bottom: var(--gap-2xl);
+		}
+
 		.content:not(:last-child) {
 			margin-bottom: var(--gap);
 		}
@@ -16,70 +20,110 @@ block body
 	+header()
 
 	main.app__main(style={'padding': 'var(--gap) 0'})
-		.container
-			.content
-				h2 Pages
-				-
-					const pages = [
-						{
-							url: 'home.html',
-							title: 'Главная',
-						},
-						{
-							url: 'grants.html',
-							title: 'Гранты',
-							pages: [
-								{
-									url: 'grant.html',
-									title: 'Грант'
-								},
-							],
-						},
-						{
-							url: 'grants-recipients.html',
-							title: 'Гранты получили',
-							pages: [
-								{
-									url: 'grant-recipient.html',
-									title: 'Грантополучатель',
-								},
-							],
-						},
-					];
+		section
+			.container
+				.content
+					h2 Pages
+					-
+						const pages = [
+							{
+								url: 'home.html',
+								title: 'Главная',
+							},
+							{
+								url: 'grants.html',
+								title: 'Гранты',
+								pages: [
+									{
+										url: 'grant.html',
+										title: 'Грант'
+									},
+								],
+							},
+							{
+								url: 'grants-recipients.html',
+								title: 'Гранты получили',
+								pages: [
+									{
+										url: 'grant-recipient.html',
+										title: 'Грантополучатель',
+									},
+								],
+							},
+						];
 
-				if pages.length
-					ol
-						each page in pages
-							li: a(href=page.url)= page.title
-								if page.pages
-									ol
-										each subpage in page.pages
-											li: a(href=subpage.url)= subpage.title
+					if pages.length
+						ol
+							each page in pages
+								li: a(href=page.url)= page.title
+									if page.pages
+										ol
+											each subpage in page.pages
+												li: a(href=subpage.url)= subpage.title
 
-			.content
-				h2: code button-arrow
-			+button-arrow({content: "'Смотреть все'"})
-			br
-			br
-			+button-arrow({content: "'Смотреть все'", dir: 'left'})
-			br
-			br
-			+button-arrow({content: "'Смотреть все'"}).button-arrow--row
-			br
-			br
-			+button-arrow({content: "'Смотреть все'", dir: 'left'}).button-arrow--row
+		section
+			.container
+				.content
+					h2: code button-arrow
+				+button-arrow({content: "'Смотреть все'"})
+				br
+				br
+				+button-arrow({content: "'Смотреть все'", dir: 'left'})
+				br
+				br
+				+button-arrow({content: "'Смотреть все'"}).button-arrow--row
+				br
+				br
+				+button-arrow({content: "'Смотреть все'", dir: 'left'}).button-arrow--row
 
-			.content
-				h2: code date
-			+date('26.10.2020')
-			br
-			br
-			+date('26.10.2020', '30.10.2020')
-			br
-			br
-			+date('26.10.2020', null, true)
-			br
-			br
-			+date('26.10.2020', '30.10.2020', true)
+		section
+			.container
+				.content
+					h2: code date
+				+date('26.10.2020')
+				br
+				br
+				+date('26.10.2020', '30.10.2020')
+				br
+				br
+				div(style={'max-width': '200px'})
+					+date('26.10.2020', '30.10.2020')
+				br
+				br
+				.content
+					h3: code adaptive
+				+date('26.10.2020', null, true)
+				br
+				br
+				+date('26.10.2020', '30.10.2020', true)
+
+		section
+			.container
+				.content
+					h2: code ref
+				+ref({
+					title: 'Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				})(style={'max-width': '255px'})
+				br
+				br
+				+ref({
+					title: 'Ресурсный Молодежный центр длинный заголовок',
+					image: '../../images/content/projects/logo.png',
+				})(style={'max-width': '255px'})
+				br
+				br
+				.content
+					h3: code line-clamp-none
+				+ref({
+					title: 'Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				}).ref--line-clamp-none(style={'max-width': '255px'})
+				br
+				br
+				+ref({
+					title: 'Ресурсный Молодежный центр длинный заголовок',
+					image: '../../images/content/projects/logo.png',
+				}).ref--line-clamp-none(style={'max-width': '255px'})
 
 	+footer()
