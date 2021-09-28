@@ -2,6 +2,10 @@
 	--body-padding-top: 50rem;
 
 	position: relative;
+
+	@include media-breakpoint-down(lg) {
+		--body-padding-top: 0;
+	}
 }
 
 .article__image {
@@ -45,10 +49,12 @@
 		background: linear-gradient(180deg, $color-dolly 81.03%, rgba(255, 243, 134, 0) 100%);
 	}
 
-	&:not(:first-child) {
-		--body-padding-top: 150rem;
+	@include media-breakpoint-up(lg) {
+		&:not(:first-child) {
+			--body-padding-top: 150rem;
 
-		margin-top: calc(-1 * var(--body-padding-top) + 50rem);
+			margin-top: calc(-1 * var(--body-padding-top) + 50rem);
+		}
 	}
 
 	@include media-breakpoint-down(lg) {
@@ -92,9 +98,19 @@
 		position: sticky;
 		top: calc(var(--header-sticky-height) + 20rem);
 	}
+
+	@include media-breakpoint-down(lg) {
+		display: none;
+	}
 }
 
 .article__card-details {
 	position: relative;
 	margin-top: calc(-1 * var(--body-padding-top));
+
+	@include media-breakpoint-down(lg) {
+		margin-right: calc(-1 * var(--container-content-offset-x));
+		margin-left: calc(-1 * var(--container-content-offset-x));
+		padding: 25rem var(--container-gap) 30rem;
+	}
 }

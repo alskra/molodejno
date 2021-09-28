@@ -1,5 +1,6 @@
 import '../css/fonts.scss';
 import 'normalize.css';
+import '../css/root.scss';
 import '../css/base.scss';
 import '../css/helpers.scss';
 

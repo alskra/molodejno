@@ -1,5 +1,5 @@
 :root {
-	--app__main-gap-bottom: var(--gap-xxl);
+	--app__main-gap-bottom: var(--gap-3xl);
 }
 
 .app {
@@ -26,7 +26,7 @@
 	background: linear-gradient(180deg, $color-aero-blue 51.03%, $color-onahau var(--bg-end), transparent var(--bg-end));
 
 	&:not(:last-child) {
-		margin-bottom: var(--gap-xxl);
+		margin-bottom: var(--gap-3xl);
 	}
 
 	@include media-breakpoint-down(lg) {

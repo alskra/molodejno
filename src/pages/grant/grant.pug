@@ -1,10 +1,10 @@
 extends ../../pug/base
 include ../../components/header/header
 include ../../components/footer/footer
-include ../../components/article/article
 include ../../components/article-nav/article-nav
 include ../../components/card-details/card-details
 include ../../components/subsection/subsection
+include ../../components/article/article
 
 append variables
 	-
@@ -50,7 +50,8 @@ block body
 					]
 				})
 
-			+card-details().article__card-details card-details
+			+card-details().article__card-details
+				+date('26.10.2020', '30.10.2020')
 
 			.article__row
 				+breadcrumbs([

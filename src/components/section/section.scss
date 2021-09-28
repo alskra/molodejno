@@ -44,13 +44,7 @@
 
 .section__header {
 	&:not(:last-child) {
-		margin-bottom: 40rem;
-	}
-
-	@include media-breakpoint-down(lg) {
-		&:not(:last-child) {
-			margin-bottom: 25rem;
-		}
+		margin-bottom: var(--gap-lg);
 	}
 }
 
@@ -245,13 +239,7 @@
 
 .section__footer {
 	&:not(:first-child) {
-		margin-top: 40rem;
-	}
-
-	@include media-breakpoint-down(lg) {
-		&:not(:first-child) {
-			margin-top: 25rem;
-		}
+		margin-top: var(--gap-lg);
 	}
 }
 

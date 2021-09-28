@@ -68,7 +68,18 @@ block body
 			br
 			br
 			+button-arrow({content: "'Смотреть все'", dir: 'left'}).button-arrow--row
+
+			.content
+				h2: code date
+			+date('26.10.2020')
 			br
 			br
+			+date('26.10.2020', '30.10.2020')
+			br
+			br
+			+date('26.10.2020', null, true)
+			br
+			br
+			+date('26.10.2020', '30.10.2020', true)
 
 	+footer()
