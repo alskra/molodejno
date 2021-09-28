@@ -50,35 +50,47 @@
 	h3,
 	h4,
 	h5,
-	h6 {
+	h6,
+	.h1,
+	.h2,
+	.h3,
+	.h4,
+	.h5,
+	.h6 {
 		font-family: $heading-font-family;
 		font-weight: $heading-font-weight;
 		line-height: $heading-line-height;
 		color: $heading-color;
 	}
 
-	h1 {
+	h1,
+	.h1 {
 		font-size: var(--content-h1-font-size);
 	}
 
-	h2 {
+	h2,
+	.h2 {
 		font-size: var(--content-h2-font-size);
 	}
 
-	h3 {
+	h3,
+	.h3 {
 		font-size: var(--content-h3-font-size);
 		color: $color-primary;
 	}
 
-	h4 {
+	h4,
+	.h4 {
 		font-size: var(--content-h4-font-size);
 	}
 
-	h5 {
+	h5,
+	.h5 {
 		font-size: var(--content-h5-font-size);
 	}
 
-	h6 {
+	h6,
+	.h6 {
 		font-size: var(--content-h6-font-size);
 	}
 
@@ -94,12 +106,13 @@
 
 	ul,
 	ol {
-		position: relative;
-		list-style: none;
 		padding-left: var(--content-list-indent-left);
 	}
 
 	ul {
+		position: relative;
+		list-style: none;
+
 		> li {
 			&::before {
 				@include conic-gradient;
