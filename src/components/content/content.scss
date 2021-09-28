@@ -1,13 +1,13 @@
 :root {
 	--content-font-size: #{$font-size};
 	--content-line-height: #{$line-height};
-	--content-indent: #{em(10)};
+	--content-indent: #{em(15)};
 	--content-h1-font-size: 60rem;
 	--content-h2-font-size: 50rem;
 	--content-h3-font-size: 40rem;
 	--content-h4-font-size: 35rem;
-	--content-h5-font-size: 25rem;
-	--content-h6-font-size: 20rem;
+	--content-h5-font-size: 30rem;
+	--content-h6-font-size: 25rem;
 	--content-list-indent-left: #{em(64)};
 	--content-ul-marker-size: #{em(10)};
 
@@ -113,5 +113,11 @@
 				height: var(--content-ul-marker-size);
 			}
 		}
+	}
+
+	th,
+	td {
+		vertical-align: baseline;
+		padding: 0;
 	}
 }

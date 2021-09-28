@@ -111,6 +111,5 @@
 	@include media-breakpoint-down(lg) {
 		margin-right: calc(-1 * var(--container-content-offset-x));
 		margin-left: calc(-1 * var(--container-content-offset-x));
-		padding: 25rem var(--container-gap) 30rem;
 	}
 }

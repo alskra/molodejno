@@ -2,7 +2,6 @@
 	position: relative;
 	display: flex;
 	flex-flow: column;
-	color: $color;
 
 	&::before {
 		content: "";
@@ -12,7 +11,8 @@
 		width: 100%;
 		height: 1px;
 		background: $color-black;
-		transition: height $transition-duration;
+		transition: height;
+		transition-duration: $transition-duration;
 	}
 
 	@include hover {
@@ -83,7 +83,9 @@
 	font-family: $heading-font-family;
 	font-weight: 500;
 	font-size: 20rem;
-	transition: color $transition-duration;
+	color: $color;
+	transition: color;
+	transition-duration: $transition-duration;
 
 	&:not(:last-child) {
 		margin-bottom: 10rem;

@@ -51,16 +51,52 @@ block body
 				})
 
 			+card-details().article__card-details
-				+date('26.10.2020', '30.10.2020')
-
-			.article__row
 				+breadcrumbs([
 					{
 						url: 'grants.html',
 						content: 'Гранты',
 					},
 					'Конкурс среди организаций высшего образования',
-				])
+				]).card-details__breadcrumbs
+
+				h1.heading.card-details__title Конкурс среди организаций высшего образования
+
+				.card-details__info
+					.card-details__info-column
+						+date('26.10.2020', '30.10.2020', true)
+					.card-details__info-column
+						+ref({
+							title: 'Ресурсный Молодежный центр',
+							image: '../../images/content/projects/logo.png',
+						})
+
+				.card-details__content
+					section.card-details__content-column
+						h2.card-details__content-title Участникам
+						.content.card-details__content-item
+							table
+								tr
+									td Сумма гранта
+									td до #[span(x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&nbsp;&#8381;'") 15000000]
+								tr
+									td Организатор
+									td Ресурсный молодёжный центр
+								tr
+									td
+									td: a(href="mailto:site@info.ru") site@info.ru
+
+					section.card-details__content-column
+						h2.card-details__content-title Регистрация
+						.content.card-details__content-item
+							table
+								tr
+									td Телефон
+									td +7 (495) 123-45-67
+								tr
+									td E-mail
+									td: a(href="mailto:info@support.ru") info@support.ru
+
+			.article__row
 				.content
 					h1 Конкурс среди организаций высшего образования
 					h2 О гранте
