@@ -9,6 +9,7 @@ mixin card-item({url, title, image, date, ref, tags, price})
 						+date(date).card-item__date
 
 					if ref
+						- ref.lineClamp = true;
 						+ref(ref).card-item__ref
 
 					if price
