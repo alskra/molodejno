@@ -4,12 +4,12 @@ import '../css/root.scss';
 import '../css/base.scss';
 import '../css/helpers.scss';
 
-import 'ninelines-ua-parser';
-import 'focus-visible';
-import './vh-fix';
-import './scrollbar-width';
+// import 'ninelines-ua-parser';
+// import 'focus-visible';
+// import './vh-fix';
+// import './scrollbar-width';
 import 'aos/dist/aos.css';
-import AOS from 'aos';
+// import AOS from 'aos';
 
 import Alpine from 'alpinejs';
 
@@ -34,7 +34,7 @@ window.addEventListener('resize', () => {
 	Alpine.store('isDesktop', innerWidth >= 1025);
 });
 
-AOS.init();
+// AOS.init();
 
 // eslint-disable-next-line
-alert(innerWidth + ', ' + Alpine.store('isDesktop'));
+// alert(innerWidth + ', ' + Alpine.store('isDesktop'));
