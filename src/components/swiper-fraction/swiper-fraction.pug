@@ -1,0 +1,14 @@
+mixin swiper-fraction()
+	.swiper-fraction(x-data="swiperFraction")&attributes(attributes)
+		block
+		.swiper-fraction__footer
+			.swiper-fraction__pagination(x-ref="pagination")
+			.swiper-fraction__navigation(x-ref="navigation")
+				button.swiper-fraction__button(
+					type="button"
+					x-ref="prevEl"
+				): icon-svg(name="arrow-left")
+				button.swiper-fraction__button(
+					type="button"
+					x-ref="nextEl"
+				): icon-svg(name="arrow-right")

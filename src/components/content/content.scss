@@ -18,6 +18,7 @@
 		--content-h4-font-size: 25rem;
 		--content-h5-font-size: 20rem;
 		--content-h6-font-size: 15rem;
+		--content-list-indent-left: #{em(36)};
 	}
 }
 
@@ -26,16 +27,12 @@
 	line-height: var(--content-line-height);
 	color: $color;
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
+	// stylelint-disable
 	p,
-	ul,
-	ol,
-	li {
+	ul, ol, li,
+	dl, dt, dd,
+	table {
+	// stylelint-enable
 		&:not(:first-child) {
 			margin-top: var(--content-indent);
 		}
@@ -45,22 +42,22 @@
 		}
 	}
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	.h1,
-	.h2,
-	.h3,
-	.h4,
-	.h5,
-	.h6 {
+	// stylelint-disable
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+	// stylelint-enable
 		font-family: $heading-font-family;
 		font-weight: $heading-font-weight;
 		line-height: $heading-line-height;
 		color: $heading-color;
+
+		&:not(:first-child) {
+			margin-top: 1.7em;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 0.85em;
+		}
 	}
 
 	h1,
@@ -132,5 +129,9 @@
 	td {
 		vertical-align: baseline;
 		padding: 0;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: var(--gap-lg);
 	}
 }

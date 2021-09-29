@@ -26,19 +26,21 @@
 	}
 
 	@include hover {
-		color: $color-primary;
+		&:not(.is-disabled) {
+			color: $color-primary;
 
-		icon-svg[name="arrow-left"] {
-			transform: translate(-$arrow-hover-translate);
-		}
+			icon-svg[name="arrow-left"] {
+				transform: translate(-$arrow-hover-translate);
+			}
 
-		icon-svg[name="arrow-right"] {
-			transform: translate($arrow-hover-translate);
+			icon-svg[name="arrow-right"] {
+				transform: translate($arrow-hover-translate);
+			}
 		}
 	}
 
 	&.is-disabled {
-		color: $color-silver-2;
+		color: $color-disabled;
 	}
 }
 

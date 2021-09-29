@@ -11,10 +11,8 @@
 }
 
 .subsection {
-	.content {
-		&:not(:last-child) {
-			margin-bottom: var(--gap-lg);
-		}
+	&:not(:last-child) {
+		margin-bottom: var(--gap-2xl);
 	}
 
 	@include media-breakpoint-up(lg) {

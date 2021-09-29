@@ -1,14 +1,17 @@
 import Alpine from 'alpinejs';
 import 'swiper/css/bundle';
 import Swiper, {Navigation, Pagination} from 'swiper';
+import './swiper-fraction.scss';
 
 Alpine.data('swiperFraction', () => {
 	let inst;
 
 	return {
+		swiper: undefined,
 		swiperIsInit: false,
 		init() {
 			inst = this;
+			this.$nextTick(() => this.initSwiper());
 		},
 		destroy() {
 			inst.destroySwiper();
@@ -26,19 +29,23 @@ Alpine.data('swiperFraction', () => {
 							this.swiperIsInit = false;
 						},
 					},
+					navigation: {
+						prevEl: this.$refs.prevEl,
+						nextEl: this.$refs.nextEl,
+					},
+					pagination: {
+						el: this.$refs.pagination,
+						type: 'fraction',
+						modifierClass: 'swiper-fraction__pagination--',
+						currentClass: 'swiper-fraction__pagination-current',
+						totalClass: 'swiper-fraction__pagination-total',
+					},
 				});
 			}
 		},
 		destroySwiper() {
 			if (this.swiperIsInit) {
 				this.swiper.destroy();
-			}
-		},
-		effect() {
-			if (this.$store.isDesktop) {
-				this.destroySwiper();
-			} else {
-				this.$nextTick(() => this.initSwiper());
 			}
 		},
 	};
