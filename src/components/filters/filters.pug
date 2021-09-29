@@ -1,9 +1,8 @@
 mixin filters(items)
-	nav.filters(
-		x-data="filters"
-		x-effect="effect"
-	)&attributes(attributes)
+	nav.filters&attributes(attributes)
 		.filters__body(
+			x-data="swiperFree"
+			x-effect="effect"
 			x-bind:class="{swiper: !$store.isDesktop}"
 			x-ref="swiper"
 		)

@@ -43,7 +43,7 @@
 
 	@include media-breakpoint-down(lg) {
 		&:not(:last-child) {
-			margin-bottom: 15rem;
+			margin-bottom: 20rem;
 		}
 	}
 }

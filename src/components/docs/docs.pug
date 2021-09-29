@@ -21,14 +21,16 @@ mixin docs()
 
 	.docs&attributes(attributes)
 		.docs__body(
+			x-data="swiperFree"
+			x-effect="effect"
 			x-bind:class="{swiper: !$store.isDesktop}"
 			x-ref="swiper"
 		)
-			.docs__body-inner(x-bind:class="{swiper-wrapper: !$store.isDesktop}")
+			.docs__body-inner(x-bind:class="{'swiper-wrapper': !$store.isDesktop}")
 				each doc in docs
 					a.docs__item(
 						href=""
-						x-bind:class="{swiper-slide: !$store.isDesktop}"
+						x-bind:class="{'swiper-slide': !$store.isDesktop}"
 					)
 						icon-svg.docs__icon(name=doc.type)
 						.docs__title= doc.title
