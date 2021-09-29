@@ -1,16 +1,35 @@
 .button {
+	--width: calc((var(--container-content-width) - 3 * var(--gap)) / 4);
+	--height: 65rem;
+
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	border: 0;
+	border-radius: calc(var(--height) / 2);
+	padding: 0 var(--gap);
+	width: var(--width);
+	height: var(--height);
+	max-width: 100%;
+	font-weight: 700;
+	font-size: 18rem;
+	line-height: 1.25;
 	white-space: nowrap;
 	text-align: center;
-	background-color: transparent;
+	color: $color-white;
+	background: $color-primary;
 	transition: border-color, color, background-color;
 	transition-duration: $transition-duration;
 	user-select: none;
 
-	&__content {
-		overflow: hidden;
-		text-overflow: ellipsis;
+	&:hover {
+		&:not(:disabled, .is-disabled) {
+			background: $color-primary-hover;
+		}
 	}
+}
+
+.button__content {
+	overflow: hidden;
+	text-overflow: ellipsis;
 }

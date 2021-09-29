@@ -1,12 +1,8 @@
 @mixin make-column($type) {
 	.subsection__#{$type} .subsection__grid {
 		display: grid;
+		column-gap: var(--gap);
 		grid-template-columns: repeat(4, 1fr);
-		gap: var(--gap);
-
-		> * {
-			min-width: 0;
-		}
 	}
 
 	.subsection__#{$type} .subsection__column {
@@ -15,6 +11,12 @@
 }
 
 .subsection {
+	.content {
+		&:not(:last-child) {
+			margin-bottom: var(--gap-lg);
+		}
+	}
+
 	@include media-breakpoint-up(lg) {
 		&--offset-column-all,
 		&--offset-column-header {
@@ -26,4 +28,24 @@
 			@include make-column(main);
 		}
 	}
+}
+
+.subsection__header {
+	&:not(:last-child) {
+		margin-bottom: 30rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		&:not(:last-child) {
+			margin-bottom: 15rem;
+		}
+	}
+}
+
+.subsection__title {
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	font-size: var(--content-h2-font-size);
+	line-height: $heading-line-height;
+	color: $heading-color;
 }

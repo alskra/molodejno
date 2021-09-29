@@ -12,7 +12,7 @@
 		--gap-bottom: 0;
 		--image-height: clamp(300rem, 300 / 360 * var(--width), #{vh(100)} - var(--header-height));
 		--body-height: auto;
-		--bg-radius: #{cw(506 / 2 - (506 - 360), 360)};
+		--bg-radius: #{cw(div(506, 2) - (506 - 360), 360)};
 	}
 }
 
