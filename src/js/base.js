@@ -11,7 +11,7 @@ import '../css/helpers.scss';
 import 'aos/dist/aos.css';
 // import AOS from 'aos';
 
-import Alpine from 'alpinejs';
+// import Alpine from 'alpinejs';
 
 import '../components/icon-svg/icon-svg';
 import '../components/container/container.scss';
@@ -27,12 +27,12 @@ import '../components/price/price';
 import '../components/organizer/organizer';
 import '../components/content/content';
 
-window.Alpine = Alpine;
-
-Alpine.store('isDesktop', innerWidth >= 1025);
-window.addEventListener('resize', () => {
-	Alpine.store('isDesktop', innerWidth >= 1025);
-});
+// window.Alpine = Alpine;
+//
+// Alpine.store('isDesktop', innerWidth >= 1025);
+// window.addEventListener('resize', () => {
+// 	Alpine.store('isDesktop', innerWidth >= 1025);
+// });
 
 // AOS.init();
 
