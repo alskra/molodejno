@@ -82,21 +82,9 @@
 							<aside class="section__grid-aside">
 								<nav class="section-nav"><a class="section-nav__item is-active" href="grants.html">Гранты</a><a class="section-nav__item" href="grants-recipients.html">Гранты получили</a>
 								</nav>
-								<nav class="filters" x-data="filters" x-effect="effect">
-									<div class="filters__body swiper" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
-										<div class="filters__wrapper swiper-wrapper" x-bind:class="{'swiper-wrapper': !$store.isDesktop}"><a class="filters__item swiper-slide is-active" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
-												<div class="filters__content">Все</div>
-												<div class="filters__quantity">991</div></a><a class="filters__item swiper-slide" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
-												<div class="filters__content">Бизнес</div>
-												<div class="filters__quantity">132</div></a><a class="filters__item swiper-slide" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
-												<div class="filters__content">Образование</div>
-												<div class="filters__quantity">53</div></a><a class="filters__item swiper-slide" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
-												<div class="filters__content">HR</div>
-												<div class="filters__quantity">4</div></a><a class="filters__item swiper-slide" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
-												<div class="filters__content">Производство</div>
-												<div class="filters__quantity">8</div></a><a class="filters__item swiper-slide" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
-												<div class="filters__content">Творчество</div>
-												<div class="filters__quantity">76</div></a>
+								<nav class="filters">
+									<div class="filters__body" x-data="swiperFree" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
+										<div class="filters__wrapper" x-bind:class="{'swiper-wrapper': !$store.isDesktop}"><a class="filters__item is-active" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Все</span><span class="filters__quantity">991</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Бизнес</span><span class="filters__quantity">132</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Образование</span><span class="filters__quantity">53</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">HR</span><span class="filters__quantity">4</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Производство</span><span class="filters__quantity">8</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Творчество</span><span class="filters__quantity">76</span></a>
 										</div>
 									</div>
 								</nav>
