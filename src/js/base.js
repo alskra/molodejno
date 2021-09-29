@@ -4,16 +4,16 @@ import '../css/root.scss';
 import '../css/base.scss';
 import '../css/helpers.scss';
 
-// import 'ninelines-ua-parser';
-// import 'focus-visible';
-// import './vh-fix';
-// import './scrollbar-width';
+import 'ninelines-ua-parser';
+import 'focus-visible';
+import './vh-fix';
+import './scrollbar-width';
 import 'aos/dist/aos.css';
-// import AOS from 'aos';
+import AOS from 'aos';
 
-// import Alpine from 'alpinejs';
+import Alpine from 'alpinejs';
 
-// import '../components/icon-svg/icon-svg';
+import '../components/icon-svg/icon-svg';
 import '../components/container/container.scss';
 import '../components/heading/heading.scss';
 import '../components/date/date.scss';
@@ -27,14 +27,11 @@ import '../components/price/price';
 import '../components/organizer/organizer';
 import '../components/content/content';
 
-// window.Alpine = Alpine;
-//
-// Alpine.store('isDesktop', innerWidth >= 1025);
-// window.addEventListener('resize', () => {
-// 	Alpine.store('isDesktop', innerWidth >= 1025);
-// });
+window.Alpine = Alpine;
 
-// AOS.init();
+Alpine.store('isDesktop', innerWidth >= 1025);
+window.addEventListener('resize', () => {
+	Alpine.store('isDesktop', innerWidth >= 1025);
+});
 
-// eslint-disable-next-line
-// alert(innerWidth + ', ' + Alpine.store('isDesktop'));
+AOS.init();
