@@ -13,7 +13,7 @@ import 'aos/dist/aos.css';
 
 // import Alpine from 'alpinejs';
 
-import '../components/icon-svg/icon-svg';
+// import '../components/icon-svg/icon-svg';
 import '../components/container/container.scss';
 import '../components/heading/heading.scss';
 import '../components/date/date.scss';
