@@ -1,10 +1,14 @@
 extends ../../pug/base
 include ../../components/header/header
 include ../../components/footer/footer
+
+include ../../components/gallery-slider/gallery-slider
+include ../../components/stages/stages
+
 include ../../components/article-nav/article-nav
 include ../../components/card-details/card-details
 include ../../components/subsection/subsection
-include ../../components/gallery-slider/gallery-slider
+
 include ../../components/article/article
 
 append variables
@@ -102,6 +106,7 @@ block app
 
 			+subsection({
 				offsetColumn: 'all',
+				anchor: 'about',
 				title: 'О гранте'
 			}).article__row-outside
 				.content
@@ -137,4 +142,12 @@ block app
 						li.
 							В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской дивизии
 							народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».
+
+			+subsection({
+				offsetColumn: 'all',
+				anchor: 'stages',
+				title: 'Этапы'
+			}).article__row-outside
+				+stages()
+
 	+footer()

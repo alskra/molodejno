@@ -33,10 +33,6 @@
 	dl, dt, dd,
 	table {
 	// stylelint-enable
-		&:not(:first-child) {
-			margin-top: var(--content-indent);
-		}
-
 		&:not(:last-child) {
 			margin-bottom: var(--content-indent);
 		}
@@ -52,11 +48,11 @@
 		color: $heading-color;
 
 		&:not(:first-child) {
-			margin-top: 1.6em;
+			margin-top: 1em;
 		}
 
 		&:not(:last-child) {
-			margin-bottom: 0.8em;
+			margin-bottom: 0.5em;
 		}
 	}
 

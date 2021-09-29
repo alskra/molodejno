@@ -1,6 +1,6 @@
 .date {
+	--column-gap: 10rem;
 	--icon-size: 25rem;
-	--column-gap: 20rem;
 
 	display: inline-flex;
 	column-gap: var(--column-gap);
@@ -16,7 +16,6 @@
 
 	@include media-breakpoint-down(lg) {
 		--icon-size: 15rem;
-		--column-gap: 8rem;
 
 		font-size: 20rem;
 

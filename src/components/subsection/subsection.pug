@@ -1,5 +1,7 @@
-mixin subsection({offsetColumn, title})
+mixin subsection({offsetColumn, anchor, title})
 	section.subsection(class={[`subsection--offset-column-${offsetColumn}`]: offsetColumn})&attributes(attributes)
+		if anchor
+			.subsection__anchor(id=anchor)
 		header.subsection__header
 			.container.subsection__grid
 				.subsection__column

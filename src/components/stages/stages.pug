@@ -1,0 +1,33 @@
+mixin stages()
+	-
+		let stages = [
+			{
+				dateStart: '26.10.2020',
+				dateEnd: '28.10.2020',
+				title: 'Открытый набор',
+				content: '<p>Проблемно-ориентированное эссе</p>',
+			},
+			{
+				dateStart: '26.10.2020',
+				title: 'Проектный маршрут',
+				content: `<p>Индивидуальная образовательная программа, стажировки, профессиональные пробы.
+		Индивидуальная образовательная программа, стажировки, профессиональные пробы.</p>`,
+			},
+			{
+				dateStart: '26.10.2020',
+				dateEnd: '28.10.2020',
+				title: 'Марафон проектов',
+				content: `<p>Индивидуальная образовательная программа, стажировки, профессиональные пробы.
+		Индивидуальная образовательная программа, стажировки, профессиональные пробы.</p>`,
+			},
+		];
+
+	.stages&attributes(attributes)
+		each stage in stages
+			article.stages__item
+				header.stages__header
+					+date(stage.dateStart, stage.dateEnd, true)
+				.stages__main
+					.content.stages__content
+						h3.h5!= stage.title
+						!= stage.content

@@ -1,0 +1,38 @@
+.stages__item {
+	display: grid;
+	border-top: 1px solid $color;
+	border-bottom: 1px solid $color;
+	padding: 45rem 0;
+
+	&:not(:first-child) {
+		border-top-color: transparent;
+	}
+
+	@include media-breakpoint-up(lg) {
+		column-gap: var(--gap);
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	@include media-breakpoint-down(lg) {
+		padding: 25rem 0;
+		row-gap: 10rem;
+	}
+}
+
+.stages__main {
+	.content .h5 {
+		color: $color-primary;
+	}
+
+	@include media-breakpoint-up(lg) {
+		grid-column: 2 / 4;
+	}
+
+	@include media-breakpoint-down(lg) {
+		.content .h5 {
+			&:not(:last-child) {
+				margin-bottom: 0.25em;
+			}
+		}
+	}
+}
