@@ -1,0 +1,30 @@
+.docs__body-inner {
+	@include media-breakpoint-up(lg) {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--gap);
+	}
+}
+
+.docs__item {
+	display: flex;
+	column-gap: 20rem;
+	align-items: flex-start;
+	font-size: $font-size;
+	line-height: $line-height;
+	color: $color-primary;
+	transition: color;
+	transition-duration: $transition-duration;
+
+	@include hover {
+		color: $color-primary-hover;
+	}
+}
+
+.docs__icon {
+	flex: 0 0 65rem;
+}
+
+.docs__title {
+	flex: 1;
+}

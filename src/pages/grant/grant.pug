@@ -4,6 +4,7 @@ include ../../components/footer/footer
 
 include ../../components/gallery-slider/gallery-slider
 include ../../components/stages/stages
+include ../../components/docs/docs
 
 include ../../components/article-nav/article-nav
 include ../../components/card-details/card-details
@@ -149,5 +150,12 @@ block app
 				title: 'Этапы'
 			}).article__row-outside
 				+stages()
+
+			+subsection({
+				offsetColumn: 'all',
+				anchor: 'docs',
+				title: 'Документы'
+			}).article__row-outside
+				+docs()
 
 	+footer()
