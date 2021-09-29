@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>Молодёжно (Frontend) - Гранты</title>
-	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/grants-all.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/grants-all.css" rel="stylesheet"></head>
+	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/grants.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/grants.css" rel="stylesheet"></head>
 	<body>
 		<div class="app">
 			<header class="header" x-data="header" x-bind:class="{'is-sticky': isSticky}" x-on:scroll.window="updateStick" x-on:resize.window="updateStick(); updateMobMenu();">
@@ -24,17 +24,18 @@
 									<source type="image/webp" srcset="data:image/webp;base64,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, images/design/logo@2x.webp 2x"><img src="images/design/logo.png" srcset="images/design/logo@2x.png 2x" alt="Молодёжно">
 								</picture>
 								<icon-svg name="logo-sticky" x-show="isSticky"></icon-svg></a><a class="header__info-item" href="" target="_blank">Администрация<br> Новгородской<br class="hidden-lg-up"> области</a></div>
-						<div class="soc-network header__soc-network"><a class="soc-network__item soc-network__item--vk" href="" target="_blank">
-								<icon-svg name="vk"></icon-svg></a><a class="soc-network__item soc-network__item--instagram" href="" target="_blank">
-								<icon-svg name="instagram"></icon-svg></a><a class="soc-network__item soc-network__item--facebook" href="" target="_blank">
-								<icon-svg name="facebook"></icon-svg></a></div>
-						<nav class="nav header__nav"><a class="nav__item" href="">Деятельность</a><a class="nav__item" href="">Форумы</a><a class="nav__item" href="">Проекты</a><a class="nav__item" href="">Гранты</a><a class="nav__item" href="">Афиша</a><a class="nav__item" href="">Пресс-центр</a><a class="nav__item" href="">О нас</a><a class="nav__item" href="">Контакты</a>
+						<div class="soc-network header__soc-network"><a class="soc-network__item soc-network__item--vk" href="" target="_blank" title="VK">
+								<icon-svg name="vk"></icon-svg></a><a class="soc-network__item soc-network__item--instagram" href="" target="_blank" title="Instagram">
+								<icon-svg name="instagram"></icon-svg></a><a class="soc-network__item soc-network__item--facebook" href="" target="_blank" title="Facebook">
+								<icon-svg name="facebook"></icon-svg></a>
+						</div>
+						<nav class="nav header__nav"><a class="nav__item" href="">Деятельность</a><a class="nav__item" href="forums.html">Форумы</a><a class="nav__item" href="projects.html">Проекты</a><a class="nav__item" href="grants.html">Гранты</a><a class="nav__item" href="playbill">Афиша</a><a class="nav__item" href="">Пресс-центр</a><a class="nav__item" href="">О нас</a><a class="nav__item" href="">Контакты</a>
 						</nav>
 					</div>
 				</div>
 			</header>
 			<main class="app__main">
-				<nav class="breadcrumbs container app__breadcrumbs"><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a></span><span class="breadcrumbs__item">Гранты</span>
+				<nav class="breadcrumbs container app__breadcrumbs"><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="home.html">Главная</a></span><span class="breadcrumbs__item">Гранты</span>
 				</nav>
 				<section class="section section--grants section--advanced">
 					<div class="section__bg">
@@ -64,9 +65,9 @@
 					</div>
 					<header class="container section__header">
 						<div class="section__header-body">
-							<h2 class="heading section__heading" data-aos="fade-up" data-aos-duration="800">Гранты</h2>
+							<h1 class="heading section__heading" data-aos="fade-up" data-aos-duration="800">Гранты</h1>
 							<div class="section__desc"><p>Портал для молодёжи занимающийся реализацией молодёжной политики во&nbsp;всех актуальных
-		и&nbsp;действующих направлениях данной отрасли</p></div>
+и&nbsp;действующих направлениях данной отрасли</p></div>
 							<div class="score section__score" x-data="scoreAnimated">
 								<div class="score__title">Открытых грантов</div>
 								<div class="score__content">
@@ -79,7 +80,7 @@
 					<div class="section__main">
 						<div class="container section__grid">
 							<aside class="section__grid-aside">
-								<nav class="section-nav"><a class="section-nav__item is-active" href="grants-all.html">Гранты</a><a class="section-nav__item" href="grants-recipients.html">Гранты получили</a>
+								<nav class="section-nav"><a class="section-nav__item is-active" href="grants.html">Гранты</a><a class="section-nav__item" href="grants-recipients.html">Гранты получили</a>
 								</nav>
 								<nav class="filters" x-data="filters" x-effect="effect">
 									<div class="filters__body swiper" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
@@ -105,22 +106,26 @@
 									<div class="grants__grid">
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Конкурс среди образовательных организаций высшего образования Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования Конкурс среди образовательных организаций высшего образования</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Образование</a><a class="tags__item" href="">Мастер-классы</a><a class="tags__item" href="">Культура и искусство</a>
 												</nav>
 											</div>
-											<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-3.jpg" srcset="images/content/projects/img-3@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
+											<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-3.jpg" srcset="images/content/projects/img-3@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования Конкурс среди образовательных организаций высшего образования">
 											</div>
 										</article>
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Производство</a>
 												</nav>
 											</div>
@@ -129,10 +134,12 @@
 										</article>
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Образование</a>
 												</nav>
 											</div>
@@ -141,10 +148,12 @@
 										</article>
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Производство</a>
 												</nav>
 											</div>
@@ -153,10 +162,12 @@
 										</article>
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Образование</a>
 												</nav>
 											</div>
@@ -165,10 +176,12 @@
 										</article>
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Образование</a><a class="tags__item" href="">Мастер-классы</a><a class="tags__item" href="">Культура и искусство</a>
 												</nav>
 											</div>
@@ -177,10 +190,12 @@
 										</article>
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Образование</a><a class="tags__item" href="">Мастер-классы</a><a class="tags__item" href="">Культура и искусство</a>
 												</nav>
 											</div>
@@ -189,10 +204,12 @@
 										</article>
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Производство</a>
 												</nav>
 											</div>
@@ -201,10 +218,12 @@
 										</article>
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Образование</a>
 												</nav>
 											</div>
@@ -213,10 +232,12 @@
 										</article>
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Производство</a>
 												</nav>
 											</div>
@@ -225,10 +246,12 @@
 										</article>
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Образование</a>
 												</nav>
 											</div>
@@ -237,10 +260,12 @@
 										</article>
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Образование</a><a class="tags__item" href="">Мастер-классы</a><a class="tags__item" href="">Культура и искусство</a>
 												</nav>
 											</div>
@@ -249,10 +274,12 @@
 										</article>
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Образование</a><a class="tags__item" href="">Мастер-классы</a><a class="tags__item" href="">Культура и искусство</a>
 												</nav>
 											</div>
@@ -261,10 +288,12 @@
 										</article>
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Производство</a>
 												</nav>
 											</div>
@@ -273,10 +302,12 @@
 										</article>
 										<article class="card-item">
 											<div class="card-item__body">
-												<div class="card-item__group card-item__group--ref">
-													<div class="card-item__ref-title">Ресурсный Молодежный центр</div><img class="card-item__ref-image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												<div class="card-item__group">
+													<div class="organizer organizer--line-clamp card-item__organizer">
+														<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+													</div>
 												</div>
-												<div class="card-item__title"><a class="card-item__link" href="grant-detail.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></div>
+												<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 												<nav class="tags card__tags"><a class="tags__item" href="">Образование</a>
 												</nav>
 											</div>
@@ -301,7 +332,7 @@
 					</div>
 				</section>
 				<div class="promo promo--grants">
-					<div class="container promo__container">
+					<div class="container promo__grid">
 						<div class="promo__image">
 							<picture class="promo__image-el">
 								<source type="image/webp" srcset="images/design/promo/grants.webp, images/design/promo/grants@2x.webp 2x"><img src="images/design/promo/grants.png" srcset="images/design/promo/grants@2x.png 2x" alt="">
@@ -363,10 +394,11 @@
 						<p class="footer__info"><span class="color-silver">&copy;&nbsp;<span x-init x-text="new Date().getFullYear()"></span>.
 								Информационно-познавательный портал для молодёжи Новгородской области
 								</span></p>
-						<div class="soc-network footer__soc-network"><a class="soc-network__item soc-network__item--vk" href="" target="_blank">
-								<icon-svg name="vk"></icon-svg></a><a class="soc-network__item soc-network__item--instagram" href="" target="_blank">
-								<icon-svg name="instagram"></icon-svg></a><a class="soc-network__item soc-network__item--facebook" href="" target="_blank">
-								<icon-svg name="facebook"></icon-svg></a></div>
+						<div class="soc-network footer__soc-network"><a class="soc-network__item soc-network__item--vk" href="" target="_blank" title="VK">
+								<icon-svg name="vk"></icon-svg></a><a class="soc-network__item soc-network__item--instagram" href="" target="_blank" title="Instagram">
+								<icon-svg name="instagram"></icon-svg></a><a class="soc-network__item soc-network__item--facebook" href="" target="_blank" title="Facebook">
+								<icon-svg name="facebook"></icon-svg></a>
+						</div>
 						<p class="footer__info footer__info--dev"><a class="color-silver" href="https://renart.ru/" target="_blank">
 								<icon-svg name="renaissance"></icon-svg><span>Разработка сайта:<br> <strong>Renaissance Art Group</strong></span></a></p>
 						<p class="footer__info">
