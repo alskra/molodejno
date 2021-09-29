@@ -35,3 +35,6 @@ window.addEventListener('resize', () => {
 });
 
 AOS.init();
+
+// eslint-disable-next-line
+alert(innerWidth + ', ' + Alpine.store('isDesktop'));
