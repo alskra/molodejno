@@ -105,13 +105,23 @@ block app
 				+button-arrow({content: "'Смотреть все'"})
 				br
 				br
-				+button-arrow({content: "'Смотреть все'", dir: 'left'})
+				+button-arrow({
+					dir: 'left',
+					content: "'Смотреть все'",
+				})
 				br
 				br
-				+button-arrow({content: "'Смотреть все'"}).button-arrow--row
+				+button-arrow({
+					row: true,
+					content: "'Смотреть все'",
+				})
 				br
 				br
-				+button-arrow({content: "'Смотреть все'", dir: 'left'}).button-arrow--row
+				+button-arrow({
+					dir: 'left',
+					row: true,
+					content: "'Смотреть все'",
+				})
 
 		section
 			.container

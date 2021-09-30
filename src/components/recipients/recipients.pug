@@ -42,3 +42,6 @@ mixin recipients()
 				.recipients__grid(x-bind:class="{'swiper-wrapper': !$store.isDesktop}")
 					each recipient in recipients
 						+card-item(recipient).card-item--recipient.recipients__item(x-bind:class="{'swiper-slide': !$store.isDesktop}")
+
+		.recipients__footer
+			+button-load({content: 'Открыть все'})

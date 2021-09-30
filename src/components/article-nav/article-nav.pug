@@ -5,8 +5,8 @@ mixin article-nav({backUrl = "", items} = {})
 		x-on:scroll.window.debounce.100ms="update"
 	)&attributes(attributes)
 		+button-arrow({
-			content: "'Назад'",
 			dir: 'left',
+			content: "'Назад'",
 		}).article-nav__back(href=backUrl)
 		if items
 			.article-nav__items

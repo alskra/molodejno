@@ -1,5 +1,6 @@
 .button-load {
 	display: inline-flex;
+	column-gap: 20rem;
 	align-items: center;
 	vertical-align: top;
 	max-width: 100%;
@@ -13,13 +14,14 @@
 	user-select: none;
 
 	@include hover {
-		color: $color-primary;
+		&:not(:disabled, .is-disabled) {
+			color: $color-primary;
+		}
 	}
 }
 
 .button-load__content {
 	overflow: hidden;
-	margin-right: 20rem;
 	text-overflow: ellipsis;
 }
 
