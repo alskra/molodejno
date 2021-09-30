@@ -5,7 +5,9 @@ include ../../components/footer/footer
 include ../../components/gallery-slider/gallery-slider
 include ../../components/stages/stages
 include ../../components/docs/docs
+include ../../components/recipients/recipients
 include ../../components/gallery/gallery
+include ../../components/reviews/reviews
 
 include ../../components/article-nav/article-nav
 include ../../components/card-details/card-details
@@ -164,6 +166,7 @@ block app
 				anchor: 'recipients',
 				type: 'recipients',
 			}).article__row-outside
+				+recipients()
 
 			+subsection({
 				offsetColumn: 'all',
@@ -175,7 +178,10 @@ block app
 			+subsection({
 				offsetColumn: 'all',
 				anchor: 'reviews',
+				type: 'reviews',
+				extType: 'grants',
 				title: 'Отзывы',
 			}).article__row-outside
+				+reviews()
 
 	+footer()

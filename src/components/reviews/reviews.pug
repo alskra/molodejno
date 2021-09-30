@@ -1,0 +1,10 @@
+include ../swiper-fraction/swiper-fraction
+
+mixin reviews()
+	+swiper-fraction().reviews&attributes(attributes)
+		.reviews__main
+			.swiper.reviews__main-inner(x-ref="swiper")
+				.swiper-wrapper
+					.swiper-slide.reviews__item 1
+					.swiper-slide.reviews__item 2
+					.swiper-slide.reviews__item 3
