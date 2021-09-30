@@ -31,3 +31,9 @@
 .overflow-hidden {
 	overflow: hidden;
 }
+
+.anchor {
+	position: absolute;
+	top: calc(-1 * var(--header-sticky-height));
+	bottom: 0;
+}

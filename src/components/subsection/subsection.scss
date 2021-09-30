@@ -30,12 +30,6 @@
 	}
 }
 
-.subsection__anchor {
-	position: absolute;
-	top: 0;
-	margin-top: calc(-1 * var(--header-sticky-height));
-}
-
 .subsection__header {
 	&:not(:last-child) {
 		margin-bottom: 30rem;
