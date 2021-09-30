@@ -106,13 +106,13 @@ block app
 									td: a(href="mailto:info@support.ru") info@support.ru
 						+button({tag: 'a', content: 'Подать заявку'}).card-details__button
 
-			.article__row-outside.article__row-outside--bg
+			.column-span-2-lg-up.from-container-to-body.article__bg
 
 			+subsection({
 				offsetColumn: 'all',
 				anchor: 'about',
 				title: 'О гранте'
-			}).article__row-outside
+			}).column-span-2-lg-up.from-container-to-body
 				.content
 					p.
 						Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
@@ -151,28 +151,28 @@ block app
 				offsetColumn: 'all',
 				anchor: 'stages',
 				title: 'Этапы'
-			}).article__row-outside
+			}).column-span-2-lg-up.from-container-to-body
 				+stages()
 
 			+subsection({
 				offsetColumn: 'all',
 				anchor: 'docs',
 				title: 'Документы'
-			}).article__row-outside
+			}).column-span-2-lg-up.from-container-to-body
 				+docs()
 
 			+subsection({
 				offsetColumn: 'all',
 				anchor: 'recipients',
 				type: 'recipients',
-			}).article__row-outside
+			}).column-span-2-lg-up.from-container-to-body
 				+recipients()
 
 			+subsection({
 				offsetColumn: 'all',
 				anchor: 'gallery',
 				title: 'Галерея',
-			}).article__row-outside
+			}).column-span-2-lg-up.from-container-to-body
 				+gallery()
 
 			+subsection({
@@ -181,7 +181,7 @@ block app
 				type: 'reviews',
 				extType: 'grants',
 				title: 'Отзывы',
-			}).article__row-outside
+			}).column-span-2-lg-up.from-container-to-body
 				+reviews()
 
 	+footer()
