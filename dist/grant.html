@@ -276,7 +276,7 @@
 									</div>
 								</div>
 							</section>
-							<section class="subsection subsection--offset-column-all article__row-outside">
+							<section class="subsection subsection--offset-column-all subsection--recipients article__row-outside">
 								<div class="anchor" id="recipients"></div>
 								<header class="promo promo--offset-column promo--header promo--grants">
 									<div class="container promo__grid">
@@ -377,18 +377,58 @@
 									</div>
 								</div>
 							</section>
-							<section class="subsection subsection--offset-column-all article__row-outside">
+							<section class="subsection subsection--offset-column-all subsection--reviews subsection--reviews-grants article__row-outside">
 								<div class="anchor" id="reviews"></div>
 								<header class="subsection__header">
 									<div class="container subsection__grid">
 										<div class="subsection__column">
 											<h2 class="subsection__title">Отзывы</h2>
+											<a class="button subsection__header-button" href=""><span class="button__content">Оставить отзыв</span></a>
 										</div>
 									</div>
 								</header>
 								<div class="subsection__main">
 									<div class="container subsection__grid">
 										<div class="subsection__column">
+											<div class="swiper-fraction reviews" x-data="swiperFraction">
+												<div class="reviews__main">
+													<div class="swiper reviews__main-inner" x-ref="swiper">
+														<div class="swiper-wrapper">
+															<article class="review-item swiper-slide reviews__item">
+																<div class="content review-item__body"><p>В рамках направления «Здоровый образ жизни» на территории области проводятся акции,
+		приуроченные к Всемирному дню здоровья. В рамках направления «Здоровый образ жизни» на территории
+		области проводятся акции, приуроченные к Всемирному дню здоровья. В рамках направления
+		«Здоровый образ жизни»</p></div>
+																<footer class="review-item__footer"><img class="review-item__image" src="images/content/reviews/img-1.jpg" srcset="images/content/reviews/img-1@2x.jpg 2x" alt="Андрей Сергеевич Константинопольский">
+																	<h4 class="review-item__name">Андрей Сергеевич Константинопольский</h4>
+																	<div class="review-item__position">Губернатор Новгородской области, длинная должность</div>
+																</footer>
+															</article>
+															<article class="review-item swiper-slide reviews__item">
+																<div class="content review-item__body"><p>В рамках направления «Здоровый образ жизни» на территории области проводятся акции,
+		приуроченные к Всемирному дню здоровья. В рамках направления «Здоровый образ жизни» на территории
+		области проводятся акции, приуроченные к Всемирному дню здоровья. В рамках направления
+		«Здоровый образ жизни»</p></div>
+																<footer class="review-item__footer"><img class="review-item__image" src="images/content/reviews/img-1.jpg" srcset="images/content/reviews/img-1@2x.jpg 2x" alt="Андрей Сергеевич Константинопольский">
+																	<h4 class="review-item__name">Андрей Сергеевич Константинопольский</h4>
+																	<div class="review-item__position">Губернатор Новгородской области, длинная должность</div>
+																</footer>
+															</article>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-fraction__footer">
+													<div class="swiper-fraction__pagination" x-ref="pagination"></div>
+													<div class="swiper-fraction__navigation" x-ref="navigation">
+														<button class="swiper-fraction__button" type="button" x-ref="prevEl">
+															<icon-svg name="arrow-left"></icon-svg>
+														</button>
+														<button class="swiper-fraction__button" type="button" x-ref="nextEl">
+															<icon-svg name="arrow-right"></icon-svg>
+														</button>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
