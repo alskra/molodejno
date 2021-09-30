@@ -21,6 +21,7 @@ import '../components/location/location.scss';
 import '../components/button/button';
 import '../components/button-arrow/button-arrow';
 import '../components/button-load/button-load';
+import '../components/button-arrow-down/button-arrow-down';
 import '../components/integration/integration.scss';
 import '../components/breadcrumbs/breadcrumbs.scss';
 import '../components/price/price';

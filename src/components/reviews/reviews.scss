@@ -1,13 +1,24 @@
 .reviews__main {
 	overflow: hidden;
+	margin-right: calc(-1 * var(--container-content-offset-x));
+	padding-right: var(--container-content-offset-x);
 }
 
 .reviews__main-inner {
 	overflow: visible;
 	margin: 0 calc(-1 * var(--gap) / 2);
+
+	@include media-breakpoint-down(lg) {
+		--gap: 3rem;
+	}
 }
 
 .reviews__item {
 	margin: 0 calc(var(--gap) / 2);
 	width: calc((var(--container-content-width) - var(--gap)) / 2);
+	height: auto;
+
+	@include media-breakpoint-down(lg) {
+		width: calc(100% - var(--gap));
+	}
 }

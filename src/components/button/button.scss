@@ -1,5 +1,5 @@
 .button {
-	--width: calc((var(--container-content-width) - 3 * var(--gap)) / 4);
+	--width: auto;
 	--height: 65rem;
 
 	display: inline-flex;

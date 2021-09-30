@@ -1,0 +1,42 @@
+.button-arrow-down {
+	display: inline-flex;
+	column-gap: 15rem;
+	align-items: center;
+	vertical-align: top;
+	max-width: 100%;
+	font-weight: 700;
+	font-size: 16rem;
+	line-height: 1.25;
+	white-space: nowrap;
+	color: $color-primary;
+	transition: color;
+	transition-duration: $transition-duration;
+	user-select: none;
+
+	@include hover {
+		&:not(:disabled, .is-disabled) {
+			color: $color-primary-hover;
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		column-gap: 10rem;
+		font-size: 14rem;
+	}
+}
+
+.button-arrow-down__content {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.button-arrow-down__icon {
+	flex-shrink: 0;
+	width: 25rem;
+	height: 25rem;
+
+	@include media-breakpoint-down(lg) {
+		width: 20rem;
+		height: 20rem;
+	}
+}

@@ -1,10 +1,12 @@
 mixin review-item({content, image, name, position} = {})
 	article.review-item&attributes(attributes)
-		.content.review-item__body!= content
+		.review-item__body
+			.content.review-item__content!= content
+			+button-arrow-down({content: 'Читать весь отзыв'}).review-item__button
 		footer.review-item__footer
 			+img-2x().review-item__image(
 				src=image
 				alt=name
 			)
-			h4.review-item__name= name
+			h3.review-item__name= name
 			.review-item__position= position
