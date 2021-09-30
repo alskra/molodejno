@@ -10,6 +10,14 @@
 	}
 }
 
+:root {
+	--subsection__header-margin-bottom: 30rem;
+
+	@include media-breakpoint-down(lg) {
+		--subsection__header-margin-bottom: 20rem;
+	}
+}
+
 .subsection {
 	position: relative;
 
@@ -32,13 +40,7 @@
 
 .subsection__header {
 	&:not(:last-child) {
-		margin-bottom: 30rem;
-	}
-
-	@include media-breakpoint-down(lg) {
-		&:not(:last-child) {
-			margin-bottom: 20rem;
-		}
+		margin-bottom: var(--subsection__header-margin-bottom);
 	}
 }
 

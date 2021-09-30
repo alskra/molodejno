@@ -1,4 +1,5 @@
 include ../promo/promo
+include ../recipients/recipients
 
 mixin subsection({offsetColumn, anchor, type, title})
 	section.subsection(class={[`subsection--offset-column-${offsetColumn}`]: offsetColumn})&attributes(attributes)
@@ -6,7 +7,7 @@ mixin subsection({offsetColumn, anchor, type, title})
 			.anchor(id=anchor)
 
 		case type
-			when 'grants-recipients'
+			when 'recipients'
 				+promo({
 					offsetColumn: true,
 					header: true,
@@ -21,4 +22,8 @@ mixin subsection({offsetColumn, anchor, type, title})
 		.subsection__main
 			.container.subsection__grid
 				.subsection__column
-					block
+					case type
+						when 'recipients'
+							+recipients()
+						default
+							block

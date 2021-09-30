@@ -6,6 +6,7 @@ Alpine.data('swiperCards', () => {
 	let inst;
 
 	return {
+		swiper: undefined,
 		swiperIsInit: false,
 		init() {
 			inst = this;

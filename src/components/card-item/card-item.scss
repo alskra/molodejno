@@ -49,10 +49,23 @@
 				border-radius: 50%;
 			}
 		}
+
+		&--recipient {
+			&:nth-child(6n + 1) .card-item__image,
+			&:nth-child(6n + 6) .card-item__image {
+				border-radius: 50% 0 0 50%;
+			}
+
+			&:nth-child(6n + 3) .card-item__image,
+			&:nth-child(6n + 5) .card-item__image {
+				border-radius: 50%;
+			}
+		}
 	}
 
 	@include media-breakpoint-down(lg) {
-		&--event {
+		&--event,
+		&--recipient {
 			&:nth-child(4n + 1) .card-item__image {
 				border-radius: 50% 0 0 50%;
 			}

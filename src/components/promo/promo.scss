@@ -9,6 +9,25 @@
 		margin-bottom: var(--gap-xl);
 	}
 
+	&--header {
+		.promo__body {
+			align-self: end;
+		}
+
+		.promo__title {
+			font-size: var(--content-h2-font-size);
+			word-wrap: normal;
+		}
+
+		&:not(:first-child) {
+			margin-top: 0;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: var(--subsection__header-margin-bottom);
+		}
+	}
+
 	&--projects {
 		background: $color-aero-blue;
 	}
@@ -43,10 +62,6 @@
 	padding-top: var(--padding-y);
 	padding-bottom: var(--padding-y);
 	gap: var(--gap);
-
-	> * {
-		min-width: 0;
-	}
 
 	@include media-breakpoint-down(lg) {
 		grid-template-columns: repeat(auto-fit, minmax(min(320rem, 100%), 1fr));
@@ -96,7 +111,8 @@
 	font-family: $heading-font-family;
 	font-weight: $heading-font-weight;
 	font-size: 40rem;
-	line-height: 1.1;
+	line-height: $heading-line-height;
+	color: $heading-color;
 
 	&:not(:last-child) {
 		margin-bottom: 30rem;
