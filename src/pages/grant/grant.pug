@@ -5,6 +5,7 @@ include ../../components/footer/footer
 include ../../components/gallery-slider/gallery-slider
 include ../../components/stages/stages
 include ../../components/docs/docs
+include ../../components/gallery/gallery
 
 include ../../components/article-nav/article-nav
 include ../../components/card-details/card-details
@@ -169,6 +170,7 @@ block app
 				anchor: 'gallery',
 				title: 'Галерея',
 			}).article__row-outside
+				+gallery()
 
 			+subsection({
 				offsetColumn: 'all',

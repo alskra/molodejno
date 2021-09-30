@@ -32,9 +32,7 @@
 }
 
 .recipients__footer {
-	&:not(:first-child) {
-		margin-top: 30rem;
-	}
+	margin-top: 30rem;
 
 	@include media-breakpoint-down(lg) {
 		display: none;
