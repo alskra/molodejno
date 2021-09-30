@@ -1,7 +1,8 @@
-mixin button-arrow-down({tag = 'a', content} = {})
+mixin button-arrow-down({tag = 'a', dir = 'down', content} = {})
 	#{tag}.button-arrow-down(
+		class={'button-arrow-down--up': dir === 'up'}
 		type=tag === 'button' ? 'button' : null
 		href=tag === 'a' ? "" : null
 	)&attributes(attributes)
-		span.button-arrow-down__content= content
+		span.button-arrow-down__content(x-text=content)
 		icon-svg.button-arrow-down__icon(name="arrow-down")

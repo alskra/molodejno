@@ -1,8 +1,21 @@
 mixin review-item({content, image, name, position} = {})
 	article.review-item&attributes(attributes)
-		.review-item__body
-			.content.review-item__content!= content
-			+button-arrow-down({content: 'Читать весь отзыв'}).review-item__button
+		.review-item__body(
+			x-data="lineClamp"
+			x-on:resize.window.debounce="update"
+		)
+			.content.review-item__content(
+				x-ref="content"
+				x-bind:class="{'is-clamped': isClamped}"
+			)!= content
+			+button-arrow-down({
+				tag: 'button',
+				content: "isClamped ? 'Читать весь отзыв' : 'Свернуть'",
+			}).review-item__button(
+				x-bind:class="{'button-arrow-down--up': !isClamped}"
+				x-show="hasClamp"
+				x-on:click="isClamped = !isClamped"
+			)
 		footer.review-item__footer
 			+img-2x().review-item__image(
 				src=image

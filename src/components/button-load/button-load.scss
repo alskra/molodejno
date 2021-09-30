@@ -3,12 +3,15 @@
 	column-gap: 20rem;
 	align-items: center;
 	vertical-align: top;
+	border: 0;
+	padding: 0;
 	max-width: 100%;
 	font-weight: 700;
 	font-size: 20rem;
 	line-height: 1.25;
 	white-space: nowrap;
 	color: $color;
+	background: none;
 	transition: color;
 	transition-duration: $transition-duration;
 	user-select: none;

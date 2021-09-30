@@ -27,6 +27,7 @@ import '../components/breadcrumbs/breadcrumbs.scss';
 import '../components/price/price';
 import '../components/organizer/organizer';
 import '../components/content/content';
+import '../components/line-clamp/line-clamp';
 
 window.Alpine = Alpine;
 

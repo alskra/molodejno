@@ -20,7 +20,6 @@
 }
 
 .review-item__content {
-	--line-clamp: 7;
 	--line-height: var(--content-line-height);
 
 	@include line-clamp;
@@ -34,11 +33,17 @@
 		margin-bottom: 20rem;
 	}
 
-	@include media-breakpoint-down(lg) {
-		--line-clamp: 10;
+	&.is-clamped {
+		--line-clamp: 7;
+	}
 
+	@include media-breakpoint-down(lg) {
 		&:not(:last-child) {
 			margin-bottom: 10rem;
+		}
+
+		&.is-clamped {
+			--line-clamp: 10;
 		}
 	}
 }
