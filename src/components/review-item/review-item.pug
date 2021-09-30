@@ -1,0 +1,10 @@
+mixin review-item({content, image, name, position} = {})
+	article.review-item&attributes(attributes)
+		.content.review-item__body!= content
+		footer.review-item__footer
+			+img-2x().review-item__image(
+				src=image
+				alt=name
+			)
+			h4.review-item__name= name
+			.review-item__position= position

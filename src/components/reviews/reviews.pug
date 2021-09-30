@@ -1,10 +1,32 @@
 include ../swiper-fraction/swiper-fraction
+include ../review-item/review-item
 
 mixin reviews()
+	-
+		let reviews = [
+			{
+				content: `<p>В рамках направления «Здоровый образ жизни» на территории области проводятся акции,
+				приуроченные к Всемирному дню здоровья. В рамках направления «Здоровый образ жизни» на территории
+				области проводятся акции, приуроченные к Всемирному дню здоровья. В рамках направления
+				«Здоровый образ жизни»</p>`,
+				image: '../../images/content/reviews/img-1.jpg',
+				name: 'Андрей Сергеевич Константинопольский',
+				position: 'Губернатор Новгородской области, длинная должность',
+			},
+			{
+				content: `<p>В рамках направления «Здоровый образ жизни» на территории области проводятся акции,
+				приуроченные к Всемирному дню здоровья. В рамках направления «Здоровый образ жизни» на территории
+				области проводятся акции, приуроченные к Всемирному дню здоровья. В рамках направления
+				«Здоровый образ жизни»</p>`,
+				image: '../../images/content/reviews/img-1.jpg',
+				name: 'Андрей Сергеевич Константинопольский',
+				position: 'Губернатор Новгородской области, длинная должность',
+			},
+		];
+
 	+swiper-fraction().reviews&attributes(attributes)
 		.reviews__main
 			.swiper.reviews__main-inner(x-ref="swiper")
 				.swiper-wrapper
-					.swiper-slide.reviews__item 1
-					.swiper-slide.reviews__item 2
-					.swiper-slide.reviews__item 3
+					each review in reviews
+						+review-item(review).swiper-slide.reviews__item

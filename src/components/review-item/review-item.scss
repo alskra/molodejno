@@ -1,0 +1,15 @@
+.review-item {
+	display: grid;
+}
+
+.review-item__body {
+	--line-clamp: 7;
+	--line-height: var(--content-line-height);
+
+	@include line-clamp;
+
+	* {
+		// stylelint-disable-next-line
+		display: inline !important;
+	}
+}
