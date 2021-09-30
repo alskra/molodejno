@@ -1,11 +1,22 @@
-mixin subsection({offsetColumn, anchor, title})
+include ../promo/promo
+
+mixin subsection({offsetColumn, anchor, promo, title})
 	section.subsection(class={[`subsection--offset-column-${offsetColumn}`]: offsetColumn})&attributes(attributes)
 		if anchor
 			.anchor(id=anchor)
-		header.subsection__header
-			.container.subsection__grid
-				.subsection__column
-					h2.subsection__title!= title
+
+		if promo
+			+promo({
+				tag: 'header',
+				offsetColumn: true,
+				type: promo,
+			})
+		else
+			header.subsection__header
+				.container.subsection__grid
+					.subsection__column
+						h2.subsection__title!= title
+
 		.subsection__main
 			.container.subsection__grid
 				.subsection__column

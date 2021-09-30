@@ -1,4 +1,4 @@
-mixin promo(type, offsetColumn)
+mixin promo({tag = 'div', offsetColumn, type} = {})
 	-
 		const promo = {
 			projects: {
@@ -17,7 +17,7 @@ mixin promo(type, offsetColumn)
 
 		const {title, image} = promo[type];
 
-	.promo(
+	#{tag}.promo(
 		class=`promo--${type}`
 		class={'promo--offset-column': offsetColumn}
 	)&attributes(attributes)

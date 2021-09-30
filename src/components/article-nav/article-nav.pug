@@ -2,7 +2,7 @@ mixin article-nav({backUrl = "", items} = {})
 	nav.article-nav(
 		x-data="articleNav"
 		x-on:popstate.window="hash = location.hash"
-		x-on:scroll.window.debounce="update"
+		x-on:scroll.window.debounce.100ms="update"
 	)&attributes(attributes)
 		+button-arrow({
 			content: "'Назад'",

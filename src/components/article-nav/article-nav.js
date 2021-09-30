@@ -20,8 +20,8 @@ Alpine.data('articleNav', () => ({
 		}
 
 		if (currentSection) {
-			history.pushState(null, null, `#${currentSection.id}`);
-			window.dispatchEvent(new Event('popstate'));
+			history.replaceState(null, null, `#${currentSection.id}`);
+			this.hash = location.hash;
 		}
 	},
 }));
