@@ -1,4 +1,4 @@
-mixin promo({tag = 'div', offsetColumn, type} = {})
+mixin promo({offsetColumn, header, type})
 	-
 		const promo = {
 			projects: {
@@ -17,9 +17,12 @@ mixin promo({tag = 'div', offsetColumn, type} = {})
 
 		const {title, image} = promo[type];
 
-	#{tag}.promo(
-		class=`promo--${type}`
-		class={'promo--offset-column': offsetColumn}
+	#{header ? 'header' : 'div'}.promo(
+		class={
+			'promo--offset-column': offsetColumn,
+			'promo--header': header,
+			[`promo--${type}`]: type,
+		}
 	)&attributes(attributes)
 		.container.promo__grid
 			.promo__image
@@ -28,8 +31,9 @@ mixin promo({tag = 'div', offsetColumn, type} = {})
 					srcset="2x"
 				)
 			.promo__body
-				.promo__title!= title
-				+button-arrow({content: "$store.isDesktop ? 'Смотреть все' : 'Подробнее'"})(
-					href=`${type === 'grants' ? `${type}-recipients` : type}.html`
-					x-bind:class="{'button-arrow--row': !$store.isDesktop}"
-				)
+				#{header ? 'h2' : 'div'}.promo__title!= title
+				if !header
+					+button-arrow({content: "$store.isDesktop ? 'Смотреть все' : 'Подробнее'"})(
+						href=`${type === 'grants' ? `${type}-recipients` : type}.html`
+						x-bind:class="{'button-arrow--row': !$store.isDesktop}"
+					)

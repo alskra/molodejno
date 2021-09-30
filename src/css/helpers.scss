@@ -36,4 +36,5 @@
 	position: absolute;
 	top: calc(-1 * var(--header-sticky-height));
 	bottom: 0;
+	visibility: hidden;
 }

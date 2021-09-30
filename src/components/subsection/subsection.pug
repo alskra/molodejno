@@ -1,21 +1,22 @@
 include ../promo/promo
 
-mixin subsection({offsetColumn, anchor, promo, title})
+mixin subsection({offsetColumn, anchor, type, title})
 	section.subsection(class={[`subsection--offset-column-${offsetColumn}`]: offsetColumn})&attributes(attributes)
 		if anchor
 			.anchor(id=anchor)
 
-		if promo
-			+promo({
-				tag: 'header',
-				offsetColumn: true,
-				type: promo,
-			})
-		else
-			header.subsection__header
-				.container.subsection__grid
-					.subsection__column
-						h2.subsection__title!= title
+		case type
+			when 'grants-recipients'
+				+promo({
+					offsetColumn: true,
+					header: true,
+					type: 'grants',
+				})
+			default
+				header.subsection__header
+					.container.subsection__grid
+						.subsection__column
+							h2.subsection__title!= title
 
 		.subsection__main
 			.container.subsection__grid
