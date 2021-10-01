@@ -55,11 +55,13 @@ block app
 					if pages.length
 						ol
 							each page in pages
-								li: a(href=page.url)= page.title
+								li
+									a(href=page.url)= page.title
 									if page.pages
 										ol
 											each subpage in page.pages
-												li: a(href=subpage.url)= subpage.title
+												li
+													a(href=subpage.url)= subpage.title
 
 		section
 			.container

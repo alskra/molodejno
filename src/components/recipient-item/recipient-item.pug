@@ -1,2 +1,20 @@
+include ../tags/tags
+
 mixin recipient-item()
 	.recipient-item&attributes(attributes)
+		.recipient-item__content
+			.recipient-item__heading Выдано средств
+			+price(1000000)
+		.recipient-item__content
+			.recipient-item__heading Автор проекта
+			| Константинопольская Александра Александровна
+		.recipient-item__image
+			+img-2x().recipient-item__image-el(
+				src="../../images/content/recipients/img-1.jpg"
+				alt="Константинопольская Александра Александровна"
+			)
+		+tags([
+			'Образование',
+			'Мастер-классы',
+			'Культура и искусство',
+		]).recipient-item__tags
