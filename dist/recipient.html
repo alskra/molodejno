@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>Молодёжно (Frontend) - Грантополучатель</title>
-	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/grant-recipient.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/grant-recipient.css" rel="stylesheet"></head>
+	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/recipient.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/recipient.css" rel="stylesheet"></head>
 	<body>
 		<div class="app">
 			<header class="header" x-data="header" x-bind:class="{'is-sticky': isSticky}" x-on:scroll.window="updateStick" x-on:resize.window="updateStick(); updateMobMenu();">
@@ -35,8 +35,28 @@
 				</div>
 			</header>
 			<main class="app__main">
-				<nav class="breadcrumbs container app__breadcrumbs"><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="home.html">Главная</a></span><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="grants-recipients.html">Гранты получили</a></span><span class="breadcrumbs__item">Создание проектного офиса для обучения молодёжи лидерским качествам</span>
+				<nav class="breadcrumbs container app__breadcrumbs"><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="home.html">Главная</a></span><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="recipients.html">Гранты получили</a></span><span class="breadcrumbs__item">Создание проектного офиса для обучения молодёжи лидерским качествам</span>
 				</nav>
+				<section class="section section--grants section--advanced section--without-image">
+					<div class="section__bg">
+						<div class="container">
+							<div class="position-relative">
+								<div class="section__bg-el section__rellax section__bg-el--grants" data-rellax-speed="-2"></div>
+							</div>
+						</div>
+					</div>
+					<header class="container section__header">
+						<div class="section__header-body">
+							<h1 class="heading section__heading" data-aos="fade-up" data-aos-duration="800">Создание проектного офиса для обучения молодёжи лидерским качествам</h1>
+						</div>
+					</header>
+					<div class="section__main">
+						<div class="container section__grid">
+							<aside class="section__grid-aside"></aside>
+							<div class="section__grid-main"></div>
+						</div>
+					</div>
+				</section>
 			</main>
 			<footer class="footer">
 				<form class="subscribe" action="" x-data>
