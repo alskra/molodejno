@@ -1,4 +1,4 @@
-mixin article-nav({backUrl = "", items} = {})
+mixin article-nav({primary = false, backUrl = "", items} = {})
 	nav.article-nav(
 		x-data="articleNav"
 		x-on:popstate.window="hash = location.hash"
@@ -7,7 +7,10 @@ mixin article-nav({backUrl = "", items} = {})
 		+button-arrow({
 			dir: 'left',
 			content: "'Назад'",
-		}).article-nav__back(href=backUrl)
+		}).article-nav__back(
+			class={'button-arrow--primary': primary}
+			href=backUrl
+		)
 		if items
 			.article-nav__items
 				each item in items

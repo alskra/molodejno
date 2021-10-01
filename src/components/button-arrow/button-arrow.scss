@@ -1,4 +1,7 @@
 .button-arrow {
+	--color: #{$color};
+	--color-hover: #{$color-primary};
+
 	display: inline-flex;
 	flex-flow: column;
 	vertical-align: top;
@@ -10,7 +13,7 @@
 	font-size: 20rem;
 	line-height: 1.25;
 	white-space: nowrap;
-	color: $color;
+	color: var(--color);
 	background: none;
 	transition: color;
 	transition-duration: $transition-duration;
@@ -19,7 +22,7 @@
 
 	@include hover {
 		&:not(:disabled, .is-disabled) {
-			color: $color-primary;
+			color: var(--color-hover);
 
 			.button-arrow__icon icon-svg {
 				width: percentage(div(492, 542));
@@ -48,6 +51,11 @@
 		&:not(.button-arrow--dir-left) {
 			flex-direction: row-reverse;
 		}
+	}
+
+	&--primary {
+		--color: #{$color-primary};
+		--color-hover: #{$color-primary-hover};
 	}
 
 	@include media-breakpoint-down(lg) {

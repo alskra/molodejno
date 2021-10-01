@@ -2,6 +2,9 @@ extends ../../pug/base
 include ../../components/header/header
 include ../../components/footer/footer
 
+include ../../components/recipient-item/recipient-item
+include ../../components/article-nav/article-nav
+
 include ../../components/section/section
 
 append variables
@@ -28,6 +31,11 @@ block app
 		})
 			.container.section__grid
 				aside.section__grid-aside
+					+recipient-item()
+					+article-nav({
+						primary: true,
+						backUrl: 'recipients.html',
+					})
 
 				.section__grid-main
 

@@ -1,0 +1,5 @@
+.recipient-item {
+	&:not(:last-child) {
+		margin-bottom: 20rem;
+	}
+}
