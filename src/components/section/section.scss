@@ -249,8 +249,8 @@
 
 .section__grid {
 	display: grid;
+	column-gap: var(--gap);
 	align-items: start;
-	gap: 30rem var(--gap);
 
 	@include media-breakpoint-up(lg) {
 		grid-template-columns: repeat(4, 1fr);
@@ -261,11 +261,30 @@
 	@include media-breakpoint-up(lg) {
 		position: sticky;
 		top: calc(var(--header-sticky-height) + 20rem);
+		z-index: 1;
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 30rem;
 	}
 }
 
 .section__grid-main {
 	@include media-breakpoint-up(lg) {
 		grid-column: span 3;
+	}
+}
+
+.section__recipient-item {
+	margin-bottom: 20rem;
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 0;
+	}
+}
+
+.section__article-nav {
+	@include media-breakpoint-down(lg) {
+		display: none;
 	}
 }

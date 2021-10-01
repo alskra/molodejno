@@ -1,19 +1,23 @@
 .tags {
 	display: flex;
 	flex-flow: wrap;
+	font-family: $font-family-stolzl;
+	font-size: 13rem;
+	line-height: 1.25;
+	color: $color-primary;
 	gap: 5rem 15rem;
 
 	&--align-right {
 		justify-content: flex-end;
 		text-align: right;
 	}
+
+	@include media-breakpoint-down(lg) {
+		font-size: 12rem;
+	}
 }
 
 .tags__item {
-	font-family: $font-family-stolzl;
-	font-size: 13rem;
-	line-height: 1.25;
-	color: $color-primary;
 	transition: color;
 	transition-duration: $transition-duration;
 
@@ -23,9 +27,5 @@
 
 	@include hover {
 		color: $color-primary-hover;
-	}
-
-	@include media-breakpoint-down(lg) {
-		font-size: 12rem;
 	}
 }

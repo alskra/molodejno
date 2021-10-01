@@ -2,9 +2,12 @@ extends ../../pug/base
 include ../../components/header/header
 include ../../components/footer/footer
 
+include ../../components/gallery/gallery
+
 include ../../components/recipient-item/recipient-item
 include ../../components/article-nav/article-nav
 include ../../components/gallery-slider/gallery-slider
+include ../../components/subsection/subsection
 
 include ../../components/section/section
 
@@ -32,16 +35,54 @@ block app
 		})
 			.container.section__grid
 				aside.section__grid-aside
-					+recipient-item()
+					+recipient-item().section__recipient-item
 					+article-nav({
 						primary: true,
 						backUrl: 'recipients.html',
-					})
+					}).section__article-nav
 
-				.section__grid-main
-					+gallery-slider([
-						'../../images/content/gallery-slider/img-2.jpg',
-						'../../images/content/gallery-slider/img-1.jpg',
-					])
+				+gallery-slider([
+					'../../images/content/gallery-slider/img-2.jpg',
+					'../../images/content/gallery-slider/img-1.jpg',
+				]).column-span-3-lg-up
+
+				+subsection({
+					offsetColumn: 'all',
+					title: 'О проекте'
+				}).column-span-4-lg-up.from-container-to-body
+					.content
+						p.
+							Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+							молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+							Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+							молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+							Это информационно-познавательный портал для молодёжи.
+						p.
+							Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+							и действующих направлениях данной отрасли.
+
+				+subsection({
+					offsetColumn: 'all',
+					title: 'Задачи проекта'
+				}).column-span-4-lg-up.from-container-to-body
+					.content
+						ul
+							li.
+								30 октября в Батецком районе будет дан старт областному походу по местам боевых сражений.
+								К нему присоединятся активисты военно-патриотических клубов, центров, объединений и представители
+								поисковых отрядов Новгородской области.
+							li.
+								Поход продлится до 1 ноября и будет посвящен боевому пути 1-й Ленинградской стрелковой дивизии
+								народного ополчения, которая в июле 1941 года высадилась на станции Батецкая и заняла оборону
+								на Лужском рубеже.
+							li.
+								В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской дивизии
+								народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».
+
+				+subsection({
+					offsetColumn: 'all',
+					title: 'Галерея'
+				}).column-span-4-lg-up.from-container-to-body
+					+gallery()
 
 	+footer()

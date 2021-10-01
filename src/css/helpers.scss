@@ -38,6 +38,14 @@
 	.column-span-2-lg-up {
 		grid-column: span 2;
 	}
+
+	.column-span-3-lg-up {
+		grid-column: span 3;
+	}
+
+	.column-span-4-lg-up {
+		grid-column: span 4;
+	}
 }
 
 @include media-breakpoint-down(lg) {
