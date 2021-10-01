@@ -36,15 +36,19 @@
 	}
 
 	.column-span-2-lg-up {
-		grid-column: span 2;
+		grid-column-end: span 2;
 	}
 
 	.column-span-3-lg-up {
-		grid-column: span 3;
+		grid-column-end: span 3;
 	}
 
 	.column-span-4-lg-up {
-		grid-column: span 4;
+		grid-column-end: span 4;
+	}
+
+	.column-offset-1-lg-up {
+		grid-column-start: 2;
 	}
 }
 

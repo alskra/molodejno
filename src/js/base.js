@@ -28,6 +28,7 @@ import '../components/price/price';
 import '../components/organizer/organizer';
 import '../components/content/content';
 import '../components/line-clamp/line-clamp';
+import '../components/share/share';
 
 window.Alpine = Alpine;
 

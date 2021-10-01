@@ -1,0 +1,34 @@
+mixin share()
+	-
+		let share = [
+			{
+				icon: 'facebook',
+				title: 'Поделиться',
+			},
+			{
+				icon: 'twitter',
+				title: 'Твитнуть',
+			},
+			{
+				icon: 'facebook',
+				title: 'Поделиться',
+			},
+			{
+				icon: 'twitter',
+				title: 'Твитнуть',
+			},
+		];
+
+	.share&attributes(attributes)
+		.share__title
+			icon-svg(name="share").share__title-icon
+			| Поделиться
+
+		.share__items
+			each shareItem in share
+				a.share__item(
+					class=`share__item--${shareItem.icon}`
+					href=""
+				)
+					icon-svg.share__item-icon(name=shareItem.icon)
+					= shareItem.title

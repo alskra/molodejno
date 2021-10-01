@@ -24,6 +24,8 @@
 }
 
 .gallery-slider__item {
+	--height: #{cw(500, 825)};
+
 	position: relative;
 	margin: 0 var(--item-gap);
 	width: calc(100% - 2 * var(--item-gap));
@@ -31,15 +33,13 @@
 	&::before {
 		content: "";
 		display: block;
-		padding-top: cw(500, 825);
+		padding-top: min(var(--height), #{vh(100)} - var(--header-height));
 	}
 
 	@include media-breakpoint-down(lg) {
-		width: calc(100% - 2 * var(--item-gap) - var(--container-content-offset-x));
+		--height: #{cw(250, 340)};
 
-		&::before {
-			padding-top: cw(250, 340);
-		}
+		width: calc(100% - 2 * var(--item-gap) - var(--container-content-offset-x));
 	}
 }
 
