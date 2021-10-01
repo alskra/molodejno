@@ -1,15 +1,10 @@
 include ../swiper-fraction/swiper-fraction
 
-mixin gallery-slider()
+mixin gallery-slider(items)
 	+swiper-fraction().gallery-slider&attributes(attributes)
 		.gallery-slider__main
 			.swiper.gallery-slider__main-inner(x-ref="swiper")
 				.swiper-wrapper
-					.swiper-slide.gallery-slider__item
-						+img-2x().swiper-slide.gallery-slider__image(
-							src="../../images/content/gallery-slider/img-1.jpg"
-						)
-					.swiper-slide.gallery-slider__item
-						+img-2x().swiper-slide.gallery-slider__image(
-							src="../../images/content/gallery-slider/img-1.jpg"
-						)
+					each item in items
+						.swiper-slide.gallery-slider__item
+							+img-2x().swiper-slide.gallery-slider__image(src=item)

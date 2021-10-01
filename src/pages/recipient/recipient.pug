@@ -4,6 +4,7 @@ include ../../components/footer/footer
 
 include ../../components/recipient-item/recipient-item
 include ../../components/article-nav/article-nav
+include ../../components/gallery-slider/gallery-slider
 
 include ../../components/section/section
 
@@ -38,5 +39,9 @@ block app
 					})
 
 				.section__grid-main
+					+gallery-slider([
+						'../../images/content/gallery-slider/img-2.jpg',
+						'../../images/content/gallery-slider/img-1.jpg',
+					])
 
 	+footer()
