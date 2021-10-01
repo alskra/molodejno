@@ -52,8 +52,149 @@
 					</header>
 					<div class="section__main">
 						<div class="container section__grid">
-							<aside class="section__grid-aside"></aside>
-							<div class="section__grid-main"></div>
+							<aside class="section__grid-aside">
+								<div class="recipient-item section__recipient-item">
+									<div class="recipient-item__content">
+										<div class="recipient-item__heading">Выдано средств</div>
+										<div class="price">
+											<div class="price__content" x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&amp;nbsp;&amp;#8381;'">1000000</div>
+										</div>
+									</div>
+									<div class="recipient-item__content">
+										<div class="recipient-item__heading">Автор проекта</div>Константинопольская Александра Александровна
+									</div>
+									<div class="recipient-item__image"><img class="recipient-item__image-el" src="images/content/recipients/img-1.jpg" srcset="images/content/recipients/img-1@2x.jpg 2x" alt="Константинопольская Александра Александровна">
+									</div>
+									<nav class="tags recipient-item__tags"><a class="tags__item" href="">Образование</a><a class="tags__item" href="">Мастер-классы</a><a class="tags__item" href="">Культура и искусство</a>
+									</nav>
+								</div>
+								<nav class="article-nav section__article-nav" x-data="articleNav" x-on:popstate.window="hash = location.hash" x-on:scroll.window.debounce.100ms="update">
+									<a class="button-arrow button-arrow--dir-left article-nav__back button-arrow--primary" href="recipients.html" x-init><span class="button-arrow__icon">
+											<icon-svg name="arrow-left"></icon-svg></span><span class="button-arrow__content" x-text="'Назад'"></span>
+									</a>
+								</nav>
+							</aside>
+							<div class="swiper-fraction gallery-slider column-span-3-lg-up" x-data="swiperFraction">
+								<div class="gallery-slider__main">
+									<div class="swiper gallery-slider__main-inner" x-ref="swiper">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide gallery-slider__item"><img class="swiper-slide gallery-slider__image" src="images/content/gallery-slider/img-2.jpg" srcset="images/content/gallery-slider/img-2@2x.jpg 2x" alt="">
+											</div>
+											<div class="swiper-slide gallery-slider__item"><img class="swiper-slide gallery-slider__image" src="images/content/gallery-slider/img-1.jpg" srcset="images/content/gallery-slider/img-1@2x.jpg 2x" alt="">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-fraction__footer">
+									<div class="swiper-fraction__pagination" x-ref="pagination"></div>
+									<div class="swiper-fraction__navigation" x-ref="navigation">
+										<button class="swiper-fraction__button" type="button" x-ref="prevEl">
+											<icon-svg name="arrow-left"></icon-svg>
+										</button>
+										<button class="swiper-fraction__button" type="button" x-ref="nextEl">
+											<icon-svg name="arrow-right"></icon-svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<section class="subsection subsection--offset-column-all column-span-4-lg-up from-container-to-body">
+								<header class="subsection__header">
+									<div class="container subsection__grid">
+										<div class="subsection__column">
+											<h2 class="subsection__title">О проекте</h2>
+										</div>
+									</div>
+								</header>
+								<div class="subsection__main">
+									<div class="container subsection__grid">
+										<div class="subsection__column">
+											<div class="content">
+												<p>
+													Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+													молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+													Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+													молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+													Это информационно-познавательный портал для молодёжи.
+												</p>
+												<p>
+													Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+													и действующих направлениях данной отрасли.
+													
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section class="subsection subsection--offset-column-all column-span-4-lg-up from-container-to-body">
+								<header class="subsection__header">
+									<div class="container subsection__grid">
+										<div class="subsection__column">
+											<h2 class="subsection__title">Задачи проекта</h2>
+										</div>
+									</div>
+								</header>
+								<div class="subsection__main">
+									<div class="container subsection__grid">
+										<div class="subsection__column">
+											<div class="content">
+												<ul>
+													<li>
+														30 октября в Батецком районе будет дан старт областному походу по местам боевых сражений.
+														К нему присоединятся активисты военно-патриотических клубов, центров, объединений и представители
+														поисковых отрядов Новгородской области.
+													</li>
+													<li>
+														Поход продлится до 1 ноября и будет посвящен боевому пути 1-й Ленинградской стрелковой дивизии
+														народного ополчения, которая в июле 1941 года высадилась на станции Батецкая и заняла оборону
+														на Лужском рубеже.
+													</li>
+													<li>
+														В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской дивизии
+														народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».
+														
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section class="subsection subsection--offset-column-all column-span-4-lg-up from-container-to-body">
+								<header class="subsection__header">
+									<div class="container subsection__grid">
+										<div class="subsection__column">
+											<h2 class="subsection__title">Галерея</h2>
+										</div>
+									</div>
+								</header>
+								<div class="subsection__main">
+									<div class="container subsection__grid">
+										<div class="subsection__column">
+											<div class="gallery">
+												<div class="gallery__main"><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a>
+												</div>
+												<div class="gallery__footer">
+													<a class="button-load" href=""><span class="button-load__content">Загрузить еще</span>
+														<icon-svg class="button-load__icon" name="plus"></icon-svg>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<div class="share column-span-3-lg-up column-offset-1-lg-up">
+								<div class="share__title">
+									<icon-svg class="share__title-icon" name="share"></icon-svg>Поделиться
+								</div>
+								<div class="share__items"><a class="share__item share__item--facebook" href="">
+										<icon-svg class="share__item-icon" name="facebook"></icon-svg>Поделиться</a><a class="share__item share__item--twitter" href="">
+										<icon-svg class="share__item-icon" name="twitter"></icon-svg>Твитнуть</a><a class="share__item share__item--facebook" href="">
+										<icon-svg class="share__item-icon" name="facebook"></icon-svg>Поделиться</a><a class="share__item share__item--twitter" href="">
+										<icon-svg class="share__item-icon" name="twitter"></icon-svg>Твитнуть</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
