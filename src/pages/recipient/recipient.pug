@@ -2,6 +2,8 @@ extends ../../pug/base
 include ../../components/header/header
 include ../../components/footer/footer
 
+include ../../components/section/section
+
 append variables
 	-
 		title = `${title} - Грантополучатель`;
@@ -12,10 +14,21 @@ block app
 	main.app__main
 		+breadcrumbs([
 			{
-				url: 'grants-recipients.html',
+				url: 'recipients.html',
 				content: 'Гранты получили',
 			},
 			'Создание проектного офиса для обучения молодёжи лидерским качествам',
 		]).container.app__breadcrumbs
+
+		+section({
+			type: 'grants',
+			title: 'Создание проектного офиса для обучения молодёжи лидерским качествам',
+			advanced: true,
+			withoutImage: true,
+		})
+			.container.section__grid
+				aside.section__grid-aside
+
+				.section__grid-main
 
 	+footer()

@@ -59,6 +59,6 @@ mixin section({type, title, desc, score, advanced, withoutImage})
 		if !block
 			footer.container.section__footer
 				+button-arrow({content: "'Смотреть все'"})(
-					href=`${type === 'grants' ? `${type}-all` : type}.html`
+					href=`${type}.html`
 					x-bind:class="{'button-arrow--row': !$store.isDesktop}"
 				)

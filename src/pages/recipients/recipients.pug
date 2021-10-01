@@ -1,10 +1,12 @@
 extends ../../pug/base
 include ../../components/header/header
 include ../../components/footer/footer
-include ../../components/section/section
+
 include ../../components/section-nav/section-nav
 include ../../components/filters/filters
 include ../../components/grants/grants
+
+include ../../components/section/section
 
 append variables
 	-
@@ -15,6 +17,7 @@ block app
 
 	main.app__main
 		+breadcrumbs(['Гранты получили']).container.app__breadcrumbs
+
 		+section({
 			type: 'grants',
 			title: 'Гранты получили',
@@ -30,7 +33,7 @@ block app
 							isActive: false,
 						},
 						{
-							url: 'grants-recipients.html',
+							url: 'recipients.html',
 							content: 'Гранты получили',
 							isActive: true,
 						},
