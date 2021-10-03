@@ -28,7 +28,7 @@
 	@include media-breakpoint-down(lg) {
 		&::before {
 			top: auto;
-			margin-top: calc(-1 * var(--gap-2xl));
+			margin-top: calc(-1 * var(--gap-lg));
 			height: min(350 / 360 * var(--body-width), 100%);
 		}
 	}
