@@ -28,6 +28,7 @@
 	display: flex;
 	column-gap: 20rem;
 	align-items: flex-start;
+	border-top: 1px solid transparent;
 	padding-top: 30rem;
 	font-size: $font-size;
 	line-height: $line-height;
@@ -39,19 +40,19 @@
 		content: "";
 		position: absolute;
 		left: 0;
-		top: 0;
+		top: -1px;
 		width: 100%;
 		height: 1px;
 		background: $color;
 		transition: height;
-		transition-duration: inherit;
+		transition-duration: $transition-duration;
 	}
 
 	@include hover {
 		color: $color-primary-hover;
 
 		&::before {
-			height: 2px;
+			height: 3px;
 		}
 	}
 

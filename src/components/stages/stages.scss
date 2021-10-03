@@ -4,8 +4,8 @@
 	border-bottom: 1px solid $color;
 	padding: 45rem 0;
 
-	&:not(:first-child) {
-		border-top-color: transparent;
+	&:nth-child(n + 2) {
+		border-top: 0;
 	}
 
 	@include media-breakpoint-up(lg) {
