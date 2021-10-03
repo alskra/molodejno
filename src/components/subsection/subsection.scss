@@ -21,10 +21,6 @@
 .subsection {
 	position: relative;
 
-	&:not(:last-child) {
-		margin-bottom: var(--gap-2xl);
-	}
-
 	&--reviews {
 		padding: var(--gap-2xl) 0;
 	}
@@ -74,7 +70,7 @@
 .subsection__title {
 	font-family: $heading-font-family;
 	font-weight: $heading-font-weight;
-	font-size: var(--content-h2-font-size);
+	font-size: var(--content-edited-h2-font-size);
 	line-height: $heading-line-height;
 	color: $heading-color;
 }

@@ -11,6 +11,8 @@ import '../../components/recipients/recipients';
 import '../../components/gallery/gallery';
 import '../../components/reviews/reviews';
 
+import '../../components/subsection-section/subsection-section';
+
 import '../../components/article-nav/article-nav';
 import '../../components/card-details/card-details';
 import '../../components/subsection/subsection';

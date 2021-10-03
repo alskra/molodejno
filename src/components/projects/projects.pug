@@ -38,7 +38,7 @@ mixin projects()
 		];
 
 	.projects&attributes(attributes)
-		.container
+		+container()
 			.projects__swiper(
 				x-data="swiperCards"
 				x-effect="effect"

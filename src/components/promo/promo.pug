@@ -24,7 +24,7 @@ mixin promo({offsetColumn, header, type})
 			[`promo--${type}`]: type,
 		}
 	)&attributes(attributes)
-		.container.promo__grid
+		+container().promo__grid
 			.promo__image
 				+picture-webp().promo__image-el(
 					src=image

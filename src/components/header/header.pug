@@ -8,7 +8,7 @@ mixin header()
 		x-on:scroll.window="updateStick"
 		x-on:resize.window="updateStick(); updateMobMenu();"
 	)&attributes(attributes)
-		.container.header__mob(x-show="!$store.isDesktop")
+		+container().header__mob(x-show="!$store.isDesktop")
 			a.header__logo(href="home.html" x-show="!mobMenuIsOpen")
 				+picture-webp.header__logo-image(
 					src="../../images/design/logo-mob.png"
@@ -28,7 +28,7 @@ mixin header()
 			x-transition.opacity
 			x-ref="main"
 		)
-			.container.header__grid
+			+container().header__grid
 				a.header__visually(href="" x-show="$store.isDesktop")
 					icon-svg(name="visually")
 					| Слабовидящим

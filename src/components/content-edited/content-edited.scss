@@ -1,0 +1,129 @@
+:root {
+	--content-edited-font-size: #{$font-size};
+	--content-edited-line-height: #{$line-height};
+	--content-edited-indent: #{em(15)};
+	--content-edited-h1-font-size: 60rem;
+	--content-edited-h2-font-size: 50rem;
+	--content-edited-h3-font-size: 40rem;
+	--content-edited-h4-font-size: 35rem;
+	--content-edited-h5-font-size: 30rem;
+	--content-edited-h6-font-size: 25rem;
+	--content-edited-list-indent-left: #{em(64)};
+	--content-edited-ul-marker-size: #{em(10)};
+
+	@include media-breakpoint-down(lg) {
+		--content-edited-h1-font-size: 40rem;
+		--content-edited-h2-font-size: 35rem;
+		--content-edited-h3-font-size: 30rem;
+		--content-edited-h4-font-size: 25rem;
+		--content-edited-h5-font-size: 20rem;
+		--content-edited-h6-font-size: 15rem;
+		--content-edited-list-indent-left: #{em(36)};
+	}
+}
+
+.content-edited {
+	font-size: var(--content-edited-font-size);
+	line-height: var(--content-edited-line-height);
+	color: $color;
+
+	// stylelint-disable
+	p,
+	ul, ol, li,
+	dl, dt, dd,
+	table {
+	// stylelint-enable
+		&:not(:last-child) {
+			margin-bottom: var(--content-edited-indent);
+		}
+	}
+
+	// stylelint-disable
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+	// stylelint-enable
+		font-family: $heading-font-family;
+		font-weight: $heading-font-weight;
+		line-height: $heading-line-height;
+		color: $heading-color;
+
+		&:not(:first-child) {
+			margin-top: 1em;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 0.5em;
+		}
+	}
+
+	h1,
+	.h1 {
+		font-size: var(--content-edited-h1-font-size);
+	}
+
+	h2,
+	.h2 {
+		font-size: var(--content-edited-h2-font-size);
+	}
+
+	h3,
+	.h3 {
+		font-size: var(--content-edited-h3-font-size);
+		color: $color-primary;
+	}
+
+	h4,
+	.h4 {
+		font-size: var(--content-edited-h4-font-size);
+	}
+
+	h5,
+	.h5 {
+		font-size: var(--content-edited-h5-font-size);
+	}
+
+	h6,
+	.h6 {
+		font-size: var(--content-edited-h6-font-size);
+	}
+
+	a[href] {
+		color: $color-primary;
+		transition: color;
+		transition-duration: $transition-duration;
+
+		&:hover {
+			color: $color-primary-hover;
+		}
+	}
+
+	ul,
+	ol {
+		padding-left: var(--content-edited-list-indent-left);
+	}
+
+	ul {
+		position: relative;
+		list-style: none;
+
+		> li {
+			&::before {
+				@include conic-gradient;
+
+				content: "";
+				position: absolute;
+				left: 0;
+				margin-top: calc((var(--content-edited-line-height) * 1em - var(--content-edited-ul-marker-size)) / 2);
+				border-radius: 50%;
+				width: var(--content-edited-ul-marker-size);
+				height: var(--content-edited-ul-marker-size);
+			}
+		}
+	}
+
+	th,
+	td {
+		vertical-align: baseline;
+		padding: 0;
+	}
+}

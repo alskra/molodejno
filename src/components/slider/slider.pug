@@ -29,7 +29,7 @@ mixin slider()
 							+img-2x().slider__image-el(src=slide.image)
 
 						.slider__body
-							.container.slider__container
+							+container().slider__container
 								.slider__body-inner
 									.slider__header
 										.slider__date
@@ -45,7 +45,7 @@ mixin slider()
 									h2.slider__title!= slide.title
 
 			.slider__nav
-				.container.slider__container-nav
+				+container().slider__container-nav
 					button.slider__button(x-ref="buttonPrev")
 						icon-svg(name="arrow-left")
 					button.slider__button(x-ref="buttonNext")

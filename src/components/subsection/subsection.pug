@@ -21,7 +21,7 @@ mixin subsection({offsetColumn, anchor, type, extType, title})
 				})
 			default
 				header.subsection__header
-					.container.subsection__grid
+					+container().subsection__grid
 						.subsection__column(class={'subsection__column--grid': type === 'reviews'})
 							h2.subsection__title!= title
 							if type === 'reviews'
@@ -31,6 +31,6 @@ mixin subsection({offsetColumn, anchor, type, extType, title})
 								}).subsection__header-button
 
 		.subsection__main
-			.container.subsection__grid
-				.subsection__column
+			+container().subsection__grid
+				+content().subsection__column
 					block

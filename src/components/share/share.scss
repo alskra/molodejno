@@ -3,6 +3,10 @@
 	align-items: center;
 	gap: 15rem 20rem;
 
+	&:not(:first-child) {
+		margin-top: var(--gap-xl);
+	}
+
 	@include media-breakpoint-up(lg) {
 		grid-template-columns: auto 1fr;
 	}
@@ -11,8 +15,13 @@
 .share__items {
 	display: grid;
 	align-items: center;
-	grid-template-columns: repeat(auto-fill, minmax(135rem, auto));
+	justify-content: start;
+	grid-template-columns: repeat(auto-fill, 135rem);
 	gap: 10rem;
+
+	@include media-breakpoint-down(lg) {
+		grid-template-columns: repeat(auto-fill, minmax(135rem, 1fr));
+	}
 }
 
 .share__title {

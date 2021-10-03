@@ -20,7 +20,7 @@
 }
 
 .review-item__content {
-	--line-height: var(--content-line-height);
+	--line-height: var(--content-edited-line-height);
 
 	@include line-clamp;
 

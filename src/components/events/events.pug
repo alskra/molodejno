@@ -77,12 +77,12 @@ mixin events(type)
 	.events&attributes(attributes)
 		case type
 			when 'forums'
-				.container.events__grid
+				+container().events__grid
 					each eventItem in events[type]
 						+event-item(eventItem)
 			when 'playbill'
 			when 'news'
-				.container.events__grid
+				+container().events__grid
 					+event-item(events[type][0]).events__item-main
 					.events__swiper(
 						x-data="swiperCards"

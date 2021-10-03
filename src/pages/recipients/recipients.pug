@@ -16,7 +16,8 @@ block app
 	+header()
 
 	main.app__main
-		+breadcrumbs(['Гранты получили']).container.app__breadcrumbs
+		+container().app__breadcrumbs
+			+breadcrumbs(['Гранты получили'])
 
 		+section({
 			type: 'grants',
@@ -24,7 +25,7 @@ block app
 			advanced: true,
 			withoutImage: true,
 		})
-			.container.section__grid
+			+container().section__grid
 				aside.section__grid-aside
 					+section-nav([
 						{
@@ -66,6 +67,7 @@ block app
 					])
 
 				.section__grid-main
-					+grants('recipients')
+					+content()
+						+grants('recipients')
 
 	+footer()

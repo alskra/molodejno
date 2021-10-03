@@ -1,0 +1,13 @@
+.subsection-section__header {
+	&:not(:last-child) {
+		margin-bottom: var(--subsection__header-margin-bottom);
+	}
+}
+
+.subsection-section__title {
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	font-size: var(--content-edited-h3-font-size);
+	line-height: $heading-line-height;
+	color: $color-primary;
+}

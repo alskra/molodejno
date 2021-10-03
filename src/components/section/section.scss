@@ -270,8 +270,16 @@
 }
 
 .section__grid-main {
+	.subsection {
+		margin: 0 calc(-1 * var(--container-content-offset-x));
+	}
+
 	@include media-breakpoint-up(lg) {
-		grid-column: span 3;
+		grid-column: 2 / 5;
+
+		.subsection {
+			margin-left: calc(-3 * (var(--container-cell-width) + var(--gap)) - 1 * var(--container-content-offset-x));
+		}
 	}
 }
 

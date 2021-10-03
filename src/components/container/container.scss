@@ -4,6 +4,7 @@
 	--container-width: min(var(--body-width), var(--container-max-width));
 	--container-content-width: calc(var(--container-width) - 2 * var(--container-gap));
 	--container-content-offset-x: calc((var(--body-width) - var(--container-content-width)) / 2);
+	--container-cell-width: calc((var(--container-content-width) - 11 * var(--gap)) / 12);
 
 	@include media-breakpoint-down(lg) {
 		--container-gap: 20rem;

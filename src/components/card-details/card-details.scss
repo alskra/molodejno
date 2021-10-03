@@ -3,10 +3,6 @@
 	padding: 45rem 65rem 60rem 95rem;
 	background: $color-white;
 
-	&:not(:last-child) {
-		margin-bottom: var(--gap-2xl);
-	}
-
 	@include media-breakpoint-down(lg) {
 		padding: 25rem var(--container-gap) 30rem;
 	}
@@ -143,7 +139,7 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		--content-font-size: 14rem;
+		--content-edited-font-size: 14rem;
 
 		&:not(:last-child) {
 			margin-bottom: 15rem;

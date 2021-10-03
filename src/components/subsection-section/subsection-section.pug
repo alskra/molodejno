@@ -1,0 +1,6 @@
+mixin subsection-section({title})
+	section.subsection-section&attributes(attributes)
+		header.subsection-section__header
+			h3.subsection-section__title!= title
+		+content().subsection-section__main
+			block

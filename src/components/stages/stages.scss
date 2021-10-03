@@ -20,7 +20,7 @@
 }
 
 .stages__main {
-	.content .h5 {
+	.content-edited .h5 {
 		color: $color-primary;
 	}
 
@@ -29,7 +29,7 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		.content .h5 {
+		.content-edited .h5 {
 			&:not(:last-child) {
 				margin-bottom: 0.25em;
 			}

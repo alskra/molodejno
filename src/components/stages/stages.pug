@@ -28,6 +28,6 @@ mixin stages()
 				header.stages__header
 					+date(stage.dateStart, stage.dateEnd, true)
 				.stages__main
-					.content.stages__content
+					+content-edited().stages__content
 						h3.h5!= stage.title
 						!= stage.content

@@ -1,4 +1,4 @@
-.button-arrow-down {
+.button-expand {
 	display: inline-flex;
 	column-gap: 15rem;
 	align-items: center;
@@ -23,7 +23,7 @@
 	}
 
 	&--up {
-		.button-arrow-down__icon {
+		.button-expand__icon {
 			transform: rotateX(180deg);
 		}
 	}
@@ -34,12 +34,12 @@
 	}
 }
 
-.button-arrow-down__content {
+.button-expand__content {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
-.button-arrow-down__icon {
+.button-expand__icon {
 	flex-shrink: 0;
 	width: 25rem;
 	height: 25rem;

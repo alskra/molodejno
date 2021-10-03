@@ -2,8 +2,8 @@ include ../score/score
 include ../events/events
 include ../projects/projects
 
-mixin section({type, title, desc, score, advanced, withoutImage})
-	section.section(
+mixin section({tag = 'section', type, title, desc, score, advanced, withoutImage})
+	#{tag}.section(
 		class=`section--${type}`
 		class={
 			'section--advanced': advanced,
@@ -11,7 +11,7 @@ mixin section({type, title, desc, score, advanced, withoutImage})
 		}
 	)&attributes(attributes)
 		.section__bg
-			.container
+			+container()
 				.position-relative
 					.section__bg-el.section__rellax(
 						class=`section__bg-el--${type}`
@@ -21,22 +21,22 @@ mixin section({type, title, desc, score, advanced, withoutImage})
 		if !withoutImage
 			.section__image(class=`section__image--${type}`)
 				.overflow-hidden.section__rellax(data-rellax-speed="0")
-					.container
+					+container()
 						+picture-webp().section__image-el(
 							src=`../../images/design/section/${type}/back.png`
 							srcset="2x"
 						)
 			.section__image(class=`section__image--${type}`)
 				.overflow-hidden.section__rellax(data-rellax-speed="1")
-					.container
+					+container()
 						+picture-webp().section__image-el(
 							src=`../../images/design/section/${type}/front.png`
 							srcset="2x"
 						)
 
-		header.container.section__header
+		+container('header').section__header
 			.section__header-body
-				#{advanced ? 'h1' : 'h2'}.heading.section__heading(data-aos="fade-up" data-aos-duration="800")= title
+				+heading(advanced ? 'h1' : 'h2').section__heading(data-aos="fade-up" data-aos-duration="800")!= title
 				if desc
 					.section__desc!= desc
 				if score
@@ -57,7 +57,7 @@ mixin section({type, title, desc, score, advanced, withoutImage})
 						+projects()
 
 		if !block
-			footer.container.section__footer
+			+container('footer').section__footer
 				+button-arrow({content: "'Смотреть все'"})(
 					href=`${type}.html`
 					x-bind:class="{'button-arrow--row': !$store.isDesktop}"

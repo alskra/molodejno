@@ -12,7 +12,7 @@ append body-start
 			margin-bottom: var(--gap-2xl);
 		}
 
-		.content:not(:last-child) {
+		+content-edited():not(:last-child) {
 			margin-bottom: var(--gap);
 		}
 
@@ -21,8 +21,8 @@ block app
 
 	main.app__main(style={'padding': 'var(--gap) 0'})
 		section
-			.container
-				.content
+			+container()
+				+content-edited()
 					h2 Pages
 					-
 						const pages = [
@@ -64,8 +64,8 @@ block app
 													a(href=subpage.url)= subpage.title
 
 		section
-			.container
-				.content
+			+container()
+				+content-edited()
 					h1 h1: Конкурс среди организаций высшего образования
 					h2 h2: Конкурс среди организаций высшего образования
 					h3 h3: Конкурс среди организаций высшего образования
@@ -95,14 +95,14 @@ block app
 						и действующих направлениях данной отрасли.
 
 		section
-			.container
-				.content
+			+container()
+				+content-edited()
 					h2: code button
 				+button({content: 'Синяя кнопка'})
 
 		section
-			.container
-				.content
+			+container()
+				+content-edited()
 					h2: code button-arrow
 				+button-arrow({content: "'Смотреть все'"})
 				br
@@ -126,8 +126,8 @@ block app
 				})
 
 		section
-			.container
-				.content
+			+container()
+				+content-edited()
 					h2: code date
 				+date('26.10.2020')
 				br
@@ -139,7 +139,7 @@ block app
 					+date('26.10.2020', '30.10.2020')
 				br
 				br
-				.content
+				+content-edited()
 					h3: code adaptive
 				+date('26.10.2020', null, true)
 				br
@@ -147,8 +147,8 @@ block app
 				+date('26.10.2020', '30.10.2020', true)
 
 		section
-			.container
-				.content
+			+container()
+				+content-edited()
 					h2: code organizer
 				+organizer({
 					title: 'Молодежный центр',
@@ -162,7 +162,7 @@ block app
 				})(style={'max-width': '255px'})
 				br
 				br
-				.content
+				+content-edited()
 					h3: code line-clamp
 				+organizer({
 					title: 'Молодежный центр',
