@@ -73,8 +73,8 @@
 
 .article__grid {
 	display: grid;
-	column-gap: var(--gap);
 	align-items: start;
+	gap: 30rem var(--gap);
 
 	@include media-breakpoint-up(lg) {
 		grid-template-columns: repeat(6, 1fr);

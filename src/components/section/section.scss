@@ -249,8 +249,8 @@
 
 .section__grid {
 	display: grid;
-	column-gap: var(--gap);
 	align-items: start;
+	gap: 30rem var(--gap);
 
 	@include media-breakpoint-up(lg) {
 		grid-template-columns: repeat(4, 1fr);
@@ -262,10 +262,6 @@
 		position: sticky;
 		top: calc(var(--header-sticky-height) + 20rem);
 		z-index: 1;
-	}
-
-	@include media-breakpoint-down(lg) {
-		margin-bottom: 30rem;
 	}
 }
 

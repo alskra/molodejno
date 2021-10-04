@@ -5,9 +5,7 @@
 
 	@include media-breakpoint-down(lg) {
 		column-gap: var(--gap);
-		align-content: start;
 		align-items: start;
-		grid-auto-rows: 1fr;
 		grid-template-columns: 1fr min((100% - var(--gap)) / 2, 265rem);
 		padding-top: 20rem;
 	}
