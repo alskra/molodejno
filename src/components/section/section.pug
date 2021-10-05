@@ -1,8 +1,8 @@
 include ../score/score
 include ../events/events
-include ../projects/projects
+include ../card-list/card-list
 
-mixin section({tag = 'section', type, title, desc, score, advanced, withoutImage})
+mixin section({tag = 'section', type, title, desc, score, advanced, withoutImage} = {})
 	#{tag}.section(
 		class=`section--${type}`
 		class={
@@ -46,15 +46,19 @@ mixin section({tag = 'section', type, title, desc, score, advanced, withoutImage
 			if block
 				block
 			else
-				case type
-					when 'forums'
-					when 'playbill'
-					when 'news'
-						+events(type)
-					when 'projects'
-					when 'contests'
-					when 'grants'
-						+projects()
+				+container()
+					case type
+						when 'forums'
+						when 'playbill'
+						when 'news'
+							+events(type)
+						when 'projects'
+						when 'contests'
+						when 'grants'
+							+card-list({
+								type,
+								last: true,
+							})
 
 		if !block
 			+container('footer').section__footer

@@ -1,4 +1,6 @@
 .card-item {
+	--image-border-radius: 0;
+
 	position: relative;
 	display: flex;
 	flex-flow: column;
@@ -30,50 +32,27 @@
 		}
 	}
 
-	&--project {
-		&:nth-child(4n + 2) .card-item__image {
-			border-radius: 50%;
-		}
-
-		&:nth-child(4n + 3) .card-item__image {
-			border-radius: 50% 0 0 50%;
-		}
-	}
-
 	@include media-breakpoint-up(lg) {
-		&--event {
-			&:nth-child(4n + 1) .card-item__image {
-				border-radius: 50% 0 0 50%;
+		&--style-group-8 {
+			&:nth-child(8n + 1),
+			&:nth-child(8n + 8) {
+				--image-border-radius: 50% 0 0 50%;
 			}
 
-			&:nth-child(4n + 4) .card-item__image {
-				border-radius: 50%;
-			}
-		}
-
-		&--recipient {
-			&:nth-child(6n + 1) .card-item__image,
-			&:nth-child(6n + 6) .card-item__image {
-				border-radius: 50% 0 0 50%;
-			}
-
-			&:nth-child(6n + 3) .card-item__image,
-			&:nth-child(6n + 5) .card-item__image {
-				border-radius: 50%;
+			&:nth-child(8n + 3),
+			&:nth-child(8n + 6) {
+				--image-border-radius: 50%;
 			}
 		}
 	}
 
 	@include media-breakpoint-down(lg) {
-		&--event,
-		&--recipient {
-			&:nth-child(4n + 1) .card-item__image {
-				border-radius: 50% 0 0 50%;
-			}
+		&:nth-child(4n + 1) {
+			--image-border-radius: 50% 0 0 50%;
+		}
 
-			&:nth-child(4n + 3) .card-item__image {
-				border-radius: 50%;
-			}
+		&:nth-child(4n + 3) {
+			--image-border-radius: 50%;
 		}
 	}
 }
@@ -121,6 +100,7 @@
 .card-item__image {
 	position: relative;
 	overflow: hidden;
+	border-radius: var(--image-border-radius);
 
 	&::before {
 		content: "";

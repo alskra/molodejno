@@ -1,4 +1,4 @@
-mixin organizer({title, image, lineClamp})
+mixin organizer({title, image, lineClamp} = {})
 	.organizer(class={'organizer--line-clamp': lineClamp})&attributes(attributes)
 		.organizer__title!= title
 		+img-2x().organizer__image(

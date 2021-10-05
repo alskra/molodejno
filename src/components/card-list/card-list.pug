@@ -1,2 +1,28 @@
-mixin card-list(type)
+include ../card-item/card-item
+
+mixin card-list({type, last = false} = {})
+	include data
+
+	-
+		let items = data[type];
+
 	.card-list&attributes(attributes)
+		case type
+			when 'projects'
+			when 'contests'
+			when 'grants'
+				if last
+					.card-list__main
+						.card-list__main-inner(
+							x-data="swiperCards"
+							x-effect="effect"
+							x-bind:class="{swiper: !$store.isDesktop}"
+							x-ref="swiper"
+						)
+							.card-list__grid.card-list__grid--columns-4(
+								x-bind:class="{'swiper-wrapper': !$store.isDesktop}"
+							)
+								each item in items.slice(0, 4)
+									+card-item(item).card-item--style-group-8.card-list__item(
+										x-bind:class="{'swiper-slide': !$store.isDesktop}"
+									)

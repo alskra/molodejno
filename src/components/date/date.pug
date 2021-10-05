@@ -1,5 +1,5 @@
 mixin date(date1, date2, adaptive = false)
-	- date1 = date1.split('.');
+	- date1 = date1 && date1.split('.');
 	- date2 = date2 && date2.split('.');
 
 	.date(class={'date--adaptive': adaptive})&attributes(attributes)
