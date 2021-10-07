@@ -16,16 +16,28 @@
 }
 
 .card-list__grid {
+	&:not(.swiper-wrapper) {
+		display: grid;
+		gap: 80rem var(--gap);
+	}
+
 	@include media-breakpoint-up(lg) {
-		&:not(.swiper-wrapper) {
-			display: grid;
-			gap: 80rem var(--gap);
+		&--columns-3 {
+			&:not(.swiper-wrapper) {
+				grid-template-columns: repeat(3, 1fr);
+			}
 		}
 
 		&--columns-4 {
 			&:not(.swiper-wrapper) {
 				grid-template-columns: repeat(4, 1fr);
 			}
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		&:not(.swiper-wrapper) {
+			row-gap: 30rem;
 		}
 	}
 }

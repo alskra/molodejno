@@ -1,4 +1,10 @@
 .pagination {
+	&:not(:first-child) {
+		margin-top: var(--gap-xl);
+	}
+}
+
+.pagination__multipage {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;

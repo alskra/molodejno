@@ -1,8 +1,28 @@
 extends ../../pug/base
+
 include ../../components/card-item/card-item
+
+append variables
+	-
+		let type = 'projects';
+		let last;
 
 block document
 	include ../../components/card-list/data
 
-	each item in data.projects
-		+card-item(item).card-item--style-group-6.card-list__item
+	-
+		let [items, isRecipients, isEvents] = data(type, last);
+
+	if last
+		each item in items
+			+card-item(item).card-list__item(
+				class={
+					'card-item--style-group-8': !isRecipients && !isEvents,
+					'card-item--style-group-6': isRecipients,
+					'card-item--style-group-4': isEvents,
+				}
+				x-bind:class="{'swiper-slide': !$store.isDesktop}"
+			)
+	else
+		each item in items
+			+card-item(item).card-item--style-group-6.card-list__item

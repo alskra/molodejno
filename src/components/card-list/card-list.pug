@@ -1,28 +1,41 @@
 include ../card-item/card-item
+include ../pagination/pagination
 
-mixin card-list({type, last = false} = {})
+mixin card-list({type, last} = {})
 	include data
 
 	-
-		let items = data[type];
+		let [items, isRecipients, isEvents] = data(type, last);
 
-	.card-list&attributes(attributes)
-		case type
-			when 'projects'
-			when 'contests'
-			when 'grants'
-				if last
-					.card-list__main
-						.card-list__main-inner(
-							x-data="swiperCards"
-							x-effect="effect"
-							x-bind:class="{swiper: !$store.isDesktop}"
-							x-ref="swiper"
-						)
-							.card-list__grid.card-list__grid--columns-4(
-								x-bind:class="{'swiper-wrapper': !$store.isDesktop}"
+	.card-list(x-data="{gridEl: $refs.grid}")&attributes(attributes)
+		if last
+			.card-list__main
+				.card-list__main-inner(
+					x-data="swiperCards"
+					x-effect="effect"
+					x-bind:class="{swiper: !$store.isDesktop}"
+					x-ref="swiper"
+				)
+					.card-list__grid(
+						class={
+							'card-list__grid--columns-4': !isRecipients && !isEvents,
+							'card-list__grid--columns-3': isRecipients,
+							'card-list__grid--columns-2': isEvents,
+						}
+						x-bind:class="{'swiper-wrapper': !$store.isDesktop}"
+						x-ref="grid"
+					)
+						each item in items
+							+card-item(item).card-list__item(
+								class={
+									'card-item--style-group-8': !isRecipients && !isEvents,
+									'card-item--style-group-6': isRecipients,
+									'card-item--style-group-4': isEvents,
+								}
+								x-bind:class="{'swiper-slide': !$store.isDesktop}"
 							)
-								each item in items.slice(0, 4)
-									+card-item(item).card-item--style-group-8.card-list__item(
-										x-bind:class="{'swiper-slide': !$store.isDesktop}"
-									)
+		else
+			.card-list__grid.card-list__grid--columns-3(x-ref="grid")
+				each item in items
+					+card-item(item).card-item--style-group-6.card-list__item
+			+pagination(x-data=`pagination('ajax/${type}.html', gridEl)`)
