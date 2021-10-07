@@ -1,5 +1,5 @@
 include mixins
-include data
+include store
 
 include ../components/container/container
 include ../components/heading/heading
@@ -23,16 +23,17 @@ block variables
 		let bodyClassList = [];
 		let appClassList = [];
 
-doctype html
-html(lang="ru")
-	head
-		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
-		meta(http-equiv="x-ua-compatible" content="ie=edge")
-		title= title
-		block head-end
+block document
+	doctype html
+	html(lang="ru")
+		head
+			meta(charset="utf-8")
+			meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
+			meta(http-equiv="x-ua-compatible" content="ie=edge")
+			title= title
+			block head-end
 
-	body(class=bodyClassList)
-		block body-start
-		.app(class=appClassList)
-			block app
+		body(class=bodyClassList)
+			block body-start
+			.app(class=appClassList)
+				block app

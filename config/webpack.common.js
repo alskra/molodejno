@@ -7,20 +7,31 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const paths = require('./paths');
 
-const pages = fs.readdirSync(path.resolve(paths.src, 'pages'));
+const pages = fs.readdirSync(path.resolve(paths.src, 'pages'))
+	.filter((item) => item !== 'ajax');
+const ajax = fs.readdirSync(path.resolve(paths.src, 'pages/ajax'));
 const entry = {};
 
-pages.forEach((key) => {
-	entry[key] = path.resolve(paths.src, `pages/${key}/${key}.js`);
+pages.forEach((page) => {
+	entry[page] = path.resolve(paths.src, `pages/${page}/${page}.js`);
 });
 
-const htmlPluginEntries = pages.map((key) => {
+const htmlPluginEntries = pages.map((page) => {
 	return new HtmlWebpackPlugin({
-		template: path.resolve(paths.src, `pages/${key}/${key}.pug`),
-		filename: `${key}.html`,
+		template: path.resolve(paths.src, `pages/${page}/${page}.pug`),
+		filename: `${page}.html`,
 		title: 'Webpack Starter',
-		chunks: [key],
+		chunks: [page],
 		minify: false,
+	});
+});
+
+const htmlPluginEntriesAjax = ajax.map((item) => {
+	return new HtmlWebpackPlugin({
+		template: path.resolve(paths.src, `pages/ajax/${item}`),
+		filename: `ajax/${path.basename(item, '.pug')}.html`,
+		minify: false,
+		inject: false,
 	});
 });
 
@@ -99,6 +110,7 @@ module.exports = {
 	},
 	plugins: [
 		...htmlPluginEntries,
+		...htmlPluginEntriesAjax,
 		new CopyWebpackPlugin({
 			patterns: [
 				{
