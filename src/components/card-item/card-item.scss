@@ -33,6 +33,16 @@
 	}
 
 	@include media-breakpoint-up(lg) {
+		&--style-group-4 {
+			&:nth-child(4n + 1) {
+				--image-border-radius: 50% 0 0 50%;
+			}
+
+			&:nth-child(4n + 4) {
+				--image-border-radius: 50%;
+			}
+		}
+
 		&--style-group-6 {
 			&:nth-child(6n + 1),
 			&:nth-child(6n + 6) {
