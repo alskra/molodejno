@@ -10,8 +10,14 @@
 
 	@include media-breakpoint-up(lg) {
 		&--advanced {
+			.section__image--forums,
 			.section__image--grants {
 				top: -40rem;
+			}
+
+			.section__image--forums .section__image-el {
+				right: 30rem;
+				width: 575rem;
 			}
 
 			.section__image--grants .section__image-el {
