@@ -164,11 +164,11 @@
 	flex: 1;
 }
 
-.card__tags {
-	position: relative;
-	z-index: 1;
-}
-
 .card-item__price {
 	margin-left: auto;
+}
+
+.card__tags {
+	position: relative;
+	z-index: 2;
 }

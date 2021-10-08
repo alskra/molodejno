@@ -1,18 +1,20 @@
 mixin event-item({url = "", title, image, date, location, tags} = {})
-	a.event-item(
-		href=url
-		title!=title
-	)&attributes(attributes)
+	article.event-item&attributes(attributes)
 		.event-item__image
-			img.event-item__image-el(
+			+img-2x.event-item__image-el(
 				src=image
-				srcset=`${image.replace(/\.\w+$/, '@2x$&')} 2x`
-				alt=""
+				alt!=title
 			)
 		.event-item__body
 			.event-item__main
 				if location
 					.event-item__group
 						+location(location).event-item__location
+
 				+date(date).event-item__date
-				h3.event-item__title!= title
+
+				h3.event-item__title
+					a.event-item__link(
+						href=url
+						title!=title
+					)!= title

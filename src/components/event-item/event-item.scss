@@ -7,9 +7,11 @@
 		}
 	}
 
-	&--lg {
-		.event-item__image::before {
-			padding-top: cw(540, 825);
+	@include media-breakpoint-up(lg) {
+		&--lg {
+			.event-item__image::before {
+				padding-top: cw(540, 825);
+			}
 		}
 	}
 }
@@ -30,7 +32,7 @@
 		left: 0;
 		bottom: 0;
 		width: 100%;
-		height: percentage(div(376, 540));
+		height: cw(376, 540);
 		background: linear-gradient(to top, rgba($color-black, 0.8), transparent);
 	}
 }
@@ -107,5 +109,14 @@
 
 	@include media-breakpoint-down(lg) {
 		font-size: 20rem;
+	}
+}
+
+.event-item__link {
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		inset: 0;
 	}
 }
