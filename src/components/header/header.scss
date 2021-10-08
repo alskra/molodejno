@@ -3,7 +3,7 @@
 	--header-sticky-height: 50rem;
 
 	@include media-breakpoint-down(lg) {
-		--header-height: 60rem;
+		--header-height: min(60rem, 1.2 * 60px);
 		--header-sticky-height: var(--header-height);
 	}
 }
@@ -78,10 +78,6 @@
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
-		top: 0;
-	}
-
 	@media print {
 		display: none;
 	}
@@ -99,8 +95,8 @@
 	flex-shrink: 0;
 	margin-left: auto;
 	border: 0;
-	width: 37rem;
-	height: 24rem;
+	width: min(37rem, 1.2 * 37px);
+	height: min(24rem, 1.2 * 24px);
 	background: none;
 
 	&::before,
@@ -116,11 +112,11 @@
 	}
 
 	&::before {
-		transform: translate(-50%, -12rem);
+		transform: translate(-50%, max(-12rem, 1.2 * -12px));
 	}
 
 	&::after {
-		transform: translate(-50%, 12rem);
+		transform: translate(-50%, min(12rem, 1.2 * 12px));
 	}
 
 	span {
@@ -245,7 +241,7 @@
 	max-width: 100%;
 
 	@include media-breakpoint-down(lg) {
-		width: 180rem;
+		width: min(180rem, 1.2 * 180px);
 	}
 }
 

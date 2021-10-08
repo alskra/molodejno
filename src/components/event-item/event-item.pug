@@ -1,6 +1,6 @@
-mixin event-item({title, image, date, location})
+mixin event-item({url = "", title, image, date, location, tags} = {})
 	a.event-item(
-		href=""
+		href=url
 		title!=title
 	)&attributes(attributes)
 		.event-item__image
