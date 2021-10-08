@@ -47,4 +47,9 @@ mixin events(type)
 				when 'playbill'
 				when 'news'
 					+event-item(events[type][0]).events__item.events__item--main
-					+cards(type, 4)
+					+cards({
+						type,
+						slice: 4,
+						tags: false,
+						columns: 2,
+					})

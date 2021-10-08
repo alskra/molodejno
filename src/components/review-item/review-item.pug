@@ -12,7 +12,7 @@ mixin review-item({content, image, name, position} = {})
 				tag: 'button',
 				content: "isClamped ? 'Читать весь отзыв' : 'Свернуть'",
 			}).review-item__button(
-				x-bind:class="{'button-arrow-down--up': !isClamped}"
+				x-bind:class="{'button-expand--up': !isClamped}"
 				x-show="hasClamp"
 				x-on:click="isClamped = !isClamped"
 			)

@@ -1,8 +1,6 @@
 -
-	const data = (type, last) => {
+	const data = (type, slice, tags) => {
 		let items;
-		let isRecipients;
-		let isEvents;
 		let projects = [
 			{
 				title: 'Кадры будущего для регионов',
@@ -344,29 +342,18 @@
 				break;
 		}
 
-		items = items.slice(0, last);
-
-		if (type === 'recipients') {
-			isRecipients = true;
-		}
-
-		if (type === 'playbill' || type === 'news') {
-			isEvents = true;
-		}
+		items = items.slice(0, slice);
 
 		items.forEach((item) => {
+			if (!tags) {
+				delete item.tags;
+			}
+
 			switch (type) {
 				case 'projects':
 				case 'contests':
 				case 'grants':
-				case 'playbill':
-				case 'news':
 					delete item.price;
-
-					if (last) {
-						delete item.tags;
-					}
-
 					break;
 				case 'recipients':
 					delete item.organizer;
@@ -395,5 +382,5 @@
 			}
 		});
 
-		return [items, isRecipients, isEvents];
+		return items;
 	};

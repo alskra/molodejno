@@ -1,4 +1,4 @@
-mixin pagination(multipage = true)
+mixin pagination({multipage = true, buttonLoadContent = 'Загрузить еще'} = {})
 	.pagination(x-data="pagination")&attributes(attributes)
 		.pagination__error(
 			x-show="error"
@@ -24,7 +24,7 @@ mixin pagination(multipage = true)
 
 		+button-load({
 			tag: 'button',
-			content: 'Загрузить еще',
+			content: buttonLoadContent,
 		})(
 			class={'hidden-lg-up': multipage}
 			x-bind:class="{'is-loading': isLoading}"

@@ -1,14 +1,14 @@
 include ../card-item/card-item
 include ../pagination/pagination
 
-mixin cards(type, last)
+mixin cards({type, slice, tags = true, columns = 3} = {})
 	include data
 
 	-
-		let [items, isRecipients, isEvents] = data(type, last);
+		let items = data(type, slice, tags);
 
-	.cards(x-data="{gridEl: $refs.grid}")&attributes(attributes)
-		if last
+	.cards(x-data="{gridEl: $root.querySelector('.cards__grid')}")&attributes(attributes)
+		if slice
 			.cards__main
 				.cards__main-inner(
 					x-data="swiperCards"
@@ -17,25 +17,20 @@ mixin cards(type, last)
 					x-ref="swiper"
 				)
 					.cards__grid(
-						class={
-							'cards__grid--columns-4': !isRecipients && !isEvents,
-							'cards__grid--columns-3': isRecipients,
-							'cards__grid--columns-2': isEvents,
-						}
+						class=`cards__grid--columns-${columns}`
 						x-bind:class="{'swiper-wrapper': !$store.isDesktop}"
-						x-ref="grid"
 					)
 						each item in items
 							+card-item(item).cards__item(
-								class={
-									'card-item--style-group-8': !isRecipients && !isEvents,
-									'card-item--style-group-6': isRecipients,
-									'card-item--style-group-4': isEvents,
-								}
+								class=`card-item--style-group-${columns * 2}`
 								x-bind:class="{'swiper-slide': !$store.isDesktop}"
 							)
+
+			if type === 'recipients'
+				+pagination({multipage: false}).hidden-lg-down(x-data=`pagination('ajax/${type}-slice.html', gridEl)`)
 		else
-			.cards__grid.cards__grid--columns-3(x-ref="grid")
+			.cards__grid(class=`cards__grid--columns-${columns}`)
 				each item in items
-					+card-item(item).card-item--style-group-6.cards__item
-			+pagination(x-data=`pagination('ajax/${type}.html', gridEl)`)
+					+card-item(item).cards__item(class=`card-item--style-group-${columns * 2}`)
+
+			+pagination()(x-data=`pagination('ajax/${type}.html', gridEl)`)

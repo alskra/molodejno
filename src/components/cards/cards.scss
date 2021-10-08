@@ -18,14 +18,13 @@
 .cards__grid {
 	&:not(.swiper-wrapper) {
 		display: grid;
-		gap: 80rem var(--gap);
+		gap: var(--gap-xl) var(--gap);
 	}
 
 	@include media-breakpoint-up(lg) {
 		&--columns-2 {
 			&:not(.swiper-wrapper) {
 				grid-template-columns: repeat(2, 1fr);
-				row-gap: 50rem;
 			}
 		}
 

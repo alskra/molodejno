@@ -5,24 +5,22 @@ include ../../components/card-item/card-item
 append variables
 	-
 		let type = 'projects';
-		let last;
+		let slice;
+		let tags = true;
+		let columns = 3;
 
 block document
 	include ../../components/cards/data
 
 	-
-		let [items, isRecipients, isEvents] = data(type, last);
+		let items = data(type, slice, tags);
 
-	if last
+	if slice
 		each item in items
 			+card-item(item).cards__item(
-				class={
-					'card-item--style-group-8': !isRecipients && !isEvents,
-					'card-item--style-group-6': isRecipients,
-					'card-item--style-group-4': isEvents,
-				}
+				class=`card-item--style-group-${columns * 2}`
 				x-bind:class="{'swiper-slide': !$store.isDesktop}"
 			)
 	else
 		each item in items
-			+card-item(item).card-item--style-group-6.cards__item
+			+card-item(item).cards__item(class=`card-item--style-group-${columns * 2}`)

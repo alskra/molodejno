@@ -55,7 +55,12 @@ mixin section({tag = 'section', type, title, desc, score, advanced, withoutImage
 						when 'projects'
 						when 'contests'
 						when 'grants'
-							+cards(type, 4)
+							+cards({
+								type,
+								slice: 4,
+								tags: false,
+								columns: 4,
+							})
 
 		if !block
 			+container('footer').section__footer
