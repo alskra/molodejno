@@ -4,6 +4,8 @@ block document
 	include ../../components/gallery/data
 
 	each galleryItem in gallery
-		a.gallery__item(href=galleryItem.imageFullSize)
+		a.gallery__item(
+			href=galleryItem.imageFullSize
+			data-fancybox="gallery"
+		)
 			+img-2x().gallery__image(src=galleryItem.image)
-

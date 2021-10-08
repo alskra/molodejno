@@ -26,9 +26,10 @@ mixin share()
 
 		.share__items
 			each shareItem in share
-				a.share__item(
+				button.share__item(
 					class=`share__item--${shareItem.icon}`
-					href=""
+					type="button"
+					data-social=shareItem.icon
 				)
 					icon-svg.share__item-icon(name=shareItem.icon)
 					= shareItem.title
