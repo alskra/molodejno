@@ -1,4 +1,5 @@
 extends ../../pug/base
+
 include ../../components/header/header
 include ../../components/footer/footer
 
@@ -8,56 +9,180 @@ append variables
 
 append body-start
 	style.
-		li {
-			margin: 0.5em 0;
-			list-style: decimal;
+		section:not(:last-child) {
+			margin-bottom: var(--gap-2xl);
 		}
 
-		a {
-			color: #595fe4;
+		.content-edited:not(:last-child) {
+			margin-bottom: var(--gap);
 		}
 
-block body
+block app
 	+header()
 
-	main.app__main
-		.container
-			h2 Pages
-			-
-				const pages = [
-					{
-						url: 'home.html',
-						title: 'Главная',
-					},
-					{
-						url: 'grants-all.html',
-						title: 'Гранты',
-						pages: [
+	main.app__main(style={'padding': 'var(--gap) 0'})
+		section
+			+container()
+				+content-edited()
+					h2 Pages
+					-
+						const pages = [
 							{
-								url: 'grant-detail.html',
-								title: 'Грант'
+								url: 'home.html',
+								title: 'Главная',
 							},
-						],
-					},
-					{
-						url: 'grants-recipients.html',
-						title: 'Гранты получили',
-						pages: [
 							{
-								url: 'grant-recipient.html',
-								title: 'Грантополучатель',
+								url: 'grants.html',
+								title: 'Гранты',
+								pages: [
+									{
+										url: 'grant.html',
+										title: 'Грант'
+									},
+								],
 							},
-						],
-					},
-				];
+							{
+								url: 'recipients.html',
+								title: 'Гранты получили',
+								pages: [
+									{
+										url: 'recipient.html',
+										title: 'Грантополучатель',
+									},
+								],
+							},
+						];
 
-			if pages.length
-				ol
-					each page in pages
-						li: a(href=page.url target="_blank")= page.title
-							if page.pages
-								ol
-									each subpage in page.pages
-										li: a(href=subpage.url target="_blank")= subpage.title
+					if pages.length
+						ol
+							each page in pages
+								li
+									a(href=page.url)= page.title
+									if page.pages
+										ol
+											each subpage in page.pages
+												li
+													a(href=subpage.url)= subpage.title
+
+		section
+			+container()
+				+content-edited()
+					h1 h1: Конкурс среди организаций высшего образования
+					h2 h2: Конкурс среди организаций высшего образования
+					h3 h3: Конкурс среди организаций высшего образования
+					h4 h4: Конкурс среди организаций высшего образования
+					h5 h5: Конкурс среди организаций высшего образования
+					h6 h6: Конкурс среди организаций высшего образования
+					ul
+						li.
+							30 октября в Батецком районе будет дан старт областному походу по местам боевых сражений.
+							К нему присоединятся активисты военно-патриотических клубов, центров, объединений и представители
+							поисковых отрядов Новгородской области.
+						li.
+							Поход продлится до 1 ноября и будет посвящен боевому пути 1-й Ленинградской стрелковой дивизии
+							народного ополчения, которая в июле 1941 года высадилась на станции Батецкая и заняла оборону
+							на Лужском рубеже.
+						li.
+							В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской дивизии
+							народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».
+					p.
+						Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+						молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+						Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+						молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+						Это информационно-познавательный портал для молодёжи.
+					p.
+						Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+						и действующих направлениях данной отрасли.
+
+		section
+			+container()
+				+content-edited()
+					h2: code button
+				+button({content: 'Синяя кнопка'})
+
+		section
+			+container()
+				+content-edited()
+					h2: code button-arrow
+				+button-arrow({content: "'Смотреть все'"})
+				br
+				br
+				+button-arrow({
+					dir: 'left',
+					content: "'Смотреть все'",
+				})
+				br
+				br
+				+button-arrow({
+					row: true,
+					content: "'Смотреть все'",
+				})
+				br
+				br
+				+button-arrow({
+					dir: 'left',
+					row: true,
+					content: "'Смотреть все'",
+				})
+
+		section
+			+container()
+				+content-edited()
+					h2: code date
+				+date('26.10.2020')
+				br
+				br
+				+date('26.10.2020', '30.10.2020')
+				br
+				br
+				div(style={'max-width': '200px'})
+					+date('26.10.2020', '30.10.2020')
+				br
+				br
+				+content-edited()
+					h3: code adaptive
+				+date('26.10.2020', null, true)
+				br
+				br
+				+date('26.10.2020', '30.10.2020', true)
+
+		section
+			+container()
+				+content-edited()
+					h2: code organizer
+				+organizer({
+					title: 'Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				})(style={'max-width': '255px'})
+				br
+				br
+				+organizer({
+					title: 'Ресурсный Молодежный центр длинный заголовок',
+					image: '../../images/content/projects/logo.png',
+				})(style={'max-width': '255px'})
+				br
+				br
+				+content-edited()
+					h3: code line-clamp
+				+organizer({
+					title: 'Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+					lineClamp: true,
+				})(style={'max-width': '255px'})
+				br
+				br
+				+organizer({
+					title: 'Ресурсный Молодежный центр длинный заголовок',
+					image: '../../images/content/projects/logo.png',
+					lineClamp: true,
+				})(style={'max-width': '255px'})
+				br
+				br
+				+organizer({
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+					lineClamp: true,
+				})(style={'max-width': '555px'})
 
 	+footer()

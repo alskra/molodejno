@@ -2,40 +2,18 @@
 	display: grid;
 	align-items: start;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 30rem;
+	gap: var(--gap);
 
 	@include media-breakpoint-down(lg) {
 		grid-template-columns: repeat(auto-fill, minmax(min(280rem, 100%), 1fr));
-		gap: 20rem;
-	}
-}
-
-.events__swiper {
-	@include media-breakpoint-down(lg) {
-		overflow: hidden;
-		margin-right: calc(-1 * var(--container-content-offset-x));
-	}
-}
-
-.events__swiper-wrapper {
-	@include media-breakpoint-up(lg) {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 40rem 30rem;
-	}
-}
-
-.events__item-main {
-	@include media-breakpoint-up(lg) {
-		position: sticky;
-		top: var(--header-sticky-height);
 	}
 }
 
 .events__item {
-	@include media-breakpoint-down(lg) {
-		margin: 0 20rem 0 0;
-		width: 265rem;
-		height: auto;
+	@include media-breakpoint-up(lg) {
+		&--main {
+			position: sticky;
+			top: var(--header-sticky-height);
+		}
 	}
 }

@@ -1,5 +1,6 @@
 import '../css/fonts.scss';
 import 'normalize.css';
+import '../css/root.scss';
 import '../css/base.scss';
 import '../css/helpers.scss';
 
@@ -13,20 +14,26 @@ import AOS from 'aos';
 import Alpine from 'alpinejs';
 
 import '../components/icon-svg/icon-svg';
-import '../components/container/container.scss';
-import '../components/heading/heading.scss';
-import '../components/date/date.scss';
-import '../components/location/location.scss';
+import '../components/container/container';
+import '../components/heading/heading';
+import '../components/date/date';
+import '../components/location/location';
+import '../components/button/button';
 import '../components/button-arrow/button-arrow';
 import '../components/button-load/button-load';
-import '../components/integration/integration.scss';
-import '../components/breadcrumbs/breadcrumbs.scss';
+import '../components/button-expand/button-expand';
+import '../components/integration/integration';
+import '../components/breadcrumbs/breadcrumbs';
 import '../components/price/price';
+import '../components/organizer/organizer';
+import '../components/content/content';
+import '../components/content-edited/content-edited';
+import '../components/line-clamp/line-clamp';
+import '../components/share/share';
 
 window.Alpine = Alpine;
 
 Alpine.store('isDesktop', innerWidth >= 1025);
-
 window.addEventListener('resize', () => {
 	Alpine.store('isDesktop', innerWidth >= 1025);
 });

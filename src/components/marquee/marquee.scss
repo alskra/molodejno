@@ -26,6 +26,7 @@
 
 .marquee__list {
 	display: flex;
+	flex-shrink: 0;
 
 	@include media-breakpoint-down(lg) {
 		flex-flow: column;
@@ -37,6 +38,7 @@
 .marquee__item {
 	position: relative;
 	display: block;
+	flex-shrink: 0;
 	margin: 0 30rem;
 	font-family: $heading-font-family;
 	font-weight: 700;

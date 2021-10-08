@@ -1,55 +1,52 @@
 mixin slider()
+	-
+		const slides = [
+			{
+				title: `Новый проект &laquo;Время возможностей&raquo; объединит молодёжь Новгородской области`,
+				image: '../../images/content/slider/slide-1.jpg',
+				date: '26.08.2020',
+				type: 'Региональное',
+				place: 'Тёсово-Нетыльский',
+			},
+			{
+				title: `Молодёжно&nbsp;&mdash; это информационно-познавательный портал для молодёжи Новгородской области`,
+				image: '../../images/content/slider/slide-2.jpg',
+				date: '04.12.2021',
+				type: 'Региональное',
+				place: 'Тёсово-Нетыльский',
+			},
+		];
+
 	.slider(x-data="slider")&attributes(attributes)
 		.swiper(
-			x-ref="container"
+			x-ref="swiper"
 			data-swiper-autoplay="3000"
 		)
 			.swiper-wrapper
-				.swiper-slide.slider__item
-					.slider__image
-						img.slider__image-el(
-							src="../../images/content/slider/slide-1.jpg"
-							srcset='../../images/content/slider/slide-1@2x.jpg 2x'
-							alt=""
-						)
-					.slider__main
-						.container.slider__container
-							.slider__content
-								.slider__header
-									.slider__date
-										.slider__day-month 26.08
-										| 2020
-									.slider__header-group
-										.slider__type Региональное
-										.slider__place
-											span Тёсово-Нетыльский
+				each slide in slides
+					.swiper-slide.slider__item
+						.slider__image
+							+img-2x().slider__image-el(src=slide.image)
 
-								h2.slider-title Новый проект#[br] &laquo;Время возможностей&raquo; объединит молодёжь Новгородской области
+						.slider__body
+							+container().slider__container
+								.slider__body-inner
+									.slider__header
+										.slider__date
+											- const date = slide.date.split('.');
 
-				.swiper-slide.slider__item
-					.slider__image
-						img.slider__image-el(
-							src="../../images/content/slider/slide-2.jpg"
-							srcset='../../images/content/slider/slide-2@2x.jpg 2x'
-							alt=""
-						)
-					.slider__main
-						.container.slider__container
-							.slider__content
-								.slider__header
-									.slider__date
-										.slider__day-month 04.12
-										| 2021
-									.slider__header-group
-										.slider__type Региональное
-										.slider__place
-											span Тёсово-Нетыльский
+											.slider__day-month #{date[0]}.#{date[1]}
+											| #{date[2]}
+										.slider__header-group
+											.slider__type= slide.type
+											.slider__place
+												span= slide.place
 
-								h2.slider-title Молодёжно — это информационно-познавательный портал для молодёжи Новгородской области
+									h2.slider__title!= slide.title
 
 			.slider__nav
-				.container.slider__container-nav
-					button.slider__button.slider__button--prev(x-ref="buttonPrev")
+				+container().slider__container-nav
+					button.slider__button(x-ref="buttonPrev")
 						icon-svg(name="arrow-left")
-					button.slider__button.slider__button--next(x-ref="buttonNext")
+					button.slider__button(x-ref="buttonNext")
 						icon-svg(name="arrow-right")

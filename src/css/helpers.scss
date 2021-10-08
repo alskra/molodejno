@@ -1,19 +1,13 @@
-@include media-breakpoint-up(lg) {
-	.hidden-lg-up {
-		// stylelint-disable-next-line
-		display: none !important;
-	}
-}
-
-@include media-breakpoint-down(lg) {
-	.hidden-lg-down {
-		// stylelint-disable-next-line
-		display: none !important;
-	}
+.color-primary {
+	color: $color-primary;
 }
 
 .color-silver {
 	color: $color-silver;
+}
+
+.color-gray {
+	color: $color-gray;
 }
 
 .position-relative {
@@ -22,4 +16,45 @@
 
 .overflow-hidden {
 	overflow: hidden;
+}
+
+.anchor {
+	position: absolute;
+	top: calc(-1 * var(--header-sticky-height));
+	bottom: 0;
+	visibility: hidden;
+}
+
+.from-container-to-body {
+	margin: 0 calc(-1 * var(--container-content-offset-x));
+}
+
+@include media-breakpoint-up(lg) {
+	.hidden-lg-up {
+		// stylelint-disable-next-line
+		display: none !important;
+	}
+
+	.column-span-2-lg-up {
+		grid-column-end: span 2;
+	}
+
+	.column-span-3-lg-up {
+		grid-column-end: span 3;
+	}
+
+	.column-span-4-lg-up {
+		grid-column-end: span 4;
+	}
+
+	.column-offset-1-lg-up {
+		grid-column-start: 2;
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.hidden-lg-down {
+		// stylelint-disable-next-line
+		display: none !important;
+	}
 }

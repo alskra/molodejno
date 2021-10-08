@@ -27,6 +27,8 @@
 }
 
 .section-promo__image {
+	position: relative;
+	z-index: 1;
 	margin: -15rem - 134rem auto 0;
 	width: 100%;
 
@@ -58,7 +60,7 @@
 
 	@include media-breakpoint-down(lg) {
 		margin-bottom: 22rem;
-		font-size: 44rem;
+		font-size: 42rem;
 
 		small {
 			font-size: 24rem;

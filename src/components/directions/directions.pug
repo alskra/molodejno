@@ -2,9 +2,9 @@ include ../../components/marquee/marquee
 
 mixin directions()
 	section.directions(x-data="directions(undefined, -1, 3)")&attributes(attributes)
-		header.container.directions__header
-			h2.heading.directions__heading Направления
+		+container('header').directions__header
+			+heading('h2').directions__heading Направления
 		template(x-for="marqueeOptions in marqueeOptionsList")
 			+marquee()(x-data="marquee(marqueeOptions)")
-		footer.container.directions__footer
+		+container('footer').directions__footer
 			+button-arrow({content: "'Смотреть все'"}).directions__more(x-bind:class="{'button-arrow--row': !$store.isDesktop}")

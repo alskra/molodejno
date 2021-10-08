@@ -1,7 +1,13 @@
-mixin date(date)
-	- date = date.split('.');
+mixin date(date1, date2, adaptive = false)
+	- date1 = date1 && date1.split('.');
+	- date2 = date2 && date2.split('.');
 
-	time.date&attributes(attributes)
-		span.date__day-month #{date[0]}.#{date[1]}
-		|
-		| #{date[2]}
+	.date(class={'date--adaptive': adaptive})&attributes(attributes)
+		time.date__item
+			span.date__day-month.date__day-month--start #{date1[0]}.#{date1[1]}
+			span.date__year #{date1[2]}
+
+		if date2
+			time.date__item
+				span.date__day-month.date__day-month--end #{date2[0]}.#{date2[1]}
+				span.date__year #{date2[2]}

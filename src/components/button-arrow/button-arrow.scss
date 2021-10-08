@@ -1,39 +1,61 @@
 .button-arrow {
+	--color: #{$color};
+	--color-hover: #{$color-primary};
+
 	display: inline-flex;
 	flex-flow: column;
 	vertical-align: top;
+	border: 0;
+	padding: 0;
 	width: calc((var(--container-content-width) - var(--gap)) / 2);
 	max-width: 100%;
 	font-weight: 700;
 	font-size: 20rem;
 	line-height: 1.25;
 	white-space: nowrap;
-	color: $color;
+	color: var(--color);
+	background: none;
 	transition: color;
 	transition-duration: $transition-duration;
 	user-select: none;
+	gap: 3rem;
 
 	@include hover {
-		color: $color-primary;
+		&:not(:disabled, .is-disabled) {
+			color: var(--color-hover);
+
+			.button-arrow__icon icon-svg {
+				width: percentage(div(492, 542));
+			}
+		}
+	}
+
+	&--dir-left {
+		text-align: right;
 
 		.button-arrow__icon icon-svg {
-			width: percentage(div(492, 542));
+			margin-left: auto;
 		}
 	}
 
 	&--row {
 		flex-flow: row;
 		align-items: center;
+		gap: 20rem;
 
 		.button-arrow__icon {
 			flex: 1;
-			order: 1;
 			min-width: 50rem;
 		}
 
-		.button-arrow__content {
-			margin: 0 20rem 0 0;
+		&:not(.button-arrow--dir-left) {
+			flex-direction: row-reverse;
 		}
+	}
+
+	&--primary {
+		--color: #{$color-primary};
+		--color-hover: #{$color-primary-hover};
 	}
 
 	@include media-breakpoint-down(lg) {
@@ -41,15 +63,13 @@
 		font-size: 16rem;
 
 		&--row {
-			.button-arrow__content {
-				margin-right: 18rem;
-			}
+			gap: 18rem;
 		}
 	}
 }
 
 .button-arrow__icon {
-	height: 27px;
+	height: 27rem;
 
 	icon-svg {
 		width: 100%;
@@ -61,6 +81,5 @@
 
 .button-arrow__content {
 	overflow: hidden;
-	margin-top: 3rem;
 	text-overflow: ellipsis;
 }

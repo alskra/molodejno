@@ -1,0 +1,199 @@
+extends ../../pug/base
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+include ../../components/gallery-slider/gallery-slider
+include ../../components/stages/stages
+include ../../components/docs/docs
+include ../../components/cards/cards
+include ../../components/gallery/gallery
+include ../../components/reviews/reviews
+
+include ../../components/subsection-section/subsection-section
+
+include ../../components/article-nav/article-nav
+include ../../components/card-details/card-details
+include ../../components/subsection/subsection
+
+include ../../components/article/article
+
+append variables
+	-
+		title = `${title} - Грант`;
+
+block app
+	+header()
+
+	main.app__main
+		+article({type: 'grant'})
+			aside.article__grid-aside
+				+article-nav({
+					backUrl: 'grants.html',
+					items: [
+						{
+							url: '#card',
+							content: 'Карточка гранта',
+						},
+						{
+							url: '#about',
+							content: 'О гранте',
+						},
+						{
+							url: '#stages',
+							content: 'Этапы',
+						},
+						{
+							url: '#docs',
+							content: 'Документы',
+						},
+						{
+							url: '#recipients',
+							content: 'Гранты получили',
+						},
+						{
+							url: '#gallery',
+							content: 'Галарея',
+						},
+						{
+							url: '#reviews',
+							content: 'Отзывы',
+						},
+					]
+				})
+
+			.article__grid-main
+				+content()
+					+card-details().article__card-details
+						+breadcrumbs([
+							{
+								url: 'grants.html',
+								content: 'Гранты',
+							},
+							'Конкурс среди организаций высшего образования',
+						]).card-details__breadcrumbs
+
+						+heading().card-details__title Конкурс среди организаций высшего образования
+
+						.card-details__info
+							.card-details__info-column
+								+date('26.10.2020', '30.10.2020', true)
+							.card-details__info-column
+								+organizer({
+									title: 'Ресурсный Молодежный центр',
+									image: '../../images/content/projects/logo.png',
+								})
+
+						.card-details__content
+							section.card-details__content-column
+								h2.card-details__content-title Участникам
+								+content-edited().card-details__content-item
+									table
+										tr
+											td Сумма гранта
+											td до #[span(x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&nbsp;&#8381;'") 15000000]
+										tr
+											td Организатор
+											td Ресурсный молодёжный центр
+										tr
+											td
+											td: a(href="mailto:site@info.ru") site@info.ru
+
+							section.card-details__content-column
+								h2.card-details__content-title Регистрация
+								+content-edited().card-details__content-item
+									table
+										tr
+											td Телефон
+											td +7 (495) 123-45-67
+										tr
+											td E-mail
+											td: a(href="mailto:info@support.ru") info@support.ru
+								+button({tag: 'a', content: 'Подать заявку'}).card-details__button
+
+					.article__bg
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'about',
+						title: 'О гранте'
+					})
+						+content-edited()
+							p.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+								Это информационно-познавательный портал для молодёжи.
+							p.
+								Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+								и действующих направлениях данной отрасли.
+
+						+gallery-slider([
+							'../../images/content/gallery-slider/img-1.jpg',
+							'../../images/content/gallery-slider/img-2.jpg',
+						])
+
+						+content-edited()
+							p.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся
+								реализацией молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся
+								реализацией молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+
+						+subsection-section({title: 'Заголовок списка'})
+							+content-edited()
+								ul
+									li.
+										30 октября в Батецком районе будет дан старт областному походу по местам боевых сражений.
+										К нему присоединятся активисты военно-патриотических клубов, центров, объединений и представители
+										поисковых отрядов Новгородской области.
+									li.
+										Поход продлится до 1 ноября и будет посвящен боевому пути 1-й Ленинградской стрелковой дивизии
+										народного ополчения, которая в июле 1941 года высадилась на станции Батецкая и заняла оборону
+										на Лужском рубеже.
+									li.
+										В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской дивизии
+										народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'stages',
+						title: 'Этапы'
+					})
+						+stages()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'docs',
+						title: 'Документы'
+					})
+						+docs()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'recipients',
+						type: 'recipients',
+					})
+						+cards({
+							type: 'recipients',
+							slice: 3,
+						})
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'gallery',
+						title: 'Галерея',
+					})
+						+gallery()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'reviews',
+						type: 'reviews',
+						extType: 'grants',
+						title: 'Отзывы',
+					})
+						+reviews()
+
+	+footer()

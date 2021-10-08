@@ -1,8 +1,10 @@
 mixin soc-network()
 	.soc-network&attributes(attributes)
-		a.soc-network__item.soc-network__item--vk(href="" target="_blank")
-			icon-svg(name="vk")
-		a.soc-network__item.soc-network__item--instagram(href="" target="_blank")
-			icon-svg(name="instagram")
-		a.soc-network__item.soc-network__item--facebook(href="" target="_blank")
-			icon-svg(name="facebook")
+		each item in [['vk', 'VK'], ['instagram', 'Instagram'], ['facebook', 'Facebook']]
+			a.soc-network__item(
+				class=`soc-network__item--${item[0]}`
+				href=""
+				target="_blank"
+				title=item[1]
+			)
+				icon-svg(name=item[0])

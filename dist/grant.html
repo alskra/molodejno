@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Молодёжно (Frontend) - Грант</title>
+	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/grant.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/grant.css" rel="stylesheet"></head>
+	<body>
+		<div class="app">
+			<header class="header" x-data="header" x-bind:class="{'is-sticky': isSticky}" x-on:scroll.window="updateStick" x-on:resize.window="updateStick(); updateMobMenu();">
+				<div class="container header__mob" x-show="!$store.isDesktop"><a class="header__logo" href="home.html" x-show="!mobMenuIsOpen">
+						<picture class="header__logo-image">
+							<source type="image/webp" srcset="data:image/webp;base64,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, images/design/logo-mob@2x.webp 2x"><img src="images/design/logo-mob.png" srcset="images/design/logo-mob@2x.png 2x" alt="Молодёжно">
+						</picture></a><a class="header__visually" href="" x-show="mobMenuIsOpen">
+						<icon-svg name="visually"></icon-svg>Слабовидящим</a>
+					<button class="header__button-menu" x-bind:class="{'is-open': mobMenuIsOpen}" x-on:click="toggleMobMenu"><span></span></button>
+				</div>
+				<div class="header__main" x-show="mobMenuIsOpen || $store.isDesktop" x-transition.opacity x-ref="main">
+					<div class="container header__grid"><a class="header__visually" href="" x-show="$store.isDesktop">
+							<icon-svg name="visually"></icon-svg>Слабовидящим</a>
+						<div class="header__info"><a class="header__info-item" href="" target="_blank">Дом&nbsp;молодёжи<br> Новгородской<br class="hidden-lg-up"> области</a><a class="header__logo" href="home.html" x-show="$store.isDesktop">
+								<picture class="header__logo-image" x-show="!isSticky">
+									<source type="image/webp" srcset="data:image/webp;base64,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, images/design/logo@2x.webp 2x"><img src="images/design/logo.png" srcset="images/design/logo@2x.png 2x" alt="Молодёжно">
+								</picture>
+								<icon-svg name="logo-sticky" x-show="isSticky"></icon-svg></a><a class="header__info-item" href="" target="_blank">Администрация<br> Новгородской<br class="hidden-lg-up"> области</a></div>
+						<div class="soc-network header__soc-network"><a class="soc-network__item soc-network__item--vk" href="" target="_blank" title="VK">
+								<icon-svg name="vk"></icon-svg></a><a class="soc-network__item soc-network__item--instagram" href="" target="_blank" title="Instagram">
+								<icon-svg name="instagram"></icon-svg></a><a class="soc-network__item soc-network__item--facebook" href="" target="_blank" title="Facebook">
+								<icon-svg name="facebook"></icon-svg></a>
+						</div>
+						<nav class="nav header__nav"><a class="nav__item" href="activities.html">Деятельность</a><a class="nav__item" href="forums.html">Форумы</a><a class="nav__item" href="projects.html">Проекты</a><a class="nav__item" href="grants.html">Гранты</a><a class="nav__item" href="playbill.html">Афиша</a><a class="nav__item" href="news.html">Пресс-центр</a><a class="nav__item" href="about.html">О нас</a><a class="nav__item" href="contacts.html">Контакты</a>
+						</nav>
+					</div>
+				</div>
+			</header>
+			<main class="app__main">
+				<article class="article article--grant">
+					<div class="container">
+						<div class="article__image"><img class="article__image-el" src="images/content/article/img-intro.jpg" srcset="images/content/article/img-intro@2x.jpg 2x" alt="">
+						</div>
+					</div>
+					<div class="article__body">
+						<div class="container article__grid">
+							<aside class="article__grid-aside">
+								<nav class="article-nav" x-data="articleNav" x-on:popstate.window="hash = location.hash" x-on:scroll.window.debounce.100ms="update">
+									<a class="button-arrow button-arrow--dir-left article-nav__back" href="grants.html" x-init><span class="button-arrow__icon">
+											<icon-svg name="arrow-left"></icon-svg></span><span class="button-arrow__content" x-text="'Назад'"></span>
+									</a>
+									<div class="article-nav__items"><a class="article-nav__item" href="#card" x-bind:class="{'is-active': $el.hash === hash}">Карточка гранта</a><a class="article-nav__item" href="#about" x-bind:class="{'is-active': $el.hash === hash}">О гранте</a><a class="article-nav__item" href="#stages" x-bind:class="{'is-active': $el.hash === hash}">Этапы</a><a class="article-nav__item" href="#docs" x-bind:class="{'is-active': $el.hash === hash}">Документы</a><a class="article-nav__item" href="#recipients" x-bind:class="{'is-active': $el.hash === hash}">Гранты получили</a><a class="article-nav__item" href="#gallery" x-bind:class="{'is-active': $el.hash === hash}">Галарея</a><a class="article-nav__item" href="#reviews" x-bind:class="{'is-active': $el.hash === hash}">Отзывы</a>
+									</div>
+								</nav>
+							</aside>
+							<div class="article__grid-main">
+								<div class="content">
+									<div class="card-details article__card-details">
+										<div class="anchor" id="card"></div>
+										<nav class="breadcrumbs card-details__breadcrumbs"><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="home.html">Главная</a></span><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="grants.html">Гранты</a></span><span class="breadcrumbs__item">Конкурс среди организаций высшего образования</span>
+										</nav>
+										<h1 class="heading card-details__title">Конкурс среди организаций высшего образования
+										</h1>
+										<div class="card-details__info">
+											<div class="card-details__info-column">
+												<div class="date date--adaptive">
+													<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
+													<time class="date__item"><span class="date__day-month date__day-month--end">30.10</span><span class="date__year">2020</span></time>
+												</div>
+											</div>
+											<div class="card-details__info-column">
+												<div class="organizer">
+													<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+												</div>
+											</div>
+										</div>
+										<div class="card-details__content">
+											<section class="card-details__content-column">
+												<h2 class="card-details__content-title">Участникам</h2>
+												<div class="content-edited card-details__content-item">
+													<table>
+														<tr>
+															<td>Сумма гранта</td>
+															<td>до <span x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&amp;nbsp;&amp;#8381;'">15000000</span></td>
+														</tr>
+														<tr>
+															<td>Организатор</td>
+															<td>Ресурсный молодёжный центр</td>
+														</tr>
+														<tr>
+															<td></td>
+															<td><a href="mailto:site@info.ru">site@info.ru</a></td>
+														</tr>
+													</table>
+												</div>
+											</section>
+											<section class="card-details__content-column">
+												<h2 class="card-details__content-title">Регистрация</h2>
+												<div class="content-edited card-details__content-item">
+													<table>
+														<tr>
+															<td>Телефон</td>
+															<td>+7 (495) 123-45-67</td>
+														</tr>
+														<tr>
+															<td>E-mail</td>
+															<td><a href="mailto:info@support.ru">info@support.ru</a></td>
+														</tr>
+													</table>
+												</div>
+												<a class="button card-details__button" href=""><span class="button__content">Подать заявку</span></a>
+											</section>
+										</div>
+									</div>
+									<div class="article__bg"></div>
+									<section class="subsection subsection--offset-column-all">
+										<div class="anchor" id="about"></div>
+										<header class="subsection__header">
+											<div class="container subsection__grid">
+												<div class="subsection__column">
+													<h2 class="subsection__title">О гранте</h2>
+												</div>
+											</div>
+										</header>
+										<div class="subsection__main">
+											<div class="container subsection__grid">
+												<div class="content subsection__column">
+													<div class="content-edited">
+														<p>
+															Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+															молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+															Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+															молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+															Это информационно-познавательный портал для молодёжи.
+														</p>
+														<p>
+															Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+															и действующих направлениях данной отрасли.
+															
+														</p>
+													</div>
+													<div class="swiper-fraction gallery-slider" x-data="swiperFraction">
+														<div class="gallery-slider__main">
+															<div class="swiper gallery-slider__main-inner" x-ref="swiper">
+																<div class="swiper-wrapper">
+																	<div class="swiper-slide gallery-slider__item"><img class="swiper-slide gallery-slider__image" src="images/content/gallery-slider/img-1.jpg" srcset="images/content/gallery-slider/img-1@2x.jpg 2x" alt="">
+																	</div>
+																	<div class="swiper-slide gallery-slider__item"><img class="swiper-slide gallery-slider__image" src="images/content/gallery-slider/img-2.jpg" srcset="images/content/gallery-slider/img-2@2x.jpg 2x" alt="">
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="swiper-fraction__footer">
+															<div class="swiper-fraction__pagination" x-ref="pagination"></div>
+															<div class="swiper-fraction__navigation" x-ref="navigation">
+																<button class="swiper-fraction__button" type="button" x-ref="prevEl">
+																	<icon-svg name="arrow-left"></icon-svg>
+																</button>
+																<button class="swiper-fraction__button" type="button" x-ref="nextEl">
+																	<icon-svg name="arrow-right"></icon-svg>
+																</button>
+															</div>
+														</div>
+													</div>
+													<div class="content-edited">
+														<p>
+															Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся
+															реализацией молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+															Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся
+															реализацией молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+															
+														</p>
+													</div>
+													<section class="subsection-section">
+														<header class="subsection-section__header">
+															<h3 class="subsection-section__title">Заголовок списка</h3>
+														</header>
+														<div class="content subsection-section__main">
+															<div class="content-edited">
+																<ul>
+																	<li>
+																		30 октября в Батецком районе будет дан старт областному походу по местам боевых сражений.
+																		К нему присоединятся активисты военно-патриотических клубов, центров, объединений и представители
+																		поисковых отрядов Новгородской области.
+																	</li>
+																	<li>
+																		Поход продлится до 1 ноября и будет посвящен боевому пути 1-й Ленинградской стрелковой дивизии
+																		народного ополчения, которая в июле 1941 года высадилась на станции Батецкая и заняла оборону
+																		на Лужском рубеже.
+																	</li>
+																	<li>
+																		В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской дивизии
+																		народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».
+																		
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</section>
+												</div>
+											</div>
+										</div>
+									</section>
+									<section class="subsection subsection--offset-column-all">
+										<div class="anchor" id="stages"></div>
+										<header class="subsection__header">
+											<div class="container subsection__grid">
+												<div class="subsection__column">
+													<h2 class="subsection__title">Этапы</h2>
+												</div>
+											</div>
+										</header>
+										<div class="subsection__main">
+											<div class="container subsection__grid">
+												<div class="content subsection__column">
+													<div class="stages">
+														<article class="stages__item">
+															<header class="stages__header">
+																<div class="date date--adaptive">
+																	<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
+																	<time class="date__item"><span class="date__day-month date__day-month--end">28.10</span><span class="date__year">2020</span></time>
+																</div>
+															</header>
+															<div class="stages__main">
+																<div class="content-edited stages__content">
+																	<h3 class="h5">Открытый набор</h3><p>Проблемно-ориентированное эссе</p>
+																</div>
+															</div>
+														</article>
+														<article class="stages__item">
+															<header class="stages__header">
+																<div class="date date--adaptive">
+																	<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
+																</div>
+															</header>
+															<div class="stages__main">
+																<div class="content-edited stages__content">
+																	<h3 class="h5">Проектный маршрут</h3><p>Индивидуальная образовательная программа, стажировки, профессиональные пробы.
+Индивидуальная образовательная программа, стажировки, профессиональные пробы.</p>
+																</div>
+															</div>
+														</article>
+														<article class="stages__item">
+															<header class="stages__header">
+																<div class="date date--adaptive">
+																	<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
+																	<time class="date__item"><span class="date__day-month date__day-month--end">28.10</span><span class="date__year">2020</span></time>
+																</div>
+															</header>
+															<div class="stages__main">
+																<div class="content-edited stages__content">
+																	<h3 class="h5">Марафон проектов</h3><p>Индивидуальная образовательная программа, стажировки, профессиональные пробы.
+Индивидуальная образовательная программа, стажировки, профессиональные пробы.</p>
+																</div>
+															</div>
+														</article>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+									<section class="subsection subsection--offset-column-all">
+										<div class="anchor" id="docs"></div>
+										<header class="subsection__header">
+											<div class="container subsection__grid">
+												<div class="subsection__column">
+													<h2 class="subsection__title">Документы</h2>
+												</div>
+											</div>
+										</header>
+										<div class="subsection__main">
+											<div class="container subsection__grid">
+												<div class="content subsection__column">
+													<div class="docs">
+														<div class="docs__body" x-data="swiperFree" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
+															<div class="docs__body-inner" x-bind:class="{'swiper-wrapper': !$store.isDesktop}"><a class="docs__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<icon-svg class="docs__icon" name="pdf"></icon-svg>
+																	<div class="docs__title">Заголовок документа для скачивания в две строчки очень длинное</div></a><a class="docs__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<icon-svg class="docs__icon" name="doc"></icon-svg>
+																	<div class="docs__title">Заголовок документа для скачивания</div></a><a class="docs__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<icon-svg class="docs__icon" name="xls"></icon-svg>
+																	<div class="docs__title">Заголовок документа</div></a><a class="docs__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<icon-svg class="docs__icon" name="pdf"></icon-svg>
+																	<div class="docs__title">Заголовок документа для скачивания</div></a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+									<section class="subsection subsection--offset-column-all subsection--recipients">
+										<div class="anchor" id="recipients"></div>
+										<header class="promo promo--offset-column promo--header promo--grants">
+											<div class="container promo__grid">
+												<div class="promo__image">
+													<picture class="promo__image-el">
+														<source type="image/webp" srcset="images/design/promo/grants.webp, images/design/promo/grants@2x.webp 2x"><img src="images/design/promo/grants.png" srcset="images/design/promo/grants@2x.png 2x" alt="">
+													</picture>
+												</div>
+												<div class="promo__body">
+													<h2 class="promo__title">Гранты<br> получили</h2>
+												</div>
+											</div>
+										</header>
+										<div class="subsection__main">
+											<div class="container subsection__grid">
+												<div class="content subsection__column">
+													<div class="cards" x-data="{gridEl: $root.querySelector('.cards__grid')}">
+														<div class="cards__main">
+															<div class="cards__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
+																<div class="cards__grid cards__grid--columns-3" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-6" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																		<div class="card-item__body">
+																			<div class="card-item__group">
+																				<div class="price card-item__price">
+																					<div class="price__content" x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&amp;nbsp;&amp;#8381;'">1000000</div>
+																				</div>
+																			</div>
+																			<h3 class="card-item__title"><a class="card-item__link" href="recipient.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
+																			<nav class="tags card__tags"><a class="tags__item" href="">Образование</a><a class="tags__item" href="">Мастер-классы</a><a class="tags__item" href="">Культура и искусство</a>
+																			</nav>
+																		</div>
+																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-1.jpg" srcset="images/content/projects/img-1@2x.jpg 2x" alt="Кадры будущего для регионов">
+																		</div>
+																	</article>
+																	<article class="card-item cards__item card-item--style-group-6" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																		<div class="card-item__body">
+																			<div class="card-item__group">
+																				<div class="price card-item__price">
+																					<div class="price__content" x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&amp;nbsp;&amp;#8381;'">70000</div>
+																				</div>
+																			</div>
+																			<h3 class="card-item__title"><a class="card-item__link" href="recipient.html" title="Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок">Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок</a></h3>
+																			<nav class="tags card__tags"><a class="tags__item" href="">Производство</a>
+																			</nav>
+																		</div>
+																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-2.jpg" srcset="images/content/projects/img-2@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок">
+																		</div>
+																	</article>
+																	<article class="card-item cards__item card-item--style-group-6" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																		<div class="card-item__body">
+																			<div class="card-item__group">
+																				<div class="price card-item__price">
+																					<div class="price__content" x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&amp;nbsp;&amp;#8381;'">600000</div>
+																				</div>
+																			</div>
+																			<h3 class="card-item__title"><a class="card-item__link" href="recipient.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
+																			<nav class="tags card__tags"><a class="tags__item" href="">Образование</a>
+																			</nav>
+																		</div>
+																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-3.jpg" srcset="images/content/projects/img-3@2x.jpg 2x" alt="Кадры будущего для регионов">
+																		</div>
+																	</article>
+																</div>
+															</div>
+														</div>
+														<div class="pagination hidden-lg-down" x-data="pagination('ajax/recipients-slice.html', gridEl)">
+															<div class="pagination__error" x-show="error" x-text="error"></div>
+															<button class="button-load" type="button" x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content">Загрузить еще</span>
+																<icon-svg class="button-load__icon" name="plus"></icon-svg>
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+									<section class="subsection subsection--offset-column-all">
+										<div class="anchor" id="gallery"></div>
+										<header class="subsection__header">
+											<div class="container subsection__grid">
+												<div class="subsection__column">
+													<h2 class="subsection__title">Галерея</h2>
+												</div>
+											</div>
+										</header>
+										<div class="subsection__main">
+											<div class="container subsection__grid">
+												<div class="content subsection__column">
+													<div class="gallery" x-data="{gridEl: $refs.grid}">
+														<div class="gallery__grid" x-ref="grid"><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a>
+														</div>
+														<div class="pagination" x-data="pagination('ajax/gallery.html', gridEl)">
+															<div class="pagination__error" x-show="error" x-text="error"></div>
+															<button class="button-load" type="button" x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content">Загрузить еще</span>
+																<icon-svg class="button-load__icon" name="plus"></icon-svg>
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+									<section class="subsection subsection--offset-column-all subsection--reviews subsection--reviews-grants">
+										<div class="anchor" id="reviews"></div>
+										<header class="subsection__header">
+											<div class="container subsection__grid">
+												<div class="subsection__column subsection__column--grid">
+													<h2 class="subsection__title">Отзывы</h2>
+													<a class="button subsection__header-button" href=""><span class="button__content">Оставить отзыв</span></a>
+												</div>
+											</div>
+										</header>
+										<div class="subsection__main">
+											<div class="container subsection__grid">
+												<div class="content subsection__column">
+													<div class="swiper-fraction reviews" x-data="swiperFraction">
+														<div class="reviews__main">
+															<div class="swiper reviews__main-inner" x-ref="swiper">
+																<div class="swiper-wrapper">
+																	<article class="review-item swiper-slide reviews__item">
+																		<div class="review-item__body" x-data="lineClamp" x-on:resize.window.debounce="update">
+																			<div class="content-edited review-item__content" x-ref="content" x-bind:class="{'is-clamped': isClamped}"><p>В рамках направления «Здоровый образ жизни» на территории области проводятся акции,
+		приуроченные к Всемирному дню здоровья. В рамках направления «Здоровый образ жизни» на территории
+		области проводятся акции, приуроченные к Всемирному дню здоровья. В рамках направления «Здоровый образ
+		жизни» на территории области проводятся акции, приуроченные к Всемирному дню здоровья. В рамках
+		направления «Здоровый образ жизни» на территории области проводятся акции, приуроченные
+		к Всемирному дню здоровья. В рамках направления «Здоровый образ жизни» на территории области проводятся
+		акции, приуроченные к Всемирному дню здоровья.</p>
+																			</div>
+																			<button class="button-expand review-item__button" type="button" x-bind:class="{'button-expand--up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
+																				<icon-svg class="button-expand__icon" name="arrow-down"></icon-svg>
+																			</button>
+																		</div>
+																		<footer class="review-item__footer"><img class="review-item__image" src="images/content/reviews/img-1.jpg" srcset="images/content/reviews/img-1@2x.jpg 2x" alt="Андрей Сергеевич Константинопольский">
+																			<h3 class="review-item__name">Андрей Сергеевич Константинопольский</h3>
+																			<div class="review-item__position">Губернатор Новгородской области, длинная должность</div>
+																		</footer>
+																	</article>
+																	<article class="review-item swiper-slide reviews__item">
+																		<div class="review-item__body" x-data="lineClamp" x-on:resize.window.debounce="update">
+																			<div class="content-edited review-item__content" x-ref="content" x-bind:class="{'is-clamped': isClamped}"><p>В рамках направления «Здоровый образ жизни» на территории области проводятся акции,
+		приуроченные к Всемирному дню здоровья.</p>
+																			</div>
+																			<button class="button-expand review-item__button" type="button" x-bind:class="{'button-expand--up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
+																				<icon-svg class="button-expand__icon" name="arrow-down"></icon-svg>
+																			</button>
+																		</div>
+																		<footer class="review-item__footer"><img class="review-item__image" src="images/content/reviews/img-1.jpg" srcset="images/content/reviews/img-1@2x.jpg 2x" alt="Андрей Сергеевич Константинопольский">
+																			<h3 class="review-item__name">Андрей Сергеевич Константинопольский</h3>
+																			<div class="review-item__position">Губернатор Новгородской области</div>
+																		</footer>
+																	</article>
+																	<article class="review-item swiper-slide reviews__item">
+																		<div class="review-item__body" x-data="lineClamp" x-on:resize.window.debounce="update">
+																			<div class="content-edited review-item__content" x-ref="content" x-bind:class="{'is-clamped': isClamped}"><p>В рамках направления «Здоровый образ жизни» на территории области проводятся акции,
+		приуроченные к Всемирному дню здоровья. В рамках направления «Здоровый образ жизни» на территории
+		области проводятся акции, приуроченные к Всемирному дню здоровья. В рамках направления «Здоровый образ
+		жизни» на территории области проводятся акции, приуроченные к Всемирному дню здоровья. В рамках
+		направления «Здоровый образ жизни» на территории области проводятся акции, приуроченные
+		к Всемирному дню здоровья.</p>
+																			</div>
+																			<button class="button-expand review-item__button" type="button" x-bind:class="{'button-expand--up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
+																				<icon-svg class="button-expand__icon" name="arrow-down"></icon-svg>
+																			</button>
+																		</div>
+																		<footer class="review-item__footer"><img class="review-item__image" src="images/content/reviews/img-1.jpg" srcset="images/content/reviews/img-1@2x.jpg 2x" alt="Андрей Сергеевич Константинопольский">
+																			<h3 class="review-item__name">Андрей Сергеевич Константинопольский</h3>
+																			<div class="review-item__position">Губернатор Новгородской области, длинная должность</div>
+																		</footer>
+																	</article>
+																</div>
+															</div>
+														</div>
+														<div class="swiper-fraction__footer">
+															<div class="swiper-fraction__pagination" x-ref="pagination"></div>
+															<div class="swiper-fraction__navigation" x-ref="navigation">
+																<button class="swiper-fraction__button" type="button" x-ref="prevEl">
+																	<icon-svg name="arrow-left"></icon-svg>
+																</button>
+																<button class="swiper-fraction__button" type="button" x-ref="nextEl">
+																	<icon-svg name="arrow-right"></icon-svg>
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</main>
+			<footer class="footer">
+				<form class="subscribe" action="" x-data>
+					<div class="container subscribe__container">
+						<div class="subscribe__body">
+							<div class="subscribe__input">
+								<input class="subscribe__input-el" type="email" name="email" x-on:focus="$refs.placeholder.hidden = true" x-on:blur="$refs.placeholder.hidden = $event.target.value">
+								<div class="subscribe__input-placeholder" x-ref="placeholder"><strong>Введите e-mail,</strong> чтобы подписаться на&nbsp;новости</div>
+							</div>
+							<button class="subscribe__button" type="submit">
+								<icon-svg name="arrow-right"></icon-svg>
+							</button>
+						</div>
+					</div>
+				</form>
+				<div class="footer__body">
+					<div class="container footer__grid">
+						<div class="footer__section hidden-lg-down">
+							<div class="footer__header">
+								<h4 class="footer__title">Министерство спорта и&nbsp;молодёжной политики</h4>
+							</div>
+							<div class="footer__content">
+								<p>Телефон: <strong><a href="tel:+78000000000">+7 (800) 000-00-00</a></strong></p>
+								<p>Адрес: <strong>Москва, ул. Ленина, 123</strong></p>
+								<p>E-mail: <strong><a href="mailto:info@u.university">info@u.university</a></strong></p>
+								<p>Сайт: <strong><a href="">www.site.ru</a></strong></p>
+							</div>
+						</div>
+						<picture class="footer__logo hidden-lg-down">
+							<source type="image/webp" srcset="images/design/logo-footer.webp, images/design/logo-footer@2x.webp 2x"><img src="images/design/logo-footer.png" srcset="images/design/logo-footer@2x.png 2x" alt="Молодёжно">
+						</picture>
+						<div class="footer__section hidden-lg-down">
+							<div class="footer__header">
+								<h4 class="footer__title">Дом Молодёжи Новгородской области</h4>
+							</div>
+							<div class="footer__content">
+								<p>Телефон: <strong><a href="tel:+78000000000">+7 (800) 000-00-00</a></strong></p>
+								<p>Адрес: <strong>Москва, ул. Ленина, 123</strong></p>
+								<p>E-mail: <strong><a href="mailto:info@u.university">info@u.university</a></strong></p>
+								<p>Сайт: <strong><a href="">www.site.ru</a></strong></p>
+							</div>
+						</div>
+						<p class="footer__info"><span class="color-silver">&copy;&nbsp;<span x-init x-text="new Date().getFullYear()"></span>.
+								Информационно-познавательный портал для молодёжи Новгородской области
+								</span></p>
+						<div class="soc-network footer__soc-network"><a class="soc-network__item soc-network__item--vk" href="" target="_blank" title="VK">
+								<icon-svg name="vk"></icon-svg></a><a class="soc-network__item soc-network__item--instagram" href="" target="_blank" title="Instagram">
+								<icon-svg name="instagram"></icon-svg></a><a class="soc-network__item soc-network__item--facebook" href="" target="_blank" title="Facebook">
+								<icon-svg name="facebook"></icon-svg></a>
+						</div>
+						<p class="footer__info footer__info--dev"><a class="color-silver" href="https://renart.ru/" target="_blank">
+								<icon-svg name="renaissance"></icon-svg><span>Разработка сайта:<br> <strong>Renaissance Art Group</strong></span></a></p>
+						<p class="footer__info">
+							По&nbsp;вопросам сотрудничества обращайтесь
+							по&nbsp;<strong><a href="tel:+71234567890">+7&nbsp;(123)&nbsp;456-78-90</a></strong>
+							или пишите на&nbsp;<strong><a href="mailto:friendship@molodejno.ru">friendship@molodejno.ru</a></strong>
+						</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

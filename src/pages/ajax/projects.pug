@@ -1,0 +1,26 @@
+extends ../../pug/base
+
+include ../../components/card-item/card-item
+
+append variables
+	-
+		let type = 'projects';
+		let slice;
+		let tags = true;
+		let columns = 3;
+
+block document
+	include ../../components/cards/data
+
+	-
+		let items = data(type, slice, tags);
+
+	if slice
+		each item in items
+			+card-item(item).cards__item(
+				class=`card-item--style-group-${columns * 2}`
+				x-bind:class="{'swiper-slide': !$store.isDesktop}"
+			)
+	else
+		each item in items
+			+card-item(item).cards__item(class=`card-item--style-group-${columns * 2}`)

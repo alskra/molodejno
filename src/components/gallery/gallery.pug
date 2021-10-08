@@ -1,0 +1,15 @@
+include ../pagination/pagination
+
+mixin gallery()
+	include data
+
+	.gallery(x-data="{gridEl: $refs.grid}")&attributes(attributes)
+		.gallery__grid(x-ref="grid")
+			each galleryItem in gallery
+				a.gallery__item(
+					href=galleryItem.imageFullSize
+					data-fancybox="gallery"
+				)
+					+img-2x().gallery__image(src=galleryItem.image)
+
+		+pagination({multipage: false})(x-data=`pagination('ajax/gallery.html', gridEl)`)

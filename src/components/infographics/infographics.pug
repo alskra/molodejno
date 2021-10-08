@@ -28,7 +28,7 @@ mixin infographics()
 		];
 
 	section.infographics(x-data="infographics")&attributes(attributes)
-		.container
+		+container()
 			.infographics__items
 				.swiper(x-ref="container")
 					.swiper-wrapper

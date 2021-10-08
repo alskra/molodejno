@@ -1,0 +1,386 @@
+-
+	const data = (type, slice, tags) => {
+		let items;
+		let projects = [
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-1.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 1000000,
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок',
+				image: '../../images/content/projects/img-2.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр очень-очень длинный заголовок',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 70000,
+				tags: [
+					'Производство',
+				],
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-3.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 600000,
+				tags: [
+					'Образование',
+				],
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-4.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 750000,
+				tags: [
+					'Творчество',
+				],
+			},
+
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-3.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 600000,
+				tags: [
+					'Образование',
+				],
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-4.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 750000,
+				tags: [
+					'Творчество',
+				],
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-1.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 1000000,
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок',
+				image: '../../images/content/projects/img-2.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр очень-очень длинный заголовок',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 70000,
+				tags: [
+					'Производство',
+				],
+			},
+
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-1.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 1000000,
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок',
+				image: '../../images/content/projects/img-2.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр очень-очень длинный заголовок',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 70000,
+				tags: [
+					'Производство',
+				],
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-3.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 600000,
+				tags: [
+					'Образование',
+				],
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-4.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 750000,
+				tags: [
+					'Творчество',
+				],
+			},
+
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-3.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 600000,
+				tags: [
+					'Образование',
+				],
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/projects/img-4.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 750000,
+				tags: [
+					'Творчество',
+				],
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/projects/img-1.jpg',
+				organizer: {
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				},
+				price: 1000000,
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
+			},
+		];
+
+		let playbill = [
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/playbill/img-2.jpg',
+				date: '26.08.2020',
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/playbill/img-3.jpg',
+				date: '12.09.2020',
+				tags: [
+					'Концерты',
+				],
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/playbill/img-5.jpg',
+				date: '05.10.2020',
+				tags: [
+					'Творчество',
+				],
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/playbill/img-4.jpg',
+				date: '11.11.2021',
+				tags: [
+					'Творчество',
+				],
+			},
+
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/playbill/img-5.jpg',
+				date: '05.10.2020',
+				tags: [
+					'Творчество',
+				],
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/playbill/img-4.jpg',
+				date: '11.11.2021',
+				tags: [
+					'Творчество',
+				],
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/playbill/img-2.jpg',
+				date: '26.08.2020',
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/playbill/img-3.jpg',
+				date: '12.09.2020',
+				tags: [
+					'Концерты',
+				],
+			},
+
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/playbill/img-2.jpg',
+				date: '26.08.2020',
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/playbill/img-3.jpg',
+				date: '12.09.2020',
+				tags: [
+					'Концерты',
+				],
+			},
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/playbill/img-5.jpg',
+				date: '05.10.2020',
+				tags: [
+					'Творчество',
+				],
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/playbill/img-4.jpg',
+				date: '11.11.2021',
+				tags: [
+					'Творчество',
+				],
+			},
+
+			{
+				title: 'Конкурс среди образовательных организаций высшего образования',
+				image: '../../images/content/playbill/img-5.jpg',
+				date: '05.10.2020',
+				tags: [
+					'Творчество',
+				],
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/playbill/img-4.jpg',
+				date: '11.11.2021',
+				tags: [
+					'Творчество',
+				],
+			},
+			{
+				title: 'Кадры будущего для регионов',
+				image: '../../images/content/playbill/img-2.jpg',
+				date: '26.08.2020',
+				tags: [
+					'Образование',
+					'Мастер-классы',
+					'Культура и искусство',
+				],
+			},
+		];
+
+		switch (type) {
+			case 'projects':
+			case 'contests':
+			case 'grants':
+			case 'recipients':
+				items = projects;
+				break;
+			case 'playbill':
+			case 'news':
+				items = playbill;
+				break;
+		}
+
+		items = items.slice(0, slice);
+
+		items.forEach((item) => {
+			if (!tags) {
+				delete item.tags;
+			}
+
+			switch (type) {
+				case 'projects':
+				case 'contests':
+				case 'grants':
+					delete item.price;
+					break;
+				case 'recipients':
+					delete item.organizer;
+					break;
+			}
+
+			switch (type) {
+				case 'projects':
+					item.url = 'project.html';
+					break;
+				case 'contests':
+					item.url = 'contest.html';
+					break;
+				case 'grants':
+					item.url = 'grant.html';
+					break;
+				case 'recipients':
+					item.url = 'recipient.html';
+					break;
+				case 'playbill':
+					item.url = 'event.html';
+					break;
+				case 'news':
+					item.url = 'new.html';
+					break;
+			}
+		});
+
+		return items;
+	};

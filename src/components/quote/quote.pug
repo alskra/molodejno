@@ -1,5 +1,5 @@
 mixin quote(cite)
-	.container.quote&attributes(attributes)
+	+container().quote&attributes(attributes)
 		blockquote.quote__body
 			block
 			cite.quote__cite= cite

@@ -1,94 +1,55 @@
 include ../event-item/event-item
-include ../card-item/card-item
+include ../cards/cards
 
 mixin events(type)
 	-
 		const events = {
 			forums: [
 				{
+					url: 'forum.html',
 					title: 'Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;. Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;.',
-					image: '../../images/content/events/forums/img-1.jpg',
+					image: '../../images/content/forums/img-1.jpg',
 					date: '26.08.2020',
 					location: 'Тёсово-Нетыльский',
 				},
 				{
+					url: 'forum.html',
 					title: 'От&nbsp;малого к&nbsp;Великому',
-					image: '../../images/content/events/forums/img-2.jpg',
+					image: '../../images/content/forums/img-2.jpg',
 					date: '12.04.2020',
 					location: 'Тёсово-Нетыльский',
 				},
 			],
 			playbill: [
 				{
+					url: 'event.html',
 					title: 'Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;',
-					image: '../../images/content/events/playbill/img-1.jpg',
+					image: '../../images/content/playbill/img-1.jpg',
 					date: '26.08.2020',
-				},
-				{
-					title: 'Кадры будущего для регионов',
-					image: '../../images/content/events/playbill/img-2.jpg',
-					date: '26.08.2020',
-				},
-				{
-					title: 'Конкурс среди образовательных организаций высшего образования',
-					image: '../../images/content/events/playbill/img-3.jpg',
-					date: '12.04.2020',
-				},
-				{
-					title: 'Кадры будущего для регионов',
-					image: '../../images/content/events/playbill/img-4.jpg',
-					date: '26.08.2020',
-				},
-				{
-					title: 'Конкурс среди образовательных организаций высшего образования',
-					image: '../../images/content/events/playbill/img-5.jpg',
-					date: '12.04.2020',
 				},
 			],
 			news: [
 				{
+					url: 'new.html',
 					title: 'Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;',
-					image: '../../images/content/events/news/img-1.jpg',
+					image: '../../images/content/news/img-1.jpg',
 					date: '26.08.2020',
-				},
-				{
-					title: 'Кадры будущего для регионов',
-					image: '../../images/content/projects/img-3.jpg',
-					date: '26.08.2020',
-				},
-				{
-					title: 'Конкурс среди образовательных организаций высшего образования',
-					image: '../../images/content/projects/img-4.jpg',
-					date: '12.04.2020',
-				},
-				{
-					title: 'Кадры будущего для регионов',
-					image: '../../images/content/projects/img-1.jpg',
-					date: '26.08.2020',
-				},
-				{
-					title: 'Конкурс среди образовательных организаций высшего образования',
-					image: '../../images/content/projects/img-2.jpg',
-					date: '12.04.2020',
 				},
 			],
 		};
 
 	.events&attributes(attributes)
-		case type
-			when 'forums'
-				.container.events__grid
+		.events__grid
+			case type
+				when 'forums'
 					each eventItem in events[type]
-						+event-item(eventItem)
-			when 'playbill'
-			when 'news'
-				.container.events__grid
-					+event-item(events[type][0]).events__item-main
-					.events__swiper(
-						x-data="swiperCards"
-						x-effect="effect"
-					)
-						.swiper.events__swiper-container(x-ref="swiper")
-							.swiper-wrapper.events__swiper-wrapper
-								each eventItem in events[type].slice(1)
-									+card-item(eventItem).card-item--event.swiper-slide.events__item
+						+event-item(eventItem).events__item
+				when 'playbill'
+				when 'news'
+					+event-item(events[type][0]).events__item.events__item--main
+					+cards({
+						type,
+						slice: 4,
+						tags: false,
+						columns: 2,
+					})

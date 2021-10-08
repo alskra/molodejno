@@ -1,16 +1,32 @@
-mixin pagination()
-	nav.pagination&attributes(attributes)
-		a.pagination__button.is-disabled(href="")
-			icon-svg(name="arrow-left")
+mixin pagination({multipage = true, buttonLoadContent = 'Загрузить еще'} = {})
+	.pagination(x-data="pagination")&attributes(attributes)
+		.pagination__error(
+			x-show="error"
+			x-text="error"
+		)
 
-		.pagination__group
-			span.pagination__item.is-active 1
-			a.pagination__item(href="") 2
-			a.pagination__item(href="") 3
-			a.pagination__item(href="") 4
-			a.pagination__item(href="") 5
-			span.pagination__item.pagination__item--hellip &hellip;
-			a.pagination__item(href="") 18
+		if multipage
+			nav.pagination__multipage.hidden-lg-down
+				a.pagination__button.is-disabled(href="")
+					icon-svg(name="arrow-left")
 
-		a.pagination__button(href="")
-			icon-svg(name="arrow-right")
+				.pagination__group
+					span.pagination__item.is-active 1
+					a.pagination__item(href="") 2
+					a.pagination__item(href="") 3
+					a.pagination__item(href="") 4
+					a.pagination__item(href="") 5
+					span.pagination__item.pagination__item--hellip &hellip;
+					a.pagination__item(href="") 18
+
+				a.pagination__button(href="")
+					icon-svg(name="arrow-right")
+
+		+button-load({
+			tag: 'button',
+			content: buttonLoadContent,
+		})(
+			class={'hidden-lg-up': multipage}
+			x-bind:class="{'is-loading': isLoading}"
+			x-on:click="load"
+		)

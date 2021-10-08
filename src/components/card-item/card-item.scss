@@ -1,19 +1,21 @@
 .card-item {
+	--image-border-radius: 0;
+
 	position: relative;
 	display: flex;
 	flex-flow: column;
-	min-width: 0;
-	color: $color;
+	border-top: 1px solid transparent;
 
 	&::before {
 		content: "";
 		position: absolute;
 		left: 0;
-		top: 0;
+		top: -1px;
 		width: 100%;
 		height: 1px;
-		background: $color-black;
-		transition: height $transition-duration;
+		background: $color;
+		transition: height;
+		transition-duration: $transition-duration;
 	}
 
 	@include hover {
@@ -30,44 +32,55 @@
 		}
 	}
 
-	&--project {
-		&:nth-child(4n + 2) .card-item__image {
-			border-radius: 50%;
-		}
-
-		&:nth-child(4n + 3) .card-item__image {
-			border-radius: 50% 0 0 50%;
-		}
-	}
-
 	@include media-breakpoint-up(lg) {
-		&--event {
-			&:nth-child(4n + 1) .card-item__image {
-				border-radius: 50% 0 0 50%;
+		&--style-group-4 {
+			&:nth-child(4n + 1) {
+				--image-border-radius: 50% 0 0 50%;
 			}
 
-			&:nth-child(4n + 4) .card-item__image {
-				border-radius: 50%;
+			&:nth-child(4n + 4) {
+				--image-border-radius: 50%;
+			}
+		}
+
+		&--style-group-6 {
+			&:nth-child(6n + 1),
+			&:nth-child(6n + 6) {
+				--image-border-radius: 50% 0 0 50%;
+			}
+
+			&:nth-child(6n + 3),
+			&:nth-child(6n + 5) {
+				--image-border-radius: 50%;
+			}
+		}
+
+		&--style-group-8 {
+			&:nth-child(8n + 1),
+			&:nth-child(8n + 8) {
+				--image-border-radius: 50% 0 0 50%;
+			}
+
+			&:nth-child(8n + 3),
+			&:nth-child(8n + 6) {
+				--image-border-radius: 50%;
 			}
 		}
 	}
 
 	@include media-breakpoint-down(lg) {
-		&--event {
-			&:nth-child(4n + 1) .card-item__image {
-				border-radius: 50% 0 0 50%;
-			}
+		&:nth-child(4n + 1) {
+			--image-border-radius: 50% 0 0 50%;
+		}
 
-			&:nth-child(4n + 3) .card-item__image {
-				border-radius: 50%;
-			}
+		&:nth-child(4n + 3) {
+			--image-border-radius: 50%;
 		}
 	}
 }
 
 .card-item__body {
 	flex: 1;
-	border-top: 1px solid transparent;
 	padding: 25rem 0;
 
 	@include media-breakpoint-down(lg) {
@@ -77,23 +90,22 @@
 
 .card-item__title {
 	--line-clamp: 4;
-	--line-height: 1.4;
+	--line-height: 1.25;
 
 	@include line-clamp;
 
 	font-family: $heading-font-family;
 	font-weight: 500;
 	font-size: 20rem;
-	word-wrap: break-word;
-	transition: color $transition-duration;
+	color: $color;
+	transition: color;
+	transition-duration: $transition-duration;
 
 	&:not(:last-child) {
 		margin-bottom: 10rem;
 	}
 
 	@include media-breakpoint-down(lg) {
-		--line-clamp-line-height: 1.2;
-
 		font-size: 18rem;
 	}
 }
@@ -110,6 +122,7 @@
 .card-item__image {
 	position: relative;
 	overflow: hidden;
+	border-radius: var(--image-border-radius);
 
 	&::before {
 		content: "";
@@ -136,25 +149,9 @@
 		margin-bottom: 20rem;
 	}
 
-	&--ref {
-		--line-clamp: 3;
-		--line-height: 1.25;
-		--ref-image-height: 49rem;
-
-		min-height: max(calc(var(--line-clamp) * var(--line-height) * 1em), var(--ref-image-height));
-		font-size: 14rem;
-		gap: 10rem;
-	}
-
 	@include media-breakpoint-down(lg) {
 		&:not(:last-child) {
 			margin-bottom: 15rem;
-		}
-
-		&--ref {
-			--ref-image-height: 36rem;
-
-			font-size: 12rem;
 		}
 	}
 }
@@ -163,23 +160,8 @@
 	margin-left: auto;
 }
 
-.card-item__ref-title {
-	@include line-clamp;
-
+.card-item__organizer {
 	flex: 1;
-	word-wrap: break-word;
-}
-
-.card-item__ref-image {
-	width: 152rem;
-	height: var(--ref-image-height);
-	min-width: 0;
-	object-fit: contain;
-	object-position: 100%;
-
-	@include media-breakpoint-down(lg) {
-		width: 114rem;
-	}
 }
 
 .card__tags {
@@ -189,5 +171,4 @@
 
 .card-item__price {
 	margin-left: auto;
-	min-width: 0;
 }

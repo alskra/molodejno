@@ -1,0 +1,14 @@
+.content {
+	> :not(:first-child) {
+		margin-top: var(--gap-lg);
+	}
+
+	> :not(:last-child) {
+		margin-bottom: var(--gap-lg);
+	}
+
+	> .subsection:not(:first-child),
+	> .subsection-section:not(:first-child) {
+		margin-top: var(--gap-2xl);
+	}
+}

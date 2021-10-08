@@ -1,0 +1,26 @@
+:root {
+	--body-width: calc(100vw - var(--scrollbar-width, 0));
+	--gap-sm: 20rem;
+	--gap: 30rem;
+	--gap-lg: 40rem;
+	--gap-xl: 50rem;
+	--gap-2xl: 80rem;
+	--gap-3xl: 100rem;
+
+	font-size: 1px;
+
+	@include media-breakpoint-down(xl) {
+		font-size: calc(0.5 / 1200 * 100vw + 0.5px);
+	}
+
+	@include media-breakpoint-down(lg) {
+		--gap-sm: 12rem;
+		--gap: 20rem;
+		--gap-lg: 25rem;
+		--gap-xl: 30rem;
+		--gap-2xl: 40rem;
+		--gap-3xl: 50rem;
+
+		font-size: calc(0.5 / 360 * 100vmin + 0.5px);
+	}
+}

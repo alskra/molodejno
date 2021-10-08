@@ -1,17 +1,11 @@
 :root {
-	--app__main-gap-bottom: var(--gap-xxl);
+	--app__main-gap-bottom: var(--gap-3xl);
 }
 
 .app {
 	display: flex;
 	flex-flow: column;
 	min-height: vh(100);
-	font-family: $font-family;
-	font-size: 16rem;
-	line-height: 1.25;
-	word-wrap: break-word;
-	color: $color;
-	background: $background-color;
 }
 
 .app__main {
@@ -20,6 +14,10 @@
 
 	.promo:last-child {
 		margin-top: var(--app__main-gap-bottom);
+		margin-bottom: calc(-1 * var(--app__main-gap-bottom));
+	}
+
+	.subsection--reviews:last-child {
 		margin-bottom: calc(-1 * var(--app__main-gap-bottom));
 	}
 }
@@ -32,15 +30,11 @@
 	background: linear-gradient(180deg, $color-aero-blue 51.03%, $color-onahau var(--bg-end), transparent var(--bg-end));
 
 	&:not(:last-child) {
-		margin-bottom: 228rem - 125rem;
+		margin-bottom: var(--gap-3xl);
 	}
 
 	@include media-breakpoint-down(lg) {
 		--bg-end: calc(100% - 70rem);
-
-		&:not(:last-child) {
-			margin-bottom: 115rem - 70rem;
-		}
 	}
 }
 

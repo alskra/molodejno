@@ -1,0 +1,36 @@
+include ../promo/promo
+
+mixin subsection({offsetColumn, anchor, type, extType, title})
+	section.subsection(
+		class={
+			[`subsection--offset-column-${offsetColumn}`]: offsetColumn,
+			[`subsection--${type}`]: type,
+			[`subsection--${type}-${extType}`]: type && extType,
+		}
+	)&attributes(
+		attributes)
+		if anchor
+			.anchor(id=anchor)
+
+		case type
+			when 'recipients'
+				+promo({
+					offsetColumn: true,
+					header: true,
+					type: 'grants',
+				})
+			default
+				header.subsection__header
+					+container().subsection__grid
+						.subsection__column(class={'subsection__column--grid': type === 'reviews'})
+							h2.subsection__title!= title
+							if type === 'reviews'
+								+button({
+									tag: 'a',
+									content: 'Оставить отзыв',
+								}).subsection__header-button
+
+		.subsection__main
+			+container().subsection__grid
+				+content().subsection__column
+					block

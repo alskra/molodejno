@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 64 27" xmlns="http://www.w3.org/2000/svg">
 	<defs>
 		<marker id="arrowhead" markerWidth="17" markerHeight="27" refX="16" refY="13.5" orient="0">
 			<path d="M1.2793 1L16 13.6848M1.2793 26L16 13.3152" stroke="currentColor"/>

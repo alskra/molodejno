@@ -28,7 +28,7 @@ $font-family-stolzl: "Stolzl", sans-serif, $font-family-emoji;
 $font-family-stolzl-display: "Stolzl Display", sans-serif, $font-family-emoji;
 $font-family-gilroy: "Gilroy", sans-serif, $font-family-emoji;
 
-// Breakpoints
+// Layout
 $breakpoints: (
 	xs: 360px,
 	sm: 576px,
@@ -37,18 +37,25 @@ $breakpoints: (
 	xl: 1200px,
 	xxl: 2560px
 );
+$container-gap: 15rem;
+$container-max-width: 1140rem;
 
 // Base
 $color: $color-cod-gray;
 $color-primary: $color-royal-blue;
 $color-primary-hover: $color-indigo;
-$background-color: $color-white;
+$color-disabled: $color-silver-2;
 $font-family: $font-family-helvetica-neue;
+$font-size: 16rem;
+$line-height: 1.5;
+$background-color: $color-white;
 $transition-duration: 0.2s;
 
 // Heading
-$heading-color: $color-cod-gray;
+$heading-color: $color;
 $heading-font-family: $font-family-stolzl;
+$heading-font-weight: 700;
+$heading-line-height: 1.15;
 
 // Image
 $image-transition: transform 3s;

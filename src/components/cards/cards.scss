@@ -1,0 +1,60 @@
+.cards__main {
+	overflow: hidden;
+
+	@include media-breakpoint-down(lg) {
+		margin-right: calc(-1 * var(--container-content-offset-x));
+		padding-right: var(--container-content-offset-x);
+	}
+}
+
+.cards__main-inner {
+	overflow: visible;
+
+	@include media-breakpoint-down(lg) {
+		margin: 0 calc(-0.5 * var(--gap));
+	}
+}
+
+.cards__grid {
+	&:not(.swiper-wrapper) {
+		display: grid;
+		gap: var(--gap-xl) var(--gap);
+	}
+
+	@include media-breakpoint-up(lg) {
+		&--columns-2 {
+			&:not(.swiper-wrapper) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		&--columns-3 {
+			&:not(.swiper-wrapper) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+
+		&--columns-4 {
+			&:not(.swiper-wrapper) {
+				grid-template-columns: repeat(4, 1fr);
+			}
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		&:not(.swiper-wrapper) {
+			grid-template-columns: repeat(auto-fill, minmax(min(280rem, 100%), 1fr));
+			row-gap: 30rem;
+		}
+	}
+}
+
+.cards__item {
+	@include media-breakpoint-down(lg) {
+		&.swiper-slide {
+			margin: 0 calc(0.5 * var(--gap));
+			width: 265rem;
+			height: auto;
+		}
+	}
+}

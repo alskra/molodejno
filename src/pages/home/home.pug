@@ -1,4 +1,5 @@
 extends ../../pug/base
+
 include ../../components/header/header
 include ../../components/footer/footer
 include ../../components/slider/slider
@@ -13,7 +14,7 @@ append variables
 	-
 		title = `${title} - Главная`;
 
-block body
+block app
 	+header().header--no-border-bottom
 
 	main.app__main
@@ -46,7 +47,7 @@ block body
 				number: 100,
 			},
 		})
-		+promo('projects')
+		+promo({type: 'projects'})
 		+integration()
 		+section({
 			type: 'contests',
@@ -58,7 +59,7 @@ block body
 				number: 100,
 			},
 		})
-		+promo('contests')
+		+promo({type: 'contests'})
 		+section({
 			type: 'grants',
 			title: 'Гранты',
@@ -69,7 +70,7 @@ block body
 				number: 100,
 			},
 		})
-		+promo('grants')
+		+promo({type: 'grants'})
 		+integration()
 		+section({
 			type: 'playbill',

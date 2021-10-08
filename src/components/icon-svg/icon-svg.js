@@ -1,3 +1,4 @@
+import ResizeObserver from 'resize-observer-polyfill';
 import './icon-svg.scss';
 
 const requireIcon = require.context(
@@ -7,6 +8,17 @@ const requireIcon = require.context(
 );
 
 const icons = {};
+
+const resizeObserver = new ResizeObserver((entries) => {
+	entries.forEach((entry) => {
+		const contentBoxSize = entry.contentBoxSize && entry.contentBoxSize[0] || entry.contentBoxSize;
+		const iconWidth = contentBoxSize && contentBoxSize.inlineSize || entry.contentRect.width;
+		const iconHeight = contentBoxSize && contentBoxSize.blockSize || entry.contentRect.height;
+		const viewBox = `0 0 ${iconWidth / (iconHeight || 1) * entry.target.svgViewBoxHeight} ${entry.target.svgViewBoxHeight}`;
+
+		entry.target.svgEl.setAttribute('viewBox', viewBox);
+	});
+});
 
 requireIcon.keys().forEach((iconPath) => {
 	const iconName = iconPath
@@ -34,11 +46,24 @@ class IconSvg extends HTMLElement {
 
 	update() {
 		this.shadowRoot.innerHTML = icons[this.name];
-		Object.assign(this.shadowRoot.querySelector('svg').style, {
+		this.svgEl = this.shadowRoot.querySelector('svg');
+
+		Object.assign(this.svgEl.style, {
 			display: 'block',
 			width: '100%',
 			height: '100%',
 		});
+
+		resizeObserver.unobserve(this);
+
+		if (['arrow-left', 'arrow-right'].includes(this.name)) {
+			this.svgViewBoxHeight = +this.svgEl.getAttribute('viewBox').split(/\s+/).pop();
+			resizeObserver.observe(this);
+		}
+	}
+
+	disconnected() {
+		resizeObserver.unobserve(this);
 	}
 
 	attributeChangedCallback(name) {

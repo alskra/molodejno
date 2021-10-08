@@ -1,0 +1,32 @@
+.organizer {
+	--line-height: 1.25;
+	--image-height: 40rem;
+
+	display: flex;
+	align-items: center;
+	font-size: 14rem;
+	color: $color;
+	gap: 10rem;
+
+	&--line-clamp {
+		--line-clamp: 3;
+
+		height: max(calc(var(--line-clamp) * var(--line-height) * 1em), var(--image-height));
+	}
+
+	@include media-breakpoint-down(lg) {
+		font-size: 12rem;
+	}
+}
+
+.organizer__title {
+	@include line-clamp;
+
+	flex: 50%;
+}
+
+.organizer__image {
+	flex: 50%;
+	height: var(--image-height);
+	object-fit: contain;
+}

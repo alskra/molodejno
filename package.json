@@ -55,11 +55,13 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.15.4",
+    "@fancyapps/ui": "^4.0.5",
     "alpinejs": "^3.3.3",
     "aos": "^3.0.0-beta.6",
     "body-scroll-lock": "^4.0.0-beta.0",
     "core-js": "^3.17.3",
     "focus-visible": "^5.2.0",
+    "goodshare.js": "^6.2.1",
     "gsap": "^3.7.1",
     "lodash": "^4.17.21",
     "ninelines-ua-parser": "^1.1.6",

@@ -1,0 +1,40 @@
+.recipients__main {
+	overflow: hidden;
+
+	@include media-breakpoint-down(lg) {
+		margin-right: calc(-1 * var(--container-content-offset-x));
+		padding-right: var(--container-content-offset-x);
+	}
+}
+
+.recipients__main-inner {
+	overflow: visible;
+
+	@include media-breakpoint-down(lg) {
+		margin: 0 calc(-1 * var(--gap) / 2);
+	}
+}
+
+.recipients__grid {
+	@include media-breakpoint-up(lg) {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--gap);
+	}
+}
+
+.recipients__item {
+	@include media-breakpoint-down(lg) {
+		margin: 0 calc(var(--gap) / 2);
+		width: 265rem;
+		height: auto;
+	}
+}
+
+.recipients__footer {
+	margin-top: 30rem;
+
+	@include media-breakpoint-down(lg) {
+		display: none;
+	}
+}

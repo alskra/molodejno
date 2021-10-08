@@ -1,24 +1,11 @@
-:root {
-	--heading-margin-bottom: 20rem;
-
-	@include media-breakpoint-down(lg) {
-		--heading-margin-bottom: 12rem;
-	}
-}
-
 .heading {
-	margin: 0;
 	font-family: $heading-font-family;
-	font-weight: 700;
-	font-size: 60rem;
-	line-height: 1.25;
+	font-weight: $heading-font-weight;
+	font-size: var(--content-edited-h1-font-size);
+	line-height: $heading-line-height;
 	color: $heading-color;
 
 	&:not(:last-child) {
-		margin-bottom: var(--heading-margin-bottom);
-	}
-
-	@include media-breakpoint-down(lg) {
-		font-size: 40rem;
+		margin-bottom: var(--gap-sm);
 	}
 }

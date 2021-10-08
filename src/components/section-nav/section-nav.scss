@@ -1,6 +1,7 @@
 .section-nav {
 	display: flex;
 	flex-flow: column;
+	user-select: none;
 	gap: 15rem 20rem;
 
 	&:not(:last-child) {
@@ -17,12 +18,13 @@
 }
 
 .section-nav__item {
-	font-family: $font-family-stolzl;
+	font-family: $heading-font-family;
 	font-weight: 500;
 	font-size: 15rem;
 	line-height: 1.2;
 	color: $color;
-	transition: color $transition-duration;
+	transition: color;
+	transition-duration: $transition-duration;
 
 	@include hover {
 		&:not(.is-active) {

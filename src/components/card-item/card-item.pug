@@ -1,26 +1,23 @@
 include ../tags/tags
 
-mixin card-item({url, title, image, date, ref, tags, price})
+mixin card-item({url = "", title, image, date, organizer, price, tags} = {})
 	article.card-item&attributes(attributes)
 		.card-item__body
-			if date || ref || price
-				.card-item__group(class={'card-item__group--ref': ref})
+			if date || organizer || price
+				.card-item__group
 					if date
 						+date(date).card-item__date
 
-					if ref
-						.card-item__ref-title!= ref.title
-						+img-2x().card-item__ref-image(
-							src=ref.image
-							alt!=ref.title
-						)
+					if organizer
+						- organizer.lineClamp = true;
+						+organizer(organizer).card-item__organizer
 
 					if price
 						+price(price).card-item__price
 
-			.card-item__title
+			h3.card-item__title
 				a.card-item__link(
-					href=url || ""
+					href=url
 					title!=title
 				)!=title
 
