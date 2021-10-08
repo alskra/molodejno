@@ -49,9 +49,18 @@ mixin section({tag = 'section', type, title, desc, score, advanced, withoutImage
 				+container()
 					case type
 						when 'forums'
+							+events({
+								type,
+								slice: 2,
+								tags: false,
+							})
 						when 'playbill'
 						when 'news'
-							+events(type)
+							+events({
+								type,
+								slice: 1,
+								tags: false,
+							})
 						when 'projects'
 						when 'contests'
 						when 'grants'

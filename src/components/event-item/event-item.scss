@@ -1,11 +1,15 @@
 .event-item {
 	position: relative;
-	display: block;
-	min-width: 0;
 
 	@include hover {
 		.event-item__image-el {
 			transform: $image-hover-transform;
+		}
+	}
+
+	&--lg {
+		.event-item__image::before {
+			padding-top: cw(540, 825);
 		}
 	}
 }

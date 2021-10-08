@@ -4,6 +4,7 @@ include ../../components/header/header
 include ../../components/footer/footer
 
 include ../../components/filters/filters
+include ../../components/events/events
 
 include ../../components/section/section
 
@@ -60,6 +61,9 @@ block app
 
 				.section__grid-main
 					+content()
-						p dsfdsf
+						+events({
+							type: 'forums',
+							columns: 1,
+						})
 
 	+footer()

@@ -1,8 +1,13 @@
 .events__grid {
 	display: grid;
 	align-items: start;
-	grid-template-columns: repeat(2, 1fr);
 	gap: var(--gap);
+
+	@include media-breakpoint-up(lg) {
+		&--columns-2 {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
 
 	@include media-breakpoint-down(lg) {
 		grid-template-columns: repeat(auto-fill, minmax(min(280rem, 100%), 1fr));
