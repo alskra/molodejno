@@ -1,6 +1,6 @@
 include ../score/score
 include ../events/events
-include ../card-list/card-list
+include ../cards/cards
 
 mixin section({tag = 'section', type, title, desc, score, advanced, withoutImage} = {})
 	#{tag}.section(
@@ -55,10 +55,7 @@ mixin section({tag = 'section', type, title, desc, score, advanced, withoutImage
 						when 'projects'
 						when 'contests'
 						when 'grants'
-							+card-list({
-								type,
-								last: 4,
-							})
+							+cards(type, 4)
 
 		if !block
 			+container('footer').section__footer

@@ -1,3 +1,9 @@
+@keyframes button-load-loading {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 .button-load {
 	display: inline-flex;
 	column-gap: 20rem;
@@ -19,6 +25,12 @@
 	@include hover {
 		&:not(:disabled, .is-disabled) {
 			color: $color-primary;
+		}
+	}
+
+	&.is-loading {
+		.button-load__icon {
+			animation: button-load-loading 1s ease-in-out infinite;
 		}
 	}
 }

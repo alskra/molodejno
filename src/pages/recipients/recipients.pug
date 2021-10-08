@@ -5,7 +5,7 @@ include ../../components/footer/footer
 
 include ../../components/section-nav/section-nav
 include ../../components/filters/filters
-include ../../components/card-list/card-list
+include ../../components/cards/cards
 
 include ../../components/section/section
 
@@ -69,6 +69,6 @@ block app
 
 				.section__grid-main
 					+content()
-						+card-list({type: 'recipients'})
+						+cards('recipients')
 
 	+footer()

@@ -7,7 +7,7 @@ import '../../components/footer/footer';
 
 import '../../components/section-nav/section-nav';
 import '../../components/filters/filters';
-import '../../components/card-list/card-list';
+import '../../components/cards/cards';
 
 import '../../components/section/section';
 

@@ -8,14 +8,14 @@ append variables
 		let last;
 
 block document
-	include ../../components/card-list/data
+	include ../../components/cards/data
 
 	-
 		let [items, isRecipients, isEvents] = data(type, last);
 
 	if last
 		each item in items
-			+card-item(item).card-list__item(
+			+card-item(item).cards__item(
 				class={
 					'card-item--style-group-8': !isRecipients && !isEvents,
 					'card-item--style-group-6': isRecipients,
@@ -25,4 +25,4 @@ block document
 			)
 	else
 		each item in items
-			+card-item(item).card-item--style-group-6.card-list__item
+			+card-item(item).card-item--style-group-6.cards__item

@@ -25,7 +25,8 @@ mixin pagination(multipage = true)
 		+button-load({
 			tag: 'button',
 			content: 'Загрузить еще',
-		}).pagination__button-load(
+		})(
 			class={'hidden-lg-up': multipage}
+			x-bind:class="{'is-loading': isLoading}"
 			x-on:click="load"
 		)

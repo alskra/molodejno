@@ -3,17 +3,27 @@ import './pagination.scss';
 
 Alpine.data('pagination', (url, containerEl) => ({
 	error: null,
+	isLoading: false,
 	url,
 	containerEl,
 	async load() {
-		const response = await fetch(this.url);
+		try {
+			this.isLoading = true;
 
-		if (response.ok) {
-			const html = (await response.text()).trim();
+			const response = await fetch(this.url);
 
-			this.containerEl.insertAdjacentHTML('beforeend', html);
-		} else {
-			this.error = `HTTP Error: ${response.status}`;
+			if (response.ok) {
+				const html = (await response.text()).trim();
+
+				this.error = null;
+				this.containerEl.insertAdjacentHTML('beforeend', html);
+			} else {
+				this.error = `HTTP Error: ${response.status}`;
+			}
+		} catch (error) {
+			this.error = error;
+		} finally {
+			this.isLoading = false;
 		}
 	},
 }));
