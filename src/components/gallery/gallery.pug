@@ -1,29 +1,12 @@
-mixin gallery()
-	-
-		let gallery = [
-			{
-				image: '../../images/content/gallery/img-1.jpg',
-				imageFullSize: 'images/content/gallery/img-1@2x.jpg',
-			},
-			{
-				image: '../../images/content/gallery/img-2.jpg',
-				imageFullSize: 'images/content/gallery/img-2@2x.jpg',
-			},
-			{
-				image: '../../images/content/gallery/img-2.jpg',
-				imageFullSize: 'images/content/gallery/img-2@2x.jpg',
-			},
-			{
-				image: '../../images/content/gallery/img-1.jpg',
-				imageFullSize: 'images/content/gallery/img-1@2x.jpg',
-			},
-		];
+include ../pagination/pagination
 
-	.gallery&attributes(attributes)
-		.gallery__main
+mixin gallery()
+	include data
+
+	.gallery(x-data="{gridEl: $refs.grid}")&attributes(attributes)
+		.gallery__grid(x-ref="grid")
 			each galleryItem in gallery
 				a.gallery__item(href=galleryItem.imageFullSize)
 					+img-2x().gallery__image(src=galleryItem.image)
 
-		.gallery__footer
-			+button-load({content: 'Загрузить еще'})
+		+pagination({multipage: false})(x-data=`pagination('ajax/gallery.html', gridEl)`)
