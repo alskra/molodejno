@@ -176,13 +176,14 @@
 										<div class="subsection__main">
 											<div class="container subsection__grid">
 												<div class="content subsection__column">
-													<div class="gallery">
-														<div class="gallery__main"><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a>
+													<div class="gallery" x-data="{gridEl: $refs.grid}">
+														<div class="gallery__grid" x-ref="grid"><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a>
 														</div>
-														<div class="gallery__footer">
-															<a class="button-load" href=""><span class="button-load__content">Загрузить еще</span>
+														<div class="pagination" x-data="pagination('ajax/gallery.html', gridEl)">
+															<div class="pagination__error" x-show="error" x-text="error"></div>
+															<button class="button-load" type="button" x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content">Загрузить еще</span>
 																<icon-svg class="button-load__icon" name="plus"></icon-svg>
-															</a>
+															</button>
 														</div>
 													</div>
 												</div>
@@ -194,11 +195,19 @@
 									<div class="share__title">
 										<icon-svg class="share__title-icon" name="share"></icon-svg>Поделиться
 									</div>
-									<div class="share__items"><a class="share__item share__item--facebook" href="">
-											<icon-svg class="share__item-icon" name="facebook"></icon-svg>Поделиться</a><a class="share__item share__item--twitter" href="">
-											<icon-svg class="share__item-icon" name="twitter"></icon-svg>Твитнуть</a><a class="share__item share__item--facebook" href="">
-											<icon-svg class="share__item-icon" name="facebook"></icon-svg>Поделиться</a><a class="share__item share__item--twitter" href="">
-											<icon-svg class="share__item-icon" name="twitter"></icon-svg>Твитнуть</a>
+									<div class="share__items">
+										<button class="share__item share__item--facebook" type="button" data-social="facebook">
+											<icon-svg class="share__item-icon" name="facebook"></icon-svg>Поделиться
+										</button>
+										<button class="share__item share__item--twitter" type="button" data-social="twitter">
+											<icon-svg class="share__item-icon" name="twitter"></icon-svg>Твитнуть
+										</button>
+										<button class="share__item share__item--facebook" type="button" data-social="facebook">
+											<icon-svg class="share__item-icon" name="facebook"></icon-svg>Поделиться
+										</button>
+										<button class="share__item share__item--twitter" type="button" data-social="twitter">
+											<icon-svg class="share__item-icon" name="twitter"></icon-svg>Твитнуть
+										</button>
 									</div>
 								</div>
 							</div>
@@ -227,7 +236,7 @@
 								<h4 class="footer__title">Министерство спорта и&nbsp;молодёжной политики</h4>
 							</div>
 							<div class="footer__content">
-								<p>Телефон: <strong>+7 (800) 000-00-00</strong></p>
+								<p>Телефон: <strong><a href="tel:+78000000000">+7 (800) 000-00-00</a></strong></p>
 								<p>Адрес: <strong>Москва, ул. Ленина, 123</strong></p>
 								<p>E-mail: <strong><a href="mailto:info@u.university">info@u.university</a></strong></p>
 								<p>Сайт: <strong><a href="">www.site.ru</a></strong></p>
@@ -241,7 +250,7 @@
 								<h4 class="footer__title">Дом Молодёжи Новгородской области</h4>
 							</div>
 							<div class="footer__content">
-								<p>Телефон: <strong>+7 (800) 000-00-00</strong></p>
+								<p>Телефон: <strong><a href="tel:+78000000000">+7 (800) 000-00-00</a></strong></p>
 								<p>Адрес: <strong>Москва, ул. Ленина, 123</strong></p>
 								<p>E-mail: <strong><a href="mailto:info@u.university">info@u.university</a></strong></p>
 								<p>Сайт: <strong><a href="">www.site.ru</a></strong></p>
@@ -259,7 +268,7 @@
 								<icon-svg name="renaissance"></icon-svg><span>Разработка сайта:<br> <strong>Renaissance Art Group</strong></span></a></p>
 						<p class="footer__info">
 							По&nbsp;вопросам сотрудничества обращайтесь
-							по&nbsp;<strong>+7&nbsp;(123)&nbsp;456-78-90</strong>
+							по&nbsp;<strong><a href="tel:+71234567890">+7&nbsp;(123)&nbsp;456-78-90</a></strong>
 							или пишите на&nbsp;<strong><a href="mailto:friendship@molodejno.ru">friendship@molodejno.ru</a></strong>
 						</p>
 					</div>

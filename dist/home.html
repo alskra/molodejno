@@ -246,8 +246,8 @@
 					<div class="section__main">
 						<div class="container">
 							<div class="events">
-								<div class="events__grid"><a class="event-item" href="" title="Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;. Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;.">
-										<div class="event-item__image"><img class="event-item__image-el" src="images/content/events/forums/img-1.jpg" srcset="images/content/events/forums/img-1@2x.jpg 2x" alt=""></div>
+								<div class="events__grid"><a class="event-item events__item" href="forum.html" title="Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;. Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;.">
+										<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-1.jpg" srcset="images/content/forums/img-1@2x.jpg 2x" alt=""></div>
 										<div class="event-item__body">
 											<div class="event-item__main">
 												<div class="event-item__group">
@@ -260,8 +260,8 @@
 												</div>
 												<h3 class="event-item__title">Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;. Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;.</h3>
 											</div>
-										</div></a><a class="event-item" href="" title="От&nbsp;малого к&nbsp;Великому">
-										<div class="event-item__image"><img class="event-item__image-el" src="images/content/events/forums/img-2.jpg" srcset="images/content/events/forums/img-2@2x.jpg 2x" alt=""></div>
+										</div></a><a class="event-item events__item" href="forum.html" title="От&nbsp;малого к&nbsp;Великому">
+										<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-2.jpg" srcset="images/content/forums/img-2@2x.jpg 2x" alt=""></div>
 										<div class="event-item__body">
 											<div class="event-item__main">
 												<div class="event-item__group">
@@ -328,54 +328,54 @@
 					</header>
 					<div class="section__main">
 						<div class="container">
-							<div class="card-list">
-								<div class="card-list__main">
-									<div class="card-list__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
-										<div class="card-list__grid card-list__grid--columns-4" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
-											<article class="card-item card-item--style-group-8 card-list__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+							<div class="cards" x-data="{gridEl: $root.querySelector('.cards__grid')}">
+								<div class="cards__main">
+									<div class="cards__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
+										<div class="cards__grid cards__grid--columns-4" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
+											<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 												<div class="card-item__body">
 													<div class="card-item__group">
 														<div class="organizer organizer--line-clamp card-item__organizer">
 															<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
 														</div>
 													</div>
-													<h3 class="card-item__title"><a class="card-item__link" href="" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
+													<h3 class="card-item__title"><a class="card-item__link" href="project.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 												</div>
 												<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-1.jpg" srcset="images/content/projects/img-1@2x.jpg 2x" alt="Кадры будущего для регионов">
 												</div>
 											</article>
-											<article class="card-item card-item--style-group-8 card-list__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+											<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 												<div class="card-item__body">
 													<div class="card-item__group">
 														<div class="organizer organizer--line-clamp card-item__organizer">
 															<div class="organizer__title">Ресурсный Молодежный центр очень-очень длинный заголовок</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр очень-очень длинный заголовок">
 														</div>
 													</div>
-													<h3 class="card-item__title"><a class="card-item__link" href="" title="Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок">Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок</a></h3>
+													<h3 class="card-item__title"><a class="card-item__link" href="project.html" title="Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок">Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок</a></h3>
 												</div>
 												<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-2.jpg" srcset="images/content/projects/img-2@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок">
 												</div>
 											</article>
-											<article class="card-item card-item--style-group-8 card-list__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+											<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 												<div class="card-item__body">
 													<div class="card-item__group">
 														<div class="organizer organizer--line-clamp card-item__organizer">
 															<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
 														</div>
 													</div>
-													<h3 class="card-item__title"><a class="card-item__link" href="" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
+													<h3 class="card-item__title"><a class="card-item__link" href="project.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 												</div>
 												<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-3.jpg" srcset="images/content/projects/img-3@2x.jpg 2x" alt="Кадры будущего для регионов">
 												</div>
 											</article>
-											<article class="card-item card-item--style-group-8 card-list__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+											<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 												<div class="card-item__body">
 													<div class="card-item__group">
 														<div class="organizer organizer--line-clamp card-item__organizer">
 															<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
 														</div>
 													</div>
-													<h3 class="card-item__title"><a class="card-item__link" href="" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
+													<h3 class="card-item__title"><a class="card-item__link" href="project.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 												</div>
 												<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-4.jpg" srcset="images/content/projects/img-4@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
 												</div>
@@ -454,54 +454,54 @@
 					</header>
 					<div class="section__main">
 						<div class="container">
-							<div class="card-list">
-								<div class="card-list__main">
-									<div class="card-list__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
-										<div class="card-list__grid card-list__grid--columns-4" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
-											<article class="card-item card-item--style-group-8 card-list__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+							<div class="cards" x-data="{gridEl: $root.querySelector('.cards__grid')}">
+								<div class="cards__main">
+									<div class="cards__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
+										<div class="cards__grid cards__grid--columns-4" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
+											<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 												<div class="card-item__body">
 													<div class="card-item__group">
 														<div class="organizer organizer--line-clamp card-item__organizer">
 															<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
 														</div>
 													</div>
-													<h3 class="card-item__title"><a class="card-item__link" href="" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
+													<h3 class="card-item__title"><a class="card-item__link" href="contest.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 												</div>
 												<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-1.jpg" srcset="images/content/projects/img-1@2x.jpg 2x" alt="Кадры будущего для регионов">
 												</div>
 											</article>
-											<article class="card-item card-item--style-group-8 card-list__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+											<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 												<div class="card-item__body">
 													<div class="card-item__group">
 														<div class="organizer organizer--line-clamp card-item__organizer">
 															<div class="organizer__title">Ресурсный Молодежный центр очень-очень длинный заголовок</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр очень-очень длинный заголовок">
 														</div>
 													</div>
-													<h3 class="card-item__title"><a class="card-item__link" href="" title="Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок">Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок</a></h3>
+													<h3 class="card-item__title"><a class="card-item__link" href="contest.html" title="Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок">Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок</a></h3>
 												</div>
 												<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-2.jpg" srcset="images/content/projects/img-2@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок">
 												</div>
 											</article>
-											<article class="card-item card-item--style-group-8 card-list__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+											<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 												<div class="card-item__body">
 													<div class="card-item__group">
 														<div class="organizer organizer--line-clamp card-item__organizer">
 															<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
 														</div>
 													</div>
-													<h3 class="card-item__title"><a class="card-item__link" href="" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
+													<h3 class="card-item__title"><a class="card-item__link" href="contest.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 												</div>
 												<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-3.jpg" srcset="images/content/projects/img-3@2x.jpg 2x" alt="Кадры будущего для регионов">
 												</div>
 											</article>
-											<article class="card-item card-item--style-group-8 card-list__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+											<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 												<div class="card-item__body">
 													<div class="card-item__group">
 														<div class="organizer organizer--line-clamp card-item__organizer">
 															<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
 														</div>
 													</div>
-													<h3 class="card-item__title"><a class="card-item__link" href="" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
+													<h3 class="card-item__title"><a class="card-item__link" href="contest.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 												</div>
 												<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-4.jpg" srcset="images/content/projects/img-4@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
 												</div>
@@ -576,54 +576,54 @@
 					</header>
 					<div class="section__main">
 						<div class="container">
-							<div class="card-list">
-								<div class="card-list__main">
-									<div class="card-list__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
-										<div class="card-list__grid card-list__grid--columns-4" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
-											<article class="card-item card-item--style-group-8 card-list__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+							<div class="cards" x-data="{gridEl: $root.querySelector('.cards__grid')}">
+								<div class="cards__main">
+									<div class="cards__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
+										<div class="cards__grid cards__grid--columns-4" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
+											<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 												<div class="card-item__body">
 													<div class="card-item__group">
 														<div class="organizer organizer--line-clamp card-item__organizer">
 															<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
 														</div>
 													</div>
-													<h3 class="card-item__title"><a class="card-item__link" href="" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
+													<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 												</div>
 												<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-1.jpg" srcset="images/content/projects/img-1@2x.jpg 2x" alt="Кадры будущего для регионов">
 												</div>
 											</article>
-											<article class="card-item card-item--style-group-8 card-list__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+											<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 												<div class="card-item__body">
 													<div class="card-item__group">
 														<div class="organizer organizer--line-clamp card-item__organizer">
 															<div class="organizer__title">Ресурсный Молодежный центр очень-очень длинный заголовок</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр очень-очень длинный заголовок">
 														</div>
 													</div>
-													<h3 class="card-item__title"><a class="card-item__link" href="" title="Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок">Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок</a></h3>
+													<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок">Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок</a></h3>
 												</div>
 												<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-2.jpg" srcset="images/content/projects/img-2@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок">
 												</div>
 											</article>
-											<article class="card-item card-item--style-group-8 card-list__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+											<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 												<div class="card-item__body">
 													<div class="card-item__group">
 														<div class="organizer organizer--line-clamp card-item__organizer">
 															<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
 														</div>
 													</div>
-													<h3 class="card-item__title"><a class="card-item__link" href="" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
+													<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 												</div>
 												<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-3.jpg" srcset="images/content/projects/img-3@2x.jpg 2x" alt="Кадры будущего для регионов">
 												</div>
 											</article>
-											<article class="card-item card-item--style-group-8 card-list__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+											<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 												<div class="card-item__body">
 													<div class="card-item__group">
 														<div class="organizer organizer--line-clamp card-item__organizer">
 															<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
 														</div>
 													</div>
-													<h3 class="card-item__title"><a class="card-item__link" href="" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
+													<h3 class="card-item__title"><a class="card-item__link" href="grant.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 												</div>
 												<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-4.jpg" srcset="images/content/projects/img-4@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
 												</div>
@@ -703,8 +703,8 @@
 					<div class="section__main">
 						<div class="container">
 							<div class="events">
-								<div class="events__grid"><a class="event-item events__item-main" href="" title="Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;">
-										<div class="event-item__image"><img class="event-item__image-el" src="images/content/events/playbill/img-1.jpg" srcset="images/content/events/playbill/img-1@2x.jpg 2x" alt=""></div>
+								<div class="events__grid"><a class="event-item events__item events__item--main" href="event.html" title="Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;">
+										<div class="event-item__image"><img class="event-item__image-el" src="images/content/playbill/img-1.jpg" srcset="images/content/playbill/img-1@2x.jpg 2x" alt=""></div>
 										<div class="event-item__body">
 											<div class="event-item__main">
 												<div class="date event-item__date">
@@ -713,57 +713,59 @@
 												<h3 class="event-item__title">Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;</h3>
 											</div>
 										</div></a>
-									<div class="events__swiper" x-data="swiperCards" x-effect="effect">
-										<div class="swiper events__swiper-container" x-ref="swiper">
-											<div class="swiper-wrapper events__swiper-wrapper">
-												<article class="card-item card-item--event swiper-slide events__item">
-													<div class="card-item__body">
-														<div class="card-item__group">
-															<div class="date card-item__date">
-																<time class="date__item"><span class="date__day-month date__day-month--start">26.08</span><span class="date__year">2020</span></time>
+									<div class="cards" x-data="{gridEl: $root.querySelector('.cards__grid')}">
+										<div class="cards__main">
+											<div class="cards__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
+												<div class="cards__grid cards__grid--columns-2" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
+													<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+														<div class="card-item__body">
+															<div class="card-item__group">
+																<div class="date card-item__date">
+																	<time class="date__item"><span class="date__day-month date__day-month--start">26.08</span><span class="date__year">2020</span></time>
+																</div>
 															</div>
+															<h3 class="card-item__title"><a class="card-item__link" href="event.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 														</div>
-														<h3 class="card-item__title"><a class="card-item__link" href="" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
-													</div>
-													<div class="card-item__image"><img class="card-item__image-el" src="images/content/events/playbill/img-2.jpg" srcset="images/content/events/playbill/img-2@2x.jpg 2x" alt="Кадры будущего для регионов">
-													</div>
-												</article>
-												<article class="card-item card-item--event swiper-slide events__item">
-													<div class="card-item__body">
-														<div class="card-item__group">
-															<div class="date card-item__date">
-																<time class="date__item"><span class="date__day-month date__day-month--start">12.04</span><span class="date__year">2020</span></time>
+														<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-2.jpg" srcset="images/content/playbill/img-2@2x.jpg 2x" alt="Кадры будущего для регионов">
+														</div>
+													</article>
+													<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+														<div class="card-item__body">
+															<div class="card-item__group">
+																<div class="date card-item__date">
+																	<time class="date__item"><span class="date__day-month date__day-month--start">12.09</span><span class="date__year">2020</span></time>
+																</div>
 															</div>
+															<h3 class="card-item__title"><a class="card-item__link" href="event.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 														</div>
-														<h3 class="card-item__title"><a class="card-item__link" href="" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
-													</div>
-													<div class="card-item__image"><img class="card-item__image-el" src="images/content/events/playbill/img-3.jpg" srcset="images/content/events/playbill/img-3@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
-													</div>
-												</article>
-												<article class="card-item card-item--event swiper-slide events__item">
-													<div class="card-item__body">
-														<div class="card-item__group">
-															<div class="date card-item__date">
-																<time class="date__item"><span class="date__day-month date__day-month--start">26.08</span><span class="date__year">2020</span></time>
+														<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-3.jpg" srcset="images/content/playbill/img-3@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
+														</div>
+													</article>
+													<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+														<div class="card-item__body">
+															<div class="card-item__group">
+																<div class="date card-item__date">
+																	<time class="date__item"><span class="date__day-month date__day-month--start">05.10</span><span class="date__year">2020</span></time>
+																</div>
 															</div>
+															<h3 class="card-item__title"><a class="card-item__link" href="event.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 														</div>
-														<h3 class="card-item__title"><a class="card-item__link" href="" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
-													</div>
-													<div class="card-item__image"><img class="card-item__image-el" src="images/content/events/playbill/img-4.jpg" srcset="images/content/events/playbill/img-4@2x.jpg 2x" alt="Кадры будущего для регионов">
-													</div>
-												</article>
-												<article class="card-item card-item--event swiper-slide events__item">
-													<div class="card-item__body">
-														<div class="card-item__group">
-															<div class="date card-item__date">
-																<time class="date__item"><span class="date__day-month date__day-month--start">12.04</span><span class="date__year">2020</span></time>
+														<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-5.jpg" srcset="images/content/playbill/img-5@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
+														</div>
+													</article>
+													<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+														<div class="card-item__body">
+															<div class="card-item__group">
+																<div class="date card-item__date">
+																	<time class="date__item"><span class="date__day-month date__day-month--start">11.11</span><span class="date__year">2021</span></time>
+																</div>
 															</div>
+															<h3 class="card-item__title"><a class="card-item__link" href="event.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 														</div>
-														<h3 class="card-item__title"><a class="card-item__link" href="" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
-													</div>
-													<div class="card-item__image"><img class="card-item__image-el" src="images/content/events/playbill/img-5.jpg" srcset="images/content/events/playbill/img-5@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
-													</div>
-												</article>
+														<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-4.jpg" srcset="images/content/playbill/img-4@2x.jpg 2x" alt="Кадры будущего для регионов">
+														</div>
+													</article>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -825,8 +827,8 @@
 					<div class="section__main">
 						<div class="container">
 							<div class="events">
-								<div class="events__grid"><a class="event-item events__item-main" href="" title="Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;">
-										<div class="event-item__image"><img class="event-item__image-el" src="images/content/events/news/img-1.jpg" srcset="images/content/events/news/img-1@2x.jpg 2x" alt=""></div>
+								<div class="events__grid"><a class="event-item events__item events__item--main" href="new.html" title="Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;">
+										<div class="event-item__image"><img class="event-item__image-el" src="images/content/news/img-1.jpg" srcset="images/content/news/img-1@2x.jpg 2x" alt=""></div>
 										<div class="event-item__body">
 											<div class="event-item__main">
 												<div class="date event-item__date">
@@ -835,57 +837,59 @@
 												<h3 class="event-item__title">Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;</h3>
 											</div>
 										</div></a>
-									<div class="events__swiper" x-data="swiperCards" x-effect="effect">
-										<div class="swiper events__swiper-container" x-ref="swiper">
-											<div class="swiper-wrapper events__swiper-wrapper">
-												<article class="card-item card-item--event swiper-slide events__item">
-													<div class="card-item__body">
-														<div class="card-item__group">
-															<div class="date card-item__date">
-																<time class="date__item"><span class="date__day-month date__day-month--start">26.08</span><span class="date__year">2020</span></time>
+									<div class="cards" x-data="{gridEl: $root.querySelector('.cards__grid')}">
+										<div class="cards__main">
+											<div class="cards__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
+												<div class="cards__grid cards__grid--columns-2" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
+													<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+														<div class="card-item__body">
+															<div class="card-item__group">
+																<div class="date card-item__date">
+																	<time class="date__item"><span class="date__day-month date__day-month--start">26.08</span><span class="date__year">2020</span></time>
+																</div>
 															</div>
+															<h3 class="card-item__title"><a class="card-item__link" href="new.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 														</div>
-														<h3 class="card-item__title"><a class="card-item__link" href="" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
-													</div>
-													<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-3.jpg" srcset="images/content/projects/img-3@2x.jpg 2x" alt="Кадры будущего для регионов">
-													</div>
-												</article>
-												<article class="card-item card-item--event swiper-slide events__item">
-													<div class="card-item__body">
-														<div class="card-item__group">
-															<div class="date card-item__date">
-																<time class="date__item"><span class="date__day-month date__day-month--start">12.04</span><span class="date__year">2020</span></time>
+														<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-2.jpg" srcset="images/content/playbill/img-2@2x.jpg 2x" alt="Кадры будущего для регионов">
+														</div>
+													</article>
+													<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+														<div class="card-item__body">
+															<div class="card-item__group">
+																<div class="date card-item__date">
+																	<time class="date__item"><span class="date__day-month date__day-month--start">12.09</span><span class="date__year">2020</span></time>
+																</div>
 															</div>
+															<h3 class="card-item__title"><a class="card-item__link" href="new.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 														</div>
-														<h3 class="card-item__title"><a class="card-item__link" href="" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
-													</div>
-													<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-4.jpg" srcset="images/content/projects/img-4@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
-													</div>
-												</article>
-												<article class="card-item card-item--event swiper-slide events__item">
-													<div class="card-item__body">
-														<div class="card-item__group">
-															<div class="date card-item__date">
-																<time class="date__item"><span class="date__day-month date__day-month--start">26.08</span><span class="date__year">2020</span></time>
+														<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-3.jpg" srcset="images/content/playbill/img-3@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
+														</div>
+													</article>
+													<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+														<div class="card-item__body">
+															<div class="card-item__group">
+																<div class="date card-item__date">
+																	<time class="date__item"><span class="date__day-month date__day-month--start">05.10</span><span class="date__year">2020</span></time>
+																</div>
 															</div>
+															<h3 class="card-item__title"><a class="card-item__link" href="new.html" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
 														</div>
-														<h3 class="card-item__title"><a class="card-item__link" href="" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
-													</div>
-													<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-1.jpg" srcset="images/content/projects/img-1@2x.jpg 2x" alt="Кадры будущего для регионов">
-													</div>
-												</article>
-												<article class="card-item card-item--event swiper-slide events__item">
-													<div class="card-item__body">
-														<div class="card-item__group">
-															<div class="date card-item__date">
-																<time class="date__item"><span class="date__day-month date__day-month--start">12.04</span><span class="date__year">2020</span></time>
+														<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-5.jpg" srcset="images/content/playbill/img-5@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
+														</div>
+													</article>
+													<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+														<div class="card-item__body">
+															<div class="card-item__group">
+																<div class="date card-item__date">
+																	<time class="date__item"><span class="date__day-month date__day-month--start">11.11</span><span class="date__year">2021</span></time>
+																</div>
 															</div>
+															<h3 class="card-item__title"><a class="card-item__link" href="new.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 														</div>
-														<h3 class="card-item__title"><a class="card-item__link" href="" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
-													</div>
-													<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-2.jpg" srcset="images/content/projects/img-2@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
-													</div>
-												</article>
+														<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-4.jpg" srcset="images/content/playbill/img-4@2x.jpg 2x" alt="Кадры будущего для регионов">
+														</div>
+													</article>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -921,7 +925,7 @@
 								<h4 class="footer__title">Министерство спорта и&nbsp;молодёжной политики</h4>
 							</div>
 							<div class="footer__content">
-								<p>Телефон: <strong>+7 (800) 000-00-00</strong></p>
+								<p>Телефон: <strong><a href="tel:+78000000000">+7 (800) 000-00-00</a></strong></p>
 								<p>Адрес: <strong>Москва, ул. Ленина, 123</strong></p>
 								<p>E-mail: <strong><a href="mailto:info@u.university">info@u.university</a></strong></p>
 								<p>Сайт: <strong><a href="">www.site.ru</a></strong></p>
@@ -935,7 +939,7 @@
 								<h4 class="footer__title">Дом Молодёжи Новгородской области</h4>
 							</div>
 							<div class="footer__content">
-								<p>Телефон: <strong>+7 (800) 000-00-00</strong></p>
+								<p>Телефон: <strong><a href="tel:+78000000000">+7 (800) 000-00-00</a></strong></p>
 								<p>Адрес: <strong>Москва, ул. Ленина, 123</strong></p>
 								<p>E-mail: <strong><a href="mailto:info@u.university">info@u.university</a></strong></p>
 								<p>Сайт: <strong><a href="">www.site.ru</a></strong></p>
@@ -953,7 +957,7 @@
 								<icon-svg name="renaissance"></icon-svg><span>Разработка сайта:<br> <strong>Renaissance Art Group</strong></span></a></p>
 						<p class="footer__info">
 							По&nbsp;вопросам сотрудничества обращайтесь
-							по&nbsp;<strong>+7&nbsp;(123)&nbsp;456-78-90</strong>
+							по&nbsp;<strong><a href="tel:+71234567890">+7&nbsp;(123)&nbsp;456-78-90</a></strong>
 							или пишите на&nbsp;<strong><a href="mailto:friendship@molodejno.ru">friendship@molodejno.ru</a></strong>
 						</p>
 					</div>

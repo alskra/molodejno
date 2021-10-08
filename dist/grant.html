@@ -304,59 +304,60 @@
 										<div class="subsection__main">
 											<div class="container subsection__grid">
 												<div class="content subsection__column">
-													<div class="recipients">
-														<div class="recipients__main">
-															<div class="recipients__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
-																<div class="recipients__grid" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
-																	<article class="card-item card-item--recipient recipients__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+													<div class="cards" x-data="{gridEl: $root.querySelector('.cards__grid')}">
+														<div class="cards__main">
+															<div class="cards__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
+																<div class="cards__grid cards__grid--columns-3" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-6" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<div class="card-item__body">
 																			<div class="card-item__group">
 																				<div class="price card-item__price">
 																					<div class="price__content" x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&amp;nbsp;&amp;#8381;'">1000000</div>
 																				</div>
 																			</div>
-																			<h3 class="card-item__title"><a class="card-item__link" href="" title="Конкурс среди образовательных организаций высшего образования Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования Конкурс среди образовательных организаций высшего образования</a></h3>
+																			<h3 class="card-item__title"><a class="card-item__link" href="recipient.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 																			<nav class="tags card__tags"><a class="tags__item" href="">Образование</a><a class="tags__item" href="">Мастер-классы</a><a class="tags__item" href="">Культура и искусство</a>
 																			</nav>
 																		</div>
-																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-3.jpg" srcset="images/content/projects/img-3@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования Конкурс среди образовательных организаций высшего образования">
+																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-1.jpg" srcset="images/content/projects/img-1@2x.jpg 2x" alt="Кадры будущего для регионов">
 																		</div>
 																	</article>
-																	<article class="card-item card-item--recipient recipients__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-6" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<div class="card-item__body">
 																			<div class="card-item__group">
 																				<div class="price card-item__price">
 																					<div class="price__content" x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&amp;nbsp;&amp;#8381;'">70000</div>
 																				</div>
 																			</div>
-																			<h3 class="card-item__title"><a class="card-item__link" href="" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
+																			<h3 class="card-item__title"><a class="card-item__link" href="recipient.html" title="Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок">Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок</a></h3>
 																			<nav class="tags card__tags"><a class="tags__item" href="">Производство</a>
 																			</nav>
 																		</div>
-																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-4.jpg" srcset="images/content/projects/img-4@2x.jpg 2x" alt="Кадры будущего для регионов">
+																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-2.jpg" srcset="images/content/projects/img-2@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок">
 																		</div>
 																	</article>
-																	<article class="card-item card-item--recipient recipients__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-6" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<div class="card-item__body">
 																			<div class="card-item__group">
 																				<div class="price card-item__price">
 																					<div class="price__content" x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&amp;nbsp;&amp;#8381;'">600000</div>
 																				</div>
 																			</div>
-																			<h3 class="card-item__title"><a class="card-item__link" href="" title="Конкурс среди образовательных организаций высшего образования">Конкурс среди образовательных организаций высшего образования</a></h3>
+																			<h3 class="card-item__title"><a class="card-item__link" href="recipient.html" title="Кадры будущего для регионов">Кадры будущего для регионов</a></h3>
 																			<nav class="tags card__tags"><a class="tags__item" href="">Образование</a>
 																			</nav>
 																		</div>
-																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-2.jpg" srcset="images/content/projects/img-2@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
+																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-3.jpg" srcset="images/content/projects/img-3@2x.jpg 2x" alt="Кадры будущего для регионов">
 																		</div>
 																	</article>
 																</div>
 															</div>
 														</div>
-														<div class="recipients__footer">
-															<a class="button-load" href=""><span class="button-load__content">Открыть все</span>
+														<div class="pagination hidden-lg-down" x-data="pagination('ajax/recipients-slice.html', gridEl)">
+															<div class="pagination__error" x-show="error" x-text="error"></div>
+															<button class="button-load" type="button" x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content">Загрузить еще</span>
 																<icon-svg class="button-load__icon" name="plus"></icon-svg>
-															</a>
+															</button>
 														</div>
 													</div>
 												</div>
@@ -375,13 +376,14 @@
 										<div class="subsection__main">
 											<div class="container subsection__grid">
 												<div class="content subsection__column">
-													<div class="gallery">
-														<div class="gallery__main"><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a>
+													<div class="gallery" x-data="{gridEl: $refs.grid}">
+														<div class="gallery__grid" x-ref="grid"><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a>
 														</div>
-														<div class="gallery__footer">
-															<a class="button-load" href=""><span class="button-load__content">Загрузить еще</span>
+														<div class="pagination" x-data="pagination('ajax/gallery.html', gridEl)">
+															<div class="pagination__error" x-show="error" x-text="error"></div>
+															<button class="button-load" type="button" x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content">Загрузить еще</span>
 																<icon-svg class="button-load__icon" name="plus"></icon-svg>
-															</a>
+															</button>
 														</div>
 													</div>
 												</div>
@@ -415,7 +417,7 @@
 		к Всемирному дню здоровья. В рамках направления «Здоровый образ жизни» на территории области проводятся
 		акции, приуроченные к Всемирному дню здоровья.</p>
 																			</div>
-																			<button class="button-expand review-item__button" type="button" x-bind:class="{'button-arrow-down--up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
+																			<button class="button-expand review-item__button" type="button" x-bind:class="{'button-expand--up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
 																				<icon-svg class="button-expand__icon" name="arrow-down"></icon-svg>
 																			</button>
 																		</div>
@@ -429,7 +431,7 @@
 																			<div class="content-edited review-item__content" x-ref="content" x-bind:class="{'is-clamped': isClamped}"><p>В рамках направления «Здоровый образ жизни» на территории области проводятся акции,
 		приуроченные к Всемирному дню здоровья.</p>
 																			</div>
-																			<button class="button-expand review-item__button" type="button" x-bind:class="{'button-arrow-down--up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
+																			<button class="button-expand review-item__button" type="button" x-bind:class="{'button-expand--up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
 																				<icon-svg class="button-expand__icon" name="arrow-down"></icon-svg>
 																			</button>
 																		</div>
@@ -447,7 +449,7 @@
 		направления «Здоровый образ жизни» на территории области проводятся акции, приуроченные
 		к Всемирному дню здоровья.</p>
 																			</div>
-																			<button class="button-expand review-item__button" type="button" x-bind:class="{'button-arrow-down--up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
+																			<button class="button-expand review-item__button" type="button" x-bind:class="{'button-expand--up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
 																				<icon-svg class="button-expand__icon" name="arrow-down"></icon-svg>
 																			</button>
 																		</div>
@@ -502,7 +504,7 @@
 								<h4 class="footer__title">Министерство спорта и&nbsp;молодёжной политики</h4>
 							</div>
 							<div class="footer__content">
-								<p>Телефон: <strong>+7 (800) 000-00-00</strong></p>
+								<p>Телефон: <strong><a href="tel:+78000000000">+7 (800) 000-00-00</a></strong></p>
 								<p>Адрес: <strong>Москва, ул. Ленина, 123</strong></p>
 								<p>E-mail: <strong><a href="mailto:info@u.university">info@u.university</a></strong></p>
 								<p>Сайт: <strong><a href="">www.site.ru</a></strong></p>
@@ -516,7 +518,7 @@
 								<h4 class="footer__title">Дом Молодёжи Новгородской области</h4>
 							</div>
 							<div class="footer__content">
-								<p>Телефон: <strong>+7 (800) 000-00-00</strong></p>
+								<p>Телефон: <strong><a href="tel:+78000000000">+7 (800) 000-00-00</a></strong></p>
 								<p>Адрес: <strong>Москва, ул. Ленина, 123</strong></p>
 								<p>E-mail: <strong><a href="mailto:info@u.university">info@u.university</a></strong></p>
 								<p>Сайт: <strong><a href="">www.site.ru</a></strong></p>
@@ -534,7 +536,7 @@
 								<icon-svg name="renaissance"></icon-svg><span>Разработка сайта:<br> <strong>Renaissance Art Group</strong></span></a></p>
 						<p class="footer__info">
 							По&nbsp;вопросам сотрудничества обращайтесь
-							по&nbsp;<strong>+7&nbsp;(123)&nbsp;456-78-90</strong>
+							по&nbsp;<strong><a href="tel:+71234567890">+7&nbsp;(123)&nbsp;456-78-90</a></strong>
 							или пишите на&nbsp;<strong><a href="mailto:friendship@molodejno.ru">friendship@molodejno.ru</a></strong>
 						</p>
 					</div>
