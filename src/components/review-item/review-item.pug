@@ -8,11 +8,8 @@ mixin review-item({content, image, name, position} = {})
 				x-ref="content"
 				x-bind:class="{'is-clamped': isClamped}"
 			)!= content
-			+button-expand({
-				tag: 'button',
-				content: "isClamped ? 'Читать весь отзыв' : 'Свернуть'",
-			}).review-item__button(
-				x-bind:class="{'button-expand--up': !isClamped}"
+			+button-expand({content: "isClamped ? 'Читать весь отзыв' : 'Свернуть'"}).review-item__button(
+				x-bind:class="{'button-expand--dir-up': !isClamped}"
 				x-show="hasClamp"
 				x-on:click="isClamped = !isClamped"
 			)

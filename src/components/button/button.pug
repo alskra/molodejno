@@ -1,6 +1,7 @@
 mixin button({tag = 'button', content} = {})
 	#{tag}.button(
 		type=tag === 'button' ? 'button' : null
-		href=tag === 'a' ? "" : null
+		href=tag === 'a' ? '' : null
+		x-init
 	)&attributes(attributes)
-		span.button__content= content
+		span.button__content(x-text=content)

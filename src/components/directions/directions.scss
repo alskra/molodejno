@@ -4,7 +4,6 @@
 
 .directions__heading {
 	text-align: center;
-	color: $color-black;
 
 	@include media-breakpoint-down(lg) {
 		text-align: left;
@@ -14,14 +13,10 @@
 .directions__footer {
 	display: flex;
 	justify-content: center;
-	margin-top: 32rem;
+	margin-top: 30rem;
 
 	@include media-breakpoint-down(lg) {
 		justify-content: flex-start;
-		margin-top: 38rem;
+		margin-top: 40rem;
 	}
-}
-
-.directions__more {
-	color: $color-black;
 }

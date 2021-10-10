@@ -1,20 +1,11 @@
 .button-expand {
-	display: inline-flex;
+	@include button;
+
 	column-gap: 15rem;
-	align-items: center;
-	vertical-align: top;
-	border: 0;
-	padding: 0;
-	max-width: 100%;
 	font-weight: 700;
 	font-size: 16rem;
 	line-height: 1.25;
-	white-space: nowrap;
 	color: $color-primary;
-	background: none;
-	transition: color;
-	transition-duration: $transition-duration;
-	user-select: none;
 
 	@include hover {
 		&:not(:disabled, .is-disabled) {
@@ -22,7 +13,7 @@
 		}
 	}
 
-	&--up {
+	&--dir-up {
 		.button-expand__icon {
 			transform: rotateX(180deg);
 		}

@@ -5,7 +5,7 @@ mixin button-arrow({tag = 'a', dir = 'right', row = false, content} = {})
 			'button-arrow--row': row,
 		}
 		type=tag === 'button' ? 'button' : null
-		href=tag === 'a' ? "" : null
+		href=tag === 'a' ? '' : null
 		x-init
 	)&attributes(attributes)
 		span.button-arrow__icon

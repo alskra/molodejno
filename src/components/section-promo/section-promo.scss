@@ -1,20 +1,19 @@
 .section-promo {
-	padding-top: 134rem;
-	padding-bottom: 66rem;
+	padding-top: 135rem;
+	padding-bottom: 65rem;
 
 	@include media-breakpoint-down(lg) {
 		padding-top: 40rem;
-		padding-bottom: 27rem;
+		padding-bottom: 25rem;
 	}
 }
 
 .section-promo__container {
 	display: grid;
-	grid-template-columns: 568fr 512fr;
-	gap: 30rem;
+	gap: 30rem var(--gap);
 
-	@include media-breakpoint-down(lg) {
-		grid-template-columns: 1fr;
+	@include media-breakpoint-up(lg) {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
@@ -46,48 +45,51 @@
 }
 
 .section-promo__title {
-	margin: 0 0 31rem;
 	font-family: $heading-font-family;
 	font-weight: 350;
 	font-size: 60rem;
 	line-height: 1.25;
-	color: $color-black;
+	color: $color;
 
 	small {
 		display: block;
 		font-size: 40rem;
 	}
 
+	&:not(:last-child) {
+		margin-bottom: 30rem;
+	}
+
 	@include media-breakpoint-down(lg) {
-		margin-bottom: 22rem;
 		font-size: 42rem;
 
 		small {
 			font-size: 24rem;
 		}
+
+		&:not(:last-child) {
+			margin-bottom: 20rem;
+		}
 	}
 }
 
 .section-promo__content {
-	margin-bottom: 31rem;
+	margin-bottom: 30rem;
 	font-size: 20rem;
 	line-height: 1.5;
 	color: $color;
 
-	> :last-child {
-		margin-bottom: 0;
+	&:not(:last-child) {
+		margin-bottom: 30rem;
 	}
 
 	p {
-		margin-bottom: 1em;
+		&:not(:last-child) {
+			margin-bottom: 1em;
+		}
 	}
 
 	@include media-breakpoint-down(lg) {
-		margin-bottom: 28rem;
 		font-size: 18rem;
 	}
-}
-
-.section-promo__more {
-	color: $color-black;
 }

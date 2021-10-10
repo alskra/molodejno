@@ -109,13 +109,19 @@ block app
 			+container()
 				+content-edited()
 					h2: code button
-				+button({content: 'Синяя кнопка'})
+				+button({content: "'Синяя кнопка'"})
+				br
+				br
+				+button({content: "'Синяя кнопка'"}).button--height-sm
 
 		section
 			+container()
 				+content-edited()
 					h2: code button-arrow
-				+button-arrow({content: "'Смотреть все'"})
+				+button-arrow({
+					tag: 'button',
+					content: "'Смотреть все'",
+				})
 				br
 				br
 				+button-arrow({
@@ -135,6 +141,27 @@ block app
 					row: true,
 					content: "'Смотреть все'",
 				})
+
+		section
+			+container()
+				+content-edited()
+					h2: code button-expand
+				+button-expand({content: "'Развернуть'"})
+				br
+				br
+				+button-expand({
+					dir: 'up',
+					content: "'Свернуть'",
+				})
+
+		section
+			+container()
+				+content-edited()
+					h2: code button-load
+				+button-load({content: "'Загрузить еще'"})
+				br
+				br
+				+button-load({content: "'Загрузить еще'"}).is-loading
 
 		section
 			+container()
@@ -166,12 +193,10 @@ block app
 					image: '../../images/content/projects/logo.png',
 				})(style={'max-width': '255px'})
 				br
-				br
 				+organizer({
 					title: 'Ресурсный Молодежный центр длинный заголовок',
 					image: '../../images/content/projects/logo.png',
 				})(style={'max-width': '255px'})
-				br
 				br
 				+content-edited()
 					h3: code line-clamp
@@ -181,18 +206,25 @@ block app
 					lineClamp: true,
 				})(style={'max-width': '255px'})
 				br
-				br
 				+organizer({
 					title: 'Ресурсный Молодежный центр длинный заголовок',
 					image: '../../images/content/projects/logo.png',
 					lineClamp: true,
 				})(style={'max-width': '255px'})
 				br
-				br
 				+organizer({
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 					lineClamp: true,
 				})(style={'max-width': '555px'})
+
+		section
+			+container()
+				+content-edited()
+					h2: code location
+				+location('Тёсово-Нетыльский')
+				br
+				br
+				+location('Тёсово-Нетыльский')(style={'max-width': '100px'})
 
 	+footer()
