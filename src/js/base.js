@@ -20,6 +20,7 @@ import '../components/date/date';
 import '../components/location/location';
 import '../components/button/button';
 import '../components/button-arrow/button-arrow';
+import '../components/button-arrow-text/button-arrow-text';
 import '../components/button-expand/button-expand';
 import '../components/button-load/button-load';
 import '../components/integration/integration';

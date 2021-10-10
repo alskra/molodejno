@@ -15,5 +15,4 @@ mixin subscribe()
 					.subscribe__input-placeholder(
 						x-ref="placeholder"
 					) #[strong Введите e-mail,] чтобы подписаться на&nbsp;новости
-				button.subscribe__button(type="submit")
-					icon-svg(name="arrow-right")
+				+button-arrow().subscribe__button(type="submit")

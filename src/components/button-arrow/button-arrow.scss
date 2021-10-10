@@ -4,72 +4,33 @@
 
 	@include button;
 
-	flex-flow: column;
-	align-items: stretch;
-	justify-content: flex-start;
-	width: calc((var(--container-content-width) - var(--gap)) / 2);
-	font-weight: 700;
-	font-size: 20rem;
-	line-height: 1.25;
+	width: 64rem;
+	height: 27rem;
 	color: var(--color);
-	gap: 3rem;
+
+	icon-svg {
+		width: 100%;
+		height: 100%;
+		transition: transform;
+		transition-duration: inherit;
+	}
 
 	@include hover {
 		&:not(:disabled, .is-disabled) {
 			color: var(--color-hover);
 
-			.button-arrow__icon icon-svg {
-				width: percentage(div(492, 542));
+			icon-svg[name="arrow-left"] {
+				transform: translate(-$arrow-hover-translate);
+			}
+
+			icon-svg[name="arrow-right"] {
+				transform: translate($arrow-hover-translate);
 			}
 		}
 	}
 
-	&--dir-left {
-		text-align: right;
-
-		.button-arrow__icon icon-svg {
-			margin-left: auto;
-		}
+	&:disabled,
+	&.is-disabled {
+		color: $color-disabled;
 	}
-
-	&--row {
-		flex-flow: row;
-		align-items: center;
-		gap: 20rem;
-
-		.button-arrow__icon {
-			flex: 1;
-			min-width: 50rem;
-		}
-
-		&:not(.button-arrow--dir-left) {
-			flex-direction: row-reverse;
-		}
-	}
-
-	&--primary {
-		--color: #{$color-primary};
-		--color-hover: #{$color-primary-hover};
-	}
-
-	@include media-breakpoint-down(lg) {
-		width: 100%;
-		font-size: 16rem;
-	}
-}
-
-.button-arrow__icon {
-	height: 27rem;
-
-	icon-svg {
-		width: 100%;
-		height: 100%;
-		transition: width;
-		transition-duration: $transition-duration;
-	}
-}
-
-.button-arrow__content {
-	overflow: hidden;
-	text-overflow: ellipsis;
 }

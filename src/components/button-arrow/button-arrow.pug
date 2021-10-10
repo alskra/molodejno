@@ -1,14 +1,6 @@
-mixin button-arrow({tag = 'a', dir = 'right', row = false, content} = {})
+mixin button-arrow({tag = 'button', dir = 'right'} = {})
 	#{tag}.button-arrow(
-		class={
-			'button-arrow--dir-left': dir === 'left',
-			'button-arrow--row': row,
-		}
 		type=tag === 'button' ? 'button' : null
 		href=tag === 'a' ? '' : null
-		x-init
 	)&attributes(attributes)
-		span.button-arrow__icon
-			icon-svg(name=`arrow-${dir}`)
-		if content
-			span.button-arrow__content(x-text=content)
+		icon-svg(name=`arrow-${dir}`)

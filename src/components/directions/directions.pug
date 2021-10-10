@@ -7,4 +7,4 @@ mixin directions()
 		template(x-for="marqueeOptions in marqueeOptionsList")
 			+marquee()(x-data="marquee(marqueeOptions)")
 		+container('footer').directions__footer
-			+button-arrow({content: "'Смотреть все'"})(x-bind:class="{'button-arrow--row': !$store.isDesktop}")
+			+button-arrow-text({content: "'Смотреть все'"})(x-bind:class="{'button-arrow-text--row': !$store.isDesktop}")

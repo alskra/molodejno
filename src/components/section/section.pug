@@ -73,7 +73,7 @@ mixin section({tag = 'section', type, title, desc, score, advanced, withoutImage
 
 		if !block
 			+container('footer').section__footer
-				+button-arrow({content: "'Смотреть все'"})(
+				+button-arrow-text({content: "'Смотреть все'"})(
 					href=`${type}.html`
-					x-bind:class="{'button-arrow--row': !$store.isDesktop}"
+					x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"
 				)

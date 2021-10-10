@@ -271,32 +271,9 @@
 }
 
 .slider__button {
+	--color: #{$color-white};
+	--color-hover: #{$color-white};
+
 	position: relative;
 	z-index: 1;
-	border: 0;
-	padding: 0;
-	width: 64rem;
-	height: 27rem;
-	color: $color-white;
-	background: none;
-
-	icon-svg {
-		height: 100%;
-		transition: transform;
-		transition-duration: $transition-duration;
-	}
-
-	@include hover {
-		icon-svg[name="arrow-left"] {
-			transform: translate(-$arrow-hover-translate);
-		}
-
-		icon-svg[name="arrow-right"] {
-			transform: translate($arrow-hover-translate);
-		}
-	}
-
-	&:disabled {
-		color: $color-silver-2;
-	}
 }

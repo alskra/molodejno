@@ -1,16 +1,10 @@
 .tags {
 	display: flex;
 	flex-flow: wrap;
-	font-family: $font-family-stolzl;
-	font-size: 13rem;
+	font-size: 14rem;
 	line-height: 1.25;
 	color: $color-primary;
 	gap: 5rem 15rem;
-
-	&--align-right {
-		justify-content: flex-end;
-		text-align: right;
-	}
 
 	@include media-breakpoint-down(lg) {
 		font-size: 12rem;

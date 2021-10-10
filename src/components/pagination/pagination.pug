@@ -7,8 +7,10 @@ mixin pagination({multipage = true, buttonLoadContent = "'Загрузить е�
 
 		if multipage
 			nav.pagination__multipage.hidden-lg-down
-				a.pagination__button.is-disabled(href="")
-					icon-svg(name="arrow-left")
+				+button-arrow({
+					tag: 'a',
+					dir: 'left',
+				}).pagination__button.is-disabled
 
 				.pagination__group
 					span.pagination__item.is-active 1
@@ -19,8 +21,7 @@ mixin pagination({multipage = true, buttonLoadContent = "'Загрузить е�
 					span.pagination__item.pagination__item--hellip &hellip;
 					a.pagination__item(href="") 18
 
-				a.pagination__button(href="")
-					icon-svg(name="arrow-right")
+				+button-arrow({tag: 'a'}).pagination__button
 
 		+button-load({content: buttonLoadContent})(
 			class={'hidden-lg-up': multipage}

@@ -171,4 +171,9 @@
 .card__tags {
 	position: relative;
 	z-index: 2;
+	font-family: $font-family-stolzl;
+
+	@include media-breakpoint-up(lg) {
+		font-size: 13rem;
+	}
 }

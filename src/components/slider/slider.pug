@@ -46,7 +46,5 @@ mixin slider()
 
 			.slider__nav
 				+container().slider__container-nav
-					button.slider__button(x-ref="buttonPrev")
-						icon-svg(name="arrow-left")
-					button.slider__button(x-ref="buttonNext")
-						icon-svg(name="arrow-right")
+					+button-arrow({dir: 'left'}).slider__button(x-ref="buttonPrev")
+					+button-arrow().slider__button(x-ref="buttonNext")

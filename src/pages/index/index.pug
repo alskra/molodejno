@@ -118,25 +118,32 @@ block app
 			+container()
 				+content-edited()
 					h2: code button-arrow
-				+button-arrow({
+				+button-arrow({dir: 'left'})(disabled)
+				+button-arrow()
+
+		section
+			+container()
+				+content-edited()
+					h2: code button-arrow-text
+				+button-arrow-text({
 					tag: 'button',
 					content: "'Смотреть все'",
 				})
 				br
 				br
-				+button-arrow({
+				+button-arrow-text({
 					dir: 'left',
 					content: "'Смотреть все'",
 				})
 				br
 				br
-				+button-arrow({
+				+button-arrow-text({
 					row: true,
 					content: "'Смотреть все'",
 				})
 				br
 				br
-				+button-arrow({
+				+button-arrow-text({
 					dir: 'left',
 					row: true,
 					content: "'Смотреть все'",

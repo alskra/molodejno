@@ -33,7 +33,7 @@ mixin promo({offsetColumn, header, type})
 			.promo__body
 				#{header ? 'h2' : 'div'}.promo__title!= title
 				if !header
-					+button-arrow({content: "$store.isDesktop ? 'Смотреть все' : 'Подробнее'"})(
+					+button-arrow-text({content: "$store.isDesktop ? 'Смотреть все' : 'Подробнее'"})(
 						href=`${type === 'grants' ? 'recipients' : type}.html`
-						x-bind:class="{'button-arrow--row': !$store.isDesktop}"
+						x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"
 					)

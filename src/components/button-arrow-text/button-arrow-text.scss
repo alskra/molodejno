@@ -1,0 +1,75 @@
+.button-arrow-text {
+	--color: #{$color};
+	--color-hover: #{$color-primary};
+
+	@include button;
+
+	flex-flow: column;
+	align-items: stretch;
+	justify-content: flex-start;
+	width: calc((var(--container-content-width) - var(--gap)) / 2);
+	font-weight: 700;
+	font-size: 20rem;
+	line-height: 1.25;
+	color: var(--color);
+	gap: 3rem;
+
+	@include hover {
+		&:not(:disabled, .is-disabled) {
+			color: var(--color-hover);
+
+			.button-arrow-text__icon icon-svg {
+				width: percentage(div(492, 542));
+			}
+		}
+	}
+
+	&--dir-left {
+		text-align: right;
+
+		.button-arrow-text__icon icon-svg {
+			margin-left: auto;
+		}
+	}
+
+	&--row {
+		flex-flow: row;
+		align-items: center;
+		gap: 20rem;
+
+		.button-arrow-text__icon {
+			flex: 1;
+			min-width: 50rem;
+		}
+
+		&:not(.button-arrow-text--dir-left) {
+			flex-direction: row-reverse;
+		}
+	}
+
+	&--primary {
+		--color: #{$color-primary};
+		--color-hover: #{$color-primary-hover};
+	}
+
+	@include media-breakpoint-down(lg) {
+		width: 100%;
+		font-size: 16rem;
+	}
+}
+
+.button-arrow-text__icon {
+	height: 27rem;
+
+	icon-svg {
+		width: 100%;
+		height: 100%;
+		transition: width;
+		transition-duration: $transition-duration;
+	}
+}
+
+.button-arrow-text__content {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

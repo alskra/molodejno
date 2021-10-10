@@ -24,35 +24,6 @@
 
 .pagination__button {
 	flex-shrink: 0;
-	width: 64rem;
-	height: 27rem;
-	color: $color;
-	transition: color;
-	transition-duration: $transition-duration;
-
-	icon-svg {
-		height: 100%;
-		transition: transform;
-		transition-duration: inherit;
-	}
-
-	@include hover {
-		&:not(.is-disabled) {
-			color: $color-primary;
-
-			icon-svg[name="arrow-left"] {
-				transform: translate(-$arrow-hover-translate);
-			}
-
-			icon-svg[name="arrow-right"] {
-				transform: translate($arrow-hover-translate);
-			}
-		}
-	}
-
-	&.is-disabled {
-		color: $color-disabled;
-	}
 }
 
 .pagination__group {

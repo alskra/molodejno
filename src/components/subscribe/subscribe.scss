@@ -14,7 +14,7 @@
 	display: grid;
 	column-gap: 20rem;
 	align-items: center;
-	grid-template-columns: 1fr 64rem;
+	grid-template-columns: 1fr auto;
 	margin: 0 auto;
 	width: 100%;
 	max-width: 730rem;
@@ -70,21 +70,6 @@
 }
 
 .subscribe__button {
-	border: 0;
-	padding: 0;
-	height: 27rem;
-	color: $color-white;
-	background: none;
-
-	icon-svg {
-		height: 100%;
-		transition: transform;
-		transition-duration: $transition-duration;
-	}
-
-	@include hover {
-		icon-svg {
-			transform: translate($arrow-hover-translate);
-		}
-	}
+	--color: #{$color-white};
+	--color-hover: #{$color-white};
 }
