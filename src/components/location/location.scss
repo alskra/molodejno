@@ -1,25 +1,31 @@
 .location {
+	--color: #{$color};
+	--icon-stroke-width: 2px;
+	--icon-stroke-color: #{$color-primary};
+
 	display: inline-flex;
 	column-gap: 10rem;
 	align-items: flex-start;
 	vertical-align: top;
 	max-width: 100%;
 	font-family: $heading-font-family;
-	font-size: 14rem;
+	font-weight: 500;
+	font-size: 18rem;
 	line-height: 1.25;
-	color: $color;
+	color: var(--color);
+	cursor: default;
 
 	&::before {
 		content: "";
 		flex-shrink: 0;
 		margin-top: calc((1.25em - 15rem) / 2);
-		border: 1px solid currentColor;
+		border: var(--icon-stroke-width) solid var(--icon-stroke-color);
 		border-radius: 50%;
 		width: 15rem;
 		height: 15rem;
 	}
 
 	@include media-breakpoint-down(lg) {
-		font-size: 12rem;
+		font-size: 14rem;
 	}
 }

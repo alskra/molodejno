@@ -1,9 +1,12 @@
 .tags {
+	--color: #{$color-primary};
+	--color-hover: #{$color-primary-hover};
+
 	display: flex;
 	flex-flow: wrap;
 	font-size: 14rem;
 	line-height: 1.25;
-	color: $color-primary;
+	color: var(--color);
 	gap: 5rem 15rem;
 
 	@include media-breakpoint-down(lg) {
@@ -20,6 +23,6 @@
 	}
 
 	@include hover {
-		color: $color-primary-hover;
+		color: var(--color-hover);
 	}
 }
