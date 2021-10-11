@@ -1,35 +1,73 @@
 .section-promo {
-	padding-top: 134rem;
-	padding-bottom: 66rem;
+	padding-top: 135rem;
+	padding-bottom: 65rem;
 
 	@include media-breakpoint-down(lg) {
 		padding-top: 40rem;
-		padding-bottom: 27rem;
+		padding-bottom: 25rem;
 	}
 }
 
 .section-promo__container {
 	display: grid;
-	grid-template-columns: 568fr 512fr;
-	gap: 30rem;
+	gap: 30rem var(--gap);
 
-	@include media-breakpoint-down(lg) {
-		grid-template-columns: 1fr;
+	@include media-breakpoint-up(lg) {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
-.section-promo__body {
-	min-width: 0;
+.section-promo__title {
+	font-family: $heading-font-family;
+	font-weight: 350;
+	font-size: 60rem;
+	line-height: 1.25;
+	color: $color;
 
-	> :last-child {
-		margin-bottom: 0;
+	small {
+		display: block;
+		font-size: 40rem;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 30rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		font-size: 42rem;
+
+		small {
+			font-size: 24rem;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 20rem;
+		}
+	}
+}
+
+.section-promo__content {
+	font-size: 20rem;
+	line-height: 1.5;
+	color: $color;
+
+	p:not(:last-child) {
+		margin-bottom: 1em;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 30rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		font-size: 18rem;
 	}
 }
 
 .section-promo__image {
 	position: relative;
 	z-index: 1;
-	margin: -15rem - 134rem auto 0;
+	margin: -15rem - 135rem auto 0;
 	width: 100%;
 
 	img {
@@ -43,51 +81,4 @@
 			max-height: calc(#{vh(100)} - 100rem);
 		}
 	}
-}
-
-.section-promo__title {
-	margin: 0 0 31rem;
-	font-family: $heading-font-family;
-	font-weight: 350;
-	font-size: 60rem;
-	line-height: 1.25;
-	color: $color-black;
-
-	small {
-		display: block;
-		font-size: 40rem;
-	}
-
-	@include media-breakpoint-down(lg) {
-		margin-bottom: 22rem;
-		font-size: 42rem;
-
-		small {
-			font-size: 24rem;
-		}
-	}
-}
-
-.section-promo__content {
-	margin-bottom: 31rem;
-	font-size: 20rem;
-	line-height: 1.5;
-	color: $color;
-
-	> :last-child {
-		margin-bottom: 0;
-	}
-
-	p {
-		margin-bottom: 1em;
-	}
-
-	@include media-breakpoint-down(lg) {
-		margin-bottom: 28rem;
-		font-size: 18rem;
-	}
-}
-
-.section-promo__more {
-	color: $color-black;
 }

@@ -1,55 +1,34 @@
 include ../event-item/event-item
 include ../cards/cards
+include ../pagination/pagination
 
-mixin events(type)
+mixin events({type, slice, tags = true, columns = 2} = {})
+	include data
+
 	-
-		const events = {
-			forums: [
-				{
-					url: 'forum.html',
-					title: 'Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;. Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;.',
-					image: '../../images/content/forums/img-1.jpg',
-					date: '26.08.2020',
-					location: 'Тёсово-Нетыльский',
-				},
-				{
-					url: 'forum.html',
-					title: 'От&nbsp;малого к&nbsp;Великому',
-					image: '../../images/content/forums/img-2.jpg',
-					date: '12.04.2020',
-					location: 'Тёсово-Нетыльский',
-				},
-			],
-			playbill: [
-				{
-					url: 'event.html',
-					title: 'Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;',
-					image: '../../images/content/playbill/img-1.jpg',
-					date: '26.08.2020',
-				},
-			],
-			news: [
-				{
-					url: 'new.html',
-					title: 'Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;',
-					image: '../../images/content/news/img-1.jpg',
-					date: '26.08.2020',
-				},
-			],
-		};
+		let items = data(type, slice, tags);
 
-	.events&attributes(attributes)
-		.events__grid
+	.events(x-data="{gridEl: $refs.grid}")&attributes(attributes)
+		.events__grid(
+			class={[`events__grid--columns-${columns}`]: columns > 1}
+			x-ref="grid"
+		)
+			each item in items
+				+event-item(item).events__item(
+					class={
+						'event-item--lg': columns === 1,
+						'events__item--main': slice === 1,
+					}
+				)
 			case type
-				when 'forums'
-					each eventItem in events[type]
-						+event-item(eventItem).events__item
 				when 'playbill'
 				when 'news'
-					+event-item(events[type][0]).events__item.events__item--main
 					+cards({
 						type,
 						slice: 4,
 						tags: false,
 						columns: 2,
 					})
+
+		if !slice
+			+pagination({multipage: false})(x-data=`pagination('ajax/${type}.html', gridEl)`)

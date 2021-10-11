@@ -164,11 +164,16 @@
 	flex: 1;
 }
 
-.card__tags {
-	position: relative;
-	z-index: 1;
-}
-
 .card-item__price {
 	margin-left: auto;
+}
+
+.card__tags {
+	position: relative;
+	z-index: 2;
+	font-family: $heading-font-family;
+
+	@include media-breakpoint-up(lg) {
+		font-size: 13rem;
+	}
 }

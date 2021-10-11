@@ -1,8 +1,9 @@
-mixin button-expand({tag = 'a', dir = 'down', content} = {})
+mixin button-expand({tag = 'button', dir = 'down', content} = {})
 	#{tag}.button-expand(
-		class={'button-expand--up': dir === 'up'}
+		class={'button-expand--dir-up': dir === 'up'}
 		type=tag === 'button' ? 'button' : null
-		href=tag === 'a' ? "" : null
+		href=tag === 'a' ? '' : null
+		x-init
 	)&attributes(attributes)
 		span.button-expand__content(x-text=content)
 		icon-svg.button-expand__icon(name="arrow-down")

@@ -4,11 +4,11 @@ mixin article-nav({primary = false, backUrl = "", items} = {})
 		x-on:popstate.window="hash = location.hash"
 		x-on:scroll.window.debounce.100ms="update"
 	)&attributes(attributes)
-		+button-arrow({
+		+button-arrow-text({
 			dir: 'left',
 			content: "'Назад'",
 		}).article-nav__back(
-			class={'button-arrow--primary': primary}
+			class={'button-arrow-text--primary': primary}
 			href=backUrl
 		)
 		if items

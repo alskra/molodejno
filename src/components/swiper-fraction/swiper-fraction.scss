@@ -38,38 +38,3 @@
 		display: none;
 	}
 }
-
-.swiper-fraction__button {
-	border: 0;
-	padding: 0;
-	width: 64rem;
-	height: 27rem;
-	color: $color;
-	background: none;
-	transition: color;
-	transition-duration: $transition-duration;
-
-	icon-svg {
-		height: 100%;
-		transition: transform;
-		transition-duration: inherit;
-	}
-
-	@include hover {
-		&:not(:disabled) {
-			color: $color-primary;
-
-			icon-svg[name="arrow-left"] {
-				transform: translate(-$arrow-hover-translate);
-			}
-
-			icon-svg[name="arrow-right"] {
-				transform: translate($arrow-hover-translate);
-			}
-		}
-	}
-
-	&:disabled {
-		color: $color-disabled;
-	}
-}

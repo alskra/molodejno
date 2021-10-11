@@ -67,9 +67,6 @@
 }
 
 .recipient-item__tags {
-	font-family: $font-family;
-	font-size: 14rem;
-
 	@include media-breakpoint-up(lg) {
 		justify-content: flex-end;
 		text-align: right;

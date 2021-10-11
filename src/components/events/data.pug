@@ -1,0 +1,92 @@
+-
+	const data = (type, slice, tags) => {
+		let items = {
+			forums: [
+				{
+					url: 'forum.html',
+					title: 'Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок',
+					image: '../../images/content/forums/img-1.jpg',
+					date: '26.08.2020',
+					location: 'Тёсово-Нетыльский',
+					tags: [
+						'Образование',
+					],
+				},
+				{
+					url: 'forum.html',
+					title: '«Мой бизнес. От малого к Великому»',
+					image: '../../images/content/forums/img-2.jpg',
+					date: '12.09.2020',
+					location: 'Тёсово-Нетыльский',
+					tags: [
+						'Образование',
+					],
+				},
+				{
+					url: 'forum.html',
+					title: 'Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок',
+					image: '../../images/content/forums/img-3.jpg',
+					date: '26.08.2020',
+					location: 'Тёсово-Нетыльский',
+					tags: [
+						'Образование',
+					],
+				},
+				{
+					url: 'forum.html',
+					title: '«Мой бизнес. От малого к Великому»',
+					image: '../../images/content/forums/img-4.jpg',
+					date: '12.09.2020',
+					location: 'Тёсово-Нетыльский',
+					tags: [
+						'Образование',
+					],
+				},
+				{
+					url: 'forum.html',
+					title: 'Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок',
+					image: '../../images/content/forums/img-5.jpg',
+					date: '26.08.2020',
+					location: 'Тёсово-Нетыльский',
+					tags: [
+						'Образование',
+					],
+				},
+			],
+			playbill: [
+				{
+					url: 'event.html',
+					title: 'Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок',
+					image: '../../images/content/playbill/img-1.jpg',
+					date: '26.08.2020',
+					location: 'Тёсово-Нетыльский',
+					tags: [
+						'Образование',
+					],
+				},
+			],
+			news: [
+				{
+					url: 'new.html',
+					title: '«Мой бизнес. От малого к Великому»',
+					image: '../../images/content/news/img-1.jpg',
+					date: '12.09.2020',
+					location: 'Тёсово-Нетыльский',
+					tags: [
+						'Образование',
+					],
+				},
+			],
+		};
+
+		items = items[type];
+		items = items.slice(0, slice);
+
+		items.forEach((item) => {
+			if (!tags) {
+				delete item.tags;
+			}
+		});
+
+		return items;
+	}

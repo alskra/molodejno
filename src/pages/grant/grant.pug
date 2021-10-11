@@ -109,7 +109,10 @@ block app
 										tr
 											td E-mail
 											td: a(href="mailto:info@support.ru") info@support.ru
-								+button({tag: 'a', content: 'Подать заявку'}).card-details__button
+								+button({
+									tag: 'a',
+									content: "'Подать заявку'",
+								}).button--height-sm.card-details__button
 
 					.article__bg
 

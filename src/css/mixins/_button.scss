@@ -1,0 +1,19 @@
+@mixin button {
+	all: unset;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: top;
+	max-width: 100%;
+	box-sizing: border-box;
+	white-space: nowrap;
+	transition: border-color, color, background-color;
+	transition-duration: $transition-duration;
+	cursor: pointer;
+	user-select: none;
+
+	&:disabled,
+	&.is-disabled {
+		cursor: default;
+	}
+}

@@ -1,7 +1,8 @@
-mixin button-load({tag = 'a', content} = {})
+mixin button-load({tag = 'button', content} = {})
 	#{tag}.button-load(
 		type=tag === 'button' ? 'button' : null
-		href=tag === 'a' ? "" : null
+		href=tag === 'a' ? '' : null
+		x-init
 	)&attributes(attributes)
-		span.button-load__content= content
+		span.button-load__content(x-text=content)
 		icon-svg.button-load__icon(name="plus")

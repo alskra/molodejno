@@ -1,16 +1,13 @@
 .tags {
+	--color: #{$color-primary};
+	--color-hover: #{$color-primary-hover};
+
 	display: flex;
 	flex-flow: wrap;
-	font-family: $font-family-stolzl;
-	font-size: 13rem;
+	font-size: 14rem;
 	line-height: 1.25;
-	color: $color-primary;
+	color: var(--color);
 	gap: 5rem 15rem;
-
-	&--align-right {
-		justify-content: flex-end;
-		text-align: right;
-	}
 
 	@include media-breakpoint-down(lg) {
 		font-size: 12rem;
@@ -26,6 +23,6 @@
 	}
 
 	@include hover {
-		color: $color-primary-hover;
+		color: var(--color-hover);
 	}
 }

@@ -2,30 +2,26 @@
 	--width: auto;
 	--height: 65rem;
 
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	border: 0;
+	@include button;
+
 	border-radius: calc(var(--height) / 2);
 	padding: 0 var(--gap);
 	width: var(--width);
 	height: var(--height);
-	max-width: 100%;
 	font-weight: 700;
 	font-size: 18rem;
 	line-height: 1.25;
-	white-space: nowrap;
-	text-align: center;
 	color: $color-white;
 	background: $color-primary;
-	transition: border-color, color, background-color;
-	transition-duration: $transition-duration;
-	user-select: none;
 
 	&:hover {
 		&:not(:disabled, .is-disabled) {
 			background: $color-primary-hover;
 		}
+	}
+
+	&--height-sm {
+		--height: 55rem;
 	}
 }
 

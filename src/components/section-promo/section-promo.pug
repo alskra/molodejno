@@ -3,17 +3,17 @@ mixin section-promo()
 		+container().section-promo__container
 			.section-promo__body
 				h2.section-promo__title.
-					#[strong Молодёжно]&nbsp;&mdash;
+					#[strong Молодёж&shy;но]&nbsp;&mdash;
 					#[small это информационно-познавательный портал для молодёжи Новгородской области]
 				.section-promo__content
 					p.
 						Портал реализован инициативами Дома Молодёжи Новгородской области, цель которого&nbsp;&mdash;
 						это реализация молодёжной политики во&nbsp;всех актуальных и&nbsp;действующих направлениях
 						данной отрасли
-				+button-arrow({
+				+button-arrow-text({
 					row: true,
 					content: "'Подробнее'",
-				}).section-promo__more
+				})
 
 			+picture-webp().section-promo__image(
 				src="../../images/design/molodejno.png"

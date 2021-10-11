@@ -10,11 +10,11 @@ html {
 }
 
 body {
+	overflow-wrap: break-word;
 	font-family: $font-family;
 	-webkit-font-smoothing: antialiased;
 	font-size: $font-size;
 	line-height: $line-height;
-	word-wrap: break-word;
 	text-decoration-skip: objects;
 	text-rendering: optimizeLegibility;
 	text-size-adjust: 100%;
@@ -23,15 +23,11 @@ body {
 	background: $background-color;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+// stylelint-disable
+h1, h2, h3, h4, h5, h6,
 p,
-ul,
-ol {
+ul, ol {
+// stylelint-enable
 	margin: 0;
 }
 
@@ -70,20 +66,12 @@ fieldset {
 	padding: 0;
 }
 
-button {
-	color: currentColor;
-
-	&:not(:disabled, .is-disabled) {
-		cursor: pointer;
-	}
-}
-
 :disabled,
 .is-disabled {
 	pointer-events: none;
 }
 
-:focus:not(.focus-visible) {
+:focus:not(:focus-visible, .focus-visible) {
 	outline: none;
 }
 

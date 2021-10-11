@@ -1,0 +1,24 @@
+extends ../../pug/base
+
+include ../../components/event-item/event-item
+
+append variables
+	-
+		let type = 'forums';
+		let slice;
+		let tags = true;
+		let columns = 1;
+
+block document
+	include ../../components/events/data
+
+	-
+		let items = data(type, slice, tags);
+
+	each item in items
+		+event-item(item).events__item(
+			class={
+				'event-item--lg': columns === 1,
+				'events__item--main': slice === 1,
+			}
+		)
