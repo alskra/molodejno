@@ -4,19 +4,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Молодёжно (Frontend) - Guide</title>
-	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/index.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/index.css" rel="stylesheet"></head>
+		<title>Молодёжно (Frontend) - Форумы</title>
+	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/forums.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/forums.css" rel="stylesheet"></head>
 	<body>
-		<style>
-			section:not(:last-child) {
-				margin-bottom: var(--gap-2xl);
-			}
-			
-			.content-edited:not(:last-child) {
-				margin-bottom: var(--gap);
-			}
-			
-		</style>
 		<div class="app">
 			<header class="header" x-data="header" x-bind:class="{'is-sticky': isSticky}" x-on:scroll.window="updateStick" x-on:resize.window="updateStick(); updateMobMenu();">
 				<div class="container header__mob" x-show="!$store.isDesktop"><a class="header__logo" href="home.html" x-show="!mobMenuIsOpen">
@@ -44,205 +34,171 @@
 					</div>
 				</div>
 			</header>
-			<main class="app__main" style="padding:var(--gap) 0;">
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2>Pages</h2>
-							<ol>
-								<li><a href="home.html">Главная</a>
-								</li>
-								<li><a href="grants.html">Гранты</a>
-									<ol>
-										<li><a href="grant.html">Грант</a></li>
-									</ol>
-								</li>
-								<li><a href="recipients.html">Гранты получили</a>
-									<ol>
-										<li><a href="recipient.html">Грантополучатель</a></li>
-									</ol>
-								</li>
-								<li><a href="forums.html">Форумы</a>
-									<ol>
-										<li><a href="forum.html">Форум</a></li>
-									</ol>
-								</li>
-							</ol>
-						</div>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h1>h1: Конкурс среди организаций высшего образования</h1>
-							<h2>h2: Конкурс среди организаций высшего образования</h2>
-							<h3>h3: Конкурс среди организаций высшего образования</h3>
-							<h4>h4: Конкурс среди организаций высшего образования</h4>
-							<h5>h5: Конкурс среди организаций высшего образования</h5>
-							<h6>h6: Конкурс среди организаций высшего образования</h6>
-							<ul>
-								<li>
-									30 октября в Батецком районе будет дан старт областному походу по местам боевых сражений.
-									К нему присоединятся активисты военно-патриотических клубов, центров, объединений и представители
-									поисковых отрядов Новгородской области.
-								</li>
-								<li>
-									Поход продлится до 1 ноября и будет посвящен боевому пути 1-й Ленинградской стрелковой дивизии
-									народного ополчения, которая в июле 1941 года высадилась на станции Батецкая и заняла оборону
-									на Лужском рубеже.
-								</li>
-								<li>
-									В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской дивизии
-									народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».
-								</li>
-							</ul>
-							<p>
-								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
-								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
-								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
-								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
-								Это информационно-познавательный портал для молодёжи.
-							</p>
-							<p>
-								Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
-								и действующих направлениях данной отрасли.
-								
-							</p>
-						</div>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>button</code></h2>
-						</div>
-						<button class="button" type="button" x-init><span class="button__content" x-text="'Синяя кнопка'"></span></button><br><br>
-						<button class="button button--height-sm" type="button" x-init><span class="button__content" x-text="'Синяя кнопка'"></span></button>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>button-arrow</code></h2>
-						</div>
-						<button class="button-arrow" type="button" disabled>
-							<icon-svg name="arrow-left"></icon-svg>
-						</button>
-						<button class="button-arrow" type="button">
-							<icon-svg name="arrow-right"></icon-svg>
-						</button>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>button-arrow-text</code></h2>
-						</div>
-						<button class="button-arrow-text" type="button" x-init><span class="button-arrow-text__icon">
-								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
-						</button><br><br>
-						<a class="button-arrow-text button-arrow-text--dir-left" href="" x-init><span class="button-arrow-text__icon">
-								<icon-svg name="arrow-left"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
-						</a><br><br>
-						<a class="button-arrow-text button-arrow-text--row" href="" x-init><span class="button-arrow-text__icon">
-								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
-						</a><br><br>
-						<a class="button-arrow-text button-arrow-text--dir-left button-arrow-text--row" href="" x-init><span class="button-arrow-text__icon">
-								<icon-svg name="arrow-left"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
-						</a>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>button-expand</code></h2>
-						</div>
-						<button class="button-expand" type="button" x-init><span class="button-expand__content" x-text="'Развернуть'"></span>
-							<icon-svg class="button-expand__icon" name="arrow-down"></icon-svg>
-						</button><br><br>
-						<button class="button-expand button-expand--dir-up" type="button" x-init><span class="button-expand__content" x-text="'Свернуть'"></span>
-							<icon-svg class="button-expand__icon" name="arrow-down"></icon-svg>
-						</button>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>button-load</code></h2>
-						</div>
-						<button class="button-load" type="button" x-init><span class="button-load__content" x-text="'Загрузить еще'"></span>
-							<icon-svg class="button-load__icon" name="plus"></icon-svg>
-						</button><br><br>
-						<button class="button-load is-loading" type="button" x-init><span class="button-load__content" x-text="'Загрузить еще'"></span>
-							<icon-svg class="button-load__icon" name="plus"></icon-svg>
-						</button>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>date</code></h2>
-						</div>
-						<div class="date">
-							<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
-						</div><br><br>
-						<div class="date">
-							<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
-							<time class="date__item"><span class="date__day-month date__day-month--end">30.10</span><span class="date__year">2020</span></time>
-						</div><br><br>
-						<div style="max-width:200px;">
-							<div class="date">
-								<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
-								<time class="date__item"><span class="date__day-month date__day-month--end">30.10</span><span class="date__year">2020</span></time>
+			<main class="app__main">
+				<div class="container app__breadcrumbs">
+					<nav class="breadcrumbs"><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="home.html">Главная</a></span><span class="breadcrumbs__item">Форумы</span>
+					</nav>
+				</div>
+				<section class="section section--forums section--advanced">
+					<div class="section__bg">
+						<div class="container">
+							<div class="position-relative">
+								<div class="section__bg-el section__rellax section__bg-el--forums" data-rellax-speed="-2"></div>
 							</div>
-						</div><br><br>
-						<div class="content-edited">
-							<h3><code>adaptive</code></h3>
-						</div>
-						<div class="date date--adaptive">
-							<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
-						</div><br><br>
-						<div class="date date--adaptive">
-							<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
-							<time class="date__item"><span class="date__day-month date__day-month--end">30.10</span><span class="date__year">2020</span></time>
 						</div>
 					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>organizer</code></h2>
-						</div>
-						<div class="organizer" style="max-width:255px;">
-							<div class="organizer__title">Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Молодежный центр">
-						</div><br>
-						<div class="organizer" style="max-width:255px;">
-							<div class="organizer__title">Ресурсный Молодежный центр длинный заголовок</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр длинный заголовок">
-						</div><br>
-						<div class="content-edited">
-							<h3><code>line-clamp</code></h3>
-						</div>
-						<div class="organizer organizer--line-clamp" style="max-width:255px;">
-							<div class="organizer__title">Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Молодежный центр">
-						</div><br>
-						<div class="organizer organizer--line-clamp" style="max-width:255px;">
-							<div class="organizer__title">Ресурсный Молодежный центр длинный заголовок</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр длинный заголовок">
-						</div><br>
-						<div class="organizer organizer--line-clamp" style="max-width:555px;">
-							<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+					<div class="section__image section__image--forums">
+						<div class="overflow-hidden section__rellax" data-rellax-speed="0">
+							<div class="container">
+								<picture class="section__image-el">
+									<source type="image/webp" srcset="images/design/section/forums/back.webp, images/design/section/forums/back@2x.webp 2x"><img src="images/design/section/forums/back.png" srcset="images/design/section/forums/back@2x.png 2x" alt="">
+								</picture>
+							</div>
 						</div>
 					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>location</code></h2>
+					<div class="section__image section__image--forums">
+						<div class="overflow-hidden section__rellax" data-rellax-speed="1">
+							<div class="container">
+								<picture class="section__image-el">
+									<source type="image/webp" srcset="images/design/section/forums/front.webp, images/design/section/forums/front@2x.webp 2x"><img src="images/design/section/forums/front.png" srcset="images/design/section/forums/front@2x.png 2x" alt="">
+								</picture>
+							</div>
 						</div>
-						<div class="location">
-							<div class="location__content">Тёсово-Нетыльский</div>
-						</div><br><br>
-						<div class="location" style="max-width:150px;">
-							<div class="location__content">Тёсово-Нетыльский</div>
+					</div>
+					<header class="container section__header">
+						<div class="section__header-body">
+							<h1 class="heading section__heading" data-aos="fade-up" data-aos-duration="800">Форумы
+							</h1>
+							<div class="section__desc"><p>Портал для молодёжи занимающийся реализацией молодёжной политики во&nbsp;всех актуальных
+и&nbsp;действующих направлениях данной отрасли</p></div>
+							<div class="score section__score" x-data="scoreAnimated">
+								<div class="score__title">Деловых событий</div>
+								<div class="score__content">
+									<div class="score__number" x-ref="number">100</div>
+									<div class="score__plus" x-ref="plus">+</div>
+								</div>
+							</div>
+						</div>
+					</header>
+					<div class="section__main">
+						<div class="container section__grid">
+							<aside class="section__grid-aside">
+								<nav class="filters">
+									<div class="filters__body" x-data="swiperFree" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
+										<div class="filters__wrapper" x-bind:class="{'swiper-wrapper': !$store.isDesktop}"><a class="filters__item is-active" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Все</span><span class="filters__quantity">991</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Бизнес</span><span class="filters__quantity">132</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Образование</span><span class="filters__quantity">53</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">HR</span><span class="filters__quantity">4</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Производство</span><span class="filters__quantity">8</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Творчество</span><span class="filters__quantity">76</span></a>
+										</div>
+									</div>
+								</nav>
+							</aside>
+							<div class="section__grid-main">
+								<div class="content">
+									<div class="events" x-data="{gridEl: $refs.grid}">
+										<div class="events__grid" x-ref="grid">
+											<article class="event-item events__item event-item--lg">
+												<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-1.jpg" srcset="images/content/forums/img-1@2x.jpg 2x" alt="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">
+												</div>
+												<div class="event-item__body">
+													<div class="event-item__main">
+														<div class="event-item__group">
+															<nav class="tags event-item__tags"><a class="tags__item" href="">Образование</a>
+															</nav>
+															<div class="location event-item__location">
+																<div class="location__content">Тёсово-Нетыльский</div>
+															</div>
+														</div>
+														<div class="date event-item__date">
+															<time class="date__item"><span class="date__day-month date__day-month--start">26.08</span><span class="date__year">2020</span></time>
+														</div>
+														<h3 class="event-item__title"><a class="event-item__link" href="forum.html" title="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок</a></h3>
+													</div>
+												</div>
+											</article>
+											<article class="event-item events__item event-item--lg">
+												<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-2.jpg" srcset="images/content/forums/img-2@2x.jpg 2x" alt="«Мой бизнес. От малого к Великому»">
+												</div>
+												<div class="event-item__body">
+													<div class="event-item__main">
+														<div class="event-item__group">
+															<nav class="tags event-item__tags"><a class="tags__item" href="">Образование</a>
+															</nav>
+															<div class="location event-item__location">
+																<div class="location__content">Тёсово-Нетыльский</div>
+															</div>
+														</div>
+														<div class="date event-item__date">
+															<time class="date__item"><span class="date__day-month date__day-month--start">12.09</span><span class="date__year">2020</span></time>
+														</div>
+														<h3 class="event-item__title"><a class="event-item__link" href="forum.html" title="«Мой бизнес. От малого к Великому»">«Мой бизнес. От малого к Великому»</a></h3>
+													</div>
+												</div>
+											</article>
+											<article class="event-item events__item event-item--lg">
+												<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-3.jpg" srcset="images/content/forums/img-3@2x.jpg 2x" alt="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">
+												</div>
+												<div class="event-item__body">
+													<div class="event-item__main">
+														<div class="event-item__group">
+															<nav class="tags event-item__tags"><a class="tags__item" href="">Образование</a>
+															</nav>
+															<div class="location event-item__location">
+																<div class="location__content">Тёсово-Нетыльский</div>
+															</div>
+														</div>
+														<div class="date event-item__date">
+															<time class="date__item"><span class="date__day-month date__day-month--start">26.08</span><span class="date__year">2020</span></time>
+														</div>
+														<h3 class="event-item__title"><a class="event-item__link" href="forum.html" title="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок</a></h3>
+													</div>
+												</div>
+											</article>
+											<article class="event-item events__item event-item--lg">
+												<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-4.jpg" srcset="images/content/forums/img-4@2x.jpg 2x" alt="«Мой бизнес. От малого к Великому»">
+												</div>
+												<div class="event-item__body">
+													<div class="event-item__main">
+														<div class="event-item__group">
+															<nav class="tags event-item__tags"><a class="tags__item" href="">Образование</a>
+															</nav>
+															<div class="location event-item__location">
+																<div class="location__content">Тёсово-Нетыльский</div>
+															</div>
+														</div>
+														<div class="date event-item__date">
+															<time class="date__item"><span class="date__day-month date__day-month--start">12.09</span><span class="date__year">2020</span></time>
+														</div>
+														<h3 class="event-item__title"><a class="event-item__link" href="forum.html" title="«Мой бизнес. От малого к Великому»">«Мой бизнес. От малого к Великому»</a></h3>
+													</div>
+												</div>
+											</article>
+											<article class="event-item events__item event-item--lg">
+												<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-5.jpg" srcset="images/content/forums/img-5@2x.jpg 2x" alt="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">
+												</div>
+												<div class="event-item__body">
+													<div class="event-item__main">
+														<div class="event-item__group">
+															<nav class="tags event-item__tags"><a class="tags__item" href="">Образование</a>
+															</nav>
+															<div class="location event-item__location">
+																<div class="location__content">Тёсово-Нетыльский</div>
+															</div>
+														</div>
+														<div class="date event-item__date">
+															<time class="date__item"><span class="date__day-month date__day-month--start">26.08</span><span class="date__year">2020</span></time>
+														</div>
+														<h3 class="event-item__title"><a class="event-item__link" href="forum.html" title="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок</a></h3>
+													</div>
+												</div>
+											</article>
+										</div>
+										<div class="pagination" x-data="pagination('ajax/forums.html', gridEl)">
+											<div class="pagination__error" x-show="error" x-text="error"></div>
+											<button class="button-load" type="button" x-init x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content" x-text="'Загрузить еще'"></span>
+												<icon-svg class="button-load__icon" name="plus"></icon-svg>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>

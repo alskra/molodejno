@@ -81,10 +81,10 @@
 						</div>
 						<div class="slider__nav">
 							<div class="container slider__container-nav">
-								<button class="slider__button" x-ref="buttonPrev">
+								<button class="button-arrow slider__button" type="button" x-ref="buttonPrev">
 									<icon-svg name="arrow-left"></icon-svg>
 								</button>
-								<button class="slider__button" x-ref="buttonNext">
+								<button class="button-arrow slider__button" type="button" x-ref="buttonNext">
 									<icon-svg name="arrow-right"></icon-svg>
 								</button>
 							</div>
@@ -95,7 +95,7 @@
 					<section class="section-promo">
 						<div class="container section-promo__container">
 							<div class="section-promo__body">
-								<h2 class="section-promo__title"><strong>Молодёжно</strong>&nbsp;&mdash;
+								<h2 class="section-promo__title"><strong>Молодёж&shy;но</strong>&nbsp;&mdash;
 									<small>это информационно-познавательный портал для молодёжи Новгородской области</small>
 								</h2>
 								<div class="section-promo__content">
@@ -105,8 +105,8 @@
 										данной отрасли
 									</p>
 								</div>
-								<a class="button-arrow button-arrow--row section-promo__more" href="" x-init><span class="button-arrow__icon">
-										<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow__content" x-text="'Подробнее'"></span>
+								<a class="button-arrow-text button-arrow-text--row" href="" x-init><span class="button-arrow-text__icon">
+										<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="'Подробнее'"></span>
 								</a>
 							</div>
 							<picture class="section-promo__image">
@@ -197,8 +197,8 @@
 						</div>
 					</template>
 					<footer class="container directions__footer">
-						<a class="button-arrow directions__more" href="" x-init x-bind:class="{'button-arrow--row': !$store.isDesktop}"><span class="button-arrow__icon">
-								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow__content" x-text="'Смотреть все'"></span>
+						<a class="button-arrow-text" href="" x-init x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"><span class="button-arrow-text__icon">
+								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
 						</a>
 					</footer>
 				</section>
@@ -245,9 +245,11 @@
 					</header>
 					<div class="section__main">
 						<div class="container">
-							<div class="events">
-								<div class="events__grid"><a class="event-item events__item" href="forum.html" title="Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;. Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;.">
-										<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-1.jpg" srcset="images/content/forums/img-1@2x.jpg 2x" alt=""></div>
+							<div class="events" x-data="{gridEl: $refs.grid}">
+								<div class="events__grid events__grid--columns-2" x-ref="grid">
+									<article class="event-item events__item">
+										<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-1.jpg" srcset="images/content/forums/img-1@2x.jpg 2x" alt="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">
+										</div>
 										<div class="event-item__body">
 											<div class="event-item__main">
 												<div class="event-item__group">
@@ -258,10 +260,13 @@
 												<div class="date event-item__date">
 													<time class="date__item"><span class="date__day-month date__day-month--start">26.08</span><span class="date__year">2020</span></time>
 												</div>
-												<h3 class="event-item__title">Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;. Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;.</h3>
+												<h3 class="event-item__title"><a class="event-item__link" href="forum.html" title="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок</a></h3>
 											</div>
-										</div></a><a class="event-item events__item" href="forum.html" title="От&nbsp;малого к&nbsp;Великому">
-										<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-2.jpg" srcset="images/content/forums/img-2@2x.jpg 2x" alt=""></div>
+										</div>
+									</article>
+									<article class="event-item events__item">
+										<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-2.jpg" srcset="images/content/forums/img-2@2x.jpg 2x" alt="«Мой бизнес. От малого к Великому»">
+										</div>
 										<div class="event-item__body">
 											<div class="event-item__main">
 												<div class="event-item__group">
@@ -270,18 +275,19 @@
 													</div>
 												</div>
 												<div class="date event-item__date">
-													<time class="date__item"><span class="date__day-month date__day-month--start">12.04</span><span class="date__year">2020</span></time>
+													<time class="date__item"><span class="date__day-month date__day-month--start">12.09</span><span class="date__year">2020</span></time>
 												</div>
-												<h3 class="event-item__title">От&nbsp;малого к&nbsp;Великому</h3>
+												<h3 class="event-item__title"><a class="event-item__link" href="forum.html" title="«Мой бизнес. От малого к Великому»">«Мой бизнес. От малого к Великому»</a></h3>
 											</div>
-										</div></a>
+										</div>
+									</article>
 								</div>
 							</div>
 						</div>
 					</div>
 					<footer class="container section__footer">
-						<a class="button-arrow" href="forums.html" x-init x-bind:class="{'button-arrow--row': !$store.isDesktop}"><span class="button-arrow__icon">
-								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow__content" x-text="'Смотреть все'"></span>
+						<a class="button-arrow-text" href="forums.html" x-init x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"><span class="button-arrow-text__icon">
+								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
 						</a>
 					</footer>
 				</section>
@@ -387,8 +393,8 @@
 						</div>
 					</div>
 					<footer class="container section__footer">
-						<a class="button-arrow" href="projects.html" x-init x-bind:class="{'button-arrow--row': !$store.isDesktop}"><span class="button-arrow__icon">
-								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow__content" x-text="'Смотреть все'"></span>
+						<a class="button-arrow-text" href="projects.html" x-init x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"><span class="button-arrow-text__icon">
+								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
 						</a>
 					</footer>
 				</section>
@@ -401,8 +407,8 @@
 						</div>
 						<div class="promo__body">
 							<div class="promo__title">Реализованные<br> проекты</div>
-							<a class="button-arrow" href="projects.html" x-init x-bind:class="{'button-arrow--row': !$store.isDesktop}"><span class="button-arrow__icon">
-									<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow__content" x-text="$store.isDesktop ? 'Смотреть все' : 'Подробнее'"></span>
+							<a class="button-arrow-text" href="projects.html" x-init x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"><span class="button-arrow-text__icon">
+									<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="$store.isDesktop ? 'Смотреть все' : 'Подробнее'"></span>
 							</a>
 						</div>
 					</div>
@@ -513,8 +519,8 @@
 						</div>
 					</div>
 					<footer class="container section__footer">
-						<a class="button-arrow" href="contests.html" x-init x-bind:class="{'button-arrow--row': !$store.isDesktop}"><span class="button-arrow__icon">
-								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow__content" x-text="'Смотреть все'"></span>
+						<a class="button-arrow-text" href="contests.html" x-init x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"><span class="button-arrow-text__icon">
+								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
 						</a>
 					</footer>
 				</section>
@@ -527,8 +533,8 @@
 						</div>
 						<div class="promo__body">
 							<div class="promo__title">Победители<br> конкурсов</div>
-							<a class="button-arrow" href="contests.html" x-init x-bind:class="{'button-arrow--row': !$store.isDesktop}"><span class="button-arrow__icon">
-									<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow__content" x-text="$store.isDesktop ? 'Смотреть все' : 'Подробнее'"></span>
+							<a class="button-arrow-text" href="contests.html" x-init x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"><span class="button-arrow-text__icon">
+									<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="$store.isDesktop ? 'Смотреть все' : 'Подробнее'"></span>
 							</a>
 						</div>
 					</div>
@@ -635,8 +641,8 @@
 						</div>
 					</div>
 					<footer class="container section__footer">
-						<a class="button-arrow" href="grants.html" x-init x-bind:class="{'button-arrow--row': !$store.isDesktop}"><span class="button-arrow__icon">
-								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow__content" x-text="'Смотреть все'"></span>
+						<a class="button-arrow-text" href="grants.html" x-init x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"><span class="button-arrow-text__icon">
+								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
 						</a>
 					</footer>
 				</section>
@@ -649,8 +655,8 @@
 						</div>
 						<div class="promo__body">
 							<div class="promo__title">Гранты<br> получили</div>
-							<a class="button-arrow" href="recipients.html" x-init x-bind:class="{'button-arrow--row': !$store.isDesktop}"><span class="button-arrow__icon">
-									<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow__content" x-text="$store.isDesktop ? 'Смотреть все' : 'Подробнее'"></span>
+							<a class="button-arrow-text" href="recipients.html" x-init x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"><span class="button-arrow-text__icon">
+									<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="$store.isDesktop ? 'Смотреть все' : 'Подробнее'"></span>
 							</a>
 						</div>
 					</div>
@@ -702,17 +708,25 @@
 					</header>
 					<div class="section__main">
 						<div class="container">
-							<div class="events">
-								<div class="events__grid"><a class="event-item events__item events__item--main" href="event.html" title="Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;">
-										<div class="event-item__image"><img class="event-item__image-el" src="images/content/playbill/img-1.jpg" srcset="images/content/playbill/img-1@2x.jpg 2x" alt=""></div>
+							<div class="events" x-data="{gridEl: $refs.grid}">
+								<div class="events__grid events__grid--columns-2" x-ref="grid">
+									<article class="event-item events__item events__item--main">
+										<div class="event-item__image"><img class="event-item__image-el" src="images/content/playbill/img-1.jpg" srcset="images/content/playbill/img-1@2x.jpg 2x" alt="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">
+										</div>
 										<div class="event-item__body">
 											<div class="event-item__main">
+												<div class="event-item__group">
+													<div class="location event-item__location">
+														<div class="location__content">Тёсово-Нетыльский</div>
+													</div>
+												</div>
 												<div class="date event-item__date">
 													<time class="date__item"><span class="date__day-month date__day-month--start">26.08</span><span class="date__year">2020</span></time>
 												</div>
-												<h3 class="event-item__title">Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;</h3>
+												<h3 class="event-item__title"><a class="event-item__link" href="event.html" title="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок</a></h3>
 											</div>
-										</div></a>
+										</div>
+									</article>
 									<div class="cards" x-data="{gridEl: $root.querySelector('.cards__grid')}">
 										<div class="cards__main">
 											<div class="cards__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
@@ -774,8 +788,8 @@
 						</div>
 					</div>
 					<footer class="container section__footer">
-						<a class="button-arrow" href="playbill.html" x-init x-bind:class="{'button-arrow--row': !$store.isDesktop}"><span class="button-arrow__icon">
-								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow__content" x-text="'Смотреть все'"></span>
+						<a class="button-arrow-text" href="playbill.html" x-init x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"><span class="button-arrow-text__icon">
+								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
 						</a>
 					</footer>
 				</section>
@@ -826,17 +840,25 @@
 					</header>
 					<div class="section__main">
 						<div class="container">
-							<div class="events">
-								<div class="events__grid"><a class="event-item events__item events__item--main" href="new.html" title="Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;">
-										<div class="event-item__image"><img class="event-item__image-el" src="images/content/news/img-1.jpg" srcset="images/content/news/img-1@2x.jpg 2x" alt=""></div>
+							<div class="events" x-data="{gridEl: $refs.grid}">
+								<div class="events__grid events__grid--columns-2" x-ref="grid">
+									<article class="event-item events__item events__item--main">
+										<div class="event-item__image"><img class="event-item__image-el" src="images/content/news/img-1.jpg" srcset="images/content/news/img-1@2x.jpg 2x" alt="«Мой бизнес. От малого к Великому»">
+										</div>
 										<div class="event-item__body">
 											<div class="event-item__main">
-												<div class="date event-item__date">
-													<time class="date__item"><span class="date__day-month date__day-month--start">26.08</span><span class="date__year">2020</span></time>
+												<div class="event-item__group">
+													<div class="location event-item__location">
+														<div class="location__content">Тёсово-Нетыльский</div>
+													</div>
 												</div>
-												<h3 class="event-item__title">Предпринимательский форум молодежи &laquo;Мой бизнес. От&nbsp;малого к&nbsp;Великому&raquo;</h3>
+												<div class="date event-item__date">
+													<time class="date__item"><span class="date__day-month date__day-month--start">12.09</span><span class="date__year">2020</span></time>
+												</div>
+												<h3 class="event-item__title"><a class="event-item__link" href="new.html" title="«Мой бизнес. От малого к Великому»">«Мой бизнес. От малого к Великому»</a></h3>
 											</div>
-										</div></a>
+										</div>
+									</article>
 									<div class="cards" x-data="{gridEl: $root.querySelector('.cards__grid')}">
 										<div class="cards__main">
 											<div class="cards__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
@@ -898,8 +920,8 @@
 						</div>
 					</div>
 					<footer class="container section__footer">
-						<a class="button-arrow" href="news.html" x-init x-bind:class="{'button-arrow--row': !$store.isDesktop}"><span class="button-arrow__icon">
-								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow__content" x-text="'Смотреть все'"></span>
+						<a class="button-arrow-text" href="news.html" x-init x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"><span class="button-arrow-text__icon">
+								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
 						</a>
 					</footer>
 				</section>
@@ -912,7 +934,7 @@
 								<input class="subscribe__input-el" type="email" name="email" x-on:focus="$refs.placeholder.hidden = true" x-on:blur="$refs.placeholder.hidden = $event.target.value">
 								<div class="subscribe__input-placeholder" x-ref="placeholder"><strong>Введите e-mail,</strong> чтобы подписаться на&nbsp;новости</div>
 							</div>
-							<button class="subscribe__button" type="submit">
+							<button class="button-arrow subscribe__button" type="submit">
 								<icon-svg name="arrow-right"></icon-svg>
 							</button>
 						</div>

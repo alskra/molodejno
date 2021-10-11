@@ -309,12 +309,16 @@
 										</div>
 										<div class="pagination" x-data="pagination('ajax/grants.html', gridEl)">
 											<div class="pagination__error" x-show="error" x-text="error"></div>
-											<nav class="pagination__multipage hidden-lg-down"><a class="pagination__button is-disabled" href="">
-													<icon-svg name="arrow-left"></icon-svg></a>
-												<div class="pagination__group"><span class="pagination__item is-active">1</span><a class="pagination__item" href="">2</a><a class="pagination__item" href="">3</a><a class="pagination__item" href="">4</a><a class="pagination__item" href="">5</a><span class="pagination__item pagination__item--hellip">&hellip;</span><a class="pagination__item" href="">18</a></div><a class="pagination__button" href="">
-													<icon-svg name="arrow-right"></icon-svg></a>
+											<nav class="pagination__multipage hidden-lg-down">
+												<a class="button-arrow pagination__button is-disabled" href="">
+													<icon-svg name="arrow-left"></icon-svg>
+												</a>
+												<div class="pagination__group"><span class="pagination__item is-active">1</span><a class="pagination__item" href="">2</a><a class="pagination__item" href="">3</a><a class="pagination__item" href="">4</a><a class="pagination__item" href="">5</a><span class="pagination__item pagination__item--hellip">&hellip;</span><a class="pagination__item" href="">18</a></div>
+												<a class="button-arrow pagination__button" href="">
+													<icon-svg name="arrow-right"></icon-svg>
+												</a>
 											</nav>
-											<button class="button-load hidden-lg-up" type="button" x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content">Загрузить еще</span>
+											<button class="button-load hidden-lg-up" type="button" x-init x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content" x-text="'Загрузить еще'"></span>
 												<icon-svg class="button-load__icon" name="plus"></icon-svg>
 											</button>
 										</div>
@@ -333,8 +337,8 @@
 						</div>
 						<div class="promo__body">
 							<div class="promo__title">Гранты<br> получили</div>
-							<a class="button-arrow" href="recipients.html" x-init x-bind:class="{'button-arrow--row': !$store.isDesktop}"><span class="button-arrow__icon">
-									<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow__content" x-text="$store.isDesktop ? 'Смотреть все' : 'Подробнее'"></span>
+							<a class="button-arrow-text" href="recipients.html" x-init x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"><span class="button-arrow-text__icon">
+									<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="$store.isDesktop ? 'Смотреть все' : 'Подробнее'"></span>
 							</a>
 						</div>
 					</div>
@@ -348,7 +352,7 @@
 								<input class="subscribe__input-el" type="email" name="email" x-on:focus="$refs.placeholder.hidden = true" x-on:blur="$refs.placeholder.hidden = $event.target.value">
 								<div class="subscribe__input-placeholder" x-ref="placeholder"><strong>Введите e-mail,</strong> чтобы подписаться на&nbsp;новости</div>
 							</div>
-							<button class="subscribe__button" type="submit">
+							<button class="button-arrow subscribe__button" type="submit">
 								<icon-svg name="arrow-right"></icon-svg>
 							</button>
 						</div>

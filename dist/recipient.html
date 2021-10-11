@@ -72,8 +72,8 @@
 									</nav>
 								</div>
 								<nav class="article-nav section__article-nav" x-data="articleNav" x-on:popstate.window="hash = location.hash" x-on:scroll.window.debounce.100ms="update">
-									<a class="button-arrow button-arrow--dir-left article-nav__back button-arrow--primary" href="recipients.html" x-init><span class="button-arrow__icon">
-											<icon-svg name="arrow-left"></icon-svg></span><span class="button-arrow__content" x-text="'Назад'"></span>
+									<a class="button-arrow-text button-arrow-text--dir-left article-nav__back button-arrow-text--primary" href="recipients.html" x-init><span class="button-arrow-text__icon">
+											<icon-svg name="arrow-left"></icon-svg></span><span class="button-arrow-text__content" x-text="'Назад'"></span>
 									</a>
 								</nav>
 							</aside>
@@ -93,10 +93,10 @@
 										<div class="swiper-fraction__footer">
 											<div class="swiper-fraction__pagination" x-ref="pagination"></div>
 											<div class="swiper-fraction__navigation" x-ref="navigation">
-												<button class="swiper-fraction__button" type="button" x-ref="prevEl">
+												<button class="button-arrow" type="button" x-ref="prevEl">
 													<icon-svg name="arrow-left"></icon-svg>
 												</button>
-												<button class="swiper-fraction__button" type="button" x-ref="nextEl">
+												<button class="button-arrow" type="button" x-ref="nextEl">
 													<icon-svg name="arrow-right"></icon-svg>
 												</button>
 											</div>
@@ -181,7 +181,7 @@
 														</div>
 														<div class="pagination" x-data="pagination('ajax/gallery.html', gridEl)">
 															<div class="pagination__error" x-show="error" x-text="error"></div>
-															<button class="button-load" type="button" x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content">Загрузить еще</span>
+															<button class="button-load" type="button" x-init x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content" x-text="'Загрузить еще'"></span>
 																<icon-svg class="button-load__icon" name="plus"></icon-svg>
 															</button>
 														</div>
@@ -223,7 +223,7 @@
 								<input class="subscribe__input-el" type="email" name="email" x-on:focus="$refs.placeholder.hidden = true" x-on:blur="$refs.placeholder.hidden = $event.target.value">
 								<div class="subscribe__input-placeholder" x-ref="placeholder"><strong>Введите e-mail,</strong> чтобы подписаться на&nbsp;новости</div>
 							</div>
-							<button class="subscribe__button" type="submit">
+							<button class="button-arrow subscribe__button" type="submit">
 								<icon-svg name="arrow-right"></icon-svg>
 							</button>
 						</div>

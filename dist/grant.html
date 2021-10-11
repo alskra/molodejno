@@ -44,8 +44,8 @@
 						<div class="container article__grid">
 							<aside class="article__grid-aside">
 								<nav class="article-nav" x-data="articleNav" x-on:popstate.window="hash = location.hash" x-on:scroll.window.debounce.100ms="update">
-									<a class="button-arrow button-arrow--dir-left article-nav__back" href="grants.html" x-init><span class="button-arrow__icon">
-											<icon-svg name="arrow-left"></icon-svg></span><span class="button-arrow__content" x-text="'Назад'"></span>
+									<a class="button-arrow-text button-arrow-text--dir-left article-nav__back" href="grants.html" x-init><span class="button-arrow-text__icon">
+											<icon-svg name="arrow-left"></icon-svg></span><span class="button-arrow-text__content" x-text="'Назад'"></span>
 									</a>
 									<div class="article-nav__items"><a class="article-nav__item" href="#card" x-bind:class="{'is-active': $el.hash === hash}">Карточка гранта</a><a class="article-nav__item" href="#about" x-bind:class="{'is-active': $el.hash === hash}">О гранте</a><a class="article-nav__item" href="#stages" x-bind:class="{'is-active': $el.hash === hash}">Этапы</a><a class="article-nav__item" href="#docs" x-bind:class="{'is-active': $el.hash === hash}">Документы</a><a class="article-nav__item" href="#recipients" x-bind:class="{'is-active': $el.hash === hash}">Гранты получили</a><a class="article-nav__item" href="#gallery" x-bind:class="{'is-active': $el.hash === hash}">Галарея</a><a class="article-nav__item" href="#reviews" x-bind:class="{'is-active': $el.hash === hash}">Отзывы</a>
 									</div>
@@ -106,7 +106,7 @@
 														</tr>
 													</table>
 												</div>
-												<a class="button card-details__button" href=""><span class="button__content">Подать заявку</span></a>
+												<a class="button button--height-sm card-details__button" href="" x-init><span class="button__content" x-text="'Подать заявку'"></span></a>
 											</section>
 										</div>
 									</div>
@@ -151,10 +151,10 @@
 														<div class="swiper-fraction__footer">
 															<div class="swiper-fraction__pagination" x-ref="pagination"></div>
 															<div class="swiper-fraction__navigation" x-ref="navigation">
-																<button class="swiper-fraction__button" type="button" x-ref="prevEl">
+																<button class="button-arrow" type="button" x-ref="prevEl">
 																	<icon-svg name="arrow-left"></icon-svg>
 																</button>
-																<button class="swiper-fraction__button" type="button" x-ref="nextEl">
+																<button class="button-arrow" type="button" x-ref="nextEl">
 																	<icon-svg name="arrow-right"></icon-svg>
 																</button>
 															</div>
@@ -355,7 +355,7 @@
 														</div>
 														<div class="pagination hidden-lg-down" x-data="pagination('ajax/recipients-slice.html', gridEl)">
 															<div class="pagination__error" x-show="error" x-text="error"></div>
-															<button class="button-load" type="button" x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content">Загрузить еще</span>
+															<button class="button-load" type="button" x-init x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content" x-text="'Загрузить еще'"></span>
 																<icon-svg class="button-load__icon" name="plus"></icon-svg>
 															</button>
 														</div>
@@ -381,7 +381,7 @@
 														</div>
 														<div class="pagination" x-data="pagination('ajax/gallery.html', gridEl)">
 															<div class="pagination__error" x-show="error" x-text="error"></div>
-															<button class="button-load" type="button" x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content">Загрузить еще</span>
+															<button class="button-load" type="button" x-init x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content" x-text="'Загрузить еще'"></span>
 																<icon-svg class="button-load__icon" name="plus"></icon-svg>
 															</button>
 														</div>
@@ -396,7 +396,7 @@
 											<div class="container subsection__grid">
 												<div class="subsection__column subsection__column--grid">
 													<h2 class="subsection__title">Отзывы</h2>
-													<a class="button subsection__header-button" href=""><span class="button__content">Оставить отзыв</span></a>
+													<a class="button button--height-sm" href="" x-init><span class="button__content" x-text="'Оставить отзыв'"></span></a>
 												</div>
 											</div>
 										</header>
@@ -417,7 +417,7 @@
 		к Всемирному дню здоровья. В рамках направления «Здоровый образ жизни» на территории области проводятся
 		акции, приуроченные к Всемирному дню здоровья.</p>
 																			</div>
-																			<button class="button-expand review-item__button" type="button" x-bind:class="{'button-expand--up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
+																			<button class="button-expand review-item__button" type="button" x-init x-bind:class="{'button-expand--dir-up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
 																				<icon-svg class="button-expand__icon" name="arrow-down"></icon-svg>
 																			</button>
 																		</div>
@@ -431,7 +431,7 @@
 																			<div class="content-edited review-item__content" x-ref="content" x-bind:class="{'is-clamped': isClamped}"><p>В рамках направления «Здоровый образ жизни» на территории области проводятся акции,
 		приуроченные к Всемирному дню здоровья.</p>
 																			</div>
-																			<button class="button-expand review-item__button" type="button" x-bind:class="{'button-expand--up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
+																			<button class="button-expand review-item__button" type="button" x-init x-bind:class="{'button-expand--dir-up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
 																				<icon-svg class="button-expand__icon" name="arrow-down"></icon-svg>
 																			</button>
 																		</div>
@@ -449,7 +449,7 @@
 		направления «Здоровый образ жизни» на территории области проводятся акции, приуроченные
 		к Всемирному дню здоровья.</p>
 																			</div>
-																			<button class="button-expand review-item__button" type="button" x-bind:class="{'button-expand--up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
+																			<button class="button-expand review-item__button" type="button" x-init x-bind:class="{'button-expand--dir-up': !isClamped}" x-show="hasClamp" x-on:click="isClamped = !isClamped"><span class="button-expand__content" x-text="isClamped ? 'Читать весь отзыв' : 'Свернуть'"></span>
 																				<icon-svg class="button-expand__icon" name="arrow-down"></icon-svg>
 																			</button>
 																		</div>
@@ -464,10 +464,10 @@
 														<div class="swiper-fraction__footer">
 															<div class="swiper-fraction__pagination" x-ref="pagination"></div>
 															<div class="swiper-fraction__navigation" x-ref="navigation">
-																<button class="swiper-fraction__button" type="button" x-ref="prevEl">
+																<button class="button-arrow" type="button" x-ref="prevEl">
 																	<icon-svg name="arrow-left"></icon-svg>
 																</button>
-																<button class="swiper-fraction__button" type="button" x-ref="nextEl">
+																<button class="button-arrow" type="button" x-ref="nextEl">
 																	<icon-svg name="arrow-right"></icon-svg>
 																</button>
 															</div>
@@ -491,7 +491,7 @@
 								<input class="subscribe__input-el" type="email" name="email" x-on:focus="$refs.placeholder.hidden = true" x-on:blur="$refs.placeholder.hidden = $event.target.value">
 								<div class="subscribe__input-placeholder" x-ref="placeholder"><strong>Введите e-mail,</strong> чтобы подписаться на&nbsp;новости</div>
 							</div>
-							<button class="subscribe__button" type="submit">
+							<button class="button-arrow subscribe__button" type="submit">
 								<icon-svg name="arrow-right"></icon-svg>
 							</button>
 						</div>
