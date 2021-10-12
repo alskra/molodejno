@@ -13,6 +13,8 @@ include ../../components/docs/docs
 include ../../components/gallery/gallery
 include ../../components/reviews/reviews
 
+include ../../components/subsection-section/subsection-section
+
 include ../../components/article-nav/article-nav
 include ../../components/card-details/card-details
 include ../../components/subsection/subsection
@@ -213,29 +215,28 @@ block app
 
 					+subsection({
 						offsetColumn: 'all',
-						anchor: 'questions',
+						anchor: 'teasers',
 						title: 'Основые вопросы форума'
 					})
 						+teasers()
 
 					+subsection({
 						offsetColumn: 'all',
-						anchor: 'stages',
-						title: 'Этапы'
+						anchor: 'program',
+						title: 'Программа форума'
 					})
+						+content-edited()
+							h3 Программа
 						+stages()
 
-					+subsection({
-						offsetColumn: 'all',
-						anchor: 'docs',
-						title: 'Документы'
-					})
+						+content-edited()
+							h3 Документы
 						+docs()
 
 					+subsection({
 						offsetColumn: 'all',
 						anchor: 'gallery',
-						title: 'Галерея',
+						title: 'Форум в 2020',
 					})
 						+gallery()
 
@@ -243,7 +244,7 @@ block app
 						offsetColumn: 'all',
 						anchor: 'reviews',
 						type: 'reviews',
-						extType: 'grants',
+						extType: 'forums',
 						title: 'Отзывы',
 					})
 						+reviews()

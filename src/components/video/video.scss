@@ -67,7 +67,12 @@
 	border-radius: 50%;
 	width: var(--size);
 	height: var(--size);
-	background: conic-gradient(from 90deg at 50% 50%, rgba($color-cerulean-blue, 0.8) 0deg, rgba(#7277f5, 0.8) 360deg);
+	background:
+		conic-gradient(
+			from 90deg at 50% 50%,
+			rgba($color-cerulean-blue, 0.8) 0deg,
+			rgba($color-cornflower-blue-2, 0.8) 360deg
+		);
 	inset: 0;
 
 	&::before {

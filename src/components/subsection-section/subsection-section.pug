@@ -1,6 +1,6 @@
-mixin subsection-section({title})
+mixin subsection-section({title, titleTag = 'h3'} = {})
 	section.subsection-section&attributes(attributes)
 		header.subsection-section__header
-			h3.subsection-section__title!= title
+			#{titleTag}.subsection-section__title(class=`subsection-section__title--${titleTag}`)!= title
 		+content().subsection-section__main
 			block
