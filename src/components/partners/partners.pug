@@ -54,7 +54,7 @@ mixin partners(general = false)
 			partners = partners.slice(2);
 		}
 
-	.partners&attributes(attributes)
+	.partners(class={'partners--general': general})&attributes(attributes)
 		each partner in partners
 			a.partners__item(
 				class={'partners__item--general': general}
