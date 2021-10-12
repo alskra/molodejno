@@ -1,0 +1,8 @@
+mixin video({caption} = {})
+	figure.video
+		if caption
+			figcaption.video__caption!= caption
+		.video__main
+			+img-2x().video__image(src="../../images/content/article/img-2.jpg")
+			.video__overlay
+				.video__button-play

@@ -3,6 +3,7 @@ extends ../../pug/base
 include ../../components/header/header
 include ../../components/footer/footer
 
+include ../../components/tags/tags
 include ../../components/infographic/infographic
 include ../../components/quote/quote
 include ../../components/gallery-slider/gallery-slider
@@ -10,9 +11,6 @@ include ../../components/stages/stages
 include ../../components/docs/docs
 include ../../components/gallery/gallery
 include ../../components/reviews/reviews
-
-include ../../components/tags/tags
-include ../../components/subsection-section/subsection-section
 
 include ../../components/article-nav/article-nav
 include ../../components/card-details/card-details
@@ -201,7 +199,8 @@ block app
 								молодёжной политики во всех актуальных и действующих
 								направлениях данной отрасли.
 
-						+content-edited
+							+video({caption: 'Это информационно-познавательный портал для молодёжи Новгородской области'})
+
 							p.
 								Это информационно-познавательный портал для молодёжи Новгородской области,
 								занимающийся реализацией молодёжной политики во всех актуальных и действующих
