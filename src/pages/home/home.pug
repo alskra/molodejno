@@ -5,7 +5,7 @@ include ../../components/footer/footer
 include ../../components/slider/slider
 include ../../components/section-promo/section-promo
 include ../../components/quote/quote
-include ../../components/infographics/infographics
+include ../../components/section-infographic/section-infographic
 include ../../components/directions/directions
 include ../../components/section/section
 include ../../components/promo/promo
@@ -22,9 +22,12 @@ block app
 
 		.app__group
 			+section-promo()
-			+infographics()
-			+quote('Молодёжно')
-				p Сегодня Дом молодёжи&nbsp;&mdash; это команда профессионалов, которые отвечают за&nbsp;основные направления современной молодёжной политики.
+			+section-infographic()
+			+container()
+				+quote('Молодёжно')
+					p.
+						Сегодня Дом молодёжи&nbsp;&mdash; #[br]это команда профессионалов, которые отвечают
+						за&nbsp;основные направления современной молодёжной политики.
 
 		+directions()
 		+section({

@@ -1,0 +1,38 @@
+mixin infographic
+	-
+		const items = [
+			{
+				title: 'Выигранных грантов',
+				number: '12500',
+			},
+			{
+				title: 'Участников ежегодно',
+				number: '3500',
+			},
+			{
+				title: 'Выигранных грантов',
+				number: '12500',
+			},
+			{
+				title: 'Участников ежегодно',
+				number: '3500',
+			},
+			{
+				title: 'Выигранных грантов',
+				number: '12500',
+			},
+			{
+				title: 'Участников ежегодно',
+				number: '3500',
+			},
+		];
+
+	.infographic(x-data="infographic")
+		.swiper(x-ref="container")
+			.swiper-wrapper
+				each item in items
+					.swiper-slide.infographic__item(x-data="scoreAnimated")
+						.infographic__title= item.title
+						.infographic__content
+							.infographic__number(x-ref="number")= item.number
+							.infographic__plus(x-ref="plus") +
