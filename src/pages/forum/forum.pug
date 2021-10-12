@@ -12,6 +12,7 @@ include ../../components/stages/stages
 include ../../components/docs/docs
 include ../../components/gallery/gallery
 include ../../components/reviews/reviews
+include ../../components/partners/partners
 
 include ../../components/subsection-section/subsection-section
 
@@ -59,15 +60,15 @@ block app
 							content: 'Новости',
 						},
 						{
-							url: '#',
+							url: '#partners',
 							content: 'Партнеры',
 						},
 						{
-							url: '#',
+							url: '#team',
 							content: 'Наши люди',
 						},
 						{
-							url: '#',
+							url: '#contacts',
 							content: 'Контактная информация',
 						},
 					]
@@ -248,5 +249,21 @@ block app
 						title: 'Отзывы',
 					})
 						+reviews()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'partners',
+						title: 'Партнеры',
+					})
+						+content-edited()
+							h3 Генеральные партнеры
+
+						+content-edited()
+							h3 Информационные партнеры
+						+partners()
+
+						+content-edited()
+							h3 Организационные партнеры
+						+partners()
 
 	+footer()

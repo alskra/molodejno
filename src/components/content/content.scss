@@ -29,7 +29,8 @@
 		}
 	}
 
-	> .subsection:not(:first-child) {
+	> .subsection:not(:first-child),
+	> .subsection-section:not(:first-child) {
 		margin-top: var(--content-edited-heading-indent-top);
 	}
 
