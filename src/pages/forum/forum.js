@@ -15,6 +15,7 @@ import '../../components/docs/docs';
 import '../../components/gallery/gallery';
 import '../../components/reviews/reviews';
 import '../../components/partners/partners';
+import '../../components/cards/cards';
 
 import '../../components/subsection-section/subsection-section';
 

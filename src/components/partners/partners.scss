@@ -98,7 +98,7 @@
 .partners__title {
 	font-weight: 400;
 	font-size: 14rem;
-	line-height: 1.25;
+	line-height: $line-height;
 	color: $color;
 
 	@include media-breakpoint-down(lg) {

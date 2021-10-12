@@ -13,6 +13,7 @@ include ../../components/docs/docs
 include ../../components/gallery/gallery
 include ../../components/reviews/reviews
 include ../../components/partners/partners
+include ../../components/cards/cards
 
 include ../../components/subsection-section/subsection-section
 
@@ -64,7 +65,7 @@ block app
 							content: 'Партнеры',
 						},
 						{
-							url: '#team',
+							url: '#persons',
 							content: 'Наши люди',
 						},
 						{
@@ -266,5 +267,21 @@ block app
 						+content-edited()
 							h3 Организационные партнеры
 						+partners()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'persons',
+						title: 'Наши люди',
+					})
+						+cards({
+							type: 'persons',
+							slice: 6,
+						})
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'contacts',
+						title: 'Контакты',
+					})
 
 	+footer()
