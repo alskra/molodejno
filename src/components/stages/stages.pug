@@ -27,7 +27,7 @@ mixin stages()
 			article.stages__item
 				header.stages__header
 					+date(stage.dateStart, stage.dateEnd, true)
-				.stages__main
-					+content-edited().stages__content
-						h3.h5!= stage.title
-						!= stage.content
+
+				+content-edited().stages__main
+					h3.h5!= stage.title
+					div!= stage.content

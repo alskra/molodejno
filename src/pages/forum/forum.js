@@ -9,6 +9,7 @@ import '../../components/tags/tags';
 import '../../components/infographic/infographic';
 import '../../components/quote/quote';
 import '../../components/gallery-slider/gallery-slider';
+import '../../components/teasers/teasers';
 import '../../components/stages/stages';
 import '../../components/docs/docs';
 import '../../components/gallery/gallery';

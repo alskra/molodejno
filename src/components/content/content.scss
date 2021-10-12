@@ -7,7 +7,7 @@
 		margin-bottom: var(--content-edited-block-indent);
 	}
 
-	.content-edited:not(:first-child) {
+	> .content-edited:not(:first-child) {
 		// stylelint-disable
 		> h1, > h2, > h3, > h4, > h5, > h6,
 		> .h1, > .h2, > .h3, > .h4, > .h5, > .h6 {
@@ -18,11 +18,11 @@
 		}
 	}
 
-	.subsection:not(:first-child) {
+	> .subsection:not(:first-child) {
 		margin-top: var(--content-edited-heading-indent-top);
 	}
 
-	.quote {
+	> .quote {
 		max-width: none;
 	}
 }

@@ -7,6 +7,7 @@ include ../../components/tags/tags
 include ../../components/infographic/infographic
 include ../../components/quote/quote
 include ../../components/gallery-slider/gallery-slider
+include ../../components/teasers/teasers
 include ../../components/stages/stages
 include ../../components/docs/docs
 include ../../components/gallery/gallery
@@ -130,8 +131,8 @@ block app
 						anchor: 'about',
 						title: 'О форуме'
 					})
-						+infographic
-						+content-edited
+						+infographic()
+						+content-edited()
 							+img-2x()(
 								src="../../images/content/article/img-1.jpg"
 								width="100%"
@@ -154,7 +155,7 @@ block app
 								Сегодня Дом молодёжи&nbsp;&mdash; #[br]это команда профессионалов, которые отвечают
 								за&nbsp;основные направления современной молодёжной политики.
 
-						+content-edited
+						+content-edited()
 							p.
 								Это информационно-познавательный портал для молодёжи Новгородской области,
 								занимающийся реализацией молодёжной политики во всех актуальных и действующих
@@ -163,7 +164,7 @@ block app
 								реализацией молодёжной политики во всех актуальных и действующих направлениях данной
 								отрасли.
 
-						+content-edited
+						+content-edited()
 							h3 HR форум поднимает вопросы
 							ul
 								li.
@@ -184,7 +185,7 @@ block app
 							'../../images/content/gallery-slider/img-2.jpg',
 						])
 
-						+content-edited
+						+content-edited()
 							h4 HR форум поднимает вопросы
 							p.
 								Это информационно-познавательный портал для молодёжи Новгородской области,
@@ -209,6 +210,13 @@ block app
 								реализацией молодёжной политики во всех актуальных и действующих направлениях данной
 								отрасли.
 								Это информационно-познавательный портал для молодёжи.
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'questions',
+						title: 'Основые вопросы форума'
+					})
+						+teasers()
 
 					+subsection({
 						offsetColumn: 'all',

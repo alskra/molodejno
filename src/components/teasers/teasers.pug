@@ -1,0 +1,39 @@
+mixin teasers()
+	-
+		let teasers = [
+			{
+				url: '',
+				title: 'Проектный маршрут в две строки',
+				content: `В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской
+		дивизии народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».`,
+				image: '../../images/content/tea_sers/img-1.jpg',
+			},
+			{
+				url: '',
+				title: 'Заголовок тизера',
+				content: `В первый день участники познакомятся с виртуальной экспозицией.`,
+				image: '../../images/content/tea_sers/img-2.jpg',
+			},
+			{
+				url: '',
+				title: 'Проектный маршрут в две строки',
+				content: `Завершающим этапом похода станет семинар «Исследовательская деятельность в поисковом движении».
+		Участники познакомятся с алгоритмом отработки заявок Всероссийского проекта «Судьба солдата» онлайн». А также
+		примут участие в образовательном интенсиве по освоению методики защиты исследовательских работ.`,
+				image: '../../images/content/tea_sers/img-3.jpg',
+			},
+		];
+
+	.teasers&attributes(attributes)
+		each teaser in teasers
+			a.teasers__item(href=teaser.url)
+				.teasers__image
+					+img-2x().teasers__image-el(
+						src=teaser.image
+						alt!=teaser.title
+					)
+
+				+content-edited().teasers__main
+					h3.h5!= teaser.title
+					div!= teaser.content
+

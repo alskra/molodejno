@@ -11,11 +11,7 @@
 }
 
 :root {
-	--subsection__header-margin-bottom: 30rem;
-
-	@include media-breakpoint-down(lg) {
-		--subsection__header-margin-bottom: 20rem;
-	}
+	--subsection__header-margin-bottom: var(--content-edited-heading-indent-bottom);
 }
 
 .subsection {
