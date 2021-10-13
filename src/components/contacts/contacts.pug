@@ -1,0 +1,53 @@
+include ../soc-network/soc-network
+
+mixin contacts()
+	.contacts&attributes(attributes)
+		section.contacts__item
+			.contacts__body
+				+content-edited().contacts__main
+					h3.h5 Общие контакты
+					table
+						tbody
+							tr
+								td Телефон:
+								td #[a(href="tel:+74951234567") +7 (495) 123-45-67]
+							tr
+								td Адрес:
+								td г. Великий Новгород, ул. Черняховского, 2
+							tr
+								td E-mail:
+								td #[a(href="mailto:info@u.university") info@u.university]
+							tr
+								td Сайт:
+								td #[a(href="www.site.ru") www.site.ru]
+
+				+soc-network()
+
+			.contacts__map
+
+		section.contacts__item
+			.contacts__body
+				+content-edited().contacts__main
+					h3.h5 Министерство спорта и&nbsp;молодёжной политики
+					table
+						tbody
+							tr
+								td Телефон:
+								td
+									| #[a(href="tel:+78000000000") +7 (800) 000-00-00]
+									| #[a(href="tel:+74951234567") +7 (495) 123-45-67]
+							tr
+								td Адрес:
+								td г. Великий Новгород, ул. Черняховского-Завальная-Кольцевая
+							tr
+								td E-mail:
+								td
+									| #[a(href="mailto:info@u.university") info@u.university]
+									| #[a(href="mailto:info@u.university") info@u.university]
+							tr
+								td Сайт:
+								td #[a(href="www.site.ru") www.site.ru]
+
+				+soc-network()
+
+			.contacts__map

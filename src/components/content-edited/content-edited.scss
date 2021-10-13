@@ -109,7 +109,7 @@
 		font-size: var(--content-edited-h6-font-size);
 	}
 
-	a[href] {
+	a[href]:not([href^="tel:"]) {
 		color: $color-primary;
 		transition: color;
 		transition-duration: $transition-duration;
@@ -143,10 +143,39 @@
 		}
 	}
 
-	th,
-	td {
-		vertical-align: baseline;
-		padding: 0;
+	table {
+		display: block;
+		overflow: auto;
+
+		tbody {
+			display: table;
+			border-collapse: collapse;
+		}
+
+		tr:first-child :is(th, td) {
+			padding-top: 0;
+		}
+
+		tr:last-child :is(th, td) {
+			padding-bottom: 0;
+		}
+
+		:is(th, td) {
+			vertical-align: baseline;
+			padding: calc(0.5 * var(--content-edited-indent)) 15rem;
+		}
+
+		:is(th, td):first-child {
+			padding-left: 0;
+		}
+
+		:is(th, td):last-child {
+			padding-right: 0;
+		}
+
+		td:first-child {
+			color: $color-gray;
+		}
 	}
 
 	img {
