@@ -98,33 +98,24 @@
 	}
 }
 
-.card-details__content-title {
-	font-family: $heading-font-family;
-	font-weight: $heading-font-weight;
-	font-size: 30rem;
-	line-height: $heading-line-height;
-	color: $color-primary;
-
-	&:not(:last-child) {
-		margin-bottom: 15rem;
-	}
-
-	@include media-breakpoint-down(lg) {
-		font-size: 24rem;
-
-		&:not(:last-child) {
-			margin-bottom: 10rem;
-		}
-	}
-}
-
 .card-details__content-item {
+	--content-edited-heading-indent-bottom: 15rem;
+
+	table:not(:first-child) {
+		margin-top: var(--content-edited-indent);
+	}
+
+	table:not(:last-child) {
+		margin-bottom: var(--content-edited-indent);
+	}
+
 	&:not(:last-child) {
 		margin-bottom: 20rem;
 	}
 
 	@include media-breakpoint-down(lg) {
 		--content-edited-font-size: 14rem;
+		--content-edited-heading-indent-bottom: 10rem;
 
 		&:not(:last-child) {
 			margin-bottom: 15rem;
