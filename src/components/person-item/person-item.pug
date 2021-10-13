@@ -2,7 +2,7 @@ mixin person-item({title, image, name, position} = {})
 	article.person-item&attributes(attributes)
 		h3.person-item__title!= title
 		.person-item__image
-			+img-2x().person-item__image(
+			+img-2x().person-item__image-el(
 				src=image
 				alt!=name
 			)
