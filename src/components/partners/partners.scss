@@ -21,6 +21,13 @@
 	display: flex;
 	flex-flow: column;
 	border-bottom: 1px solid $color;
+	color: $color;
+	transition: color;
+	transition-duration: $transition-duration;
+
+	@include hover {
+		color: $color-primary;
+	}
 
 	&--general {
 		border: 1px solid $color;
@@ -99,7 +106,6 @@
 	font-weight: 400;
 	font-size: 14rem;
 	line-height: $line-height;
-	color: $color;
 
 	@include media-breakpoint-down(lg) {
 		font-size: 11rem;

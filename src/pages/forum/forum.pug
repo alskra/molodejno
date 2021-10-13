@@ -227,13 +227,11 @@ block app
 						anchor: 'program',
 						title: 'Программа форума'
 					})
-						+content-edited()
-							h3 Программа
-						+stages()
+						+subsection-section({title: 'Программа'})
+							+stages()
 
-						+content-edited()
-							h3 Документы
-						+docs()
+						+subsection-section({title: 'Документы'})
+							+docs()
 
 					+subsection({
 						offsetColumn: 'all',
@@ -256,17 +254,14 @@ block app
 						anchor: 'partners',
 						title: 'Партнеры',
 					})
-						+content-edited()
-							h3 Генеральные партнеры
-						+partners(true)
+						+subsection-section({title: 'Генеральные партнеры'})
+							+partners(true)
 
-						+content-edited()
-							h3 Информационные партнеры
-						+partners()
+						+subsection-section({title: 'Информационные партнеры'})
+							+partners()
 
-						+content-edited()
-							h3 Организационные партнеры
-						+partners()
+						+subsection-section({title: 'Организационные партнеры'})
+							+partners()
 
 					+subsection({
 						offsetColumn: 'all',

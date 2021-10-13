@@ -7,7 +7,18 @@
 .subsection-section__title {
 	font-family: $heading-font-family;
 	font-weight: $heading-font-weight;
-	font-size: var(--content-edited-h3-font-size);
 	line-height: $heading-line-height;
 	color: $color-primary;
+
+	&--h3 {
+		font-size: var(--content-edited-h3-font-size);
+	}
+
+	&--h4 {
+		font-size: var(--content-edited-h4-font-size);
+	}
+
+	&--h5 {
+		font-size: var(--content-edited-h5-font-size);
+	}
 }
