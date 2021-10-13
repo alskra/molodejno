@@ -23,7 +23,7 @@ mixin contacts()
 
 				+soc-network()
 
-			.contacts__map
+			.contacts__map(x-data="ymaps()")
 
 		section.contacts__item
 			.contacts__body
@@ -50,4 +50,4 @@ mixin contacts()
 
 				+soc-network()
 
-			.contacts__map
+			.contacts__map(x-data="ymaps([53.751574, 37.573856])")
