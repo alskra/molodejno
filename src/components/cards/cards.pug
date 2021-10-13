@@ -1,4 +1,5 @@
 include ../card-item/card-item
+include ../person-item/person-item
 include ../pagination/pagination
 
 mixin cards({type, slice, tags = true, columns = 3} = {})
@@ -21,12 +22,17 @@ mixin cards({type, slice, tags = true, columns = 3} = {})
 						x-bind:class="{'swiper-wrapper': !$store.isDesktop}"
 					)
 						each item in items
-							+card-item(item).cards__item(
-								class=`card-item--style-group-${columns * 2}`
-								x-bind:class="{'swiper-slide': !$store.isDesktop}"
-							)
+							if type !== 'persons'
+								+card-item(item).cards__item(
+									class=`card-item--style-group-${columns * 2}`
+									x-bind:class="{'swiper-slide': !$store.isDesktop}"
+								)
+							else
+								+person-item(item).cards__item(
+									x-bind:class="{'swiper-slide': !$store.isDesktop}"
+								)
 
-			if type === 'recipients'
+			if type === 'recipients' || type === 'persons'
 				+pagination({multipage: false}).hidden-lg-down(x-data=`pagination('ajax/${type}-slice.html', gridEl)`)
 		else
 			.cards__grid(class=`cards__grid--columns-${columns}`)

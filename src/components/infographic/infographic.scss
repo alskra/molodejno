@@ -1,43 +1,25 @@
-.infographics {
-	overflow: hidden;
-
-	&:not(:last-child) {
-		margin-bottom: 100rem;
-	}
-
-	@include media-breakpoint-down(lg) {
-		&:not(:last-child) {
-			margin-bottom: 68rem;
-		}
-	}
-}
-
-.infographics__items {
+.infographic {
 	overflow: hidden;
 	margin-right: calc(-1 * var(--container-content-offset-x));
-	margin-left: -61rem;
-	padding-left: 61rem;
+	margin-left: -60rem;
+	padding-left: 60rem;
 
 	.swiper {
 		overflow: visible;
-		margin: 0 -15rem;
+		margin: 0 calc(-0.5 * var(--gap));
 	}
 
 	@include media-breakpoint-down(lg) {
-		margin-left: calc(-1 * var(--container-gap));
-		padding-left: var(--container-gap);
-
-		.swiper-container {
-			margin: 0 -10rem;
-		}
+		margin-left: calc(-1 * var(--container-content-offset-x));
+		padding-left: var(--container-content-offset-x);
 	}
 }
 
-.infographics__item {
+.infographic__item {
 	position: relative;
 	display: flex;
 	flex-flow: column;
-	margin: 0 15rem;
+	margin: 0 calc(0.5 * var(--gap));
 	border-bottom: 1px solid $heading-color;
 	padding: 51rem 0 12rem;
 	width: 445rem;
@@ -47,7 +29,7 @@
 	&::before {
 		content: "";
 		position: absolute;
-		left: -61rem;
+		left: -60rem;
 		top: 0;
 		z-index: -1;
 		border: div(134 - 52, 2) * 1rem solid $color-white;
@@ -57,7 +39,6 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		margin: 0 10rem;
 		padding: 35rem 0 4rem;
 		width: 265rem;
 
@@ -70,7 +51,7 @@
 	}
 }
 
-.infographics__title {
+.infographic__title {
 	margin-bottom: -18rem;
 	font-family: $heading-font-family;
 	font-weight: 500;
@@ -84,13 +65,13 @@
 	}
 }
 
-.infographics__content {
+.infographic__content {
 	display: flex;
 	align-items: center;
 	margin-top: auto;
 }
 
-.infographics__number {
+.infographic__number {
 	font-family: $heading-font-family;
 	font-weight: 700;
 	font-size: 90rem;
@@ -102,7 +83,7 @@
 	}
 }
 
-.infographics__plus {
+.infographic__plus {
 	margin-left: 12rem;
 	font-family: $font-family-gilroy;
 	font-weight: 600;
@@ -115,15 +96,5 @@
 	@include media-breakpoint-down(lg) {
 		margin-left: 5rem;
 		font-size: 60rem;
-	}
-}
-
-.infographics__image {
-	display: block;
-	margin-top: 46rem;
-	width: 100%;
-
-	@include media-breakpoint-down(lg) {
-		margin-top: 20rem;
 	}
 }

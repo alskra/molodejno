@@ -94,10 +94,10 @@ block app
 											td до #[span(x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&nbsp;&#8381;'") 15000000]
 										tr
 											td Организатор
-											td Ресурсный молодёжный центр
-										tr
 											td
-											td: a(href="mailto:site@info.ru") site@info.ru
+												| Ресурсный молодёжный центр
+												br
+												a(href="mailto:site@info.ru") site@info.ru
 
 							section.card-details__content-column
 								h2.card-details__content-title Регистрация

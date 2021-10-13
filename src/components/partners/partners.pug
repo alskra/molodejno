@@ -1,0 +1,70 @@
+mixin partners(general = false)
+	-
+		let partners = [
+			{
+				url: '',
+				title: 'Jaguar',
+				image: '../../images/content/partners/img-1.png',
+			},
+			{
+				url: '',
+				title: 'Министерство образования РФ',
+				image: '../../images/content/partners/img-2.png',
+			},
+			{
+				url: '',
+				title: 'Информационное агентство ТАСС',
+				image: '../../images/content/partners/img-3.png',
+			},
+			{
+				url: '',
+				title: 'Риа Новости',
+				image: '../../images/content/partners/img-4.png',
+			},
+			{
+				url: '',
+				title: 'Информационное агентство ТАСС',
+				image: '../../images/content/partners/img-5.png',
+			},
+			{
+				url: '',
+				title: 'Агентство новостей Доступ',
+				image: '../../images/content/partners/img-6.png',
+			},
+			{
+				url: '',
+				title: 'Информационное агентство ТАСС',
+				image: '../../images/content/partners/img-3.png',
+			},
+			{
+				url: '',
+				title: 'Риа Новости',
+				image: '../../images/content/partners/img-4.png',
+			},
+			{
+				url: '',
+				title: 'Информационное агентство ТАСС',
+				image: '../../images/content/partners/img-5.png',
+			},
+		];
+
+		if (general) {
+			partners = partners.slice(0, 2);
+		} else {
+			partners = partners.slice(2);
+		}
+
+	.partners(class={'partners--general': general})&attributes(attributes)
+		each partner in partners
+			a.partners__item(
+				class={'partners__item--general': general}
+				href=partner.url
+				target="_blank"
+			)
+				.partners__image
+					+img-2x().partners__image-el(
+						src=partner.image
+						alt!=partner.title
+					)
+				.partners__footer
+					h4.partners__title!= partner.title

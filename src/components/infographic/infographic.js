@@ -2,9 +2,10 @@ import Alpine from 'alpinejs';
 import 'swiper/css/bundle';
 import Swiper from 'swiper';
 import '../score-animated/score-animated';
-import './infographics.scss';
+import './infographic.scss';
 
-Alpine.data('infographics', () => ({
+Alpine.data('infographic', () => ({
+	swiper: undefined,
 	init() {
 		this.swiper = new Swiper(this.$refs.container, {
 			slidesPerView: 'auto',

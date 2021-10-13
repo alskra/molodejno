@@ -1,0 +1,57 @@
+.teasers {
+	display: grid;
+	row-gap: var(--gap-xl);
+
+	@include hover {
+		.teasers__main .h5 {
+			color: $color-primary-hover;
+		}
+	}
+}
+
+.teasers__item {
+	display: grid;
+	column-gap: var(--gap);
+	align-items: start;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.teasers__image {
+	position: relative;
+	overflow: hidden;
+	border-radius: 50% 0 0 50%;
+
+	&::before {
+		content: "";
+		display: block;
+		padding-top: 100%;
+	}
+}
+
+.teasers__image-el {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.teasers__main {
+	--content-edited-heading-indent-bottom: 15rem;
+
+	grid-column: 2 / 4;
+	border-top: 1px solid $color;
+	padding-top: 40rem;
+
+	.h5 {
+		transition: color;
+		transition-duration: $transition-duration;
+	}
+
+	@include media-breakpoint-down(lg) {
+		--content-edited-heading-indent-bottom: 10rem;
+
+		padding-top: 15rem;
+	}
+}

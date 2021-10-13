@@ -1,6 +1,6 @@
 include ../promo/promo
 
-mixin subsection({offsetColumn, anchor, type, extType, title})
+mixin subsection({offsetColumn, anchor, type, extType, title} = {})
 	section.subsection(
 		class={
 			[`subsection--offset-column-${offsetColumn}`]: offsetColumn,

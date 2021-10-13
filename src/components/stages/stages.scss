@@ -20,19 +20,13 @@
 }
 
 .stages__main {
-	.content-edited .h5 {
-		color: $color-primary;
-	}
+	--content-edited-heading-indent-bottom: 15rem;
 
 	@include media-breakpoint-up(lg) {
 		grid-column: 2 / 4;
 	}
 
 	@include media-breakpoint-down(lg) {
-		.content-edited .h5 {
-			&:not(:last-child) {
-				margin-bottom: 0.25em;
-			}
-		}
+		--content-edited-heading-indent-bottom: 10rem;
 	}
 }

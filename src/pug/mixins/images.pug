@@ -1,11 +1,11 @@
-mixin img-2x()
+mixin img-2x
 	img(
 		src!=attributes.src
 		srcset!=`${attributes.src.replace(/\.\w+$/, '@2x$&')} 2x`
 		alt=""
 	)&attributes(attributes)
 
-mixin picture-webp()
+mixin picture-webp
 	-
 		let {src, srcset, sizes, alt = ''} = attributes;
 

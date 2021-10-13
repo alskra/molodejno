@@ -1,6 +1,7 @@
 extends ../../pug/base
 
 include ../../components/card-item/card-item
+include ../../components/person-item/person-item
 
 append variables
 	-
@@ -17,10 +18,15 @@ block document
 
 	if slice
 		each item in items
-			+card-item(item).cards__item(
-				class=`card-item--style-group-${columns * 2}`
-				x-bind:class="{'swiper-slide': !$store.isDesktop}"
-			)
+			if type !== 'persons'
+				+card-item(item).cards__item(
+					class=`card-item--style-group-${columns * 2}`
+					x-bind:class="{'swiper-slide': !$store.isDesktop}"
+				)
+			else
+				+person-item(item).cards__item(
+					x-bind:class="{'swiper-slide': !$store.isDesktop}"
+				)
 	else
 		each item in items
 			+card-item(item).cards__item(class=`card-item--style-group-${columns * 2}`)

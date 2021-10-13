@@ -250,6 +250,7 @@
 }
 
 .header__soc-network {
+	column-gap: 60rem;
 	justify-self: end;
 
 	@include media-breakpoint-down(lg) {

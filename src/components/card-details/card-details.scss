@@ -43,7 +43,7 @@
 }
 
 .card-details__info-column {
-	--padding-y: 14rem;
+	--padding-y: 15rem;
 
 	position: relative;
 	display: grid;
@@ -51,6 +51,7 @@
 	border-top: 1px solid $color;
 	border-bottom: 1px solid $color;
 	padding: var(--padding-y) 0;
+	row-gap: 10rem;
 
 	@include media-breakpoint-up(lg) {
 		&:nth-child(2n + 3),
@@ -79,6 +80,8 @@
 	@include media-breakpoint-down(lg) {
 		--padding-y: 10rem;
 
+		row-gap: 5rem;
+
 		&:nth-child(n + 2) {
 			border-top: 0;
 		}
@@ -88,7 +91,7 @@
 .card-details__content {
 	display: grid;
 	color: $color;
-	gap: 20rem 60rem;
+	gap: 20rem calc(2 * var(--gap));
 
 	@include media-breakpoint-up(lg) {
 		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
@@ -119,13 +122,12 @@
 	table {
 		display: flex;
 		flex-flow: column;
-		word-break: break-word;
 	}
 
 	table tbody {
 		display: table;
-		margin: em(-10);
-		border-spacing: em(10);
+		margin: calc(-1 * var(--content-edited-indent)) calc(-1 * var(--gap));
+		border-spacing: var(--gap) var(--content-edited-indent);
 	}
 
 	table td {

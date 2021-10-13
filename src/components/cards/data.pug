@@ -327,6 +327,50 @@
 					],
 				},
 			],
+			persons: [
+				{
+					url: '',
+					title: 'Менеджер по рекламе',
+					image: '../../images/content/persons/img-1.jpg',
+					name: 'Константин Константинопольский',
+					position: 'Обладатель премии «Золотой клик» и «Серебряная паутина 2016» в номинации «Лучший сайт»',
+				},
+				{
+					url: '',
+					title: 'Заместитель директора по социальным вопросам',
+					image: '../../images/content/persons/img-2.jpg',
+					name: 'Олег Иванов',
+					position: 'Руководитель',
+				},
+				{
+					url: '',
+					title: 'Менеджер',
+					image: '../../images/content/persons/img-3.jpg',
+					name: 'Константин Константинопольский',
+					position: 'Куратор',
+				},
+				{
+					url: '',
+					title: 'Менеджер по рекламе',
+					image: '../../images/content/persons/img-1.jpg',
+					name: 'Константин Константинопольский',
+					position: 'Обладатель премии «Золотой клик» и «Серебряная паутина 2016» в номинации «Лучший сайт»',
+				},
+				{
+					url: '',
+					title: 'Заместитель директора по социальным вопросам',
+					image: '../../images/content/persons/img-2.jpg',
+					name: 'Олег Иванов',
+					position: 'Руководитель',
+				},
+				{
+					url: '',
+					title: 'Менеджер',
+					image: '../../images/content/persons/img-3.jpg',
+					name: 'Константин Константинопольский',
+					position: 'Куратор',
+				},
+			],
 		};
 
 		switch (type) {
@@ -339,6 +383,9 @@
 			case 'playbill':
 			case 'news':
 				items = items.playbill;
+				break;
+			case 'persons':
+				items = items.persons;
 				break;
 		}
 

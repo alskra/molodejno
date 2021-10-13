@@ -31,6 +31,7 @@ import '../components/content/content';
 import '../components/content-edited/content-edited';
 import '../components/line-clamp/line-clamp';
 import '../components/share/share';
+import '../components/video/video';
 
 window.Alpine = Alpine;
 
