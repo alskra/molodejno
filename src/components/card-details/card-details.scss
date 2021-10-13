@@ -119,23 +119,6 @@
 }
 
 .card-details__content-item {
-	table {
-		display: flex;
-		flex-flow: column;
-	}
-
-	table tbody {
-		display: table;
-		margin: calc(-1 * var(--content-edited-indent)) calc(-1 * var(--gap));
-		border-spacing: var(--gap) var(--content-edited-indent);
-	}
-
-	table td {
-		&:first-child {
-			color: $color-gray;
-		}
-	}
-
 	&:not(:last-child) {
 		margin-bottom: 20rem;
 	}

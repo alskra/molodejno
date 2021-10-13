@@ -1,6 +1,6 @@
 import Alpine from 'alpinejs';
 
-Alpine.data('ymaps', (center = [55.751574, 37.573856]) => ({
+Alpine.data('ymaps', ({center = [55.751574, 37.573856], hintContent} = {}) => ({
 	init() {
 		if (!document.getElementById('ymaps-api')) {
 			const script = document.createElement('script');
@@ -26,8 +26,8 @@ Alpine.data('ymaps', (center = [55.751574, 37.573856]) => ({
 				});
 
 				const myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-					hintContent: 'Собственный значок метки',
-					balloonContent: 'Это красивая метка',
+					hintContent,
+					// balloonContent: 'Это красивая метка',
 				}, {
 					// Опции.
 					// Необходимо указать данный тип макета.
@@ -42,6 +42,7 @@ Alpine.data('ymaps', (center = [55.751574, 37.573856]) => ({
 				});
 
 				myMap.geoObjects.add(myPlacemark);
+				myMap.behaviors.disable('scrollZoom');
 			});
 			/* eslint-enable */
 		});

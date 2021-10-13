@@ -35,6 +35,7 @@ mixin contacts()
 								td Телефон:
 								td
 									| #[a(href="tel:+78000000000") +7 (800) 000-00-00]
+									br
 									| #[a(href="tel:+74951234567") +7 (495) 123-45-67]
 							tr
 								td Адрес:
@@ -43,6 +44,7 @@ mixin contacts()
 								td E-mail:
 								td
 									| #[a(href="mailto:info@u.university") info@u.university]
+									br
 									| #[a(href="mailto:info@u.university") info@u.university]
 							tr
 								td Сайт:
@@ -50,4 +52,4 @@ mixin contacts()
 
 				+soc-network()
 
-			.contacts__map(x-data="ymaps([53.751574, 37.573856])")
+			.contacts__map(x-data="ymaps({center: [53.751574, 37.573856], hintContent: 'г. Великий Новгород, ул. Черняховского-Завальная-Кольцевая'})")
