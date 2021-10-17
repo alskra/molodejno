@@ -180,5 +180,15 @@
 
 	img {
 		display: block;
+		width: 100%;
+		max-width: none;
+	}
+
+	@include media-breakpoint-down(lg) {
+		img {
+			margin-right: calc(-1 * var(--container-content-offset-x));
+			margin-left: calc(-1 * var(--container-content-offset-x));
+			width: var(--container-width);
+		}
 	}
 }

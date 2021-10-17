@@ -318,7 +318,7 @@
 													<icon-svg name="arrow-right"></icon-svg>
 												</a>
 											</nav>
-											<button class="button-load hidden-lg-up" type="button" x-init x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content" x-text="'Загрузить еще'"></span>
+											<button class="button-load hidden-lg-up" type="button" x-init x-bind:class="{'is-loading': isLoading}" x-bind:disabled="isLoading" x-on:click="load"><span class="button-load__content" x-text="'Загрузить еще'"></span>
 												<icon-svg class="button-load__icon" name="plus"></icon-svg>
 											</button>
 										</div>
