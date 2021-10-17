@@ -173,7 +173,7 @@
 															</div>
 														</div>
 													</div>
-													<div class="content-edited"><img src="images/content/article/img-1.jpg" srcset="images/content/article/img-1@2x.jpg 2x" alt="" width="100%">
+													<div class="content-edited"><img src="images/content/article/img-1.jpg" srcset="images/content/article/img-1@2x.jpg 2x" alt="">
 														<p><strong>Это информационно-познавательный портал для молодёжи Новгородской области</strong>,
 															занимающийся реализацией молодёжной политики во всех актуальных и действующих
 															направлениях данной отрасли.
@@ -430,7 +430,7 @@
 														</div>
 														<div class="pagination" x-data="pagination('ajax/gallery.html', gridEl)">
 															<div class="pagination__error" x-show="error" x-text="error"></div>
-															<button class="button-load" type="button" x-init x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content" x-text="'Загрузить еще'"></span>
+															<button class="button-load" type="button" x-init x-bind:class="{'is-loading': isLoading}" x-bind:disabled="isLoading" x-on:click="load"><span class="button-load__content" x-text="'Загрузить еще'"></span>
 																<icon-svg class="button-load__icon" name="plus"></icon-svg>
 															</button>
 														</div>
@@ -712,7 +712,7 @@
 														</div>
 														<div class="pagination hidden-lg-down" x-data="pagination('ajax/persons-slice.html', gridEl)">
 															<div class="pagination__error" x-show="error" x-text="error"></div>
-															<button class="button-load" type="button" x-init x-bind:class="{'is-loading': isLoading}" x-on:click="load"><span class="button-load__content" x-text="'Загрузить еще'"></span>
+															<button class="button-load" type="button" x-init x-bind:class="{'is-loading': isLoading}" x-bind:disabled="isLoading" x-on:click="load"><span class="button-load__content" x-text="'Загрузить еще'"></span>
 																<icon-svg class="button-load__icon" name="plus"></icon-svg>
 															</button>
 														</div>
