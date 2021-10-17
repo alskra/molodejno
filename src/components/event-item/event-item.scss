@@ -82,6 +82,10 @@
 	flex: 1;
 	flex-flow: column;
 	row-gap: 10rem;
+
+	@include media-breakpoint-down(lg) {
+		row-gap: 5rem;
+	}
 }
 
 .event-item__location {
@@ -120,10 +124,6 @@
 			text-decoration: underline;
 		}
 	}
-
-	@include media-breakpoint-down(lg) {
-		display: none;
-	}
 }
 
 .event-item__date {
@@ -137,12 +137,10 @@
 
 	@include line-clamp;
 
-	flex: 0 0 100%;
-	margin: 0;
+	flex: 100%;
 	font-family: $heading-font-family;
 	font-weight: 500;
 	font-size: 24rem;
-	word-wrap: break-word;
 
 	@include media-breakpoint-down(lg) {
 		font-size: 20rem;

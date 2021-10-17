@@ -178,14 +178,14 @@
 		}
 	}
 
-	img {
+	img:not(.video__image) {
 		display: block;
 		width: 100%;
 		max-width: none;
 	}
 
 	@include media-breakpoint-down(lg) {
-		img {
+		img:not(.video__image) {
 			margin-right: calc(-1 * var(--container-content-offset-x));
 			margin-left: calc(-1 * var(--container-content-offset-x));
 			width: var(--container-width);
