@@ -20,13 +20,9 @@
 }
 
 .stages__main {
-	--content-edited-heading-indent-bottom: 15rem;
+	--content-edited-heading-indent-bottom: var(--gap-xs);
 
 	@include media-breakpoint-up(lg) {
 		grid-column: 2 / 4;
-	}
-
-	@include media-breakpoint-down(lg) {
-		--content-edited-heading-indent-bottom: 10rem;
 	}
 }
