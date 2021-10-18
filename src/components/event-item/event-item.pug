@@ -9,11 +9,13 @@ mixin event-item({url = "", title, image, date, location, tags} = {})
 			)
 		.event-item__body
 			.event-item__main
-				if location
+				if location || tags
 					.event-item__group
 						if tags
 							+tags(tags).event-item__tags
-						+location(location).event-item__location
+
+						if location
+							+location(location).event-item__location
 
 				+date(date).event-item__date
 
