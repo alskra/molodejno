@@ -58,7 +58,7 @@
 
 	@include media-breakpoint-down(lg) {
 		&--grid {
-			grid-template-columns: repeat(auto-fit, minmax(min(320rem, 100%), 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(min(322rem, 100%), 1fr));
 
 			.subsection__title {
 				grid-column: auto;
