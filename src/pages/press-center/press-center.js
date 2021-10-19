@@ -5,12 +5,12 @@ import '../../js/base';
 import '../../components/header/header';
 import '../../components/footer/footer';
 
-import '../../components/section-nav/section-nav';
-import '../../components/filters/filters';
-import '../../components/cards/cards';
+import '../../components/events/events';
+
+import '../../components/subsection/subsection';
+import '../../components/integration/integration';
 
 import '../../components/section/section';
-import '../../components/promo/promo';
 
 import '../../components/app/app';
 

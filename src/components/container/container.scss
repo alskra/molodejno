@@ -7,7 +7,7 @@
 	--container-cell-width: calc((var(--container-content-width) - 11 * var(--gap)) / 12);
 
 	@include media-breakpoint-down(lg) {
-		--container-gap: 20rem;
+		--container-gap: 19rem;
 		--container-max-width: var(--body-width);
 	}
 }

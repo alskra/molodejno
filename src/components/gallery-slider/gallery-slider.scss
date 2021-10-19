@@ -1,9 +1,5 @@
 .gallery-slider {
 	--item-gap: 1.5rem;
-
-	&:not(:last-child) {
-		margin-bottom: var(--gap-lg);
-	}
 }
 
 .gallery-slider__main {

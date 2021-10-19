@@ -3,12 +3,12 @@ extends ../../pug/base
 include ../../components/header/header
 include ../../components/footer/footer
 
-include ../../components/section-nav/section-nav
-include ../../components/filters/filters
-include ../../components/cards/cards
+include ../../components/events/events
+
+include ../../components/subsection/subsection
+include ../../components/integration/integration
 
 include ../../components/section/section
-include ../../components/promo/promo
 
 append variables
 	-
@@ -32,51 +32,31 @@ block app
 			},
 			advanced: true,
 		})
-			+container().section__grid
-				aside.section__grid-aside
-					+section-nav([
-						{
-							url: 'grants.html',
-							content: 'Гранты',
-							isActive: true,
-						},
-						{
-							url: 'recipients.html',
-							content: 'Гранты получили',
-							isActive: false,
-						},
-					])
-					+filters([
-						{
-							content: 'Все',
-							quantity: 991
-						},
-						{
-							content: 'Бизнес',
-							quantity: 132
-						},
-						{
-							content: 'Образование',
-							quantity: 53
-						},
-						{
-							content: 'HR',
-							quantity: 4
-						},
-						{
-							content: 'Производство',
-							quantity: 8
-						},
-						{
-							content: 'Творчество',
-							quantity: 76
-						},
-					])
+			+content()
+				+subsection({title: 'Новости и события'})
+					+events({
+						type: 'news',
+						slice: 1,
+						tags: false,
+					})
+					div
+						+button-arrow-text({content: "'Смотреть все'"})(
+							href="news.html"
+							x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"
+						)
 
-				.section__grid-main
-					+content()
-						+cards({type: 'grants'})
+				+integration()
 
-		+promo({type: 'grants'})
+				+subsection({title: 'СМИ о нас'})
+					+events({
+						type: 'news',
+						slice: 1,
+						tags: false,
+					})
+					div
+						+button-arrow-text({content: "'Смотреть все'"})(
+							href="news.html"
+							x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"
+						)
 
 	+footer()

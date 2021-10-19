@@ -1,36 +1,25 @@
 .content {
 	> :not(:first-child) {
-		margin-top: var(--content-edited-block-indent);
+		margin-top: var(--content-edited-block-interval);
 	}
 
 	> :not(:last-child) {
-		margin-bottom: var(--content-edited-block-indent);
+		margin-bottom: var(--content-edited-block-interval);
 	}
 
-	> .content-edited:not(:first-child) {
-		// stylelint-disable
-		> h1, > h2, > h3, > h4, > h5, > h6,
-		> .h1, > .h2, > .h3, > .h4, > .h5, > .h6 {
-		// stylelint-enable
-			&:first-child {
-				margin-top: var(--content-edited-heading-indent-top);
-			}
-		}
+	> .content-edited:not(:first-child) > :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6):first-child {
+		margin-top: var(--content-edited-heading-interval-top);
 	}
 
-	> .content-edited:not(:last-child) {
-		// stylelint-disable
-		> h1, > h2, > h3, > h4, > h5, > h6,
-		> .h1, > .h2, > .h3, > .h4, > .h5, > .h6 {
-			// stylelint-enable
-			&:last-child {
-				margin-bottom: calc(var(--content-edited-heading-indent-bottom) - var(--content-edited-block-indent));
-			}
-		}
+	> .content-edited:not(:last-child) > :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6):last-child {
+		margin-bottom: calc(var(--content-edited-heading-interval-bottom) - var(--content-edited-block-interval));
 	}
 
-	> .subsection:not(:first-child),
-	> .subsection-section:not(:first-child) {
-		margin-top: var(--content-edited-heading-indent-top);
+	> :is(.subsection, .subsection-section):not(:first-child) {
+		margin-top: var(--content-edited-heading-interval-top);
+	}
+
+	> :is(.subsection, .subsection-section):not(:last-child) {
+		margin-bottom: var(--content-edited-heading-interval-top);
 	}
 }

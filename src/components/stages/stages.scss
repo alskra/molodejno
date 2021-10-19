@@ -20,7 +20,7 @@
 }
 
 .stages__main {
-	--content-edited-heading-indent-bottom: var(--gap-xs);
+	--content-edited-heading-interval-bottom: var(--gap-xs);
 
 	@include media-breakpoint-up(lg) {
 		grid-column: 2 / 4;

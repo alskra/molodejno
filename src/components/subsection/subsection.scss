@@ -10,10 +10,6 @@
 	}
 }
 
-:root {
-	--subsection__header-margin-bottom: var(--content-edited-heading-indent-bottom);
-}
-
 .subsection {
 	position: relative;
 
@@ -44,7 +40,7 @@
 
 .subsection__header {
 	&:not(:last-child) {
-		margin-bottom: var(--subsection__header-margin-bottom);
+		margin-bottom: var(--content-edited-heading-interval-bottom);
 	}
 }
 

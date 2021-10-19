@@ -38,7 +38,7 @@
 }
 
 .teasers__main {
-	--content-edited-heading-indent-bottom: var(--gap-xs);
+	--content-edited-heading-interval-bottom: var(--gap-xs);
 
 	grid-column: 2 / 4;
 	border-top: 1px solid $color;

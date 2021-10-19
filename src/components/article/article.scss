@@ -101,7 +101,8 @@
 
 .article__grid-main {
 	.subsection {
-		margin: 0 calc(-1 * var(--container-content-offset-x));
+		margin-right: calc(-1 * var(--container-content-offset-x));
+		margin-left: calc(-1 * var(--container-content-offset-x));
 	}
 
 	@include media-breakpoint-up(lg) {
