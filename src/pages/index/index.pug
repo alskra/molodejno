@@ -68,21 +68,27 @@ block app
 									{
 										url: 'news.html',
 										title: 'Новости',
+										pages: [
+											{
+												url: 'new.html',
+												title: 'Новость',
+											},
+										],
 									},
 								],
 							},
 						];
 
-					if pages.length
-						ol
-							each page in pages
-								li
-									a(href=page.url)= page.title
-									if page.pages
-										ol
-											each subpage in page.pages
-												li
-													a(href=subpage.url)= subpage.title
+					mixin pages(pages)
+						if pages.length
+							ol
+								each page in pages
+									li
+										a(href=page.url)= page.title
+										if page.pages
+											+pages(page.pages)
+
+					+pages(pages)
 
 		section
 			+container()
