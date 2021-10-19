@@ -15,6 +15,8 @@ import Alpine from 'alpinejs';
 
 import '../components/icon-svg/icon-svg';
 import '../components/container/container';
+import '../components/content/content';
+import '../components/content-edited/content-edited';
 import '../components/heading/heading';
 import '../components/date/date';
 import '../components/location/location';
@@ -27,8 +29,6 @@ import '../components/integration/integration';
 import '../components/breadcrumbs/breadcrumbs';
 import '../components/price/price';
 import '../components/organizer/organizer';
-import '../components/content/content';
-import '../components/content-edited/content-edited';
 import '../components/line-clamp/line-clamp';
 import '../components/share/share';
 import '../components/video/video';

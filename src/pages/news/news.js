@@ -5,9 +5,9 @@ import '../../js/base';
 import '../../components/header/header';
 import '../../components/footer/footer';
 
+import '../../components/events-slider/events-slider';
 import '../../components/section-nav/section-nav';
 import '../../components/filters/filters';
-import '../../components/events-slider/events-slider';
 import '../../components/cards/cards';
 
 import '../../components/section/section';
