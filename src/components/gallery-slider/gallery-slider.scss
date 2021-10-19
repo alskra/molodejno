@@ -1,7 +1,3 @@
-.gallery-slider {
-	--item-gap: 1.5rem;
-}
-
 .gallery-slider__main {
 	overflow: hidden;
 
@@ -10,21 +6,23 @@
 	}
 
 	@include media-breakpoint-down(lg) {
+		--gap: 3rem;
+
 		margin: 0 calc(-1 * var(--container-content-offset-x));
 	}
 }
 
 .gallery-slider__main-inner {
 	overflow: visible;
-	margin: 0 calc(-1 * var(--item-gap));
+	margin: 0 calc(-0.5 * var(--gap));
 }
 
 .gallery-slider__item {
 	--height: #{cw(500, 825)};
 
 	position: relative;
-	margin: 0 var(--item-gap);
-	width: calc(100% - 2 * var(--item-gap));
+	margin: 0 calc(0.5 * var(--gap));
+	width: calc(100% - var(--gap));
 
 	&::before {
 		content: "";
@@ -35,7 +33,7 @@
 	@include media-breakpoint-down(lg) {
 		--height: #{cw(250, 340)};
 
-		width: calc(100% - 2 * var(--item-gap) - var(--container-content-offset-x));
+		width: calc(100% - var(--gap) - var(--container-content-offset-x));
 	}
 }
 

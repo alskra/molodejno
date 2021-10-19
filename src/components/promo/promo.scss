@@ -24,7 +24,7 @@
 		}
 
 		&:not(:last-child) {
-			margin-bottom: var(--subsection__header-margin-bottom);
+			margin-bottom: var(--content-edited-heading-interval-bottom);
 		}
 	}
 
