@@ -113,7 +113,7 @@
 		transition: color;
 		transition-duration: $transition-duration;
 
-		&:hover {
+		@include hover {
 			color: $color-primary-hover;
 		}
 	}

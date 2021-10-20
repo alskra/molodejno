@@ -1,15 +1,18 @@
 .price {
+	--icon-size: 25rem;
+
 	display: inline-flex;
+	column-gap: 10rem;
 	align-items: center;
 	vertical-align: top;
 	max-width: 100%;
 	font-family: $heading-font-family;
 	font-weight: 700;
 	font-size: 30rem;
-	line-height: 1.25;
+	line-height: 1;
 	white-space: nowrap;
 	color: $color;
-	gap: 10rem;
+	cursor: default;
 
 	&::before {
 		@include conic-gradient;
@@ -17,16 +20,13 @@
 		content: "";
 		flex-shrink: 0;
 		border-radius: 50%;
-		width: 25rem;
-		height: 25rem;
+		width: var(--icon-size);
+		height: var(--icon-size);
 	}
 
 	@include media-breakpoint-down(lg) {
-		font-size: 20rem;
+		--icon-size: 15rem;
 
-		&::before {
-			width: 15rem;
-			height: 15rem;
-		}
+		font-size: 20rem;
 	}
 }

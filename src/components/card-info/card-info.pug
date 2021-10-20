@@ -1,0 +1,30 @@
+include ../tags/tags
+
+mixin card-info(type)
+	.card-info&attributes(attributes)
+		case type
+			when 'new'
+				.card-info__content.card-info__content--date
+					+date('26.08.2020')
+				.card-info__content
+					h3.card-info__heading Источник
+					p Ресурсный Молодежный центр
+					p: a(href="//www.site.ru" target="_blank") www.site.ru
+			when 'recipient'
+				.card-info__content
+					h3.card-info__heading Выдано средств
+					+price(1000000)
+				.card-info__content
+					h3.card-info__heading Автор проекта
+					p Константинопольская Александра Александровна
+				.card-info__image
+					+img-2x().card-info__image-el(
+						src="../../images/content/recipients/img-1.jpg"
+						alt="Константинопольская Александра Александровна"
+					)
+
+		+tags([
+			'Образование',
+			'Мастер-классы',
+			'Культура и искусство',
+		]).card-info__tags

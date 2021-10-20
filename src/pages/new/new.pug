@@ -5,7 +5,7 @@ include ../../components/footer/footer
 
 include ../../components/gallery/gallery
 
-include ../../components/recipient-item/recipient-item
+include ../../components/card-info/card-info
 include ../../components/article-nav/article-nav
 include ../../components/gallery-slider/gallery-slider
 include ../../components/subsection/subsection
@@ -14,7 +14,7 @@ include ../../components/section/section
 
 append variables
 	-
-		title = `${title} - Грантополучатель`;
+		title = `${title} - Новость`;
 
 block app
 	+header()
@@ -23,25 +23,29 @@ block app
 		+container().app__breadcrumbs
 			+breadcrumbs([
 				{
-					url: 'recipients.html',
-					content: 'Гранты получили',
+					url: 'press-center.html',
+					content: 'Пресс-центр',
 				},
-				'Создание проектного офиса для обучения молодёжи лидерским качествам',
+				{
+					url: 'news.html',
+					content: 'Новости',
+				},
+				'Всероссийский HR-форум по подбору IT-персонала',
 			])
 
 		+section({
 			tag: 'article',
-			type: 'grants',
-			title: 'Создание проектного офиса для обучения молодёжи лидерским качествам',
+			type: 'news',
+			title: 'Всероссийский HR-форум по подбору IT-персонала',
 			advanced: true,
 			withoutImage: true,
 		})
 			+container().section__grid
 				aside.section__grid-aside
-					+recipient-item().section__recipient-item
+					+card-info('new').section__card-info
 					+article-nav({
 						primary: true,
-						backUrl: 'recipients.html',
+						backUrl: 'news.html',
 					}).section__article-nav
 
 				.section__grid-main

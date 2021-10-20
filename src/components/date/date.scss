@@ -41,6 +41,7 @@
 
 .date__day-month {
 	display: flex;
+	column-gap: var(--column-gap);
 	align-items: center;
 
 	&--start {
@@ -49,7 +50,6 @@
 
 			content: "";
 			flex-shrink: 0;
-			margin-right: var(--column-gap);
 			border-radius: 50%;
 			width: var(--icon-size);
 			height: var(--icon-size);
@@ -59,7 +59,7 @@
 	&--end {
 		&::before {
 			content: "-";
-			margin-right: var(--column-gap);
+			flex-shrink: 0;
 		}
 	}
 }

@@ -7,7 +7,7 @@ import '../../components/footer/footer';
 
 import '../../components/gallery/gallery';
 
-import '../../components/recipient-item/recipient-item';
+import '../../components/card-info/card-info';
 import '../../components/article-nav/article-nav';
 import '../../components/gallery-slider/gallery-slider';
 import '../../components/subsection/subsection';
