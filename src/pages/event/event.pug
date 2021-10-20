@@ -1,0 +1,85 @@
+extends ../../pug/base
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+include ../../components/card-info/card-info
+include ../../components/article-nav/article-nav
+include ../../components/gallery-slider/gallery-slider
+include ../../components/quote/quote
+include ../../components/cards/cards
+
+include ../../components/subsection-section/subsection-section
+include ../../components/subsection/subsection
+include ../../components/section/section
+
+append variables
+	-
+		title = `${title} - Событие`;
+
+block app
+	+header()
+
+	main.app__main
+		+container().app__breadcrumbs
+			+breadcrumbs([
+				{
+					url: 'playbill.html',
+					content: 'Афиша',
+				},
+				'Всероссийский HR форум',
+			])
+
+		+section({
+			tag: 'article',
+			type: 'playbill',
+			title: 'Всероссийский HR форум',
+			advanced: true,
+			withoutImage: true,
+		})
+			+content()
+				+container().section__grid
+					aside.section__grid-aside
+						+card-info('event').section__card-info
+						+article-nav({
+							primary: true,
+							backUrl: 'playbill.html',
+						}).section__article-nav
+
+					.section__grid-main
+						+content()
+							+gallery-slider([
+								'../../images/content/gallery-slider/img-1.jpg',
+								'../../images/content/gallery-slider/img-2.jpg',
+							])
+
+							+content-edited()
+								blockquote
+									p.
+										Портал для молодёжи занимающийся реализацией молодёжной политики во всех актуальных
+										и действующих направлениях данной отрасли
+								p.
+									Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+									молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+									Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+									молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+									Это информационно-познавательный портал для молодёжи.
+								p.
+									Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+									и действующих направлениях данной отрасли.
+
+						+share()
+
+				+subsection({
+					offsetColumn: 'header',
+					type: 'related',
+					extType: 'playbill',
+					title: 'Смотрите еще',
+				})
+					+cards({
+						type: 'playbill',
+						slice: 4,
+						columns: 4,
+					})
+
+	+footer()

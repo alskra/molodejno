@@ -5,10 +5,8 @@ import '../../js/base';
 import '../../components/header/header';
 import '../../components/footer/footer';
 
-import '../../components/card-info/card-info';
-import '../../components/article-nav/article-nav';
-import '../../components/gallery-slider/gallery-slider';
-import '../../components/quote/quote';
+import '../../components/events-slider/events-slider';
+import '../../components/filters/filters';
 import '../../components/cards/cards';
 
 import '../../components/subsection-section/subsection-section';

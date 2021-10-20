@@ -12,12 +12,16 @@
 	flex: 1;
 	padding-bottom: var(--app__main-gap-bottom);
 
-	.promo:last-child {
-		margin-top: var(--app__main-gap-bottom);
+	:is(.subsection--related, .subsection--reviews):last-child {
 		margin-bottom: calc(-1 * var(--app__main-gap-bottom));
 	}
 
-	.subsection--reviews:last-child {
+	.integration:last-child {
+		margin-top: var(--app__main-gap-bottom);
+	}
+
+	.promo:last-child {
+		margin-top: var(--app__main-gap-bottom);
 		margin-bottom: calc(-1 * var(--app__main-gap-bottom));
 	}
 }

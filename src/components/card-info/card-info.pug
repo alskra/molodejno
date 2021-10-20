@@ -10,6 +10,16 @@ mixin card-info(type)
 					h3.card-info__heading Источник
 					p Ресурсный Молодежный центр
 					p: a(href="//www.site.ru" target="_blank") www.site.ru
+			when 'event'
+				.card-info__content.card-info__content--date
+					+date('26.08.2020')
+				.card-info__content
+					h3.card-info__heading Место проведения
+					p г. Великий Новгород,#[br] БЦ Молодость и жизнь,#[br] ул. Название улицы, 123, стр 2, корп А
+				.card-info__content
+					h3.card-info__heading Организатор
+					p Ресурсный Молодежный центр
+					p: a(href="//www.site.ru" target="_blank") www.site.ru
 			when 'recipient'
 				.card-info__content
 					h3.card-info__heading Выдано средств
