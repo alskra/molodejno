@@ -5,7 +5,6 @@ include ../../components/footer/footer
 
 include ../../components/article-nav/article-nav
 include ../../components/card-details/card-details
-include ../../components/tags/tags
 include ../../components/infographic/infographic
 include ../../components/quote/quote
 include ../../components/gallery-slider/gallery-slider
@@ -76,57 +75,7 @@ block app
 
 			.article__grid-main
 				+content()
-					+card-details().article__card-details
-						+breadcrumbs([
-							{
-								url: 'forums.html',
-								content: 'Форумы',
-							},
-							'Новгородский форум',
-						]).card-details__breadcrumbs
-
-						+heading().card-details__title Новгородский форум
-
-						.card-details__info
-							.card-details__info-column
-								+date('26.10.2020', '30.10.2020', true)
-							.card-details__info-column
-								+location('Тёсово-Нетыльский')
-								+tags(['Бизнес-мероприятия'])
-
-						.card-details__content
-							section.card-details__content-column
-								+content-edited().card-details__content-item
-									h2.h5 Участникам
-									table
-										tr
-											td Место
-											td.
-												г. Великий Новгород, БЦ&nbsp;Молодость и&nbsp;жизнь, ул. Название улицы,
-												123, стр&nbsp;2, корп&nbsp;А
-										tr
-											td Организатор
-											td
-												| Ресурсный молодёжный центр
-												br
-												a(href="mailto:site@info.ru") site@info.ru
-
-							section.card-details__content-column
-								+content-edited().card-details__content-item
-									h2.h5 Регистрация
-									p По вопросам регистрации или участия в мероприятии обращайтесь:
-									table
-										tr
-											td Телефон
-											td #[a(href="tel:+74951234567") +7 (495) 123-45-67]
-										tr
-											td E-mail
-											td: a(href="mailto:info@support.ru") info@support.ru
-								+button({
-									tag: 'a',
-									content: "'Подать заявку'",
-								}).button--height-sm.card-details__button
-
+					+card-details('forum').article__card-details
 					.article__bg
 
 					+subsection({

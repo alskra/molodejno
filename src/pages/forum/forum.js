@@ -7,7 +7,6 @@ import '../../components/footer/footer';
 
 import '../../components/article-nav/article-nav';
 import '../../components/card-details/card-details';
-import '../../components/tags/tags';
 import '../../components/infographic/infographic';
 import '../../components/quote/quote';
 import '../../components/gallery-slider/gallery-slider';

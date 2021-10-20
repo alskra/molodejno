@@ -14,22 +14,22 @@ include ../../components/section/section
 
 append variables
 	-
-		title = `${title} - Гранты`;
+		title = `${title} - Проекты`;
 
 block app
 	+header()
 
 	main.app__main
 		+container().app__breadcrumbs
-			+breadcrumbs(['Гранты'])
+			+breadcrumbs(['Проекты'])
 
 		+section({
-			type: 'grants',
-			title: 'Гранты',
+			type: 'projects',
+			title: 'Проекты',
 			desc: `<p>Портал для молодёжи занимающийся реализацией молодёжной политики во&nbsp;всех актуальных
 и&nbsp;действующих направлениях данной отрасли</p>`,
 			score: {
-				title: 'Открытых грантов',
+				title: 'Открытых проектов',
 				number: 100,
 			},
 			advanced: true,
@@ -37,13 +37,13 @@ block app
 			+container().section__grid
 				+section-nav([
 					{
-						url: 'grants.html',
-						content: 'Гранты',
+						url: 'projects.html',
+						content: 'Проекты',
 						isActive: true,
 					},
 					{
-						url: 'recipients.html',
-						content: 'Гранты получили',
+						url: 'releases.html',
+						content: 'Реализованные проекты',
 						isActive: false,
 					},
 				]).hidden-lg-up
@@ -51,13 +51,13 @@ block app
 				aside.section__grid-aside
 					+section-nav([
 						{
-							url: 'grants.html',
-							content: 'Гранты',
+							url: 'projects.html',
+							content: 'Проекты',
 							isActive: true,
 						},
 						{
-							url: 'recipients.html',
-							content: 'Гранты получили',
+							url: 'releases.html',
+							content: 'Реализованные проекты',
 							isActive: false,
 						},
 					]).hidden-lg-down
@@ -91,8 +91,8 @@ block app
 
 				.section__grid-main
 					+content()
-						+cards({type: 'grants'})
+						+cards({type: 'projects'})
 
-		+promo({type: 'grants'})
+		+promo({type: 'projects'})
 
 	+footer()
