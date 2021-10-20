@@ -181,11 +181,33 @@
 		max-width: none;
 	}
 
+	blockquote {
+		position: relative;
+		padding-left: var(--content-edited-list-indent);
+		font-family: $heading-font-family;
+		font-weight: 500;
+		font-size: em(24);
+		line-height: 1.2;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 8rem;
+			border-left: 1px solid;
+			height: min(55rem, 100%);
+		}
+	}
+
 	@include media-breakpoint-down(lg) {
 		img:not(.video__image) {
 			margin-right: calc(-1 * var(--container-content-offset-x));
 			margin-left: calc(-1 * var(--container-content-offset-x));
 			width: var(--body-width);
+		}
+
+		blockquote {
+			font-size: em(18);
 		}
 	}
 }
