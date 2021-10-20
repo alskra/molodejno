@@ -1,11 +1,11 @@
 include ../swiper-fraction/swiper-fraction
 include ../event-item/event-item
 
-mixin events-slider()
+mixin events-slider(type)
 	include ../events/data
 
 	-
-		let items = data('news', 3, true);
+		let items = data(type, 3, true);
 
 	+swiper-fraction().events-slider&attributes(attributes)
 		.events-slider__main

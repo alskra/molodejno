@@ -20,6 +20,10 @@
 	.subsection--reviews:last-child {
 		margin-bottom: calc(-1 * var(--app__main-gap-bottom));
 	}
+
+	.integration:last-child {
+		margin-top: var(--app__main-gap-bottom);
+	}
 }
 
 .app__group {

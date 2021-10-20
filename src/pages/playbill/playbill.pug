@@ -4,7 +4,6 @@ include ../../components/header/header
 include ../../components/footer/footer
 
 include ../../components/events-slider/events-slider
-include ../../components/section-nav/section-nav
 include ../../components/filters/filters
 include ../../components/cards/cards
 
@@ -14,57 +13,30 @@ include ../../components/section/section
 
 append variables
 	-
-		title = `${title} - Новости и события`;
+		title = `${title} - Афиша`;
 
 block app
 	+header()
 
 	main.app__main
 		+container().app__breadcrumbs
-			+breadcrumbs([
-				{
-					url: 'press-center.html',
-					content: 'Пресс-центр',
-				},
-				'Новости и события',
-			])
+			+breadcrumbs(['Афиша'])
 
 		+section({
-			type: 'news',
-			title: 'Новости и события',
+			type: 'playbill',
+			title: 'Афиша',
+			desc: `<p>Портал для молодёжи занимающийся реализацией молодёжной политики во&nbsp;всех актуальных
+и&nbsp;действующих направлениях данной отрасли</p>`,
+			score: {
+				title: 'Событий',
+				number: 10,
+			},
 			advanced: true,
-			withoutImage: true,
 		})
 			+container().section__grid
-				+section-nav([
-					{
-						url: 'news.html',
-						content: 'Новости и события',
-						isActive: true,
-					},
-					{
-						url: 'news.html',
-						content: 'СМИ о нас',
-						isActive: false,
-					},
-				]).hidden-lg-up
-
-				+events-slider('news').section__events-slider
+				+events-slider('playbill').section__events-slider
 
 				aside.section__grid-aside
-					+section-nav([
-						{
-							url: 'news.html',
-							content: 'Новости и события',
-							isActive: true,
-						},
-						{
-							url: 'news.html',
-							content: 'СМИ о нас',
-							isActive: false,
-						},
-					]).hidden-lg-down
-
 					+filters([
 						{
 							content: 'Все',
@@ -94,6 +66,8 @@ block app
 
 				.section__grid-main
 					+content()
-						+cards({type: 'news'})
+						+cards({type: 'playbill'})
+
+		+integration()
 
 	+footer()
