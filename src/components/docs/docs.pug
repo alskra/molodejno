@@ -28,9 +28,4 @@ mixin docs()
 		)
 			.docs__body-inner(x-bind:class="{'swiper-wrapper': !$store.isDesktop}")
 				each doc in docs
-					a.docs__item(
-						href=""
-						x-bind:class="{'swiper-slide': !$store.isDesktop}"
-					)
-						icon-svg.docs__icon(name=doc.type)
-						.docs__title= doc.title
+					+doc-item(doc).doc-item--lg.docs__item(x-bind:class="{'swiper-slide': !$store.isDesktop}")

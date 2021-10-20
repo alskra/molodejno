@@ -30,6 +30,7 @@ import '../components/price/price';
 import '../components/organizer/organizer';
 import '../components/breadcrumbs/breadcrumbs';
 import '../components/tags/tags';
+import '../components/doc-item/doc-item';
 import '../components/share/share';
 import '../components/integration/integration';
 import '../components/video/video';

@@ -1,0 +1,7 @@
+mixin doc-item({type, title} = {})
+	a.doc-item(
+		href=""
+		download
+	)&attributes(attributes)
+		icon-svg.doc-item__icon(name=type)
+		.doc-item__title!= title

@@ -34,7 +34,7 @@
 	@include media-breakpoint-down(lg) {
 		&::before {
 			top: auto;
-			margin-top: calc(-1 * var(--gap-lg));
+			margin-top: calc(-1 * var(--content-edited-block-interval));
 			height: min(350 / 360 * var(--body-width), 100%);
 		}
 	}
