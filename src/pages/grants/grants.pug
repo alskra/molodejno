@@ -6,9 +6,11 @@ include ../../components/footer/footer
 include ../../components/section-nav/section-nav
 include ../../components/filters/filters
 include ../../components/cards/cards
-
-include ../../components/section/section
 include ../../components/promo/promo
+
+include ../../components/subsection-section/subsection-section
+include ../../components/subsection/subsection
+include ../../components/section/section
 
 append variables
 	-
@@ -33,6 +35,19 @@ block app
 			advanced: true,
 		})
 			+container().section__grid
+				+section-nav([
+					{
+						url: 'news.html',
+						content: 'Новости и события',
+						isActive: true,
+					},
+					{
+						url: 'news.html',
+						content: 'СМИ о нас',
+						isActive: false,
+					},
+				]).hidden-lg-up
+
 				aside.section__grid-aside
 					+section-nav([
 						{
@@ -45,7 +60,8 @@ block app
 							content: 'Гранты получили',
 							isActive: false,
 						},
-					])
+					]).hidden-lg-down
+
 					+filters([
 						{
 							content: 'Все',

@@ -79,8 +79,8 @@
 
 .article__grid {
 	display: grid;
+	column-gap: var(--gap);
 	align-items: start;
-	gap: 30rem var(--gap);
 
 	@include media-breakpoint-up(lg) {
 		grid-template-columns: repeat(6, 1fr);
@@ -96,12 +96,14 @@
 
 	@include media-breakpoint-down(lg) {
 		display: none;
+		margin-bottom: 30rem;
 	}
 }
 
 .article__grid-main {
 	.subsection {
-		margin: 0 calc(-1 * var(--container-content-offset-x));
+		margin-right: calc(-1 * var(--container-content-offset-x));
+		margin-left: calc(-1 * var(--container-content-offset-x));
 	}
 
 	@include media-breakpoint-up(lg) {

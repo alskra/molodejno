@@ -3,13 +3,13 @@ extends ../../pug/base
 include ../../components/header/header
 include ../../components/footer/footer
 
-include ../../components/gallery/gallery
-
-include ../../components/recipient-item/recipient-item
+include ../../components/card-info/card-info
 include ../../components/article-nav/article-nav
 include ../../components/gallery-slider/gallery-slider
-include ../../components/subsection/subsection
+include ../../components/gallery/gallery
 
+include ../../components/subsection-section/subsection-section
+include ../../components/subsection/subsection
 include ../../components/section/section
 
 append variables
@@ -38,7 +38,7 @@ block app
 		})
 			+container().section__grid
 				aside.section__grid-aside
-					+recipient-item().section__recipient-item
+					+card-info('recipient').section__card-info
 					+article-nav({
 						primary: true,
 						backUrl: 'recipients.html',

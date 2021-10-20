@@ -33,6 +33,10 @@
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	gap: var(--gap);
+
+	@include media-breakpoint-down(lg) {
+		grid-template-columns: repeat(6, 1fr);
+	}
 }
 
 @include media-breakpoint-up(lg) {

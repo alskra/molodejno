@@ -56,19 +56,20 @@
 					<div class="section__main">
 						<div class="container section__grid">
 							<aside class="section__grid-aside">
-								<div class="recipient-item section__recipient-item">
-									<div class="recipient-item__content">
-										<div class="recipient-item__heading">Выдано средств</div>
+								<div class="card-info section__card-info">
+									<div class="card-info__content">
+										<h3 class="card-info__heading">Выдано средств</h3>
 										<div class="price">
 											<div class="price__content" x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&amp;nbsp;&amp;#8381;'">1000000</div>
 										</div>
 									</div>
-									<div class="recipient-item__content">
-										<div class="recipient-item__heading">Автор проекта</div>Константинопольская Александра Александровна
+									<div class="card-info__content">
+										<h3 class="card-info__heading">Автор проекта</h3>
+										<p>Константинопольская Александра Александровна</p>
 									</div>
-									<div class="recipient-item__image"><img class="recipient-item__image-el" src="images/content/recipients/img-1.jpg" srcset="images/content/recipients/img-1@2x.jpg 2x" alt="Константинопольская Александра Александровна">
+									<div class="card-info__image"><img class="card-info__image-el" src="images/content/recipients/img-1.jpg" srcset="images/content/recipients/img-1@2x.jpg 2x" alt="Константинопольская Александра Александровна">
 									</div>
-									<nav class="tags recipient-item__tags"><a class="tags__item" href="">Образование</a><a class="tags__item" href="">Мастер-классы</a><a class="tags__item" href="">Культура и искусство</a>
+									<nav class="tags card-info__tags"><a class="tags__item" href="">Образование</a><a class="tags__item" href="">Мастер-классы</a><a class="tags__item" href="">Культура и искусство</a>
 									</nav>
 								</div>
 								<nav class="article-nav section__article-nav" x-data="articleNav" x-on:popstate.window="hash = location.hash" x-on:scroll.window.debounce.100ms="update">
@@ -83,9 +84,9 @@
 										<div class="gallery-slider__main">
 											<div class="swiper gallery-slider__main-inner" x-ref="swiper">
 												<div class="swiper-wrapper">
-													<div class="swiper-slide gallery-slider__item"><img class="swiper-slide gallery-slider__image" src="images/content/gallery-slider/img-2.jpg" srcset="images/content/gallery-slider/img-2@2x.jpg 2x" alt="">
+													<div class="swiper-slide gallery-slider__item"><img class="gallery-slider__image" src="images/content/gallery-slider/img-2.jpg" srcset="images/content/gallery-slider/img-2@2x.jpg 2x" alt="">
 													</div>
-													<div class="swiper-slide gallery-slider__item"><img class="swiper-slide gallery-slider__image" src="images/content/gallery-slider/img-1.jpg" srcset="images/content/gallery-slider/img-1@2x.jpg 2x" alt="">
+													<div class="swiper-slide gallery-slider__item"><img class="gallery-slider__image" src="images/content/gallery-slider/img-1.jpg" srcset="images/content/gallery-slider/img-1@2x.jpg 2x" alt="">
 													</div>
 												</div>
 											</div>

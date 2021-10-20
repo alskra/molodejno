@@ -24,7 +24,7 @@
 		}
 
 		&:not(:last-child) {
-			margin-bottom: var(--subsection__header-margin-bottom);
+			margin-bottom: var(--content-edited-heading-interval-bottom);
 		}
 	}
 
@@ -64,7 +64,7 @@
 	gap: var(--gap);
 
 	@include media-breakpoint-down(lg) {
-		grid-template-columns: repeat(auto-fit, minmax(min(320rem, 100%), 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(322rem, 100%), 1fr));
 		row-gap: var(--padding-y);
 	}
 }

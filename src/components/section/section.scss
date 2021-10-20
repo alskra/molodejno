@@ -24,6 +24,15 @@
 				right: 18rem;
 				width: 522rem;
 			}
+
+			.section__image--news {
+				top: -45rem;
+			}
+
+			.section__image--news .section__image-el {
+				right: -8rem;
+				width: 559rem;
+			}
 		}
 
 		&--without-image {
@@ -255,8 +264,8 @@
 
 .section__grid {
 	display: grid;
+	column-gap: var(--gap);
 	align-items: start;
-	gap: 30rem var(--gap);
 
 	@include media-breakpoint-up(lg) {
 		grid-template-columns: repeat(4, 1fr);
@@ -269,11 +278,16 @@
 		top: calc(var(--header-sticky-height) + 20rem);
 		z-index: 1;
 	}
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 30rem;
+	}
 }
 
 .section__grid-main {
 	.subsection {
-		margin: 0 calc(-1 * var(--container-content-offset-x));
+		margin-right: calc(-1 * var(--container-content-offset-x));
+		margin-left: calc(-1 * var(--container-content-offset-x));
 	}
 
 	@include media-breakpoint-up(lg) {
@@ -285,7 +299,7 @@
 	}
 }
 
-.section__recipient-item {
+.section__card-info {
 	margin-bottom: 20rem;
 
 	@include media-breakpoint-down(lg) {
@@ -296,5 +310,17 @@
 .section__article-nav {
 	@include media-breakpoint-down(lg) {
 		display: none;
+	}
+}
+
+.section__events-slider {
+	margin-bottom: 100rem;
+
+	@include media-breakpoint-up(lg) {
+		grid-column: span 4;
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 30rem;
 	}
 }

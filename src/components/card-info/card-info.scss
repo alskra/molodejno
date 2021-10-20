@@ -1,4 +1,4 @@
-.recipient-item {
+.card-info {
 	display: grid;
 	border-top: 1px solid $color;
 	padding-top: 25rem;
@@ -6,18 +6,36 @@
 	@include media-breakpoint-down(lg) {
 		column-gap: var(--gap);
 		align-items: start;
-		grid-template-columns: 1fr min((100% - var(--gap)) / 2, 265rem);
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr) minmax(0, min((100% - var(--gap)) / 2, 265rem)));
 		padding-top: 20rem;
 	}
 }
 
-.recipient-item__content {
+.card-info__content {
 	font-size: 14rem;
-	line-height: div(20, 14);
+	line-height: 1.25;
 	color: $color;
 
+	p:not(:last-child) {
+		margin-bottom: 10rem;
+	}
+
+	a {
+		color: $color-primary;
+		transition: color;
+		transition-duration: $transition-duration;
+
+		@include hover {
+			color: $color-primary-hover;
+		}
+	}
+
 	&:not(:last-child) {
-		margin-bottom: 15rem;
+		margin-bottom: 20rem;
+	}
+
+	&--date {
+		text-align: right;
 	}
 
 	@include media-breakpoint-up(lg) {
@@ -26,15 +44,21 @@
 
 	@include media-breakpoint-down(lg) {
 		grid-column: 1;
+
+		&:not(:last-child) {
+			margin-bottom: 15rem;
+		}
 	}
 }
 
-.recipient-item__heading {
-	margin-bottom: 3rem;
+.card-info__heading {
+	margin-bottom: 10rem;
+	font-weight: inherit;
+	font-size: inherit;
 	color: $color-gray;
 }
 
-.recipient-item__image {
+.card-info__image {
 	position: relative;
 	overflow: hidden;
 	border-radius: 0 0 50% 50%;
@@ -53,11 +77,11 @@
 
 	@include media-breakpoint-down(lg) {
 		grid-column: 2;
-		grid-row: 1 / span 3;
+		grid-row: 1 / span 100;
 	}
 }
 
-.recipient-item__image-el {
+.card-info__image-el {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -66,7 +90,7 @@
 	object-fit: cover;
 }
 
-.recipient-item__tags {
+.card-info__tags {
 	@include media-breakpoint-up(lg) {
 		justify-content: flex-end;
 		text-align: right;

@@ -38,7 +38,7 @@
 }
 
 .teasers__main {
-	--content-edited-heading-indent-bottom: 15rem;
+	--content-edited-heading-interval-bottom: var(--gap-xs);
 
 	grid-column: 2 / 4;
 	border-top: 1px solid $color;
@@ -50,8 +50,6 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		--content-edited-heading-indent-bottom: 10rem;
-
 		padding-top: 15rem;
 	}
 }

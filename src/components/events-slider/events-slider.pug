@@ -1,0 +1,15 @@
+include ../swiper-fraction/swiper-fraction
+include ../event-item/event-item
+
+mixin events-slider()
+	include ../events/data
+
+	-
+		let items = data('news', 3, true);
+
+	+swiper-fraction().events-slider&attributes(attributes)
+		.events-slider__main
+			.swiper.events-slider__main-inner(x-ref="swiper")
+				.swiper-wrapper
+					each item in items
+						+event-item(item).event-item--lg.swiper-slide.events-slider__item

@@ -1,0 +1,62 @@
+extends ../../pug/base
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+include ../../components/events/events
+include ../../components/integration/integration
+
+include ../../components/subsection-section/subsection-section
+include ../../components/subsection/subsection
+include ../../components/section/section
+
+append variables
+	-
+		title = `${title} - Пресс-центр`;
+
+block app
+	+header()
+
+	main.app__main
+		+container().app__breadcrumbs
+			+breadcrumbs(['Пресс-центр'])
+
+		+section({
+			type: 'news',
+			title: 'Пресс-центр',
+			desc: `<p>Портал для молодёжи занимающийся реализацией молодёжной политики во&nbsp;всех актуальных
+и&nbsp;действующих направлениях данной отрасли</p>`,
+			score: {
+				title: 'Новостей в&nbsp;регионе',
+				number: 100,
+			},
+			advanced: true,
+		})
+			+content()
+				+subsection({title: 'Новости и события'})
+					+events({
+						type: 'news',
+						slice: 1,
+						tags: false,
+					})
+					div
+						+button-arrow-text({content: "'Смотреть все'"})(
+							href="news.html"
+							x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"
+						)
+
+				+integration()
+
+				+subsection({title: 'СМИ о нас'})
+					+events({
+						type: 'news',
+						slice: 1,
+						tags: false,
+					})
+					div
+						+button-arrow-text({content: "'Смотреть все'"})(
+							href="news.html"
+							x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"
+						)
+
+	+footer()
