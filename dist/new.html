@@ -4,8 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Молодёжно (Frontend) - Грантополучатель</title>
-	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/recipient.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/recipient.css" rel="stylesheet"></head>
+		<title>Молодёжно (Frontend) - Новость</title>
+	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/new.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/new.css" rel="stylesheet"></head>
 	<body>
 		<div class="app">
 			<header class="header" x-data="header" x-bind:class="{'is-sticky': isSticky}" x-on:scroll.window="updateStick" x-on:resize.window="updateStick(); updateMobMenu();">
@@ -36,20 +36,20 @@
 			</header>
 			<main class="app__main">
 				<div class="container app__breadcrumbs">
-					<nav class="breadcrumbs"><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="home.html">Главная</a></span><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="recipients.html">Гранты получили</a></span><span class="breadcrumbs__item">Создание проектного офиса для обучения молодёжи лидерским качествам</span>
+					<nav class="breadcrumbs"><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="home.html">Главная</a></span><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="press-center.html">Пресс-центр</a></span><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="news.html">Новости</a></span><span class="breadcrumbs__item">Всероссийский HR-форум по подбору IT-персонала</span>
 					</nav>
 				</div>
-				<article class="section section--grants section--advanced section--without-image">
+				<article class="section section--news section--advanced section--without-image">
 					<div class="section__bg">
 						<div class="container">
 							<div class="position-relative">
-								<div class="section__bg-el section__rellax section__bg-el--grants" data-rellax-speed="-2"></div>
+								<div class="section__bg-el section__rellax section__bg-el--news" data-rellax-speed="-2"></div>
 							</div>
 						</div>
 					</div>
 					<header class="container section__header">
 						<div class="section__header-body">
-							<h1 class="heading section__heading" data-aos="fade-up" data-aos-duration="800">Создание проектного офиса для обучения молодёжи лидерским качествам
+							<h1 class="heading section__heading" data-aos="fade-up" data-aos-duration="800">Всероссийский HR-форум по подбору IT-персонала
 							</h1>
 						</div>
 					</header>
@@ -57,23 +57,21 @@
 						<div class="container section__grid">
 							<aside class="section__grid-aside">
 								<div class="card-info section__card-info">
-									<div class="card-info__content">
-										<h3 class="card-info__heading">Выдано средств</h3>
-										<div class="price">
-											<div class="price__content" x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&amp;nbsp;&amp;#8381;'">1000000</div>
+									<div class="card-info__content card-info__content--date">
+										<div class="date">
+											<time class="date__item"><span class="date__day-month date__day-month--start">26.08</span><span class="date__year">2020</span></time>
 										</div>
 									</div>
 									<div class="card-info__content">
-										<h3 class="card-info__heading">Автор проекта</h3>
-										<p>Константинопольская Александра Александровна</p>
-									</div>
-									<div class="card-info__image"><img class="card-info__image-el" src="images/content/recipients/img-1.jpg" srcset="images/content/recipients/img-1@2x.jpg 2x" alt="Константинопольская Александра Александровна">
+										<h3 class="card-info__heading">Источник</h3>
+										<p>Ресурсный Молодежный центр</p>
+										<p><a href="//www.site.ru" target="_blank">www.site.ru</a></p>
 									</div>
 									<nav class="tags card-info__tags"><a class="tags__item" href="">Образование</a><a class="tags__item" href="">Мастер-классы</a><a class="tags__item" href="">Культура и искусство</a>
 									</nav>
 								</div>
 								<nav class="article-nav section__article-nav" x-data="articleNav" x-on:popstate.window="hash = location.hash" x-on:scroll.window.debounce.100ms="update">
-									<a class="button-arrow-text button-arrow-text--dir-left article-nav__back button-arrow-text--primary" href="recipients.html" x-init><span class="button-arrow-text__icon">
+									<a class="button-arrow-text button-arrow-text--dir-left article-nav__back button-arrow-text--primary" href="news.html" x-init><span class="button-arrow-text__icon">
 											<icon-svg name="arrow-left"></icon-svg></span><span class="button-arrow-text__content" x-text="'Назад'"></span>
 									</a>
 								</nav>
@@ -103,40 +101,52 @@
 											</div>
 										</div>
 									</div>
+									<div class="content-edited">
+										<blockquote>
+											<p>
+												Портал для молодёжи занимающийся реализацией молодёжной политики во всех актуальных
+												и действующих направлениях данной отрасли
+											</p>
+										</blockquote>
+										<p>
+											Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+											молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+											Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+											молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+											Это информационно-познавательный портал для молодёжи.
+										</p>
+										<p>
+											Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+											и действующих направлениях данной отрасли.
+											
+										</p>
+									</div>
+									<blockquote class="quote">
+										<p>Сегодня Дом молодёжи&nbsp;&mdash;<br> это команда профессионалов, которые отвечают
+											за&nbsp;основные направления современной молодёжной политики.
+											
+										</p>
+										<cite class="quote__cite">Константинопольский А.&nbsp;М.</cite>
+									</blockquote>
+									<div class="content-edited">
+										<p>
+											Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+											молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+											Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+											молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+											Это информационно-познавательный портал для молодёжи.
+										</p>
+										<p>
+											Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+											и действующих направлениях данной отрасли.
+											
+										</p>
+									</div>
 									<section class="subsection subsection--offset-column-all">
 										<header class="subsection__header">
 											<div class="container subsection__grid">
 												<div class="subsection__column">
-													<h2 class="subsection__title">О проекте</h2>
-												</div>
-											</div>
-										</header>
-										<div class="subsection__main">
-											<div class="container subsection__grid">
-												<div class="content subsection__column">
-													<div class="content-edited">
-														<p>
-															Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
-															молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
-															Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
-															молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
-															Это информационно-познавательный портал для молодёжи.
-														</p>
-														<p>
-															Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
-															и действующих направлениях данной отрасли.
-															
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</section>
-									<section class="subsection subsection--offset-column-all">
-										<header class="subsection__header">
-											<div class="container subsection__grid">
-												<div class="subsection__column">
-													<h2 class="subsection__title">Задачи проекта</h2>
+													<h2 class="subsection__title">HR форум</h2>
 												</div>
 											</div>
 										</header>
@@ -162,31 +172,46 @@
 															</li>
 														</ul>
 													</div>
-												</div>
-											</div>
-										</div>
-									</section>
-									<section class="subsection subsection--offset-column-all">
-										<header class="subsection__header">
-											<div class="container subsection__grid">
-												<div class="subsection__column">
-													<h2 class="subsection__title">Галерея</h2>
-												</div>
-											</div>
-										</header>
-										<div class="subsection__main">
-											<div class="container subsection__grid">
-												<div class="content subsection__column">
-													<div class="gallery" x-data="{gridEl: $refs.grid}">
-														<div class="gallery__grid" x-ref="grid"><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a>
+													<section class="subsection-section">
+														<header class="subsection-section__header">
+															<h3 class="subsection-section__title subsection-section__title--h3">HR форум</h3>
+														</header>
+														<div class="content subsection-section__main">
+															<div class="content-edited"><img src="images/content/article/img-3.jpg" srcset="images/content/article/img-3@2x.jpg 2x" alt="">
+																<p>
+																	Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+																	молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+																	Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+																	молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+																	Это информационно-познавательный портал для молодёжи.
+																</p>
+																<p>
+																	Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+																	и действующих направлениях данной отрасли.
+																	
+																</p>
+																<figure class="video">
+																	<figcaption class="video__caption">Это информационно-познавательный портал для молодёжи Новгородской области</figcaption>
+																	<div class="video__main"><img class="video__image" src="images/content/article/img-2.jpg" srcset="images/content/article/img-2@2x.jpg 2x" alt="">
+																		<div class="video__overlay">
+																			<div class="video__button-play"></div>
+																		</div>
+																	</div>
+																</figure>
+																<p>
+																	Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+																	молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+																</p>
+																<p>
+																	Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+																	молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+																	Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+																	молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+																	
+																</p>
+															</div>
 														</div>
-														<div class="pagination" x-data="pagination('ajax/gallery.html', gridEl)">
-															<div class="pagination__error" x-show="error" x-text="error"></div>
-															<button class="button-load" type="button" x-init x-bind:class="{'is-loading': isLoading}" x-bind:disabled="isLoading" x-on:click="load"><span class="button-load__content" x-text="'Загрузить еще'"></span>
-																<icon-svg class="button-load__icon" name="plus"></icon-svg>
-															</button>
-														</div>
-													</div>
+													</section>
 												</div>
 											</div>
 										</div>
