@@ -9,6 +9,7 @@ import '../../components/card-info/card-info';
 import '../../components/article-nav/article-nav';
 import '../../components/gallery-slider/gallery-slider';
 import '../../components/quote/quote';
+import '../../components/cards/cards';
 
 import '../../components/subsection-section/subsection-section';
 import '../../components/subsection/subsection';

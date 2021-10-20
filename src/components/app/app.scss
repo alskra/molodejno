@@ -17,7 +17,7 @@
 		margin-bottom: calc(-1 * var(--app__main-gap-bottom));
 	}
 
-	.subsection--reviews:last-child {
+	:is(.subsection--reviews, .subsection--related):last-child {
 		margin-bottom: calc(-1 * var(--app__main-gap-bottom));
 	}
 

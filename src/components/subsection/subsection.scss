@@ -25,6 +25,14 @@
 		background: $color-dolly;
 	}
 
+	&--related {
+		padding: var(--gap-2xl) 0;
+	}
+
+	&--related-news {
+		background: $color-watusi;
+	}
+
 	@include media-breakpoint-up(lg) {
 		&--offset-column-all,
 		&--offset-column-header {
