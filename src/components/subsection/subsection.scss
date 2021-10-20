@@ -13,6 +13,18 @@
 .subsection {
 	position: relative;
 
+	&--related {
+		padding: var(--gap-2xl) 0;
+	}
+
+	&--related-playbill {
+		background: $color-blue-chalk;
+	}
+
+	&--related-news {
+		background: $color-watusi;
+	}
+
 	&--reviews {
 		padding: var(--gap-2xl) 0;
 	}
@@ -23,14 +35,6 @@
 
 	&--reviews-grants {
 		background: $color-dolly;
-	}
-
-	&--related {
-		padding: var(--gap-2xl) 0;
-	}
-
-	&--related-news {
-		background: $color-watusi;
 	}
 
 	@include media-breakpoint-up(lg) {
