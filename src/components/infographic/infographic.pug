@@ -1,6 +1,6 @@
 mixin infographic
 	-
-		const items = [
+		let items = [
 			{
 				title: 'Выигранных грантов',
 				number: '12500',
@@ -27,7 +27,7 @@ mixin infographic
 			},
 		];
 
-	.infographic(x-data="infographic")
+	.infographic(x-data="infographic")&attributes(attributes)
 		.swiper(x-ref="container")
 			.swiper-wrapper
 				each item in items

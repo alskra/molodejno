@@ -315,7 +315,7 @@
 		grid-column: 2 / 5;
 
 		.subsection {
-			margin-left: calc(-3 * (var(--container-cell-width) + var(--gap)) - 1 * var(--container-content-offset-x));
+			margin-left: calc(-1 * (var(--container-column-offset-3) + var(--container-content-offset-x)));
 		}
 	}
 }
