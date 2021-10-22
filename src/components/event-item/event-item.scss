@@ -6,14 +6,6 @@
 			transform: $image-hover-transform;
 		}
 	}
-
-	@include media-breakpoint-up(lg) {
-		&--lg {
-			.event-item__image::before {
-				padding-top: cw(540, 825);
-			}
-		}
-	}
 }
 
 .event-item__image {

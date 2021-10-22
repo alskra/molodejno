@@ -18,7 +18,7 @@
 			padding-left: 60rem;
 
 			.infographic__item {
-				width: calc(50% - var(--gap));
+				min-width: calc(50% - var(--gap));
 			}
 		}
 	}
@@ -31,8 +31,9 @@
 	margin: 0 calc(0.5 * var(--gap));
 	border-bottom: 1px solid $color;
 	padding: 51rem 0 12rem;
-	width: var(--container-column-5);
+	width: auto;
 	height: auto;
+	min-width: var(--container-column-5);
 	cursor: default;
 
 	&::before {
@@ -49,7 +50,7 @@
 
 	@include media-breakpoint-down(lg) {
 		padding: 35rem 0 4rem;
-		width: var(--container-column-6);
+		min-width: var(--container-column-6);
 
 		&::before {
 			left: -56rem;
@@ -60,11 +61,11 @@
 	}
 
 	@include media-breakpoint-down(md) {
-		width: var(--container-column-8);
+		min-width: var(--container-column-8);
 	}
 
 	@include media-breakpoint-down(sm) {
-		width: var(--container-column-10);
+		min-width: var(--container-column-10);
 	}
 }
 

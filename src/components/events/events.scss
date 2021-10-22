@@ -1,16 +1,26 @@
 .events__grid {
 	display: grid;
 	align-items: start;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fill, var(--container-column-6));
 	gap: var(--gap);
 
 	@include media-breakpoint-up(lg) {
-		&--columns-2 {
-			grid-template-columns: repeat(2, 1fr);
+		&--columns-1-lg-up {
+			grid-template-columns: repeat(auto-fill, var(--container-column-9));
+
+			.event-item__image::before {
+				padding-top: cw(540, 825);
+			}
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
-		grid-template-columns: repeat(auto-fill, minmax(min(280rem, 100%), 1fr));
+	@include media-breakpoint-down(md) {
+		grid-template-columns: repeat(auto-fill, var(--container-column-9));
+	}
+
+	@include media-breakpoint-down(sm) {
+		grid-template-columns: repeat(auto-fill, var(--container-column-12));
 	}
 }
 

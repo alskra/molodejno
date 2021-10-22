@@ -10,15 +10,12 @@ mixin events({type, slice, tags = true, columns = 2} = {})
 
 	.events(x-data="{gridEl: $refs.grid}")&attributes(attributes)
 		.events__grid(
-			class={[`events__grid--columns-${columns}`]: columns > 1}
+			class={[`events__grid--columns-1-lg-up`]: columns === 1}
 			x-ref="grid"
 		)
 			each item in items
 				+event-item(item).events__item(
-					class={
-						'event-item--lg': columns === 1,
-						'events__item--main': slice === 1,
-					}
+					class={'events__item--main': slice === 1}
 				)
 			case type
 				when 'playbill'

@@ -44,7 +44,6 @@
 	@include media-breakpoint-down(lg) {
 		&:not(.swiper-wrapper) {
 			grid-template-columns: repeat(auto-fill, minmax(min(280rem, 100%), 1fr));
-			row-gap: 30rem;
 		}
 	}
 }
