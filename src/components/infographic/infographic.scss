@@ -91,11 +91,21 @@
 }
 
 .infographic__number {
+	position: relative;
 	font-family: $heading-font-family;
 	font-weight: 700;
 	font-size: 90rem;
 	line-height: div(108, 90);
 	color: $color-cerulean-blue;
+
+	> div:nth-child(1) {
+		color: transparent;
+	}
+
+	> div:nth-child(2) {
+		position: absolute;
+		inset: 0;
+	}
 
 	@include media-breakpoint-down(lg) {
 		font-size: 60rem;

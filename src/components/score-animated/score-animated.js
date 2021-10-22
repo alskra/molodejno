@@ -6,6 +6,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 Alpine.data('scoreAnimated', () => ({
 	init() {
+		this.$refs.number.innerHTML = (+this.$refs.number.textContent).toLocaleString('ru');
+
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: this.$el,
@@ -15,10 +17,10 @@ Alpine.data('scoreAnimated', () => ({
 			},
 		});
 
-		tl.from(this.$refs.number, {
+		tl.from(this.$refs.numberAnimated, {
 			autoAlpha: 0,
 			duration: 0.2,
-		}).from(this.$refs.number, {
+		}).from(this.$refs.numberAnimated, {
 			textContent: 0,
 			duration: 1.4,
 			onUpdate() {

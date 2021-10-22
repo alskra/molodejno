@@ -34,5 +34,7 @@ mixin infographic
 					.swiper-slide.infographic__item(x-data="scoreAnimated")
 						.infographic__title= item.title
 						.infographic__content
-							.infographic__number(x-ref="number")= item.number
+							.infographic__number
+								div(x-ref="number")= item.number
+								div(x-ref="numberAnimated")= item.number
 							.infographic__plus(x-ref="plus") +
