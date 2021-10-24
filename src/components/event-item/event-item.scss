@@ -6,6 +6,14 @@
 			transform: $image-hover-transform;
 		}
 	}
+
+	@include media-breakpoint-up(lg) {
+		&.column-span-9-lg-up {
+			.event-item__image::before {
+				padding-top: cw(540, 825);
+			}
+		}
+	}
 }
 
 .event-item__image {
@@ -26,12 +34,6 @@
 		width: 100%;
 		height: cw(376, 540);
 		background: linear-gradient(to top, rgba($color-black, 0.8), transparent);
-	}
-
-	&[column-span-9-lg-up] {
-		&::before {
-			padding-top: cw(540, 825);
-		}
 	}
 }
 
