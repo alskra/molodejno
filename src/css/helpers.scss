@@ -31,40 +31,90 @@
 
 .grid {
 	display: grid;
-	grid-template-columns: repeat(12, 1fr);
+	grid-template-columns: repeat(auto-fill, var(--container-column-1));
 	gap: var(--gap);
 }
 
-@include media-breakpoint-up(lg) {
-	.hidden-lg-up {
-		// stylelint-disable-next-line
-		display: none !important;
+@for $size from 1 through 12 {
+	.column-span-#{$size} {
+		grid-column-end: span $size;
 	}
 
-	@for $i from 1 through 12 {
-		.column-#{$i}-lg-up {
-			grid-column-end: span $i;
+	.column-line-#{$size} {
+		grid-column-start: $size;
+	}
+
+	.column-#{$size} {
+		width: var(--container-column-#{$size});
+	}
+
+	.column-offset-#{$size} {
+		margin-left: var(--container-column-offset-#{$size - 1});
+	}
+}
+
+@each $name, $value in $breakpoints {
+	@include media-breakpoint-up($name) {
+		.hidden-#{$name}-up {
+			// stylelint-disable-next-line
+			display: none !important;
 		}
 
-		.column-offset-#{$i}-lg-up {
-			grid-column-start: $i + 1;
+		.grid-#{$name}-up {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, var(--container-column-1));
+			gap: var(--gap);
+		}
+
+		@for $size from 1 through 12 {
+			.column-span-#{$size}-#{$name}-up {
+				grid-column-end: span $size;
+			}
+
+			.column-line-#{$size}-#{$name}-up {
+				grid-column-start: $size;
+			}
+
+			.column-#{$size}-#{$name}-up {
+				width: var(--container-column-#{$size});
+			}
+
+			.column-offset-#{$size}-#{$name}-up {
+				margin-left: var(--container-column-offset-#{$size - 1});
+			}
 		}
 	}
 }
 
-@include media-breakpoint-down(lg) {
-	.hidden-lg-down {
-		// stylelint-disable-next-line
-		display: none !important;
-	}
-
-	@for $i from 1 through 12 {
-		.column-#{$i}-lg-down {
-			grid-column-end: span $i;
+@each $name, $value in map-reverse($breakpoints) {
+	@include media-breakpoint-down($name) {
+		.hidden-#{$name}-down {
+			// stylelint-disable-next-line
+			display: none !important;
 		}
 
-		.column-offset-#{$i}-lg-down {
-			grid-column-start: $i + 1;
+		.grid-#{$name}-down {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, var(--container-column-1));
+			gap: var(--gap);
+		}
+
+		@for $size from 1 through 12 {
+			.column-span-#{$size}-#{$name}-down {
+				grid-column-end: span $size;
+			}
+
+			.column-line-#{$size}-#{$name}-down {
+				grid-column-start: $size;
+			}
+
+			.column-#{$size}-#{$name}-down {
+				width: var(--container-column-#{$size});
+			}
+
+			.column-offset-#{$size}-#{$name}-down {
+				margin-left: var(--container-column-offset-#{$size - 1});
+			}
 		}
 	}
 }

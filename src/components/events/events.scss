@@ -1,31 +1,10 @@
 .events__grid {
-	display: grid;
 	align-items: start;
 	justify-content: center;
-	grid-template-columns: repeat(auto-fill, var(--container-column-6));
-	gap: var(--gap);
-
-	@include media-breakpoint-up(lg) {
-		&--columns-1-lg-up {
-			grid-template-columns: repeat(auto-fill, var(--container-column-9));
-
-			.event-item__image::before {
-				padding-top: cw(540, 825);
-			}
-		}
-	}
-
-	@include media-breakpoint-down(md) {
-		grid-template-columns: repeat(auto-fill, var(--container-column-9));
-	}
-
-	@include media-breakpoint-down(sm) {
-		grid-template-columns: repeat(auto-fill, var(--container-column-12));
-	}
 }
 
 .events__item {
-	@include media-breakpoint-up(lg) {
+	@include media-breakpoint-up(md) {
 		&--main {
 			position: sticky;
 			top: var(--header-sticky-height);
