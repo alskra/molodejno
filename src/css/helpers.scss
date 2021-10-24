@@ -45,7 +45,8 @@
 	}
 
 	.column-#{$size} {
-		width: var(--container-column-#{$size});
+		// stylelint-disable-next-line
+		width: var(--container-column-#{$size}) !important;
 	}
 
 	.column-offset-#{$size} {
@@ -76,7 +77,8 @@
 			}
 
 			.column-#{$size}-#{$name}-up {
-				width: var(--container-column-#{$size});
+				// stylelint-disable-next-line
+				width: var(--container-column-#{$size}) !important;
 			}
 
 			.column-offset-#{$size}-#{$name}-up {
@@ -109,7 +111,8 @@
 			}
 
 			.column-#{$size}-#{$name}-down {
-				width: var(--container-column-#{$size});
+				// stylelint-disable-next-line
+				width: var(--container-column-#{$size}) !important;
 			}
 
 			.column-offset-#{$size}-#{$name}-down {

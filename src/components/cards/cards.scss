@@ -17,42 +17,40 @@
 
 .cards__grid {
 	&:not(.swiper-wrapper) {
-		display: grid;
+		//display: grid;
 		gap: var(--gap-xl) var(--gap);
 	}
 
-	@include media-breakpoint-up(lg) {
-		&--columns-2 {
-			&:not(.swiper-wrapper) {
-				grid-template-columns: repeat(2, 1fr);
-			}
-		}
-
-		&--columns-3 {
-			&:not(.swiper-wrapper) {
-				grid-template-columns: repeat(3, 1fr);
-			}
-		}
-
-		&--columns-4 {
-			&:not(.swiper-wrapper) {
-				grid-template-columns: repeat(4, 1fr);
-			}
-		}
-	}
-
-	@include media-breakpoint-down(lg) {
-		&:not(.swiper-wrapper) {
-			grid-template-columns: repeat(auto-fill, minmax(min(280rem, 100%), 1fr));
-		}
-	}
+	//&--columns-2 {
+	//	&:not(.swiper-wrapper) {
+	//		grid-template-columns: repeat(2, 1fr);
+	//	}
+	//}
+	//
+	//&--columns-3 {
+	//	&:not(.swiper-wrapper) {
+	//		grid-template-columns: repeat(3, 1fr);
+	//	}
+	//}
+	//
+	//&--columns-4 {
+	//	&:not(.swiper-wrapper) {
+	//		grid-template-columns: repeat(4, 1fr);
+	//	}
+	//}
+	//
+	//@include media-breakpoint-down(lg) {
+	//	&:not(.swiper-wrapper) {
+	//		grid-template-columns: repeat(auto-fill, minmax(min(280rem, 100%), 1fr));
+	//	}
+	//}
 }
 
 .cards__item {
 	@include media-breakpoint-down(lg) {
 		&.swiper-slide {
 			margin: 0 calc(0.5 * var(--gap));
-			width: 265rem;
+			//width: 265rem;
 			height: auto;
 		}
 	}

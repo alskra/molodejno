@@ -18,12 +18,14 @@ mixin cards({type, slice, tags = true, columns = 3} = {})
 					x-ref="swiper"
 				)
 					.cards__grid(
-						class=`cards__grid--columns-${columns}`
-						x-bind:class="{'swiper-wrapper': !$store.isDesktop}"
+						x-bind:class=`{
+							'grid': $store.isDesktop,
+							'swiper-wrapper': !$store.isDesktop,
+						}`
 					)
 						each item in items
 							if type !== 'persons'
-								+card-item(item).cards__item(
+								+card-item(item).cards__item.column-span-3-lg-up.column-4-lg-down.column-7-md-down.column-10-sm-down(
 									class=`card-item--style-group-${columns * 2}`
 									x-bind:class="{'swiper-slide': !$store.isDesktop}"
 								)
