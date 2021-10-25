@@ -11,11 +11,19 @@ mixin events({type, slice, tags = true, columns = 2} = {})
 	.events(x-data="{gridEl: $refs.grid}")&attributes(attributes)
 		.events__grid.grid(x-ref="grid")
 			each item in items
-				+event-item(item).events__item.column-span-6.column-span-10-md-down.column-line-2-md-down.column-span-12-sm-down.column-line-1-sm-down(
+				+event-item(item).events__item(
+					class=[
+						'column-span-6',
+						'column-span-10-md-down',
+						'column-line-2-md-down',
+						'column-span-12-sm-down',
+						'column-line-1-sm-down',
+					]
 					class={
 						'events__item--main': slice === 1,
 						'column-span-9-lg-up': columns === 1,
-					})
+					}
+				)
 			case type
 				when 'playbill'
 				when 'news'

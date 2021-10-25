@@ -1,3 +1,12 @@
+.events {
+	@include media-breakpoint-up(md) {
+		.cards__main.has-swiper {
+			margin-left: 0;
+			padding-left: 0;
+		}
+	}
+}
+
 .events__grid {
 	align-items: start;
 }

@@ -9,36 +9,47 @@ mixin cards({type, slice, tags = true, columns = 3} = {})
 		let items = data(type, slice, tags);
 
 	.cards(x-data="{gridEl: $root.querySelector('.cards__grid')}")&attributes(attributes)
-		if slice
-			.cards__main
-				.cards__main-inner(
-					x-data="swiperCards"
-					x-effect="effect"
-					x-bind:class="{swiper: !$store.isDesktop}"
-					x-ref="swiper"
+		.cards__main(x-bind:class=slice ? "{'has-swiper': !$store.isDesktop}" : null)
+			.cards__main-inner(
+				x-data=slice ? "swiperCards" : null
+				x-effect=slice ? "effect" : null
+				x-bind:class=slice ? "{swiper: !$store.isDesktop}" : null
+				x-ref=slice ? "swiper" : null
+			)
+				.cards__grid(
+					class={grid: !slice}
+					x-bind:class=slice ? `{
+						'grid': $store.isDesktop,
+						'swiper-wrapper': !$store.isDesktop,
+					}` : null
 				)
-					.cards__grid(
-						x-bind:class=`{
-							'grid': $store.isDesktop,
-							'swiper-wrapper': !$store.isDesktop,
-						}`
-					)
-						each item in items
-							if type !== 'persons'
-								+card-item(item).cards__item.column-span-3-lg-up.column-4-lg-down.column-7-md-down.column-10-sm-down(
-									class=`card-item--style-group-${columns * 2}`
-									x-bind:class="{'swiper-slide': !$store.isDesktop}"
-								)
-							else
-								+person-item(item).cards__item(
-									x-bind:class="{'swiper-slide': !$store.isDesktop}"
-								)
+					-
+						const itemAttrs = {
+							class: slice ? [
+								'column-span-3-lg-up',
+								'column-4-lg-down',
+								'column-6-md-down',
+								'column-10-sm-down',
+							] : [
+								'column-span-3',
+								'column-span-4-lg-down',
+								'column-span-6-md-down',
+								'column-span-12-sm-down',
+							],
+							'x-bind:class': slice ? "{'swiper-slide': !$store.isDesktop}" : null,
+						};
 
-			if type === 'recipients' || type === 'persons'
-				+pagination({multipage: false}).hidden-lg-down(x-data=`pagination('ajax/${type}-slice.html', gridEl)`)
+					each item in items
+						case type
+							when 'persons'
+								+person-item(item).cards__item&attributes(itemAttrs)
+							default
+								+card-item(item).cards__item(class=`card-item--style-group-${columns * 2}`)&attributes(itemAttrs)
+
+		if slice
+			case type
+				when 'recipients'
+				when 'persons'
+					+pagination({multipage: false}).hidden-lg-down(x-data=`pagination('ajax/${type}-slice.html', gridEl)`)
 		else
-			.cards__grid(class=`cards__grid--columns-${columns}`)
-				each item in items
-					+card-item(item).cards__item(class=`card-item--style-group-${columns * 2}`)
-
 			+pagination()(x-data=`pagination('ajax/${type}.html', gridEl)`)

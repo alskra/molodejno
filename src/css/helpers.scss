@@ -48,10 +48,6 @@
 		// stylelint-disable-next-line
 		width: var(--container-column-#{$size}) !important;
 	}
-
-	.column-offset-#{$size} {
-		margin-left: var(--container-column-offset-#{$size - 1});
-	}
 }
 
 @each $name, $value in $breakpoints {
@@ -79,10 +75,6 @@
 			.column-#{$size}-#{$name}-up {
 				// stylelint-disable-next-line
 				width: var(--container-column-#{$size}) !important;
-			}
-
-			.column-offset-#{$size}-#{$name}-up {
-				margin-left: var(--container-column-offset-#{$size - 1});
 			}
 		}
 	}
@@ -113,10 +105,6 @@
 			.column-#{$size}-#{$name}-down {
 				// stylelint-disable-next-line
 				width: var(--container-column-#{$size}) !important;
-			}
-
-			.column-offset-#{$size}-#{$name}-down {
-				margin-left: var(--container-column-offset-#{$size - 1});
 			}
 		}
 	}
