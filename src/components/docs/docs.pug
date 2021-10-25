@@ -21,11 +21,22 @@ mixin docs()
 
 	.docs&attributes(attributes)
 		.docs__body(
-			x-data="swiperFree"
+			x-data="swiperCards"
 			x-effect="effect"
 			x-bind:class="{swiper: !$store.isDesktop}"
 			x-ref="swiper"
 		)
-			.docs__body-inner(x-bind:class="{'swiper-wrapper': !$store.isDesktop}")
+			.docs__grid(x-bind:class=`{
+				'grid': $store.isDesktop,
+				'swiper-wrapper': !$store.isDesktop,
+			}`)
 				each doc in docs
-					+doc-item(doc).doc-item--lg.docs__item(x-bind:class="{'swiper-slide': !$store.isDesktop}")
+					+doc-item(doc).doc-item--lg.docs__item(
+						class=[
+							'column-span-3-lg-up',
+							'column-4-lg-down',
+							'column-6-md-down',
+							'column-10-sm-down',
+						]
+						x-bind:class="{'swiper-slide': !$store.isDesktop}"
+					)

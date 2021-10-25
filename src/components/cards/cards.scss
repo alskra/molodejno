@@ -18,7 +18,7 @@
 }
 
 .cards__grid {
-	&:not(.swiper-wrapper) {
+	&.grid {
 		gap: var(--gap-xl) var(--gap);
 	}
 }

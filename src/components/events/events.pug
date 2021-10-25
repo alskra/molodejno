@@ -13,16 +13,14 @@ mixin events({type, slice, tags = true, columns = 2} = {})
 			each item in items
 				+event-item(item).events__item(
 					class=[
+						{'events__item--main': slice === 1},
+						{'column-span-9-lg-up': columns === 1},
 						'column-span-6',
 						'column-span-10-md-down',
 						'column-line-2-md-down',
 						'column-span-12-sm-down',
 						'column-line-1-sm-down',
 					]
-					class={
-						'events__item--main': slice === 1,
-						'column-span-9-lg-up': columns === 1,
-					}
 				)
 			case type
 				when 'playbill'

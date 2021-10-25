@@ -3,7 +3,9 @@
 
 	@include media-breakpoint-down(lg) {
 		margin-right: calc(-1 * var(--container-content-offset-x));
+		margin-left: calc(-1 * var(--container-content-offset-x));
 		padding-right: var(--container-content-offset-x);
+		padding-left: var(--container-content-offset-x);
 	}
 }
 
@@ -15,18 +17,9 @@
 	}
 }
 
-.docs__body-inner {
-	@include media-breakpoint-up(lg) {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: var(--gap);
-	}
-}
-
 .docs__item {
 	@include media-breakpoint-down(lg) {
 		margin: 0 calc(0.5 * var(--gap));
-		width: 265rem;
 		height: auto;
 	}
 }

@@ -1,2 +1,2 @@
-import '../swiper-free/swiper-free';
+import '../swiper-cards/swiper-cards';
 import './docs.scss';
