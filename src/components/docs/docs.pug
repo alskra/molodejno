@@ -26,15 +26,14 @@ mixin docs()
 			x-bind:class="{swiper: !$store.isDesktop}"
 			x-ref="swiper"
 		)
-			.docs__grid(x-bind:class=`{
-				'grid': $store.isDesktop,
-				'swiper-wrapper': !$store.isDesktop,
-			}`)
+			.grid-lg-up(
+				x-bind:class=`{'swiper-wrapper': !$store.isDesktop}`
+			)
 				each doc in docs
 					+doc-item(doc).doc-item--lg.docs__item(
 						class=[
 							'column-span-3-lg-up',
-							'column-4-lg-down',
+							'column-5-lg-down',
 							'column-6-md-down',
 							'column-10-sm-down',
 						]

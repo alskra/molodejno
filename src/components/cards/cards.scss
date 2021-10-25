@@ -18,8 +18,8 @@
 }
 
 .cards__grid {
-	&.grid {
-		gap: var(--gap-xl) var(--gap);
+	&:not(.swiper-wrapper) {
+		row-gap: var(--gap-xl);
 	}
 }
 

@@ -17,11 +17,11 @@ mixin cards({type, slice, tags = true, columns = 3} = {})
 				x-ref=slice ? "swiper" : null
 			)
 				.cards__grid(
-					class={grid: !slice}
-					x-bind:class=slice ? `{
-						'grid': $store.isDesktop,
-						'swiper-wrapper': !$store.isDesktop,
-					}` : null
+					class={
+						'grid-lg-up': slice,
+						grid: !slice
+					}
+					x-bind:class=slice ? `{'swiper-wrapper': !$store.isDesktop}` : null
 				)
 					-
 						const itemAttrs = {
