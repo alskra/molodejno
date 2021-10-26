@@ -12,16 +12,19 @@ const pages = fs.readdirSync(path.resolve(paths.src, 'pages'))
 const ajax = fs.readdirSync(path.resolve(paths.src, 'pages/ajax'));
 const entry = {};
 
-pages.forEach((page) => {
-	entry[page] = path.resolve(paths.src, `pages/${page}/${page}.js`);
-});
+// pages.forEach((page) => {
+// 	entry[page] = path.resolve(paths.src, `pages/${page}/${page}.js`);
+// });
+
+entry.main = pages.map((page) => path.resolve(paths.src, `pages/${page}/${page}.js`))
+	.concat(path.resolve(paths.src, 'js/alpine.js'));
 
 const htmlPluginEntries = pages.map((page) => {
 	return new HtmlWebpackPlugin({
 		template: path.resolve(paths.src, `pages/${page}/${page}.pug`),
 		filename: `${page}.html`,
 		title: 'Webpack Starter',
-		chunks: [page],
+		// chunks: [page],
 		minify: false,
 	});
 });
