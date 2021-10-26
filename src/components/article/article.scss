@@ -15,6 +15,12 @@
 		}
 	}
 
+	&--contest {
+		.article__bg::before {
+			background: linear-gradient(180deg, $color-tidal 81.03%, rgba(229, 255, 172, 0) 100%);
+		}
+	}
+
 	&--grant {
 		.article__bg::before {
 			background: linear-gradient(180deg, $color-dolly 81.03%, rgba(255, 243, 134, 0) 100%);

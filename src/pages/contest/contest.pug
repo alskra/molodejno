@@ -20,24 +20,24 @@ include ../../components/article/article
 
 append variables
 	-
-		title = `${title} - Проект`;
+		title = `${title} - Конкурс`;
 
 block app
 	+header()
 
 	main.app__main
-		+article({type: 'project'})
+		+article({type: 'contest'})
 			aside.article__grid-aside
 				+article-nav({
-					backUrl: 'projects.html',
+					backUrl: 'contests.html',
 					items: [
 						{
 							url: '#card',
-							content: 'Карточка проекта',
+							content: 'Карточка конкурса',
 						},
 						{
 							url: '#about',
-							content: 'О проекте',
+							content: 'О конкурсе',
 						},
 						{
 							url: '#stages',
@@ -68,7 +68,7 @@ block app
 
 			.article__grid-main
 				+content()
-					+card-details('project').article__card-details
+					+card-details('contest').article__card-details
 					.article__bg
 
 					+subsection({
