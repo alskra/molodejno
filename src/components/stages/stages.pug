@@ -25,7 +25,7 @@ mixin stages()
 	.stages&attributes(attributes)
 		each stage in stages
 			article.stages__item.grid
-				header.column-span-3.column-span-12-lg-down
+				header.column-span-3.column-line-1-lg-down.column-line-end-1-lg-down
 					+date(stage.dateStart, stage.dateEnd, true)
 
 				+content-edited().stages__main.column-line-4.column-line-end-1.column-line-1-lg-down
