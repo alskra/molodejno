@@ -6,6 +6,8 @@ include ../../components/footer/footer
 include ../../components/article-nav/article-nav
 include ../../components/card-details/card-details
 include ../../components/infographic/infographic
+include ../../components/gallery-slider/gallery-slider
+include ../../components/stages/stages
 
 include ../../components/subsection-section/subsection-section
 include ../../components/subsection/subsection
@@ -63,9 +65,10 @@ block app
 					+subsection({
 						offsetColumn: 'all',
 						anchor: 'about',
-						title: 'О проекте'
+						title: 'О проекте',
 					})
 						+infographic().infographic--inner
+
 						+content-edited()
 							p.
 								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
@@ -82,7 +85,6 @@ block app
 								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
 								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
 
-						+content-edited()
 							h3 Проблематика проекта
 							ul
 								li.
@@ -97,5 +99,17 @@ block app
 									В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й
 									Кировской дивизии народного ополчения, посетят Исторический памятник
 									древнеславянской культуры «Шум-Гора».
+
+						+gallery-slider([
+							'../../images/content/gallery-slider/img-1.jpg',
+							'../../images/content/gallery-slider/img-2.jpg',
+						])
+
+					+subsection({
+						offsetColumns: 'all',
+						anchor: 'stages',
+						title: 'Этапы',
+					})
+						+stages()
 
 	+footer()

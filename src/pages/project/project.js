@@ -8,6 +8,8 @@ import '../../components/footer/footer';
 import '../../components/article-nav/article-nav';
 import '../../components/card-details/card-details';
 import '../../components/infographic/infographic';
+import '../../components/gallery-slider/gallery-slider';
+import '../../components/stages/stages';
 
 import '../../components/subsection-section/subsection-section';
 import '../../components/subsection/subsection';
