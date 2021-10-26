@@ -8,6 +8,11 @@ include ../../components/card-details/card-details
 include ../../components/infographic/infographic
 include ../../components/gallery-slider/gallery-slider
 include ../../components/stages/stages
+include ../../components/docs/docs
+include ../../components/gallery/gallery
+include ../../components/reviews/reviews
+include ../../components/partners/partners
+include ../../components/contacts/contacts
 
 include ../../components/subsection-section/subsection-section
 include ../../components/subsection/subsection
@@ -43,16 +48,20 @@ block app
 							content: 'Документы',
 						},
 						{
-							url: '#recipients',
-							content: 'Гранты получили',
-						},
-						{
 							url: '#gallery',
-							content: 'Галарея',
+							content: 'Галерея',
 						},
 						{
 							url: '#reviews',
 							content: 'Отзывы',
+						},
+						{
+							url: '#partners',
+							content: 'Партнеры',
+						},
+						{
+							url: '#contacts',
+							content: 'Контакты',
 						},
 					]
 				})
@@ -106,10 +115,54 @@ block app
 						])
 
 					+subsection({
-						offsetColumns: 'all',
+						offsetColumn: 'all',
 						anchor: 'stages',
 						title: 'Этапы',
 					})
 						+stages()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'docs',
+						title: 'Документы',
+					})
+						+docs()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'gallery',
+						title: 'Галерея',
+					})
+						+gallery()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'reviews',
+						type: 'reviews',
+						extType: 'projects',
+						title: 'Отзывы',
+					})
+						+reviews()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'partners',
+						title: 'Партнеры',
+					})
+						+subsection-section({title: 'Генеральные партнеры'})
+							+partners(true)
+
+						+subsection-section({title: 'Информационные партнеры'})
+							+partners()
+
+						+subsection-section({title: 'Организационные партнеры'})
+							+partners()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'contacts',
+						title: 'Контакты',
+					})
+						+contacts()
 
 	+footer()

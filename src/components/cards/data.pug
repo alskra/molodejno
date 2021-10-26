@@ -10,6 +10,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 1000000,
+					author: {
+						title: 'Константинопольская Александра',
+						image: '../../images/content/projects/authors/img-1.jpg',
+					},
 					tags: [
 						'Образование',
 						'Мастер-классы',
@@ -24,6 +28,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 70000,
+					author: {
+						title: 'Константинопольская Александра очень-очень длинный заголовок',
+						image: '../../images/content/projects/authors/img-2.jpg',
+					},
 					tags: [
 						'Производство',
 					],
@@ -36,6 +44,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 600000,
+					author: {
+						title: 'Олег Иванов',
+						image: '../../images/content/projects/authors/img-3.jpg',
+					},
 					tags: [
 						'Образование',
 					],
@@ -48,6 +60,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 750000,
+					author: {
+						title: 'Константинопольская Александра',
+						image: '../../images/content/projects/authors/img-4.jpg',
+					},
 					tags: [
 						'Творчество',
 					],
@@ -61,6 +77,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 600000,
+					author: {
+						title: 'Олег Иванов',
+						image: '../../images/content/projects/authors/img-3.jpg',
+					},
 					tags: [
 						'Образование',
 					],
@@ -73,6 +93,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 750000,
+					author: {
+						title: 'Константинопольская Александра',
+						image: '../../images/content/projects/authors/img-4.jpg',
+					},
 					tags: [
 						'Творчество',
 					],
@@ -85,6 +109,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 1000000,
+					author: {
+						title: 'Константинопольская Александра',
+						image: '../../images/content/projects/authors/img-1.jpg',
+					},
 					tags: [
 						'Образование',
 						'Мастер-классы',
@@ -99,6 +127,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 70000,
+					author: {
+						title: 'Константинопольская Александра очень-очень длинный заголовок',
+						image: '../../images/content/projects/authors/img-2.jpg',
+					},
 					tags: [
 						'Производство',
 					],
@@ -112,6 +144,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 1000000,
+					author: {
+						title: 'Константинопольская Александра',
+						image: '../../images/content/projects/authors/img-1.jpg',
+					},
 					tags: [
 						'Образование',
 						'Мастер-классы',
@@ -126,6 +162,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 70000,
+					author: {
+						title: 'Константинопольская Александра очень-очень длинный заголовок',
+						image: '../../images/content/projects/authors/img-2.jpg',
+					},
 					tags: [
 						'Производство',
 					],
@@ -138,6 +178,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 600000,
+					author: {
+						title: 'Олег Иванов',
+						image: '../../images/content/projects/authors/img-3.jpg',
+					},
 					tags: [
 						'Образование',
 					],
@@ -150,6 +194,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 750000,
+					author: {
+						title: 'Константинопольская Александра',
+						image: '../../images/content/projects/authors/img-4.jpg',
+					},
 					tags: [
 						'Творчество',
 					],
@@ -163,6 +211,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 600000,
+					author: {
+						title: 'Олег Иванов',
+						image: '../../images/content/projects/authors/img-3.jpg',
+					},
 					tags: [
 						'Образование',
 					],
@@ -175,6 +227,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 750000,
+					author: {
+						title: 'Константинопольская Александра',
+						image: '../../images/content/projects/authors/img-4.jpg',
+					},
 					tags: [
 						'Творчество',
 					],
@@ -187,6 +243,10 @@
 						image: '../../images/content/projects/logo.png',
 					},
 					price: 1000000,
+					author: {
+						title: 'Константинопольская Александра',
+						image: '../../images/content/projects/authors/img-1.jpg',
+					},
 					tags: [
 						'Образование',
 						'Мастер-классы',
@@ -375,6 +435,7 @@
 
 		switch (type) {
 			case 'projects':
+			case 'releases':
 			case 'contests':
 			case 'grants':
 			case 'recipients':
@@ -398,18 +459,30 @@
 
 			switch (type) {
 				case 'projects':
+					delete item.price;
+					delete item.author;
+					break;
+				case 'releases':
+					delete item.organizer;
+					delete item.price;
+					break;
 				case 'contests':
 				case 'grants':
 					delete item.price;
+					delete item.author;
 					break;
 				case 'recipients':
 					delete item.organizer;
+					delete item.author;
 					break;
 			}
 
 			switch (type) {
 				case 'projects':
 					item.url = 'project.html';
+					break;
+				case 'releases':
+					item.url = 'release.html';
 					break;
 				case 'contests':
 					item.url = 'contest.html';

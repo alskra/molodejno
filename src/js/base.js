@@ -28,6 +28,7 @@ import '../components/date/date';
 import '../components/location/location';
 import '../components/price/price';
 import '../components/organizer/organizer';
+import '../components/author/author';
 import '../components/breadcrumbs/breadcrumbs';
 import '../components/tags/tags';
 import '../components/doc-item/doc-item';

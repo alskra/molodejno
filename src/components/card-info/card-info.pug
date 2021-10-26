@@ -3,6 +3,18 @@ include ../tags/tags
 mixin card-info(type)
 	.card-info&attributes(attributes)
 		case type
+			when 'recipient'
+				.card-info__content
+					h3.card-info__heading Выдано средств
+					+price(1000000)
+				.card-info__content
+					h3.card-info__heading Автор проекта
+					p Константинопольская Александра Александровна
+				.card-info__image
+					+img-2x().card-info__image-el(
+						src="../../images/content/recipients/img-1.jpg"
+						alt="Константинопольская Александра Александровна"
+					)
 			when 'new'
 				.card-info__content.card-info__content--date
 					+date('26.08.2020')
@@ -20,10 +32,7 @@ mixin card-info(type)
 					h3.card-info__heading Организатор
 					p Ресурсный Молодежный центр
 					p: a(href="//www.site.ru" target="_blank") www.site.ru
-			when 'recipient'
-				.card-info__content
-					h3.card-info__heading Выдано средств
-					+price(1000000)
+			when 'release'
 				.card-info__content
 					h3.card-info__heading Автор проекта
 					p Константинопольская Александра Александровна
