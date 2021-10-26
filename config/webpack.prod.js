@@ -34,6 +34,11 @@ module.exports = merge(common, {
 					{
 						loader: 'sass-loader',
 						options: {
+							sassOptions: {
+								outputStyle: 'expanded',
+								indentType: 'tab',
+								indentWidth: 1,
+							},
 							sourceMap: true,
 							additionalData: '@use "sass:math"; @import "/css/env";',
 						},
@@ -99,7 +104,7 @@ module.exports = merge(common, {
 		}),
 	],
 	optimization: {
-		minimize: true,
+		minimize: false,
 		minimizer: [new CssMinimizerPlugin(), '...'],
 		moduleIds: 'deterministic',
 		runtimeChunk: 'single',

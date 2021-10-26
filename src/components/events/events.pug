@@ -9,16 +9,18 @@ mixin events({type, slice, tags = true, columns = 2} = {})
 		let items = data(type, slice, tags);
 
 	.events(x-data="{gridEl: $refs.grid}")&attributes(attributes)
-		.events__grid(
-			class={[`events__grid--columns-${columns}`]: columns > 1}
-			x-ref="grid"
-		)
+		.events__grid.grid(x-ref="grid")
 			each item in items
 				+event-item(item).events__item(
-					class={
-						'event-item--lg': columns === 1,
-						'events__item--main': slice === 1,
-					}
+					class=[
+						{'events__item--main': slice === 1},
+						{'column-span-9-lg-up': columns === 1},
+						'column-span-6',
+						'column-span-10-md-down',
+						'column-line-2-md-down',
+						'column-span-12-sm-down',
+						'column-line-1-sm-down',
+					]
 				)
 			case type
 				when 'playbill'
@@ -28,7 +30,7 @@ mixin events({type, slice, tags = true, columns = 2} = {})
 						slice: 4,
 						tags: false,
 						columns: 2,
-					})
+					}).column-span-6.column-span-12-md-down
 
 		if !slice
 			+pagination({multipage: false})(x-data=`pagination('ajax/${type}.html', gridEl)`)

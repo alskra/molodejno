@@ -1,21 +1,18 @@
-.events__grid {
-	display: grid;
-	align-items: start;
-	gap: var(--gap);
-
-	@include media-breakpoint-up(lg) {
-		&--columns-2 {
-			grid-template-columns: repeat(2, 1fr);
+.events {
+	@include media-breakpoint-up(md) {
+		.cards__main.has-swiper {
+			margin-left: 0;
+			padding-left: 0;
 		}
-	}
-
-	@include media-breakpoint-down(lg) {
-		grid-template-columns: repeat(auto-fill, minmax(min(280rem, 100%), 1fr));
 	}
 }
 
+.events__grid {
+	align-items: start;
+}
+
 .events__item {
-	@include media-breakpoint-up(lg) {
+	@include media-breakpoint-up(md) {
 		&--main {
 			position: sticky;
 			top: var(--header-sticky-height);

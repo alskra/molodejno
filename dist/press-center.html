@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>Молодёжно (Frontend) - Пресс-центр</title>
-	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/press-center.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/press-center.css" rel="stylesheet"></head>
+	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/main.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/main.css" rel="stylesheet"></head>
 	<body>
 		<div class="app">
 			<header class="header" x-data="header" x-bind:class="{'is-sticky': isSticky}" x-on:scroll.window="updateStick" x-on:resize.window="updateStick(); updateMobMenu();">
@@ -74,7 +74,10 @@
 							<div class="score section__score" x-data="scoreAnimated">
 								<div class="score__title">Новостей в&nbsp;регионе</div>
 								<div class="score__content">
-									<div class="score__number" x-ref="number">100</div>
+									<div class="score__number">
+										<div x-ref="number">100</div>
+										<div x-ref="numberAnimated">100</div>
+									</div>
 									<div class="score__plus" x-ref="plus">+</div>
 								</div>
 							</div>
@@ -94,8 +97,8 @@
 									<div class="container subsection__grid">
 										<div class="content subsection__column">
 											<div class="events" x-data="{gridEl: $refs.grid}">
-												<div class="events__grid events__grid--columns-2" x-ref="grid">
-													<article class="event-item events__item events__item--main">
+												<div class="events__grid grid" x-ref="grid">
+													<article class="event-item events__item events__item--main column-span-6 column-span-10-md-down column-line-2-md-down column-span-12-sm-down column-line-1-sm-down">
 														<div class="event-item__image"><img class="event-item__image-el" src="images/content/news/img-1.jpg" srcset="images/content/news/img-1@2x.jpg 2x" alt="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">
 														</div>
 														<div class="event-item__body">
@@ -107,11 +110,11 @@
 															</div>
 														</div>
 													</article>
-													<div class="cards" x-data="{gridEl: $root.querySelector('.cards__grid')}">
-														<div class="cards__main">
+													<div class="cards column-span-6 column-span-12-md-down" x-data="{gridEl: $root.querySelector('.cards__grid')}">
+														<div class="cards__main" x-bind:class="{'has-swiper': !$store.isDesktop}">
 															<div class="cards__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
-																<div class="cards__grid cards__grid--columns-2" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
-																	<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																<div class="cards__grid grid-lg-up" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-4 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<div class="card-item__body">
 																			<div class="card-item__group">
 																				<div class="date card-item__date">
@@ -123,7 +126,7 @@
 																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-2.jpg" srcset="images/content/playbill/img-2@2x.jpg 2x" alt="Кадры будущего для регионов">
 																		</div>
 																	</article>
-																	<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-4 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<div class="card-item__body">
 																			<div class="card-item__group">
 																				<div class="date card-item__date">
@@ -135,7 +138,7 @@
 																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-3.jpg" srcset="images/content/playbill/img-3@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
 																		</div>
 																	</article>
-																	<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-4 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<div class="card-item__body">
 																			<div class="card-item__group">
 																				<div class="date card-item__date">
@@ -147,7 +150,7 @@
 																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-5.jpg" srcset="images/content/playbill/img-5@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
 																		</div>
 																	</article>
-																	<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-4 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<div class="card-item__body">
 																			<div class="card-item__group">
 																				<div class="date card-item__date">
@@ -190,8 +193,8 @@
 									<div class="container subsection__grid">
 										<div class="content subsection__column">
 											<div class="events" x-data="{gridEl: $refs.grid}">
-												<div class="events__grid events__grid--columns-2" x-ref="grid">
-													<article class="event-item events__item events__item--main">
+												<div class="events__grid grid" x-ref="grid">
+													<article class="event-item events__item events__item--main column-span-6 column-span-10-md-down column-line-2-md-down column-span-12-sm-down column-line-1-sm-down">
 														<div class="event-item__image"><img class="event-item__image-el" src="images/content/news/img-1.jpg" srcset="images/content/news/img-1@2x.jpg 2x" alt="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">
 														</div>
 														<div class="event-item__body">
@@ -203,11 +206,11 @@
 															</div>
 														</div>
 													</article>
-													<div class="cards" x-data="{gridEl: $root.querySelector('.cards__grid')}">
-														<div class="cards__main">
+													<div class="cards column-span-6 column-span-12-md-down" x-data="{gridEl: $root.querySelector('.cards__grid')}">
+														<div class="cards__main" x-bind:class="{'has-swiper': !$store.isDesktop}">
 															<div class="cards__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
-																<div class="cards__grid cards__grid--columns-2" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
-																	<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																<div class="cards__grid grid-lg-up" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-4 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<div class="card-item__body">
 																			<div class="card-item__group">
 																				<div class="date card-item__date">
@@ -219,7 +222,7 @@
 																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-2.jpg" srcset="images/content/playbill/img-2@2x.jpg 2x" alt="Кадры будущего для регионов">
 																		</div>
 																	</article>
-																	<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-4 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<div class="card-item__body">
 																			<div class="card-item__group">
 																				<div class="date card-item__date">
@@ -231,7 +234,7 @@
 																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-3.jpg" srcset="images/content/playbill/img-3@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
 																		</div>
 																	</article>
-																	<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-4 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<div class="card-item__body">
 																			<div class="card-item__group">
 																				<div class="date card-item__date">
@@ -243,7 +246,7 @@
 																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-5.jpg" srcset="images/content/playbill/img-5@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
 																		</div>
 																	</article>
-																	<article class="card-item cards__item card-item--style-group-4" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-4 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<div class="card-item__body">
 																			<div class="card-item__group">
 																				<div class="date card-item__date">

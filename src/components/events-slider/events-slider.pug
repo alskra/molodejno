@@ -12,4 +12,9 @@ mixin events-slider(type)
 			.swiper.events-slider__main-inner(x-ref="swiper")
 				.swiper-wrapper
 					each item in items
-						+event-item(item).event-item--lg.swiper-slide.events-slider__item
+						+event-item(item).swiper-slide.events-slider__item(class=[
+							'column-9',
+							'column-6-lg-down',
+							'column-10-md-down',
+							'column-12-sm-down',
+						])

@@ -45,8 +45,18 @@
 }
 
 .score__number {
+	position: relative;
 	font-family: $font-family-stolzl-display;
 	font-weight: 700;
+
+	> div:nth-child(1) {
+		color: transparent;
+	}
+
+	> div:nth-child(2) {
+		position: absolute;
+		inset: 0;
+	}
 }
 
 .score__plus {

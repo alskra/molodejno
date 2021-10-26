@@ -1,17 +1,26 @@
 .infographic {
 	overflow: hidden;
 	margin-right: calc(-1 * var(--container-content-offset-x));
-	margin-left: -60rem;
-	padding-left: 60rem;
+	margin-left: calc(-1 * var(--container-content-offset-x));
+	padding-right: var(--container-content-offset-x);
+	padding-left: var(--container-content-offset-x);
 
 	.swiper {
 		overflow: visible;
 		margin: 0 calc(-0.5 * var(--gap));
 	}
 
-	@include media-breakpoint-down(lg) {
-		margin-left: calc(-1 * var(--container-content-offset-x));
-		padding-left: var(--container-content-offset-x);
+	@include media-breakpoint-up(lg) {
+		&--inner {
+			--gap: 25rem;
+
+			margin-left: -60rem;
+			padding-left: 60rem;
+
+			.infographic__item {
+				min-width: calc(50% - var(--gap));
+			}
+		}
 	}
 }
 
@@ -20,10 +29,11 @@
 	display: flex;
 	flex-flow: column;
 	margin: 0 calc(0.5 * var(--gap));
-	border-bottom: 1px solid $heading-color;
+	border-bottom: 1px solid $color;
 	padding: 51rem 0 12rem;
-	width: 445rem;
+	width: auto;
 	height: auto;
+	min-width: var(--container-column-5);
 	cursor: default;
 
 	&::before {
@@ -40,7 +50,7 @@
 
 	@include media-breakpoint-down(lg) {
 		padding: 35rem 0 4rem;
-		width: 265rem;
+		min-width: var(--container-column-6);
 
 		&::before {
 			left: -56rem;
@@ -48,6 +58,14 @@
 			width: 94rem;
 			height: 94rem;
 		}
+	}
+
+	@include media-breakpoint-down(md) {
+		min-width: var(--container-column-8);
+	}
+
+	@include media-breakpoint-down(sm) {
+		min-width: var(--container-column-10);
 	}
 }
 
@@ -69,14 +87,25 @@
 	display: flex;
 	align-items: center;
 	margin-top: auto;
+	white-space: nowrap;
 }
 
 .infographic__number {
+	position: relative;
 	font-family: $heading-font-family;
 	font-weight: 700;
 	font-size: 90rem;
 	line-height: div(108, 90);
 	color: $color-cerulean-blue;
+
+	> div:nth-child(1) {
+		color: transparent;
+	}
+
+	> div:nth-child(2) {
+		position: absolute;
+		inset: 0;
+	}
 
 	@include media-breakpoint-down(lg) {
 		font-size: 60rem;
@@ -84,14 +113,13 @@
 }
 
 .infographic__plus {
+	@include text-stroke(1px, $color-black);
+
 	margin-left: 12rem;
 	font-family: $font-family-gilroy;
 	font-weight: 600;
 	font-size: 100rem;
 	line-height: div(119, 100);
-	-webkit-text-fill-color: transparent;
-	-webkit-text-stroke: 1px currentColor;
-	color: $color-black;
 
 	@include media-breakpoint-down(lg) {
 		margin-left: 5rem;

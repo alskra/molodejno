@@ -4,18 +4,21 @@
 
 	@include media-breakpoint-down(lg) {
 		margin-right: calc(-1 * var(--container-content-offset-x));
+		margin-left: calc(-1 * var(--container-content-offset-x));
 		padding-right: var(--container-content-offset-x);
+		padding-left: var(--container-content-offset-x);
 	}
 }
 
 .filters__body {
+	overflow: visible;
+
 	@include media-breakpoint-down(lg) {
-		overflow: visible;
 		margin: 0 -2.5rem;
 	}
 }
 
-.filters__wrapper {
+.filters__grid {
 	@include media-breakpoint-up(lg) {
 		display: flex;
 		flex-flow: wrap;
@@ -29,7 +32,6 @@
 	border: 1px solid currentColor;
 	border-radius: 32.5rem;
 	padding: calc((50rem - 1.25em - 2px) / 2) 24rem;
-	min-width: 0;
 	font-size: 16rem;
 	line-height: 1.25;
 	color: $color;

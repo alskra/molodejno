@@ -10,10 +10,7 @@
 }
 
 .teasers__item {
-	display: grid;
-	column-gap: var(--gap);
 	align-items: start;
-	grid-template-columns: repeat(3, 1fr);
 }
 
 .teasers__image {
@@ -40,7 +37,6 @@
 .teasers__main {
 	--content-edited-heading-interval-bottom: var(--gap-xs);
 
-	grid-column: 2 / 4;
 	border-top: 1px solid $color;
 	padding-top: 40rem;
 

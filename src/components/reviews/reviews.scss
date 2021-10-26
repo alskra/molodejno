@@ -5,6 +5,9 @@
 
 	@include media-breakpoint-down(lg) {
 		--gap: 3rem;
+
+		margin-left: calc(-1 * var(--container-content-offset-x));
+		padding-left: var(--container-content-offset-x);
 	}
 }
 
@@ -15,9 +18,13 @@
 
 .reviews__item {
 	margin: 0 calc(0.5 * var(--gap));
-	width: calc((var(--container-content-width) - var(--gap)) / 2);
+	width: var(--container-column-6);
 
 	@include media-breakpoint-down(lg) {
-		width: calc(100% - var(--gap));
+		width: var(--container-column-8);
+	}
+
+	@include media-breakpoint-down(md) {
+		width: var(--container-column-12);
 	}
 }

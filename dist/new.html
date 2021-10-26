@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>Молодёжно (Frontend) - Новость</title>
-	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/new.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/new.css" rel="stylesheet"></head>
+	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/main.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/main.css" rel="stylesheet"></head>
 	<body>
 		<div class="app">
 			<header class="header" x-data="header" x-bind:class="{'is-sticky': isSticky}" x-on:scroll.window="updateStick" x-on:resize.window="updateStick(); updateMobMenu();">
@@ -191,7 +191,7 @@
 																		и действующих направлениях данной отрасли.
 																		
 																	</p>
-																	<figure class="video">
+																	<figure class="video grid">
 																		<figcaption class="video__caption">Это информационно-познавательный портал для молодёжи Новгородской области</figcaption>
 																		<div class="video__main"><img class="video__image" src="images/content/article/img-2.jpg" srcset="images/content/article/img-2@2x.jpg 2x" alt="">
 																			<div class="video__overlay">
@@ -251,10 +251,10 @@
 									<div class="container subsection__grid">
 										<div class="content subsection__column">
 											<div class="cards" x-data="{gridEl: $root.querySelector('.cards__grid')}">
-												<div class="cards__main">
+												<div class="cards__main" x-bind:class="{'has-swiper': !$store.isDesktop}">
 													<div class="cards__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
-														<div class="cards__grid cards__grid--columns-4" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
-															<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+														<div class="cards__grid grid-lg-up" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
+															<article class="card-item cards__item card-item--style-group-8 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																<div class="card-item__body">
 																	<div class="card-item__group">
 																		<div class="date card-item__date">
@@ -268,7 +268,7 @@
 																<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-2.jpg" srcset="images/content/playbill/img-2@2x.jpg 2x" alt="Кадры будущего для регионов">
 																</div>
 															</article>
-															<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+															<article class="card-item cards__item card-item--style-group-8 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																<div class="card-item__body">
 																	<div class="card-item__group">
 																		<div class="date card-item__date">
@@ -282,7 +282,7 @@
 																<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-3.jpg" srcset="images/content/playbill/img-3@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
 																</div>
 															</article>
-															<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+															<article class="card-item cards__item card-item--style-group-8 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																<div class="card-item__body">
 																	<div class="card-item__group">
 																		<div class="date card-item__date">
@@ -296,7 +296,7 @@
 																<div class="card-item__image"><img class="card-item__image-el" src="images/content/playbill/img-5.jpg" srcset="images/content/playbill/img-5@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования">
 																</div>
 															</article>
-															<article class="card-item cards__item card-item--style-group-8" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+															<article class="card-item cards__item card-item--style-group-8 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																<div class="card-item__body">
 																	<div class="card-item__group">
 																		<div class="date card-item__date">

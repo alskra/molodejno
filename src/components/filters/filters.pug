@@ -6,7 +6,7 @@ mixin filters(items)
 			x-bind:class="{swiper: !$store.isDesktop}"
 			x-ref="swiper"
 		)
-			.filters__wrapper(x-bind:class="{'swiper-wrapper': !$store.isDesktop}")
+			.filters__grid(x-bind:class="{'swiper-wrapper': !$store.isDesktop}")
 				each item, index in items
 					a.filters__item(
 						class={'is-active': index === 0}

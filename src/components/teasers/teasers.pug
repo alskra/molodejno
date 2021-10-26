@@ -26,14 +26,14 @@ mixin teasers()
 
 	.teasers&attributes(attributes)
 		each teaser in teasers
-			a.teasers__item(href=teaser.url)
-				.teasers__image
+			a.teasers__item.grid(href=teaser.url)
+				.teasers__image.column-span-3
 					+img-2x().teasers__image-el(
 						src=teaser.image
 						alt!=teaser.title
 					)
 
-				+content-edited().teasers__main
+				+content-edited().teasers__main.column-line-4.column-line-end-1
 					h3.h5!= teaser.title
 					div!= teaser.content
 

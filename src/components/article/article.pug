@@ -1,4 +1,4 @@
-mixin article({type})
+mixin article({type} = {})
 	article.article(class=`article--${type}`)&attributes(attributes)
 		+container()
 			.article__image

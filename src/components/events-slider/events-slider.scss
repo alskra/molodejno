@@ -25,13 +25,4 @@
 
 .events-slider__item {
 	margin: 0 calc(0.5 * var(--gap));
-	width: calc(100% / 12 * 9 - var(--gap));
-
-	@include media-breakpoint-down(lg) {
-		width: calc(100% / 12 * 6 - var(--gap));
-	}
-
-	@include media-breakpoint-down(md) {
-		width: calc(100% - var(--gap));
-	}
 }

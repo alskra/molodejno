@@ -4,8 +4,15 @@
 	--container-width: min(var(--body-width), var(--container-max-width));
 	--container-content-width: calc(var(--container-width) - 2 * var(--container-gap));
 	--container-content-offset-x: calc((var(--body-width) - var(--container-content-width)) / 2);
-	--container-cell-width: calc((var(--container-content-width) - 11 * var(--gap)) / 12);
 
+	@for $size from 1 through 12 {
+		$columns: div(12, $size);
+
+		--container-column-#{$size}: calc((var(--container-content-width) - #{$columns - 1} * var(--gap)) / #{$columns});
+		--container-column-offset-#{$size}: calc(var(--container-column-#{$size}) + var(--gap));
+	}
+
+	// stylelint-disable-next-line
 	@include media-breakpoint-down(lg) {
 		--container-gap: 19rem;
 		--container-max-width: var(--body-width);

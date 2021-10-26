@@ -8,7 +8,7 @@
 	}
 
 	@include media-breakpoint-up(lg) {
-		&--lg {
+		&:is(.column-span-9-lg-up, .column-9) {
 			.event-item__image::before {
 				padding-top: cw(540, 825);
 			}

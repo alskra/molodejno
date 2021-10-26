@@ -1,21 +1,24 @@
-mixin promo({offsetColumn, header, type})
+mixin promo({offsetColumn, header, type} = {})
 	-
-		const promo = {
+		let promo = {
 			projects: {
+				url: 'releases.html',
 				title: 'Реализованные<br> проекты',
 				image: '../../images/design/promo/projects.png',
 			},
 			contests: {
+				url: 'winners.html',
 				title: 'Победители<br> конкурсов',
 				image: '../../images/design/promo/contests.png',
 			},
 			grants: {
+				url: 'recipients.html',
 				title: 'Гранты<br> получили',
 				image: '../../images/design/promo/grants.png',
 			},
 		};
 
-		const {title, image} = promo[type];
+		let {url, title, image} = promo[type];
 
 	#{header ? 'header' : 'div'}.promo(
 		class={
@@ -34,6 +37,6 @@ mixin promo({offsetColumn, header, type})
 				#{header ? 'h2' : 'div'}.promo__title!= title
 				if !header
 					+button-arrow-text({content: "$store.isDesktop ? 'Смотреть все' : 'Подробнее'"})(
-						href=`${type === 'grants' ? 'recipients' : type}.html`
+						href=url
 						x-bind:class="{'button-arrow-text--row': !$store.isDesktop}"
 					)

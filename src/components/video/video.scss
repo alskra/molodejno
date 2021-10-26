@@ -1,13 +1,11 @@
 .video {
-	display: grid;
-	gap: 15rem var(--gap);
-
-	@include media-breakpoint-up(lg) {
-		grid-template-columns: repeat(9, 1fr);
+	@include media-breakpoint-down(lg) {
+		row-gap: 15rem;
 	}
 }
 
 .video__caption {
+	grid-column: span 2;
 	border-top: 1px solid $color;
 	padding-top: 40rem;
 	font-size: 14rem;
@@ -15,29 +13,25 @@
 	color: $color;
 
 	@include media-breakpoint-up(lg) {
-		grid-column: span 2;
-
 		+ .video__main {
-			grid-column: span 7;
+			grid-column-start: 3;
 		}
 	}
 
 	@include media-breakpoint-down(lg) {
+		grid-column: 1 / -1;
 		padding-top: 25rem;
 	}
 }
 
 .video__main {
 	position: relative;
+	grid-column: 1 / -1;
 
 	&::before {
 		content: "";
 		display: block;
 		padding-top: cw(390, 635);
-	}
-
-	@include media-breakpoint-up(lg) {
-		grid-column: span 9;
 	}
 }
 

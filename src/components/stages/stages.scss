@@ -1,16 +1,10 @@
 .stages__item {
-	display: grid;
 	border-top: 1px solid $color;
 	border-bottom: 1px solid $color;
 	padding: 45rem 0;
 
 	&:nth-child(n + 2) {
 		border-top: 0;
-	}
-
-	@include media-breakpoint-up(lg) {
-		column-gap: var(--gap);
-		grid-template-columns: repeat(3, 1fr);
 	}
 
 	@include media-breakpoint-down(lg) {
@@ -21,8 +15,4 @@
 
 .stages__main {
 	--content-edited-heading-interval-bottom: var(--gap-xs);
-
-	@include media-breakpoint-up(lg) {
-		grid-column: 2 / 4;
-	}
 }

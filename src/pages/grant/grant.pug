@@ -62,56 +62,7 @@ block app
 
 			.article__grid-main
 				+content()
-					+card-details().article__card-details
-						+breadcrumbs([
-							{
-								url: 'grants.html',
-								content: 'Гранты',
-							},
-							'Конкурс среди организаций высшего образования',
-						]).card-details__breadcrumbs
-
-						+heading().card-details__title Конкурс среди организаций высшего образования
-
-						.card-details__info
-							.card-details__info-column
-								+date('26.10.2020', '30.10.2020', true)
-							.card-details__info-column
-								+organizer({
-									title: 'Ресурсный Молодежный центр',
-									image: '../../images/content/projects/logo.png',
-								})
-
-						.card-details__content
-							section.card-details__content-column
-								+content-edited().card-details__content-item
-									h2.h5 Участникам
-									table
-										tr
-											td Сумма гранта
-											td до #[span(x-init="$el.innerHTML = (+$el.textContent).toLocaleString('ru') + '&nbsp;&#8381;'") 15000000]
-										tr
-											td Организатор
-											td
-												| Ресурсный молодёжный центр
-												br
-												a(href="mailto:site@info.ru") site@info.ru
-
-							section.card-details__content-column
-								+content-edited().card-details__content-item
-									h2.h5 Регистрация
-									table
-										tr
-											td Телефон
-											td #[a(href="tel:+74951234567") +7 (495) 123-45-67]
-										tr
-											td E-mail
-											td: a(href="mailto:info@support.ru") info@support.ru
-								+button({
-									tag: 'a',
-									content: "'Подать заявку'",
-								}).button--height-sm.card-details__button
-
+					+card-details('grant').article__card-details
 					.article__bg
 
 					+subsection({

@@ -4,6 +4,10 @@ import '../events/events';
 import '../cards/cards';
 import './section.scss';
 
-window.addEventListener('load', () => new Rellax('.section__rellax', {
-	center: true,
-}));
+const sectionRellaxEls = document.querySelectorAll('.section__rellax');
+
+if (sectionRellaxEls.length) {
+	window.addEventListener('load', () => new Rellax('.section__rellax', {
+		center: true,
+	}));
+}

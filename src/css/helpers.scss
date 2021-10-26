@@ -31,44 +31,102 @@
 
 .grid {
 	display: grid;
-	grid-template-columns: repeat(12, 1fr);
+	grid-auto-columns: var(--container-column-1);
+	grid-template-columns: repeat(auto-fill, var(--container-column-1));
 	gap: var(--gap);
+}
 
-	@include media-breakpoint-down(lg) {
-		grid-template-columns: repeat(6, 1fr);
+@for $size from 1 through 12 {
+	.column-span-#{$size} {
+		grid-column: span $size / span $size;
+	}
+
+	.column-#{$size} {
+		// stylelint-disable-next-line
+		width: var(--container-column-#{$size}) !important;
 	}
 }
 
-@include media-breakpoint-up(lg) {
-	.hidden-lg-up {
-		// stylelint-disable-next-line
-		display: none !important;
+@for $size from 1 through 12 {
+	.column-line-#{$size} {
+		grid-column-start: $size;
 	}
 
-	@for $i from 1 through 12 {
-		.column-span-#{$i}-lg-up {
-			grid-column-end: span #{$i};
+	.column-line-end-#{$size} {
+		grid-column-end: -$size;
+	}
+}
+
+@each $name, $value in $breakpoints {
+	@include media-breakpoint-up($name) {
+		.hidden-#{$name}-up {
+			// stylelint-disable-next-line
+			display: none !important;
 		}
 
-		.column-line-#{$i}-lg-up {
-			grid-column-start: #{$i};
+		.grid-#{$name}-up {
+			display: grid;
+			grid-auto-columns: var(--container-column-1);
+			grid-template-columns: repeat(auto-fill, var(--container-column-1));
+			gap: var(--gap);
+		}
+
+		@for $size from 1 through 12 {
+			.column-span-#{$size}-#{$name}-up {
+				grid-column: span $size / span $size;
+			}
+
+			.column-#{$size}-#{$name}-up {
+				// stylelint-disable-next-line
+				width: var(--container-column-#{$size}) !important;
+			}
+		}
+
+		@for $size from 1 through 12 {
+			.column-line-#{$size}-#{$name}-up {
+				grid-column-start: $size;
+			}
+
+			.column-line-end-#{$size}-#{$name}-up {
+				grid-column-end: -$size;
+			}
 		}
 	}
 }
 
-@include media-breakpoint-down(lg) {
-	.hidden-lg-down {
-		// stylelint-disable-next-line
-		display: none !important;
-	}
-
-	@for $i from 1 through 12 {
-		.column-span-#{$i}-lg-down {
-			grid-column-end: span #{$i};
+@each $name, $value in map-reverse($breakpoints) {
+	@include media-breakpoint-down($name) {
+		.hidden-#{$name}-down {
+			// stylelint-disable-next-line
+			display: none !important;
 		}
 
-		.column-offset-#{$i}-lg-down {
-			grid-column-start: #{$i};
+		.grid-#{$name}-down {
+			display: grid;
+			grid-auto-columns: var(--container-column-1);
+			grid-template-columns: repeat(auto-fill, var(--container-column-1));
+			gap: var(--gap);
+		}
+
+		@for $size from 1 through 12 {
+			.column-span-#{$size}-#{$name}-down {
+				grid-column: span $size / span $size;
+			}
+
+			.column-#{$size}-#{$name}-down {
+				// stylelint-disable-next-line
+				width: var(--container-column-#{$size}) !important;
+			}
+		}
+
+		@for $size from 1 through 12 {
+			.column-line-#{$size}-#{$name}-down {
+				grid-column-start: $size;
+			}
+
+			.column-line-end-#{$size}-#{$name}-down {
+				grid-column-end: -$size;
+			}
 		}
 	}
 }

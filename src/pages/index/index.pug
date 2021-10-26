@@ -87,6 +87,16 @@ block app
 									},
 								],
 							},
+							{
+								url: 'projects.html',
+								title: 'Проекты',
+								pages: [
+									{
+										url: 'project.html',
+										title: 'Проект',
+									},
+								],
+							},
 						];
 
 					mixin pages(pages)
@@ -259,5 +269,26 @@ block app
 				br
 				br
 				+location('Тёсово-Нетыльский')(style={'max-width': '150px'})
+
+		section
+			+container()
+				+content-edited()
+					h2: code doc-item
+				+doc-item({
+					type: 'pdf',
+					title: 'Документы для участия'
+				})
+				br
+				br
+				div(style="max-width: 100px")
+					+doc-item({
+						type: 'pdf',
+						title: 'Документыдляучастия'
+					})
+				br
+				+doc-item({
+					type: 'pdf',
+					title: 'Документы для участия'
+				}).doc-item--lg
 
 	+footer()

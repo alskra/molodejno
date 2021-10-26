@@ -10,14 +10,26 @@
 
 	@include media-breakpoint-up(lg) {
 		&--advanced {
-			.section__image--forums,
-			.section__image--grants {
+			.section__image--forums {
 				top: -40rem;
 			}
 
 			.section__image--forums .section__image-el {
 				right: 30rem;
 				width: 575rem;
+			}
+
+			.section__image--projects {
+				top: -42rem;
+			}
+
+			.section__image--projects .section__image-el {
+				right: 65rem;
+				width: 475rem;
+			}
+
+			.section__image--grants {
+				top: -40rem;
 			}
 
 			.section__image--grants .section__image-el {
@@ -303,7 +315,7 @@
 		grid-column: 2 / 5;
 
 		.subsection {
-			margin-left: calc(-3 * (var(--container-cell-width) + var(--gap)) - 1 * var(--container-content-offset-x));
+			margin-left: calc(-1 * (var(--container-column-offset-3) + var(--container-content-offset-x)));
 		}
 	}
 }

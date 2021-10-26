@@ -5,7 +5,7 @@ mixin stages()
 				dateStart: '26.10.2020',
 				dateEnd: '28.10.2020',
 				title: 'Открытый набор',
-				content: '<p>Проблемно-ориентированное эссе</p>',
+				content: `<p>Проблемно-ориентированное эссе</p>`,
 			},
 			{
 				dateStart: '26.10.2020',
@@ -24,10 +24,10 @@ mixin stages()
 
 	.stages&attributes(attributes)
 		each stage in stages
-			article.stages__item
-				header.stages__header
+			article.stages__item.grid
+				header.column-span-3.column-line-1-lg-down.column-line-end-1-lg-down
 					+date(stage.dateStart, stage.dateEnd, true)
 
-				+content-edited().stages__main
+				+content-edited().stages__main.column-line-4.column-line-end-1.column-line-1-lg-down
 					h3.h5!= stage.title
 					div!= stage.content
