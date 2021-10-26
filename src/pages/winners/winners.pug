@@ -1,0 +1,90 @@
+extends ../../pug/base
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+include ../../components/section-nav/section-nav
+include ../../components/filters/filters
+include ../../components/cards/cards
+
+include ../../components/subsection-section/subsection-section
+include ../../components/subsection/subsection
+include ../../components/section/section
+
+append variables
+	-
+		title = `${title} - Победители конкурсов`;
+
+block app
+	+header()
+
+	main.app__main
+		+container().app__breadcrumbs
+			+breadcrumbs(['Победители конкурсов'])
+
+		+section({
+			type: 'contests',
+			title: 'Победители конкурсов',
+			advanced: true,
+			withoutImage: true,
+		})
+			+container().section__grid
+				+section-nav([
+					{
+						url: 'contests.html',
+						content: 'Конкурсы',
+						isActive: false,
+					},
+					{
+						url: 'winners.html',
+						content: 'Победители конкурсов',
+						isActive: true,
+					},
+				]).hidden-lg-up
+
+				aside.section__grid-aside
+					+section-nav([
+						{
+							url: 'contests.html',
+							content: 'Конкурсы',
+							isActive: false,
+						},
+						{
+							url: 'winners.html',
+							content: 'Победители конкурсов',
+							isActive: true,
+						},
+					]).hidden-lg-down
+
+					+filters([
+						{
+							content: 'Все',
+							quantity: 991
+						},
+						{
+							content: 'Бизнес',
+							quantity: 132
+						},
+						{
+							content: 'Образование',
+							quantity: 53
+						},
+						{
+							content: 'HR',
+							quantity: 4
+						},
+						{
+							content: 'Производство',
+							quantity: 8
+						},
+						{
+							content: 'Творчество',
+							quantity: 76
+						},
+					])
+
+				.section__grid-main
+					+content()
+						+cards({type: 'winners'})
+
+	+footer()

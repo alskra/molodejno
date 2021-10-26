@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Молодёжно (Frontend) - Проект</title>
+		<title>Молодёжно (Frontend) - Конкурс</title>
 	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/main.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/main.css" rel="stylesheet"></head>
 	<body>
 		<div class="app">
@@ -35,7 +35,7 @@
 				</div>
 			</header>
 			<main class="app__main">
-				<article class="article article--project">
+				<article class="article article--contest">
 					<div class="container">
 						<div class="article__image"><img class="article__image-el" src="images/content/article/img-intro.jpg" srcset="images/content/article/img-intro@2x.jpg 2x" alt="">
 						</div>
@@ -44,10 +44,10 @@
 						<div class="container article__grid">
 							<aside class="article__grid-aside">
 								<nav class="article-nav" x-data="articleNav" x-on:popstate.window="hash = location.hash" x-on:scroll.window.debounce.100ms="update">
-									<a class="button-arrow-text button-arrow-text--dir-left article-nav__back" href="projects.html" x-init><span class="button-arrow-text__icon">
+									<a class="button-arrow-text button-arrow-text--dir-left article-nav__back" href="contests.html" x-init><span class="button-arrow-text__icon">
 											<icon-svg name="arrow-left"></icon-svg></span><span class="button-arrow-text__content" x-text="'Назад'"></span>
 									</a>
-									<div class="article-nav__items"><a class="article-nav__item" href="#card" x-bind:class="{'is-active': $el.hash === hash}">Карточка проекта</a><a class="article-nav__item" href="#about" x-bind:class="{'is-active': $el.hash === hash}">О проекте</a><a class="article-nav__item" href="#stages" x-bind:class="{'is-active': $el.hash === hash}">Этапы</a><a class="article-nav__item" href="#docs" x-bind:class="{'is-active': $el.hash === hash}">Документы</a><a class="article-nav__item" href="#gallery" x-bind:class="{'is-active': $el.hash === hash}">Галерея</a><a class="article-nav__item" href="#reviews" x-bind:class="{'is-active': $el.hash === hash}">Отзывы</a><a class="article-nav__item" href="#partners" x-bind:class="{'is-active': $el.hash === hash}">Партнеры</a><a class="article-nav__item" href="#contacts" x-bind:class="{'is-active': $el.hash === hash}">Контакты</a>
+									<div class="article-nav__items"><a class="article-nav__item" href="#card" x-bind:class="{'is-active': $el.hash === hash}">Карточка конкурса</a><a class="article-nav__item" href="#about" x-bind:class="{'is-active': $el.hash === hash}">О конкурсе</a><a class="article-nav__item" href="#stages" x-bind:class="{'is-active': $el.hash === hash}">Этапы</a><a class="article-nav__item" href="#docs" x-bind:class="{'is-active': $el.hash === hash}">Документы</a><a class="article-nav__item" href="#gallery" x-bind:class="{'is-active': $el.hash === hash}">Галерея</a><a class="article-nav__item" href="#reviews" x-bind:class="{'is-active': $el.hash === hash}">Отзывы</a><a class="article-nav__item" href="#partners" x-bind:class="{'is-active': $el.hash === hash}">Партнеры</a><a class="article-nav__item" href="#contacts" x-bind:class="{'is-active': $el.hash === hash}">Контакты</a>
 									</div>
 								</nav>
 							</aside>
@@ -55,7 +55,7 @@
 								<div class="content">
 									<div class="card-details article__card-details">
 										<div class="anchor" id="card"></div>
-										<nav class="breadcrumbs card-details__breadcrumbs"><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="home.html">Главная</a></span><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="projects.html">Проекты</a></span><span class="breadcrumbs__item">Кадры будущего</span>
+										<nav class="breadcrumbs card-details__breadcrumbs"><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="home.html">Главная</a></span><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="contests.html">Конкурсы</a></span><span class="breadcrumbs__item">Кадры будущего</span>
 										</nav>
 										<h1 class="heading card-details__title">Кадры будущего
 										</h1>

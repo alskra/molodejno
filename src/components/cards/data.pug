@@ -437,6 +437,7 @@
 			case 'projects':
 			case 'releases':
 			case 'contests':
+			case 'winners':
 			case 'grants':
 			case 'recipients':
 				items = items.projects;
@@ -459,17 +460,15 @@
 
 			switch (type) {
 				case 'projects':
-					delete item.price;
-					delete item.author;
-					break;
-				case 'releases':
-					delete item.organizer;
-					delete item.price;
-					break;
 				case 'contests':
 				case 'grants':
 					delete item.price;
 					delete item.author;
+					break;
+				case 'releases':
+				case 'winners':
+					delete item.organizer;
+					delete item.price;
 					break;
 				case 'recipients':
 					delete item.organizer;
@@ -486,6 +485,9 @@
 					break;
 				case 'contests':
 					item.url = 'contest.html';
+					break;
+				case 'winners':
+					item.url = 'winner.html';
 					break;
 				case 'grants':
 					item.url = 'grant.html';

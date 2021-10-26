@@ -1,0 +1,168 @@
+extends ../../pug/base
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+include ../../components/article-nav/article-nav
+include ../../components/card-details/card-details
+include ../../components/infographic/infographic
+include ../../components/gallery-slider/gallery-slider
+include ../../components/stages/stages
+include ../../components/docs/docs
+include ../../components/gallery/gallery
+include ../../components/reviews/reviews
+include ../../components/partners/partners
+include ../../components/contacts/contacts
+
+include ../../components/subsection-section/subsection-section
+include ../../components/subsection/subsection
+include ../../components/article/article
+
+append variables
+	-
+		title = `${title} - Конкурс`;
+
+block app
+	+header()
+
+	main.app__main
+		+article({type: 'contest'})
+			aside.article__grid-aside
+				+article-nav({
+					backUrl: 'contests.html',
+					items: [
+						{
+							url: '#card',
+							content: 'Карточка конкурса',
+						},
+						{
+							url: '#about',
+							content: 'О конкурсе',
+						},
+						{
+							url: '#stages',
+							content: 'Этапы',
+						},
+						{
+							url: '#docs',
+							content: 'Документы',
+						},
+						{
+							url: '#gallery',
+							content: 'Галерея',
+						},
+						{
+							url: '#reviews',
+							content: 'Отзывы',
+						},
+						{
+							url: '#partners',
+							content: 'Партнеры',
+						},
+						{
+							url: '#contacts',
+							content: 'Контакты',
+						},
+					]
+				})
+
+			.article__grid-main
+				+content()
+					+card-details('contest').article__card-details
+					.article__bg
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'about',
+						title: 'О проекте',
+					})
+						+infographic().infographic--inner
+
+						+content-edited()
+							p.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+								Это информационно-познавательный портал для молодёжи.
+							p.
+								Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+								и действующих направлениях данной отрасли.
+							p.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+
+							h3 Проблематика проекта
+							ul
+								li.
+									30 октября в Батецком районе будет дан старт областному походу по местам боевых
+									сражений. К нему присоединятся активисты военно-патриотических клубов, центров,
+									объединений и представители поисковых отрядов Новгородской области.
+								li.
+									Поход продлится до 1 ноября и будет посвящен боевому пути 1-й Ленинградской
+									стрелковой дивизии народного ополчения, которая в июле 1941 года высадилась
+									на станции Батецкая и заняла оборону на Лужском рубеже.
+								li.
+									В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й
+									Кировской дивизии народного ополчения, посетят Исторический памятник
+									древнеславянской культуры «Шум-Гора».
+
+						+gallery-slider([
+							'../../images/content/gallery-slider/img-1.jpg',
+							'../../images/content/gallery-slider/img-2.jpg',
+						])
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'stages',
+						title: 'Этапы',
+					})
+						+stages()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'docs',
+						title: 'Документы',
+					})
+						+docs()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'gallery',
+						title: 'Галерея',
+					})
+						+gallery()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'reviews',
+						type: 'reviews',
+						extType: 'projects',
+						title: 'Отзывы',
+					})
+						+reviews()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'partners',
+						title: 'Партнеры',
+					})
+						+subsection-section({title: 'Генеральные партнеры'})
+							+partners(true)
+
+						+subsection-section({title: 'Информационные партнеры'})
+							+partners()
+
+						+subsection-section({title: 'Организационные партнеры'})
+							+partners()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'contacts',
+						title: 'Контакты',
+					})
+						+contacts()
+
+	+footer()

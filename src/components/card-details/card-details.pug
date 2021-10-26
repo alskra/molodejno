@@ -100,6 +100,54 @@ mixin card-details(type)
 							tag: 'a',
 							content: "'Подать заявку'",
 						}).button--height-sm.card-details__button
+			when 'contest'
+				+breadcrumbs([
+					{
+						url: 'contests.html',
+						content: 'Конкурсы',
+					},
+					'Кадры будущего',
+				]).card-details__breadcrumbs
+
+				+heading().card-details__title Кадры будущего
+
+				.card-details__info
+					.card-details__info-column
+						+date('26.10.2020', '30.10.2021', true)
+					.card-details__info-column
+						+location('Новгородская область')
+						+tags(['Образование'])
+
+				.card-details__content
+					section.card-details__content-column
+						+content-edited().card-details__content-item
+							h2.h5 Участникам
+							table
+								tr
+									td Для кого
+									td для учителей всех категорий подготовки
+								tr
+									td Как принять участие
+									td
+										+doc-item({
+											type: 'pdf',
+											title: 'Документы для участия',
+										})
+
+					section.card-details__content-column
+						+content-edited().card-details__content-item
+							h2.h5 Регистрация
+							table
+								tr
+									td Телефон
+									td #[a(href="tel:+74951234567") +7 (495) 123-45-67]
+								tr
+									td E-mail
+									td: a(href="mailto:info@support.ru") info@support.ru
+						+button({
+							tag: 'a',
+							content: "'Подать заявку'",
+						}).button--height-sm.card-details__button
 			when 'grant'
 				+breadcrumbs([
 					{

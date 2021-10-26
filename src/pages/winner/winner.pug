@@ -14,7 +14,7 @@ include ../../components/section/section
 
 append variables
 	-
-		title = `${title} - Реализованный проект`;
+		title = `${title} - Победитель конкурса`;
 
 block app
 	+header()
@@ -23,25 +23,25 @@ block app
 		+container().app__breadcrumbs
 			+breadcrumbs([
 				{
-					url: 'releases.html',
-					content: 'Реализованные проекты',
+					url: 'winners.html',
+					content: 'Победители конкурсов',
 				},
 				'Поддержка молодежи, оказавшейся в трудной жизненной ситуации',
 			])
 
 		+section({
 			tag: 'article',
-			type: 'projects',
+			type: 'contests',
 			title: 'Поддержка молодежи, оказавшейся в трудной жизненной ситуации',
 			advanced: true,
 			withoutImage: true,
 		})
 			+container().section__grid
 				aside.section__grid-aside
-					+card-info('release').section__card-info
+					+card-info('winner').section__card-info
 					+article-nav({
 						primary: true,
-						backUrl: 'releases.html',
+						backUrl: 'winners.html',
 					}).section__article-nav
 
 				.section__grid-main
