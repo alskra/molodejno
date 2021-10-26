@@ -1,4 +1,4 @@
-import Alpine from 'alpinejs';
+// import Alpine from 'alpinejs';
 
 import '../../js/base';
 
@@ -15,4 +15,4 @@ import '../../components/section/section';
 
 import '../../components/app/app';
 
-Alpine.start();
+// Alpine.start();
