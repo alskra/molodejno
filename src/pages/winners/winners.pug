@@ -13,31 +13,31 @@ include ../../components/section/section
 
 append variables
 	-
-		title = `${title} - Реализованные проекты`;
+		title = `${title} - Победители конкурсов`;
 
 block app
 	+header()
 
 	main.app__main
 		+container().app__breadcrumbs
-			+breadcrumbs(['Реализованные проекты'])
+			+breadcrumbs(['Победители конкурсов'])
 
 		+section({
-			type: 'projects',
-			title: 'Реализованные проекты',
+			type: 'contests',
+			title: 'Победители конкурсов',
 			advanced: true,
 			withoutImage: true,
 		})
 			+container().section__grid
 				+section-nav([
 					{
-						url: 'projects.html',
-						content: 'Проекты',
+						url: 'contests.html',
+						content: 'Конкурсы',
 						isActive: false,
 					},
 					{
-						url: 'releases.html',
-						content: 'Реализованные проекты',
+						url: 'winners.html',
+						content: 'Победители конкурсов',
 						isActive: true,
 					},
 				]).hidden-lg-up
@@ -45,13 +45,13 @@ block app
 				aside.section__grid-aside
 					+section-nav([
 						{
-							url: 'projects.html',
-							content: 'Проекты',
+							url: 'contests.html',
+							content: 'Конкурсы',
 							isActive: false,
 						},
 						{
-							url: 'releases.html',
-							content: 'Реализованные проекты',
+							url: 'winners.html',
+							content: 'Победители конкурсов',
 							isActive: true,
 						},
 					]).hidden-lg-down
@@ -85,6 +85,6 @@ block app
 
 				.section__grid-main
 					+content()
-						+cards({type: 'releases'})
+						+cards({type: 'winners'})
 
 	+footer()
