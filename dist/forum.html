@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>Молодёжно (Frontend) - Форум</title>
-	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/forum.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/forum.css" rel="stylesheet"></head>
+	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/main.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/main.css" rel="stylesheet"></head>
 	<body>
 		<div class="app">
 			<header class="header" x-data="header" x-bind:class="{'is-sticky': isSticky}" x-on:scroll.window="updateStick" x-on:resize.window="updateStick(); updateMobMenu();">
@@ -63,7 +63,7 @@
 											<div class="card-details__info-column">
 												<div class="date date--adaptive">
 													<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
-													<time class="date__item"><span class="date__day-month date__day-month--end">30.10</span><span class="date__year">2020</span></time>
+													<time class="date__item"><span class="date__day-month date__day-month--end">30.10</span><span class="date__year">2021</span></time>
 												</div>
 											</div>
 											<div class="card-details__info-column">
@@ -125,48 +125,66 @@
 										<div class="subsection__main">
 											<div class="container subsection__grid">
 												<div class="content subsection__column">
-													<div class="infographic" x-data="infographic">
+													<div class="infographic infographic--inner" x-data="infographic">
 														<div class="swiper" x-ref="container">
 															<div class="swiper-wrapper">
 																<div class="swiper-slide infographic__item" x-data="scoreAnimated">
 																	<div class="infographic__title">Выигранных грантов</div>
 																	<div class="infographic__content">
-																		<div class="infographic__number" x-ref="number">12500</div>
+																		<div class="infographic__number">
+																			<div x-ref="number">12500</div>
+																			<div x-ref="numberAnimated">12500</div>
+																		</div>
 																		<div class="infographic__plus" x-ref="plus">+</div>
 																	</div>
 																</div>
 																<div class="swiper-slide infographic__item" x-data="scoreAnimated">
 																	<div class="infographic__title">Участников ежегодно</div>
 																	<div class="infographic__content">
-																		<div class="infographic__number" x-ref="number">3500</div>
+																		<div class="infographic__number">
+																			<div x-ref="number">3500</div>
+																			<div x-ref="numberAnimated">3500</div>
+																		</div>
 																		<div class="infographic__plus" x-ref="plus">+</div>
 																	</div>
 																</div>
 																<div class="swiper-slide infographic__item" x-data="scoreAnimated">
 																	<div class="infographic__title">Выигранных грантов</div>
 																	<div class="infographic__content">
-																		<div class="infographic__number" x-ref="number">12500</div>
+																		<div class="infographic__number">
+																			<div x-ref="number">12500</div>
+																			<div x-ref="numberAnimated">12500</div>
+																		</div>
 																		<div class="infographic__plus" x-ref="plus">+</div>
 																	</div>
 																</div>
 																<div class="swiper-slide infographic__item" x-data="scoreAnimated">
 																	<div class="infographic__title">Участников ежегодно</div>
 																	<div class="infographic__content">
-																		<div class="infographic__number" x-ref="number">3500</div>
+																		<div class="infographic__number">
+																			<div x-ref="number">3500</div>
+																			<div x-ref="numberAnimated">3500</div>
+																		</div>
 																		<div class="infographic__plus" x-ref="plus">+</div>
 																	</div>
 																</div>
 																<div class="swiper-slide infographic__item" x-data="scoreAnimated">
 																	<div class="infographic__title">Выигранных грантов</div>
 																	<div class="infographic__content">
-																		<div class="infographic__number" x-ref="number">12500</div>
+																		<div class="infographic__number">
+																			<div x-ref="number">12500</div>
+																			<div x-ref="numberAnimated">12500</div>
+																		</div>
 																		<div class="infographic__plus" x-ref="plus">+</div>
 																	</div>
 																</div>
 																<div class="swiper-slide infographic__item" x-data="scoreAnimated">
 																	<div class="infographic__title">Участников ежегодно</div>
 																	<div class="infographic__content">
-																		<div class="infographic__number" x-ref="number">3500</div>
+																		<div class="infographic__number">
+																			<div x-ref="number">3500</div>
+																			<div x-ref="numberAnimated">3500</div>
+																		</div>
 																		<div class="infographic__plus" x-ref="plus">+</div>
 																	</div>
 																</div>
@@ -268,7 +286,7 @@
 															направлениях данной отрасли.
 															
 														</p>
-														<figure class="video">
+														<figure class="video grid">
 															<figcaption class="video__caption">Это информационно-познавательный портал для молодёжи Новгородской области</figcaption>
 															<div class="video__main"><img class="video__image" src="images/content/article/img-2.jpg" srcset="images/content/article/img-2@2x.jpg 2x" alt="">
 																<div class="video__overlay">
@@ -303,23 +321,23 @@
 										<div class="subsection__main">
 											<div class="container subsection__grid">
 												<div class="content subsection__column">
-													<div class="teasers"><a class="teasers__item" href="">
-															<div class="teasers__image"><img class="teasers__image-el" src="images/content/tea_sers/img-1.jpg" srcset="images/content/tea_sers/img-1@2x.jpg 2x" alt="Проектный маршрут в две строки">
+													<div class="teasers"><a class="teasers__item grid" href="">
+															<div class="teasers__image column-span-3"><img class="teasers__image-el" src="images/content/tea_sers/img-1.jpg" srcset="images/content/tea_sers/img-1@2x.jpg 2x" alt="Проектный маршрут в две строки">
 															</div>
-															<div class="content-edited teasers__main">
+															<div class="content-edited teasers__main column-line-4 column-line-end-1">
 																<h3 class="h5">Проектный маршрут в две строки</h3>
 																<div>В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской
 дивизии народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».</div>
-															</div></a><a class="teasers__item" href="">
-															<div class="teasers__image"><img class="teasers__image-el" src="images/content/tea_sers/img-2.jpg" srcset="images/content/tea_sers/img-2@2x.jpg 2x" alt="Заголовок тизера">
+															</div></a><a class="teasers__item grid" href="">
+															<div class="teasers__image column-span-3"><img class="teasers__image-el" src="images/content/tea_sers/img-2.jpg" srcset="images/content/tea_sers/img-2@2x.jpg 2x" alt="Заголовок тизера">
 															</div>
-															<div class="content-edited teasers__main">
+															<div class="content-edited teasers__main column-line-4 column-line-end-1">
 																<h3 class="h5">Заголовок тизера</h3>
 																<div>В первый день участники познакомятся с виртуальной экспозицией.</div>
-															</div></a><a class="teasers__item" href="">
-															<div class="teasers__image"><img class="teasers__image-el" src="images/content/tea_sers/img-3.jpg" srcset="images/content/tea_sers/img-3@2x.jpg 2x" alt="Проектный маршрут в две строки">
+															</div></a><a class="teasers__item grid" href="">
+															<div class="teasers__image column-span-3"><img class="teasers__image-el" src="images/content/tea_sers/img-3.jpg" srcset="images/content/tea_sers/img-3@2x.jpg 2x" alt="Проектный маршрут в две строки">
 															</div>
-															<div class="content-edited teasers__main">
+															<div class="content-edited teasers__main column-line-4 column-line-end-1">
 																<h3 class="h5">Проектный маршрут в две строки</h3>
 																<div>Завершающим этапом похода станет семинар «Исследовательская деятельность в поисковом движении».
 Участники познакомятся с алгоритмом отработки заявок Всероссийского проекта «Судьба солдата» онлайн». А также
@@ -348,38 +366,38 @@
 														</header>
 														<div class="content subsection-section__main">
 															<div class="stages">
-																<article class="stages__item">
-																	<header class="stages__header">
+																<article class="stages__item grid">
+																	<header class="column-span-3 column-line-1-lg-down column-line-end-1-lg-down">
 																		<div class="date date--adaptive">
 																			<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
 																			<time class="date__item"><span class="date__day-month date__day-month--end">28.10</span><span class="date__year">2020</span></time>
 																		</div>
 																	</header>
-																	<div class="content-edited stages__main">
+																	<div class="content-edited stages__main column-line-4 column-line-end-1 column-line-1-lg-down">
 																		<h3 class="h5">Открытый набор</h3>
 																		<div><p>Проблемно-ориентированное эссе</p></div>
 																	</div>
 																</article>
-																<article class="stages__item">
-																	<header class="stages__header">
+																<article class="stages__item grid">
+																	<header class="column-span-3 column-line-1-lg-down column-line-end-1-lg-down">
 																		<div class="date date--adaptive">
 																			<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
 																		</div>
 																	</header>
-																	<div class="content-edited stages__main">
+																	<div class="content-edited stages__main column-line-4 column-line-end-1 column-line-1-lg-down">
 																		<h3 class="h5">Проектный маршрут</h3>
 																		<div><p>Индивидуальная образовательная программа, стажировки, профессиональные пробы.
 Индивидуальная образовательная программа, стажировки, профессиональные пробы.</p></div>
 																	</div>
 																</article>
-																<article class="stages__item">
-																	<header class="stages__header">
+																<article class="stages__item grid">
+																	<header class="column-span-3 column-line-1-lg-down column-line-end-1-lg-down">
 																		<div class="date date--adaptive">
 																			<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
 																			<time class="date__item"><span class="date__day-month date__day-month--end">28.10</span><span class="date__year">2020</span></time>
 																		</div>
 																	</header>
-																	<div class="content-edited stages__main">
+																	<div class="content-edited stages__main column-line-4 column-line-end-1 column-line-1-lg-down">
 																		<h3 class="h5">Марафон проектов</h3>
 																		<div><p>Индивидуальная образовательная программа, стажировки, профессиональные пробы.
 Индивидуальная образовательная программа, стажировки, профессиональные пробы.</p></div>
@@ -394,16 +412,16 @@
 														</header>
 														<div class="content subsection-section__main">
 															<div class="docs">
-																<div class="docs__body" x-data="swiperFree" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
-																	<div class="docs__body-inner" x-bind:class="{'swiper-wrapper': !$store.isDesktop}"><a class="docs__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
-																			<icon-svg class="docs__icon" name="pdf"></icon-svg>
-																			<div class="docs__title">Заголовок документа для скачивания в две строчки очень длинное</div></a><a class="docs__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
-																			<icon-svg class="docs__icon" name="doc"></icon-svg>
-																			<div class="docs__title">Заголовок документа для скачивания</div></a><a class="docs__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
-																			<icon-svg class="docs__icon" name="xls"></icon-svg>
-																			<div class="docs__title">Заголовок документа</div></a><a class="docs__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
-																			<icon-svg class="docs__icon" name="pdf"></icon-svg>
-																			<div class="docs__title">Заголовок документа для скачивания</div></a>
+																<div class="docs__body" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
+																	<div class="grid-lg-up" x-bind:class="{'swiper-wrapper': !$store.isDesktop}"><a class="doc-item doc-item--lg docs__item column-span-3-lg-up column-5-lg-down column-6-md-down column-10-sm-down" href="" download x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																			<icon-svg class="doc-item__icon" name="pdf"></icon-svg>
+																			<div class="doc-item__title">Заголовок документа для скачивания в две строчки очень длинное</div></a><a class="doc-item doc-item--lg docs__item column-span-3-lg-up column-5-lg-down column-6-md-down column-10-sm-down" href="" download x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																			<icon-svg class="doc-item__icon" name="doc"></icon-svg>
+																			<div class="doc-item__title">Заголовок документа для скачивания</div></a><a class="doc-item doc-item--lg docs__item column-span-3-lg-up column-5-lg-down column-6-md-down column-10-sm-down" href="" download x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																			<icon-svg class="doc-item__icon" name="xls"></icon-svg>
+																			<div class="doc-item__title">Заголовок документа</div></a><a class="doc-item doc-item--lg docs__item column-span-3-lg-up column-5-lg-down column-6-md-down column-10-sm-down" href="" download x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																			<icon-svg class="doc-item__icon" name="pdf"></icon-svg>
+																			<div class="doc-item__title">Заголовок документа для скачивания</div></a>
 																	</div>
 																</div>
 															</div>
@@ -662,45 +680,45 @@
 											<div class="container subsection__grid">
 												<div class="content subsection__column">
 													<div class="cards" x-data="{gridEl: $root.querySelector('.cards__grid')}">
-														<div class="cards__main">
+														<div class="cards__main" x-bind:class="{'has-swiper': !$store.isDesktop}">
 															<div class="cards__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
-																<div class="cards__grid cards__grid--columns-3" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
-																	<article class="person-item cards__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																<div class="cards__grid grid-lg-up" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
+																	<article class="person-item cards__item column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<h3 class="person-item__title">Менеджер по рекламе</h3>
 																		<div class="person-item__image"><img class="person-item__image-el" src="images/content/persons/img-1.jpg" srcset="images/content/persons/img-1@2x.jpg 2x" alt="Константин Константинопольский">
 																		</div>
 																		<div class="person-item__name">Константин Константинопольский</div>
 																		<div class="person-item__position">Обладатель премии «Золотой клик» и «Серебряная паутина 2016» в номинации «Лучший сайт»</div>
 																	</article>
-																	<article class="person-item cards__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="person-item cards__item column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<h3 class="person-item__title">Заместитель директора по социальным вопросам</h3>
 																		<div class="person-item__image"><img class="person-item__image-el" src="images/content/persons/img-2.jpg" srcset="images/content/persons/img-2@2x.jpg 2x" alt="Олег Иванов">
 																		</div>
 																		<div class="person-item__name">Олег Иванов</div>
 																		<div class="person-item__position">Руководитель</div>
 																	</article>
-																	<article class="person-item cards__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="person-item cards__item column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<h3 class="person-item__title">Менеджер</h3>
 																		<div class="person-item__image"><img class="person-item__image-el" src="images/content/persons/img-3.jpg" srcset="images/content/persons/img-3@2x.jpg 2x" alt="Константин Константинопольский">
 																		</div>
 																		<div class="person-item__name">Константин Константинопольский</div>
 																		<div class="person-item__position">Куратор</div>
 																	</article>
-																	<article class="person-item cards__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="person-item cards__item column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<h3 class="person-item__title">Менеджер по рекламе</h3>
 																		<div class="person-item__image"><img class="person-item__image-el" src="images/content/persons/img-1.jpg" srcset="images/content/persons/img-1@2x.jpg 2x" alt="Константин Константинопольский">
 																		</div>
 																		<div class="person-item__name">Константин Константинопольский</div>
 																		<div class="person-item__position">Обладатель премии «Золотой клик» и «Серебряная паутина 2016» в номинации «Лучший сайт»</div>
 																	</article>
-																	<article class="person-item cards__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="person-item cards__item column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<h3 class="person-item__title">Заместитель директора по социальным вопросам</h3>
 																		<div class="person-item__image"><img class="person-item__image-el" src="images/content/persons/img-2.jpg" srcset="images/content/persons/img-2@2x.jpg 2x" alt="Олег Иванов">
 																		</div>
 																		<div class="person-item__name">Олег Иванов</div>
 																		<div class="person-item__position">Руководитель</div>
 																	</article>
-																	<article class="person-item cards__item" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="person-item cards__item column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<h3 class="person-item__title">Менеджер</h3>
 																		<div class="person-item__image"><img class="person-item__image-el" src="images/content/persons/img-3.jpg" srcset="images/content/persons/img-3@2x.jpg 2x" alt="Константин Константинопольский">
 																		</div>

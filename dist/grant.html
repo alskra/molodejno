@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>Молодёжно (Frontend) - Грант</title>
-	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/grant.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/grant.css" rel="stylesheet"></head>
+	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/main.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/main.css" rel="stylesheet"></head>
 	<body>
 		<div class="app">
 			<header class="header" x-data="header" x-bind:class="{'is-sticky': isSticky}" x-on:scroll.window="updateStick" x-on:resize.window="updateStick(); updateMobMenu();">
@@ -63,7 +63,7 @@
 											<div class="card-details__info-column">
 												<div class="date date--adaptive">
 													<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
-													<time class="date__item"><span class="date__day-month date__day-month--end">30.10</span><span class="date__year">2020</span></time>
+													<time class="date__item"><span class="date__day-month date__day-month--end">30.10</span><span class="date__year">2021</span></time>
 												</div>
 											</div>
 											<div class="card-details__info-column">
@@ -208,38 +208,38 @@
 											<div class="container subsection__grid">
 												<div class="content subsection__column">
 													<div class="stages">
-														<article class="stages__item">
-															<header class="stages__header">
+														<article class="stages__item grid">
+															<header class="column-span-3 column-line-1-lg-down column-line-end-1-lg-down">
 																<div class="date date--adaptive">
 																	<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
 																	<time class="date__item"><span class="date__day-month date__day-month--end">28.10</span><span class="date__year">2020</span></time>
 																</div>
 															</header>
-															<div class="content-edited stages__main">
+															<div class="content-edited stages__main column-line-4 column-line-end-1 column-line-1-lg-down">
 																<h3 class="h5">Открытый набор</h3>
 																<div><p>Проблемно-ориентированное эссе</p></div>
 															</div>
 														</article>
-														<article class="stages__item">
-															<header class="stages__header">
+														<article class="stages__item grid">
+															<header class="column-span-3 column-line-1-lg-down column-line-end-1-lg-down">
 																<div class="date date--adaptive">
 																	<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
 																</div>
 															</header>
-															<div class="content-edited stages__main">
+															<div class="content-edited stages__main column-line-4 column-line-end-1 column-line-1-lg-down">
 																<h3 class="h5">Проектный маршрут</h3>
 																<div><p>Индивидуальная образовательная программа, стажировки, профессиональные пробы.
 Индивидуальная образовательная программа, стажировки, профессиональные пробы.</p></div>
 															</div>
 														</article>
-														<article class="stages__item">
-															<header class="stages__header">
+														<article class="stages__item grid">
+															<header class="column-span-3 column-line-1-lg-down column-line-end-1-lg-down">
 																<div class="date date--adaptive">
 																	<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
 																	<time class="date__item"><span class="date__day-month date__day-month--end">28.10</span><span class="date__year">2020</span></time>
 																</div>
 															</header>
-															<div class="content-edited stages__main">
+															<div class="content-edited stages__main column-line-4 column-line-end-1 column-line-1-lg-down">
 																<h3 class="h5">Марафон проектов</h3>
 																<div><p>Индивидуальная образовательная программа, стажировки, профессиональные пробы.
 Индивидуальная образовательная программа, стажировки, профессиональные пробы.</p></div>
@@ -263,16 +263,16 @@
 											<div class="container subsection__grid">
 												<div class="content subsection__column">
 													<div class="docs">
-														<div class="docs__body" x-data="swiperFree" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
-															<div class="docs__body-inner" x-bind:class="{'swiper-wrapper': !$store.isDesktop}"><a class="docs__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
-																	<icon-svg class="docs__icon" name="pdf"></icon-svg>
-																	<div class="docs__title">Заголовок документа для скачивания в две строчки очень длинное</div></a><a class="docs__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
-																	<icon-svg class="docs__icon" name="doc"></icon-svg>
-																	<div class="docs__title">Заголовок документа для скачивания</div></a><a class="docs__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
-																	<icon-svg class="docs__icon" name="xls"></icon-svg>
-																	<div class="docs__title">Заголовок документа</div></a><a class="docs__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}">
-																	<icon-svg class="docs__icon" name="pdf"></icon-svg>
-																	<div class="docs__title">Заголовок документа для скачивания</div></a>
+														<div class="docs__body" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
+															<div class="grid-lg-up" x-bind:class="{'swiper-wrapper': !$store.isDesktop}"><a class="doc-item doc-item--lg docs__item column-span-3-lg-up column-5-lg-down column-6-md-down column-10-sm-down" href="" download x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<icon-svg class="doc-item__icon" name="pdf"></icon-svg>
+																	<div class="doc-item__title">Заголовок документа для скачивания в две строчки очень длинное</div></a><a class="doc-item doc-item--lg docs__item column-span-3-lg-up column-5-lg-down column-6-md-down column-10-sm-down" href="" download x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<icon-svg class="doc-item__icon" name="doc"></icon-svg>
+																	<div class="doc-item__title">Заголовок документа для скачивания</div></a><a class="doc-item doc-item--lg docs__item column-span-3-lg-up column-5-lg-down column-6-md-down column-10-sm-down" href="" download x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<icon-svg class="doc-item__icon" name="xls"></icon-svg>
+																	<div class="doc-item__title">Заголовок документа</div></a><a class="doc-item doc-item--lg docs__item column-span-3-lg-up column-5-lg-down column-6-md-down column-10-sm-down" href="" download x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<icon-svg class="doc-item__icon" name="pdf"></icon-svg>
+																	<div class="doc-item__title">Заголовок документа для скачивания</div></a>
 															</div>
 														</div>
 													</div>
@@ -298,10 +298,10 @@
 											<div class="container subsection__grid">
 												<div class="content subsection__column">
 													<div class="cards" x-data="{gridEl: $root.querySelector('.cards__grid')}">
-														<div class="cards__main">
+														<div class="cards__main" x-bind:class="{'has-swiper': !$store.isDesktop}">
 															<div class="cards__main-inner" x-data="swiperCards" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
-																<div class="cards__grid cards__grid--columns-3" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
-																	<article class="card-item cards__item card-item--style-group-6" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																<div class="cards__grid grid-lg-up" x-bind:class="{'swiper-wrapper': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-6 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<div class="card-item__body">
 																			<div class="card-item__group">
 																				<div class="price card-item__price">
@@ -315,7 +315,7 @@
 																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-1.jpg" srcset="images/content/projects/img-1@2x.jpg 2x" alt="Кадры будущего для регионов">
 																		</div>
 																	</article>
-																	<article class="card-item cards__item card-item--style-group-6" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-6 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<div class="card-item__body">
 																			<div class="card-item__group">
 																				<div class="price card-item__price">
@@ -329,7 +329,7 @@
 																		<div class="card-item__image"><img class="card-item__image-el" src="images/content/projects/img-2.jpg" srcset="images/content/projects/img-2@2x.jpg 2x" alt="Конкурс среди образовательных организаций высшего образования очень-очень длинный заголовок">
 																		</div>
 																	</article>
-																	<article class="card-item cards__item card-item--style-group-6" x-bind:class="{'swiper-slide': !$store.isDesktop}">
+																	<article class="card-item cards__item card-item--style-group-6 column-span-3-lg-up column-4-lg-down column-6-md-down column-10-sm-down" x-bind:class="{'swiper-slide': !$store.isDesktop}">
 																		<div class="card-item__body">
 																			<div class="card-item__group">
 																				<div class="price card-item__price">

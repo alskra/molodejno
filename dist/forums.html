@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>Молодёжно (Frontend) - Форумы</title>
-	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/forums.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/forums.css" rel="stylesheet"></head>
+	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/main.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/main.css" rel="stylesheet"></head>
 	<body>
 		<div class="app">
 			<header class="header" x-data="header" x-bind:class="{'is-sticky': isSticky}" x-on:scroll.window="updateStick" x-on:resize.window="updateStick(); updateMobMenu();">
@@ -74,7 +74,10 @@
 							<div class="score section__score" x-data="scoreAnimated">
 								<div class="score__title">Деловых событий</div>
 								<div class="score__content">
-									<div class="score__number" x-ref="number">100</div>
+									<div class="score__number">
+										<div x-ref="number">100</div>
+										<div x-ref="numberAnimated">100</div>
+									</div>
 									<div class="score__plus" x-ref="plus">+</div>
 								</div>
 							</div>
@@ -85,7 +88,7 @@
 							<aside class="section__grid-aside">
 								<nav class="filters">
 									<div class="filters__body" x-data="swiperFree" x-effect="effect" x-bind:class="{swiper: !$store.isDesktop}" x-ref="swiper">
-										<div class="filters__wrapper" x-bind:class="{'swiper-wrapper': !$store.isDesktop}"><a class="filters__item is-active" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Все</span><span class="filters__quantity">991</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Бизнес</span><span class="filters__quantity">132</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Образование</span><span class="filters__quantity">53</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">HR</span><span class="filters__quantity">4</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Производство</span><span class="filters__quantity">8</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Творчество</span><span class="filters__quantity">76</span></a>
+										<div class="filters__grid" x-bind:class="{'swiper-wrapper': !$store.isDesktop}"><a class="filters__item is-active" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Все</span><span class="filters__quantity">991</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Бизнес</span><span class="filters__quantity">132</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Образование</span><span class="filters__quantity">53</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">HR</span><span class="filters__quantity">4</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Производство</span><span class="filters__quantity">8</span></a><a class="filters__item" href="" x-bind:class="{'swiper-slide': !$store.isDesktop}"><span class="filters__content">Творчество</span><span class="filters__quantity">76</span></a>
 										</div>
 									</div>
 								</nav>
@@ -93,8 +96,8 @@
 							<div class="section__grid-main">
 								<div class="content">
 									<div class="events" x-data="{gridEl: $refs.grid}">
-										<div class="events__grid" x-ref="grid">
-											<article class="event-item events__item event-item--lg">
+										<div class="events__grid grid" x-ref="grid">
+											<article class="event-item events__item column-span-9-lg-up column-span-6 column-span-10-md-down column-line-2-md-down column-span-12-sm-down column-line-1-sm-down">
 												<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-1.jpg" srcset="images/content/forums/img-1@2x.jpg 2x" alt="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">
 												</div>
 												<div class="event-item__body">
@@ -113,7 +116,7 @@
 													</div>
 												</div>
 											</article>
-											<article class="event-item events__item event-item--lg">
+											<article class="event-item events__item column-span-9-lg-up column-span-6 column-span-10-md-down column-line-2-md-down column-span-12-sm-down column-line-1-sm-down">
 												<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-2.jpg" srcset="images/content/forums/img-2@2x.jpg 2x" alt="«Мой бизнес. От малого к Великому»">
 												</div>
 												<div class="event-item__body">
@@ -132,7 +135,7 @@
 													</div>
 												</div>
 											</article>
-											<article class="event-item events__item event-item--lg">
+											<article class="event-item events__item column-span-9-lg-up column-span-6 column-span-10-md-down column-line-2-md-down column-span-12-sm-down column-line-1-sm-down">
 												<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-3.jpg" srcset="images/content/forums/img-3@2x.jpg 2x" alt="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">
 												</div>
 												<div class="event-item__body">
@@ -151,7 +154,7 @@
 													</div>
 												</div>
 											</article>
-											<article class="event-item events__item event-item--lg">
+											<article class="event-item events__item column-span-9-lg-up column-span-6 column-span-10-md-down column-line-2-md-down column-span-12-sm-down column-line-1-sm-down">
 												<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-4.jpg" srcset="images/content/forums/img-4@2x.jpg 2x" alt="«Мой бизнес. От малого к Великому»">
 												</div>
 												<div class="event-item__body">
@@ -170,7 +173,7 @@
 													</div>
 												</div>
 											</article>
-											<article class="event-item events__item event-item--lg">
+											<article class="event-item events__item column-span-9-lg-up column-span-6 column-span-10-md-down column-line-2-md-down column-span-12-sm-down column-line-1-sm-down">
 												<div class="event-item__image"><img class="event-item__image-el" src="images/content/forums/img-5.jpg" srcset="images/content/forums/img-5@2x.jpg 2x" alt="Предпринимательский форум молодежи «Мой бизнес. От малого к Великому» очень-очень длинный заголовок">
 												</div>
 												<div class="event-item__body">
