@@ -1,5 +1,3 @@
-// import Alpine from 'alpinejs';
-
 import '../../js/base';
 
 import '../../components/header/header';
@@ -13,5 +11,3 @@ import '../../components/section/section';
 import '../../components/promo/promo';
 
 import '../../components/app/app';
-
-// Alpine.start();
