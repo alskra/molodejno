@@ -4,19 +4,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Молодёжно (Frontend) - Guide</title>
+		<title>Молодёжно (Frontend) - Победитель конкурса</title>
 	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/main.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/main.css" rel="stylesheet"></head>
 	<body>
-		<style>
-			section:not(:last-child) {
-				margin-bottom: var(--gap-2xl);
-			}
-			
-			.content-edited:not(:last-child) {
-				margin-bottom: var(--gap);
-			}
-			
-		</style>
 		<div class="app">
 			<header class="header" x-data="header" x-bind:class="{'is-sticky': isSticky}" x-on:scroll.window="updateStick" x-on:resize.window="updateStick(); updateMobMenu();">
 				<div class="container header__mob" x-show="!$store.isDesktop"><a class="header__logo" href="home.html" x-show="!mobMenuIsOpen">
@@ -44,276 +34,175 @@
 					</div>
 				</div>
 			</header>
-			<main class="app__main" style="padding:var(--gap) 0;">
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2>Pages</h2>
-							<ol>
-								<li><a href="home.html">Главная</a>
-								</li>
-								<li><a href="grants.html">Гранты</a>
-									<ol>
-										<li><a href="grant.html">Грант</a>
-										</li>
-									</ol>
-								</li>
-								<li><a href="recipients.html">Гранты получили</a>
-									<ol>
-										<li><a href="recipient.html">Грантополучатель</a>
-										</li>
-									</ol>
-								</li>
-								<li><a href="forums.html">Форумы</a>
-									<ol>
-										<li><a href="forum.html">Форум</a>
-										</li>
-									</ol>
-								</li>
-								<li><a href="press-center.html">Пресс-центр</a>
-									<ol>
-										<li><a href="news.html">Новости</a>
-											<ol>
-												<li><a href="new.html">Новость</a>
-												</li>
-											</ol>
-										</li>
-									</ol>
-								</li>
-								<li><a href="playbill.html">Афиша</a>
-									<ol>
-										<li><a href="event.html">Событие</a>
-										</li>
-									</ol>
-								</li>
-								<li><a href="projects.html">Проекты</a>
-									<ol>
-										<li><a href="project.html">Проект</a>
-										</li>
-									</ol>
-								</li>
-								<li><a href="releases.html">Реализованные проекты</a>
-									<ol>
-										<li><a href="release.html">Реализованный проект</a>
-										</li>
-									</ol>
-								</li>
-								<li><a href="contests.html">Конкурсы</a>
-									<ol>
-										<li><a href="contest.html">Конкурс</a>
-										</li>
-									</ol>
-								</li>
-								<li><a href="winners.html">Победители</a>
-									<ol>
-										<li><a href="winner.html">Победитель</a>
-										</li>
-									</ol>
-								</li>
-							</ol>
-						</div>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h1>h1: Конкурс среди организаций высшего образования</h1>
-							<h2>h2: Конкурс среди организаций высшего образования</h2>
-							<h3>h3: Конкурс среди организаций высшего образования</h3>
-							<h4>h4: Конкурс среди организаций высшего образования</h4>
-							<h5>h5: Конкурс среди организаций высшего образования</h5>
-							<h6>h6: Конкурс среди организаций высшего образования</h6>
-							<ul>
-								<li>
-									30 октября в Батецком районе будет дан старт областному походу по местам боевых сражений.
-									К нему присоединятся активисты военно-патриотических клубов, центров, объединений и представители
-									поисковых отрядов Новгородской области.
-								</li>
-								<li>
-									Поход продлится до 1 ноября и будет посвящен боевому пути 1-й Ленинградской стрелковой дивизии
-									народного ополчения, которая в июле 1941 года высадилась на станции Батецкая и заняла оборону
-									на Лужском рубеже.
-								</li>
-								<li>
-									В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской дивизии
-									народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».
-								</li>
-							</ul>
-							<p>
-								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
-								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
-								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
-								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
-								Это информационно-познавательный портал для молодёжи.
-							</p>
-							<p>
-								Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
-								и действующих направлениях данной отрасли.
-								
-							</p>
-						</div>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>button</code></h2>
-						</div>
-						<button class="button" type="button" x-init><span class="button__content" x-text="'Синяя кнопка'"></span></button><br><br>
-						<button class="button button--height-sm" type="button" x-init><span class="button__content" x-text="'Синяя кнопка'"></span></button>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>button-arrow</code></h2>
-						</div>
-						<button class="button-arrow" type="button" disabled>
-							<icon-svg name="arrow-left"></icon-svg>
-						</button>
-						<button class="button-arrow" type="button">
-							<icon-svg name="arrow-right"></icon-svg>
-						</button>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>button-arrow-text</code></h2>
-						</div>
-						<button class="button-arrow-text" type="button" x-init><span class="button-arrow-text__icon">
-								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
-						</button><br><br>
-						<a class="button-arrow-text button-arrow-text--dir-left" href="" x-init><span class="button-arrow-text__icon">
-								<icon-svg name="arrow-left"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
-						</a><br><br>
-						<a class="button-arrow-text button-arrow-text--row" href="" x-init><span class="button-arrow-text__icon">
-								<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
-						</a><br><br>
-						<a class="button-arrow-text button-arrow-text--dir-left button-arrow-text--row" href="" x-init><span class="button-arrow-text__icon">
-								<icon-svg name="arrow-left"></icon-svg></span><span class="button-arrow-text__content" x-text="'Смотреть все'"></span>
-						</a>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>button-expand</code></h2>
-						</div>
-						<button class="button-expand" type="button" x-init><span class="button-expand__content" x-text="'Развернуть'"></span>
-							<icon-svg class="button-expand__icon" name="arrow-down"></icon-svg>
-						</button><br><br>
-						<button class="button-expand button-expand--dir-up" type="button" x-init><span class="button-expand__content" x-text="'Свернуть'"></span>
-							<icon-svg class="button-expand__icon" name="arrow-down"></icon-svg>
-						</button>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>button-load</code></h2>
-						</div>
-						<button class="button-load" type="button" x-init><span class="button-load__content" x-text="'Загрузить еще'"></span>
-							<icon-svg class="button-load__icon" name="plus"></icon-svg>
-						</button><br><br>
-						<button class="button-load is-loading" type="button" x-init><span class="button-load__content" x-text="'Загрузить еще'"></span>
-							<icon-svg class="button-load__icon" name="plus"></icon-svg>
-						</button>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>date</code></h2>
-						</div>
-						<div class="date">
-							<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
-						</div><br><br>
-						<div class="date">
-							<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
-							<time class="date__item"><span class="date__day-month date__day-month--end">30.10</span><span class="date__year">2020</span></time>
-						</div><br><br>
-						<div style="max-width:200px;">
-							<div class="date">
-								<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
-								<time class="date__item"><span class="date__day-month date__day-month--end">30.10</span><span class="date__year">2020</span></time>
+			<main class="app__main">
+				<div class="container app__breadcrumbs">
+					<nav class="breadcrumbs"><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="home.html">Главная</a></span><span class="breadcrumbs__item"><a class="breadcrumbs__link" href="winners.html">Победители конкурсов</a></span><span class="breadcrumbs__item">Поддержка молодежи, оказавшейся в трудной жизненной ситуации</span>
+					</nav>
+				</div>
+				<article class="section section--contests section--advanced section--without-image">
+					<div class="section__bg">
+						<div class="container">
+							<div class="position-relative">
+								<div class="section__bg-el section__rellax section__bg-el--contests" data-rellax-speed="-2"></div>
 							</div>
-						</div><br><br>
-						<div class="content-edited">
-							<h3><code>adaptive</code></h3>
-						</div>
-						<div class="date date--adaptive">
-							<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
-						</div><br><br>
-						<div class="date date--adaptive">
-							<time class="date__item"><span class="date__day-month date__day-month--start">26.10</span><span class="date__year">2020</span></time>
-							<time class="date__item"><span class="date__day-month date__day-month--end">30.10</span><span class="date__year">2020</span></time>
 						</div>
 					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>organizer</code></h2>
+					<header class="container section__header">
+						<div class="section__header-body">
+							<h1 class="heading section__heading" data-aos="fade-up" data-aos-duration="800">Поддержка молодежи, оказавшейся в трудной жизненной ситуации
+							</h1>
 						</div>
-						<div class="organizer" style="max-width:255px;">
-							<div class="organizer__title">Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Молодежный центр">
-						</div><br>
-						<div class="organizer" style="max-width:255px;">
-							<div class="organizer__title">Ресурсный Молодежный центр длинный заголовок</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр длинный заголовок">
-						</div><br>
-						<div class="content-edited">
-							<h3><code>line-clamp</code></h3>
-						</div>
-						<div class="organizer organizer--line-clamp" style="max-width:255px;">
-							<div class="organizer__title">Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Молодежный центр">
-						</div><br>
-						<div class="organizer organizer--line-clamp" style="max-width:255px;">
-							<div class="organizer__title">Ресурсный Молодежный центр длинный заголовок</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр длинный заголовок">
-						</div><br>
-						<div class="organizer organizer--line-clamp" style="max-width:555px;">
-							<div class="organizer__title">Ресурсный Молодежный центр</div><img class="organizer__image" src="images/content/projects/logo.png" srcset="images/content/projects/logo@2x.png 2x" alt="Ресурсный Молодежный центр">
+					</header>
+					<div class="section__main">
+						<div class="container section__grid">
+							<aside class="section__grid-aside">
+								<div class="card-info section__card-info">
+									<div class="card-info__content">
+										<h3 class="card-info__heading">Победитель конкурса</h3>
+										<p>Константинопольская Александра Александровна</p>
+									</div>
+									<div class="card-info__image"><img class="card-info__image-el" src="images/content/recipients/img-1.jpg" srcset="images/content/recipients/img-1@2x.jpg 2x" alt="Константинопольская Александра Александровна">
+									</div>
+									<nav class="tags card-info__tags"><a class="tags__item" href="">Образование</a><a class="tags__item" href="">Мастер-классы</a><a class="tags__item" href="">Культура и искусство</a>
+									</nav>
+								</div>
+								<nav class="article-nav section__article-nav" x-data="articleNav" x-on:popstate.window="hash = location.hash" x-on:scroll.window.debounce.100ms="update">
+									<a class="button-arrow-text button-arrow-text--dir-left article-nav__back button-arrow-text--primary" href="winners.html" x-init><span class="button-arrow-text__icon">
+											<icon-svg name="arrow-left"></icon-svg></span><span class="button-arrow-text__content" x-text="'Назад'"></span>
+									</a>
+								</nav>
+							</aside>
+							<div class="section__grid-main">
+								<div class="content">
+									<div class="swiper-fraction gallery-slider" x-data="swiperFraction">
+										<div class="gallery-slider__main">
+											<div class="swiper gallery-slider__main-inner" x-ref="swiper">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide gallery-slider__item"><img class="gallery-slider__image" src="images/content/gallery-slider/img-2.jpg" srcset="images/content/gallery-slider/img-2@2x.jpg 2x" alt="">
+													</div>
+													<div class="swiper-slide gallery-slider__item"><img class="gallery-slider__image" src="images/content/gallery-slider/img-1.jpg" srcset="images/content/gallery-slider/img-1@2x.jpg 2x" alt="">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-fraction__footer">
+											<div class="swiper-fraction__pagination" x-ref="pagination"></div>
+											<div class="swiper-fraction__navigation" x-ref="navigation">
+												<button class="button-arrow" type="button" x-ref="prevEl">
+													<icon-svg name="arrow-left"></icon-svg>
+												</button>
+												<button class="button-arrow" type="button" x-ref="nextEl">
+													<icon-svg name="arrow-right"></icon-svg>
+												</button>
+											</div>
+										</div>
+									</div>
+									<section class="subsection subsection--offset-column-all">
+										<header class="subsection__header">
+											<div class="container subsection__grid">
+												<div class="subsection__column">
+													<h2 class="subsection__title">О проекте</h2>
+												</div>
+											</div>
+										</header>
+										<div class="subsection__main">
+											<div class="container subsection__grid">
+												<div class="content subsection__column">
+													<div class="content-edited">
+														<p>
+															Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+															молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+															Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+															молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+															Это информационно-познавательный портал для молодёжи.
+														</p>
+														<p>
+															Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+															и действующих направлениях данной отрасли.
+															
+														</p>
+														<h3>Задачи проекта</h3>
+														<ul>
+															<li>
+																30 октября в Батецком районе будет дан старт областному походу по местам боевых сражений.
+																К нему присоединятся активисты военно-патриотических клубов, центров, объединений и представители
+																поисковых отрядов Новгородской области.
+															</li>
+															<li>
+																Поход продлится до 1 ноября и будет посвящен боевому пути 1-й Ленинградской стрелковой дивизии
+																народного ополчения, которая в июле 1941 года высадилась на станции Батецкая и заняла оборону
+																на Лужском рубеже.
+															</li>
+															<li>
+																В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской дивизии
+																народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».
+																
+															</li>
+														</ul>
+														<h3>Результаты проекта</h3>
+														<ul>
+															<li>
+																30 октября в Батецком районе будет дан старт областному походу по местам боевых сражений.
+																К нему присоединятся активисты военно-патриотических клубов, центров, объединений и представители
+																поисковых отрядов Новгородской области.
+															</li>
+															<li>
+																Поход продлится до 1 ноября и будет посвящен боевому пути 1-й Ленинградской стрелковой дивизии
+																народного ополчения, которая в июле 1941 года высадилась на станции Батецкая и заняла оборону
+																на Лужском рубеже.
+															</li>
+															<li>
+																В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской дивизии
+																народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».
+																
+															</li>
+														</ul>
+													</div>
+													<section class="subsection-section">
+														<header class="subsection-section__header">
+															<h3 class="subsection-section__title subsection-section__title--h3">Галерея</h3>
+														</header>
+														<div class="content subsection-section__main">
+															<div class="gallery" x-data="{gridEl: $refs.grid}">
+																<div class="gallery__grid" x-ref="grid"><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-2@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-2.jpg" srcset="images/content/gallery/img-2@2x.jpg 2x" alt=""></a><a class="gallery__item" href="images/content/gallery/img-1@2x.jpg" data-fancybox="gallery"><img class="gallery__image" src="images/content/gallery/img-1.jpg" srcset="images/content/gallery/img-1@2x.jpg 2x" alt=""></a>
+																</div>
+																<div class="pagination" x-data="pagination('ajax/gallery.html', gridEl)">
+																	<div class="pagination__error" x-show="error" x-text="error"></div>
+																	<button class="button-load" type="button" x-init x-bind:class="{'is-loading': isLoading}" x-bind:disabled="isLoading" x-on:click="load"><span class="button-load__content" x-text="'Загрузить еще'"></span>
+																		<icon-svg class="button-load__icon" name="plus"></icon-svg>
+																	</button>
+																</div>
+															</div>
+														</div>
+													</section>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+								<div class="share">
+									<div class="share__title">
+										<icon-svg class="share__title-icon" name="share"></icon-svg>Поделиться
+									</div>
+									<div class="share__items">
+										<button class="share__item share__item--facebook" type="button" data-social="facebook">
+											<icon-svg class="share__item-icon" name="facebook"></icon-svg>Поделиться
+										</button>
+										<button class="share__item share__item--twitter" type="button" data-social="twitter">
+											<icon-svg class="share__item-icon" name="twitter"></icon-svg>Твитнуть
+										</button>
+										<button class="share__item share__item--facebook" type="button" data-social="facebook">
+											<icon-svg class="share__item-icon" name="facebook"></icon-svg>Поделиться
+										</button>
+										<button class="share__item share__item--twitter" type="button" data-social="twitter">
+											<icon-svg class="share__item-icon" name="twitter"></icon-svg>Твитнуть
+										</button>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>author</code></h2>
-						</div>
-						<div class="author" style="max-width:255px;">
-							<div class="author__title">Константинопольская Александра</div><img class="author__image" src="data:image/jpeg;base64,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" srcset="images/content/projects/authors/img-1@2x.jpg 2x" alt="Константинопольская Александра">
-						</div>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>location</code></h2>
-						</div>
-						<div class="location">
-							<div class="location__content">Тёсово-Нетыльский</div>
-						</div><br><br>
-						<div class="location" style="max-width:150px;">
-							<div class="location__content">Тёсово-Нетыльский</div>
-						</div>
-					</div>
-				</section>
-				<section>
-					<div class="container">
-						<div class="content-edited">
-							<h2><code>doc-item</code></h2>
-						</div><a class="doc-item" href="" download>
-							<icon-svg class="doc-item__icon" name="pdf"></icon-svg>
-							<div class="doc-item__title">Документы для участия</div></a><br><br>
-						<div style="max-width: 100px"><a class="doc-item" href="" download>
-								<icon-svg class="doc-item__icon" name="pdf"></icon-svg>
-								<div class="doc-item__title">Документыдляучастия</div></a>
-						</div><br><a class="doc-item doc-item--lg" href="" download>
-							<icon-svg class="doc-item__icon" name="pdf"></icon-svg>
-							<div class="doc-item__title">Документы для участия</div></a>
-					</div>
-				</section>
+				</article>
 			</main>
 			<footer class="footer">
 				<form class="subscribe" action="" x-data>
