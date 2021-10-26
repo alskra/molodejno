@@ -97,6 +97,16 @@ block app
 									},
 								],
 							},
+							{
+								url: 'releases.html',
+								title: 'Реализованные проекты',
+								pages: [
+									{
+										url: 'release.html',
+										title: 'Реализованный проект',
+									},
+								],
+							},
 						];
 
 					mixin pages(pages)
@@ -260,6 +270,15 @@ block app
 					image: '../../images/content/projects/logo.png',
 					lineClamp: true,
 				})(style={'max-width': '555px'})
+
+		section
+			+container()
+				+content-edited()
+					h2: code author
+				+author({
+					title: 'Константинопольская Александра',
+					image: '../../images/content/projects/authors/img-1.jpg',
+				})(style={'max-width': '255px'})
 
 		section
 			+container()

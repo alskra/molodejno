@@ -1,0 +1,7 @@
+mixin author({title, image, lineClamp} = {})
+	.author(class={'author--line-clamp': lineClamp})&attributes(attributes)
+		.author__title!= title
+		+img-2x().author__image(
+			src=image
+			alt!=title
+		)

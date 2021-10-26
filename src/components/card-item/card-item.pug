@@ -1,9 +1,9 @@
 include ../tags/tags
 
-mixin card-item({url = "", title, image, date, organizer, price, tags} = {})
+mixin card-item({url = "", title, image, date, organizer, price, author, tags} = {})
 	article.card-item&attributes(attributes)
 		.card-item__body
-			if date || organizer || price
+			if date || organizer || price || author
 				.card-item__group
 					if date
 						+date(date).card-item__date
@@ -14,6 +14,10 @@ mixin card-item({url = "", title, image, date, organizer, price, tags} = {})
 
 					if price
 						+price(price).card-item__price
+
+					if author
+						- author.lineClamp = true;
+						+author(author).card-item__author
 
 			h3.card-item__title
 				a.card-item__link(

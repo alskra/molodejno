@@ -3,10 +3,10 @@
 	--image-height: 40rem;
 
 	display: flex;
-	align-items: center;
+	column-gap: var(--gap-sm);
+	align-items: flex-start;
 	font-size: 14rem;
 	color: $color;
-	gap: 10rem;
 
 	&--line-clamp {
 		--line-clamp: 3;
@@ -23,6 +23,7 @@
 	@include line-clamp;
 
 	flex: 50%;
+	margin: auto 0;
 }
 
 .organizer__image {
