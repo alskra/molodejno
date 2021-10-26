@@ -86,7 +86,7 @@
 
 .section__header-body {
 	@include media-breakpoint-up(lg) {
-		width: calc((var(--container-content-width) - var(--gap)) / 2);
+		width: var(--container-column-6);
 	}
 }
 
