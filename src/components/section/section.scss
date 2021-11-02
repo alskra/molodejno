@@ -328,6 +328,12 @@
 		position: sticky;
 		top: calc(var(--header-sticky-height) + 20rem);
 		z-index: 1;
+		overflow-y: auto;
+		max-height: calc(#{vh(100)} - (var(--header-sticky-height) + 20rem) - 20rem);
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
 
 	@include media-breakpoint-down(lg) {

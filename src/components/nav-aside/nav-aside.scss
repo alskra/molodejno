@@ -1,20 +1,11 @@
-.article-nav {
-	user-select: none;
-}
-
-.article-nav__back {
-	&:not(:last-child) {
-		margin-bottom: 35rem;
-	}
-}
-
-.article-nav__items {
+.nav-aside {
 	display: flex;
 	flex-flow: column;
+	user-select: none;
 	gap: 15rem 20rem;
 }
 
-.article-nav__item {
+.nav-aside__item {
 	font-size: 16rem;
 	line-height: 1.25;
 	color: $color;

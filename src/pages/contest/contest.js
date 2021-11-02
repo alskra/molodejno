@@ -17,5 +17,3 @@ import '../../components/contacts/contacts';
 import '../../components/subsection-section/subsection-section';
 import '../../components/subsection/subsection';
 import '../../components/article/article';
-
-import '../../components/app/app';

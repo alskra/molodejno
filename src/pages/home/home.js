@@ -9,5 +9,3 @@ import '../../components/section-infographic/section-infographic';
 import '../../components/directions/directions';
 import '../../components/section/section';
 import '../../components/promo/promo';
-
-import '../../components/app/app';

@@ -3,10 +3,7 @@ extends ../../pug/base
 include ../../components/header/header
 include ../../components/footer/footer
 
-include ../../components/section-nav/section-nav
-include ../../components/filters/filters
-include ../../components/cards/cards
-include ../../components/promo/promo
+include ../../components/nav-aside/nav-aside
 
 include ../../components/subsection-section/subsection-section
 include ../../components/subsection/subsection
@@ -15,6 +12,64 @@ include ../../components/section/section
 append variables
 	-
 		title = `${title} - Деятельность`;
+		let activities = [
+			{
+				url: 'activities-direction.html',
+				content: 'Волонтерство',
+			},
+			{
+				url: 'activities-direction.html',
+				content: 'Инновационная деятельность и научно-техническое творчество',
+			},
+			{
+				url: 'activities-direction.html',
+				content: 'Культура и творчество',
+			},
+			{
+				url: 'activities-direction.html',
+				content: 'Молодые семьи',
+			},
+			{
+				url: 'activities-direction.html',
+				content: 'Образование и карьера',
+			},
+			{
+				url: 'activities-direction.html',
+				content: 'Патриотическое воспитание',
+			},
+			{
+				url: 'activities-direction.html',
+				content: 'Предпринимательство',
+			},
+			{
+				url: 'activities-direction.html',
+				content: 'Самоуправление',
+			},
+			{
+				url: 'activities-direction.html',
+				content: 'Сельское хозяйство и молодёжь на селе',
+			},
+			{
+				url: 'activities-direction.html',
+				content: 'Спорт и ЗОЖ',
+			},
+			{
+				url: 'activities-direction.html',
+				content: 'Социальная защита',
+			},
+			{
+				url: 'activities-direction.html',
+				content: 'Социальная адаптация',
+			},
+			{
+				url: 'activities-direction.html',
+				content: 'Строительство и жильё',
+			},
+			{
+				url: 'activities-direction.html',
+				content: 'Экология',
+			},
+		];
 
 block app
 	+header()
@@ -35,64 +90,11 @@ block app
 			advanced: true,
 		})
 			+container().section__grid
-				+section-nav([
-					{
-						url: 'grants.html',
-						content: 'Гранты',
-						isActive: true,
-					},
-					{
-						url: 'recipients.html',
-						content: 'Гранты получили',
-						isActive: false,
-					},
-				]).hidden-lg-up
-
-				aside.section__grid-aside
-					+section-nav([
-						{
-							url: 'grants.html',
-							content: 'Гранты',
-							isActive: true,
-						},
-						{
-							url: 'recipients.html',
-							content: 'Гранты получили',
-							isActive: false,
-						},
-					]).hidden-lg-down
-
-					+filters([
-						{
-							content: 'Все',
-							quantity: 991
-						},
-						{
-							content: 'Бизнес',
-							quantity: 132
-						},
-						{
-							content: 'Образование',
-							quantity: 53
-						},
-						{
-							content: 'HR',
-							quantity: 4
-						},
-						{
-							content: 'Производство',
-							quantity: 8
-						},
-						{
-							content: 'Творчество',
-							quantity: 76
-						},
-					])
+				aside.section__grid-aside.hidden-lg-down
+					+nav-aside(activities)
 
 				.section__grid-main
 					+content()
-						+cards({type: 'grants'})
-
-		+promo({type: 'grants'})
+						| fdsfds
 
 	+footer()
