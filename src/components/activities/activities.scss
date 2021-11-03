@@ -3,8 +3,13 @@
 	row-gap: var(--gap-xl);
 }
 
+.activities__gap {
+	width: var(--gap);
+}
+
 .activities__item {
 	align-items: start;
+	margin-bottom: var(--gap-xl);
 	border-top: 1px solid currentColor;
 	padding-top: 25rem;
 

@@ -1,7 +1,21 @@
 mixin activities(items)
-	.activities.grid&attributes(attributes)
+	.activities.grid(
+		x-data="activities"
+		x-ref="grid"
+	)&attributes(attributes)
+		.activities__gap
 		each item in items
-			a.activities__item.grid.column-span-3.column-span-4-lg-down.column-span-12-md-down(href=item.url)
+			a.activities__item.grid(
+				class=[
+					'column-span-3',
+					'column-3',
+					'column-span-4-lg-down',
+					'column-4-lg-down',
+					'column-span-12-md-down',
+					'column-12-md-down',
+				]
+				href=item.url
+			)
 				h3.activities__title.column-line-1.column-line-end-1.column-line-1-md-down.column-line-end-5-md-down!= item.title
 				.activities__image.column-line-1.column-line-end-1.column-span-4-md-down.column-line-end-1-md-down
 					+img-2x().activities__image-el(
