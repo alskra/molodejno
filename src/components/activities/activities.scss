@@ -1,10 +1,10 @@
 .activities {
 	align-items: start;
 	row-gap: var(--gap-xl);
-}
 
-.activities__gap {
-	width: var(--gap);
+	.gutter-sizer {
+		width: var(--gap);
+	}
 }
 
 .activities__item {

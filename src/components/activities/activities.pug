@@ -3,15 +3,15 @@ mixin activities(items)
 		x-data="activities"
 		x-ref="grid"
 	)&attributes(attributes)
-		.activities__gap
+		.gutter-sizer
 		each item in items
 			a.activities__item.grid(
 				class=[
 					'column-span-3',
-					'column-3',
 					'column-span-4-lg-down',
-					'column-4-lg-down',
 					'column-span-12-md-down',
+					'column-3',
+					'column-4-lg-down',
 					'column-12-md-down',
 				]
 				href=item.url

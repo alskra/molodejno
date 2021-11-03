@@ -6,10 +6,10 @@ Alpine.data('activities', () => ({
 	masonry: undefined,
 	init() {
 		this.masonry = new Masonry(this.$refs.grid, {
+			gutter: '.gutter-sizer',
 			itemSelector: '.activities__item',
-			gutter: '.activities__gap',
 		});
 
-		setTimeout(() => this.masonry.layout(), 500);
+		setTimeout(() => this.masonry.layout(), 100);
 	},
 }));
