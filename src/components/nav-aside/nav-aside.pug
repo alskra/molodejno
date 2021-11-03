@@ -2,4 +2,4 @@ mixin nav-aside(items)
 	nav.nav-aside&attributes(attributes)
 		if items && items.length
 			each item in items
-				a.nav-aside__item(href=item.url)= item.content
+				a.nav-aside__item(href=item.url)= item.title

@@ -4,6 +4,7 @@ include ../../components/header/header
 include ../../components/footer/footer
 
 include ../../components/nav-aside/nav-aside
+include ../../components/activities/activities
 
 include ../../components/subsection-section/subsection-section
 include ../../components/subsection/subsection
@@ -15,59 +16,73 @@ append variables
 		let activities = [
 			{
 				url: 'activities-direction.html',
-				content: 'Волонтерство',
+				title: 'Волонтерство',
+				image: '../../images/content/activities/img-1.jpg',
 			},
 			{
 				url: 'activities-direction.html',
-				content: 'Инновационная деятельность и научно-техническое творчество',
+				title: 'Инновационная деятельность и научно-техническое творчество',
+				image: '../../images/content/activities/img-2.jpg',
 			},
 			{
 				url: 'activities-direction.html',
-				content: 'Культура и творчество',
+				title: 'Культура и творчество',
+				image: '../../images/content/activities/img-3.jpg',
 			},
 			{
 				url: 'activities-direction.html',
-				content: 'Молодые семьи',
+				title: 'Молодые семьи',
+				image: '../../images/content/activities/img-4.jpg',
 			},
 			{
 				url: 'activities-direction.html',
-				content: 'Образование и карьера',
+				title: 'Образование и карьера',
+				image: '../../images/content/activities/img-5.jpg',
 			},
 			{
 				url: 'activities-direction.html',
-				content: 'Патриотическое воспитание',
+				title: 'Патриотическое воспитание',
+				image: '../../images/content/activities/img-6.jpg',
 			},
 			{
 				url: 'activities-direction.html',
-				content: 'Предпринимательство',
+				title: 'Предпринимательство',
+				image: '../../images/content/activities/img-7.jpg',
 			},
 			{
 				url: 'activities-direction.html',
-				content: 'Самоуправление',
+				title: 'Самоуправление',
+				image: '../../images/content/activities/img-8.jpg',
 			},
 			{
 				url: 'activities-direction.html',
-				content: 'Сельское хозяйство и молодёжь на селе',
+				title: 'Сельское хозяйство и молодёжь на селе',
+				image: '../../images/content/activities/img-9.jpg',
 			},
 			{
 				url: 'activities-direction.html',
-				content: 'Спорт и ЗОЖ',
+				title: 'Спорт и ЗОЖ',
+				image: '../../images/content/activities/img-10.jpg',
 			},
 			{
 				url: 'activities-direction.html',
-				content: 'Социальная защита',
+				title: 'Социальная защита',
+				image: '../../images/content/activities/img-11.jpg',
 			},
 			{
 				url: 'activities-direction.html',
-				content: 'Социальная адаптация',
+				title: 'Социальная адаптация',
+				image: '../../images/content/activities/img-12.jpg',
 			},
 			{
 				url: 'activities-direction.html',
-				content: 'Строительство и жильё',
+				title: 'Строительство и жильё',
+				image: '../../images/content/activities/img-13.jpg',
 			},
 			{
 				url: 'activities-direction.html',
-				content: 'Экология',
+				title: 'Экология',
+				image: '../../images/content/activities/img-14.jpg',
 			},
 		];
 
@@ -95,6 +110,6 @@ block app
 
 				.section__grid-main
 					+content()
-						| fdsfds
+						+activities(activities)
 
 	+footer()

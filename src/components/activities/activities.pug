@@ -1,0 +1,10 @@
+mixin activities(items)
+	.activities.grid&attributes(attributes)
+		each item in items
+			a.activities__item.column-span-3.column-span-4-lg-down.column-span-6-md-down.column-span-12-sm-down(href=item.url)
+				h3.activities__title!= item.title
+				.activities__image
+					+img-2x().activities__image-el(
+						src=item.image
+						alt!=item.title
+					)
