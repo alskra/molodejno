@@ -1,7 +1,11 @@
+.activities {
+	align-items: start;
+	row-gap: var(--gap-xl);
+}
+
 .activities__item {
-	display: flex;
-	flex-flow: column;
-	border-top: 1px solid $color;
+	align-items: start;
+	border-top: 1px solid currentColor;
 	padding-top: 25rem;
 
 	@include hover {
@@ -11,15 +15,22 @@
 			border-radius: 0;
 		}
 	}
+
+	@include media-breakpoint-down(md) {
+		padding-top: 15rem;
+	}
 }
 
 .activities__title {
-	margin-bottom: 30rem;
 	font-family: $heading-font-family;
 	font-size: 24rem;
-	line-height: 1.25;
+	line-height: 1.2;
 	transition: color;
 	transition-duration: $transition-duration;
+
+	@include media-breakpoint-down(md) {
+		font-size: 20rem;
+	}
 }
 
 .activities__image {
