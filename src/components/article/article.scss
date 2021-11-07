@@ -5,25 +5,31 @@
 
 	&--forum {
 		.article__bg::before {
-			background: linear-gradient(180deg, $color-onahau-2 81.03%, rgba(208, 235, 255, 0) 100%);
+			background: linear-gradient(180deg, $color-onahau-2 81.03%, transparent);
 		}
 	}
 
 	&--project {
 		.article__bg::before {
-			background: linear-gradient(180deg, $color-aero-blue 81.03%, rgba(205, 255, 225, 0) 100%);
+			background: linear-gradient(180deg, $color-aero-blue 81.03%, transparent);
 		}
 	}
 
 	&--contest {
 		.article__bg::before {
-			background: linear-gradient(180deg, $color-tidal 81.03%, rgba(229, 255, 172, 0) 100%);
+			background: linear-gradient(180deg, $color-tidal 81.03%, transparent);
 		}
 	}
 
 	&--grant {
 		.article__bg::before {
-			background: linear-gradient(180deg, $color-dolly 81.03%, rgba(255, 243, 134, 0) 100%);
+			background: linear-gradient(180deg, $color-dolly 81.03%, transparent);
+		}
+	}
+
+	&--direction {
+		.article__bg::before {
+			background: linear-gradient(180deg, $color-white-pointer 81.03%, transparent);
 		}
 	}
 
