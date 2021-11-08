@@ -159,7 +159,7 @@
 
 		:is(th, td) {
 			vertical-align: baseline;
-			padding: calc(0.5 * var(--content-edited-interval)) 15rem;
+			padding: calc(0.5 * var(--content-edited-interval)) calc(0.5 * var(--gap));
 		}
 
 		:is(th, td):first-child {
