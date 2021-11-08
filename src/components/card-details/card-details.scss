@@ -168,6 +168,7 @@
 		display: grid;
 		place-content: center;
 		border-left: 1px solid;
+		padding-right: var(--gap);
 		padding-left: var(--gap);
 	}
 }
