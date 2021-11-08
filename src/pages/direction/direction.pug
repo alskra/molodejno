@@ -18,7 +18,10 @@ block app
 	+header()
 
 	main.app__main
-		+article({type: 'direction'})
+		+article({
+			type: 'direction',
+			image: '../../images/content/article/img-4.jpg',
+		})
 			aside.article__grid-aside
 				+article-nav({
 					backUrl: 'activities.html',
