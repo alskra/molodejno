@@ -27,7 +27,7 @@
 	&::before {
 		content: "";
 		display: block;
-		padding-top: min(var(--height), #{vh(100)} - var(--header-height));
+		padding-top: min(var(--height), #{vh(100)} - var(--header-sticky-height));
 	}
 
 	@include media-breakpoint-down(lg) {
