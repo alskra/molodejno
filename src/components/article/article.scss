@@ -4,33 +4,23 @@
 	position: relative;
 
 	&--forum {
-		.article__bg::before {
-			background: linear-gradient(180deg, $color-onahau-2 81.03%, transparent);
-		}
+		--theme-color: #{$color-onahau-2};
 	}
 
 	&--project {
-		.article__bg::before {
-			background: linear-gradient(180deg, $color-aero-blue 81.03%, transparent);
-		}
+		--theme-color: #{$color-aero-blue};
 	}
 
 	&--contest {
-		.article__bg::before {
-			background: linear-gradient(180deg, $color-tidal 81.03%, transparent);
-		}
+		--theme-color: #{$color-tidal};
 	}
 
 	&--grant {
-		.article__bg::before {
-			background: linear-gradient(180deg, $color-dolly 81.03%, transparent);
-		}
+		--theme-color: #{$color-dolly};
 	}
 
 	&--direction {
-		.article__bg::before {
-			background: linear-gradient(180deg, $color-white-pointer 81.03%, transparent);
-		}
+		--theme-color: #{$color-white-pointer};
 	}
 
 	@include media-breakpoint-down(lg) {
@@ -47,6 +37,7 @@
 		z-index: -1;
 		width: 100%;
 		height: min(1300 / 1200 * var(--body-width), 100%);
+		background: linear-gradient(180deg, var(--theme-color) 81.03%, transparent);
 	}
 
 	@include media-breakpoint-down(lg) {
@@ -95,6 +86,11 @@
 	}
 }
 
+.article__subsection-group {
+	padding: var(--gap-2xl) 0;
+	background: var(--theme-color);
+}
+
 .article__grid {
 	display: grid;
 	column-gap: var(--gap);
@@ -125,6 +121,13 @@
 }
 
 .article__grid-main {
+	.article__subsection-group {
+		margin-right: calc(-1 * var(--container-content-offset-x));
+		margin-left: calc(-1 * var(--container-content-offset-x));
+		padding-right: var(--container-content-offset-x);
+		padding-left: var(--container-content-offset-x);
+	}
+
 	.subsection {
 		margin-right: calc(-1 * var(--container-content-offset-x));
 		margin-left: calc(-1 * var(--container-content-offset-x));
@@ -132,6 +135,11 @@
 
 	@include media-breakpoint-up(lg) {
 		grid-column: 2 / 7;
+
+		.article__subsection-group {
+			margin-left: calc(-1 * (var(--container-column-offset-2) + var(--container-content-offset-x)));
+			padding-left: calc(var(--container-column-offset-2) + var(--container-content-offset-x));
+		}
 
 		.subsection {
 			margin-left: calc(-1 * (var(--container-column-offset-2) + var(--container-content-offset-x)));
