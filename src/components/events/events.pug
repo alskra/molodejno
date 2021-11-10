@@ -13,7 +13,7 @@ mixin events({columns = 1, type, slice, tags = true, pagination = true, cards} =
 			each item in items
 				+event-item(item).events__item(
 					class=[
-						{'events__item--main': columns === 2 && slice === 1},
+						{'events__item--main': cards},
 						{'column-span-9-lg-up': columns === 1},
 						'column-span-6',
 						'column-span-10-md-down',

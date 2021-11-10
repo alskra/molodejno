@@ -12,8 +12,15 @@
 }
 
 .events__item {
+	@include media-breakpoint-between(md, lg) {
+		&--main.column-span-9-lg-up {
+			position: sticky;
+			top: var(--header-sticky-height);
+		}
+	}
+
 	@include media-breakpoint-up(md) {
-		&--main {
+		&--main:not(.column-span-9-lg-up) {
 			position: sticky;
 			top: var(--header-sticky-height);
 		}

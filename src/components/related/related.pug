@@ -11,5 +11,9 @@ mixin related(type)
 				+events({
 					type,
 					slice: 1,
-					columns: 1,
+					pagination: false,
+					cards: {
+						type,
+						slice: 3,
+					},
 				})
