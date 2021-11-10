@@ -49,5 +49,5 @@ mixin cards({columns = 3, type, slice, tags = true, pagination = true} = {})
 		if pagination
 			+pagination({multipage: !slice})(
 				class={'hidden-lg-down': slice}
-				x-data=`pagination('ajax/${type}.html', gridEl)`
+				x-data=`pagination('ajax/${type}${slice ? '-slice' : ''}.html', gridEl)`
 			)
