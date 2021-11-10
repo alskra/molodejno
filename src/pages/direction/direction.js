@@ -13,6 +13,7 @@ import '../../components/gallery/gallery';
 import '../../components/partners/partners';
 import '../../components/cards/cards';
 import '../../components/contacts/contacts';
+import '../../components/related/related';
 
 import '../../components/subsection-section/subsection-section';
 import '../../components/subsection/subsection';

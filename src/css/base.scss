@@ -13,8 +13,8 @@ body {
 	overflow-wrap: break-word;
 	font-family: $font-family;
 	-webkit-font-smoothing: antialiased;
-	font-size: $font-size;
-	line-height: $line-height;
+	font-size: var(--font-size);
+	line-height: var(--line-height);
 	text-decoration-skip: objects;
 	text-rendering: optimizeLegibility;
 	text-size-adjust: 100%;

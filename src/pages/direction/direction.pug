@@ -13,6 +13,7 @@ include ../../components/gallery/gallery
 include ../../components/partners/partners
 include ../../components/cards/cards
 include ../../components/contacts/contacts
+include ../../components/related/related
 
 include ../../components/subsection-section/subsection-section
 include ../../components/subsection/subsection
@@ -41,6 +42,14 @@ block app
 						{
 							url: '#about',
 							content: 'О направлении',
+						},
+						{
+							url: '#news',
+							content: 'Новости направления',
+						},
+						{
+							url: '#related',
+							content: 'Связанное',
 						},
 						{
 							url: '#partners',
@@ -139,7 +148,18 @@ block app
 						+subsection-section({title: 'Фотогалерея'})
 							+gallery()
 
-					.article__subsection-group
+					+content().article__subsection-group
+						+subsection({
+							offsetColumn: 'all',
+							anchor: 'news',
+							title: 'Новости направления',
+						})
+
+						+subsection({
+							offsetColumn: 'all',
+							anchor: 'related',
+							title: 'Связанное',
+						})
 
 					+subsection({
 						offsetColumn: 'all',

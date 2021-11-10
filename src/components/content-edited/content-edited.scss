@@ -1,6 +1,6 @@
 :root {
-	--content-edited-font-size: #{$font-size};
-	--content-edited-line-height: #{$line-height};
+	--content-edited-font-size: var(--font-size);
+	--content-edited-line-height: var(--line-height);
 	--content-edited-interval: #{em(15)};
 	--content-edited-block-interval: var(--gap-lg);
 	--content-edited-h1-font-size: 60rem;
@@ -28,7 +28,6 @@
 .content-edited {
 	font-size: var(--content-edited-font-size);
 	line-height: var(--content-edited-line-height);
-	color: $color;
 
 	> :not(:first-child) {
 		margin-top: var(--content-edited-block-interval);
@@ -41,11 +40,10 @@
 	// stylelint-disable
 	h1, h2, h3, h4, h5, h6,
 	.h1, .h2, .h3, .h4, .h5, .h6 {
-		// stylelint-enable
+	// stylelint-enable
 		font-family: $heading-font-family;
 		font-weight: $heading-font-weight;
-		line-height: $heading-line-height;
-		color: $heading-color;
+		line-height: var(--heading-line-height);
 
 		+ * {
 			// stylelint-disable-next-line
