@@ -2,7 +2,7 @@ include ../card-item/card-item
 include ../person-item/person-item
 include ../pagination/pagination
 
-mixin cards({type, slice, tags = true, columns = 3} = {})
+mixin cards({columns = 3, type, slice, tags = true, pagination = true} = {})
 	include data
 
 	-
@@ -46,10 +46,8 @@ mixin cards({type, slice, tags = true, columns = 3} = {})
 							default
 								+card-item(item).cards__item(class=`card-item--style-group-${columns * 2}`)&attributes(itemAttrs)
 
-		if slice
-			case type
-				when 'recipients'
-				when 'persons'
-					+pagination({multipage: false}).hidden-lg-down(x-data=`pagination('ajax/${type}-slice.html', gridEl)`)
-		else
-			+pagination()(x-data=`pagination('ajax/${type}.html', gridEl)`)
+		if pagination
+			+pagination({multipage: !slice})(
+				class={'hidden-lg-down': slice}
+				x-data=`pagination('ajax/${type}.html', gridEl)`
+			)

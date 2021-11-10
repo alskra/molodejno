@@ -1,0 +1,15 @@
+include ../events/events
+
+mixin related(type)
+	.related&attributes(attributes)
+		case type
+			when 'forums'
+			when 'projects'
+			when 'grants'
+			when 'playbill'
+			when 'news'
+				+events({
+					type,
+					slice: 1,
+					columns: 1,
+				})

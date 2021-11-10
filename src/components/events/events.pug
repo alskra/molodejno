@@ -2,7 +2,7 @@ include ../event-item/event-item
 include ../cards/cards
 include ../pagination/pagination
 
-mixin events({type, slice, tags = true, columns = 2} = {})
+mixin events({columns = 1, type, slice, tags = true, pagination = true, cards} = {})
 	include data
 
 	-
@@ -13,7 +13,7 @@ mixin events({type, slice, tags = true, columns = 2} = {})
 			each item in items
 				+event-item(item).events__item(
 					class=[
-						{'events__item--main': slice === 1 && columns !== 1},
+						{'events__item--main': columns === 2 && slice === 1},
 						{'column-span-9-lg-up': columns === 1},
 						'column-span-6',
 						'column-span-10-md-down',
@@ -22,15 +22,14 @@ mixin events({type, slice, tags = true, columns = 2} = {})
 						'column-line-1-sm-down',
 					]
 				)
-			case type
-				when 'playbill'
-				when 'news'
-					+cards({
-						type,
-						slice: 4,
-						tags: false,
-						columns: 2,
-					}).column-span-6.column-span-12-md-down
+			if cards
+				+cards(cards)(
+					class=[
+						{'column-span-9-lg-up': columns === 1},
+						'column-span-6',
+						'column-span-12-md-down',
+					]
+				)
 
-		if !slice
+		if pagination
 			+pagination({multipage: false})(x-data=`pagination('ajax/${type}.html', gridEl)`)

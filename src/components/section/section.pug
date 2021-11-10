@@ -50,25 +50,37 @@ mixin section({tag = 'section', type, title, desc, score, advanced, withoutImage
 					case type
 						when 'forums'
 							+events({
+								columns: 2,
 								type,
 								slice: 2,
 								tags: false,
-							})
-						when 'playbill'
-						when 'news'
-							+events({
-								type,
-								slice: 1,
-								tags: false,
+								pagination: false,
 							})
 						when 'projects'
 						when 'contests'
 						when 'grants'
 							+cards({
+								columns: 4,
 								type,
 								slice: 4,
 								tags: false,
-								columns: 4,
+								pagination: false,
+							})
+						when 'playbill'
+						when 'news'
+							+events({
+								columns: 2,
+								type,
+								slice: 1,
+								tags: false,
+								pagination: false,
+								cards: {
+									columns: 2,
+									type,
+									slice: 4,
+									tags: false,
+									pagination: false,
+								},
 							})
 
 		if !block
