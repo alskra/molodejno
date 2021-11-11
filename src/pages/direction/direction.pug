@@ -14,6 +14,7 @@ include ../../components/partners/partners
 include ../../components/cards/cards
 include ../../components/contacts/contacts
 include ../../components/related/related
+include ../../components/tabs/tabs
 
 include ../../components/subsection-section/subsection-section
 include ../../components/subsection/subsection
@@ -161,6 +162,16 @@ block app
 							anchor: 'related',
 							title: 'Связанное',
 						})
+							+tabs([
+								'Форумы',
+								'Афиша',
+								'Проекты',
+								'Гранты',
+							])
+								.tabs__frame 1
+								.tabs__frame 2
+								.tabs__frame 3
+								.tabs__frame 4
 
 					+subsection({
 						offsetColumn: 'all',
