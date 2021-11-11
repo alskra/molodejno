@@ -15,6 +15,7 @@ include ../../components/cards/cards
 include ../../components/contacts/contacts
 include ../../components/related/related
 include ../../components/tabs/tabs
+include ../../components/events/events
 
 include ../../components/subsection-section/subsection-section
 include ../../components/subsection/subsection
@@ -168,10 +169,14 @@ block app
 								'Проекты',
 								'Гранты',
 							])
-								.tabs__frame 1
-								.tabs__frame 2
-								.tabs__frame 3
-								.tabs__frame 4
+								.tabs__frame
+									+related('forums')
+								.tabs__frame
+									+related('playbill')
+								.tabs__frame
+									+related('projects')
+								.tabs__frame
+									+related('grants')
 
 					+subsection({
 						offsetColumn: 'all',

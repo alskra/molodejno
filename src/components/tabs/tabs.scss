@@ -1,6 +1,6 @@
 .tabs__items {
 	overflow: hidden;
-	margin: 0 calc(-1 * var(--container-content-offset-x));
+	margin: 0 calc(-1 * var(--container-content-offset-x)) 25rem;
 	padding: 0 var(--container-content-offset-x);
 
 	@include media-breakpoint-up(lg) {
@@ -8,6 +8,10 @@
 			margin-left: 0;
 			padding-left: 0;
 		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 20rem;
 	}
 }
 
@@ -28,7 +32,7 @@
 	padding: 0 30rem;
 	height: 50rem;
 	font-weight: 500;
-	font-size: var(--font-size);
+	font-size: 16rem;
 	line-height: 1.25;
 
 	@include hover {
@@ -38,6 +42,7 @@
 	}
 
 	&.is-active {
+		border-color: $color-primary;
 		color: $color-white;
 		background: $color-primary;
 	}
@@ -55,4 +60,8 @@
 .tabs__frame {
 	grid-column: 1;
 	grid-row: 1;
+
+	&.is-active {
+		z-index: 1;
+	}
 }

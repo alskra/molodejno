@@ -1,11 +1,24 @@
 include ../events/events
+include ../events-slider/events-slider
+include ../cards/cards
 
 mixin related(type)
 	.related&attributes(attributes)
 		case type
 			when 'forums'
+				+events({
+					type,
+					slice: 1,
+				}).hidden-lg-down
+
+				+events-slider(type).hidden-lg-up
 			when 'projects'
 			when 'grants'
+				+cards({
+					type,
+					slice: 3,
+				})
+
 			when 'playbill'
 			when 'news'
 				+events({

@@ -11,6 +11,7 @@ Alpine.data('tabs', () => ({
 		});
 
 		this.$root.querySelectorAll('.tabs__frame').forEach((item, index) => {
+			item.setAttribute('x-bind:class', `{'is-active': tab === ${index + 1}}`);
 			item.setAttribute('x-show', `tab === ${index + 1}`);
 			item.setAttribute('x-transition.opacity', '');
 		});
