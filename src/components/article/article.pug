@@ -1,8 +1,8 @@
-mixin article({type} = {})
+mixin article({type, image = '../../images/content/article/img-intro.jpg'} = {})
 	article.article(class=`article--${type}`)&attributes(attributes)
 		+container()
 			.article__image
-				+img-2x().article__image-el(src="../../images/content/article/img-intro.jpg")
+				+img-2x().article__image-el(src=image)
 		.article__body
 			+container().article__grid
 				block

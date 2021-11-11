@@ -1,0 +1,115 @@
+extends ../../pug/base
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+include ../../components/nav-aside/nav-aside
+include ../../components/activities/activities
+
+include ../../components/subsection-section/subsection-section
+include ../../components/subsection/subsection
+include ../../components/section/section
+
+append variables
+	-
+		title = `${title} - Деятельность`;
+		let activities = [
+			{
+				url: 'direction.html',
+				title: 'Волонтерство',
+				image: '../../images/content/activities/img-1.jpg',
+			},
+			{
+				url: 'direction.html',
+				title: 'Инновационная деятельность и научно-техническое творчество',
+				image: '../../images/content/activities/img-2.jpg',
+			},
+			{
+				url: 'direction.html',
+				title: 'Культура и творчество',
+				image: '../../images/content/activities/img-3.jpg',
+			},
+			{
+				url: 'direction.html',
+				title: 'Молодые семьи',
+				image: '../../images/content/activities/img-4.jpg',
+			},
+			{
+				url: 'direction.html',
+				title: 'Образование и карьера',
+				image: '../../images/content/activities/img-5.jpg',
+			},
+			{
+				url: 'direction.html',
+				title: 'Патриотическое воспитание',
+				image: '../../images/content/activities/img-6.jpg',
+			},
+			{
+				url: 'direction.html',
+				title: 'Предпринимательство',
+				image: '../../images/content/activities/img-7.jpg',
+			},
+			{
+				url: 'direction.html',
+				title: 'Самоуправление',
+				image: '../../images/content/activities/img-8.jpg',
+			},
+			{
+				url: 'direction.html',
+				title: 'Сельское хозяйство и молодёжь на селе',
+				image: '../../images/content/activities/img-9.jpg',
+			},
+			{
+				url: 'direction.html',
+				title: 'Спорт и ЗОЖ',
+				image: '../../images/content/activities/img-10.jpg',
+			},
+			{
+				url: 'direction.html',
+				title: 'Социальная защита',
+				image: '../../images/content/activities/img-11.jpg',
+			},
+			{
+				url: 'direction.html',
+				title: 'Социальная адаптация',
+				image: '../../images/content/activities/img-12.jpg',
+			},
+			{
+				url: 'direction.html',
+				title: 'Строительство и жильё',
+				image: '../../images/content/activities/img-13.jpg',
+			},
+			{
+				url: 'direction.html',
+				title: 'Экология',
+				image: '../../images/content/activities/img-14.jpg',
+			},
+		];
+
+block app
+	+header()
+
+	main.app__main
+		+container().app__breadcrumbs
+			+breadcrumbs(['Деятельность'])
+
+		+section({
+			type: 'activities',
+			title: 'Деятельность',
+			desc: `<p>Портал для молодёжи занимающийся реализацией молодёжной политики во&nbsp;всех актуальных
+и&nbsp;действующих направлениях данной отрасли</p>`,
+			score: {
+				title: 'Направлений',
+				number: 14,
+			},
+			advanced: true,
+		})
+			+container().section__grid
+				aside.section__grid-aside.hidden-lg-down
+					+nav-aside(activities)
+
+				.section__grid-main
+					+content()
+						+activities(activities)
+
+	+footer()

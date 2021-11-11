@@ -1,7 +1,8 @@
 mixin section-nav(items)
 	nav.section-nav&attributes(attributes)
-		each item, index in items
-			a.section-nav__item(
-				class={'is-active': item.isActive}
-				href=item.url
-			)= item.content
+		if items && items.length
+			each item in items
+				a.section-nav__item(
+					class={'is-active': item.isActive}
+					href=item.url
+				)= item.content

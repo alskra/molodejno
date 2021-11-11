@@ -4,10 +4,10 @@ include ../../components/event-item/event-item
 
 append variables
 	-
+		let columns = 1;
 		let type = 'forums';
 		let slice;
 		let tags = true;
-		let columns = 1;
 
 block document
 	include ../../components/events/data
@@ -18,7 +18,7 @@ block document
 	each item in items
 		+event-item(item).events__item(
 			class=[
-				{'events__item--main': slice === 1},
+				{'events__item--main': columns === 2 && slice === 1},
 				{'column-span-9-lg-up': columns === 1},
 				'column-span-6',
 				'column-span-10-md-down',

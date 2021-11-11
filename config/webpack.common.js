@@ -17,7 +17,7 @@ const entry = {};
 // });
 
 entry.main = pages.map((page) => path.resolve(paths.src, `pages/${page}/${page}.js`))
-	.concat(path.resolve(paths.src, 'js/alpine.js'));
+	.concat(path.resolve(paths.src, 'components/app/app.js'));
 
 const htmlPluginEntries = pages.map((page) => {
 	return new HtmlWebpackPlugin({

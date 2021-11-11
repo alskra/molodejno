@@ -197,3 +197,27 @@ mixin card-details(type)
 							tag: 'a',
 							content: "'Подать заявку'",
 						}).button--height-sm.card-details__button
+			when 'direction'
+				+breadcrumbs([
+					{
+						url: 'activities.html',
+						content: 'Деятельность',
+					},
+					'Инновационная деятельность и научно-техническое творчество',
+				]).card-details__breadcrumbs
+
+				+heading().card-details__title Инновационная деятельность и научно-техническое творчество
+
+				.card-details__organizer
+					.card-details__organizer-column
+						+content-edited().card-details__content-item.card-details__content-item--organizer
+							table
+								tr
+									td Организатор
+									td
+										| Ресурсный молодёжный центр
+										br
+										a(href="mailto:site@info.ru") site@info.ru
+
+					.card-details__organizer-column
+						+img-2x().card-details__organizer-logo(src="../../images/content/projects/logo.png")

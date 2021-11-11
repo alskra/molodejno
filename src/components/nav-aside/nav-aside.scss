@@ -1,0 +1,24 @@
+.nav-aside {
+	display: flex;
+	flex-flow: column;
+	user-select: none;
+	gap: 15rem 20rem;
+}
+
+.nav-aside__item {
+	font-size: 16rem;
+	line-height: 1.25;
+	transition: color;
+	transition-duration: $transition-duration;
+
+	@include hover {
+		&:not(.is-active) {
+			color: $color-primary;
+		}
+	}
+
+	&.is-active {
+		font-weight: 700;
+		color: $color-primary;
+	}
+}

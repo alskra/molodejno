@@ -1,0 +1,212 @@
+extends ../../pug/base
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+include ../../components/article-nav/article-nav
+include ../../components/card-details/card-details
+include ../../components/quote/quote
+include ../../components/gallery-slider/gallery-slider
+include ../../components/teasers/teasers
+include ../../components/docs/docs
+include ../../components/gallery/gallery
+include ../../components/partners/partners
+include ../../components/cards/cards
+include ../../components/contacts/contacts
+include ../../components/related/related
+include ../../components/tabs/tabs
+include ../../components/events/events
+
+include ../../components/subsection-section/subsection-section
+include ../../components/subsection/subsection
+include ../../components/article/article
+
+append variables
+	-
+		title = `${title} - Направление деятельности`;
+
+block app
+	+header()
+
+	main.app__main
+		+article({
+			type: 'direction',
+			image: '../../images/content/article/img-4.jpg',
+		})
+			aside.article__grid-aside
+				+article-nav({
+					backUrl: 'activities.html',
+					items: [
+						{
+							url: '#card',
+							content: 'Направление',
+						},
+						{
+							url: '#about',
+							content: 'О направлении',
+						},
+						{
+							url: '#news',
+							content: 'Новости направления',
+						},
+						{
+							url: '#related',
+							content: 'Связанное',
+						},
+						{
+							url: '#partners',
+							content: 'Партнеры',
+						},
+						{
+							url: '#persons',
+							content: 'Наши люди',
+						},
+						{
+							url: '#contacts',
+							content: 'Контакты',
+						},
+					]
+				})
+
+			.article__grid-main
+				+content()
+					+card-details('direction').article__card-details
+					.article__bg
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'about',
+						title: 'О направлении'
+					})
+						+content-edited()
+							p.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+								Это информационно-познавательный портал для молодёжи.
+							p.
+								Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+								и действующих направлениях данной отрасли.
+
+						+quote('Константинопольский А.&nbsp;М.')
+							p.
+								Сегодня Дом молодёжи&nbsp;&mdash; #[br]это команда профессионалов, которые отвечают
+								за&nbsp;основные направления современной молодёжной политики.
+
+						+content-edited()
+							p.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+
+							h3 Проблематика направления
+							ul
+								li.
+									30 октября в Батецком районе будет дан старт областному походу по местам боевых сражений.
+									К нему присоединятся активисты военно-патриотических клубов, центров, объединений и представители
+									поисковых отрядов Новгородской области.
+								li.
+									Поход продлится до 1 ноября и будет посвящен боевому пути 1-й Ленинградской стрелковой дивизии
+									народного ополчения, которая в июле 1941 года высадилась на станции Батецкая и заняла оборону
+									на Лужском рубеже.
+								li.
+									В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской дивизии
+									народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».
+
+						+gallery-slider([
+							'../../images/content/gallery-slider/img-1.jpg',
+							'../../images/content/gallery-slider/img-2.jpg',
+						])
+
+						+content-edited()
+							h3 Подзаголовок текста о направлении
+							p.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+								Это информационно-познавательный портал для молодёжи.
+							p.
+								Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+								и действующих направлениях данной отрасли.
+
+							+video({caption: 'Это информационно-познавательный портал для молодёжи Новгородской области'})
+
+							p.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+								Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+								молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+								Это информационно-познавательный портал для молодёжи.
+
+						+subsection-section({title: 'Проблематика'})
+							+teasers()
+
+						+subsection-section({title: 'Документы'})
+							+docs()
+
+						+subsection-section({title: 'Фотогалерея'})
+							+gallery()
+
+					+content().article__subsection-group
+						+subsection({
+							offsetColumn: 'all',
+							anchor: 'news',
+							title: 'Новости направления',
+						})
+							+related('news')
+
+						+subsection({
+							offsetColumn: 'all',
+							anchor: 'related',
+							title: 'Связанное',
+						})
+							+tabs([
+								'Форумы',
+								'Афиша',
+								'Проекты',
+								'Гранты',
+							])
+								.tabs__frame
+									+related('forums')
+								.tabs__frame
+									+related('playbill')
+								.tabs__frame
+									+related('projects')
+								.tabs__frame
+									+related('grants')
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'partners',
+						title: 'Партнеры',
+					})
+						+subsection-section({title: 'Генеральные партнеры'})
+							+partners(true)
+
+						+subsection-section({title: 'Информационные партнеры'})
+							+partners()
+
+						+subsection-section({title: 'Организационные партнеры'})
+							+partners()
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'persons',
+						title: 'Наши люди',
+					})
+						+cards({
+							type: 'persons',
+							slice: 6,
+						})
+
+					+subsection({
+						offsetColumn: 'all',
+						anchor: 'contacts',
+						title: 'Контакты',
+					})
+						+contacts()
+
+	+footer()

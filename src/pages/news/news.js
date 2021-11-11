@@ -11,5 +11,3 @@ import '../../components/cards/cards';
 import '../../components/subsection-section/subsection-section';
 import '../../components/subsection/subsection';
 import '../../components/section/section';
-
-import '../../components/app/app';

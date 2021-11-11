@@ -2,10 +2,11 @@ import Alpine from 'alpinejs';
 import 'swiper/css/bundle';
 import Swiper, {FreeMode} from 'swiper';
 
-Alpine.data('swiperFree', () => {
+Alpine.data('swiperFree', (onlyMobile = true) => {
 	let inst;
 
 	return {
+		onlyMobile,
 		swiper: undefined,
 		swiperIsInit: false,
 		init() {
@@ -33,8 +34,9 @@ Alpine.data('swiperFree', () => {
 						},
 					},
 				});
+
 				setTimeout(() => {
-					if (!this.swiper.destroyed) {
+					if (this.swiperIsInit) {
 						this.swiper.update();
 					}
 				}, 1000);
@@ -46,7 +48,7 @@ Alpine.data('swiperFree', () => {
 			}
 		},
 		effect() {
-			if (this.$store.isDesktop) {
+			if (this.onlyMobile && this.$store.isDesktop) {
 				this.destroySwiper();
 			} else {
 				this.$nextTick(() => this.initSwiper());

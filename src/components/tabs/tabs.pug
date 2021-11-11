@@ -1,0 +1,14 @@
+mixin tabs(items)
+	.tabs(x-data="tabs")&attributes(attributes)
+		.tabs__items
+			.tabs__items-inner.swiper(
+				x-data="swiperFree(false)"
+				x-effect="effect"
+				x-ref="swiper"
+			)
+				.swiper-wrapper
+					each item in items
+						button.tabs__item.swiper-slide(type="button")
+							span.tabs__item-content= item
+		.tabs__frames
+			block

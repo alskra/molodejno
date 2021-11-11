@@ -35,10 +35,20 @@ block app
 			+content()
 				+subsection({title: 'Новости и события'})
 					+events({
+						columns: 2,
 						type: 'news',
 						slice: 1,
 						tags: false,
+						pagination: false,
+						cards: {
+							columns: 2,
+							type: 'news',
+							slice: 4,
+							tags: false,
+							pagination: false,
+						},
 					})
+
 					div
 						+button-arrow-text({content: "'Смотреть все'"})(
 							href="news.html"
@@ -49,10 +59,20 @@ block app
 
 				+subsection({title: 'СМИ о нас'})
 					+events({
+						columns: 2,
 						type: 'news',
 						slice: 1,
 						tags: false,
+						pagination: false,
+						cards: {
+							columns: 2,
+							type: 'news',
+							slice: 4,
+							tags: false,
+							pagination: false,
+						},
 					})
+
 					div
 						+button-arrow-text({content: "'Смотреть все'"})(
 							href="news.html"

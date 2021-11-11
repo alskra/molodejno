@@ -11,7 +11,7 @@ mixin article-nav({primary = false, backUrl = "", items} = {})
 			class={'button-arrow-text--primary': primary}
 			href=backUrl
 		)
-		if items
+		if items && items.length
 			.article-nav__items
 				each item in items
 					a.article-nav__item(

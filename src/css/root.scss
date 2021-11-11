@@ -7,6 +7,9 @@
 	--gap-xl: 50rem;
 	--gap-2xl: 80rem;
 	--gap-3xl: 100rem;
+	--font-size: #{$font-size};
+	--line-height: #{$line-height};
+	--heading-line-height: #{$heading-line-height};
 
 	font-size: 1px;
 
