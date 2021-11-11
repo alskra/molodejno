@@ -2,6 +2,13 @@
 	overflow: hidden;
 	margin: 0 calc(-1 * var(--container-content-offset-x));
 	padding: 0 var(--container-content-offset-x);
+
+	@include media-breakpoint-up(lg) {
+		:is(.section__grid-main, .article__grid-main) & {
+			margin-left: 0;
+			padding-left: 0;
+		}
+	}
 }
 
 .tabs__items-inner {
@@ -14,6 +21,7 @@
 .tabs__item {
 	@include button;
 
+	flex-shrink: 0;
 	margin: 0 calc(0.5 * var(--gap));
 	border: 1px solid;
 	border-radius: 32.5rem;
