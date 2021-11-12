@@ -69,13 +69,12 @@ fieldset {
 	padding: 0;
 }
 
-:disabled,
-.is-disabled {
-	pointer-events: none;
+@include focus-not-focus-visible {
+	outline: none;
 }
 
-:focus:not(:focus-visible, .focus-visible) {
-	outline: none;
+@include disabled {
+	pointer-events: none;
 }
 
 [hidden],

@@ -36,13 +36,13 @@
 	line-height: 1.25;
 
 	@include hover {
-		&:not(.is-active) {
+		&:not(:active, .is-active, :disabled, .is-disabled) {
 			color: $color-primary;
 		}
 	}
 
 	&.is-active {
-		border-color: $color-primary;
+		border-color: transparent;
 		color: $color-white;
 		background: $color-primary;
 	}

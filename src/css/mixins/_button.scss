@@ -13,8 +13,7 @@
 	cursor: pointer;
 	user-select: none;
 
-	&:disabled,
-	&.is-disabled {
+	@include disabled {
 		cursor: default;
 	}
 }

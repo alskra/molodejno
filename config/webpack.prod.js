@@ -40,7 +40,7 @@ module.exports = merge(common, {
 								indentWidth: 1,
 							},
 							sourceMap: true,
-							additionalData: '@use "sass:math"; @import "/css/env";',
+							additionalData: '@use "sass:math";\n@import "/css/env";\n',
 						},
 					},
 				],
