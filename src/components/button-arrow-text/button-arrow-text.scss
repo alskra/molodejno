@@ -14,13 +14,11 @@
 	color: var(--color);
 	gap: 3rem;
 
-	@include hover {
-		&:not(:disabled, .is-disabled) {
-			color: var(--color-hover);
+	@include hover-not-disabled {
+		color: var(--color-hover);
 
-			.button-arrow-text__icon icon-svg {
-				width: percentage(div(492, 542));
-			}
+		.button-arrow-text__icon icon-svg {
+			width: percentage(div(492, 542));
 		}
 	}
 

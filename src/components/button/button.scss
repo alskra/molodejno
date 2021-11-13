@@ -14,10 +14,8 @@
 	color: $color-white;
 	background: $color-primary;
 
-	&:hover {
-		&:not(:disabled, .is-disabled) {
-			background: $color-primary-hover;
-		}
+	@include hover-not-disabled {
+		background: $color-primary-hover;
 	}
 
 	&--height-sm {

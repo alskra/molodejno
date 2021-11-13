@@ -7,10 +7,8 @@
 	line-height: 1.25;
 	color: $color-primary;
 
-	@include hover {
-		&:not(:disabled, .is-disabled) {
-			color: $color-primary-hover;
-		}
+	@include hover-not-disabled {
+		color: $color-primary-hover;
 	}
 
 	&--dir-up {

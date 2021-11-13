@@ -73,13 +73,12 @@ fieldset {
 	outline: none;
 }
 
-@include disabled {
-	pointer-events: none;
-}
+@include focus-visible(true);
 
 [hidden],
 [x-cloak] {
-	display: none !important; // stylelint-disable-line
+	// stylelint-disable-next-line
+	display: none !important;
 }
 
 ::selection {

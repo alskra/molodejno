@@ -36,14 +36,18 @@
 				"selector": "&:focus"
 			},
 			{
+				"type": "at-rule",
+				"name": "include",
+				"parameter": "focus"
+			},
+			{
 				"type": "rule",
 				"selector": "&:hover"
 			},
 			{
 				"type": "at-rule",
 				"name": "include",
-				"parameter": "hover",
-				"hasBlock": true
+				"parameter": "hover"
 			},
 			{
 				"type": "rule",
@@ -52,6 +56,11 @@
 			{
 				"type": "rule",
 				"selector": "&:disabled"
+			},
+			{
+				"type": "at-rule",
+				"name": "include",
+				"parameter": "disabled"
 			},
 			{
 				"type": "rule",
