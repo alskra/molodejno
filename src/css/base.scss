@@ -70,7 +70,7 @@ fieldset {
 }
 
 @include focus-not-focus-visible {
-	outline: none;
+	outline: 0;
 }
 
 @include focus-visible(true);
