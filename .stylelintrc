@@ -6,6 +6,10 @@
 	],
 	"rules": {
 		"order/order": [
+			{
+				"type": "at-rule",
+				"name": "extend"
+			},
 			"dollar-variables",
 			"custom-properties",
 			{
@@ -475,7 +479,6 @@
 			}
 		],
 		"at-rule-disallowed-list": [
-			"extend"
 		],
 		"at-rule-empty-line-before": [
 			"always",
