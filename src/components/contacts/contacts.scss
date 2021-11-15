@@ -4,22 +4,14 @@
 }
 
 .contacts__item {
-	display: grid;
-	align-items: start;
-	gap: 30rem;
+	--gap: 30rem;
 
-	@include media-breakpoint-up(lg) {
-		grid-template-columns: repeat(9, 1fr);
-	}
+	align-items: start;
 }
 
 .contacts__body {
 	border-top: 1px solid $color;
 	padding-top: var(--gap-lg);
-
-	@include media-breakpoint-up(lg) {
-		grid-column: span 5;
-	}
 }
 
 .contacts__main {
@@ -39,15 +31,15 @@
 .contacts__map {
 	position: relative;
 	overflow: hidden;
-	border-radius: 0 150rem 150rem 0;
-	height: 300rem;
+	border-radius: 0 555rem 555rem 0;
+	height: 445rem;
 	background: $color-gray;
 
 	[class*="ymaps-2"][class*="-ground-pane"] {
 		filter: grayscale(1);
 	}
 
-	@include media-breakpoint-up(lg) {
-		grid-column: span 4;
+	@include media-breakpoint-down(lg) {
+		height: 250rem;
 	}
 }
