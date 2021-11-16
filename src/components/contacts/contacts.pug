@@ -1,9 +1,13 @@
 include ../soc-network/soc-network
+include ../ymaps/ymaps
 
-mixin contacts()
+mixin contacts(inner = true)
 	.contacts&attributes(attributes)
 		section.contacts__item.grid
-			.contacts__body.column-span-6.column-span-12-lg-down
+			.contacts__body(class=[
+				`column-span-${inner ? 5 : 6}`,
+				'column-span-12-lg-down',
+			])
 				+content-edited().contacts__main
 					h3.h5 Общие контакты
 					table
@@ -23,10 +27,17 @@ mixin contacts()
 
 				+soc-network()
 
-			.contacts__map.column-span-6.column-span-12-lg-down(x-data="ymaps()")
+			.contacts__map(class=[
+				`column-span-${inner ? 4 : 6}`,
+				'column-span-12-lg-down',
+			])
+				+ymaps().contacts__ymaps
 
 		section.contacts__item.grid
-			.contacts__body.column-span-6.column-span-12-lg-down
+			.contacts__body(class=[
+				`column-span-${inner ? 5 : 6}`,
+				'column-span-12-lg-down',
+			])
 				+content-edited().contacts__main
 					h3.h5 Министерство спорта и&nbsp;молодёжной политики
 					table
@@ -52,4 +63,8 @@ mixin contacts()
 
 				+soc-network()
 
-			.contacts__map.column-span-6.column-span-12-lg-down(x-data="ymaps({center: [53.751574, 37.573856], hintContent: 'г. Великий Новгород, ул. Черняховского-Завальная-Кольцевая'})")
+			.contacts__map(class=[
+				`column-span-${inner ? 4 : 6}`,
+				'column-span-12-lg-down',
+			])
+				+ymaps().contacts__ymaps(x-data="ymaps({center: [53.751574, 37.573856], hintContent: 'г. Великий Новгород, ул. Черняховского-Завальная-Кольцевая'})")

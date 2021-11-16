@@ -4,9 +4,11 @@
 }
 
 .contacts__item {
-	--gap: 30rem;
-
 	align-items: start;
+
+	@include media-breakpoint-down(lg) {
+		row-gap: 30rem;
+	}
 }
 
 .contacts__body {
@@ -32,14 +34,22 @@
 	position: relative;
 	overflow: hidden;
 	border-radius: 0 555rem 555rem 0;
-	height: 445rem;
 	background: $color-gray;
 
-	[class*="ymaps-2"][class*="-ground-pane"] {
-		filter: grayscale(1);
+	&::before {
+		content: "";
+		display: block;
+		padding-top: cw(445, 540);
 	}
 
 	@include media-breakpoint-down(lg) {
-		height: 250rem;
+		&::before {
+			padding-top: cw(250, 322);
+		}
 	}
+}
+
+.contacts__ymaps {
+	position: absolute;
+	inset: 0;
 }
