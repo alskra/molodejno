@@ -1,0 +1,33 @@
+.section-feedback {
+	@include gradient-section;
+
+	padding: 90rem 0 var(--gap-3xl);
+
+	&:not(:first-child) {
+		margin-top: var(--gap-xl);
+	}
+
+	&:not(:last-child) {
+		margin-bottom: var(--gap-xl);
+	}
+
+	@include media-breakpoint-down(lg) {
+		padding-top: 45rem;
+	}
+}
+
+.section-feedback__title {
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	font-size: var(--content-edited-h2-font-size);
+	line-height: var(--heading-line-height);
+	color: $heading-color;
+
+	&:not(:last-child) {
+		margin-bottom: 30rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		font-size: var(--content-edited-h1-font-size);
+	}
+}

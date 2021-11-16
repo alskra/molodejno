@@ -1,0 +1,7 @@
+include ../form-feedback/form-feedback
+
+mixin section-feedback()
+	section.section-feedback&attributes(attributes)
+		+container()
+			h2.section-feedback__title Связаться с&nbsp;нами
+			+form-feedback()

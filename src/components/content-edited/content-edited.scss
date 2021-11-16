@@ -26,8 +26,8 @@
 }
 
 .content-edited {
-	font-size: var(--content-edited-font-size);
-	line-height: var(--content-edited-line-height);
+	font-size: var(--font-size);
+	line-height: var(--line-height);
 
 	> :not(:first-child) {
 		margin-top: var(--content-edited-block-interval);
@@ -44,6 +44,7 @@
 		font-family: $heading-font-family;
 		font-weight: $heading-font-weight;
 		line-height: var(--heading-line-height);
+		color: $heading-color;
 
 		+ * {
 			// stylelint-disable-next-line
@@ -131,7 +132,7 @@
 			content: "";
 			position: absolute;
 			left: 0;
-			margin-top: calc((var(--content-edited-line-height) * 1em - var(--content-edited-list-marker-size)) / 2);
+			margin-top: calc((var(--line-height) * 1em - var(--content-edited-list-marker-size)) / 2);
 			border-radius: 50%;
 			width: var(--content-edited-list-marker-size);
 			height: var(--content-edited-list-marker-size);

@@ -87,6 +87,6 @@
 	font-family: $heading-font-family;
 	font-weight: $heading-font-weight;
 	font-size: var(--content-edited-h2-font-size);
-	line-height: $heading-line-height;
+	line-height: var(--heading-line-height);
 	color: $heading-color;
 }
