@@ -1,6 +1,9 @@
 .section-feedback {
 	@include gradient-section;
 
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
 	padding: 90rem 0 var(--gap-3xl);
 
 	&:not(:first-child) {
@@ -13,6 +16,27 @@
 
 	@include media-breakpoint-down(lg) {
 		padding-top: 45rem;
+	}
+}
+
+.section-feedback__image {
+	position: absolute;
+	right: calc(var(--container-content-offset-x) - 83rem - 45rem);
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	display: flex;
+	flex-flow: column;
+	padding: var(--gap) 0;
+	width: 529rem;
+
+	img {
+		margin: auto 0;
+		height: auto;
+	}
+
+	@include media-breakpoint-down(lg) {
+		display: none;
 	}
 }
 

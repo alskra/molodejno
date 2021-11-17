@@ -1,3 +1,17 @@
-.form-feedback {
-	display: grid;
+.form-feedback__main {
+	@include media-breakpoint-up(lg) {
+		> div {
+			&:nth-child(2) {
+				margin-right: cw(45, 255);
+			}
+
+			&:nth-child(3) {
+				margin-left: cw(-45, 255);
+			}
+		}
+	}
+}
+
+.form-feedback__field {
+	width: 100%;
 }

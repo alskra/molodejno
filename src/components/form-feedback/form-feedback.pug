@@ -1,3 +1,17 @@
 mixin form-feedback()
-	form.form-feedback&attributes(attributes)
-
+	form.form-feedback.grid&attributes(attributes)
+		.form-feedback__main.grid.column-span-9.column-span-12-lg-down
+			.column-span-3.column-span-4-lg-down.column-span-12-md-down
+				+form-field().form-feedback__field(placeholder="Ваше имя")
+			.column-span-3.column-span-4-lg-down.column-span-12-md-down
+				+form-field().form-feedback__field(
+					type="tel"
+					placeholder="+7 (000) 000-00-00"
+				)
+			.column-span-3.column-span-4-lg-down.column-span-12-md-down
+				+form-field().form-feedback__field(
+					type="email"
+					placeholder="Ваш E-mail"
+				)
+			.column-span-9.column-span-12-lg-down
+				+form-field({tag: 'textarea'}).form-feedback__field(placeholder="Ваше сообщение")

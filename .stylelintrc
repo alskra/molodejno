@@ -92,6 +92,10 @@
 			},
 			{
 				"type": "rule",
+				"selector": "&:is.+"
+			},
+			{
+				"type": "rule",
 				"selector": "&--.+"
 			},
 			{

@@ -10,8 +10,7 @@
 
 	@include focus-visible;
 
-	@include disabled {
-		cursor: default;
-		pointer-events: none;
+	&:is(textarea) {
+		resize: vertical;
 	}
 }

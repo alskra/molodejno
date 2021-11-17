@@ -2,6 +2,10 @@ include ../form-feedback/form-feedback
 
 mixin section-feedback()
 	section.section-feedback&attributes(attributes)
-		+container()
+		+container().section-feedback__container
+			+picture-webp().section__image-el(
+				src=`../../images/design/feedback.png`
+				srcset="2x"
+			).section-feedback__image
 			h2.section-feedback__title Связаться с&nbsp;нами
 			+form-feedback()
