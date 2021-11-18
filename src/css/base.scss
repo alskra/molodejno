@@ -73,7 +73,9 @@ fieldset {
 	outline: 0;
 }
 
-@include focus-visible(true);
+@include focus-visible {
+	@include focus-visible-default;
+}
 
 [hidden],
 [x-cloak] {

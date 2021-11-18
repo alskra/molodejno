@@ -4,14 +4,14 @@
 	}
 }
 
-@mixin focus-visible($default: false) {
-	#{if(&, "&", "")}:is(:focus-visible, .focus-visible) {
-		@if $default {
-			outline: 1px dotted;
-			// stylelint-disable-next-line
-			outline: -webkit-focus-ring-color auto 1px;
-		}
+@mixin focus-visible-default {
+	outline: 1px dotted;
+	// stylelint-disable-next-line
+	outline: -webkit-focus-ring-color auto 1px;
+}
 
+@mixin focus-visible {
+	#{if(&, "&", "")}:is(:focus-visible, .focus-visible) {
 		@content;
 	}
 }
@@ -25,7 +25,7 @@
 	}
 }
 
-@mixin disabled() {
+@mixin disabled {
 	#{if(&, "&", "")}:is(:disabled, .is-disabled) {
 		@content;
 	}
@@ -36,6 +36,12 @@
 		&:not(:disabled, .is-disabled) {
 			@content;
 		}
+	}
+}
+
+@mixin invalid {
+	#{if(&, "&", "")}:is(:invalid, .is-invalid) {
+		@content;
 	}
 }
 

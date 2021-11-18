@@ -13,7 +13,9 @@
 	cursor: pointer;
 	user-select: none;
 
-	@include focus-visible(true);
+	@include focus-visible {
+		@include focus-visible-default;
+	}
 
 	@include disabled {
 		cursor: default;
