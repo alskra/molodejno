@@ -1,2 +1,6 @@
 mixin form-field({tag = 'input'} = {})
-	#{tag}.form-field(type="text")&attributes(attributes)
+	#{tag}.form-field(
+		type="text"
+		x-data="formField"
+	)&attributes(attributes)
+		block

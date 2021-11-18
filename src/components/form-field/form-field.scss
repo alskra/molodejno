@@ -11,7 +11,13 @@
 
 	&::placeholder {
 		font-weight: 400;
-		color: $color;
+		color: currentColor;
+		transition: inherit;
+	}
+
+	&:invalid {
+		border-bottom-color: currentColor;
+		color: $color-danger;
 	}
 
 	&:is(textarea) {

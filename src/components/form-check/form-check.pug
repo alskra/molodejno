@@ -1,0 +1,11 @@
+mixin form-check()
+	label.form-check(
+		class!=attributes.class
+		style!=attributes.style
+	)
+		input.form-check__input(type="checkbox")&attributes(attributes)
+		span.form-check__el
+			icon-svg(name="check")
+		if block
+			span.form-check__label
+				block

@@ -36,6 +36,7 @@ import '../components/share/share';
 import '../components/integration/integration';
 import '../components/video/video';
 import '../components/form-field/form-field';
+import '../components/form-check/form-check';
 
 window.Alpine = Alpine;
 

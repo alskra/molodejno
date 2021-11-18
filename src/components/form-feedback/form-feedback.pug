@@ -2,16 +2,33 @@ mixin form-feedback()
 	form.form-feedback.grid&attributes(attributes)
 		.form-feedback__main.grid.column-span-9.column-span-12-lg-down
 			.column-span-3.column-span-4-lg-down.column-span-12-md-down
-				+form-field().form-feedback__field(placeholder="Ваше имя")
+				+form-field().form-feedback__field(
+					name="name"
+					required
+					placeholder="Ваше имя"
+				)
 			.column-span-3.column-span-4-lg-down.column-span-12-md-down
 				+form-field().form-feedback__field(
 					type="tel"
-					placeholder="+7 (000) 000-00-00"
+					name="phone"
+					required
+					placeholder="Ваш Телефон"
 				)
 			.column-span-3.column-span-4-lg-down.column-span-12-md-down
 				+form-field().form-feedback__field(
 					type="email"
+					name="email"
+					required
 					placeholder="Ваш E-mail"
 				)
 			.column-span-9.column-span-12-lg-down
 				+form-field({tag: 'textarea'}).form-feedback__field(placeholder="Ваше сообщение")
+
+		.form-feedback__footer.grid.column-span-9.column-span-12-lg-down
+			.column-span-6.column-span-6-lg-down.column-span-12-md-down
+				+form-check()(
+					name="agree"
+					required
+				) Я согласен с #[a(href="") условиями обработки персональных данных]
+			.column-span-3.column-span-6-lg-down.column-span-12-md-down
+				+button({content: "'Отправить'"}).form-feedback__button(type="submit")

@@ -14,6 +14,10 @@
 		margin-bottom: var(--gap-xl);
 	}
 
+	.app__main &:last-child {
+		margin-bottom: calc(-1 * var(--app__main-gap-bottom));
+	}
+
 	@include media-breakpoint-down(lg) {
 		padding-top: 45rem;
 	}
