@@ -33,3 +33,15 @@
 .form-feedback__button {
 	--width: 100%;
 }
+
+.form-feedback__message {
+	font-weight: 500;
+
+	&.is-success {
+		color: $color-success;
+	}
+
+	&.is-error {
+		color: $color-danger;
+	}
+}

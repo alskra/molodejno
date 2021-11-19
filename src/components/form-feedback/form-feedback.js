@@ -6,7 +6,7 @@ Alpine.data('formFeedback', () => ({
 	isSubmit: false,
 	success: null,
 	error: null,
-	messageTimer: null,
+	successTimer: null,
 	validate(obj) {
 		const target = obj.target || obj;
 		const valid = target.validity.valid;
@@ -35,22 +35,22 @@ Alpine.data('formFeedback', () => ({
 
 				const response = await fetch(this.$root.action, {
 					method: 'POST',
-					// body: new FormData(this.$root),
+					body: new FormData(this.$root),
 				});
 
 				if (response.ok) {
+					clearTimeout(this.successTimer);
 					this.success = 'Success submit!';
 
-					this.messageTimer = setTimeout(() => {
+					this.successTimer = setTimeout(() => {
 						this.success = null;
-					}, 5000);
+					}, 3000);
 
 					this.error = null;
 				} else {
 					throw new Error(`HTTP Error: ${response.status} (${response.statusText})`);
 				}
 			} catch (error) {
-				clearTimeout(this.messageTimer);
 				this.success = null;
 				this.error = error;
 			} finally {
