@@ -19,7 +19,7 @@
 
 	@include invalid {
 		+ .form-check__el {
-			border-color: currentColor;
+			border-color: $color-danger;
 			color: $color-danger;
 		}
 	}

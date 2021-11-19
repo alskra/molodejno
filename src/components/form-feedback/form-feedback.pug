@@ -40,11 +40,16 @@ mixin form-feedback()
 					x-on:change="validate"
 				) Я согласен с #[a(href="") условиями обработки персональных данных]
 			.column-span-3.column-span-6-lg-down.column-span-12-md-down
-				+button({content: "'Отправить'"}).form-feedback__button(type="submit")
+				+button({content: "'Отправить'"}).form-feedback__button(
+					type="submit"
+					x-bind:disabled="isSubmit"
+				)
 			.form-feedback__message.form-feedback__message--success.column-span-9.column-span-12-lg-down(
-				x-show="success"
-			) Ваше сообщение успешно отправлено
-			.form-feedback__message.form-feedback__message--success.column-span-9.column-span-12-lg-down(
-				x-show="error"
-				x-text="error"
+				x-bind:class=`{
+					'is-success': success,
+					'is-error': error,
+				}`
+				x-show="success || error"
+				x-html="success ? 'Ваше сообщение успешно отправлено!' : error"
+				x-transition.opacity
 			)

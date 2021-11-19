@@ -2,10 +2,11 @@ import Alpine from 'alpinejs';
 import './form-feedback.scss';
 
 Alpine.data('formFeedback', () => ({
-	isValid: undefined,
+	isValid: null,
 	isSubmit: false,
-	success: false,
+	success: null,
 	error: null,
+	messageTimer: null,
 	validate(obj) {
 		const target = obj.target || obj;
 		const valid = target.validity.valid;
@@ -38,12 +39,19 @@ Alpine.data('formFeedback', () => ({
 				});
 
 				if (response.ok) {
+					this.success = 'Success submit!';
+
+					this.messageTimer = setTimeout(() => {
+						this.success = null;
+					}, 5000);
+
 					this.error = null;
-					this.success = true;
 				} else {
-					this.error = `Ошибка HTTP: ${response.status} (${response.statusText})`;
+					throw new Error(`HTTP Error: ${response.status} (${response.statusText})`);
 				}
 			} catch (error) {
+				clearTimeout(this.messageTimer);
+				this.success = null;
 				this.error = error;
 			} finally {
 				this.isSubmit = false;
