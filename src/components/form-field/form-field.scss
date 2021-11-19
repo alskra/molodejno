@@ -15,9 +15,14 @@
 		transition: inherit;
 	}
 
-	&:invalid {
+	@include invalid {
 		border-bottom-color: currentColor;
 		color: $color-danger;
+	}
+
+	@include disabled {
+		color: $color-disabled;
+		opacity: 0.85;
 	}
 
 	&:is(textarea) {

@@ -37,6 +37,15 @@
 			},
 			{
 				"type": "rule",
+				"selector": "&:invalid"
+			},
+			{
+				"type": "at-rule",
+				"name": "include",
+				"parameter": "invalid"
+			},
+			{
+				"type": "rule",
 				"selector": "&:focus"
 			},
 			{

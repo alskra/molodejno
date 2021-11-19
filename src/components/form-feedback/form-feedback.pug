@@ -1,11 +1,17 @@
 mixin form-feedback()
-	form.form-feedback.grid&attributes(attributes)
+	form.form-feedback.grid(
+		action=""
+		novalidate
+		x-data="formFeedback"
+		x-on:submit="submit"
+	)&attributes(attributes)
 		.form-feedback__main.grid.column-span-9.column-span-12-lg-down
 			.column-span-3.column-span-4-lg-down.column-span-12-md-down
 				+form-field().form-feedback__field(
 					name="name"
 					required
 					placeholder="Ваше имя"
+					x-on:input="validate"
 				)
 			.column-span-3.column-span-4-lg-down.column-span-12-md-down
 				+form-field().form-feedback__field(
@@ -13,6 +19,7 @@ mixin form-feedback()
 					name="phone"
 					required
 					placeholder="Ваш Телефон"
+					x-on:input="validate"
 				)
 			.column-span-3.column-span-4-lg-down.column-span-12-md-down
 				+form-field().form-feedback__field(
@@ -20,6 +27,7 @@ mixin form-feedback()
 					name="email"
 					required
 					placeholder="Ваш E-mail"
+					x-on:input="validate"
 				)
 			.column-span-9.column-span-12-lg-down
 				+form-field({tag: 'textarea'}).form-feedback__field(placeholder="Ваше сообщение")
@@ -29,6 +37,14 @@ mixin form-feedback()
 				+form-check()(
 					name="agree"
 					required
+					x-on:change="validate"
 				) Я согласен с #[a(href="") условиями обработки персональных данных]
 			.column-span-3.column-span-6-lg-down.column-span-12-md-down
 				+button({content: "'Отправить'"}).form-feedback__button(type="submit")
+			.form-feedback__message.form-feedback__message--success.column-span-9.column-span-12-lg-down(
+				x-show="success"
+			) Ваше сообщение успешно отправлено
+			.form-feedback__message.form-feedback__message--success.column-span-9.column-span-12-lg-down(
+				x-show="error"
+				x-text="error"
+			)

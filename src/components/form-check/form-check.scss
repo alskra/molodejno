@@ -17,6 +17,13 @@
 		}
 	}
 
+	@include invalid {
+		+ .form-check__el {
+			border-color: currentColor;
+			color: $color-danger;
+		}
+	}
+
 	@include focus-visible {
 		+ .form-check__el {
 			@include focus-visible-default;
@@ -25,6 +32,7 @@
 
 	@include disabled {
 		+ .form-check__el {
+			opacity: 0.85;
 			cursor: default;
 		}
 	}
@@ -35,10 +43,13 @@
 	flex-shrink: 0;
 	align-items: center;
 	justify-content: center;
+	border: 1px solid transparent;
 	width: 25rem;
 	height: 25rem;
 	color: $color-primary;
 	background: $color-white;
+	transition: border-color, box-shadow, color, background-color, opacity;
+	transition-duration: $transition-duration;
 	cursor: pointer;
 	pointer-events: auto;
 
