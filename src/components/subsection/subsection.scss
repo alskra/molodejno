@@ -13,6 +13,19 @@
 .subsection {
 	position: relative;
 
+	.app__main > .section:last-child > .section__main:last-child > .content:last-child > &--related {
+		&:last-child {
+			margin-bottom: calc(-1 * var(--app__main-gap-bottom));
+		}
+	}
+
+	// stylelint-disable-next-line
+	.app__main > .article:last-child > .article__body:last-child > .article__grid:last-child > .article__grid-main:last-child > .content:last-child > &--reviews {
+		&:last-child {
+			margin-bottom: calc(-1 * var(--app__main-gap-bottom));
+		}
+	}
+
 	&--related {
 		padding: var(--gap-2xl) 0;
 	}

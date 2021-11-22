@@ -9,6 +9,13 @@
 		margin-bottom: var(--gap-xl);
 	}
 
+	.app__main > & {
+		&:last-child {
+			margin-top: var(--app__main-gap-bottom);
+			margin-bottom: calc(-1 * var(--app__main-gap-bottom));
+		}
+	}
+
 	&--header {
 		.promo__body {
 			align-self: end;

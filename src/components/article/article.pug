@@ -1,5 +1,5 @@
 mixin article({type, image = '../../images/content/article/img-intro.jpg'} = {})
-	article.article(class=`article--${type}`)&attributes(attributes)
+	article.article(class={[`article--${type}`]: type})&attributes(attributes)
 		+container()
 			.article__image
 				+img-2x().article__image-el(src=image)
