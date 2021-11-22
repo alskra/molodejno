@@ -25,7 +25,7 @@
 
 		.header__grid {
 			grid-template-columns: 94fr 830fr 186fr;
-			grid-template-rows: 1px calc(var(--header-sticky-height) - 2px) 1px;
+			grid-template-rows: 1px calc(var(--header-sticky-height) - 1px);
 		}
 
 		.header__grid::before,
@@ -36,7 +36,8 @@
 		}
 
 		.header__grid::after {
-			background: $heading-color;
+			margin-bottom: -1px;
+			background: currentColor;
 		}
 
 		.header__visually {
@@ -64,7 +65,7 @@
 		.header__nav {
 			grid-column: 2;
 			grid-row: 2;
-			border: none;
+			border: 0;
 		}
 
 		.nav__item {
@@ -142,14 +143,14 @@
 }
 
 .header__main {
-	background: $background-color;
-
 	@include media-breakpoint-down(lg) {
 		position: fixed;
 		left: 0;
 		right: 0;
 		top: var(--header-height);
 		bottom: 0;
+		z-index: 100;
+		background: inherit;
 	}
 }
 
