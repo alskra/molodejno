@@ -14,8 +14,10 @@
 		margin-bottom: var(--gap-xl);
 	}
 
-	.app__main &:last-child {
-		margin-bottom: calc(-1 * var(--app__main-gap-bottom));
+	.app__main > .section:last-child > .section__main:last-child > & {
+		&:last-child {
+			margin-bottom: calc(-1 * var(--app__main-gap-bottom));
+		}
 	}
 
 	@include media-breakpoint-down(lg) {
