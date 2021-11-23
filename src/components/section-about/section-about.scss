@@ -1,4 +1,4 @@
-.section-promo {
+.section-about {
 	--padding-y: 135rem;
 	--offset-bottom: 125rem;
 
@@ -7,11 +7,11 @@
 	}
 
 	&--offset-bottom {
-		.section-promo__group:not(:last-child) {
+		.section-about__group:not(:last-child) {
 			margin-bottom: calc(var(--gap-3xl) + var(--offset-bottom));
 		}
 
-		.section-promo__container > :last-child {
+		.section-about__container > :last-child {
 			margin-bottom: calc(-1 * (var(--padding-y) + var(--offset-bottom)));
 		}
 
@@ -21,22 +21,22 @@
 	}
 
 	&--advanced {
-		.section-promo__grid:not(:last-child) {
+		.section-about__grid:not(:last-child) {
 			margin-bottom: 0;
 		}
 
-		.section-promo__image {
+		.section-about__image {
 			margin-bottom: -80rem;
 		}
 	}
 
 	@include media-breakpoint-up(lg) {
 		&--advanced {
-			.section-promo__group {
+			.section-about__group {
 				padding-top: 25rem;
 			}
 
-			.section-promo__image {
+			.section-about__image {
 				margin-top: 0;
 			}
 		}
@@ -47,14 +47,14 @@
 		--offset-bottom: 70rem;
 
 		&--advanced {
-			.section-promo__image {
+			.section-about__image {
 				margin-bottom: -44rem;
 			}
 		}
 	}
 }
 
-.section-promo__group {
+.section-about__group {
 	@include gradient-section;
 
 	padding: var(--padding-y) 0;
@@ -64,7 +64,7 @@
 	}
 }
 
-.section-promo__breadcrumbs {
+.section-about__breadcrumbs {
 	&:not(:last-child) {
 		margin-bottom: 45rem;
 	}
@@ -74,7 +74,7 @@
 	}
 }
 
-.section-promo__grid {
+.section-about__grid {
 	row-gap: 30rem;
 
 	&:not(:last-child) {
@@ -88,7 +88,7 @@
 	}
 }
 
-.section-promo__title {
+.section-about__title {
 	font-family: $heading-font-family;
 	font-weight: 350;
 	font-size: 60rem;
@@ -113,7 +113,7 @@
 	}
 }
 
-.section-promo__content {
+.section-about__content {
 	font-size: 20rem;
 	line-height: 1.5;
 
@@ -130,7 +130,7 @@
 	}
 }
 
-.section-promo__image {
+.section-about__image {
 	position: relative;
 	z-index: 1;
 	width: 100%;
@@ -152,7 +152,7 @@
 	}
 }
 
-.section-promo__infographic {
+.section-about__infographic {
 	&:not(:last-child) {
 		margin-bottom: 45rem;
 	}
@@ -164,11 +164,11 @@
 	}
 }
 
-.section-promo__image-2 {
+.section-about__image-2 {
 	width: 100%;
 }
 
-.section-promo__image-3 {
+.section-about__image-3 {
 	position: relative;
 	z-index: 1;
 	width: 100%;
@@ -189,7 +189,7 @@
 	}
 }
 
-.section-promo__quote {
+.section-about__quote {
 	&:not(:first-child) {
 		margin-top: var(--gap-3xl);
 	}

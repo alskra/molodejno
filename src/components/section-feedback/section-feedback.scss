@@ -7,7 +7,7 @@
 	padding: 90rem 0 var(--gap-3xl);
 
 	.app__main > .section:last-child > .section__main:last-child > .content:last-child > &,
-	.app__main > .section-promo:last-child > .content:last-child > & {
+	.app__main > .section-about:last-child > .content:last-child > & {
 		&:last-child {
 			margin-bottom: calc(-1 * var(--app__main-gap-bottom));
 		}

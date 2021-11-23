@@ -8,7 +8,7 @@ include ../../components/section-feedback/section-feedback
 
 include ../../components/subsection-section/subsection-section
 include ../../components/subsection/subsection
-include ../../components/section-promo/section-promo
+include ../../components/section-about/section-about
 
 append variables
 	-
@@ -18,7 +18,7 @@ block app
 	+header()
 
 	main.app__main
-		+section-promo({advanced: true})
+		+section-about({advanced: true})
 			+subsection({
 				offsetColumn: 'center',
 				title: 'О портале',

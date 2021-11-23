@@ -8,4 +8,4 @@ import '../../components/section-feedback/section-feedback';
 
 import '../../components/subsection-section/subsection-section';
 import '../../components/subsection/subsection';
-import '../../components/section-promo/section-promo';
+import '../../components/section-about/section-about';

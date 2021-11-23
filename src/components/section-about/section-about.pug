@@ -1,21 +1,21 @@
 include ../infographic/infographic
 include ../quote/quote
 
-mixin section-promo({offsetBottom = true, advanced} = {})
-	#{advanced ? 'article' : 'section'}.section-promo(class={
-		'section-promo--offset-bottom': offsetBottom,
-		'section-promo--advanced': advanced,
+mixin section-about({offsetBottom = true, advanced} = {})
+	#{advanced ? 'article' : 'section'}.section-about(class={
+		'section-about--offset-bottom': offsetBottom,
+		'section-about--advanced': advanced,
 	})&attributes(attributes)
-		.section-promo__group
-			+container().section-promo__container
+		.section-about__group
+			+container().section-about__container
 				if advanced
-					+breadcrumbs(['О проекте']).section-promo__breadcrumbs
-				.section-promo__grid.grid
+					+breadcrumbs(['О проекте']).section-about__breadcrumbs
+				.section-about__grid.grid
 					.column-span-6.column-span-12-lg-down
-						#{advanced ? 'h1' : 'h2'}.section-promo__title.
+						#{advanced ? 'h1' : 'h2'}.section-about__title.
 							#[strong Молодёжно]&nbsp;&mdash;
 							#[small это информационно-познавательный портал для молодёжи Новгородской области]
-						.section-promo__content
+						.section-about__content
 							p.
 								Портал реализован инициативами Дома Молодёжи Новгородской области, цель которого&nbsp;&mdash;
 								это реализация молодёжной политики во&nbsp;всех актуальных и&nbsp;действующих направлениях
@@ -27,26 +27,26 @@ mixin section-promo({offsetBottom = true, advanced} = {})
 							})
 
 					.column-span-6.column-span-12-lg-down
-						+picture-webp().section-promo__image(
+						+picture-webp().section-about__image(
 							src="../../images/design/section-about/img-1.png"
 							srcset="2x"
 						)
 
 				if advanced
-					+picture-webp().section-promo__image-3(
+					+picture-webp().section-about__image-3(
 						src="../../images/design/section-about/img-3.png"
 						srcset="2x"
 					)
 
-				+infographic().section-promo__infographic
+				+infographic().section-about__infographic
 
 				if !advanced
-					+picture-webp().section-promo__image-2(
+					+picture-webp().section-about__image-2(
 						src="../../images/design/section-about/img-2.png"
 						srcset="2x"
 					)
 
-				.section-promo__quote.grid
+				.section-about__quote.grid
 					+quote('Молодёжно').column-span-8-lg-up.column-line-3-lg-up.column-span-12-lg-down
 						p.
 							Сегодня Дом молодёжи&nbsp;&mdash; #[br]это команда профессионалов, которые отвечают
