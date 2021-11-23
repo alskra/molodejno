@@ -4,6 +4,7 @@ include ../../components/header/header
 include ../../components/footer/footer
 
 include ../../components/gallery-slider/gallery-slider
+include ../../components/cards/cards
 include ../../components/section-feedback/section-feedback
 
 include ../../components/subsection-section/subsection-section
@@ -92,6 +93,11 @@ block app
 				)
 
 			+subsection({title: 'Команда'})
+				+cards({
+					type: 'team',
+					slice: 6,
+					pagination: false,
+				})
 
 			+section-feedback()
 

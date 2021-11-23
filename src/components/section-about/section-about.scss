@@ -26,6 +26,7 @@
 		}
 
 		.section-about__image {
+			position: static;
 			margin-bottom: -80rem;
 		}
 	}
@@ -169,8 +170,6 @@
 }
 
 .section-about__image-3 {
-	position: relative;
-	z-index: 1;
 	width: 100%;
 
 	&:not(:last-child) {

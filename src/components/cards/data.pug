@@ -431,6 +431,75 @@
 					position: 'Куратор',
 				},
 			],
+			team: [
+				{
+					position: 'Заместитель председателя НО, курирующий молодежную политику',
+					image: '../../images/content/team/img-1.jpg',
+					content: `
+		<p>Константинопольский Александр</p>
+		<p>+7 (800) 000-00-00<br>
+		+7 (495) 123-45-67</p>
+		<p>konstantinov@u.university.ru<br>
+		konst@gmail.com</p>
+	`,
+					accounts: ['facebook'],
+				},
+				{
+					position: 'Менеджер по рекламе',
+					image: '../../images/content/team/img-2.jpg',
+					content: `
+		<p>Иванова Мария</p>
+		<p>+7 (495) 123-45-67</p>
+		<p>konstantinov@u.university.ru</p>
+	`,
+					accounts: ['vk', 'facebook', 'instagram'],
+				},
+				{
+					position: 'Связи со СМИ',
+					image: '../../images/content/team/img-3.jpg',
+					content: `
+		<p>Константинопольский Александр</p>
+		<p>+7 (800) 000-00-00<br>
+		+7 (495) 123-45-67</p>
+		<p>konstantinov@u.university.ru<br>
+		konst@gmail.com</p>
+	`,
+					accounts: null,
+				},
+				{
+					position: 'Менеджер по рекламе',
+					image: '../../images/content/team/img-4.jpg',
+					content: `
+		<p>Иванова Мария</p>
+		<p>+7 (800) 000-00-00<br>
+		+7 (495) 123-45-67</p>
+		<p>konstantinov@u.university.ru<br>
+		konst@gmail.com</p>
+	`,
+					accounts: ['vk', 'facebook', 'instagram'],
+				},
+				{
+					position: 'Заместитель председателя НО, курирующий молодежную политику',
+					image: '../../images/content/team/img-5.jpg',
+					content: `
+		<p>Константинопольский Александр</p>
+		<p>+7 (800) 000-00-00</p>
+		<p>konstantinov@u.university.ru</p>
+	`,
+					accounts: ['facebook'],
+				},
+				{
+					position: 'Заголовок контактов отдела, а не персоны',
+					image: null,
+					content: `
+		<p>+7 (800) 000-00-00<br>
+		+7 (495) 123-45-67</p>
+		<p>konstantinov@u.university.ru<br>
+		konst@gmail.com</p>
+	`,
+					accounts: null,
+				},
+			],
 		};
 
 		switch (type) {
@@ -449,6 +518,11 @@
 			case 'persons':
 				items = items.persons;
 				break;
+			case 'team':
+				items = items.team;
+				break;
+			default:
+				items = [];
 		}
 
 		items = items.slice(0, slice);

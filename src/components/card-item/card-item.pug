@@ -23,13 +23,13 @@ mixin card-item({url = "", title, image, date, organizer, price, author, tags} =
 				a.card-item__link(
 					href=url
 					title!=title
-				)!=title
+				)!= title
 
 			if tags
 				+tags(tags).card__tags
 
 		.card-item__image
-			+img-2x.card-item__image-el(
+			+img-2x().card-item__image-el(
 				src=image
 				alt!=title
 			)
