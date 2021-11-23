@@ -52,5 +52,6 @@ mixin section-promo({offsetBottom = true, advanced} = {})
 							Сегодня Дом молодёжи&nbsp;&mdash; #[br]это команда профессионалов, которые отвечают
 							за&nbsp;основные направления современной молодёжной политики.
 
-		+content()
-			block
+		if block
+			+content()
+				block
