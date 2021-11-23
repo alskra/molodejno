@@ -66,6 +66,7 @@
 			grid-column: 2;
 			grid-row: 2;
 			border: 0;
+			box-shadow: none;
 		}
 
 		.nav__item {
@@ -75,7 +76,7 @@
 
 	&--no-border-bottom {
 		.header__nav {
-			border-bottom-color: transparent;
+			box-shadow: none;
 		}
 	}
 
