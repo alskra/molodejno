@@ -1,12 +1,16 @@
-@mixin make-column($type) {
-	.subsection__#{$type} .subsection__grid {
+@mixin make-column($container, $type: right) {
+	.subsection__#{$container} .subsection__grid {
 		display: grid;
 		column-gap: var(--gap);
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(if($type == right, 4, 6), 1fr);
 	}
 
-	.subsection__#{$type} .subsection__column {
-		grid-column: 2 / 5;
+	.subsection__#{$container} .subsection__column {
+		@if $type == right {
+			grid-column: 2 / 5;
+		} @else if $type == center {
+			grid-column: 2 / 6;
+		}
 	}
 }
 
@@ -63,6 +67,11 @@
 		&--offset-column-all,
 		&--offset-column-main {
 			@include make-column(main);
+		}
+
+		&--offset-column-center {
+			@include make-column(header, center);
+			@include make-column(main, center);
 		}
 	}
 }

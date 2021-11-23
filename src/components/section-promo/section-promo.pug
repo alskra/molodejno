@@ -2,7 +2,7 @@ include ../infographic/infographic
 include ../quote/quote
 
 mixin section-promo({offsetBottom = true, advanced} = {})
-	section.section-promo(class={
+	#{advanced ? 'article' : 'section'}.section-promo(class={
 		'section-promo--offset-bottom': offsetBottom,
 		'section-promo--advanced': advanced,
 	})&attributes(attributes)
@@ -12,7 +12,7 @@ mixin section-promo({offsetBottom = true, advanced} = {})
 					+breadcrumbs(['О проекте']).section-promo__breadcrumbs
 				.section-promo__grid.grid
 					.column-span-6.column-span-12-lg-down
-						h2.section-promo__title.
+						#{advanced ? 'h1' : 'h2'}.section-promo__title.
 							#[strong Молодёжно]&nbsp;&mdash;
 							#[small это информационно-познавательный портал для молодёжи Новгородской области]
 						.section-promo__content
