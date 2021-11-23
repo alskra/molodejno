@@ -19,6 +19,10 @@ block app
 
 	main.app__main
 		+section-promo({advanced: true})
-		+section-feedback()
+			+subsection({
+				offsetColumn: 'center',
+				title: 'О портале',
+			})
+			+section-feedback()
 
 	+footer()

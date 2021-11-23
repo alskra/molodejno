@@ -6,47 +6,51 @@ mixin section-promo({offsetBottom = true, advanced} = {})
 		'section-promo--offset-bottom': offsetBottom,
 		'section-promo--advanced': advanced,
 	})&attributes(attributes)
-		+container().section-promo__container
-			if advanced
-				+breadcrumbs(['О проекте']).section-promo__breadcrumbs
-			.section-promo__grid.grid
-				.column-span-6.column-span-12-lg-down
-					h2.section-promo__title.
-						#[strong Молодёжно]&nbsp;&mdash;
-						#[small это информационно-познавательный портал для молодёжи Новгородской области]
-					.section-promo__content
-						p.
-							Портал реализован инициативами Дома Молодёжи Новгородской области, цель которого&nbsp;&mdash;
-							это реализация молодёжной политики во&nbsp;всех актуальных и&nbsp;действующих направлениях
-							данной отрасли
-					if !advanced
-						+button-arrow-text({
-							row: true,
-							content: "'Подробнее'",
-						})
+		.section-promo__group
+			+container().section-promo__container
+				if advanced
+					+breadcrumbs(['О проекте']).section-promo__breadcrumbs
+				.section-promo__grid.grid
+					.column-span-6.column-span-12-lg-down
+						h2.section-promo__title.
+							#[strong Молодёжно]&nbsp;&mdash;
+							#[small это информационно-познавательный портал для молодёжи Новгородской области]
+						.section-promo__content
+							p.
+								Портал реализован инициативами Дома Молодёжи Новгородской области, цель которого&nbsp;&mdash;
+								это реализация молодёжной политики во&nbsp;всех актуальных и&nbsp;действующих направлениях
+								данной отрасли
+						if !advanced
+							+button-arrow-text({
+								row: true,
+								content: "'Подробнее'",
+							})
 
-				.column-span-6.column-span-12-lg-down
-					+picture-webp().section-promo__image(
-						src="../../images/design/section-about/img-1.png"
+					.column-span-6.column-span-12-lg-down
+						+picture-webp().section-promo__image(
+							src="../../images/design/section-about/img-1.png"
+							srcset="2x"
+						)
+
+				if advanced
+					+picture-webp().section-promo__image-3(
+						src="../../images/design/section-about/img-3.png"
 						srcset="2x"
 					)
 
-			if advanced
-				+picture-webp().section-promo__image-3(
-					src="../../images/design/section-about/img-3.png"
-					srcset="2x"
-				)
+				+infographic().section-promo__infographic
 
-			+infographic().section-promo__infographic
+				if !advanced
+					+picture-webp().section-promo__image-2(
+						src="../../images/design/section-about/img-2.png"
+						srcset="2x"
+					)
 
-			if !advanced
-				+picture-webp().section-promo__image-2(
-					src="../../images/design/section-about/img-2.png"
-					srcset="2x"
-				)
+				.section-promo__quote.grid
+					+quote('Молодёжно').column-span-8-lg-up.column-line-3-lg-up.column-span-12-lg-down
+						p.
+							Сегодня Дом молодёжи&nbsp;&mdash; #[br]это команда профессионалов, которые отвечают
+							за&nbsp;основные направления современной молодёжной политики.
 
-			.section-promo__quote.grid
-				+quote('Молодёжно').column-span-8-lg-up.column-line-3-lg-up.column-span-12-lg-down
-					p.
-						Сегодня Дом молодёжи&nbsp;&mdash; #[br]это команда профессионалов, которые отвечают
-						за&nbsp;основные направления современной молодёжной политики.
+		+content()
+			block

@@ -6,15 +6,8 @@
 	overflow: hidden;
 	padding: 90rem 0 var(--gap-3xl);
 
-	&:not(:first-child) {
-		margin-top: var(--gap-xl);
-	}
-
-	&:not(:last-child) {
-		margin-bottom: var(--gap-xl);
-	}
-
-	.app__main > .section:last-child > .section__main:last-child > & {
+	.app__main > .section:last-child > .section__main:last-child > .content:last-child > &,
+	.app__main > .section-promo:last-child > .content:last-child > & {
 		&:last-child {
 			margin-bottom: calc(-1 * var(--app__main-gap-bottom));
 		}
