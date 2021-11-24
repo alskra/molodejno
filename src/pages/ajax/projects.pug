@@ -19,12 +19,12 @@ block document
 	-
 		const itemAttrs = {
 			class: slice ? [
-				'column-span-3-lg-up',
+				`column-span-${type === 'team' ? 4 : 3}-lg-up`,
 				'column-4-lg-down',
 				'column-6-md-down',
 				'column-10-sm-down',
 			] : [
-				'column-span-3',
+				`column-span-${type === 'team' ? 4 : 3}`,
 				'column-span-4-lg-down',
 				'column-span-6-md-down',
 				'column-span-12-sm-down',
@@ -36,5 +36,7 @@ block document
 		case type
 			when 'persons'
 				+person-item(item).cards__item&attributes(itemAttrs)
+			when 'team'
+				+team-item(item).cards__item&attributes(itemAttrs)
 			default
 				+card-item(item).cards__item(class=`card-item--style-group-${columns * 2}`)&attributes(itemAttrs)
