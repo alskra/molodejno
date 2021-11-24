@@ -33,7 +33,7 @@
 	padding: 51rem 0 12rem;
 	width: auto;
 	height: auto;
-	min-width: var(--container-column-5);
+	min-width: var(--column-5);
 	cursor: default;
 
 	&::before {
@@ -50,7 +50,7 @@
 
 	@include media-breakpoint-down(lg) {
 		padding: 35rem 0 4rem;
-		min-width: var(--container-column-6);
+		min-width: var(--column-6);
 
 		&::before {
 			left: -56rem;
@@ -61,11 +61,11 @@
 	}
 
 	@include media-breakpoint-down(md) {
-		min-width: var(--container-column-8);
+		min-width: var(--column-8);
 	}
 
 	@include media-breakpoint-down(sm) {
-		min-width: var(--container-column-10);
+		min-width: var(--column-10);
 	}
 }
 

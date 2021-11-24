@@ -1,5 +1,5 @@
 .card-details {
-	padding: 45rem var(--container-column-1) 60rem var(--container-column-offset-1);
+	padding: 45rem var(--column-1) 60rem var(--column-offset-1);
 	background: $color-white;
 
 	@include media-breakpoint-down(lg) {
@@ -148,7 +148,7 @@
 
 .card-details__organizer {
 	display: grid;
-	grid-template-columns: 1fr var(--container-column-offset-3);
+	grid-template-columns: 1fr var(--column-offset-3);
 	border-top: 1px solid;
 
 	@include media-breakpoint-down(lg) {

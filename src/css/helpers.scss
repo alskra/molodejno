@@ -29,67 +29,11 @@
 	margin-left: calc(-1 * var(--container-content-offset-x));
 }
 
-.grid {
-	display: grid;
-	grid-auto-columns: var(--container-column-1);
-	grid-template-columns: repeat(auto-fill, var(--container-column-1));
-	gap: var(--gap);
-}
-
-@for $size from 1 through 12 {
-	.column-span-#{$size} {
-		grid-column: span $size / span $size;
-	}
-
-	.column-#{$size} {
-		// stylelint-disable-next-line
-		width: var(--container-column-#{$size}) !important;
-	}
-}
-
-@for $size from 1 through 12 {
-	.column-line-#{$size} {
-		grid-column-start: $size;
-	}
-
-	.column-line-end-#{$size} {
-		grid-column-end: -$size;
-	}
-}
-
 @each $name, $value in $breakpoints {
 	@include media-breakpoint-up($name) {
 		.hidden-#{$name}-up {
 			// stylelint-disable-next-line
 			display: none !important;
-		}
-
-		.grid-#{$name}-up {
-			display: grid;
-			grid-auto-columns: var(--container-column-1);
-			grid-template-columns: repeat(auto-fill, var(--container-column-1));
-			gap: var(--gap);
-		}
-
-		@for $size from 1 through 12 {
-			.column-span-#{$size}-#{$name}-up {
-				grid-column: span $size / span $size;
-			}
-
-			.column-#{$size}-#{$name}-up {
-				// stylelint-disable-next-line
-				width: var(--container-column-#{$size}) !important;
-			}
-		}
-
-		@for $size from 1 through 12 {
-			.column-line-#{$size}-#{$name}-up {
-				grid-column-start: $size;
-			}
-
-			.column-line-end-#{$size}-#{$name}-up {
-				grid-column-end: -$size;
-			}
 		}
 	}
 }
@@ -99,34 +43,6 @@
 		.hidden-#{$name}-down {
 			// stylelint-disable-next-line
 			display: none !important;
-		}
-
-		.grid-#{$name}-down {
-			display: grid;
-			grid-auto-columns: var(--container-column-1);
-			grid-template-columns: repeat(auto-fill, var(--container-column-1));
-			gap: var(--gap);
-		}
-
-		@for $size from 1 through 12 {
-			.column-span-#{$size}-#{$name}-down {
-				grid-column: span $size / span $size;
-			}
-
-			.column-#{$size}-#{$name}-down {
-				// stylelint-disable-next-line
-				width: var(--container-column-#{$size}) !important;
-			}
-		}
-
-		@for $size from 1 through 12 {
-			.column-line-#{$size}-#{$name}-down {
-				grid-column-start: $size;
-			}
-
-			.column-line-end-#{$size}-#{$name}-down {
-				grid-column-end: -$size;
-			}
 		}
 	}
 }

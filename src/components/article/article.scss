@@ -137,12 +137,12 @@
 		grid-column: 2 / 7;
 
 		.article__subsection-group {
-			margin-left: calc(-1 * (var(--container-column-offset-2) + var(--container-content-offset-x)));
-			padding-left: calc(var(--container-column-offset-2) + var(--container-content-offset-x));
+			margin-left: calc(-1 * (var(--column-offset-2) + var(--container-content-offset-x)));
+			padding-left: calc(var(--column-offset-2) + var(--container-content-offset-x));
 		}
 
 		.subsection {
-			margin-left: calc(-1 * (var(--container-column-offset-2) + var(--container-content-offset-x)));
+			margin-left: calc(-1 * (var(--column-offset-2) + var(--container-content-offset-x)));
 		}
 	}
 }
