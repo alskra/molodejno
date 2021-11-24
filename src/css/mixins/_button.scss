@@ -8,13 +8,17 @@
 	max-width: 100%;
 	box-sizing: border-box;
 	white-space: nowrap;
-	transition: border-color, color, background-color;
+	transition: border-color, box-shadow, color, background-color, opacity;
 	transition-duration: $transition-duration;
 	cursor: pointer;
 	user-select: none;
 
-	&:disabled,
-	&.is-disabled {
+	@include focus-visible {
+		@include focus-visible-default;
+	}
+
+	@include disabled {
 		cursor: default;
+		pointer-events: none;
 	}
 }

@@ -1,0 +1,14 @@
+include ../soc-network/soc-network
+
+mixin team-item({title, image, content, accounts} = {})
+	article.team-item&attributes(attributes)
+		h3.team-item__title!= title
+		+content-edited().team-item__content!= content
+		if accounts
+			+soc-network(accounts).team-item__accounts
+		if image
+			.team-item__image
+				+img-2x().team-item__image-el(
+					src=image
+					alt!=title
+				)

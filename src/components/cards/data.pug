@@ -431,6 +431,75 @@
 					position: 'Куратор',
 				},
 			],
+			team: [
+				{
+					title: 'Заместитель председателя НО, курирующий молодежную политику',
+					image: '../../images/content/team/img-1.jpg',
+					content: `
+		<p>Константинопольский Александр</p>
+		<p><a href="tel:+78000000000">+7 (800) 000-00-00</a><br>
+		<a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+		<p><a href="mailto:konstantinov@u.university.ru">konstantinov@u.university.ru</a><br>
+		<a href="mailto:konst@gmail.com">konst@gmail.com</a></p>
+	`,
+					accounts: ['facebook'],
+				},
+				{
+					title: 'Менеджер по рекламе',
+					image: '../../images/content/team/img-2.jpg',
+					content: `
+		<p>Иванова Мария</p>
+		<p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+		<p><a href="mailto:konstantinov@u.university.ru">konstantinov@u.university.ru</a></p>
+	`,
+					accounts: ['vk', 'facebook', 'instagram'],
+				},
+				{
+					title: 'Связи со СМИ',
+					image: '../../images/content/team/img-3.jpg',
+					content: `
+		<p>Константинопольский Александр</p>
+		<p><a href="tel:+78000000000">+7 (800) 000-00-00</a><br>
+		<a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+		<p><a href="mailto:konstantinov@u.university.ru">konstantinov@u.university.ru</a><br>
+		<a href="mailto:konst@gmail.com">konst@gmail.com</a></p>
+	`,
+					accounts: null,
+				},
+				{
+					title: 'Менеджер по рекламе',
+					image: '../../images/content/team/img-4.jpg',
+					content: `
+		<p>Иванова Мария</p>
+		<p><a href="tel:+78000000000">+7 (800) 000-00-00</a><br>
+		<a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+		<p><a href="mailto:konstantinov@u.university.ru">konstantinov@u.university.ru</a><br>
+		<a href="mailto:konst@gmail.com">konst@gmail.com</a></p>
+	`,
+					accounts: ['vk', 'facebook', 'instagram'],
+				},
+				{
+					title: 'Заместитель председателя НО, курирующий молодежную политику',
+					image: '../../images/content/team/img-5.jpg',
+					content: `
+		<p>Константинопольский Александр</p>
+		<p><a href="tel:+78000000000">+7 (800) 000-00-00</a></p>
+		<p><a href="mailto:konstantinov@u.university.ru">konstantinov@u.university.ru</a></p>
+	`,
+					accounts: ['facebook'],
+				},
+				{
+					title: 'Заголовок контактов отдела, а не персоны',
+					image: null,
+					content: `
+		<p><a href="tel:+78000000000">+7 (800) 000-00-00</a><br>
+		<a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+		<p><a href="mailto:konstantinov@u.university.ru">konstantinov@u.university.ru</a><br>
+		<a href="mailto:konst@gmail.com">konst@gmail.com</a></p>
+	`,
+					accounts: null,
+				},
+			],
 		};
 
 		switch (type) {
@@ -449,6 +518,11 @@
 			case 'persons':
 				items = items.persons;
 				break;
+			case 'team':
+				items = items.team;
+				break;
+			default:
+				items = [];
 		}
 
 		items = items.slice(0, slice);

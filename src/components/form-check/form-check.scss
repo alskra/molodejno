@@ -1,0 +1,78 @@
+.form-check {
+	display: inline-flex;
+	column-gap: 20rem;
+	align-items: flex-start;
+	vertical-align: top;
+	max-width: 100%;
+	pointer-events: none;
+}
+
+.form-check__input {
+	position: absolute;
+	clip-path: inset(50%);
+
+	&:not(:checked) {
+		+ .form-check__el icon-svg {
+			display: none;
+		}
+	}
+
+	@include invalid {
+		+ .form-check__el {
+			border-color: $color-danger;
+			color: $color-danger;
+		}
+	}
+
+	@include focus-visible {
+		+ .form-check__el {
+			@include focus-visible-default;
+		}
+	}
+
+	@include disabled {
+		+ .form-check__el {
+			opacity: 0.85;
+			cursor: default;
+		}
+	}
+}
+
+.form-check__el {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid transparent;
+	width: 25rem;
+	height: 25rem;
+	color: $color-primary;
+	background: $color-white;
+	transition: border-color, box-shadow, color, background-color, opacity;
+	transition-duration: $transition-duration;
+	cursor: pointer;
+	pointer-events: auto;
+
+	icon-svg[name="check"] {
+		width: 15rem;
+	}
+}
+
+.form-check__label {
+	align-self: center;
+	font-size: 14rem;
+	line-height: var(--line-height);
+	pointer-events: auto;
+
+	a {
+		text-decoration: underline;
+		color: $color-primary;
+		transition: color;
+		transition-duration: $transition-duration;
+
+		@include hover {
+			text-decoration: none;
+			color: $color-primary-hover;
+		}
+	}
+}

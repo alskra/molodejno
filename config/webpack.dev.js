@@ -41,7 +41,7 @@ module.exports = merge(common, {
 						loader: 'sass-loader',
 						options: {
 							sourceMap: true,
-							additionalData: '@use "sass:math"; @import "/css/env";',
+							additionalData: '@use "sass:math";\n@import "/css/env";\n',
 						},
 					},
 				],

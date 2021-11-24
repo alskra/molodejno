@@ -15,22 +15,19 @@
 		transition-duration: inherit;
 	}
 
-	@include hover {
-		&:not(:disabled, .is-disabled) {
-			color: var(--color-hover);
+	@include hover-not-disabled {
+		color: var(--color-hover);
 
-			icon-svg[name="arrow-left"] {
-				transform: translate(-$arrow-hover-translate);
-			}
+		icon-svg[name="arrow-left"] {
+			transform: translate(-$arrow-hover-translate);
+		}
 
-			icon-svg[name="arrow-right"] {
-				transform: translate($arrow-hover-translate);
-			}
+		icon-svg[name="arrow-right"] {
+			transform: translate($arrow-hover-translate);
 		}
 	}
 
-	&:disabled,
-	&.is-disabled {
+	@include disabled {
 		color: $color-disabled;
 	}
 }

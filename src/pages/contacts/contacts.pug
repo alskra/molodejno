@@ -1,0 +1,37 @@
+extends ../../pug/base
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+include ../../components/contacts/contacts
+include ../../components/section-feedback/section-feedback
+
+include ../../components/subsection-section/subsection-section
+include ../../components/subsection/subsection
+include ../../components/section/section
+
+append variables
+	-
+		title = `${title} - Контакты`;
+
+block app
+	+header()
+
+	main.app__main
+		+container().app__breadcrumbs
+			+breadcrumbs(['Контакты'])
+
+		+section({
+			tag: 'article',
+			type: 'contacts',
+			title: 'Контакты',
+			advanced: true,
+			withoutImage: true,
+		})
+			+content()
+				+container()
+					+contacts(false)
+
+				+section-feedback()
+
+	+footer()

@@ -1,17 +1,34 @@
-@mixin make-column($type) {
-	.subsection__#{$type} .subsection__grid {
+@mixin make-column($container, $type: right) {
+	.subsection__#{$container} .subsection__grid {
 		display: grid;
 		column-gap: var(--gap);
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(if($type == right, 4, 6), 1fr);
 	}
 
-	.subsection__#{$type} .subsection__column {
-		grid-column: 2 / 5;
+	.subsection__#{$container} .subsection__column {
+		@if $type == right {
+			grid-column: 2 / 5;
+		} @else if $type == center {
+			grid-column: 2 / 6;
+		}
 	}
 }
 
 .subsection {
 	position: relative;
+
+	.app__main > .section:last-child > .section__main:last-child > .content:last-child > &--related {
+		&:last-child {
+			margin-bottom: calc(-1 * var(--app__main-gap-bottom));
+		}
+	}
+
+	// stylelint-disable-next-line
+	.app__main > .article:last-child > .article__body:last-child > .article__grid:last-child > .article__grid-main:last-child > .content:last-child > &--reviews {
+		&:last-child {
+			margin-bottom: calc(-1 * var(--app__main-gap-bottom));
+		}
+	}
 
 	&--related {
 		padding: var(--gap-2xl) 0;
@@ -51,6 +68,11 @@
 		&--offset-column-main {
 			@include make-column(main);
 		}
+
+		&--offset-column-center {
+			@include make-column(header, center);
+			@include make-column(main, center);
+		}
 	}
 }
 
@@ -87,6 +109,6 @@
 	font-family: $heading-font-family;
 	font-weight: $heading-font-weight;
 	font-size: var(--content-edited-h2-font-size);
-	line-height: $heading-line-height;
+	line-height: var(--heading-line-height);
 	color: $heading-color;
 }

@@ -23,6 +23,8 @@ $color-gray: #939393;
 $color-mercury: #e7e7e7;
 $color-indigo: #4247ba;
 $color-white-pointer: #fde0ff;
+$color-green: #008000;
+$color-red: #f00;
 
 // Fonts
 $font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji";
@@ -48,6 +50,8 @@ $color: $color-cod-gray;
 $color-primary: $color-royal-blue;
 $color-primary-hover: $color-indigo;
 $color-disabled: $color-silver-2;
+$color-success: $color-green;
+$color-danger: $color-red;
 $font-family: $font-family-helvetica-neue;
 $font-size: 16rem;
 $line-height: 1.5;

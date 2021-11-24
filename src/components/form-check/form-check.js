@@ -1,0 +1,1 @@
+import './form-check.scss';

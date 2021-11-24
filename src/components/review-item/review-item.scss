@@ -20,14 +20,7 @@
 }
 
 .review-item__content {
-	--line-height: var(--content-edited-line-height);
-
 	@include line-clamp;
-
-	* {
-		// stylelint-disable-next-line
-		display: inline !important;
-	}
 
 	&:not(:last-child) {
 		margin-bottom: 20rem;
@@ -35,6 +28,11 @@
 
 	&.is-clamped {
 		--line-clamp: 7;
+
+		* {
+			// stylelint-disable-next-line
+			display: inline !important;
+		}
 	}
 
 	@include media-breakpoint-down(lg) {

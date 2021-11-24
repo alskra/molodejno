@@ -10,7 +10,7 @@
 .activities__item {
 	align-items: start;
 	margin-bottom: var(--gap-xl);
-	border-top: 1px solid currentColor;
+	border-top: 1px solid $color;
 	padding-top: 25rem;
 
 	@include hover {

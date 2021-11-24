@@ -1,10 +1,17 @@
-mixin soc-network()
+mixin soc-network(items = ['vk', 'instagram', 'facebook'])
+	-
+		let networks = {
+			vk: 'VK',
+			instagram: 'Instagram',
+			facebook: 'Facebook',
+		};
+
 	.soc-network&attributes(attributes)
-		each item in [['vk', 'VK'], ['instagram', 'Instagram'], ['facebook', 'Facebook']]
+		each item in items
 			a.soc-network__item(
-				class=`soc-network__item--${item[0]}`
+				class=`soc-network__item--${item}`
 				href=""
 				target="_blank"
-				title=item[1]
+				title=networks[item]
 			)
-				icon-svg(name=item[0])
+				icon-svg(name=item)

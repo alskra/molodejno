@@ -6,6 +6,12 @@
 	&:not(:last-child) {
 		margin-bottom: var(--gap-xl);
 	}
+
+	.app__main > & {
+		&:last-child {
+			margin-top: var(--app__main-gap-bottom);
+		}
+	}
 }
 
 .integration__body {

@@ -1,9 +1,47 @@
+@mixin focus-not-focus-visible {
+	#{if(&, "&", "")}:focus:not(:focus-visible, .focus-visible) {
+		@content;
+	}
+}
+
+@mixin focus-visible-default {
+	outline: 1px dotted;
+	// stylelint-disable-next-line
+	outline: -webkit-focus-ring-color auto 1px;
+}
+
+@mixin focus-visible {
+	#{if(&, "&", "")}:is(:focus-visible, .focus-visible) {
+		@content;
+	}
+}
+
 @mixin hover {
 	@media (hover: hover), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-		//Insert Styles for Hover-Devices and IE11 here.
-		&:hover {
+		// Insert Styles for Hover-Devices and IE11 here.
+		#{if(&, "&", "")}:hover {
 			@content;
 		}
+	}
+}
+
+@mixin disabled {
+	#{if(&, "&", "")}:is(:disabled, .is-disabled) {
+		@content;
+	}
+}
+
+@mixin hover-not-disabled {
+	@include hover {
+		&:not(:disabled, .is-disabled) {
+			@content;
+		}
+	}
+}
+
+@mixin invalid {
+	#{if(&, "&", "")}:is(.is-invalid) {
+		@content;
 	}
 }
 

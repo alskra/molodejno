@@ -6,6 +6,10 @@
 	],
 	"rules": {
 		"order/order": [
+			{
+				"type": "at-rule",
+				"name": "extend"
+			},
 			"dollar-variables",
 			"custom-properties",
 			{
@@ -33,7 +37,21 @@
 			},
 			{
 				"type": "rule",
+				"selector": "&:invalid"
+			},
+			{
+				"type": "at-rule",
+				"name": "include",
+				"parameter": "invalid"
+			},
+			{
+				"type": "rule",
 				"selector": "&:focus"
+			},
+			{
+				"type": "at-rule",
+				"name": "include",
+				"parameter": "focus"
 			},
 			{
 				"type": "rule",
@@ -42,8 +60,7 @@
 			{
 				"type": "at-rule",
 				"name": "include",
-				"parameter": "hover",
-				"hasBlock": true
+				"parameter": "hover"
 			},
 			{
 				"type": "rule",
@@ -52,6 +69,11 @@
 			{
 				"type": "rule",
 				"selector": "&:disabled"
+			},
+			{
+				"type": "at-rule",
+				"name": "include",
+				"parameter": "disabled"
 			},
 			{
 				"type": "rule",
@@ -76,6 +98,10 @@
 			{
 				"type": "rule",
 				"selector": ".* &"
+			},
+			{
+				"type": "rule",
+				"selector": "&:is.+"
 			},
 			{
 				"type": "rule",
@@ -466,7 +492,6 @@
 			}
 		],
 		"at-rule-disallowed-list": [
-			"extend"
 		],
 		"at-rule-empty-line-before": [
 			"always",

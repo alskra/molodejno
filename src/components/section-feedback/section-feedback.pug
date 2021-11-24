@@ -1,0 +1,11 @@
+include ../form-feedback/form-feedback
+
+mixin section-feedback()
+	section.section-feedback&attributes(attributes)
+		+container().section-feedback__container
+			+picture-webp().section-feedback__image(
+				src=`../../images/design/feedback.png`
+				srcset="2x"
+			)
+			h2.section-feedback__title Связаться с&nbsp;нами
+			+form-feedback()

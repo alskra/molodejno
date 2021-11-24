@@ -1,0 +1,47 @@
+.form-feedback {
+	@include media-breakpoint-down(lg) {
+		row-gap: 15rem;
+	}
+}
+
+.form-feedback__main {
+	@include media-breakpoint-up(lg) {
+		> div {
+			&:nth-child(2) {
+				margin-right: cw(45, 255);
+			}
+
+			&:nth-child(3) {
+				margin-left: cw(-45, 255);
+			}
+		}
+	}
+}
+
+.form-feedback__field {
+	width: 100%;
+}
+
+.form-feedback__footer {
+	align-items: center;
+
+	@include media-breakpoint-down(lg) {
+		row-gap: 15rem;
+	}
+}
+
+.form-feedback__button {
+	--width: 100%;
+}
+
+.form-feedback__message {
+	font-weight: 500;
+
+	&.is-success {
+		color: $color-success;
+	}
+
+	&.is-error {
+		color: $color-danger;
+	}
+}

@@ -752,8 +752,8 @@
 											<div class="container subsection__grid">
 												<div class="content subsection__column">
 													<div class="contacts">
-														<section class="contacts__item">
-															<div class="contacts__body">
+														<section class="contacts__item grid">
+															<div class="contacts__body column-span-5 column-span-12-lg-down">
 																<div class="content-edited contacts__main">
 																	<h3 class="h5">Общие контакты</h3>
 																	<table>
@@ -783,10 +783,12 @@
 																		<icon-svg name="facebook"></icon-svg></a>
 																</div>
 															</div>
-															<div class="contacts__map" x-data="ymaps()"></div>
+															<div class="contacts__map column-span-4 column-span-12-lg-down">
+																<div class="ymaps contacts__ymaps" x-data="ymaps"></div>
+															</div>
 														</section>
-														<section class="contacts__item">
-															<div class="contacts__body">
+														<section class="contacts__item grid">
+															<div class="contacts__body column-span-5 column-span-12-lg-down">
 																<div class="content-edited contacts__main">
 																	<h3 class="h5">Министерство спорта и&nbsp;молодёжной политики</h3>
 																	<table>
@@ -816,7 +818,9 @@
 																		<icon-svg name="facebook"></icon-svg></a>
 																</div>
 															</div>
-															<div class="contacts__map" x-data="ymaps({center: [53.751574, 37.573856], hintContent: 'г. Великий Новгород, ул. Черняховского-Завальная-Кольцевая'})"></div>
+															<div class="contacts__map column-span-4 column-span-12-lg-down">
+																<div class="ymaps contacts__ymaps" x-data="ymaps({center: [53.751574, 37.573856], hintContent: 'г. Великий Новгород, ул. Черняховского-Завальная-Кольцевая'})"></div>
+															</div>
 														</section>
 													</div>
 												</div>

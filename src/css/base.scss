@@ -69,18 +69,18 @@ fieldset {
 	padding: 0;
 }
 
-:disabled,
-.is-disabled {
-	pointer-events: none;
+@include focus-not-focus-visible {
+	outline: 0;
 }
 
-:focus:not(:focus-visible, .focus-visible) {
-	outline: none;
+@include focus-visible {
+	@include focus-visible-default;
 }
 
 [hidden],
 [x-cloak] {
-	display: none !important; // stylelint-disable-line
+	// stylelint-disable-next-line
+	display: none !important;
 }
 
 ::selection {

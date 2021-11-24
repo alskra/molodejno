@@ -9,6 +9,13 @@
 		margin-bottom: var(--gap-xl);
 	}
 
+	.app__main > & {
+		&:last-child {
+			margin-top: var(--app__main-gap-bottom);
+			margin-bottom: calc(-1 * var(--app__main-gap-bottom));
+		}
+	}
+
 	&--header {
 		.promo__body {
 			align-self: end;
@@ -111,7 +118,7 @@
 	font-family: $heading-font-family;
 	font-weight: $heading-font-weight;
 	font-size: 40rem;
-	line-height: $heading-line-height;
+	line-height: var(--heading-line-height);
 	color: $heading-color;
 
 	&:not(:last-child) {

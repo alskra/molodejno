@@ -91,32 +91,32 @@
 						</div>
 					</div>
 				</div>
-				<div class="app__group">
-					<section class="section-promo">
-						<div class="container section-promo__container">
-							<div class="section-promo__body">
-								<h2 class="section-promo__title"><strong>Молодёжно</strong>&nbsp;&mdash;
-									<small>это информационно-познавательный портал для молодёжи Новгородской области</small>
-								</h2>
-								<div class="section-promo__content">
-									<p>
-										Портал реализован инициативами Дома Молодёжи Новгородской области, цель которого&nbsp;&mdash;
-										это реализация молодёжной политики во&nbsp;всех актуальных и&nbsp;действующих направлениях
-										данной отрасли
-									</p>
+				<section class="section-about section-about--offset-bottom">
+					<div class="section-about__group">
+						<div class="container section-about__container">
+							<div class="section-about__grid grid">
+								<div class="column-span-6 column-span-12-lg-down">
+									<h2 class="section-about__title"><strong>Молодёжно</strong>&nbsp;&mdash;
+										<small>это информационно-познавательный портал для молодёжи Новгородской области</small>
+									</h2>
+									<div class="section-about__content">
+										<p>
+											Портал реализован инициативами Дома Молодёжи Новгородской области, цель которого&nbsp;&mdash;
+											это реализация молодёжной политики во&nbsp;всех актуальных и&nbsp;действующих направлениях
+											данной отрасли
+										</p>
+									</div>
+									<a class="button-arrow-text button-arrow-text--row" href="" x-init><span class="button-arrow-text__icon">
+											<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="'Подробнее'"></span>
+									</a>
 								</div>
-								<a class="button-arrow-text button-arrow-text--row" href="" x-init><span class="button-arrow-text__icon">
-										<icon-svg name="arrow-right"></icon-svg></span><span class="button-arrow-text__content" x-text="'Подробнее'"></span>
-								</a>
+								<div class="column-span-6 column-span-12-lg-down">
+									<picture class="section-about__image">
+										<source type="image/webp" srcset="images/design/section-about/img-1.webp, images/design/section-about/img-1@2x.webp 2x"><img src="images/design/section-about/img-1.png" srcset="images/design/section-about/img-1@2x.png 2x" alt="">
+									</picture>
+								</div>
 							</div>
-							<picture class="section-promo__image">
-								<source type="image/webp" srcset="images/design/molodejno.webp, images/design/molodejno@2x.webp 2x"><img src="images/design/molodejno.png" srcset="images/design/molodejno@2x.png 2x" alt="">
-							</picture>
-						</div>
-					</section>
-					<section class="section-infographic">
-						<div class="container">
-							<div class="infographic" x-data="infographic">
+							<div class="infographic section-about__infographic" x-data="infographic">
 								<div class="swiper" x-ref="container">
 									<div class="swiper-wrapper">
 										<div class="swiper-slide infographic__item" x-data="scoreAnimated">
@@ -182,21 +182,21 @@
 									</div>
 								</div>
 							</div>
-							<picture class="section-infographic__image">
-								<source type="image/webp" srcset="images/design/infographic.webp, images/design/infographic@2x.webp 2x"><img src="images/design/infographic.png" srcset="images/design/infographic@2x.png 2x" alt="">
+							<picture class="section-about__image-2">
+								<source type="image/webp" srcset="images/design/section-about/img-2.webp, images/design/section-about/img-2@2x.webp 2x"><img src="images/design/section-about/img-2.png" srcset="images/design/section-about/img-2@2x.png 2x" alt="">
 							</picture>
+							<div class="section-about__quote grid">
+								<blockquote class="quote column-span-8-lg-up column-line-3-lg-up column-span-12-lg-down">
+									<p>Сегодня Дом молодёжи&nbsp;&mdash; <br>это команда профессионалов, которые отвечают
+										за&nbsp;основные направления современной молодёжной политики.
+										
+									</p>
+									<cite class="quote__cite">Молодёжно</cite>
+								</blockquote>
+							</div>
 						</div>
-					</section>
-					<div class="container grid">
-						<blockquote class="quote column-span-8-lg-up column-line-3-lg-up column-span-12-lg-down">
-							<p>Сегодня Дом молодёжи&nbsp;&mdash; <br>это команда профессионалов, которые отвечают
-								за&nbsp;основные направления современной молодёжной политики.
-								
-							</p>
-							<cite class="quote__cite">Молодёжно</cite>
-						</blockquote>
 					</div>
-				</div>
+				</section>
 				<section class="directions" x-data="directions(undefined, -1, 3)">
 					<header class="container directions__header">
 						<h2 class="heading directions__heading">Направления

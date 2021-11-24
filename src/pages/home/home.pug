@@ -2,10 +2,9 @@ extends ../../pug/base
 
 include ../../components/header/header
 include ../../components/footer/footer
+
 include ../../components/slider/slider
-include ../../components/section-promo/section-promo
-include ../../components/quote/quote
-include ../../components/section-infographic/section-infographic
+include ../../components/section-about/section-about
 include ../../components/directions/directions
 include ../../components/section/section
 include ../../components/promo/promo
@@ -19,16 +18,7 @@ block app
 
 	main.app__main
 		+slider()
-
-		.app__group
-			+section-promo()
-			+section-infographic()
-			+container().grid
-				+quote('Молодёжно').column-span-8-lg-up.column-line-3-lg-up.column-span-12-lg-down
-					p.
-						Сегодня Дом молодёжи&nbsp;&mdash; #[br]это команда профессионалов, которые отвечают
-						за&nbsp;основные направления современной молодёжной политики.
-
+		+section-about()
 		+directions()
 		+section({
 			type: 'forums',

@@ -35,14 +35,14 @@
 	font-size: 16rem;
 	line-height: 1.25;
 
-	@include hover {
+	@include hover-not-disabled {
 		&:not(.is-active) {
 			color: $color-primary;
 		}
 	}
 
 	&.is-active {
-		border-color: $color-primary;
+		border-color: transparent;
 		color: $color-white;
 		background: $color-primary;
 	}
