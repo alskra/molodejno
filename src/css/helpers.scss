@@ -41,9 +41,8 @@
 		grid-column: span $size / span $size;
 	}
 
-	.column-#{$size} {
-		// stylelint-disable-next-line
-		width: var(--container-column-#{$size}) !important;
+	.column-#{$size}:is(*, .swiper-slide) {
+		width: var(--container-column-#{$size});
 	}
 }
 
@@ -76,9 +75,8 @@
 				grid-column: span $size / span $size;
 			}
 
-			.column-#{$size}-#{$name}-up {
-				// stylelint-disable-next-line
-				width: var(--container-column-#{$size}) !important;
+			.column-#{$size}-#{$name}-up:is(*, .swiper-slide) {
+				width: var(--container-column-#{$size});
 			}
 		}
 
@@ -113,9 +111,8 @@
 				grid-column: span $size / span $size;
 			}
 
-			.column-#{$size}-#{$name}-down {
-				// stylelint-disable-next-line
-				width: var(--container-column-#{$size}) !important;
+			.column-#{$size}-#{$name}-down:is(*, .swiper-slide) {
+				width: var(--container-column-#{$size});
 			}
 		}
 
