@@ -5247,11 +5247,11 @@ icon-svg {
 	color: #595fe4;
 }
 .team-item__title:not(:last-child) {
-	margin-bottom: 10rem;
+	margin-bottom: 15rem;
 }
 @media (max-width: 1024.98px) {
 	.team-item__title:not(:last-child) {
-		margin-bottom: 5rem;
+		margin-bottom: 10rem;
 	}
 }
 
