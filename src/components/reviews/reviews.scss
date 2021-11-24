@@ -18,13 +18,13 @@
 
 .reviews__item {
 	margin: 0 calc(0.5 * var(--gap));
-	width: var(--container-column-6);
+	width: var(--column-6);
 
 	@include media-breakpoint-down(lg) {
-		width: var(--container-column-8);
+		width: var(--column-8);
 	}
 
 	@include media-breakpoint-down(md) {
-		width: var(--container-column-12);
+		width: var(--column-12);
 	}
 }

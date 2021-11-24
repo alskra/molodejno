@@ -31,19 +31,19 @@
 
 	@include media-breakpoint-down(lg) {
 		&.swiper-slide.column-4-lg-down {
-			width: calc(var(--container-column-4) - 16rem / 3);
+			width: calc(var(--column-4) - 16rem / 3);
 		}
 	}
 
 	@include media-breakpoint-down(md) {
 		&.swiper-slide.column-6-md-down {
-			width: calc(var(--container-column-6) - 16rem / 2);
+			width: calc(var(--column-6) - 16rem / 2);
 		}
 	}
 
 	@include media-breakpoint-down(sm) {
 		&.swiper-slide.column-10-sm-down {
-			width: var(--container-column-10);
+			width: var(--column-10);
 		}
 	}
 }

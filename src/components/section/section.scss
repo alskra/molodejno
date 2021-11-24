@@ -95,7 +95,7 @@
 
 .section__header-body {
 	@include media-breakpoint-up(lg) {
-		width: var(--container-column-6);
+		width: var(--column-6);
 	}
 }
 
@@ -351,7 +351,7 @@
 		grid-column: 2 / 5;
 
 		.subsection {
-			margin-left: calc(-1 * (var(--container-column-offset-3) + var(--container-content-offset-x)));
+			margin-left: calc(-1 * (var(--column-offset-3) + var(--container-content-offset-x)));
 		}
 	}
 }

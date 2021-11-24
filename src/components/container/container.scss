@@ -8,8 +8,8 @@
 	@for $size from 1 through 12 {
 		$columns: div(12, $size);
 
-		--container-column-#{$size}: calc((var(--container-content-width) - #{$columns - 1} * var(--gap)) / #{$columns});
-		--container-column-offset-#{$size}: calc(var(--container-column-#{$size}) + var(--gap));
+		--column-#{$size}: calc((var(--container-content-width) - #{$columns - 1} * var(--gap)) / #{$columns});
+		--column-offset-#{$size}: calc(var(--column-#{$size}) + var(--gap));
 	}
 
 	// stylelint-disable-next-line
@@ -25,4 +25,93 @@
 	padding-right: var(--container-gap);
 	padding-left: var(--container-gap);
 	width: var(--container-width);
+}
+
+.grid {
+	display: grid;
+	grid-auto-columns: var(--column-1);
+	grid-template-columns: repeat(auto-fill, var(--column-1));
+	gap: var(--gap);
+}
+
+@for $size from 1 through 12 {
+	.column-span-#{$size} {
+		grid-column: span $size / span $size;
+	}
+
+	.column-#{$size}:is(*, .swiper-slide) {
+		width: var(--column-#{$size});
+	}
+}
+
+@for $size from 1 through 12 {
+	.column-line-#{$size} {
+		grid-column-start: $size;
+	}
+
+	.column-line-end-#{$size} {
+		grid-column-end: -$size;
+	}
+}
+
+@each $name, $value in $breakpoints {
+	@include media-breakpoint-up($name) {
+		.grid-#{$name}-up {
+			display: grid;
+			grid-auto-columns: var(--column-1);
+			grid-template-columns: repeat(auto-fill, var(--column-1));
+			gap: var(--gap);
+		}
+
+		@for $size from 1 through 12 {
+			.column-span-#{$size}-#{$name}-up {
+				grid-column: span $size / span $size;
+			}
+
+			.column-#{$size}-#{$name}-up:is(*, .swiper-slide) {
+				width: var(--column-#{$size});
+			}
+		}
+
+		@for $size from 1 through 12 {
+			.column-line-#{$size}-#{$name}-up {
+				grid-column-start: $size;
+			}
+
+			.column-line-end-#{$size}-#{$name}-up {
+				grid-column-end: -$size;
+			}
+		}
+	}
+}
+
+@each $name, $value in map-reverse($breakpoints) {
+	@include media-breakpoint-down($name) {
+		.grid-#{$name}-down {
+			display: grid;
+			grid-auto-columns: var(--column-1);
+			grid-template-columns: repeat(auto-fill, var(--column-1));
+			gap: var(--gap);
+		}
+
+		@for $size from 1 through 12 {
+			.column-span-#{$size}-#{$name}-down {
+				grid-column: span $size / span $size;
+			}
+
+			.column-#{$size}-#{$name}-down:is(*, .swiper-slide) {
+				width: var(--column-#{$size});
+			}
+		}
+
+		@for $size from 1 through 12 {
+			.column-line-#{$size}-#{$name}-down {
+				grid-column-start: $size;
+			}
+
+			.column-line-end-#{$size}-#{$name}-down {
+				grid-column-end: -$size;
+			}
+		}
+	}
 }

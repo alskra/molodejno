@@ -3,16 +3,16 @@
 	gap: var(--gap);
 
 	&:not(&--general) {
-		grid-template-columns: repeat(auto-fill, minmax(calc(2.25 * var(--container-column-1) + 1.25 * var(--gap)), 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(calc(2.25 * var(--column-1) + 1.25 * var(--gap)), 1fr));
 	}
 
 	&--general {
-		grid-template-columns: repeat(auto-fill, minmax(calc(4.5 * var(--container-column-1) + 3.5 * var(--gap)), 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(calc(4.5 * var(--column-1) + 3.5 * var(--gap)), 1fr));
 	}
 
 	@include media-breakpoint-down(lg) {
 		&:not(&--general) {
-			grid-template-columns: repeat(auto-fill, var(--container-column-4));
+			grid-template-columns: repeat(auto-fill, var(--column-4));
 		}
 	}
 }
