@@ -32,7 +32,7 @@ mixin cards({columns = 3, type, slice, tags = true, pagination = true} = {})
 								'column-6-md-down',
 								'column-10-sm-down',
 							] : [
-								'column-span-3',
+								`column-span-${type === 'team' ? 4 : 3}`,
 								'column-span-4-lg-down',
 								'column-span-6-md-down',
 								'column-span-12-sm-down',

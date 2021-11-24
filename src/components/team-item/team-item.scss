@@ -1,4 +1,68 @@
 .team-item {
 	display: flex;
 	flex-flow: column;
+	border-top: 1px solid;
+	padding-top: 25rem;
+}
+
+.team-item__title {
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	font-size: 20rem;
+	line-height: 1.25;
+	color: $color-primary;
+
+	&:not(:last-child) {
+		margin-bottom: 10rem;
+	}
+}
+
+.team-item__content {
+	--content-edited-interval: 5rem;
+
+	&:not(:last-child) {
+		margin-bottom: 25rem;
+	}
+}
+
+.team-item__accounts {
+	column-gap: 45rem;
+
+	&:not(:last-child) {
+		margin-bottom: 30rem;
+	}
+
+	.soc-network__item--vk {
+		width: 16rem;
+	}
+
+	.soc-network__item--facebook {
+		width: 7rem;
+	}
+
+	.soc-network__item--instagram {
+		width: 15rem;
+	}
+}
+
+.team-item__image {
+	position: relative;
+	overflow: hidden;
+	border-radius: 0 0 50% 50%;
+	width: calc(var(--container-column-2) - #{cw(5, 350)});
+
+	&::before {
+		content: "";
+		display: block;
+		padding-top: 100%;
+	}
+}
+
+.team-item__image-el {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
