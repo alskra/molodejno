@@ -17,12 +17,12 @@
 	color: $color-primary;
 
 	&:not(:last-child) {
-		margin-bottom: 10rem;
+		margin-bottom: 15rem;
 	}
 
 	@include media-breakpoint-down(lg) {
 		&:not(:last-child) {
-			margin-bottom: 5rem;
+			margin-bottom: 10rem;
 		}
 	}
 }
