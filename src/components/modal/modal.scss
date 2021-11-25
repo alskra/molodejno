@@ -1,0 +1,39 @@
+.fancybox__container--modal {
+	--fancybox-bg: #{$color-primary};
+	--carousel-button-width: 37rem;
+	--carousel-button-height: 24rem;
+	--fancybox-content-color: #{$color-white};
+	--fancybox-content-bg: transparent;
+
+	.fancybox__slide {
+		padding: 64rem 0;
+	}
+
+	.carousel__button.is-close {
+		position: fixed;
+		right: 40rem;
+		top: 40rem;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			border-top: 1px solid $color-white;
+			width: 100%;
+		}
+
+		&::before {
+			transform: rotate(32.97deg);
+		}
+
+		&::after {
+			transform: rotate(147.03deg);
+		}
+	}
+}
+
+.modal {
+	align-self: stretch;
+	padding: 0;
+}

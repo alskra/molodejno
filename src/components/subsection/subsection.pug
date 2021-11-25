@@ -1,4 +1,5 @@
 include ../promo/promo
+include ../section-review/section-review
 
 mixin subsection({offsetColumn, anchor, type, extType, title} = {})
 	section.subsection(
@@ -28,9 +29,17 @@ mixin subsection({offsetColumn, anchor, type, extType, title} = {})
 								+button({
 									tag: 'a',
 									content: "'Оставить отзыв'",
-								}).button--height-sm
+								}).button--height-sm(
+									data-fancybox
+									data-fancybox-modal
+									data-src="#modal-review"
+								)
 
 		.subsection__main
 			+container().subsection__grid
 				+content().subsection__column
 					block
+
+		if type === 'reviews'
+			+modal()#modal-review(style="display: none;")
+				+section-review()

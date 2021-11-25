@@ -1,0 +1,42 @@
+.section-review {
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+}
+
+.section-review__image {
+	position: absolute;
+	right: calc(var(--container-content-offset-x) - 83rem - 45rem);
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	display: flex;
+	flex-flow: column;
+	padding: var(--gap) 0;
+	width: 529rem;
+
+	img {
+		margin: auto 0;
+		height: auto;
+	}
+
+	@include media-breakpoint-down(lg) {
+		display: none;
+	}
+}
+
+.section-review__title {
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	font-size: var(--content-edited-h2-font-size);
+	line-height: var(--heading-line-height);
+	color: $heading-color;
+
+	&:not(:last-child) {
+		margin-bottom: 30rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		font-size: var(--content-edited-h1-font-size);
+	}
+}
