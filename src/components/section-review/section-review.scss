@@ -4,6 +4,9 @@
 	overflow: hidden;
 
 	.modal & {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
 		margin-top: calc(-1 * var(--modal-padding-y));
 		margin-bottom: calc(-1 * var(--modal-padding-y));
 		padding-top: var(--modal-padding-y);
@@ -13,6 +16,7 @@
 
 	@include media-breakpoint-down(lg) {
 		.modal & {
+			justify-content: flex-start;
 			padding-bottom: 245rem;
 		}
 	}
