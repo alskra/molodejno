@@ -2,10 +2,9 @@ include ../form-feedback/form-feedback
 
 mixin section-feedback()
 	section.section-feedback&attributes(attributes)
-		+container().section-feedback__container
+		+container().grid
 			+picture-webp().section-feedback__image(
-				src=`../../images/design/feedback.png`
+				src="../../images/design/section-feedback/img-1.png"
 				srcset="2x"
 			)
-			h2.section-feedback__title Связаться с&nbsp;нами
-			+form-feedback()
+			+form-feedback({title: 'Связаться с&nbsp;нами'}).section-feedback__form-feedback.column-span-9.column-span-12-lg-down

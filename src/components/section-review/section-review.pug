@@ -1,0 +1,13 @@
+include ../form-feedback/form-feedback
+
+mixin section-review()
+	section.section-review&attributes(attributes)
+		+container().grid
+			+picture-webp().section-review__image(
+				src="../../images/design/section-review/img-1.png"
+				srcset="2x"
+			)
+			+form-feedback({
+				title: 'Оставить отзыв',
+				buttonClass: 'button--outline',
+			}).section-review__form-feedback.column-span-9.column-line-4-lg-up.column-span-12-lg-down

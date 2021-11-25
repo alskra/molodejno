@@ -1,8 +1,11 @@
-mixin video({caption} = {})
+mixin video({url = 'https://youtu.be/y_ZL7-TvQpw', caption} = {})
 	figure.video.grid
 		if caption
 			figcaption.video__caption!= caption
 		.video__main
 			+img-2x().video__image(src="../../images/content/article/img-2.jpg")
-			.video__overlay
+			.video__overlay(
+				data-fancybox
+				data-src=url
+			)
 				.video__button-play
