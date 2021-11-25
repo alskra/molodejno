@@ -8,5 +8,12 @@ Fancybox.bind('[data-fancybox-modal]', {
 	template: {
 		closeButton: '',
 	},
-	touch: false,
+	// Carousel: {
+	// 	touch: false,
+	// 	draggable: false,
+	// 	drag: false,
+	// },
+	// touch: false,
+	// draggable: false,
+	// drag: false,
 });
