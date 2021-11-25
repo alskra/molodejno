@@ -130,13 +130,15 @@
 								</div>
 							</div>
 							<section class="section-feedback">
-								<div class="container section-feedback__container">
+								<div class="container grid">
 									<picture class="section-feedback__image">
-										<source type="image/webp" srcset="images/design/feedback.webp, images/design/feedback@2x.webp 2x"><img src="images/design/feedback.png" srcset="images/design/feedback@2x.png 2x" alt="">
+										<source type="image/webp" srcset="images/design/section-feedback/img-1.webp, images/design/section-feedback/img-1@2x.webp 2x"><img src="images/design/section-feedback/img-1.png" srcset="images/design/section-feedback/img-1@2x.png 2x" alt="">
 									</picture>
-									<h2 class="section-feedback__title">Связаться с&nbsp;нами</h2>
-									<form class="form-feedback grid" action="" novalidate x-data="formFeedback" x-on:submit="submit">
-										<div class="form-feedback__main grid column-span-9 column-span-12-lg-down">
+									<form class="form-feedback grid section-feedback__form-feedback column-span-9 column-span-12-lg-down" action="" novalidate x-data="formFeedback" x-on:submit="submit">
+										<div class="form-feedback__header column-span-12">
+											<h2 class="form-feedback__title">Связаться с&nbsp;нами</h2>
+										</div>
+										<div class="form-feedback__main grid column-span-12">
 											<div class="column-span-3 column-span-4-lg-down column-span-12-md-down">
 												<input class="form-field form-feedback__field" type="text" x-data="formField" name="name" required placeholder="Ваше имя" x-on:input="validate"></input>
 											</div>
@@ -150,8 +152,8 @@
 												<textarea class="form-field form-feedback__field" type="text" x-data="formField" placeholder="Ваше сообщение"></textarea>
 											</div>
 										</div>
-										<div class="form-feedback__footer grid column-span-9 column-span-12-lg-down">
-											<div class="column-span-6 column-span-6-lg-down column-span-12-md-down">
+										<div class="form-feedback__footer grid column-span-12">
+											<div class="column-span-6 column-span-12-md-down">
 												<label class="form-check">
 													<input class="form-check__input" type="checkbox" name="agree" required x-on:change="validate"><span class="form-check__el">
 														<icon-svg name="check"></icon-svg></span><span class="form-check__label">Я согласен с <a href="">условиями обработки персональных данных</a></span>
