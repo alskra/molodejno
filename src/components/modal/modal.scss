@@ -1,5 +1,9 @@
 :root {
 	--modal-padding-y: 64rem;
+
+	@include media-breakpoint-down(lg) {
+		--modal-padding-y: 44rem;
+	}
 }
 
 .fancybox__container--modal {
@@ -17,6 +21,8 @@
 		position: fixed;
 		right: 40rem;
 		top: 40rem;
+		border-radius: 0;
+		filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4));
 
 		&::before,
 		&::after {
@@ -32,7 +38,14 @@
 		}
 
 		&::after {
-			transform: rotate(147.03deg);
+			transform: rotate(-32.97deg);
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		.carousel__button.is-close {
+			right: var(--container-gap);
+			top: 20rem;
 		}
 	}
 }

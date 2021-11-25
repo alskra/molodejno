@@ -8,4 +8,5 @@ Fancybox.bind('[data-fancybox-modal]', {
 	template: {
 		closeButton: '',
 	},
+	touch: false,
 });

@@ -10,6 +10,12 @@
 		padding-bottom: var(--modal-padding-y);
 		min-height: vh(100);
 	}
+
+	@include media-breakpoint-down(lg) {
+		.modal & {
+			padding-bottom: 245rem;
+		}
+	}
 }
 
 .section-review__image {
@@ -22,6 +28,7 @@
 	flex-flow: column;
 	padding: var(--gap) 0;
 	width: 462rem;
+	max-width: none;
 
 	img {
 		margin: auto 0;
@@ -29,7 +36,8 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		display: none;
+		left: calc(var(--container-content-offset-x) - 98rem - 19rem);
+		top: calc(100% - 245rem);
 	}
 }
 
