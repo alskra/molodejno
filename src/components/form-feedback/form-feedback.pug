@@ -1,11 +1,14 @@
-mixin form-feedback()
+mixin form-feedback({title, buttonClass} = {})
 	form.form-feedback.grid(
 		action=""
 		novalidate
 		x-data="formFeedback"
 		x-on:submit="submit"
 	)&attributes(attributes)
-		.form-feedback__main.grid.column-span-9.column-span-12-lg-down
+		.form-feedback__header.column-span-12
+			h2.form-feedback__title!= title
+
+		.form-feedback__main.grid.column-span-12
 			.column-span-3.column-span-4-lg-down.column-span-12-md-down
 				+form-field().form-feedback__field(
 					name="name"
@@ -32,8 +35,8 @@ mixin form-feedback()
 			.column-span-9.column-span-12-lg-down
 				+form-field({tag: 'textarea'}).form-feedback__field(placeholder="Ваше сообщение")
 
-		.form-feedback__footer.grid.column-span-9.column-span-12-lg-down
-			.column-span-6.column-span-6-lg-down.column-span-12-md-down
+		.form-feedback__footer.grid.column-span-12
+			.column-span-6.column-span-12-md-down
 				+form-check()(
 					name="agree"
 					required
@@ -41,6 +44,7 @@ mixin form-feedback()
 				) Я согласен с #[a(href="") условиями обработки персональных данных]
 			.column-span-3.column-span-6-lg-down.column-span-12-md-down
 				+button({content: "'Отправить'"}).form-feedback__button(
+					class=buttonClass
 					type="submit"
 					x-bind:disabled="isSubmit"
 				)

@@ -37,7 +37,6 @@ import '../components/integration/integration';
 import '../components/video/video';
 import '../components/form-field/form-field';
 import '../components/form-check/form-check';
-import '../components/modal/modal';
 
 window.Alpine = Alpine;
 

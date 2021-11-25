@@ -25,18 +25,12 @@
 	}
 }
 
-.section-review__title {
-	font-family: $heading-font-family;
-	font-weight: $heading-font-weight;
-	font-size: var(--content-edited-h2-font-size);
-	line-height: var(--heading-line-height);
-	color: $heading-color;
-
-	&:not(:last-child) {
-		margin-bottom: 30rem;
+.section-review__form-feedback {
+	.form-feedback__title {
+		color: $color-white;
 	}
 
-	@include media-breakpoint-down(lg) {
-		font-size: var(--content-edited-h1-font-size);
+	.form-check__label a {
+		color: $color-white;
 	}
 }
