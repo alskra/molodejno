@@ -22,7 +22,7 @@ mixin cards({columns = 3, type, slice, tags = true, pagination = true} = {})
 						'grid-lg-up': slice,
 						grid: !slice
 					}
-					x-bind:class=slice ? `{'swiper-wrapper': !$store.isDesktop}` : null
+					x-bind:class=slice ? "{'swiper-wrapper': !$store.isDesktop}" : null
 				)
 					-
 						const itemAttrs = {

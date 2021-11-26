@@ -62,10 +62,10 @@
 							<picture class="section-about__image-3">
 								<source type="image/webp" srcset="images/design/section-about/img-3.webp, images/design/section-about/img-3@2x.webp 2x"><img src="images/design/section-about/img-3.png" srcset="images/design/section-about/img-3@2x.png 2x" alt="">
 							</picture>
-							<div class="infographic section-about__infographic" x-data="infographic">
-								<div class="swiper" x-ref="container">
-									<div class="swiper-wrapper">
-										<div class="swiper-slide infographic__item" x-data="scoreAnimated">
+							<div class="infographic section-about__infographic" x-data="infographic(false)" x-effect="effect" x-bind:class="{'has-swiper': hasSwiper}">
+								<div class="infographic__body" x-bind:class="{swiper: hasSwiper}" x-ref="swiper">
+									<div class="infographic__grid" x-bind:class="{'swiper-wrapper': hasSwiper}">
+										<div class="infographic__item" x-data="scoreAnimated" x-bind:class="{'swiper-slide': hasSwiper}">
 											<div class="infographic__title">Выигранных грантов</div>
 											<div class="infographic__content">
 												<div class="infographic__number">
@@ -75,7 +75,7 @@
 												<div class="infographic__plus" x-ref="plus">+</div>
 											</div>
 										</div>
-										<div class="swiper-slide infographic__item" x-data="scoreAnimated">
+										<div class="infographic__item" x-data="scoreAnimated" x-bind:class="{'swiper-slide': hasSwiper}">
 											<div class="infographic__title">Участников ежегодно</div>
 											<div class="infographic__content">
 												<div class="infographic__number">
@@ -85,7 +85,7 @@
 												<div class="infographic__plus" x-ref="plus">+</div>
 											</div>
 										</div>
-										<div class="swiper-slide infographic__item" x-data="scoreAnimated">
+										<div class="infographic__item" x-data="scoreAnimated" x-bind:class="{'swiper-slide': hasSwiper}">
 											<div class="infographic__title">Выигранных грантов</div>
 											<div class="infographic__content">
 												<div class="infographic__number">
@@ -95,7 +95,7 @@
 												<div class="infographic__plus" x-ref="plus">+</div>
 											</div>
 										</div>
-										<div class="swiper-slide infographic__item" x-data="scoreAnimated">
+										<div class="infographic__item" x-data="scoreAnimated" x-bind:class="{'swiper-slide': hasSwiper}">
 											<div class="infographic__title">Участников ежегодно</div>
 											<div class="infographic__content">
 												<div class="infographic__number">
@@ -105,7 +105,7 @@
 												<div class="infographic__plus" x-ref="plus">+</div>
 											</div>
 										</div>
-										<div class="swiper-slide infographic__item" x-data="scoreAnimated">
+										<div class="infographic__item" x-data="scoreAnimated" x-bind:class="{'swiper-slide': hasSwiper}">
 											<div class="infographic__title">Выигранных грантов</div>
 											<div class="infographic__content">
 												<div class="infographic__number">
@@ -115,7 +115,7 @@
 												<div class="infographic__plus" x-ref="plus">+</div>
 											</div>
 										</div>
-										<div class="swiper-slide infographic__item" x-data="scoreAnimated">
+										<div class="infographic__item" x-data="scoreAnimated" x-bind:class="{'swiper-slide': hasSwiper}">
 											<div class="infographic__title">Участников ежегодно</div>
 											<div class="infographic__content">
 												<div class="infographic__number">

@@ -27,11 +27,21 @@ mixin infographic
 			},
 		];
 
-	.infographic(x-data="infographic")&attributes(attributes)
-		.swiper(x-ref="container")
-			.swiper-wrapper
+	.infographic(
+		x-data="infographic(false)"
+		x-effect="effect"
+		x-bind:class="{'has-swiper': hasSwiper}"
+	)&attributes(attributes)
+		.infographic__body(
+			x-bind:class="{swiper: hasSwiper}"
+			x-ref="swiper"
+		)
+			.infographic__grid(x-bind:class="{'swiper-wrapper': hasSwiper}")
 				each item in items
-					.swiper-slide.infographic__item(x-data="scoreAnimated")
+					.infographic__item(
+						x-data="scoreAnimated"
+						x-bind:class="{'swiper-slide': hasSwiper}"
+					)
 						.infographic__title= item.title
 						.infographic__content
 							.infographic__number

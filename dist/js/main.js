@@ -450,12 +450,54 @@ alpinejs__WEBPACK_IMPORTED_MODULE_0__/* ["default"].data */ .Z.data('header', fu
 
 
 alpinejs__WEBPACK_IMPORTED_MODULE_0__/* ["default"].data */ .Z.data('infographic', function () {
+  var onlyMobile = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+  var inst;
   return {
     swiper: undefined,
+    swiperIsInit: false,
+
+    get hasSwiper() {
+      return !(onlyMobile && this.$store.isDesktop);
+    },
+
     init: function init() {
-      this.swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .ZP(this.$refs.container, {
-        slidesPerView: 'auto'
-      });
+      inst = this;
+    },
+    destroy: function destroy() {
+      inst.destroySwiper();
+    },
+    initSwiper: function initSwiper() {
+      var _this = this;
+
+      if (!this.swiperIsInit) {
+        this.swiper = new swiper__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .ZP(this.$refs.swiper, {
+          slidesPerView: 'auto',
+          on: {
+            init: function init() {
+              _this.swiperIsInit = true;
+            },
+            destroy: function destroy() {
+              _this.swiperIsInit = false;
+            }
+          }
+        });
+      }
+    },
+    destroySwiper: function destroySwiper() {
+      if (this.swiperIsInit) {
+        this.swiper.destroy();
+      }
+    },
+    effect: function effect() {
+      var _this2 = this;
+
+      if (this.hasSwiper) {
+        this.$nextTick(function () {
+          return _this2.initSwiper();
+        });
+      } else {
+        this.destroySwiper();
+      }
     }
   };
 });
