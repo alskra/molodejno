@@ -5934,8 +5934,10 @@ icon-svg {
 }
 .infographic.has-swiper {
 	margin-right: calc(-1 * var(--container-content-offset-x));
-	margin-left: calc(-1 * var(--container-content-offset-x));
 	padding-right: var(--container-content-offset-x);
+}
+.infographic.has-swiper:not(.infographic--inner) {
+	margin-left: calc(-1 * var(--container-content-offset-x));
 	padding-left: var(--container-content-offset-x);
 }
 @media (min-width: 1025px) {
@@ -5945,12 +5947,14 @@ icon-svg {
 	.infographic--inner .infographic__item {
 		flex-basis: calc((100% - var(--gap)) / 2);
 	}
-	.infographic--inner.has-swiper {
-		margin-left: -60rem;
-		padding-left: 60rem;
-	}
 	.infographic--inner.has-swiper .infographic__item {
 		flex-basis: calc(50% - var(--gap));
+	}
+}
+@media (max-width: 1024.98px) {
+	.infographic {
+		margin-left: -56rem;
+		padding-left: 56rem;
 	}
 }
 
