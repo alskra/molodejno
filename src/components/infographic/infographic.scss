@@ -1,5 +1,7 @@
 .infographic {
 	overflow: hidden;
+	margin-left: -60rem;
+	padding-left: 60rem;
 
 	&.has-swiper {
 		margin-right: calc(-1 * var(--container-content-offset-x));
@@ -9,14 +11,20 @@
 	}
 
 	@include media-breakpoint-up(lg) {
-		&--inner:is(*, .has-swiper) {
+		&--inner {
 			--gap: 25rem;
 
-			margin-left: -60rem;
-			padding-left: 60rem;
-
 			.infographic__item {
-				flex-basis: calc(50% - var(--gap));
+				flex-basis: calc((100% - var(--gap)) / 2);
+			}
+
+			&.has-swiper {
+				margin-left: -60rem;
+				padding-left: 60rem;
+
+				.infographic__item {
+					flex-basis: calc(50% - var(--gap));
+				}
 			}
 		}
 	}
