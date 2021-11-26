@@ -2,7 +2,7 @@ import Alpine from 'alpinejs';
 import './form-feedback.scss';
 
 Alpine.data('formFeedback', () => ({
-	isValid: null,
+	isValid: false,
 	isSubmit: false,
 	success: null,
 	error: null,
