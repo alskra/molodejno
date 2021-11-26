@@ -543,48 +543,50 @@
 												</div>
 											</div>
 										</div>
-										<div class="modal" id="modal-review" style="display: none;">
-											<section class="section-review">
-												<div class="container grid">
-													<picture class="section-review__image">
-														<source type="image/webp" srcset="images/design/section-review/img-1.webp, images/design/section-review/img-1@2x.webp 2x"><img src="images/design/section-review/img-1.png" srcset="images/design/section-review/img-1@2x.png 2x" alt="">
-													</picture>
-													<form class="form-feedback grid section-review__form-feedback column-span-9 column-line-4-lg-up column-span-12-lg-down" action="" novalidate x-data="formFeedback" x-on:submit="submit">
-														<div class="form-feedback__header column-span-12">
-															<h2 class="form-feedback__title">Оставить отзыв</h2>
-														</div>
-														<div class="form-feedback__main grid column-span-12">
-															<div class="column-span-3 column-span-4-lg-down column-span-12-md-down">
-																<input class="form-field form-feedback__field" type="text" x-data="formField" name="name" required placeholder="Ваше имя" x-on:input="validate"></input>
+										<div class="modal" x-data="modal" id="modal-review" style="display: none;">
+											<template x-if="show">
+												<section class="section-review">
+													<div class="container grid">
+														<picture class="section-review__image">
+															<source type="image/webp" srcset="images/design/section-review/img-1.webp, images/design/section-review/img-1@2x.webp 2x"><img src="images/design/section-review/img-1.png" srcset="images/design/section-review/img-1@2x.png 2x" alt="">
+														</picture>
+														<form class="form-feedback grid section-review__form-feedback column-span-9 column-line-4-lg-up column-span-12-lg-down" action="" novalidate x-data="formFeedback" x-on:submit="submit">
+															<div class="form-feedback__header column-span-12">
+																<h2 class="form-feedback__title">Оставить отзыв</h2>
 															</div>
-															<div class="column-span-3 column-span-4-lg-down column-span-12-md-down">
-																<input class="form-field form-feedback__field" type="tel" x-data="formField" name="phone" required placeholder="Ваш Телефон" x-on:input="validate"></input>
+															<div class="form-feedback__main grid column-span-12">
+																<div class="column-span-3 column-span-4-lg-down column-span-12-md-down">
+																	<input class="form-field form-feedback__field" type="text" x-data="formField" name="name" required placeholder="Ваше имя" x-on:input="validate"></input>
+																</div>
+																<div class="column-span-3 column-span-4-lg-down column-span-12-md-down">
+																	<input class="form-field form-feedback__field" type="tel" x-data="formField" name="phone" required placeholder="Ваш Телефон" x-on:input="validate"></input>
+																</div>
+																<div class="column-span-3 column-span-4-lg-down column-span-12-md-down">
+																	<input class="form-field form-feedback__field" type="email" x-data="formField" name="email" required placeholder="Ваш E-mail" x-on:input="validate"></input>
+																</div>
+																<div class="column-span-9 column-span-12-lg-down">
+																	<textarea class="form-field form-feedback__field" type="text" x-data="formField" placeholder="Ваше сообщение"></textarea>
+																</div>
 															</div>
-															<div class="column-span-3 column-span-4-lg-down column-span-12-md-down">
-																<input class="form-field form-feedback__field" type="email" x-data="formField" name="email" required placeholder="Ваш E-mail" x-on:input="validate"></input>
-															</div>
-															<div class="column-span-9 column-span-12-lg-down">
-																<textarea class="form-field form-feedback__field" type="text" x-data="formField" placeholder="Ваше сообщение"></textarea>
-															</div>
-														</div>
-														<div class="form-feedback__footer grid column-span-12">
-															<div class="column-span-6 column-span-12-md-down">
-																<label class="form-check">
-																	<input class="form-check__input" type="checkbox" name="agree" required x-on:change="validate"><span class="form-check__el">
-																		<icon-svg name="check"></icon-svg></span><span class="form-check__label">Я согласен с <a href="">условиями обработки персональных данных</a></span>
-																</label>
-															</div>
-															<div class="column-span-3 column-span-6-lg-down column-span-12-md-down">
-																<button class="button form-feedback__button button--outline" type="submit" x-init x-bind:disabled="isSubmit"><span class="button__content" x-text="'Отправить'"></span></button>
-															</div>
-															<div class="form-feedback__message column-span-9 column-span-12-lg-down" x-bind:class="{
+															<div class="form-feedback__footer grid column-span-12">
+																<div class="column-span-6 column-span-12-md-down">
+																	<label class="form-check">
+																		<input class="form-check__input" type="checkbox" name="agree" required x-on:change="validate"><span class="form-check__el">
+																			<icon-svg name="check"></icon-svg></span><span class="form-check__label">Я согласен с <a href="">условиями обработки персональных данных</a></span>
+																	</label>
+																</div>
+																<div class="column-span-3 column-span-6-lg-down column-span-12-md-down">
+																	<button class="button form-feedback__button button--outline" type="submit" x-init x-bind:disabled="isSubmit"><span class="button__content" x-text="'Отправить'"></span></button>
+																</div>
+																<div class="form-feedback__message column-span-9 column-span-12-lg-down" x-bind:class="{
 					'is-success': success,
 					'is-error': error,
 				}" x-show="success || error" x-html="success ? 'Ваше сообщение успешно отправлено!' : error" x-transition.opacity></div>
-														</div>
-													</form>
-												</div>
-											</section>
+															</div>
+														</form>
+													</div>
+												</section>
+											</template>
 										</div>
 									</section>
 									<section class="subsection subsection--offset-column-all">
