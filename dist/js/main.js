@@ -259,7 +259,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 alpinejs__WEBPACK_IMPORTED_MODULE_13__/* ["default"].data */ .Z.data('formFeedback', function () {
   return {
-    isValid: null,
+    isValid: false,
     isSubmit: false,
     success: null,
     error: null,
@@ -335,7 +335,7 @@ alpinejs__WEBPACK_IMPORTED_MODULE_13__/* ["default"].data */ .Z.data('formFeedba
                 break;
 
               case 15:
-                throw new Error("HTTP Error: ".concat(response.status, " (").concat(response.statusText, ")"));
+                throw new Error("HTTP Error: ".concat(response.status).concat(response.statusText ? " (".concat(response.statusText, ")") : ''));
 
               case 16:
                 _context.next = 22;
@@ -673,18 +673,30 @@ if (sectionRellaxEls.length) {
 
 "use strict";
 
+// EXTERNAL MODULE: ../node_modules/alpinejs/dist/module.esm.js
+var module_esm = __webpack_require__(9407);
 // EXTERNAL MODULE: ../node_modules/@fancyapps/ui/dist/fancybox.esm.js
 var fancybox_esm = __webpack_require__(1597);
 ;// CONCATENATED MODULE: ./components/modal/modal.js
 
 
 
+
+module_esm/* default.data */.Z.data('modal', function () {
+  return {
+    show: false,
+    init: function init() {
+      this.$root.alpine = this;
+    }
+  };
+});
 fancybox_esm/* Fancybox.bind */.KR.bind('[data-fancybox-modal]', {
   mainClass: 'fancybox__container--modal',
   closeButton: 'outside',
   template: {
     closeButton: ''
-  } // Carousel: {
+  },
+  // Carousel: {
   // 	touch: false,
   // 	draggable: false,
   // 	drag: false,
@@ -692,7 +704,20 @@ fancybox_esm/* Fancybox.bind */.KR.bind('[data-fancybox-modal]', {
   // touch: false,
   // draggable: false,
   // drag: false,
+  on: {
+    done: function done(fancybox) {
+      fancybox.modalEl = fancybox.$container.querySelector('.modal');
 
+      if (fancybox.modalEl) {
+        fancybox.modalEl.alpine.show = true;
+      }
+    },
+    destroy: function destroy(fancybox) {
+      if (fancybox.modalEl) {
+        fancybox.modalEl.alpine.show = false;
+      }
+    }
+  }
 });
 // EXTERNAL MODULE: ./components/form-feedback/form-feedback.js
 var form_feedback = __webpack_require__(9989);

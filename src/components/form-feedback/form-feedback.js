@@ -2,7 +2,7 @@ import Alpine from 'alpinejs';
 import './form-feedback.scss';
 
 Alpine.data('formFeedback', () => ({
-	isValid: null,
+	isValid: false,
 	isSubmit: false,
 	success: null,
 	error: null,
@@ -48,7 +48,7 @@ Alpine.data('formFeedback', () => ({
 
 					this.error = null;
 				} else {
-					throw new Error(`HTTP Error: ${response.status} (${response.statusText})`);
+					throw new Error(`HTTP Error: ${response.status}${response.statusText ? ` (${response.statusText})` : ''}`);
 				}
 			} catch (error) {
 				this.success = null;
