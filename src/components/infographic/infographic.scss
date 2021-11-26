@@ -1,39 +1,50 @@
 .infographic {
 	overflow: hidden;
-	margin-right: calc(-1 * var(--container-content-offset-x));
-	margin-left: calc(-1 * var(--container-content-offset-x));
-	padding-right: var(--container-content-offset-x);
-	padding-left: var(--container-content-offset-x);
 
-	.swiper {
-		overflow: visible;
-		margin: 0 calc(-0.5 * var(--gap));
+	&.has-swiper {
+		margin-right: calc(-1 * var(--container-content-offset-x));
+		margin-left: calc(-1 * var(--container-content-offset-x));
+		padding-right: var(--container-content-offset-x);
+		padding-left: var(--container-content-offset-x);
 	}
 
 	@include media-breakpoint-up(lg) {
-		&--inner {
+		&--inner:is(*, .has-swiper) {
 			--gap: 25rem;
 
 			margin-left: -60rem;
 			padding-left: 60rem;
 
 			.infographic__item {
-				min-width: calc(50% - var(--gap));
+				flex-basis: calc(50% - var(--gap));
 			}
 		}
+	}
+}
+
+.infographic__body {
+	overflow: visible;
+
+	&.swiper {
+		margin: 0 calc(-0.5 * var(--gap));
+	}
+}
+
+.infographic__grid {
+	&:not(.swiper-wrapper) {
+		display: flex;
+		flex-flow: wrap;
+		gap: var(--gap);
 	}
 }
 
 .infographic__item {
 	position: relative;
 	display: flex;
+	flex-basis: var(--column-5);
 	flex-flow: column;
-	margin: 0 calc(0.5 * var(--gap));
 	border-bottom: 1px solid $color;
 	padding: 51rem 0 12rem;
-	width: auto;
-	height: auto;
-	min-width: var(--column-5);
 	cursor: default;
 
 	&::before {
@@ -48,9 +59,19 @@
 		height: 134rem;
 	}
 
+	&:not(.swiper-slide) {
+		flex-grow: 1;
+	}
+
+	&.swiper-slide {
+		margin: 0 calc(0.5 * var(--gap));
+		width: auto;
+		height: auto;
+	}
+
 	@include media-breakpoint-down(lg) {
+		flex-basis: var(--column-6);
 		padding: 35rem 0 4rem;
-		min-width: var(--column-6);
 
 		&::before {
 			left: -56rem;
@@ -61,11 +82,11 @@
 	}
 
 	@include media-breakpoint-down(md) {
-		min-width: var(--column-8);
+		flex-basis: var(--column-8);
 	}
 
 	@include media-breakpoint-down(sm) {
-		min-width: var(--column-10);
+		flex-basis: var(--column-10);
 	}
 }
 
