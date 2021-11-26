@@ -5,9 +5,12 @@
 
 	&.has-swiper {
 		margin-right: calc(-1 * var(--container-content-offset-x));
-		margin-left: calc(-1 * var(--container-content-offset-x));
 		padding-right: var(--container-content-offset-x);
-		padding-left: var(--container-content-offset-x);
+
+		&:not(.infographic--inner) {
+			margin-left: calc(-1 * var(--container-content-offset-x));
+			padding-left: var(--container-content-offset-x);
+		}
 	}
 
 	@include media-breakpoint-up(lg) {
@@ -19,14 +22,16 @@
 			}
 
 			&.has-swiper {
-				margin-left: -60rem;
-				padding-left: 60rem;
-
 				.infographic__item {
 					flex-basis: calc(50% - var(--gap));
 				}
 			}
 		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin-left: -56rem;
+		padding-left: 56rem;
 	}
 }
 
