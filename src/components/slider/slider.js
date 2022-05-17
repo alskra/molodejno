@@ -3,11 +3,10 @@ import 'swiper/css/bundle';
 import Swiper, {EffectFade, Navigation, Autoplay} from 'swiper';
 import './slider.scss';
 
-Swiper.use([EffectFade, Navigation, Autoplay]);
-
 Alpine.data('slider', () => ({
 	init() {
 		this.swiper = new Swiper(this.$refs.swiper, {
+			modules: [EffectFade, Navigation, Autoplay],
 			effect: 'fade',
 			fadeEffect: {
 				crossFade: false,
