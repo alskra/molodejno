@@ -1633,11 +1633,11 @@ var swiper_esm = __webpack_require__(8305);
 
 
 
-swiper_esm/* default.use */.ZP.use([swiper_esm/* EffectFade */.xW, swiper_esm/* Navigation */.W_, swiper_esm/* Autoplay */.pt]);
 module_esm/* default.data */.Z.data('slider', function () {
   return {
     init: function init() {
       this.swiper = new swiper_esm/* default */.ZP(this.$refs.swiper, {
+        modules: [swiper_esm/* EffectFade */.xW, swiper_esm/* Navigation */.W_, swiper_esm/* Autoplay */.pt],
         effect: 'fade',
         fadeEffect: {
           crossFade: false
