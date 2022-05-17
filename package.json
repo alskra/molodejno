@@ -71,6 +71,6 @@
     "normalize.css": "^8.0.1",
     "rellax": "^1.12.1",
     "resize-observer-polyfill": "^1.5.1",
-    "swiper": "^7.0.5"
+    "swiper": "^7.4.1"
   }
 }
