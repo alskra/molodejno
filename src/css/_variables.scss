@@ -28,10 +28,10 @@ $color-red: #f00;
 
 // Fonts
 $font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji";
-$font-family-helvetica-neue: "Helvetica Neue", sans-serif, $font-family-emoji;
-$font-family-stolzl: "Stolzl", sans-serif, $font-family-emoji;
-$font-family-stolzl-display: "Stolzl Display", sans-serif, $font-family-emoji;
-$font-family-gilroy: "Gilroy", sans-serif, $font-family-emoji;
+$font-family-helvetica-neue: "Helvetica Neue", system-ui, $font-family-emoji;
+$font-family-stolzl: "Stolzl", system-ui, $font-family-emoji;
+$font-family-stolzl-display: "Stolzl Display", system-ui, $font-family-emoji;
+$font-family-gilroy: "Gilroy", system-ui, $font-family-emoji;
 
 // Layout
 $breakpoints: (

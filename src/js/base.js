@@ -1,3 +1,8 @@
+import cssBlankPseudo from 'css-blank-pseudo/browser';
+import 'focus-visible';
+import focusWithin from 'focus-within';
+import cssHasPseudo from 'css-has-pseudo/browser';
+
 import '../css/fonts.scss';
 import 'normalize.css';
 import '../css/root.scss';
@@ -5,7 +10,6 @@ import '../css/base.scss';
 import '../css/helpers.scss';
 
 import 'ninelines-ua-parser';
-import 'focus-visible';
 import './vh-fix';
 import './scrollbar-width';
 import 'aos/dist/aos.css';
@@ -38,11 +42,15 @@ import '../components/video/video';
 import '../components/form-field/form-field';
 import '../components/form-check/form-check';
 
-window.Alpine = Alpine;
+cssBlankPseudo(document);
+focusWithin(document);
+cssHasPseudo(document);
 
+AOS.init();
+
+window.Alpine = Alpine;
 Alpine.store('isDesktop', innerWidth >= 1025);
+
 window.addEventListener('resize', () => {
 	Alpine.store('isDesktop', innerWidth >= 1025);
 });
-
-AOS.init();

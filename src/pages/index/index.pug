@@ -20,7 +20,7 @@ append body-start
 block app
 	+header()
 
-	main.app__main(style={'padding': 'var(--gap) 0'})
+	main.app__main(style={'padding': 'var(--gap) 0'} :has(div))
 		section
 			+container()
 				+content-edited()
@@ -162,6 +162,8 @@ block app
 			+container()
 				+content-edited()
 					h1 h1: Конкурс среди организаций высшего образования
+					div: h1 h1: Конкурс среди организаций высшего образования
+					div(data-scope="content-widget"): h1 h1: Конкурс среди организаций высшего образования
 					h2 h2: Конкурс среди организаций высшего образования
 					h3 h3: Конкурс среди организаций высшего образования
 					h4 h4: Конкурс среди организаций высшего образования

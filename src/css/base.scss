@@ -43,12 +43,12 @@ img {
 	vertical-align: top;
 	max-width: 100%;
 	user-select: none;
-}
 
-img[draggable="false"] {
-	pointer-events: none;
-	// stylelint-disable-next-line
-	-webkit-user-drag: none;
+	&[draggable="false"] {
+		pointer-events: none;
+		// stylelint-disable-next-line
+		-webkit-user-drag: none;
+	}
 }
 
 picture {

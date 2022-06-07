@@ -9,8 +9,7 @@ mixin subsection({offsetColumn, anchor, type, extType, title} = {})
 			[`subsection--${type}`]: type,
 			[`subsection--${type}-${extType}`]: type && extType,
 		}
-	)&attributes(
-		attributes)
+	)&attributes(attributes)
 		if anchor
 			.anchor(id=anchor)
 

@@ -1,5 +1,5 @@
 @mixin focus-not-focus-visible {
-	#{if(&, "&", "")}:focus:not(:focus-visible, .focus-visible) {
+	#{if(&, "&", "")}:focus:not(:focus-visible) {
 		@content;
 	}
 }
@@ -7,11 +7,11 @@
 @mixin focus-visible-default {
 	outline: 1px dotted;
 	// stylelint-disable-next-line
-	outline: -webkit-focus-ring-color auto 1px;
+	outline: 1px auto -webkit-focus-ring-color;
 }
 
 @mixin focus-visible {
-	#{if(&, "&", "")}:is(:focus-visible, .focus-visible) {
+	#{if(&, "&", "")}:focus-visible {
 		@content;
 	}
 }
@@ -26,14 +26,14 @@
 }
 
 @mixin disabled {
-	#{if(&, "&", "")}:is(:disabled, .is-disabled) {
+	#{if(&, "&", "")}:is(:disabled, [disabled], .is-disabled) {
 		@content;
 	}
 }
 
 @mixin hover-not-disabled {
 	@include hover {
-		&:not(:disabled, .is-disabled) {
+		&:not(:disabled, [disabled], .is-disabled) {
 			@content;
 		}
 	}
