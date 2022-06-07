@@ -28,6 +28,6 @@ mixin stages()
 				header.column-span-3.column-line-1-lg-down.column-line-end-1-lg-down
 					+date(stage.dateStart, stage.dateEnd, true)
 
-				+content-edited().stages__main.column-line-4.column-line-end-1.column-line-1-lg-down
+				+content().stages__main.column-line-4.column-line-end-1.column-line-1-lg-down
 					h3.h5!= stage.title
 					div!= stage.content

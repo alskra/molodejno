@@ -7,347 +7,339 @@ append variables
 	-
 		title = `${title} - Guide`;
 
-append body-start
-	style.
-		section:not(:last-child) {
-			margin-bottom: var(--gap-2xl);
-		}
-
-		.content-edited:not(:last-child) {
-			margin-bottom: var(--gap);
-		}
-
 block app
 	+header()
 
-	main.app__main(style={'padding': 'var(--gap) 0'} :has(div))
-		section
-			+container()
-				+content-edited()
-					h2 Pages
-					-
-						const pages = [
-							{
-								url: 'home.html',
-								title: 'Главная',
-							},
-							{
-								url: 'grants.html',
-								title: 'Гранты',
-								pages: [
-									{
-										url: 'grant.html',
-										title: 'Грант'
-									},
-								],
-							},
-							{
-								url: 'recipients.html',
-								title: 'Гранты получили',
-								pages: [
-									{
-										url: 'recipient.html',
-										title: 'Грантополучатель',
-									},
-								],
-							},
-							{
-								url: 'forums.html',
-								title: 'Форумы',
-								pages: [
-									{
-										url: 'forum.html',
-										title: 'Форум',
-									},
-								],
-							},
-							{
-								url: 'press-center.html',
-								title: 'Пресс-центр',
-								pages: [
-									{
-										url: 'news.html',
-										title: 'Новости',
-										pages: [
-											{
-												url: 'new.html',
-												title: 'Новость',
-											},
-										],
-									},
-								],
-							},
-							{
-								url: 'playbill.html',
-								title: 'Афиша',
-								pages: [
-									{
-										url: 'event.html',
-										title: 'Событие',
-									},
-								],
-							},
-							{
-								url: 'projects.html',
-								title: 'Проекты',
-								pages: [
-									{
-										url: 'project.html',
-										title: 'Проект',
-									},
-								],
-							},
-							{
-								url: 'releases.html',
-								title: 'Реализованные проекты',
-								pages: [
-									{
-										url: 'release.html',
-										title: 'Реализованный проект',
-									},
-								],
-							},
-							{
-								url: 'contests.html',
-								title: 'Конкурсы',
-								pages: [
-									{
-										url: 'contest.html',
-										title: 'Конкурс',
-									},
-								],
-							},
-							{
-								url: 'winners.html',
-								title: 'Победители',
-								pages: [
-									{
-										url: 'winner.html',
-										title: 'Победитель',
-									},
-								],
-							},
-							{
-								url: 'activities.html',
-								title: 'Деятельность',
-								pages: [
-									{
-										url: 'direction.html',
-										title: 'Направление деятельности',
-									},
-								],
-							},
-							{
-								url: 'contacts.html',
-								title: 'Контакты',
-							},
-							{
-								url: 'about.html',
-								title: 'О проекте',
-							},
-						];
+	main.app__main(style={'padding': 'var(--gap) 0'})
+		+container()
+			+content()
+				h2 Pages
 
-					mixin pages(pages)
-						if pages.length
-							ol
-								each page in pages
-									li
-										a(href=page.url)= page.title
-										if page.pages
-											+pages(page.pages)
+				-
+					const pages = [
+						{
+							url: 'home.html',
+							title: 'Главная',
+						},
+						{
+							url: 'grants.html',
+							title: 'Гранты',
+							pages: [
+								{
+									url: 'grant.html',
+									title: 'Грант'
+								},
+							],
+						},
+						{
+							url: 'recipients.html',
+							title: 'Гранты получили',
+							pages: [
+								{
+									url: 'recipient.html',
+									title: 'Грантополучатель',
+								},
+							],
+						},
+						{
+							url: 'forums.html',
+							title: 'Форумы',
+							pages: [
+								{
+									url: 'forum.html',
+									title: 'Форум',
+								},
+							],
+						},
+						{
+							url: 'press-center.html',
+							title: 'Пресс-центр',
+							pages: [
+								{
+									url: 'news.html',
+									title: 'Новости',
+									pages: [
+										{
+											url: 'new.html',
+											title: 'Новость',
+										},
+									],
+								},
+							],
+						},
+						{
+							url: 'playbill.html',
+							title: 'Афиша',
+							pages: [
+								{
+									url: 'event.html',
+									title: 'Событие',
+								},
+							],
+						},
+						{
+							url: 'projects.html',
+							title: 'Проекты',
+							pages: [
+								{
+									url: 'project.html',
+									title: 'Проект',
+								},
+							],
+						},
+						{
+							url: 'releases.html',
+							title: 'Реализованные проекты',
+							pages: [
+								{
+									url: 'release.html',
+									title: 'Реализованный проект',
+								},
+							],
+						},
+						{
+							url: 'contests.html',
+							title: 'Конкурсы',
+							pages: [
+								{
+									url: 'contest.html',
+									title: 'Конкурс',
+								},
+							],
+						},
+						{
+							url: 'winners.html',
+							title: 'Победители',
+							pages: [
+								{
+									url: 'winner.html',
+									title: 'Победитель',
+								},
+							],
+						},
+						{
+							url: 'activities.html',
+							title: 'Деятельность',
+							pages: [
+								{
+									url: 'direction.html',
+									title: 'Направление деятельности',
+								},
+							],
+						},
+						{
+							url: 'contacts.html',
+							title: 'Контакты',
+						},
+						{
+							url: 'about.html',
+							title: 'О проекте',
+						},
+					];
 
-					+pages(pages)
+				mixin pages(pages)
+					if pages.length
+						ol
+							each page in pages
+								li
+									a(href=page.url)= page.title
+									if page.pages
+										+pages(page.pages)
 
-		section
-			+container()
-				+content-edited()
+				+pages(pages)
+
+				h1 h1: Конкурс среди организаций высшего образования
+
+				div: h1 h1: Конкурс среди организаций высшего образования
+
+				h1(data-exclude-style="content") h1: Конкурс среди организаций высшего образования
+
+				div(data-exclude-style="content")
 					h1 h1: Конкурс среди организаций высшего образования
-					div: h1 h1: Конкурс среди организаций высшего образования
-					div(data-scope="content-widget"): h1 h1: Конкурс среди организаций высшего образования
-					h2 h2: Конкурс среди организаций высшего образования
-					h3 h3: Конкурс среди организаций высшего образования
-					h4 h4: Конкурс среди организаций высшего образования
-					h5 h5: Конкурс среди организаций высшего образования
-					h6 h6: Конкурс среди организаций высшего образования
-					ul
-						li.
-							30 октября в Батецком районе будет дан старт областному походу по местам боевых сражений.
-							К нему присоединятся активисты военно-патриотических клубов, центров, объединений и представители
-							поисковых отрядов Новгородской области.
-						li.
-							Поход продлится до 1 ноября и будет посвящен боевому пути 1-й Ленинградской стрелковой дивизии
-							народного ополчения, которая в июле 1941 года высадилась на станции Батецкая и заняла оборону
-							на Лужском рубеже.
-						li.
-							В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской дивизии
-							народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».
-					p.
-						Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
-						молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
-						Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
-						молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
-						Это информационно-познавательный портал для молодёжи.
-					p.
-						Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
-						и действующих направлениях данной отрасли.
 
-		section
-			+container()
-				+content-edited()
-					h2: code button
+					div(data-include-style="content"): h1 h1: Конкурс среди организаций высшего образования
+
+				h2 h2: Конкурс среди организаций высшего образования
+
+				h3 h3: Конкурс среди организаций высшего образования
+
+				h4 h4: Конкурс среди организаций высшего образования
+
+				h5 h5: Конкурс среди организаций высшего образования
+
+				h6 h6: Конкурс среди организаций высшего образования
+
+				ul
+					li.
+						30 октября в Батецком районе будет дан старт областному походу по местам боевых сражений.
+						К нему присоединятся активисты военно-патриотических клубов, центров, объединений и представители
+						поисковых отрядов Новгородской области.
+					li.
+						Поход продлится до 1 ноября и будет посвящен боевому пути 1-й Ленинградской стрелковой дивизии
+						народного ополчения, которая в июле 1941 года высадилась на станции Батецкая и заняла оборону
+						на Лужском рубеже.
+					li.
+						В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской дивизии
+						народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».
+
+				p.
+					Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+					молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+					Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+					молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+					Это информационно-познавательный портал для молодёжи.
+
+				p.
+					Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+					и действующих направлениях данной отрасли.
+
+				h2: code button
+
 				+button({content: "'Синяя кнопка'"})
-				br
-				br
+				div &nbsp;
 				+button({content: "'Синяя кнопка'"}).button--height-sm
 
-		section
-			+container()
-				+content-edited()
-					h2: code button-arrow
+				h2: code button-arrow
+
 				+button-arrow({dir: 'left'})(disabled)
+				div &nbsp;
 				+button-arrow()
 
-		section
-			+container()
-				+content-edited()
-					h2: code button-arrow-text
+				h2: code button-arrow-text
+
 				+button-arrow-text({
 					tag: 'button',
 					content: "'Смотреть все'",
 				})
-				br
-				br
+				div &nbsp;
 				+button-arrow-text({
 					dir: 'left',
 					content: "'Смотреть все'",
 				})
-				br
-				br
+				div &nbsp;
 				+button-arrow-text({
 					row: true,
 					content: "'Смотреть все'",
 				})
-				br
-				br
+				div &nbsp;
 				+button-arrow-text({
 					dir: 'left',
 					row: true,
 					content: "'Смотреть все'",
 				})
 
-		section
-			+container()
-				+content-edited()
-					h2: code button-expand
+				h2: code button-expand
+
 				+button-expand({content: "'Развернуть'"})
-				br
-				br
+				div &nbsp;
 				+button-expand({
 					dir: 'up',
 					content: "'Свернуть'",
 				})
 
-		section
-			+container()
-				+content-edited()
-					h2: code button-load
+				h2: code button-load
+
 				+button-load({content: "'Загрузить еще'"})
-				br
-				br
+				div &nbsp;
 				+button-load({content: "'Загрузить еще'"}).is-loading
 
-		section
-			+container()
-				+content-edited()
-					h2: code date
+				h2: code date
+
 				+date('26.10.2020')
-				br
-				br
+				div &nbsp;
 				+date('26.10.2020', '30.10.2020')
-				br
-				br
-				div(style={'max-width': '200px'})
-					+date('26.10.2020', '30.10.2020')
-				br
-				br
-				+content-edited()
-					h3: code adaptive
+				div &nbsp;
+				div(style={'max-width': '200px'}): +date('26.10.2020', '30.10.2020')
+
+				h3: code adaptive
+
 				+date('26.10.2020', null, true)
-				br
-				br
+				div &nbsp;
 				+date('26.10.2020', '30.10.2020', true)
 
-		section
-			+container()
-				+content-edited()
-					h2: code organizer
+				h2: code organizer
+
 				+organizer({
 					title: 'Молодежный центр',
 					image: '../../images/content/projects/logo.png',
-				})(style={'max-width': '255px'})
-				br
+				})(
+					data-exclude-style="content"
+					style={'max-width': '255px'}
+				)
+				div &nbsp;
 				+organizer({
 					title: 'Ресурсный Молодежный центр длинный заголовок',
 					image: '../../images/content/projects/logo.png',
-				})(style={'max-width': '255px'})
-				br
-				+content-edited()
-					h3: code line-clamp
+				})(
+					data-exclude-style="content"
+					style={'max-width': '255px'}
+				)
+
+				h3: code line-clamp
+
 				+organizer({
 					title: 'Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 					lineClamp: true,
-				})(style={'max-width': '255px'})
-				br
+				})(
+					data-exclude-style="content"
+					style={'max-width': '255px'}
+				)
+				div &nbsp;
 				+organizer({
 					title: 'Ресурсный Молодежный центр длинный заголовок',
 					image: '../../images/content/projects/logo.png',
 					lineClamp: true,
-				})(style={'max-width': '255px'})
-				br
+				})(
+					data-exclude-style="content"
+					style={'max-width': '255px'}
+				)
+				div &nbsp;
 				+organizer({
 					title: 'Ресурсный Молодежный центр',
 					image: '../../images/content/projects/logo.png',
 					lineClamp: true,
-				})(style={'max-width': '555px'})
+				})(
+					data-exclude-style="content"
+					style={'max-width': '555px'}
+				)
 
-		section
-			+container()
-				+content-edited()
-					h2: code author
+				h2: code author
+
 				+author({
 					title: 'Константинопольская Александра',
 					image: '../../images/content/projects/authors/img-1.jpg',
-				})(style={'max-width': '255px'})
+				})(
+					data-exclude-style="content"
+					style={'max-width': '255px'}
+				)
 
-		section
-			+container()
-				+content-edited()
-					h2: code location
-				+location('Тёсово-Нетыльский')
-				br
-				br
-				+location('Тёсово-Нетыльский')(style={'max-width': '150px'})
+				h2: code location
 
-		section
-			+container()
-				+content-edited()
-					h2: code doc-item
-				+doc-item({
-					type: 'pdf',
-					title: 'Документы для участия'
-				})
-				br
-				br
-				div(style="max-width: 100px")
+				+location('Тёсово-Нетыльский')(data-exclude-style="content")
+				div &nbsp;
+				+location('Тёсово-Нетыльский')(
+					data-exclude-style="content"
+					style={'max-width': '150px'}
+				)
+
+				h2: code doc-item
+
+				div(data-exclude-style="content")
 					+doc-item({
 						type: 'pdf',
-						title: 'Документыдляучастия'
+						title: 'Документы для участия'
 					})
-				br
-				+doc-item({
-					type: 'pdf',
-					title: 'Документы для участия'
-				}).doc-item--lg
+					div &nbsp;
+					div(style="max-width: 100px")
+						+doc-item({
+							type: 'pdf',
+							title: 'Документыдляучастия'
+						})
+					div &nbsp;
+					+doc-item({
+						type: 'pdf',
+						title: 'Документы для участия'
+					}).doc-item--lg
 
 	+footer()

@@ -3,7 +3,7 @@ include ../soc-network/soc-network
 mixin team-item({title, image, content, accounts} = {})
 	article.team-item&attributes(attributes)
 		h3.team-item__title!= title
-		+content-edited().team-item__content!= content
+		+content().team-item__content!= content
 		if accounts
 			+soc-network(accounts).team-item__accounts
 		if image

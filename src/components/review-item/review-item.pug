@@ -4,7 +4,7 @@ mixin review-item({content, image, name, position} = {})
 			x-data="lineClamp"
 			x-on:resize.window.debounce="update"
 		)
-			+content-edited().review-item__content(
+			+content().review-item__content(
 				x-ref="content"
 				x-bind:class="{'is-clamped': isClamped}"
 			)!= content

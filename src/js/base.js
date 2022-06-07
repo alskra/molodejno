@@ -21,7 +21,6 @@ import '../components/icon-svg/icon-svg';
 import '../components/line-clamp/line-clamp';
 import '../components/container/container';
 import '../components/content/content';
-import '../components/content-edited/content-edited';
 import '../components/heading/heading';
 import '../components/button/button';
 import '../components/button-arrow/button-arrow';
@@ -42,6 +41,7 @@ import '../components/video/video';
 import '../components/form-field/form-field';
 import '../components/form-check/form-check';
 
+document.documentElement.dir = document.documentElement.dir || 'ltr';
 cssBlankPseudo(document);
 focusWithin(document);
 cssHasPseudo(document);

@@ -7,6 +7,7 @@ module.exports = {
 				features: {
 					'all-property': false,
 					'nesting-rules': false,
+					'logical-properties-and-values': {dir: 'ltr'},
 				},
 			},
 		],

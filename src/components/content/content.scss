@@ -1,25 +1,227 @@
-.content {
-	> :not(:first-child) {
-		margin-top: var(--content-edited-block-interval);
+// stylelint-disable-next-line
+@custom-selector :--exclude :is(:not([data-exclude-style="content"], [data-exclude-style="content"] *), [data-include-style="content"], [data-include-style="content"] *);
+@custom-selector :--content .content;
+@custom-selector :--heading :is(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6):--exclude;
+@custom-selector :--heading-1 :is(h1, .h1):--exclude;
+@custom-selector :--heading-2 :is(h2, .h2):--exclude;
+@custom-selector :--heading-3 :is(h3, .h3):--exclude;
+@custom-selector :--heading-4 :is(h4, .h4):--exclude;
+@custom-selector :--heading-5 :is(h5, .h5):--exclude;
+@custom-selector :--heading-6 :is(h6, .h6):--exclude;
+@custom-selector :--paragraf p:--exclude;
+@custom-selector :--list :is(ul, ol):--exclude;
+@custom-selector :--list-unordered ul:--exclude;
+@custom-selector :--list-ordered ol:--exclude;
+@custom-selector :--list-item li:--exclude;
+@custom-selector :--list-defs dl:--exclude;
+@custom-selector :--list-term dt:--exclude;
+@custom-selector :--list-def dd:--exclude;
+@custom-selector :--blockquote blockquote:--exclude;
+@custom-selector :--table table:--exclude;
+@custom-selector :--image img:--exclude;
+@custom-selector :--link a[href]:not([href^="tel:"]):--exclude;
+@custom-selector :--subsection :is(.subsection, .subsection-section, .section-feedback, .section-about__image-4);
+
+:root {
+	--content-edited-font-size: var(--font-size);
+	--content-edited-line-height: var(--line-height);
+	--content-edited-interval: #{em(15)};
+	--content-edited-block-interval: var(--gap-lg);
+	--content-edited-h1-font-size: 60rem;
+	--content-edited-h2-font-size: 50rem;
+	--content-edited-h3-font-size: 40rem;
+	--content-edited-h4-font-size: 35rem;
+	--content-edited-h5-font-size: 30rem;
+	--content-edited-h6-font-size: 25rem;
+	--content-edited-heading-interval-top: var(--gap-2xl);
+	--content-edited-heading-interval-bottom: var(--gap);
+	--content-edited-list-indent: #{em(65)};
+	--content-edited-list-marker-size: #{em(10)};
+
+	@include media-breakpoint-down(lg) {
+		--content-edited-h1-font-size: 40rem;
+		--content-edited-h2-font-size: 35rem;
+		--content-edited-h3-font-size: 30rem;
+		--content-edited-h4-font-size: 25rem;
+		--content-edited-h5-font-size: 20rem;
+		--content-edited-h6-font-size: 15rem;
+		--content-edited-list-indent: #{em(35)};
+	}
+}
+
+:--content {
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+
+	:first-child:not(#{&} :nth-child(n + 2) *) {
+		// stylelint-disable-next-line
+		margin-block-start: 0 !important;
 	}
 
-	> :not(:last-child) {
-		margin-bottom: var(--content-edited-block-interval);
+	:last-child:not(#{&} :nth-last-child(n + 2) *) {
+		// stylelint-disable-next-line
+		margin-block-end: 0 !important;
 	}
 
-	> .content-edited:not(:first-child) > :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6):first-child {
-		margin-top: var(--content-edited-heading-interval-top);
+	:--heading {
+		font-family: $heading-font-family;
+		font-weight: $heading-font-weight;
+		line-height: var(--heading-line-height);
+		color: $heading-color;
+		margin-block: var(--content-edited-heading-interval-top) var(--content-edited-heading-interval-bottom);
+
+		+ *,
+		+ :--exclude :first-child:not(#{&} + * :nth-child(n + 2) *) {
+			// stylelint-disable-next-line
+			margin-block-start: 0 !important;
+		}
 	}
 
-	> .content-edited:not(:last-child) > :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6):last-child {
-		margin-bottom: calc(var(--content-edited-heading-interval-bottom) - var(--content-edited-block-interval));
+	:--heading-1 {
+		font-size: var(--content-edited-h1-font-size);
 	}
 
-	> :is(.subsection, .subsection-section, .section-feedback, .section-about__image-4):not(:first-child) {
-		margin-top: var(--content-edited-heading-interval-top);
+	:--heading-2 {
+		font-size: var(--content-edited-h2-font-size);
 	}
 
-	> :is(.subsection, .subsection-section, .section-feedback, .section-about__image-4):not(:last-child) {
-		margin-bottom: var(--content-edited-heading-interval-top);
+	:--heading-3 {
+		font-size: var(--content-edited-h3-font-size);
+		color: $color-primary;
+	}
+
+	:--heading-4 {
+		font-size: var(--content-edited-h4-font-size);
+		color: $color-primary;
+	}
+
+	:--heading-5 {
+		font-size: var(--content-edited-h5-font-size);
+		color: $color-primary;
+	}
+
+	:--heading-6 {
+		font-size: var(--content-edited-h6-font-size);
+	}
+
+	:--paragraf,
+	:--list,
+	:--list-item,
+	:--list-defs,
+	:--list-term,
+	:--list-def {
+		margin-block: var(--content-edited-interval);
+	}
+
+	:--list {
+		padding-inline-start: var(--content-edited-list-indent);
+	}
+
+	:--list-unordered {
+		position: relative;
+		list-style: none;
+
+		> li::before {
+			@include conic-gradient;
+
+			content: "";
+			position: absolute;
+			margin-top: calc((var(--line-height) * 1em - var(--content-edited-list-marker-size)) / 2);
+			border-radius: 50%;
+			width: var(--content-edited-list-marker-size);
+			height: var(--content-edited-list-marker-size);
+			inset-inline-start: 0;
+		}
+	}
+
+	:--blockquote,
+	:--table,
+	:--image {
+		margin-block: var(--content-edited-block-interval);
+	}
+
+	:--blockquote {
+		position: relative;
+		font-family: $heading-font-family;
+		font-weight: 500;
+		font-size: em(24);
+		line-height: 1.2;
+		padding-inline-start: var(--content-edited-list-indent);
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 8rem;
+			height: min(55rem, 100% - 8rem);
+			border-inline-start: 1px solid;
+			inset-inline-start: 0;
+		}
+	}
+
+	:--table {
+		display: block;
+		overflow: auto;
+
+		tbody {
+			display: table;
+			border-collapse: collapse;
+		}
+
+		tr:first-child :is(th, td) {
+			padding-top: 0;
+		}
+
+		tr:last-child :is(th, td) {
+			padding-bottom: 0;
+		}
+
+		:is(th, td) {
+			vertical-align: baseline;
+			padding: calc(0.5 * var(--content-edited-interval)) calc(0.5 * var(--gap));
+		}
+
+		:is(th, td):first-child {
+			padding-left: 0;
+		}
+
+		:is(th, td):last-child {
+			padding-right: 0;
+		}
+
+		td:first-child {
+			color: $color-gray;
+		}
+	}
+
+	:--image {
+		display: block;
+		width: 100%;
+	}
+
+	:--link {
+		color: $color-primary;
+		transition: $transition-duration;
+		transition-property: color;
+
+		@include hover {
+			color: $color-primary-hover;
+		}
+	}
+
+	:--subsection {
+		margin-block: var(--content-edited-heading-interval-top) var(--content-edited-block-interval);
+	}
+
+	@include media-breakpoint-down(lg) {
+		:--blockquote {
+			font-size: em(18);
+		}
+
+		:--image {
+			margin-right: calc(-1 * var(--container-content-offset-x));
+			margin-left: calc(-1 * var(--container-content-offset-x));
+			width: var(--body-width);
+			max-width: var(--body-width);
+		}
 	}
 }
