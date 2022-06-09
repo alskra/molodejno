@@ -2,6 +2,7 @@ import cssBlankPseudo from 'css-blank-pseudo/browser';
 import 'focus-visible';
 import focusWithin from 'focus-within';
 import cssHasPseudo from 'css-has-pseudo/browser';
+import cssScope from './css-scope';
 
 import '../css/fonts.scss';
 import 'normalize.css';
@@ -41,10 +42,10 @@ import '../components/video/video';
 import '../components/form-field/form-field';
 import '../components/form-check/form-check';
 
-document.documentElement.dir = document.documentElement.dir || 'ltr';
 cssBlankPseudo(document);
 focusWithin(document);
 cssHasPseudo(document);
+cssScope({scopeList: ['content', 'foo']});
 
 AOS.init();
 

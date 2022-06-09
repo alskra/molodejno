@@ -1,26 +1,18 @@
-// stylelint-disable-next-line
-@custom-selector :--exclude :is(:not([data-exclude-style="content"], [data-exclude-style="content"] *), [data-include-style="content"], [data-include-style="content"] *);
-@custom-selector :--content .content;
-@custom-selector :--heading :is(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6):--exclude;
-@custom-selector :--heading-1 :is(h1, .h1):--exclude;
-@custom-selector :--heading-2 :is(h2, .h2):--exclude;
-@custom-selector :--heading-3 :is(h3, .h3):--exclude;
-@custom-selector :--heading-4 :is(h4, .h4):--exclude;
-@custom-selector :--heading-5 :is(h5, .h5):--exclude;
-@custom-selector :--heading-6 :is(h6, .h6):--exclude;
-@custom-selector :--paragraf p:--exclude;
-@custom-selector :--list :is(ul, ol):--exclude;
-@custom-selector :--list-unordered ul:--exclude;
-@custom-selector :--list-ordered ol:--exclude;
-@custom-selector :--list-item li:--exclude;
-@custom-selector :--list-defs dl:--exclude;
-@custom-selector :--list-term dt:--exclude;
-@custom-selector :--list-def dd:--exclude;
-@custom-selector :--blockquote blockquote:--exclude;
-@custom-selector :--table table:--exclude;
-@custom-selector :--image img:--exclude;
-@custom-selector :--link a[href]:not([href^="tel:"]):--exclude;
-@custom-selector :--subsection :is(.subsection, .subsection-section, .section-feedback, .section-about__image-4);
+// stylelint-disable
+@custom-selector :--allowed
+[class^="content__"], [class*=" content__"],
+[class^="color-"], [class*=" color-"];
+@custom-selector :--scope :is(:not(.content [class] *:not(.content .content [class] *)));
+// stylelint-enable
+@custom-selector :--heading :is(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6);
+@custom-selector :--heading-1 :is(h1, .h1);
+@custom-selector :--heading-2 :is(h2, .h2);
+@custom-selector :--heading-3 :is(h3, .h3);
+@custom-selector :--heading-4 :is(h4, .h4);
+@custom-selector :--heading-5 :is(h5, .h5);
+@custom-selector :--heading-6 :is(h6, .h6);
+@custom-selector :--link a[href]:not([href^="tel:"]);
+@custom-selector :--section :is(.subsection, .subsection-section, .section-feedback, .section-about__image-4);
 
 :root {
 	--content-edited-font-size: var(--font-size);
@@ -49,79 +41,78 @@
 	}
 }
 
-:--content {
+.content {
 	font-size: var(--font-size);
 	line-height: var(--line-height);
 
-	:first-child:not(#{&} :nth-child(n + 2) *) {
-		// stylelint-disable-next-line
-		margin-block-start: 0 !important;
+	:--scope {
+		&:first-child:not(.content :nth-child(n + 2) *) {
+			// stylelint-disable-next-line
+			margin-block-start: 0 !important;
+		}
+
+		&:last-child:not(.content :nth-last-child(n + 2) *) {
+			// stylelint-disable-next-line
+			margin-block-end: 0 !important;
+		}
 	}
 
-	:last-child:not(#{&} :nth-last-child(n + 2) *) {
-		// stylelint-disable-next-line
-		margin-block-end: 0 !important;
-	}
-
-	:--heading {
+	:--heading:--scope {
 		font-family: $heading-font-family;
 		font-weight: $heading-font-weight;
 		line-height: var(--heading-line-height);
 		color: $heading-color;
 		margin-block: var(--content-edited-heading-interval-top) var(--content-edited-heading-interval-bottom);
-
-		+ *,
-		+ :--exclude :first-child:not(#{&} + * :nth-child(n + 2) *) {
-			// stylelint-disable-next-line
-			margin-block-start: 0 !important;
-		}
 	}
 
-	:--heading-1 {
+	:--heading + :--scope,
+	:--heading + * :--scope:first-child:not(.content :--heading + * :nth-child(n + 2) *) {
+		// stylelint-disable-next-line
+		margin-block-start: 0 !important;
+	}
+
+	:--heading-1:--scope {
 		font-size: var(--content-edited-h1-font-size);
 	}
 
-	:--heading-2 {
+	:--heading-2:--scope {
 		font-size: var(--content-edited-h2-font-size);
 	}
 
-	:--heading-3 {
+	:--heading-3:--scope {
 		font-size: var(--content-edited-h3-font-size);
 		color: $color-primary;
 	}
 
-	:--heading-4 {
+	:--heading-4:--scope {
 		font-size: var(--content-edited-h4-font-size);
 		color: $color-primary;
 	}
 
-	:--heading-5 {
+	:--heading-5:--scope {
 		font-size: var(--content-edited-h5-font-size);
 		color: $color-primary;
 	}
 
-	:--heading-6 {
+	:--heading-6:--scope {
 		font-size: var(--content-edited-h6-font-size);
 	}
 
-	:--paragraf,
-	:--list,
-	:--list-item,
-	:--list-defs,
-	:--list-term,
-	:--list-def {
+	:is(p, ul, ol, li, dl, dt, dd):--scope {
 		margin-block: var(--content-edited-interval);
 	}
 
-	:--list {
+	:is(ul, ol):--scope {
 		padding-inline-start: var(--content-edited-list-indent);
 	}
 
-	:--list-unordered {
+	ul:--scope {
 		position: relative;
 		list-style: none;
+	}
 
-		> li::before {
+	ul > li:--scope {
+		&::before {
 			@include conic-gradient;
 
 			content: "";
@@ -134,13 +125,11 @@
 		}
 	}
 
-	:--blockquote,
-	:--table,
-	:--image {
+	:is(blockquote, table, img):--scope {
 		margin-block: var(--content-edited-block-interval);
 	}
 
-	:--blockquote {
+	blockquote:--scope {
 		position: relative;
 		font-family: $heading-font-family;
 		font-weight: 500;
@@ -158,47 +147,47 @@
 		}
 	}
 
-	:--table {
+	table:--scope {
 		display: block;
 		overflow: auto;
-
-		tbody {
-			display: table;
-			border-collapse: collapse;
-		}
-
-		tr:first-child :is(th, td) {
-			padding-top: 0;
-		}
-
-		tr:last-child :is(th, td) {
-			padding-bottom: 0;
-		}
-
-		:is(th, td) {
-			vertical-align: baseline;
-			padding: calc(0.5 * var(--content-edited-interval)) calc(0.5 * var(--gap));
-		}
-
-		:is(th, td):first-child {
-			padding-left: 0;
-		}
-
-		:is(th, td):last-child {
-			padding-right: 0;
-		}
-
-		td:first-child {
-			color: $color-gray;
-		}
 	}
 
-	:--image {
+	tbody:--scope {
+		display: table;
+		border-collapse: collapse;
+	}
+
+	tr:first-child :is(th, td):--scope {
+		padding-top: 0;
+	}
+
+	tr:last-child :is(th, td):--scope {
+		padding-bottom: 0;
+	}
+
+	:is(th, td):--scope {
+		vertical-align: baseline;
+		padding: calc(0.5 * var(--content-edited-interval)) calc(0.5 * var(--gap));
+	}
+
+	:is(th, td):--scope:first-child {
+		padding-left: 0;
+	}
+
+	:is(th, td):--scope:last-child {
+		padding-right: 0;
+	}
+
+	td:--scope:first-child {
+		color: $color-gray;
+	}
+
+	img:--scope {
 		display: block;
 		width: 100%;
 	}
 
-	:--link {
+	:--link:--scope {
 		color: $color-primary;
 		transition: $transition-duration;
 		transition-property: color;
@@ -208,16 +197,16 @@
 		}
 	}
 
-	:--subsection {
+	:--section:--scope {
 		margin-block: var(--content-edited-heading-interval-top) var(--content-edited-block-interval);
 	}
 
 	@include media-breakpoint-down(lg) {
-		:--blockquote {
+		blockquote:--scope {
 			font-size: em(18);
 		}
 
-		:--image {
+		img:--scope {
 			margin-right: calc(-1 * var(--container-content-offset-x));
 			margin-left: calc(-1 * var(--container-content-offset-x));
 			width: var(--body-width);
