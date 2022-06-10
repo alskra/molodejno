@@ -45,7 +45,7 @@ import '../components/form-check/form-check';
 cssBlankPseudo(document);
 focusWithin(document);
 cssHasPseudo(document);
-cssScope({scopeList: ['content', 'foo']});
+cssScope();
 
 AOS.init();
 
