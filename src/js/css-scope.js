@@ -2,7 +2,7 @@ const ATTR_PREFIX = 'css';
 const HOST_REG = /^([a-zA-Z0-9-]+)(\s|$)/i;
 
 function isHost(el) {
-	return !!(HOST_REG.test(el.className) || el.dataset.cssScope && HOST_REG.test(el.dataset.cssScope));
+	return !!(el.dataset.cssScope && HOST_REG.test(el.dataset.cssScope) || HOST_REG.test(el.className));
 }
 
 function getScope(el) {
@@ -10,14 +10,14 @@ function getScope(el) {
 		el = el.parentEl;
 	}
 
-	const match = el.className.match(HOST_REG) || el.dataset.cssScope && el.dataset.cssScope.match(HOST_REG);
+	const match = el.dataset.cssScope && el.dataset.cssScope.match(HOST_REG) || el.className.match(HOST_REG);
 
 	return match ? match[1] : null;
 }
 
 function clearAttributes(target) {
 	Array.from(target.attributes).forEach((attr) => {
-		if (new RegExp(`data-${ATTR_PREFIX}-`, 'i').test(attr.name)) {
+		if (attr.name !== 'data-css-scope' && new RegExp(`data-${ATTR_PREFIX}-`, 'i').test(attr.name)) {
 			target.removeAttribute(attr.name);
 		}
 	});
@@ -74,6 +74,6 @@ export default function cssScope({context = document.documentElement, scopeList}
 	observer.observe(context, {
 		subtree: true,
 		childList: true,
-		attributeFilter: ['class'],
+		attributeFilter: ['class', 'data-css-scope'],
 	});
 }
