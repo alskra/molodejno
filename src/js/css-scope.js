@@ -1,56 +1,61 @@
-function getScope(el) {
-	let hostEl = el;
-	let match = hostEl.className.match(/^([a-zA-Z0-9-]+)\s?/i);
+const ATTR_PREFIX = 'css';
+const HOST_REG = /^([a-zA-Z0-9-]+)(\s|$)/i;
 
-	while (!match && hostEl.parentEl) {
-		hostEl = hostEl.parentEl;
-		match = hostEl.className.match(/^([a-zA-Z0-9-]+)\s?/i);
+function isHost(el) {
+	return HOST_REG.test(el.className) || HOST_REG.test(el.dataset.cssScope);
+}
+
+function getScope(el) {
+	while (!isHost(el) && el.parentEl) {
+		el = el.parentEl;
 	}
+
+	const match = el.className.match(HOST_REG) || el.dataset.cssScope && el.dataset.cssScope.match(HOST_REG);
 
 	return match && match[1];
 }
 
-function setScope(el, scopeList = [], scope = getScope(el)) {
-	const clearScopeAttributes = (target) => {
-		if (!target.cssScope && !target.cssParentScope) {
-			Array.from(target.attributes).forEach((attr) => {
-				if (/data-scope-/i.test(attr.name)) {
-					target.removeAttribute(attr.name);
-				}
-			});
+function clearAttributes(target) {
+	Array.from(target.attributes).forEach((attr) => {
+		if (new RegExp(`data-${ATTR_PREFIX}-`, 'i').test(attr.name)) {
+			target.removeAttribute(attr.name);
 		}
-	};
+	});
+}
 
-	const setScopeAttributes = (target, scopeKey, scopeValue) => {
-		if (target[scopeKey] !== scopeValue) {
-			if (target[scopeKey] && (scopeKey === 'cssParentScope' || target.cssScope !== target.cssParentScope)) {
-				target.removeAttribute(`data-scope-${target[scopeKey]}`);
-			}
+function setAttributes(target, scopeKey, scopeValue, scopeList = []) {
+	if (!target.cssScope && !target.cssParentScope) {
+		clearAttributes(target);
+	}
 
-			if (scopeValue && (!scopeList.length || scopeList.includes(scopeValue))) {
-				target[scopeKey] = scopeValue;
-				target.setAttribute(`data-scope-${target[scopeKey]}`, '');
-			} else {
-				delete target[scopeKey];
-			}
+	if (target[scopeKey] !== scopeValue) {
+		if (target[scopeKey] && (scopeKey === 'cssParentScope' || target.cssScope !== target.cssParentScope)) {
+			target.removeAttribute(`data-${ATTR_PREFIX}-${target[scopeKey]}`);
 		}
-	};
 
-	clearScopeAttributes(el);
+		if (scopeValue && (!scopeList.length || scopeList.includes(scopeValue))) {
+			target[scopeKey] = scopeValue;
+			target.setAttribute(`data-${ATTR_PREFIX}-${target[scopeKey]}`, '');
+		} else {
+			delete target[scopeKey];
+		}
+	}
+}
 
+function setScope(el, scopeList, scope = getScope(el)) {
 	const parentEl = el.parentElement;
 
 	if (parentEl && parentEl.cssScope && parentEl.cssScope !== scope) {
-		setScopeAttributes(el, 'cssParentScope', parentEl.cssScope);
+		setAttributes(el, 'cssParentScope', parentEl.cssScope, scopeList);
 	}
 
-	setScopeAttributes(el, 'cssScope', scope);
+	setAttributes(el, 'cssScope', scope, scopeList);
 
 	Array.from(el.children).forEach((childEl) => {
-		if (!childEl.className.match(/^([a-zA-Z0-9-]+)\s?/i)) {
-			setScope(childEl, scopeList, scope);
-		} else {
+		if (isHost(childEl)) {
 			setScope(childEl, scopeList);
+		} else {
+			setScope(childEl, scopeList, scope);
 		}
 	});
 }
