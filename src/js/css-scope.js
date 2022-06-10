@@ -2,7 +2,7 @@ const ATTR_PREFIX = 'css';
 const HOST_REG = /^([a-zA-Z0-9-]+)(\s|$)/i;
 
 function isHost(el) {
-	return HOST_REG.test(el.className) || HOST_REG.test(el.dataset.cssScope);
+	return !!(HOST_REG.test(el.className) || el.dataset.cssScope && HOST_REG.test(el.dataset.cssScope));
 }
 
 function getScope(el) {
@@ -12,7 +12,7 @@ function getScope(el) {
 
 	const match = el.className.match(HOST_REG) || el.dataset.cssScope && el.dataset.cssScope.match(HOST_REG);
 
-	return match && match[1];
+	return match ? match[1] : null;
 }
 
 function clearAttributes(target) {
@@ -47,6 +47,8 @@ function setScope(el, scopeList, scope = getScope(el)) {
 
 	if (parentEl && parentEl.cssScope && parentEl.cssScope !== scope) {
 		setAttributes(el, 'cssParentScope', parentEl.cssScope, scopeList);
+	} else {
+		setAttributes(el, 'cssParentScope', null);
 	}
 
 	setAttributes(el, 'cssScope', scope, scopeList);
