@@ -152,10 +152,10 @@ block app
 
 				div: h1 h1: Конкурс среди организаций высшего образования
 
-				h1(class="foo") h1: Конкурс среди организаций высшего образования
-				h1(class="foo"): span h1: Конкурс среди организаций высшего образования
+				h1.foo h1: Конкурс среди организаций высшего образования
+				.foo: h1 h1: Конкурс среди организаций высшего образования
 
-				div(class="bar")
+				.bar
 					h1 h1: Конкурс среди организаций высшего образования
 
 					.content: h1 h1: Конкурс среди организаций высшего образования
@@ -196,140 +196,129 @@ block app
 
 				h2: code button
 
-				div(data-exclude-content)
-					+button({content: "'Синяя кнопка'"})
-					div &nbsp;
-					+button({content: "'Синяя кнопка'"}).button--height-sm
+				+button({content: "'Синяя кнопка'"})
+				div &nbsp;
+				+button({content: "'Синяя кнопка'"}).button--height-sm
 
 				h2: code button-arrow
 
-				div(data-exclude-content)
-					+button-arrow({dir: 'left'})(disabled)
-					div &nbsp;
-					+button-arrow()
+				+button-arrow({dir: 'left'})(disabled)
+				div &nbsp;
+				+button-arrow()
 
 				h2: code button-arrow-text
 
-				div(data-exclude-content)
-					+button-arrow-text({
-						tag: 'button',
-						content: "'Смотреть все'",
-					})
-					div &nbsp;
-					+button-arrow-text({
-						dir: 'left',
-						content: "'Смотреть все'",
-					})
-					div &nbsp;
-					+button-arrow-text({
-						row: true,
-						content: "'Смотреть все'",
-					})
-					div &nbsp;
-					+button-arrow-text({
-						dir: 'left',
-						row: true,
-						content: "'Смотреть все'",
-					})
+				+button-arrow-text({
+					tag: 'button',
+					content: "'Смотреть все'",
+				})
+				div &nbsp;
+				+button-arrow-text({
+					dir: 'left',
+					content: "'Смотреть все'",
+				})
+				div &nbsp;
+				+button-arrow-text({
+					row: true,
+					content: "'Смотреть все'",
+				})
+				div &nbsp;
+				+button-arrow-text({
+					dir: 'left',
+					row: true,
+					content: "'Смотреть все'",
+				})
 
 				h2: code button-expand
 
-				div(data-exclude-content)
-					+button-expand({content: "'Развернуть'"})
-					div &nbsp;
-					+button-expand({
-						dir: 'up',
-						content: "'Свернуть'",
-					})
+				+button-expand({content: "'Развернуть'"})
+				div &nbsp;
+				+button-expand({
+					dir: 'up',
+					content: "'Свернуть'",
+				})
 
 				h2: code button-load
 
-				div(data-exclude-content)
-					+button-load({content: "'Загрузить еще'"})
-					div &nbsp;
-					+button-load({content: "'Загрузить еще'"}).is-loading
+				+button-load({content: "'Загрузить еще'"})
+				div &nbsp;
+				+button-load({content: "'Загрузить еще'"}).is-loading
 
 				h2: code date
 
-				div(data-exclude-content)
-					+date('26.10.2020')
-					div &nbsp;
-					+date('26.10.2020', '30.10.2020')
-					div &nbsp;
-					div(style={'max-width': '200px'}): +date('26.10.2020', '30.10.2020')
+				+date('26.10.2020')
+				div &nbsp;
+				+date('26.10.2020', '30.10.2020')
+				div &nbsp;
+				div(style={'max-width': '200px'}): +date('26.10.2020', '30.10.2020')
 
-					h3: code adaptive
+				h3: code adaptive
 
-					+date('26.10.2020', null, true)
-					div &nbsp;
-					+date('26.10.2020', '30.10.2020', true)
+				+date('26.10.2020', null, true)
+				div &nbsp;
+				+date('26.10.2020', '30.10.2020', true)
 
 				h2: code organizer
 
-				div(data-exclude-content)
-					+organizer({
-						title: 'Молодежный центр',
-						image: '../../images/content/projects/logo.png',
-					})(style={'max-width': '255px'})
-					div &nbsp;
-					+organizer({
-						title: 'Ресурсный Молодежный центр длинный заголовок',
-						image: '../../images/content/projects/logo.png',
-					})(style={'max-width': '255px'})
+				+organizer({
+					title: 'Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+				})(style={'max-width': '255px'})
+				div &nbsp;
+				+organizer({
+					title: 'Ресурсный Молодежный центр длинный заголовок',
+					image: '../../images/content/projects/logo.png',
+				})(style={'max-width': '255px'})
 
 				h3: code line-clamp
 
-				div(data-exclude-content)
-					+organizer({
-						title: 'Молодежный центр',
-						image: '../../images/content/projects/logo.png',
-						lineClamp: true,
-					})(style={'max-width': '255px'})
-					div &nbsp;
-					+organizer({
-						title: 'Ресурсный Молодежный центр длинный заголовок',
-						image: '../../images/content/projects/logo.png',
-						lineClamp: true,
-					})(style={'max-width': '255px'})
-					div &nbsp;
-					+organizer({
-						title: 'Ресурсный Молодежный центр',
-						image: '../../images/content/projects/logo.png',
-						lineClamp: true,
-					})(style={'max-width': '555px'})
+				+organizer({
+					title: 'Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+					lineClamp: true,
+				})(style={'max-width': '255px'})
+				div &nbsp;
+				+organizer({
+					title: 'Ресурсный Молодежный центр длинный заголовок',
+					image: '../../images/content/projects/logo.png',
+					lineClamp: true,
+				})(style={'max-width': '255px'})
+				div &nbsp;
+				+organizer({
+					title: 'Ресурсный Молодежный центр',
+					image: '../../images/content/projects/logo.png',
+					lineClamp: true,
+				})(style={'max-width': '555px'})
 
 				h2: code author
 
-				div(data-exclude-content)
-					+author({
-						title: 'Константинопольская Александра',
-						image: '../../images/content/projects/authors/img-1.jpg',
-					})(style={'max-width': '255px'})
+				+author({
+					title: 'Константинопольская Александра',
+					image: '../../images/content/projects/authors/img-1.jpg',
+				})(style={'max-width': '255px'})
 
 				h2: code location
 
-				div(data-exclude-content)
-					+location('Тёсово-Нетыльский')
-					div &nbsp;
-					+location('Тёсово-Нетыльский')(style={'max-width': '150px'})
+				+location('Тёсово-Нетыльский')
+				div &nbsp;
+				+location('Тёсово-Нетыльский')(style={'max-width': '150px'})
 
 				h2: code doc-item
 
-				div(data-exclude-content)
+				+doc-item({
+					type: 'pdf',
+					title: 'Документы для участия'
+				})
+				div &nbsp;
+				div(style="max-width: 100px")
 					+doc-item({
 						type: 'pdf',
-						title: 'Документы для участия'
+						title: 'Документыдляучастия'
 					})
-					div &nbsp;
-					div(style="max-width: 100px")
-						+doc-item({
-							type: 'pdf',
-							title: 'Документыдляучастия'
-						})
-					div &nbsp;
-					+doc-item({
-						type: 'pdf',
-						title: 'Документы для участия'
-					}).doc-item--lg
+				div &nbsp;
+				+doc-item({
+					type: 'pdf',
+					title: 'Документы для участия'
+				}).doc-item--lg
 
 	+footer()

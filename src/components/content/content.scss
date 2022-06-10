@@ -1,9 +1,4 @@
-// stylelint-disable
-@custom-selector :--allowed
-[class^="content__"], [class*=" content__"],
-[class^="color-"], [class*=" color-"];
-@custom-selector :--scope :is(:not(.content [class] *:not(.content .content [class] *)));
-// stylelint-enable
+@custom-selector :--scope [data-css-content];
 @custom-selector :--heading :is(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6);
 @custom-selector :--heading-1 :is(h1, .h1);
 @custom-selector :--heading-2 :is(h2, .h2);
