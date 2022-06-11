@@ -2,7 +2,7 @@ import cssBlankPseudo from 'css-blank-pseudo/browser';
 import 'focus-visible';
 import focusWithin from 'focus-within';
 import cssHasPseudo from 'css-has-pseudo/browser';
-import cssScope from './css-scope';
+import scopedCss from './scoped-css';
 
 import '../css/fonts.scss';
 import 'normalize.css';
@@ -45,7 +45,7 @@ import '../components/form-check/form-check';
 cssBlankPseudo(document);
 focusWithin(document);
 cssHasPseudo(document);
-cssScope();
+scopedCss();
 
 AOS.init();
 
