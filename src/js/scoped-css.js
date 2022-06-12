@@ -1,4 +1,4 @@
-const SCOPE_ATTR_NAME = 'data-scoped';
+const SCOPE_ATTR_NAME = 'data-scoped-css';
 const SCOPE_ATTR_PREFIX = 'data-s';
 const HOST_REG = /^([a-zA-Z0-9-]+)(\s|$)/i;
 
@@ -37,15 +37,6 @@ function getScopeAttrs(el) {
 	return el.getAttributeNames().filter((attrName) => isScopeAttr(attrName));
 }
 
-// eslint-disable-next-line no-unused-vars
-function removeScopeAttrs(el) {
-	el.getAttributeNames().forEach((attrName) => {
-		if (isScopeAttr(attrName)) {
-			el.removeAttribute(attrName);
-		}
-	});
-}
-
 function setData(el, scope) {
 	const parentScope = el.parentElement && el.parentElement.cssScope && el.parentElement.cssScope.at(-1);
 	const scopeAttrs = getScopeAttrs(el);
@@ -65,10 +56,12 @@ function setData(el, scope) {
 	});
 
 	el.cssScope.forEach(({el: scopeEl, name: scopeName}) => {
-		if (scopeName && scopeEl.hasAttribute(SCOPE_ATTR_NAME)) {
-			el.setAttribute(`${SCOPE_ATTR_PREFIX}-${scopeName}`, '');
-		} else if (!scopeEl.hasAttribute(SCOPE_ATTR_NAME)) {
-			el.removeAttribute(`${SCOPE_ATTR_PREFIX}-${scopeName}`);
+		if (scopeName) {
+			if (scopeEl.hasAttribute(SCOPE_ATTR_NAME)) {
+				el.setAttribute(`${SCOPE_ATTR_PREFIX}-${scopeName}`, '');
+			} else {
+				el.removeAttribute(`${SCOPE_ATTR_PREFIX}-${scopeName}`);
+			}
 		}
 	});
 }
