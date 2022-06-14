@@ -10,6 +10,7 @@ html {
 }
 
 body {
+	//content: calc($font-size);
 	overflow-wrap: break-word;
 	font-family: $font-family;
 	-webkit-font-smoothing: antialiased;

@@ -15,6 +15,10 @@
 	@return $number;
 }
 
+@function vw($number) {
+	@return calc(#{$number} * var(--vw, 1vw));
+}
+
 @function vh($number) {
 	@return calc(#{$number} * var(--vh, 1vh));
 }

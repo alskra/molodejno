@@ -12,7 +12,6 @@ import '../css/helpers.scss';
 
 import 'ninelines-ua-parser';
 import './viewport-sizes';
-import './scrollbar-width';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
