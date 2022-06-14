@@ -1,1 +1,0 @@
-import './soc-network.scss';

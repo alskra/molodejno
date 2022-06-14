@@ -98,12 +98,9 @@
 	}
 
 	:is(ul, ol):--scope {
-		padding-inline-start: var(--content-edited-list-indent);
-	}
-
-	ul:--scope {
 		position: relative;
 		list-style: none;
+		padding-inline-start: var(--content-edited-list-indent);
 	}
 
 	ul > li:--scope {
@@ -116,6 +113,23 @@
 			border-radius: 50%;
 			width: var(--content-edited-list-marker-size);
 			height: var(--content-edited-list-marker-size);
+			inset-inline-start: 0;
+		}
+	}
+
+	ol:--scope {
+		counter-reset: ol;
+	}
+
+	ol > li:--scope {
+		counter-increment: ol;
+
+		&::before {
+			content: counter(ol) ".\00A0";
+			position: absolute;
+			width: var(--content-edited-list-indent);
+			text-align: start;
+			color: $color-gray;
 			inset-inline-start: 0;
 		}
 	}

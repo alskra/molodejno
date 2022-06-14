@@ -55,13 +55,15 @@ module.exports = {
 					{
 						loader: 'html-loader',
 						options: {
+							sources: {
+								urlFilter: (attribute, value) => !/^\//.test(value),
+							},
 							minimize: false,
 						},
 					},
 					{
 						loader: 'pug-plain-loader',
 						options: {
-							root: paths.src,
 							pretty: '\t',
 						},
 					},
@@ -138,10 +140,10 @@ module.exports = {
 		}),
 	],
 	resolve: {
-		// modules: [paths.src, 'node_modules'],
-		extensions: ['.js', '.jsx', '.json', '.css', '.scss'],
-		// alias: {
-		// 	'@': paths.src,
-		// },
+		modules: ['node_modules'],
+		extensions: ['...', '.css', '.scss'],
+		alias: {
+			'@': paths.src,
+		},
 	},
 };

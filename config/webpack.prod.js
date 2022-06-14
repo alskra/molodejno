@@ -26,6 +26,9 @@ module.exports = merge(common, {
 					{
 						loader: 'css-loader',
 						options: {
+							url: {
+								filter: (url) => !/^\//.test(url),
+							},
 							importLoaders: 3,
 						},
 					},
@@ -40,7 +43,7 @@ module.exports = merge(common, {
 								indentWidth: 1,
 							},
 							sourceMap: true,
-							additionalData: '@import "/css/env";\n',
+							additionalData: '@import "@/css/env";\n\n',
 						},
 					},
 				],

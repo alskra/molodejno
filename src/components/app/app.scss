@@ -11,6 +11,10 @@
 .app__main {
 	flex: 1;
 	padding-bottom: var(--app__main-gap-bottom);
+
+	&--index {
+		padding: var(--gap) 0;
+	}
 }
 
 .app__breadcrumbs {
