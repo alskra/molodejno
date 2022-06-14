@@ -9,24 +9,26 @@ module.exports = merge(common, {
 	mode: 'development',
 	devtool: 'eval-source-map',
 	devServer: {
-		'historyApiFallback': true,
+		'port': 8080,
 		'static': [
 			paths.build,
+			// Fallback for templates resources
 			{
 				directory: paths.src,
 				watch: false,
 			},
 		],
+		// Watch templates
+		'watchFiles': path.resolve(paths.src, '**/*.pug'),
+		'historyApiFallback': true,
 		'open': true,
 		'compress': true,
 		'hot': true,
-		'port': 8080,
-		'watchFiles': path.resolve(paths.src, '**/*.pug'),
 	},
 	module: {
 		rules: [
 			{
-				test: /\.s?css$/,
+				test: /\.s?css$/i,
 				use: [
 					'style-loader',
 					{
@@ -44,7 +46,7 @@ module.exports = merge(common, {
 						loader: 'sass-loader',
 						options: {
 							sourceMap: true,
-							additionalData: '@import "@/css/env";\n\n',
+							additionalData: '@use "/css/global" as *;\n\n',
 						},
 					},
 				],

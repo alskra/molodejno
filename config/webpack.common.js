@@ -13,15 +13,15 @@ const ajax = fs.readdirSync(path.resolve(paths.src, 'pages/ajax'));
 const entry = {};
 
 // pages.forEach((page) => {
-// 	entry[page] = path.resolve(paths.src, `pages/${page}/${page}.js`);
+// 	entry[page] = [`./pages/${page}/${page}.js`, './components/app/app.js'];
 // });
 
-entry.main = pages.map((page) => path.resolve(paths.src, `pages/${page}/${page}.js`))
-	.concat(path.resolve(paths.src, 'components/app/app.js'));
+entry.main = pages.map((page) => `./pages/${page}/${page}.js`);
+entry.main.push('./components/app/app.js');
 
 const htmlPluginEntries = pages.map((page) => {
 	return new HtmlWebpackPlugin({
-		template: path.resolve(paths.src, `pages/${page}/${page}.pug`),
+		template: `./pages/${page}/${page}.pug`,
 		filename: `${page}.html`,
 		title: 'Webpack Starter',
 		// chunks: [page],
@@ -31,7 +31,7 @@ const htmlPluginEntries = pages.map((page) => {
 
 const htmlPluginEntriesAjax = ajax.map((item) => {
 	return new HtmlWebpackPlugin({
-		template: path.resolve(paths.src, `pages/ajax/${item}`),
+		template: `./pages/ajax/${item}`,
 		filename: `ajax/${path.basename(item, '.pug')}.html`,
 		minify: false,
 		inject: false,
@@ -50,7 +50,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.pug$/,
+				test: /\.pug$/i,
 				use: [
 					{
 						loader: 'html-loader',
@@ -64,13 +64,14 @@ module.exports = {
 					{
 						loader: 'pug-plain-loader',
 						options: {
+							basedir: paths.src,
 							pretty: '\t',
 						},
 					},
 				],
 			},
 			{
-				test: /\.m?js$/,
+				test: /\.m?js$/i,
 				exclude: /node_modules/,
 				use: 'babel-loader',
 			},
@@ -87,7 +88,7 @@ module.exports = {
 				},
 			},
 			{
-				test: /\.svg/,
+				test: /\.svg/i,
 				resourceQuery: {not: [/raw/]},
 				type: 'asset',
 				generator: {

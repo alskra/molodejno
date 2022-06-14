@@ -11,7 +11,7 @@ import '../css/base.scss';
 import '../css/helpers.scss';
 
 import 'ninelines-ua-parser';
-import './vh-fix';
+import './viewport-sizes';
 import './scrollbar-width';
 import 'aos/dist/aos.css';
 import AOS from 'aos';

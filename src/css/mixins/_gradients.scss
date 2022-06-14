@@ -1,3 +1,5 @@
+@use "../variables" as *;
+
 @mixin conic-gradient() {
 	background: $color-primary;
 	// stylelint-disable-next-line

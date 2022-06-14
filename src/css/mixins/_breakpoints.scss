@@ -1,3 +1,5 @@
+@use "../variables" as *;
+
 @mixin media-breakpoint-up($breakpoint) {
 	@if type-of($breakpoint) == "string" {
 		$breakpoint: map-get($breakpoints, $breakpoint);

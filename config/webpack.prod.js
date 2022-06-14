@@ -15,7 +15,7 @@ module.exports = merge(common, {
 	module: {
 		rules: [
 			{
-				test: /\.s?css$/,
+				test: /\.s?css$/i,
 				use: [
 					{
 						loader: MiniCssExtractPlugin.loader,
@@ -43,7 +43,7 @@ module.exports = merge(common, {
 								indentWidth: 1,
 							},
 							sourceMap: true,
-							additionalData: '@import "@/css/env";\n\n',
+							additionalData: '@use "/css/global" as *;\n\n',
 						},
 					},
 				],
@@ -108,7 +108,7 @@ module.exports = merge(common, {
 	],
 	optimization: {
 		minimize: false,
-		minimizer: [new CssMinimizerPlugin(), '...'],
+		minimizer: ['...', new CssMinimizerPlugin()],
 		moduleIds: 'deterministic',
 		runtimeChunk: 'single',
 		splitChunks: {
