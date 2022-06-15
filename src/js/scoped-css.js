@@ -1,13 +1,14 @@
 const SCOPE_ATTR_NAME = 'data-scoped-css';
 const SCOPE_ATTR_PREFIX = 'data-s';
-const HOST_REG = /^([a-zA-Z0-9-]+)(\s|$)/i;
+const SCOPE_ATTR_PREFIX_REGEXP = new RegExp(`^${SCOPE_ATTR_PREFIX}-`);
+const HOST_REGEXP = /^([a-z0-9]+(?:-[a-z0-9]+)*)(?:\s|$)/i;
 
 function isHost(el) {
-	return HOST_REG.test(el.className);
+	return HOST_REGEXP.test(el.className);
 }
 
 function isScopeAttr(attrName) {
-	return attrName !== SCOPE_ATTR_NAME && new RegExp(`${SCOPE_ATTR_PREFIX}-`, 'i').test(attrName);
+	return attrName !== SCOPE_ATTR_NAME && SCOPE_ATTR_PREFIX_REGEXP.test(attrName);
 }
 
 function getScopeEl(el) {
@@ -19,9 +20,9 @@ function getScopeEl(el) {
 }
 
 function getScopeName(el) {
-	let name = el.getAttribute(SCOPE_ATTR_NAME) || el.className.match(HOST_REG);
+	let name = el.getAttribute(SCOPE_ATTR_NAME) || (el.className.match(HOST_REGEXP) || '');
 
-	return Array.isArray(name) ? name[1] : name || '';
+	return (Array.isArray(name) ? name[1] : name).toLowerCase();
 }
 
 function getScope(el) {
@@ -33,32 +34,44 @@ function getScope(el) {
 	};
 }
 
-function getScopeAttrs(el) {
-	return el.getAttributeNames().filter((attrName) => isScopeAttr(attrName));
-}
+function getScopesFromAttrs(el) {
+	const scopes = [];
 
-function setData(el, scope) {
-	const parentScope = el.parentElement && el.parentElement.cssScope && el.parentElement.cssScope.at(-1);
-	const scopeAttrs = getScopeAttrs(el);
-
-	el.cssScope = [];
-
-	if (parentScope && parentScope.el !== scope.el) {
-		el.cssScope.push(parentScope);
-	}
-
-	el.cssScope.push(scope);
-
-	scopeAttrs.forEach((attrName) => {
-		if (!el.cssScope.find(({name: scopeName}) => attrName.replace(`${SCOPE_ATTR_PREFIX}-`, '') === scopeName)) {
-			el.removeAttribute(attrName);
+	el.getAttributeNames().forEach((attrName) => {
+		if (isScopeAttr(attrName)) {
+			scopes.push(attrName.replace(SCOPE_ATTR_PREFIX_REGEXP, ''));
 		}
 	});
 
-	el.cssScope.forEach(({el: scopeEl, name: scopeName}) => {
+	return scopes;
+}
+
+function setData(el, scope) {
+	const oldScopeNames = getScopesFromAttrs(el);
+	const parentScope = el.parentElement && el.parentElement.cssScopes && el.parentElement.cssScopes.at(-1);
+
+	el.cssScopes = [];
+
+	if (parentScope && parentScope.el !== scope.el) {
+		el.cssScopes.push(parentScope);
+	}
+
+	el.cssScopes.push(scope);
+
+	oldScopeNames.forEach((oldScopeName) => {
+		if (!el.cssScopes.find(({name: scopeName}) => oldScopeName === scopeName)) {
+			el.removeAttribute(`${SCOPE_ATTR_PREFIX}-${oldScopeName}`);
+		}
+	});
+
+	el.cssScopes.forEach(({el: scopeEl, name: scopeName}) => {
 		if (scopeName) {
 			if (scopeEl.hasAttribute(SCOPE_ATTR_NAME)) {
-				el.setAttribute(`${SCOPE_ATTR_PREFIX}-${scopeName}`, '');
+				if (!oldScopeNames.includes(scopeName)) {
+					// eslint-disable-next-line no-console
+					console.log('GOPA');
+					el.setAttribute(`${SCOPE_ATTR_PREFIX}-${scopeName}`, '');
+				}
 			} else {
 				el.removeAttribute(`${SCOPE_ATTR_PREFIX}-${scopeName}`);
 			}
@@ -81,9 +94,9 @@ function setScope(el, scope = getScope(el)) {
 export default async function scopedCss(context = document.documentElement) {
 	setScope(context);
 
-	const observer = new MutationObserver((mutationList) => {
-		mutationList.forEach((mutation) => {
-			setScope(mutation.target);
+	const observer = new MutationObserver((records) => {
+		records.forEach((record) => {
+			setScope(record.target);
 		});
 	});
 

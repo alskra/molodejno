@@ -179,7 +179,7 @@
 	@include media-breakpoint-down(lg) {
 		margin-right: calc(-1 * var(--container-content-offset-x));
 		margin-left: calc(-1 * var(--container-content-offset-x));
-		width: var(--body-width);
+		width: var(--body-content-width);
 		max-width: none;
 
 		&:not(:last-child) {

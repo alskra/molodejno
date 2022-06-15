@@ -11,7 +11,7 @@ import '../css/base.scss';
 import '../css/helpers.scss';
 
 import 'ninelines-ua-parser';
-import './viewport-sizes';
+import './viewport';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
