@@ -1,21 +1,28 @@
 import ResizeObserver from 'resize-observer-polyfill';
 
+const htmlEl = document.documentElement;
+const bodyEl = document.body;
 const callbacks = [];
 
 function setViewportHeight() {
-	document.documentElement.style.setProperty('--vh', `${innerHeight / 100}px`);
+	htmlEl.style.setProperty('--vh', `${innerHeight / 100}px`);
 }
 
-function setBodySizes() {
-	const style = getComputedStyle(document.body);
-	const contentWidth = document.body.clientWidth - parseFloat(style.paddingLeft) -
-		parseFloat(style.paddingRight);
+function setBodySizes(contentSizes) {
+	let contentWidth;
 
-	document.documentElement.style.setProperty('--body-content-width', `${contentWidth}px`);
+	if (contentSizes) {
+		contentWidth = contentSizes.inlineSize || contentSizes.width;
+	} else {
+		const style = getComputedStyle(bodyEl);
+		contentWidth = bodyEl.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+	}
+
+	htmlEl.style.setProperty('--body-content-width', `${contentWidth}px`);
 }
 
 function setScroll() {
-	document.documentElement.style.setProperty('--scroll-y', `${scrollY}px`);
+	htmlEl.style.setProperty('--scroll-y', `${scrollY}px`);
 }
 
 setViewportHeight();
@@ -29,24 +36,32 @@ window.addEventListener('resize', () => {
 
 const resizeObserver = new ResizeObserver((entries) => {
 	entries.forEach((entry) => {
-		if (entry.target === document.body) {
+		// eslint-disable-next-line no-nested-ternary
+		const contentSizes = entry.contentBoxSize ?
+			entry.contentBoxSize[0] ? entry.contentBoxSize[0] : entry.contentBoxSize :
+			entry.contentRect;
+
+		if (entry.target === bodyEl) {
 			// eslint-disable-next-line no-console
 			console.log('resize body');
-			setBodySizes();
+			setBodySizes(contentSizes);
 		}
 	});
 });
 
-resizeObserver.observe(document.body);
+resizeObserver.observe(bodyEl);
 
 window.addEventListener('scroll', () => {
 	setScroll();
+	callbacks.forEach((callback) => callback());
 }, {passive: true});
 
 const mutationObserver = new MutationObserver((records) => {
 	records.forEach((record) => {
-		// eslint-disable-next-line no-console
-		console.log(record);
+		if (record.type !== 'attributes' || record.target.getAttribute(record.attributeName) !== record.oldValue) {
+			// eslint-disable-next-line no-console
+			console.log(record);
+		}
 	});
 });
 
@@ -54,6 +69,6 @@ mutationObserver.observe(document, {
 	subtree: true,
 	childList: true,
 	attributes: true,
-	characterData: true,
 	attributeOldValue: true,
+	characterData: true,
 });
