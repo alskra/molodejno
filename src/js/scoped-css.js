@@ -93,8 +93,18 @@ export default async function scopedCss(context = document.documentElement) {
 	setScope(context);
 
 	const observer = new MutationObserver((records) => {
-		records.forEach((record) => {
-			setScope(record.target);
+		records.forEach(({type, target, addedNodes, attributeName, oldValue}) => {
+			if (addedNodes.length) {
+				addedNodes.forEach((node) => {
+					if (node instanceof Element) {
+						setScope(target);
+					}
+				});
+			}
+
+			if (type === 'attributes' && target.getAttribute(attributeName) !== oldValue) {
+				setScope(target);
+			}
 		});
 	});
 
@@ -103,4 +113,6 @@ export default async function scopedCss(context = document.documentElement) {
 		childList: true,
 		attributeFilter: ['class', SCOPE_ATTR_NAME],
 	});
+
+	return context;
 }
