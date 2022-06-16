@@ -42,8 +42,6 @@ const resizeObserver = new ResizeObserver((entries) => {
 			entry.contentRect;
 
 		if (entry.target === bodyEl) {
-			// eslint-disable-next-line no-console
-			console.log('resize body');
 			setBodySizes(contentSizes);
 		}
 	});
@@ -60,7 +58,8 @@ const mutationObserver = new MutationObserver((records) => {
 	records.forEach((record) => {
 		if (record.type !== 'attributes' || record.target.getAttribute(record.attributeName) !== record.oldValue) {
 			// eslint-disable-next-line no-console
-			console.log(record);
+			// console.log(record);
+			callbacks.forEach((callback) => callback());
 		}
 	});
 });

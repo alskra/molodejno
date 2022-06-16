@@ -68,8 +68,6 @@ function setData(el, scope) {
 		if (scopeName) {
 			if (scopeEl.hasAttribute(SCOPE_ATTR_NAME)) {
 				if (!oldScopeNames.includes(scopeName)) {
-					// eslint-disable-next-line no-console
-					console.log('GOPA');
 					el.setAttribute(`${SCOPE_ATTR_PREFIX}-${scopeName}`, '');
 				}
 			} else {
