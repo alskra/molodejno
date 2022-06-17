@@ -37,7 +37,7 @@
 
 .footer__header {
 	margin-bottom: 28rem;
-	border-bottom: 1px solid $color;
+	border-bottom: 1px solid var(--color);
 	padding-bottom: 26rem;
 }
 
@@ -61,10 +61,10 @@
 	}
 
 	a {
-		transition: color $transition-duration;
+		transition: color var(--transition-duration);
 
 		@include hover {
-			color: $color-primary;
+			color: var(--color-primary);
 		}
 	}
 }
@@ -88,10 +88,10 @@
 	color: $color-black;
 
 	a {
-		transition: color $transition-duration;
+		transition: color var(--transition-duration);
 
 		@include hover {
-			color: $color-primary;
+			color: var(--color-primary);
 		}
 	}
 

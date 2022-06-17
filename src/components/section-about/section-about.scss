@@ -94,7 +94,7 @@
 	font-weight: 350;
 	font-size: 60rem;
 	line-height: 1.25;
-	color: $heading-color;
+	color: var(--heading-color);
 
 	small {
 		display: block;
@@ -179,7 +179,7 @@
 	@include media-breakpoint-down(lg) {
 		margin-right: calc(-1 * var(--container-content-offset-x));
 		margin-left: calc(-1 * var(--container-content-offset-x));
-		width: var(--app-width);
+		width: var(--app--width);
 		max-width: none;
 
 		&:not(:last-child) {

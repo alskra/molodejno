@@ -7,7 +7,7 @@
 }
 
 .fancybox__container--modal {
-	--fancybox-bg: #{$color-primary};
+	--fancybox-bg: #{var(--color-primary)};
 	--carousel-button-width: 37rem;
 	--carousel-button-height: 24rem;
 	--fancybox-content-color: #{$color-white};

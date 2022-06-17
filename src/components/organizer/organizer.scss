@@ -6,7 +6,7 @@
 	column-gap: var(--gap-sm);
 	align-items: flex-start;
 	font-size: 14rem;
-	color: $color;
+	color: var(--color);
 
 	&--line-clamp {
 		--line-clamp: 3;

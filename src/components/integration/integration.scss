@@ -9,7 +9,7 @@
 
 	.app__main > & {
 		&:last-child {
-			margin-top: var(--app__main-gap-bottom);
+			margin-top: var(--app--main-gap-bottom);
 		}
 	}
 }

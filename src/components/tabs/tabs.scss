@@ -37,14 +37,14 @@
 
 	@include hover-not-disabled {
 		&:not(.is-active) {
-			color: $color-primary;
+			color: var(--color-primary);
 		}
 	}
 
 	&.is-active {
 		border-color: transparent;
 		color: $color-white;
-		background: $color-primary;
+		background: var(--color-primary);
 	}
 }
 

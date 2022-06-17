@@ -6,11 +6,11 @@
 
 .video__caption {
 	grid-column: span 2;
-	border-top: 1px solid $color;
+	border-top: 1px solid var(--color);
 	padding-top: 40rem;
 	font-size: 14rem;
 	line-height: var(--line-height);
-	color: $color;
+	color: var(--color);
 
 	@include media-breakpoint-up(lg) {
 		+ .video__main {

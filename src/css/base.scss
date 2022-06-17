@@ -10,7 +10,6 @@ html {
 }
 
 body {
-	//content: calc($font-size);
 	overflow-wrap: break-word;
 	font-family: var(--font-family);
 	-webkit-font-smoothing: antialiased;
@@ -19,19 +18,12 @@ body {
 	text-decoration-skip: objects;
 	text-rendering: optimizeLegibility;
 	text-size-adjust: 100%;
-	color: $color;
+	color: var(--color);
 	-webkit-tap-highlight-color: transparent;
-	background: $background-color;
+	background: var(--bg-color);
 }
 
-// stylelint-disable
-h1, h2, h3, h4, h5, h6,
-p,
-ul, ol,
-dl, dt, dd,
-blockquote,
-figure {
-// stylelint-enable
+:is(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd, blockquote, figure) {
 	margin: 0;
 }
 
@@ -86,15 +78,17 @@ fieldset {
 
 ::selection {
 	color: $color-white;
-	background: rgba($color-primary-hover, 0.9);
+	background: rgba(var(--color-primary-hover), 0.9);
 }
 
-/* stylelint-disable */
 /*
-* Немедленно переместите любую анимацию в конечную точку, если пользователь установил свое устройство в положение "prefers reduced motion".
-* Это может привести к плохим(непреднамеренным) последствиям. Удалите по мере необходимости и напишите свой собственный код для prefers-reduced-motion.
-*/
+ * Немедленно переместите любую анимацию в конечную точку,
+ * если пользователь установил свое устройство в положение `prefers reduced motion`.
+ * Это может привести к плохим (непреднамеренным) последствиям.
+ * Удалите по мере необходимости и напишите свой собственный код для `prefers-reduced-motion`.
+ */
 @media (prefers-reduced-motion: reduce) {
+	// stylelint-disable
 	*,
 	::before,
 	::after {
@@ -103,5 +97,5 @@ fieldset {
 		transition-duration: 0.001s !important;
 		transition-delay: 0s !important;
 	}
+	// stylelint-enable
 }
-/* stylelint-enable */

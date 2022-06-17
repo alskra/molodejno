@@ -57,6 +57,7 @@
 }
 
 @mixin font-face($url, $font-family, $font-weight, $font-style, $woff2: true) {
+	// stylelint-disable
 	@font-face {
 		@if $woff2 {
 			src:
@@ -66,13 +67,12 @@
 			src: url($url + ".woff") format("woff");
 		}
 
-		// stylelint-disable
 		font-family: $font-family;
 		font-weight: $font-weight;
 		font-style: $font-style;
 		font-display: swap;
-		// stylelint-enable
 	}
+	// stylelint-enable
 }
 
 @mixin retina {

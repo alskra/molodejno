@@ -9,16 +9,16 @@
 	font-size: 16rem;
 	line-height: 1.25;
 	transition: color;
-	transition-duration: $transition-duration;
+	transition-duration: var(--transition-duration);
 
 	@include hover {
 		&:not(.is-active) {
-			color: $color-primary;
+			color: var(--color-primary);
 		}
 	}
 
 	&.is-active {
 		font-weight: 700;
-		color: $color-primary;
+		color: var(--color-primary);
 	}
 }

@@ -1,5 +1,6 @@
 :root {
-	--app__main-gap-bottom: var(--gap-3xl);
+	--app--width: var(--body-content-width, 100vw);
+	--app--main-gap-bottom: var(--gap-3xl);
 }
 
 .app {
@@ -10,7 +11,7 @@
 
 .app__main {
 	flex: 1;
-	padding-bottom: var(--app__main-gap-bottom);
+	padding-bottom: var(--app--main-gap-bottom);
 
 	&--index {
 		padding: var(--gap) 0;

@@ -1,6 +1,6 @@
 .button-arrow {
 	--color: #{$color};
-	--color-hover: #{$color-primary};
+	--color-hover: #{var(--color-primary)};
 
 	@include button;
 
@@ -19,15 +19,15 @@
 		color: var(--color-hover);
 
 		icon-svg[name="arrow-left"] {
-			transform: translate(-$arrow-hover-translate);
+			transform: translate(-20rem);
 		}
 
 		icon-svg[name="arrow-right"] {
-			transform: translate($arrow-hover-translate);
+			transform: translate(20rem);
 		}
 	}
 
 	@include disabled {
-		color: $color-disabled;
+		color: var(--color-disabled);
 	}
 }

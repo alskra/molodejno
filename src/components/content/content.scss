@@ -56,7 +56,7 @@
 	font-family: var(--heading-font-family);
 	font-weight: var(--heading-font-weight);
 	line-height: var(--heading-line-height);
-	color: $heading-color;
+	color: var(--heading-color);
 	margin-block: var(--content--heading-interval-top) var(--content--heading-interval-bottom);
 }
 
@@ -76,17 +76,17 @@
 
 :--heading-3:--scope {
 	font-size: var(--content--heading-3-font-size);
-	color: $color-primary;
+	color: var(--color-primary);
 }
 
 :--heading-4:--scope {
 	font-size: var(--content--heading-4-font-size);
-	color: $color-primary;
+	color: var(--color-primary);
 }
 
 :--heading-5:--scope {
 	font-size: var(--content--heading-5-font-size);
-	color: $color-primary;
+	color: var(--color-primary);
 }
 
 :--heading-6:--scope {
@@ -131,6 +131,15 @@ ol > li:--scope {
 		text-align: start;
 		color: $color-gray;
 		inset-inline-start: 0;
+	}
+}
+
+:--link:--scope {
+	color: var(--color-primary);
+	transition: color var(--transition-duration);
+
+	@include hover {
+		color: var(--color-primary-hover);
 	}
 }
 
@@ -196,16 +205,6 @@ img:--scope {
 	width: 100%;
 }
 
-:--link:--scope {
-	color: $color-primary;
-	transition: $transition-duration;
-	transition-property: color;
-
-	@include hover {
-		color: $color-primary-hover;
-	}
-}
-
 :--section:--scope {
 	margin-block: var(--content--heading-interval-top) var(--content--block-interval);
 }
@@ -218,7 +217,7 @@ img:--scope {
 	img:--scope {
 		margin-right: calc(-1 * var(--container-content-offset-x));
 		margin-left: calc(-1 * var(--container-content-offset-x));
-		width: var(--app-width);
-		max-width: var(--app-width);
+		width: var(--app--width);
+		max-width: var(--app--width);
 	}
 }

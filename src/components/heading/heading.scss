@@ -3,7 +3,7 @@
 	font-weight: var(--heading-font-weight);
 	font-size: var(--content--heading-1-font-size);
 	line-height: var(--heading-line-height);
-	color: $heading-color;
+	color: var(--heading-color);
 
 	&:not(:last-child) {
 		margin-bottom: var(--gap-sm);

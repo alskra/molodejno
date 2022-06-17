@@ -1,6 +1,6 @@
 // Styles
-import '/css/fonts.scss';
 import 'normalize.css';
+import '/css/fonts.scss';
 import '/css/root.scss';
 import '/css/base.scss';
 import '/css/helpers.scss';
@@ -17,7 +17,6 @@ import './viewport';
 import scopedCss from './scoped-css';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import Alpine from 'alpinejs';
 
 // Components
 import '/components/icon-svg/icon-svg';
@@ -57,10 +56,3 @@ scopedCss();
 console.log(performance.now() - start);
 
 AOS.init();
-
-window.Alpine = Alpine;
-Alpine.store('isDesktop', innerWidth >= 1025);
-
-window.addEventListener('resize', () => {
-	Alpine.store('isDesktop', innerWidth >= 1025);
-});

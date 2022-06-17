@@ -1,7 +1,7 @@
 .location {
 	--color: #{$color};
 	--icon-stroke-width: 2px;
-	--icon-stroke-color: #{$color-primary};
+	--icon-stroke-color: #{var(--color-primary)};
 
 	display: inline-flex;
 	column-gap: 10rem;

@@ -22,17 +22,17 @@
 	font-weight: 500;
 	font-size: 15rem;
 	line-height: 1.2;
-	color: $color;
+	color: var(--color);
 	transition: color;
-	transition-duration: $transition-duration;
+	transition-duration: var(--transition-duration);
 
 	@include hover {
 		&:not(.is-active) {
-			color: $color-primary;
+			color: var(--color-primary);
 		}
 	}
 
 	&.is-active {
-		color: $color-primary;
+		color: var(--color-primary);
 	}
 }

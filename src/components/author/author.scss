@@ -7,7 +7,7 @@
 	align-items: flex-start;
 	font-size: 14rem;
 	text-align: right;
-	color: $color;
+	color: var(--color);
 
 	&--line-clamp {
 		--line-clamp: 3;

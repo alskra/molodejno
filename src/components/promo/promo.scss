@@ -11,8 +11,8 @@
 
 	.app__main > & {
 		&:last-child {
-			margin-top: var(--app__main-gap-bottom);
-			margin-bottom: calc(-1 * var(--app__main-gap-bottom));
+			margin-top: var(--app--main-gap-bottom);
+			margin-bottom: calc(-1 * var(--app--main-gap-bottom));
 		}
 	}
 
@@ -106,7 +106,7 @@
 .promo__body {
 	align-self: center;
 	grid-column: 3 / 5;
-	color: $color;
+	color: var(--color);
 
 	@include media-breakpoint-down(lg) {
 		grid-column: 1;
@@ -119,7 +119,7 @@
 	font-weight: var(--heading-font-weight);
 	font-size: 40rem;
 	line-height: var(--heading-line-height);
-	color: $heading-color;
+	color: var(--heading-color);
 
 	&:not(:last-child) {
 		margin-bottom: 30rem;

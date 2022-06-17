@@ -25,10 +25,10 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	transition: color;
-	transition-duration: $transition-duration;
+	transition-duration: var(--transition-duration);
 
 	@include hover {
-		color: $color-primary;
+		color: var(--color-primary);
 	}
 
 	@include media-breakpoint-down(lg) {

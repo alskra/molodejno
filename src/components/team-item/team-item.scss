@@ -14,7 +14,7 @@
 	font-weight: var(--heading-font-weight);
 	font-size: 20rem;
 	line-height: 1.25;
-	color: $color-primary;
+	color: var(--color-primary);
 
 	&:not(:last-child) {
 		margin-bottom: 15rem;

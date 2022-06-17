@@ -18,7 +18,7 @@
 	font-weight: 300;
 	font-size: 24rem;
 	line-height: 1.25;
-	color: $color;
+	color: var(--color);
 	user-select: none;
 
 	@include media-breakpoint-down(lg) {

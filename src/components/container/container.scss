@@ -1,9 +1,9 @@
 :root {
 	--container-gap: 15rem;
 	--container-max-width: 1140rem;
-	--container-width: min(var(--app-width), var(--container-max-width));
+	--container-width: min(var(--app--width), var(--container-max-width));
 	--container-content-width: calc(var(--container-width) - 2 * var(--container-gap));
-	--container-content-offset-x: calc((var(--app-width) - var(--container-content-width)) / 2);
+	--container-content-offset-x: calc((var(--app--width) - var(--container-content-width)) / 2);
 
 	@for $size from 1 through 12 {
 		$columns: div(12, $size);
@@ -15,7 +15,7 @@
 	// stylelint-disable-next-line
 	@include media-breakpoint-down(lg) {
 		--container-gap: 19rem;
-		--container-max-width: var(--app-width);
+		--container-max-width: var(--app--width);
 	}
 }
 

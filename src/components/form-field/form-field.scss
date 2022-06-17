@@ -12,7 +12,7 @@
 	font-weight: 700;
 	font-size: 16rem;
 	line-height: 1.25;
-	color: $color;
+	color: var(--color);
 	background: $color-white;
 
 	&::placeholder {
@@ -27,12 +27,12 @@
 	//}
 
 	@include invalid {
-		border-bottom-color: $color-danger;
-		color: $color-danger;
+		border-bottom-color: var(--color-danger);
+		color: var(--color-danger);
 	}
 
 	@include disabled {
-		color: $color-disabled;
+		color: var(--color-disabled);
 		opacity: 0.85;
 	}
 

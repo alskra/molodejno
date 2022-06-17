@@ -26,6 +26,15 @@ $color-white-pointer: #fde0ff;
 $color-green: #008000;
 $color-red: #f00;
 
+// Style colors
+$color: $color-cod-gray;
+$color-primary: $color-royal-blue;
+$color-primary-hover: $color-indigo;
+$color-disabled: $color-silver-2;
+$color-success: $color-green;
+$color-danger: $color-red;
+$heading-color: $color;
+
 // Layout
 $breakpoints: (
 	xs: 360px,
@@ -35,23 +44,3 @@ $breakpoints: (
 	xl: 1200px, // default
 	xxl: 2560px
 );
-
-// Base
-$color: $color-cod-gray;
-$color-primary: $color-royal-blue;
-$color-primary-hover: $color-indigo;
-$color-disabled: $color-silver-2;
-$color-success: $color-green;
-$color-danger: $color-red;
-$background-color: $color-white;
-$transition-duration: 0.2s;
-
-// Heading
-$heading-color: $color;
-
-// Image
-$image-transition: transform 3s;
-$image-hover-transform: scale(1.1);
-
-// Arrow
-$arrow-hover-translate: 20rem;

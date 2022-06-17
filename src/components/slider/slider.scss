@@ -1,5 +1,5 @@
 .slider {
-	--width: var(--app-width);
+	--width: var(--app--width);
 	--gap-bottom: 52rem;
 	--image-height: clamp(507rem, 507 / 1200 * var(--width), #{vh(100)} - var(--header-height));
 	--body-height: calc(var(--image-height) + var(--gap-bottom));

@@ -12,7 +12,7 @@
 	box-sizing: border-box;
 	white-space: nowrap;
 	transition: border-color, box-shadow, color, background-color, opacity;
-	transition-duration: $transition-duration;
+	transition-duration: var(--transition-duration);
 	cursor: pointer;
 	user-select: none;
 

@@ -19,14 +19,14 @@
 
 	.app__main > .section:last-child > .section__main:last-child > .content:last-child > &--related {
 		&:last-child {
-			margin-bottom: calc(-1 * var(--app__main-gap-bottom));
+			margin-bottom: calc(-1 * var(--app--main-gap-bottom));
 		}
 	}
 
 	// stylelint-disable-next-line
 	.app__main > .article:last-child > .article__body:last-child > .article__grid:last-child > .article__grid-main:last-child > .content:last-child > &--reviews {
 		&:last-child {
-			margin-bottom: calc(-1 * var(--app__main-gap-bottom));
+			margin-bottom: calc(-1 * var(--app--main-gap-bottom));
 		}
 	}
 
@@ -110,5 +110,5 @@
 	font-weight: var(--heading-font-weight);
 	font-size: var(--content--heading-2-font-size);
 	line-height: var(--heading-line-height);
-	color: $heading-color;
+	color: var(--heading-color);
 }

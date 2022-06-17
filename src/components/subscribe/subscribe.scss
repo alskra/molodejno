@@ -1,7 +1,7 @@
 .subscribe {
 	padding-top: 30rem;
 	padding-bottom: 30rem;
-	background: $color-primary;
+	background: var(--color-primary);
 	user-select: none;
 
 	@include media-breakpoint-down(lg) {

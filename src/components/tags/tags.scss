@@ -1,6 +1,6 @@
 .tags {
-	--color: #{$color-primary};
-	--color-hover: #{$color-primary-hover};
+	--color: #{var(--color-primary)};
+	--color-hover: #{var(--color-primary-hover)};
 
 	display: flex;
 	flex-flow: wrap;
@@ -16,7 +16,7 @@
 
 .tags__item {
 	transition: color;
-	transition-duration: $transition-duration;
+	transition-duration: var(--transition-duration);
 
 	&::before {
 		content: "#\00A0";

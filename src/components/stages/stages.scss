@@ -1,6 +1,6 @@
 .stages__item {
-	border-top: 1px solid $color;
-	border-bottom: 1px solid $color;
+	border-top: 1px solid var(--color);
+	border-bottom: 1px solid var(--color);
 	padding: 45rem 0;
 
 	&:nth-child(n + 2) {

@@ -11,10 +11,10 @@
 	font-weight: 700;
 	font-size: 20rem;
 	line-height: 1.25;
-	color: $color;
+	color: var(--color);
 
 	@include hover-not-disabled {
-		color: $color-primary;
+		color: var(--color-primary);
 	}
 
 	&.is-loading {

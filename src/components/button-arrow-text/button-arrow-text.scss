@@ -1,6 +1,6 @@
 .button-arrow-text {
 	--color: #{$color};
-	--color-hover: #{$color-primary};
+	--color-hover: #{var(--color-primary)};
 
 	@include button;
 
@@ -46,8 +46,8 @@
 	}
 
 	&--primary {
-		--color: #{$color-primary};
-		--color-hover: #{$color-primary-hover};
+		--color: #{var(--color-primary)};
+		--color-hover: #{var(--color-primary-hover)};
 	}
 
 	@include media-breakpoint-down(lg) {
@@ -63,7 +63,7 @@
 		width: 100%;
 		height: 100%;
 		transition: width;
-		transition-duration: $transition-duration;
+		transition-duration: var(--transition-duration);
 	}
 }
 

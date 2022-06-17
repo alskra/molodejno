@@ -12,7 +12,7 @@
 	font-size: 30rem;
 	line-height: 1;
 	white-space: nowrap;
-	color: $color;
+	color: var(--color);
 	cursor: default;
 
 	@include media-breakpoint-down(lg) {

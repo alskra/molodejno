@@ -19,8 +19,8 @@
 
 	@include invalid {
 		+ .form-check__el {
-			border-color: $color-danger;
-			color: $color-danger;
+			border-color: var(--color-danger);
+			color: var(--color-danger);
 		}
 	}
 
@@ -46,10 +46,10 @@
 	border: 1px solid transparent;
 	width: 25rem;
 	height: 25rem;
-	color: $color-primary;
+	color: var(--color-primary);
 	background: $color-white;
 	transition: border-color, box-shadow, color, background-color, opacity;
-	transition-duration: $transition-duration;
+	transition-duration: var(--transition-duration);
 	cursor: pointer;
 	pointer-events: auto;
 
@@ -66,13 +66,13 @@
 
 	a {
 		text-decoration: underline;
-		color: $color-primary;
+		color: var(--color-primary);
 		transition: color;
-		transition-duration: $transition-duration;
+		transition-duration: var(--transition-duration);
 
 		@include hover {
 			text-decoration: none;
-			color: $color-primary-hover;
+			color: var(--color-primary-hover);
 		}
 	}
 }

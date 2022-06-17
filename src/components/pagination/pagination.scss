@@ -37,18 +37,18 @@
 	font-weight: 700;
 	font-size: 20rem;
 	line-height: 27rem;
-	color: $color;
+	color: var(--color);
 	transition: color;
-	transition-duration: $transition-duration;
+	transition-duration: var(--transition-duration);
 
 	@include hover {
 		&:not(.pagination__item--hellip, .is-active) {
-			color: $color-primary;
+			color: var(--color-primary);
 		}
 	}
 
 	&.is-active {
-		color: $color-primary;
+		color: var(--color-primary);
 	}
 
 	&--hellip {

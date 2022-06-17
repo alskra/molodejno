@@ -5,10 +5,10 @@
 	font-weight: 700;
 	font-size: 16rem;
 	line-height: 1.25;
-	color: $color-primary;
+	color: var(--color-primary);
 
 	@include hover-not-disabled {
-		color: $color-primary-hover;
+		color: var(--color-primary-hover);
 	}
 
 	&--dir-up {

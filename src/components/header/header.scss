@@ -15,7 +15,7 @@
 	display: flex;
 	flex-flow: column;
 	height: var(--header-height);
-	background: $background-color;
+	background: var(--bg-color);
 	user-select: none;
 
 	&.is-sticky {
@@ -108,9 +108,9 @@
 		position: absolute;
 		left: 50%;
 		top: 50%;
-		border-top: 1px solid $heading-color;
+		border-top: 1px solid var(--heading-color);
 		width: 100%;
-		transition: $transition-duration;
+		transition: var(--transition-duration);
 	}
 
 	&::before {
@@ -184,11 +184,11 @@
 	line-height: div(17, 14);
 	text-transform: uppercase;
 	color: $color-black;
-	transition: color $transition-duration;
+	transition: color var(--transition-duration);
 	user-select: none;
 
 	@include hover {
-		color: $color-primary;
+		color: var(--color-primary);
 	}
 }
 
@@ -200,8 +200,8 @@
 	@include media-breakpoint-down(lg) {
 		column-gap: 20rem;
 		grid-template-columns: 1fr 1fr;
-		border-top: 1px solid $heading-color;
-		border-bottom: 1px solid $heading-color;
+		border-top: 1px solid var(--heading-color);
+		border-bottom: 1px solid var(--heading-color);
 		padding-top: 23px;
 		padding-bottom: 23px;
 	}

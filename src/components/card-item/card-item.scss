@@ -13,9 +13,9 @@
 		top: -1px;
 		width: 100%;
 		height: 1px;
-		background: $color;
+		background: var(--color);
 		transition: height;
-		transition-duration: $transition-duration;
+		transition-duration: var(--transition-duration);
 	}
 
 	@include hover {
@@ -24,11 +24,11 @@
 		}
 
 		.card-item__title {
-			color: $color-primary;
+			color: var(--color-primary);
 		}
 
 		.card-item__image-el {
-			transform: $image-hover-transform;
+			transform: var(--image-hover-transform);
 		}
 	}
 
@@ -120,9 +120,9 @@
 	font-family: var(--heading-font-family);
 	font-weight: 500;
 	font-size: 20rem;
-	color: $color;
+	color: var(--color);
 	transition: color;
-	transition-duration: $transition-duration;
+	transition-duration: var(--transition-duration);
 
 	&:not(:last-child) {
 		margin-bottom: 10rem;
@@ -171,5 +171,5 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	transition: $image-transition;
+	transition: var(--image-transition);
 }

@@ -2,7 +2,7 @@
 	overflow: hidden;
 
 	@include media-breakpoint-up(lg) {
-		box-shadow: 10rem 10rem $color-primary;
+		box-shadow: 10rem 10rem var(--color-primary);
 	}
 
 	@include media-breakpoint-down(lg) {

@@ -47,8 +47,8 @@
 	position: relative;
 	display: grid;
 	align-content: center;
-	border-top: 1px solid $color;
-	border-bottom: 1px solid $color;
+	border-top: 1px solid var(--color);
+	border-bottom: 1px solid var(--color);
 	padding: var(--padding-y) 0;
 	row-gap: 10rem;
 
@@ -71,7 +71,7 @@
 				left: 0;
 				top: var(--padding-y);
 				bottom: var(--padding-y);
-				border-left: 1px solid $color;
+				border-left: 1px solid var(--color);
 			}
 		}
 	}
@@ -89,7 +89,7 @@
 
 .card-details__content {
 	display: grid;
-	color: $color;
+	color: var(--color);
 	gap: 20rem calc(2 * var(--gap));
 
 	@include media-breakpoint-up(lg) {

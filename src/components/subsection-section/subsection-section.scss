@@ -8,7 +8,7 @@
 	font-family: var(--heading-font-family);
 	font-weight: var(--heading-font-weight);
 	line-height: var(--heading-line-height);
-	color: $color-primary;
+	color: var(--color-primary);
 
 	&--h3 {
 		font-size: var(--content--heading-3-font-size);

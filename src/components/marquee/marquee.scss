@@ -60,7 +60,7 @@
 		-webkit-text-fill-color: initial;
 		-webkit-text-stroke: initial;
 		color: transparent;
-		transition: color $transition-duration;
+		transition: color var(--transition-duration);
 	}
 
 	@include hover {
@@ -86,9 +86,9 @@
 	border-radius: 50%;
 	width: 200rem;
 	height: 200rem;
-	background: $heading-color;
+	background: var(--heading-color);
 	transition: opacity, visibility;
-	transition-duration: $transition-duration;
+	transition-duration: var(--transition-duration);
 	pointer-events: none;
 
 	&.is-hidden {

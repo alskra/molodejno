@@ -55,7 +55,7 @@
 	display: grid;
 	grid-template-columns: var(--image-size) 1fr;
 	margin-top: 25rem;
-	border-top: 1px solid $color;
+	border-top: 1px solid var(--color);
 	padding-top: 29rem;
 	gap: 10rem 20rem;
 
@@ -64,7 +64,7 @@
 		position: absolute;
 		left: 35rem;
 		top: 0;
-		border-left: 1px solid $color;
+		border-left: 1px solid var(--color);
 		height: 19rem;
 	}
 
@@ -90,7 +90,7 @@
 	font-weight: 700;
 	font-size: 18rem;
 	line-height: 1.25;
-	color: $color;
+	color: var(--color);
 
 	@include media-breakpoint-down(lg) {
 		font-size: 16rem;
