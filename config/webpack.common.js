@@ -71,6 +71,30 @@ module.exports = {
 				],
 			},
 			{
+				test: /\.s?css$/i,
+				resourceQuery: /module/,
+				use: [
+					{
+						loader: 'css-loader',
+						options: {
+							url: {
+								filter: (url) => !/^\//.test(url),
+							},
+							importLoaders: 3,
+						},
+					},
+					'postcss-loader',
+					'resolve-url-loader',
+					{
+						loader: 'sass-loader',
+						options: {
+							sourceMap: true,
+							additionalData: '@use "/css/global" as *;\n\n',
+						},
+					},
+				],
+			},
+			{
 				test: /\.m?js$/i,
 				exclude: /node_modules/,
 				use: 'babel-loader',
@@ -88,7 +112,7 @@ module.exports = {
 				},
 			},
 			{
-				test: /\.svg/i,
+				test: /\.svg$/i,
 				resourceQuery: {not: [/raw/]},
 				type: 'asset',
 				generator: {

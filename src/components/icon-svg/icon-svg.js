@@ -1,5 +1,6 @@
 import ResizeObserver from 'resize-observer-polyfill';
 import './icon-svg.scss';
+import style from './icon-svg.scss?module';
 
 const requireIcon = require.context(
 	'../../images/icons/svg?raw',
@@ -42,17 +43,22 @@ class IconSvg extends HTMLElement {
 		super();
 
 		this.attachShadow({mode: 'open'});
+
+		const styleEl = document.createElement('style');
+
+		styleEl.innerHTML = style.toString();
+		this.shadowRoot.append(styleEl);
+
+		this.svgEl = document.createElement('svg');
+		this.shadowRoot.append(this.svgEl);
 	}
 
 	update() {
-		this.shadowRoot.innerHTML = icons[this.name];
-		this.svgEl = this.shadowRoot.querySelector('svg');
+		const template = document.createElement('template');
 
-		Object.assign(this.svgEl.style, {
-			display: 'block',
-			width: '100%',
-			height: '100%',
-		});
+		template.innerHTML = icons[this.name];
+		this.svgEl.replaceWith(template.content);
+		this.svgEl = this.shadowRoot.lastElementChild;
 
 		resizeObserver.unobserve(this);
 
@@ -62,7 +68,7 @@ class IconSvg extends HTMLElement {
 		}
 	}
 
-	disconnected() {
+	disconnectedCallback() {
 		resizeObserver.unobserve(this);
 	}
 

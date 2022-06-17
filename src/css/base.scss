@@ -88,14 +88,14 @@ fieldset {
  * Удалите по мере необходимости и напишите свой собственный код для `prefers-reduced-motion`.
  */
 @media (prefers-reduced-motion: reduce) {
-	// stylelint-disable
 	*,
 	::before,
 	::after {
+		// stylelint-disable
 		animation-duration: 0.001s !important;
 		animation-delay: 0s !important;
 		transition-duration: 0.001s !important;
 		transition-delay: 0s !important;
+		// stylelint-enable
 	}
-	// stylelint-enable
 }

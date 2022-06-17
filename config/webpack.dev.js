@@ -29,6 +29,7 @@ module.exports = merge(common, {
 		rules: [
 			{
 				test: /\.s?css$/i,
+				resourceQuery: {not: [/module/]},
 				use: [
 					'style-loader',
 					{
