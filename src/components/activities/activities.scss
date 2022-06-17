@@ -27,7 +27,7 @@
 }
 
 .activities__title {
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-size: 24rem;
 	line-height: 1.2;
 	transition: color;

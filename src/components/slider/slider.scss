@@ -1,5 +1,5 @@
 .slider {
-	--width: var(--body-content-width);
+	--width: var(--app-width);
 	--gap-bottom: 52rem;
 	--image-height: clamp(507rem, 507 / 1200 * var(--width), #{vh(100)} - var(--header-height));
 	--body-height: calc(var(--image-height) + var(--gap-bottom));
@@ -131,7 +131,7 @@
 
 .slider__date {
 	flex-shrink: 0;
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-weight: 300;
 	font-size: 20rem;
 	line-height: div(24, 20);
@@ -189,7 +189,7 @@
 .slider__type {
 	overflow: hidden;
 	margin-bottom: 13rem;
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-weight: 350;
 	font-size: 16rem;
 	line-height: div(19, 16);
@@ -206,7 +206,7 @@
 .slider__place {
 	display: flex;
 	align-items: center;
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-weight: 500;
 	font-size: 16rem;
 	line-height: div(21, 16);
@@ -245,7 +245,7 @@
 	@include line-clamp;
 
 	margin: 0;
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-weight: 500;
 	font-size: 35rem;
 

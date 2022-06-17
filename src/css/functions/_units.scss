@@ -19,10 +19,10 @@
 	@return calc(#{$number} * var(--vh, 1vh));
 }
 
-@function cw($number, $base: strip-unit($container-max-width - 2 * $container-gap)) {
-	@return percentage(math.div($number, $base));
+@function em($number, $base: 16) {
+	@return math.div($number, $base) * 1em;
 }
 
-@function em($number, $base: strip-unit($font-size)) {
-	@return math.div($number, $base) * 1em;
+@function cw($number, $base: 1110) {
+	@return percentage(math.div($number, $base));
 }

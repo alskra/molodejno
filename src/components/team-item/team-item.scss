@@ -10,8 +10,8 @@
 }
 
 .team-item__title {
-	font-family: $heading-font-family;
-	font-weight: $heading-font-weight;
+	font-family: var(--heading-font-family);
+	font-weight: var(--heading-font-weight);
 	font-size: 20rem;
 	line-height: 1.25;
 	color: $color-primary;
@@ -28,7 +28,7 @@
 }
 
 .team-item__content {
-	--content-edited-interval: 5rem;
+	--content--paragraph-interval: 5rem;
 
 	&:not(:last-child) {
 		margin-bottom: 25rem;

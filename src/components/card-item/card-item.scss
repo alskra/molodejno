@@ -117,7 +117,7 @@
 
 	@include line-clamp;
 
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-weight: 500;
 	font-size: 20rem;
 	color: $color;
@@ -145,7 +145,7 @@
 .card__tags {
 	position: relative;
 	z-index: 2;
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 
 	@include media-breakpoint-up(lg) {
 		font-size: 13rem;

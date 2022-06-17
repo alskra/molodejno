@@ -12,7 +12,7 @@ html {
 body {
 	//content: calc($font-size);
 	overflow-wrap: break-word;
-	font-family: $font-family;
+	font-family: var(--font-family);
 	-webkit-font-smoothing: antialiased;
 	font-size: var(--font-size);
 	line-height: var(--line-height);

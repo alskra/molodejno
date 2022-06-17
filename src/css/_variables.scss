@@ -26,24 +26,15 @@ $color-white-pointer: #fde0ff;
 $color-green: #008000;
 $color-red: #f00;
 
-// Fonts
-$font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji";
-$font-family-helvetica-neue: "Helvetica Neue", system-ui, $font-family-emoji;
-$font-family-stolzl: "Stolzl", system-ui, $font-family-emoji;
-$font-family-stolzl-display: "Stolzl Display", system-ui, $font-family-emoji;
-$font-family-gilroy: "Gilroy", system-ui, $font-family-emoji;
-
 // Layout
 $breakpoints: (
 	xs: 360px,
 	sm: 576px,
 	md: 768px,
 	lg: 1025px,
-	xl: 1200px,
+	xl: 1200px, // default
 	xxl: 2560px
 );
-$container-gap: 15rem;
-$container-max-width: 1140rem;
 
 // Base
 $color: $color-cod-gray;
@@ -52,17 +43,11 @@ $color-primary-hover: $color-indigo;
 $color-disabled: $color-silver-2;
 $color-success: $color-green;
 $color-danger: $color-red;
-$font-family: $font-family-helvetica-neue;
-$font-size: 16rem;
-$line-height: 1.5;
 $background-color: $color-white;
 $transition-duration: 0.2s;
 
 // Heading
 $heading-color: $color;
-$heading-font-family: $font-family-stolzl;
-$heading-font-weight: 700;
-$heading-line-height: 1.15;
 
 // Image
 $image-transition: transform 3s;

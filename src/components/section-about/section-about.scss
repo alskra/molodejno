@@ -90,7 +90,7 @@
 }
 
 .section-about__title {
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-weight: 350;
 	font-size: 60rem;
 	line-height: 1.25;
@@ -179,7 +179,7 @@
 	@include media-breakpoint-down(lg) {
 		margin-right: calc(-1 * var(--container-content-offset-x));
 		margin-left: calc(-1 * var(--container-content-offset-x));
-		width: var(--body-content-width);
+		width: var(--app-width);
 		max-width: none;
 
 		&:not(:last-child) {

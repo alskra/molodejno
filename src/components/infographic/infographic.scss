@@ -105,7 +105,7 @@
 
 .infographic__title {
 	margin-bottom: -18rem;
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-weight: 500;
 	font-size: 18rem;
 	line-height: 1.8;
@@ -126,7 +126,7 @@
 
 .infographic__number {
 	position: relative;
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-weight: 700;
 	font-size: 90rem;
 	line-height: div(108, 90);
@@ -150,7 +150,7 @@
 	@include text-stroke(1px, $color-black);
 
 	margin-left: 12rem;
-	font-family: $font-family-gilroy;
+	font-family: var(--font-family-gilroy);
 	font-weight: 600;
 	font-size: 100rem;
 	line-height: div(119, 100);

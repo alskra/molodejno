@@ -89,7 +89,7 @@ function setScope(el, scope = getScope(el)) {
 	});
 }
 
-export default async function scopedCss(context = document.documentElement) {
+export default function scopedCss(context = document.documentElement) {
 	setScope(context);
 
 	const observer = new MutationObserver((records) => {

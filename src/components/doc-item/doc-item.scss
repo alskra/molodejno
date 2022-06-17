@@ -4,8 +4,8 @@
 	align-items: flex-start;
 	vertical-align: top;
 	max-width: 100%;
-	font-size: $font-size;
-	line-height: $line-height;
+	font-size: var(--font-size);
+	line-height: var(--line-height);
 	color: $color-primary;
 	transition: color;
 	transition-duration: $transition-duration;

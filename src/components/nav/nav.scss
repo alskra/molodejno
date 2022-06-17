@@ -18,7 +18,7 @@
 
 .nav__item {
 	overflow: hidden;
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-weight: 500;
 	font-size: 18rem;
 	line-height: 1.25;

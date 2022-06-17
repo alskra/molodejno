@@ -19,3 +19,11 @@
 // Gilroy
 @include font-face("~@/fonts/Gilroy/Gilroy-Semibold", "Gilroy", 600, normal);
 @include font-face("~@/fonts/Gilroy/Gilroy-Bold", "Gilroy", 700, normal);
+
+:root {
+	--font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji";
+	--font-family-helvetica-neue: "Helvetica Neue", system-ui, var(--font-family-emoji);
+	--font-family-stolzl: "Stolzl", system-ui, var(--font-family-emoji);
+	--font-family-stolzl-display: "Stolzl Display", system-ui, var(--font-family-emoji);
+	--font-family-gilroy: "Gilroy", system-ui, var(--font-family-emoji);
+}

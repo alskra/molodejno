@@ -22,7 +22,7 @@
 		}
 
 		.promo__title {
-			font-size: var(--content-edited-h2-font-size);
+			font-size: var(--content--heading-2-font-size);
 			word-wrap: normal;
 		}
 
@@ -31,7 +31,7 @@
 		}
 
 		&:not(:last-child) {
-			margin-bottom: var(--content-edited-heading-interval-bottom);
+			margin-bottom: var(--content--heading-interval-bottom);
 		}
 	}
 
@@ -115,8 +115,8 @@
 }
 
 .promo__title {
-	font-family: $heading-font-family;
-	font-weight: $heading-font-weight;
+	font-family: var(--heading-font-family);
+	font-weight: var(--heading-font-weight);
 	font-size: 40rem;
 	line-height: var(--heading-line-height);
 	color: $heading-color;

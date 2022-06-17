@@ -5,7 +5,7 @@
 .score__title {
 	display: flex;
 	align-items: flex-start;
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-weight: 700;
 	font-size: 18rem;
 	line-height: 1.25;
@@ -47,7 +47,7 @@
 
 .score__number {
 	position: relative;
-	font-family: $font-family-stolzl-display;
+	font-family: var(--font-family-stolzl-display);
 	font-weight: 700;
 
 	> div:nth-child(1) {
@@ -63,7 +63,7 @@
 .score__plus {
 	@include text-stroke(1px, $color-black);
 
-	font-family: $font-family-gilroy;
+	font-family: var(--font-family-gilroy);
 	font-weight: 600;
 	font-size: 100rem;
 }

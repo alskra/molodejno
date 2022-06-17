@@ -78,7 +78,7 @@
 
 .subsection__header {
 	&:not(:last-child) {
-		margin-bottom: var(--content-edited-heading-interval-bottom);
+		margin-bottom: var(--content--heading-interval-bottom);
 	}
 }
 
@@ -106,9 +106,9 @@
 }
 
 .subsection__title {
-	font-family: $heading-font-family;
-	font-weight: $heading-font-weight;
-	font-size: var(--content-edited-h2-font-size);
+	font-family: var(--heading-font-family);
+	font-weight: var(--heading-font-weight);
+	font-size: var(--content--heading-2-font-size);
 	line-height: var(--heading-line-height);
 	color: $heading-color;
 }

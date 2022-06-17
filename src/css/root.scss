@@ -1,4 +1,5 @@
 :root {
+	--app-width: var(--body-content-width, 100vw);
 	--gap-xs: 15rem;
 	--gap-sm: 20rem;
 	--gap: 30rem;
@@ -6,15 +7,13 @@
 	--gap-xl: 50rem;
 	--gap-2xl: 80rem;
 	--gap-3xl: 100rem;
-	--font-size: #{$font-size};
-	--line-height: #{$line-height};
-	--heading-line-height: #{$heading-line-height};
-
-	font-size: 1px;
-
-	@include media-breakpoint-down(xl) {
-		font-size: calc(0.3 / 1200 * 100vw + 0.7px);
-	}
+	//
+	--font-family: var(--font-family-helvetica-neue);
+	--font-size: 16rem;
+	--line-height: 1.5;
+	--heading-font-family: var(--font-family-stolzl);
+	--heading-font-weight: 700;
+	--heading-line-height: 1.15;
 
 	@include media-breakpoint-down(lg) {
 		--gap-xs: 10rem;
@@ -24,7 +23,18 @@
 		--gap-xl: 30rem;
 		--gap-2xl: 40rem;
 		--gap-3xl: 50rem;
+	}
+}
 
+// stylelint-disable-next-line
+:root {
+	font-size: 1px;
+
+	@include media-breakpoint-down(xl) {
+		font-size: calc(0.3 / 1200 * 100vw + 0.7px);
+	}
+
+	@include media-breakpoint-down(lg) {
 		font-size: calc(0.2 / 360 * 100vw + 0.8px);
 	}
 }

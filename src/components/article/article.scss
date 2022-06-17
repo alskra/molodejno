@@ -36,15 +36,15 @@
 		top: 0;
 		z-index: -1;
 		width: 100%;
-		height: min(1300 / 1200 * var(--body-content-width), 100%);
+		height: min(1300 / 1200 * var(--app-width), 100%);
 		background: linear-gradient(180deg, var(--theme-color) 81.03%, transparent);
 	}
 
 	@include media-breakpoint-down(lg) {
 		&::before {
 			top: auto;
-			margin-top: calc(-1 * var(--content-edited-block-interval));
-			height: min(350 / 360 * var(--body-content-width), 100%);
+			margin-top: calc(-1 * var(--content--block-interval));
+			height: min(350 / 360 * var(--app-width), 100%);
 		}
 	}
 }

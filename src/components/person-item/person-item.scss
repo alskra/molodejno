@@ -9,7 +9,7 @@
 
 .person-item__title {
 	margin-bottom: 25rem;
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-weight: 700;
 	font-size: 20rem;
 	line-height: 1.25;
@@ -59,6 +59,6 @@
 
 .person-item__position {
 	font-size: 14rem;
-	line-height: $line-height;
+	line-height: var(--line-height);
 	color: $color;
 }

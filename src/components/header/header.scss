@@ -178,7 +178,7 @@
 	align-items: center;
 	justify-self: start;
 	grid-template-columns: 41rem 1fr;
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-weight: 700;
 	font-size: 14rem;
 	line-height: div(17, 14);

@@ -1,3 +1,4 @@
+@custom-selector :--host .content;
 @custom-selector :--scope [data-s-content];
 @custom-selector :--heading :is(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6);
 @custom-selector :--heading-1 :is(h1, .h1);
@@ -6,220 +7,218 @@
 @custom-selector :--heading-4 :is(h4, .h4);
 @custom-selector :--heading-5 :is(h5, .h5);
 @custom-selector :--heading-6 :is(h6, .h6);
-@custom-selector :--link a[href]:not([href^="tel:"]);
+@custom-selector :--link :any-link:not([href^="tel:"]);
 @custom-selector :--section :is(.subsection, .subsection-section, .section-feedback, .section-about__image-4);
 
 :root {
-	--content-edited-font-size: var(--font-size);
-	--content-edited-line-height: var(--line-height);
-	--content-edited-interval: #{em(15)};
-	--content-edited-block-interval: var(--gap-lg);
-	--content-edited-h1-font-size: 60rem;
-	--content-edited-h2-font-size: 50rem;
-	--content-edited-h3-font-size: 40rem;
-	--content-edited-h4-font-size: 35rem;
-	--content-edited-h5-font-size: 30rem;
-	--content-edited-h6-font-size: 25rem;
-	--content-edited-heading-interval-top: var(--gap-2xl);
-	--content-edited-heading-interval-bottom: var(--gap);
-	--content-edited-list-indent: #{em(65)};
-	--content-edited-list-marker-size: #{em(10)};
+	--content--font-size: var(--font-size);
+	--content--line-height: var(--line-height);
+	--content--paragraph-interval: #{em(15)};
+	--content--heading-1-font-size: 60rem;
+	--content--heading-2-font-size: 50rem;
+	--content--heading-3-font-size: 40rem;
+	--content--heading-4-font-size: 35rem;
+	--content--heading-5-font-size: 30rem;
+	--content--heading-6-font-size: 25rem;
+	--content--heading-interval-top: var(--gap-2xl);
+	--content--heading-interval-bottom: var(--gap);
+	--content--list-indent: #{em(65)};
+	--content--list-marker-size: #{em(10)};
+	--content--block-interval: var(--gap-lg);
 
 	@include media-breakpoint-down(lg) {
-		--content-edited-h1-font-size: 40rem;
-		--content-edited-h2-font-size: 35rem;
-		--content-edited-h3-font-size: 30rem;
-		--content-edited-h4-font-size: 25rem;
-		--content-edited-h5-font-size: 20rem;
-		--content-edited-h6-font-size: 15rem;
-		--content-edited-list-indent: #{em(35)};
+		--content--heading-1-font-size: 40rem;
+		--content--heading-2-font-size: 35rem;
+		--content--heading-3-font-size: 30rem;
+		--content--heading-4-font-size: 25rem;
+		--content--heading-5-font-size: 20rem;
+		--content--heading-6-font-size: 15rem;
+		--content--list-indent: #{em(35)};
 	}
 }
 
-.content {
-	font-size: var(--font-size);
-	line-height: var(--line-height);
+:--host:--scope {
+	font-size: var(--content--font-size);
+	line-height: var(--content--line-height);
+}
 
-	:--scope {
-		&:first-child:not(.content :nth-child(n + 2) *) {
-			// stylelint-disable-next-line
-			margin-block-start: 0 !important;
-		}
+:first-child:not(:--host :nth-child(n + 2) *):--scope {
+	// stylelint-disable-next-line
+	margin-block-start: 0 !important;
+}
 
-		&:last-child:not(.content :nth-last-child(n + 2) *) {
-			// stylelint-disable-next-line
-			margin-block-end: 0 !important;
-		}
+:last-child:not(:--host :nth-last-child(n + 2) *):--scope {
+	// stylelint-disable-next-line
+	margin-block-end: 0 !important;
+}
+
+:--heading:--scope {
+	font-family: var(--heading-font-family);
+	font-weight: var(--heading-font-weight);
+	line-height: var(--heading-line-height);
+	color: $heading-color;
+	margin-block: var(--content--heading-interval-top) var(--content--heading-interval-bottom);
+}
+
+:--heading + :--scope,
+:--heading + * :first-child:not(:--host :--heading + * :nth-child(n + 2) *):--scope {
+	// stylelint-disable-next-line
+	margin-block-start: 0 !important;
+}
+
+:--heading-1:--scope {
+	font-size: var(--content--heading-1-font-size);
+}
+
+:--heading-2:--scope {
+	font-size: var(--content--heading-2-font-size);
+}
+
+:--heading-3:--scope {
+	font-size: var(--content--heading-3-font-size);
+	color: $color-primary;
+}
+
+:--heading-4:--scope {
+	font-size: var(--content--heading-4-font-size);
+	color: $color-primary;
+}
+
+:--heading-5:--scope {
+	font-size: var(--content--heading-5-font-size);
+	color: $color-primary;
+}
+
+:--heading-6:--scope {
+	font-size: var(--content--heading-6-font-size);
+}
+
+:is(p, ul, ol, li, dl, dt, dd):--scope {
+	margin-block: var(--content--paragraph-interval);
+}
+
+:is(ul, ol):--scope {
+	position: relative;
+	list-style: none;
+	padding-inline-start: var(--content--list-indent);
+}
+
+ul > li:--scope {
+	&::before {
+		@include conic-gradient;
+
+		content: "";
+		position: absolute;
+		margin-top: calc((var(--line-height) * 1em - var(--content--list-marker-size)) / 2);
+		border-radius: 50%;
+		width: var(--content--list-marker-size);
+		height: var(--content--list-marker-size);
+		inset-inline-start: 0;
 	}
+}
 
-	:--heading:--scope {
-		font-family: $heading-font-family;
-		font-weight: $heading-font-weight;
-		line-height: var(--heading-line-height);
-		color: $heading-color;
-		margin-block: var(--content-edited-heading-interval-top) var(--content-edited-heading-interval-bottom);
-	}
+ol:--scope {
+	counter-reset: ol;
+}
 
-	:--heading + :--scope,
-	:--heading + * :--scope:first-child:not(.content :--heading + * :nth-child(n + 2) *) {
-		// stylelint-disable-next-line
-		margin-block-start: 0 !important;
-	}
+ol > li:--scope {
+	counter-increment: ol;
 
-	:--heading-1:--scope {
-		font-size: var(--content-edited-h1-font-size);
-	}
-
-	:--heading-2:--scope {
-		font-size: var(--content-edited-h2-font-size);
-	}
-
-	:--heading-3:--scope {
-		font-size: var(--content-edited-h3-font-size);
-		color: $color-primary;
-	}
-
-	:--heading-4:--scope {
-		font-size: var(--content-edited-h4-font-size);
-		color: $color-primary;
-	}
-
-	:--heading-5:--scope {
-		font-size: var(--content-edited-h5-font-size);
-		color: $color-primary;
-	}
-
-	:--heading-6:--scope {
-		font-size: var(--content-edited-h6-font-size);
-	}
-
-	:is(p, ul, ol, li, dl, dt, dd):--scope {
-		margin-block: var(--content-edited-interval);
-	}
-
-	:is(ul, ol):--scope {
-		position: relative;
-		list-style: none;
-		padding-inline-start: var(--content-edited-list-indent);
-	}
-
-	ul > li:--scope {
-		&::before {
-			@include conic-gradient;
-
-			content: "";
-			position: absolute;
-			margin-top: calc((var(--line-height) * 1em - var(--content-edited-list-marker-size)) / 2);
-			border-radius: 50%;
-			width: var(--content-edited-list-marker-size);
-			height: var(--content-edited-list-marker-size);
-			inset-inline-start: 0;
-		}
-	}
-
-	ol:--scope {
-		counter-reset: ol;
-	}
-
-	ol > li:--scope {
-		counter-increment: ol;
-
-		&::before {
-			content: counter(ol) ".\00A0";
-			position: absolute;
-			width: var(--content-edited-list-indent);
-			text-align: start;
-			color: $color-gray;
-			inset-inline-start: 0;
-		}
-	}
-
-	:is(blockquote, table, img):--scope {
-		margin-block: var(--content-edited-block-interval);
-	}
-
-	blockquote:--scope {
-		position: relative;
-		font-family: $heading-font-family;
-		font-weight: 500;
-		font-size: em(24);
-		line-height: 1.2;
-		padding-inline-start: var(--content-edited-list-indent);
-
-		&::before {
-			content: "";
-			position: absolute;
-			top: 8rem;
-			height: min(55rem, 100% - 8rem);
-			border-inline-start: 1px solid;
-			inset-inline-start: 0;
-		}
-	}
-
-	table:--scope {
-		display: block;
-		overflow: auto;
-	}
-
-	tbody:--scope {
-		display: table;
-		border-collapse: collapse;
-	}
-
-	tr:first-child :is(th, td):--scope {
-		padding-top: 0;
-	}
-
-	tr:last-child :is(th, td):--scope {
-		padding-bottom: 0;
-	}
-
-	:is(th, td):--scope {
-		vertical-align: baseline;
-		padding: calc(0.5 * var(--content-edited-interval)) calc(0.5 * var(--gap));
-	}
-
-	:is(th, td):--scope:first-child {
-		padding-left: 0;
-	}
-
-	:is(th, td):--scope:last-child {
-		padding-right: 0;
-	}
-
-	td:--scope:first-child {
+	&::before {
+		content: counter(ol) ".\00A0";
+		position: absolute;
+		width: var(--content--list-indent);
+		text-align: start;
 		color: $color-gray;
+		inset-inline-start: 0;
+	}
+}
+
+:is(blockquote, table, img):--scope {
+	margin-block: var(--content--block-interval);
+}
+
+blockquote:not(.quote):--scope {
+	position: relative;
+	font-family: var(--heading-font-family);
+	font-weight: 500;
+	font-size: em(24);
+	line-height: 1.2;
+	padding-inline-start: var(--content--list-indent);
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 8rem;
+		height: min(55rem, 100% - 8rem);
+		border-inline-start: 1px solid;
+		inset-inline-start: 0;
+	}
+}
+
+table:--scope {
+	display: block;
+	overflow: auto;
+}
+
+tbody:--scope {
+	display: table;
+	border-collapse: collapse;
+}
+
+tr:first-child :is(th, td):--scope {
+	padding-top: 0;
+}
+
+tr:last-child :is(th, td):--scope {
+	padding-bottom: 0;
+}
+
+:is(th, td):--scope {
+	vertical-align: baseline;
+	padding: calc(0.5 * var(--content--paragraph-interval)) calc(0.5 * var(--gap));
+}
+
+:is(th, td):first-child:--scope {
+	padding-left: 0;
+}
+
+:is(th, td):last-child:--scope {
+	padding-right: 0;
+}
+
+td:first-child:--scope {
+	color: $color-gray;
+}
+
+img:--scope {
+	display: block;
+	width: 100%;
+}
+
+:--link:--scope {
+	color: $color-primary;
+	transition: $transition-duration;
+	transition-property: color;
+
+	@include hover {
+		color: $color-primary-hover;
+	}
+}
+
+:--section:--scope {
+	margin-block: var(--content--heading-interval-top) var(--content--block-interval);
+}
+
+@include media-breakpoint-down(lg) {
+	blockquote:not(.quote):--scope {
+		font-size: em(18);
 	}
 
 	img:--scope {
-		display: block;
-		width: 100%;
-	}
-
-	:--link:--scope {
-		color: $color-primary;
-		transition: $transition-duration;
-		transition-property: color;
-
-		@include hover {
-			color: $color-primary-hover;
-		}
-	}
-
-	:--section:--scope {
-		margin-block: var(--content-edited-heading-interval-top) var(--content-edited-block-interval);
-	}
-
-	@include media-breakpoint-down(lg) {
-		blockquote:--scope {
-			font-size: em(18);
-		}
-
-		img:--scope {
-			margin-right: calc(-1 * var(--container-content-offset-x));
-			margin-left: calc(-1 * var(--container-content-offset-x));
-			width: var(--body-content-width);
-			max-width: var(--body-content-width);
-		}
+		margin-right: calc(-1 * var(--container-content-offset-x));
+		margin-left: calc(-1 * var(--container-content-offset-x));
+		width: var(--app-width);
+		max-width: var(--app-width);
 	}
 }

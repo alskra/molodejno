@@ -14,7 +14,7 @@
 	display: flex;
 	column-gap: em(15, 24);
 	flex: 1;
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-weight: 300;
 	font-size: 24rem;
 	line-height: 1.25;

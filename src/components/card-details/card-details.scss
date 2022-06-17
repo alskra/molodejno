@@ -98,14 +98,14 @@
 }
 
 .card-details__content-item {
-	--content-edited-heading-interval-bottom: var(--gap-xs);
+	--content--heading-interval-bottom: var(--gap-xs);
 
 	table:not(:first-child) {
-		margin-top: var(--content-edited-interval);
+		margin-top: var(--content--paragraph-interval);
 	}
 
 	table:not(:last-child) {
-		margin-bottom: var(--content-edited-interval);
+		margin-bottom: var(--content--paragraph-interval);
 	}
 
 	&:not(:last-child) {
@@ -113,7 +113,7 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		--content-edited-font-size: 14rem;
+		--content--font-size: 14rem;
 
 		&:not(:last-child) {
 			margin-bottom: 15rem;
@@ -125,12 +125,12 @@
 
 				tbody {
 					display: grid;
-					row-gap: var(--content-edited-interval);
+					row-gap: var(--content--paragraph-interval);
 				}
 
 				tr {
 					display: grid;
-					row-gap: calc(0.5 * var(--content-edited-interval));
+					row-gap: calc(0.5 * var(--content--paragraph-interval));
 				}
 
 				:is(th, td) {

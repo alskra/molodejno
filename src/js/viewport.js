@@ -2,7 +2,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 
 const htmlEl = document.documentElement;
 const bodyEl = document.body;
-const callbacks = [];
+export const callbacks = [];
 
 function setViewportHeight() {
 	htmlEl.style.setProperty('--vh', `${innerHeight / 100}px`);

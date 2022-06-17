@@ -1,28 +1,28 @@
 .subsection-section__header {
 	&:not(:last-child) {
-		margin-bottom: var(--content-edited-heading-interval-bottom);
+		margin-bottom: var(--content--heading-interval-bottom);
 	}
 }
 
 .subsection-section__title {
-	font-family: $heading-font-family;
-	font-weight: $heading-font-weight;
+	font-family: var(--heading-font-family);
+	font-weight: var(--heading-font-weight);
 	line-height: var(--heading-line-height);
 	color: $color-primary;
 
 	&--h3 {
-		font-size: var(--content-edited-h3-font-size);
+		font-size: var(--content--heading-3-font-size);
 	}
 
 	&--h4 {
-		font-size: var(--content-edited-h4-font-size);
+		font-size: var(--content--heading-4-font-size);
 	}
 
 	&--h5 {
-		font-size: var(--content-edited-h5-font-size);
+		font-size: var(--content--heading-5-font-size);
 	}
 
 	&--h6 {
-		font-size: var(--content-edited-h6-font-size);
+		font-size: var(--content--heading-6-font-size);
 	}
 }

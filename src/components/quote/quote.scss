@@ -2,7 +2,7 @@
 	border: 1px solid $color;
 	padding: 60rem 65rem;
 	box-shadow: 10rem 10rem $color-cerulean-blue;
-	font-family: $heading-font-family;
+	font-family: var(--heading-font-family);
 	font-weight: 500;
 	font-size: 30rem;
 	line-height: 1.2;
