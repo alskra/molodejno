@@ -125,7 +125,7 @@
 .section__bg-el {
 	position: absolute;
 	left: cw(1110 - 763);
-	right: calc(-1 * var(--container-content-offset-x));
+	right: calc(-1 * var(--container--content-offset-from-body));
 	top: 0;
 	border-radius: 550rem 0 0 550rem;
 	height: 750rem;
@@ -343,15 +343,15 @@
 
 .section__grid-main {
 	.subsection {
-		margin-right: calc(-1 * var(--container-content-offset-x));
-		margin-left: calc(-1 * var(--container-content-offset-x));
+		margin-right: calc(-1 * var(--container--content-offset-from-body));
+		margin-left: calc(-1 * var(--container--content-offset-from-body));
 	}
 
 	@include media-breakpoint-up(lg) {
 		grid-column: 2 / 5;
 
 		.subsection {
-			margin-left: calc(-1 * (var(--column-offset-3) + var(--container-content-offset-x)));
+			margin-left: calc(-1 * (var(--column-offset-3) + var(--container--content-offset-from-body)));
 		}
 	}
 }

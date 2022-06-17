@@ -22,7 +22,7 @@
 		}
 
 		.promo__title {
-			font-size: var(--content--heading-2-font-size);
+			font-size: var(--heading-2-font-size);
 			word-wrap: normal;
 		}
 
@@ -31,7 +31,7 @@
 		}
 
 		&:not(:last-child) {
-			margin-bottom: var(--content--heading-interval-bottom);
+			margin-bottom: var(--heading-interval-bottom);
 		}
 	}
 

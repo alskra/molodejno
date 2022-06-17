@@ -2,10 +2,10 @@
 	overflow: hidden;
 
 	&.has-swiper {
-		margin-right: calc(-1 * var(--container-content-offset-x));
-		margin-left: calc(-1 * var(--container-content-offset-x));
-		padding-right: var(--container-content-offset-x);
-		padding-left: var(--container-content-offset-x);
+		margin-right: calc(-1 * var(--container--content-offset-from-body));
+		margin-left: calc(-1 * var(--container--content-offset-from-body));
+		padding-right: var(--container--content-offset-from-body);
+		padding-left: var(--container--content-offset-from-body);
 	}
 }
 

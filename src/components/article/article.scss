@@ -59,7 +59,7 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		margin: 0 calc(-1 * var(--container-content-offset-x));
+		margin: 0 calc(-1 * var(--container--content-offset-from-body));
 
 		&::before {
 			padding-top: min(#{cw(250, 360)}, #{vh(100)} - var(--header-height));
@@ -122,27 +122,27 @@
 
 .article__grid-main {
 	.article__subsection-group {
-		margin-right: calc(-1 * var(--container-content-offset-x));
-		margin-left: calc(-1 * var(--container-content-offset-x));
-		padding-right: var(--container-content-offset-x);
-		padding-left: var(--container-content-offset-x);
+		margin-right: calc(-1 * var(--container--content-offset-from-body));
+		margin-left: calc(-1 * var(--container--content-offset-from-body));
+		padding-right: var(--container--content-offset-from-body);
+		padding-left: var(--container--content-offset-from-body);
 	}
 
 	.subsection {
-		margin-right: calc(-1 * var(--container-content-offset-x));
-		margin-left: calc(-1 * var(--container-content-offset-x));
+		margin-right: calc(-1 * var(--container--content-offset-from-body));
+		margin-left: calc(-1 * var(--container--content-offset-from-body));
 	}
 
 	@include media-breakpoint-up(lg) {
 		grid-column: 2 / 7;
 
 		.article__subsection-group {
-			margin-left: calc(-1 * (var(--column-offset-2) + var(--container-content-offset-x)));
-			padding-left: calc(var(--column-offset-2) + var(--container-content-offset-x));
+			margin-left: calc(-1 * (var(--column-offset-2) + var(--container--content-offset-from-body)));
+			padding-left: calc(var(--column-offset-2) + var(--container--content-offset-from-body));
 		}
 
 		.subsection {
-			margin-left: calc(-1 * (var(--column-offset-2) + var(--container-content-offset-x)));
+			margin-left: calc(-1 * (var(--column-offset-2) + var(--container--content-offset-from-body)));
 		}
 	}
 }
@@ -152,7 +152,7 @@
 	margin-top: calc(-1 * var(--body-padding-top));
 
 	@include media-breakpoint-down(lg) {
-		margin-right: calc(-1 * var(--container-content-offset-x));
-		margin-left: calc(-1 * var(--container-content-offset-x));
+		margin-right: calc(-1 * var(--container--content-offset-from-body));
+		margin-left: calc(-1 * var(--container--content-offset-from-body));
 	}
 }

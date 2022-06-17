@@ -22,7 +22,7 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		--content--font-size: 14rem;
+		--font-size: 14rem;
 
 		&:not(:last-child) {
 			margin-bottom: 25rem;

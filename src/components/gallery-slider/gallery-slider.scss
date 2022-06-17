@@ -8,7 +8,7 @@
 	@include media-breakpoint-down(lg) {
 		--gap: 3rem;
 
-		margin: 0 calc(-1 * var(--container-content-offset-x));
+		margin: 0 calc(-1 * var(--container--content-offset-from-body));
 	}
 }
 
@@ -33,7 +33,7 @@
 	@include media-breakpoint-down(lg) {
 		--height: #{cw(250, 340)};
 
-		width: calc(100% - var(--gap) - var(--container-content-offset-x));
+		width: calc(100% - var(--gap) - var(--container--content-offset-from-body));
 	}
 }
 

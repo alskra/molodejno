@@ -20,7 +20,7 @@
 
 .section-feedback__image {
 	position: absolute;
-	right: calc(var(--container-content-offset-x) - 83rem - 45rem);
+	right: calc(var(--container--content-offset-from-body) - 83rem - 45rem);
 	top: 0;
 	bottom: 0;
 	z-index: -1;

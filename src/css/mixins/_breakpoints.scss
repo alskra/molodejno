@@ -5,7 +5,7 @@
 		$breakpoint: map-get($breakpoints, $breakpoint);
 	}
 
-	@media (min-width: $breakpoint) {
+	@media (width >= $breakpoint) {
 		@content;
 	}
 }
@@ -15,7 +15,7 @@
 		$breakpoint: map-get($breakpoints, $breakpoint);
 	}
 
-	@media (max-width: $breakpoint - 0.02) {
+	@media (width < $breakpoint) {
 		@content;
 	}
 }
@@ -29,7 +29,7 @@
 		$breakpoint-end: map-get($breakpoints, $breakpoint-end);
 	}
 
-	@media (min-width: $breakpoint-start) and (max-width: $breakpoint-end - 0.02) {
+	@media (width >= $breakpoint-start) and (width < $breakpoint-end) {
 		@content;
 	}
 }

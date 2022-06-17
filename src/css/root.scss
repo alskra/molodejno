@@ -7,21 +7,38 @@
 	--gap-2xl: 80rem;
 	--gap-3xl: 100rem;
 	--gap: var(--gap-md);
+	//
 	--font-family: var(--font-family-helvetica-neue);
 	--font-size: 16rem;
 	--line-height: 1.5;
+	//
 	--color: #{$color};
 	--color-primary: #{$color-primary};
 	--color-primary-hover: #{$color-primary-hover};
 	--color-disabled: #{$color-disabled};
 	--color-success: #{$color-success};
 	--color-danger: #{$color-danger};
+	//
+	--paragraph-interval: #{em(15)};
 	--bg-color: #{$color-white};
 	--transition-duration: 0.2s;
+	//
 	--heading-font-family: var(--font-family-stolzl);
 	--heading-font-weight: 700;
+	--heading-1-font-size: 60rem;
+	--heading-2-font-size: 50rem;
+	--heading-3-font-size: 40rem;
+	--heading-4-font-size: 35rem;
+	--heading-5-font-size: 30rem;
+	--heading-6-font-size: 25rem;
 	--heading-line-height: 1.15;
 	--heading-color: #{$heading-color};
+	--heading-interval-top: var(--gap-2xl);
+	--heading-interval-bottom: var(--gap);
+	//
+	--list-indent: #{em(65)};
+	--list-marker-size: #{em(10)};
+	//
 	--image-transition: transform 3s;
 	--image-hover-transform: scale(1.1);
 
@@ -33,6 +50,15 @@
 		--gap-xl: 30rem;
 		--gap-2xl: 40rem;
 		--gap-3xl: 50rem;
+		//
+		--heading-1-font-size: 40rem;
+		--heading-2-font-size: 35rem;
+		--heading-3-font-size: 30rem;
+		--heading-4-font-size: 25rem;
+		--heading-5-font-size: 20rem;
+		--heading-6-font-size: 15rem;
+		//
+		--list-indent: #{em(35)};
 	}
 }
 

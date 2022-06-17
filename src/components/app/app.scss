@@ -4,6 +4,7 @@
 }
 
 .app {
+	position: relative;
 	display: flex;
 	flex-flow: column;
 	min-height: vh(100);

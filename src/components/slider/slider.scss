@@ -73,7 +73,7 @@
 	&::after {
 		content: "";
 		position: absolute;
-		left: calc(-1 * var(--container-content-offset-x));
+		left: calc(-1 * var(--container--content-offset-from-body));
 		z-index: -1;
 		border-radius: 0 var(--bg-radius) var(--bg-radius) 0;
 	}
@@ -109,7 +109,7 @@
 
 		&::before,
 		&::after {
-			right: calc(-1 * var(--container-content-offset-x));
+			right: calc(-1 * var(--container--content-offset-from-body));
 			border-radius: 0;
 		}
 

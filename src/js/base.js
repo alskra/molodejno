@@ -52,7 +52,9 @@ const start = performance.now();
 
 scopedCss();
 
-// eslint-disable-next-line no-console
-console.log(performance.now() - start);
+if (process.env.NODE_ENV === 'development') {
+	// eslint-disable-next-line no-console
+	console.log('`scoped-css` init time is:', performance.now() - start);
+}
 
 AOS.init();

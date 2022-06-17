@@ -3,7 +3,7 @@
 	background: $color-white;
 
 	@include media-breakpoint-down(lg) {
-		padding: 25rem var(--container-gap) 30rem;
+		padding: 25rem var(--container--padding) 30rem;
 	}
 }
 
@@ -98,14 +98,14 @@
 }
 
 .card-details__content-item {
-	--content--heading-interval-bottom: var(--gap-xs);
+	--heading-interval-bottom: var(--gap-xs);
 
 	table:not(:first-child) {
-		margin-top: var(--content--paragraph-interval);
+		margin-top: var(--paragraph-interval);
 	}
 
 	table:not(:last-child) {
-		margin-bottom: var(--content--paragraph-interval);
+		margin-bottom: var(--paragraph-interval);
 	}
 
 	&:not(:last-child) {
@@ -113,7 +113,7 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		--content--font-size: 14rem;
+		--font-size: 14rem;
 
 		&:not(:last-child) {
 			margin-bottom: 15rem;
@@ -125,12 +125,12 @@
 
 				tbody {
 					display: grid;
-					row-gap: var(--content--paragraph-interval);
+					row-gap: var(--paragraph-interval);
 				}
 
 				tr {
 					display: grid;
-					row-gap: calc(0.5 * var(--content--paragraph-interval));
+					row-gap: calc(0.5 * var(--paragraph-interval));
 				}
 
 				:is(th, td) {

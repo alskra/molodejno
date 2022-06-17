@@ -30,7 +30,7 @@
 
 	@include media-breakpoint-down(lg) {
 		flex-flow: column;
-		padding: 0 var(--container-gap);
+		padding: 0 var(--container--padding);
 		row-gap: 22rem;
 	}
 }

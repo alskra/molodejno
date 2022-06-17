@@ -1,6 +1,6 @@
 .subsection-section__header {
 	&:not(:last-child) {
-		margin-bottom: var(--content--heading-interval-bottom);
+		margin-bottom: var(--heading-interval-bottom);
 	}
 }
 
@@ -11,18 +11,18 @@
 	color: var(--color-primary);
 
 	&--h3 {
-		font-size: var(--content--heading-3-font-size);
+		font-size: var(--heading-3-font-size);
 	}
 
 	&--h4 {
-		font-size: var(--content--heading-4-font-size);
+		font-size: var(--heading-4-font-size);
 	}
 
 	&--h5 {
-		font-size: var(--content--heading-5-font-size);
+		font-size: var(--heading-5-font-size);
 	}
 
 	&--h6 {
-		font-size: var(--content--heading-6-font-size);
+		font-size: var(--heading-6-font-size);
 	}
 }
