@@ -8,7 +8,7 @@
 	@include media-breakpoint-down(lg) {
 		--gap: 3rem;
 
-		margin: 0 calc(-1 * var(--container--content-offset-from-body));
+		margin: 0 calc(-1 * var(--content-offset));
 	}
 }
 
@@ -27,13 +27,13 @@
 	&::before {
 		content: "";
 		display: block;
-		padding-top: min(var(--height), #{vh(100)} - var(--header-sticky-height));
+		padding-top: min(var(--height), #{vh(100)} - var(--header--sticky-height));
 	}
 
 	@include media-breakpoint-down(lg) {
 		--height: #{cw(250, 340)};
 
-		width: calc(100% - var(--gap) - var(--container--content-offset-from-body));
+		width: calc(100% - var(--gap) - var(--content-offset));
 	}
 }
 

@@ -20,13 +20,13 @@
 
 .anchor {
 	position: absolute;
-	top: calc(-1 * var(--header-sticky-height));
+	top: calc(-1 * var(--header--sticky-height));
 	visibility: hidden;
 }
 
 .from-container-to-body {
-	margin-right: calc(-1 * var(--container--content-offset-from-body));
-	margin-left: calc(-1 * var(--container--content-offset-from-body));
+	margin-right: calc(-1 * var(--content-offset));
+	margin-left: calc(-1 * var(--content-offset));
 }
 
 @each $name, $value in $breakpoints {

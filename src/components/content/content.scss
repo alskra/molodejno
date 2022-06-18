@@ -192,8 +192,8 @@ img:--scope {
 	}
 
 	img:--scope {
-		margin-right: calc(-1 * var(--container--content-offset-from-body));
-		margin-left: calc(-1 * var(--container--content-offset-from-body));
+		margin-right: calc(-1 * var(--content-offset));
+		margin-left: calc(-1 * var(--content-offset));
 		width: var(--app--width);
 		max-width: var(--app--width);
 	}

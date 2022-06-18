@@ -125,7 +125,7 @@
 .section__bg-el {
 	position: absolute;
 	left: cw(1110 - 763);
-	right: calc(-1 * var(--container--content-offset-from-body));
+	right: calc(-1 * var(--content-offset));
 	top: 0;
 	border-radius: 550rem 0 0 550rem;
 	height: 750rem;
@@ -326,10 +326,10 @@
 .section__grid-aside {
 	@include media-breakpoint-up(lg) {
 		position: sticky;
-		top: calc(var(--header-sticky-height) + 20rem);
+		top: calc(var(--header--sticky-height) + 20rem);
 		z-index: 1;
 		overflow-y: auto;
-		max-height: calc(#{vh(100)} - (var(--header-sticky-height) + 20rem) - 20rem);
+		max-height: calc(#{vh(100)} - (var(--header--sticky-height) + 20rem) - 20rem);
 
 		&::-webkit-scrollbar {
 			display: none;
@@ -343,15 +343,15 @@
 
 .section__grid-main {
 	.subsection {
-		margin-right: calc(-1 * var(--container--content-offset-from-body));
-		margin-left: calc(-1 * var(--container--content-offset-from-body));
+		margin-right: calc(-1 * var(--content-offset));
+		margin-left: calc(-1 * var(--content-offset));
 	}
 
 	@include media-breakpoint-up(lg) {
 		grid-column: 2 / 5;
 
 		.subsection {
-			margin-left: calc(-1 * (var(--column-offset-3) + var(--container--content-offset-from-body)));
+			margin-left: calc(-1 * (var(--column-offset-3) + var(--content-offset)));
 		}
 	}
 }

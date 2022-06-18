@@ -2,22 +2,7 @@
 	--container--max-width: 1140rem;
 	--container--padding: 15rem;
 	--container--width: min(var(--app--width), var(--container--max-width));
-	--container--content-width: calc(var(--container--width) - 2 * var(--container--padding));
-	--container--content-offset-from-body: calc((var(--app--width) - var(--container--content-width)) / 2);
 
-	@for $size from 1 through 12 {
-		$columns: div(12, $size);
-
-		--column-#{$size}: calc((var(--container--content-width) - #{$columns - 1} * var(--gap)) / #{$columns});
-	}
-
-	@for $size from 1 through 12 {
-		$columns: div(12, $size);
-
-		--column-offset-#{$size}: calc(var(--column-#{$size}) + var(--gap));
-	}
-
-	// stylelint-disable-next-line
 	@include media-breakpoint-down(lg) {
 		--container--padding: 19rem;
 		--container--max-width: var(--app--width);

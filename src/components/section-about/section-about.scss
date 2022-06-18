@@ -148,7 +148,7 @@
 
 	@include media-breakpoint-down(lg) {
 		img {
-			max-height: calc(#{vh(100)} - var(--header-sticky-height));
+			max-height: calc(#{vh(100)} - var(--header--sticky-height));
 		}
 	}
 }
@@ -177,8 +177,8 @@
 	}
 
 	@include media-breakpoint-down(lg) {
-		margin-right: calc(-1 * var(--container--content-offset-from-body));
-		margin-left: calc(-1 * var(--container--content-offset-from-body));
+		margin-right: calc(-1 * var(--content-offset));
+		margin-left: calc(-1 * var(--content-offset));
 		width: var(--app--width);
 		max-width: none;
 

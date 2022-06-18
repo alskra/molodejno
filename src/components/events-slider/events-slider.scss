@@ -8,10 +8,10 @@
 
 .events-slider__main {
 	overflow: hidden;
-	margin-right: calc(-1 * var(--container--content-offset-from-body));
-	margin-left: calc(-1 * var(--container--content-offset-from-body));
-	padding-right: var(--container--content-offset-from-body);
-	padding-left: var(--container--content-offset-from-body);
+	margin-right: calc(-1 * var(--content-offset));
+	margin-left: calc(-1 * var(--content-offset));
+	padding-right: var(--content-offset);
+	padding-left: var(--content-offset);
 
 	@include media-breakpoint-down(lg) {
 		--gap: 3rem;

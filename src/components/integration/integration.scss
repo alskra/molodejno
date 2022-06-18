@@ -18,7 +18,7 @@
 	display: block;
 
 	@include media-breakpoint-down(lg) {
-		margin: 0 calc(-1 * var(--container--content-offset-from-body));
+		margin: 0 calc(-1 * var(--content-offset));
 	}
 }
 

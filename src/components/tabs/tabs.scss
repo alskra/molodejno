@@ -1,7 +1,7 @@
 .tabs__items {
 	overflow: hidden;
-	margin: 0 calc(-1 * var(--container--content-offset-from-body)) 25rem;
-	padding: 0 var(--container--content-offset-from-body);
+	margin: 0 calc(-1 * var(--content-offset)) 25rem;
+	padding: 0 var(--content-offset);
 
 	@include media-breakpoint-up(lg) {
 		:is(.section__grid-main, .article__grid-main) & {

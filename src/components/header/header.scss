@@ -1,20 +1,20 @@
 :root {
-	--header-height: 140rem;
-	--header-sticky-height: 50rem;
+	--header--height: 140rem;
+	--header--sticky-height: 50rem;
 
 	@include media-breakpoint-down(lg) {
-		--header-height: min(60rem, 1.2 * 60px);
-		--header-sticky-height: var(--header-height);
+		--header--height: min(60rem, 1.2 * 60px);
+		--header--sticky-height: var(--header--height);
 	}
 }
 
 .header {
 	position: sticky;
-	top: calc(var(--header-sticky-height) - var(--header-height));
+	top: calc(var(--header--sticky-height) - var(--header--height));
 	z-index: 100;
 	display: flex;
 	flex-flow: column;
-	height: var(--header-height);
+	height: var(--header--height);
 	background: var(--bg-color);
 	user-select: none;
 
@@ -25,7 +25,7 @@
 
 		.header__grid {
 			grid-template-columns: 94fr 830fr 186fr;
-			grid-template-rows: 1px calc(var(--header-sticky-height) - 1px);
+			grid-template-rows: 1px calc(var(--header--sticky-height) - 1px);
 		}
 
 		.header__grid::before,
@@ -148,7 +148,7 @@
 		position: fixed;
 		left: 0;
 		right: 0;
-		top: var(--header-height);
+		top: var(--header--height);
 		bottom: 0;
 		z-index: 100;
 		background: inherit;
@@ -159,7 +159,7 @@
 	display: grid;
 	align-items: center;
 	grid-template-columns: 202fr 228fr + 250fr + 228fr 202fr;
-	grid-template-rows: calc(var(--header-height) - var(--header-sticky-height)) var(--header-sticky-height);
+	grid-template-rows: calc(var(--header--height) - var(--header--sticky-height)) var(--header--sticky-height);
 
 	@include media-breakpoint-down(lg) {
 		align-items: stretch;

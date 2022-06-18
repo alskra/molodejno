@@ -1,7 +1,7 @@
 .slider {
 	--width: var(--app--width);
 	--gap-bottom: 52rem;
-	--image-height: clamp(507rem, 507 / 1200 * var(--width), #{vh(100)} - var(--header-height));
+	--image-height: clamp(507rem, 507 / 1200 * var(--width), #{vh(100)} - var(--header--height));
 	--body-height: calc(var(--image-height) + var(--gap-bottom));
 	--bg-offset-y: 10rem;
 	--bg-radius: calc((var(--body-height) - var(--bg-offset-y)) / 2);
@@ -10,7 +10,7 @@
 
 	@include media-breakpoint-down(lg) {
 		--gap-bottom: 0;
-		--image-height: clamp(300rem, 300 / 360 * var(--width), #{vh(100)} - var(--header-height));
+		--image-height: clamp(300rem, 300 / 360 * var(--width), #{vh(100)} - var(--header--height));
 		--body-height: auto;
 		--bg-radius: #{cw(div(506, 2) - (506 - 360), 360)};
 	}
@@ -73,7 +73,7 @@
 	&::after {
 		content: "";
 		position: absolute;
-		left: calc(-1 * var(--container--content-offset-from-body));
+		left: calc(-1 * var(--content-offset));
 		z-index: -1;
 		border-radius: 0 var(--bg-radius) var(--bg-radius) 0;
 	}
@@ -109,7 +109,7 @@
 
 		&::before,
 		&::after {
-			right: calc(-1 * var(--container--content-offset-from-body));
+			right: calc(-1 * var(--content-offset));
 			border-radius: 0;
 		}
 

@@ -1,4 +1,4 @@
-// Colors
+// Named colors
 $color-black: #000;
 $color-white: #fff;
 $color-cod-gray: #131313;
@@ -26,13 +26,23 @@ $color-white-pointer: #fde0ff;
 $color-green: #008000;
 $color-red: #f00;
 
-// Style colors
+// Colors
 $color: $color-cod-gray;
 $color-primary: $color-royal-blue;
 $color-primary-hover: $color-indigo;
 $color-disabled: $color-silver-2;
 $color-success: $color-green;
 $color-danger: $color-red;
+$colors: (
+	color: $color,
+	color-primary: $color-primary,
+	color-primary-hover: $color-primary-hover,
+	color-disabled: $color-disabled,
+	color-success: $color-success,
+	color-danger: $color-danger,
+);
+
+// Type
 $heading-color: $color;
 
 // Layout
