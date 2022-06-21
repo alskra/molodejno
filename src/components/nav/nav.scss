@@ -25,7 +25,7 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	transition: color;
-	transition-duration: var(--transition-duration);
+	transition-duration: var(--duration);
 
 	@include hover {
 		color: var(--color-primary);

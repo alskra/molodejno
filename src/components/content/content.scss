@@ -30,10 +30,6 @@
 }
 
 :--heading:--scope {
-	font-family: var(--heading-font-family);
-	font-weight: var(--heading-font-weight);
-	line-height: var(--heading-line-height);
-	color: var(--heading-color);
 	margin-block: var(--heading-interval-top) var(--heading-interval-bottom);
 }
 
@@ -43,31 +39,14 @@
 	margin-block-start: 0 !important;
 }
 
-:--heading-1:--scope {
-	font-size: var(--heading-1-font-size);
-}
-
-:--heading-2:--scope {
-	font-size: var(--heading-2-font-size);
-}
-
-:--heading-3:--scope {
-	font-size: var(--heading-3-font-size);
-	color: var(--color-primary);
-}
-
-:--heading-4:--scope {
-	font-size: var(--heading-4-font-size);
-	color: var(--color-primary);
-}
-
-:--heading-5:--scope {
-	font-size: var(--heading-5-font-size);
-	color: var(--color-primary);
-}
-
-:--heading-6:--scope {
-	font-size: var(--heading-6-font-size);
+@for $level from 1 through 6 {
+	:--heading-#{$level}:--scope {
+		font-family: var(--heading-#{$level}-font-family, var(--heading-font-family));
+		font-weight: var(--heading-#{$level}-font-weight, var(--heading-font-weight));
+		font-size: var(--heading-#{$level}-font-size);
+		line-height: var(--heading-#{$level}-line-height, var(--heading-line-height));
+		color: var(--heading-#{$level}-color, var(--heading-color));
+	}
 }
 
 :is(p, ul, ol, li, dl, dt, dd):--scope {
@@ -113,7 +92,7 @@ ol > li:--scope {
 
 :--link:--scope {
 	color: var(--color-primary);
-	transition: color var(--transition-duration);
+	transition: color var(--duration);
 
 	@include hover {
 		color: var(--color-primary-hover);

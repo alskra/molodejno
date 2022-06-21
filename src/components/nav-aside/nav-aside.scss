@@ -9,7 +9,7 @@
 	font-size: 16rem;
 	line-height: 1.25;
 	transition: color;
-	transition-duration: var(--transition-duration);
+	transition-duration: var(--duration);
 
 	@include hover {
 		&:not(.is-active) {

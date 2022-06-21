@@ -8,7 +8,7 @@
 	max-width: 100%;
 	box-sizing: border-box;
 	transition: border-color, box-shadow, color, background-color, opacity;
-	transition-duration: var(--transition-duration);
+	transition-duration: var(--duration);
 	cursor: text;
 
 	@include disabled {

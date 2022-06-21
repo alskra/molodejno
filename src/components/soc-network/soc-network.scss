@@ -8,7 +8,7 @@
 .soc-network__item {
 	flex-shrink: 0;
 	color: $color-black;
-	transition: color var(--transition-duration);
+	transition: color var(--duration);
 
 	@include hover {
 		color: var(--color-primary);

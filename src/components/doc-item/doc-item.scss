@@ -8,7 +8,7 @@
 	line-height: var(--line-height);
 	color: var(--color-primary);
 	transition: color;
-	transition-duration: var(--transition-duration);
+	transition-duration: var(--duration);
 
 	@include hover {
 		color: var(--color-primary-hover);
@@ -29,7 +29,7 @@
 			height: 1px;
 			background: var(--color);
 			transition: height;
-			transition-duration: var(--transition-duration);
+			transition-duration: var(--duration);
 		}
 
 		.doc-item__icon {

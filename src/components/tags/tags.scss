@@ -16,7 +16,7 @@
 
 .tags__item {
 	transition: color;
-	transition-duration: var(--transition-duration);
+	transition-duration: var(--duration);
 
 	&::before {
 		content: "#\00A0";

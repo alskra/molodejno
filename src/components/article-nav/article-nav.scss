@@ -19,7 +19,7 @@
 	line-height: 1.25;
 	color: var(--color);
 	transition: color;
-	transition-duration: var(--transition-duration);
+	transition-duration: var(--duration);
 
 	@include hover {
 		&:not(.is-active) {

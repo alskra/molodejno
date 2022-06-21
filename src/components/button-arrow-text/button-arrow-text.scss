@@ -1,6 +1,5 @@
 .button-arrow-text {
-	--color: #{$color};
-	--color-hover: #{var(--color-primary)};
+	--color-hover: var(--color-primary);
 
 	@include button;
 
@@ -63,7 +62,7 @@
 		width: 100%;
 		height: 100%;
 		transition: width;
-		transition-duration: var(--transition-duration);
+		transition-duration: var(--duration);
 	}
 }
 

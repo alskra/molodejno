@@ -27,23 +27,24 @@ $color-green: #008000;
 $color-red: #f00;
 
 // Colors
-$color: $color-cod-gray;
+$color-text: $color-cod-gray;
+$color-bg: $color-white;
+$color-heading: $color-text;
 $color-primary: $color-royal-blue;
 $color-primary-hover: $color-indigo;
 $color-disabled: $color-silver-2;
 $color-success: $color-green;
 $color-danger: $color-red;
 $colors: (
-	color: $color,
+	color-text: $color-text,
+	color-bg: $color-bg,
+	color-heading: $color-heading,
 	color-primary: $color-primary,
 	color-primary-hover: $color-primary-hover,
 	color-disabled: $color-disabled,
 	color-success: $color-success,
 	color-danger: $color-danger,
 );
-
-// Type
-$heading-color: $color;
 
 // Layout
 $breakpoints: (

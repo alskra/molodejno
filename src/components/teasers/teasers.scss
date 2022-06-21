@@ -42,7 +42,7 @@
 
 	.h5 {
 		transition: color;
-		transition-duration: var(--transition-duration);
+		transition-duration: var(--duration);
 	}
 
 	@include media-breakpoint-down(lg) {

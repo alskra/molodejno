@@ -23,7 +23,7 @@
 	a {
 		color: var(--color-primary);
 		transition: color;
-		transition-duration: var(--transition-duration);
+		transition-duration: var(--duration);
 
 		@include hover {
 			color: var(--color-primary-hover);

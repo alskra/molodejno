@@ -17,7 +17,7 @@
 .breadcrumbs__link {
 	text-decoration: underline;
 	transition: color;
-	transition-duration: var(--transition-duration);
+	transition-duration: var(--duration);
 
 	@include hover {
 		text-decoration: none;

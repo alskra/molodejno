@@ -1,6 +1,5 @@
 .button-arrow {
-	--color: #{$color};
-	--color-hover: #{var(--color-primary)};
+	--color-hover: var(--color-primary);
 
 	@include button;
 

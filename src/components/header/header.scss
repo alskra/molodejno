@@ -110,7 +110,7 @@
 		top: 50%;
 		border-top: 1px solid var(--heading-color);
 		width: 100%;
-		transition: var(--transition-duration);
+		transition: var(--duration);
 	}
 
 	&::before {
@@ -184,7 +184,7 @@
 	line-height: div(17, 14);
 	text-transform: uppercase;
 	color: $color-black;
-	transition: color var(--transition-duration);
+	transition: color var(--duration);
 	user-select: none;
 
 	@include hover {

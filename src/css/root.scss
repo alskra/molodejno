@@ -21,8 +21,11 @@
 // Type
 :root {
 	--font-family: var(--font-family-helvetica-neue);
+	--font-weight: 400;
 	--font-size: 16rem;
 	--line-height: 1.5;
+	--color: var(--color-text);
+	--bg-color: var(--color-bg);
 	--paragraph-interval: #{em(15)};
 	--heading-font-family: var(--font-family-stolzl);
 	--heading-font-weight: 700;
@@ -33,7 +36,10 @@
 	--heading-5-font-size: 30rem;
 	--heading-6-font-size: 25rem;
 	--heading-line-height: 1.15;
-	--heading-color: #{$heading-color};
+	--heading-color: var(--color-heading);
+	--heading-3-color: var(--color-primary);
+	--heading-4-color: var(--color-primary);
+	--heading-5-color: var(--color-primary);
 	--heading-interval-top: var(--gap-2xl);
 	--heading-interval-bottom: var(--gap);
 	--list-indent: #{em(65)};
@@ -90,8 +96,7 @@
 
 // Other
 :root {
-	--bg-color: #{$color-white};
-	--transition-duration: 0.2s;
+	--duration: 0.2s;
 	--image-transition: transform 3s;
 	--image-hover-transform: scale(1.1);
 }
