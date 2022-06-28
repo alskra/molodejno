@@ -34,7 +34,7 @@
 }
 
 :--heading + :--scope,
-:--heading + * :first-child:not(:--host :--heading + * :nth-child(n + 2) *):--scope {
+:--heading + * :first-child:not(:--heading + * :nth-child(n + 2) *):--scope {
 	// stylelint-disable-next-line
 	margin-block-start: 0 !important;
 }

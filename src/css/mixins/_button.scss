@@ -10,8 +10,8 @@
 	max-width: 100%;
 	box-sizing: border-box;
 	white-space: nowrap;
-	transition: border-color, box-shadow, color, background-color, opacity;
-	transition-duration: var(--duration);
+	transition: var(--duration);
+	transition-property: border-color, box-shadow, color, background-color, opacity;
 	cursor: pointer;
 	user-select: none;
 

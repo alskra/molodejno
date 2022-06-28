@@ -21,13 +21,13 @@ function setBodySizes(contentSizes) {
 	htmlEl.style.setProperty('--body-content-width', `${contentWidth}px`);
 }
 
-function setScroll() {
-	htmlEl.style.setProperty('--scroll-y', `${scrollY}px`);
-}
+// function setScroll() {
+// 	htmlEl.style.setProperty('--scroll-y', `${scrollY}px`);
+// }
 
 setViewportHeight();
 setBodySizes();
-setScroll();
+// setScroll();
 
 window.addEventListener('resize', () => {
 	setViewportHeight();
@@ -50,24 +50,24 @@ const resizeObserver = new ResizeObserver((entries) => {
 resizeObserver.observe(bodyEl);
 
 window.addEventListener('scroll', () => {
-	setScroll();
+	// setScroll();
 	callbacks.forEach((callback) => callback());
 }, {passive: true});
 
-const mutationObserver = new MutationObserver((records) => {
-	records.forEach((record) => {
-		if (record.type !== 'attributes' || record.target.getAttribute(record.attributeName) !== record.oldValue) {
-			// eslint-disable-next-line no-console
-			// console.log(record);
-			callbacks.forEach((callback) => callback());
-		}
-	});
-});
-
-mutationObserver.observe(document, {
-	subtree: true,
-	childList: true,
-	attributes: true,
-	attributeOldValue: true,
-	characterData: true,
-});
+// const mutationObserver = new MutationObserver((records) => {
+// 	records.forEach((record) => {
+// 		if (record.type !== 'attributes' || record.target.getAttribute(record.attributeName) !== record.oldValue) {
+// 			// eslint-disable-next-line no-console
+// 			// console.log(record);
+// 			callbacks.forEach((callback) => callback());
+// 		}
+// 	});
+// });
+//
+// mutationObserver.observe(document, {
+// 	subtree: true,
+// 	childList: true,
+// 	attributes: true,
+// 	attributeOldValue: true,
+// 	characterData: true,
+// });

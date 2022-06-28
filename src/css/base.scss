@@ -79,7 +79,7 @@ fieldset {
 
 ::selection {
 	color: $color-white;
-	background: rgba(var(--color-primary-hover), 0.9);
+	background: rgba($color-primary-hover, 0.9);
 }
 
 /*
