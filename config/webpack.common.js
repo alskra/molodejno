@@ -88,6 +88,9 @@ module.exports = {
 					{
 						loader: 'sass-loader',
 						options: {
+							sassOptions: {
+								outputStyle: 'expanded',
+							},
 							sourceMap: true,
 							additionalData: '@use "/css/global" as *;\n\n',
 						},

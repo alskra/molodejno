@@ -38,11 +38,9 @@ module.exports = merge(common, {
 					{
 						loader: 'sass-loader',
 						options: {
-							// sassOptions: {
-							// 	outputStyle: 'expanded',
-							// 	indentType: 'tab',
-							// 	indentWidth: 1,
-							// },
+							sassOptions: {
+								outputStyle: 'expanded',
+							},
 							sourceMap: true,
 							additionalData: '@use "/css/global" as *;\n\n',
 						},

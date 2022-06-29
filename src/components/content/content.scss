@@ -91,11 +91,13 @@ ol > li:--scope {
 }
 
 :--link:--scope {
-	color: var(--color-primary);
+	text-decoration: var(--link-text-decoration);
+	color: var(--link-color);
 	transition: color var(--duration);
 
 	@include hover {
-		color: var(--color-primary-hover);
+		text-decoration: var(--link-hover-text-decoration, var(--link-text-decoration));
+		color: var(--link-hover-color, var(--link-color));
 	}
 }
 

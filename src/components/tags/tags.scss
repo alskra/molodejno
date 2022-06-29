@@ -1,6 +1,6 @@
 .tags {
-	--color: #{var(--color-primary)};
-	--color-hover: #{var(--color-primary-hover)};
+	--color: var(--color-primary);
+	--color-hover: var(--color-primary-hover);
 
 	display: flex;
 	flex-flow: wrap;
