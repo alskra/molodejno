@@ -1,4 +1,8 @@
 @forward "sass:math";
+@forward "sass:list";
 @forward "variables";
 @forward "functions";
 @forward "mixins";
+
+@custom-selector :--disabled :is(:disabled, [disabled], .is-disabled);
+@custom-selector :--invalid .is-invalid;

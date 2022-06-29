@@ -11,9 +11,13 @@
 	}
 }
 
-// Colors
+// Colors and Gradients
 :root {
 	@each $name, $value in $colors {
+		--#{$name}: #{$value};
+	}
+
+	@each $name, $value in $gradients {
 		--#{$name}: #{$value};
 	}
 }

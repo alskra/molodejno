@@ -45,6 +45,10 @@ $colors: (
 	color-success: $color-success,
 	color-danger: $color-danger,
 );
+$gradients: (
+	gradient-conic: conic-gradient(from 135deg, $color-cornflower-blue, $color-governor-bay-2),
+	gradient-section: linear-gradient(180deg, $color-aero-blue 51.03%, $color-onahau),
+);
 
 // Layout
 $breakpoints: (

@@ -15,11 +15,11 @@
 	cursor: pointer;
 	user-select: none;
 
-	@include focus-visible {
+	&:focus-visible {
 		@include focus-visible-default;
 	}
 
-	@include disabled {
+	&:--disabled {
 		cursor: default;
 		pointer-events: none;
 	}

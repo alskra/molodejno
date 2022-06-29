@@ -17,20 +17,20 @@
 		}
 	}
 
-	@include invalid {
+	&:--invalid {
 		+ .form-check__el {
 			border-color: var(--color-danger);
 			color: var(--color-danger);
 		}
 	}
 
-	@include focus-visible {
+	&:focus-visible {
 		+ .form-check__el {
 			@include focus-visible-default;
 		}
 	}
 
-	@include disabled {
+	&:--disabled {
 		+ .form-check__el {
 			opacity: 0.85;
 			cursor: default;

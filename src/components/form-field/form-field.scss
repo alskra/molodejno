@@ -1,9 +1,3 @@
-@keyframes form-field-autofill {
-	to {
-		color: #008000;
-	}
-}
-
 .form-field {
 	@include form-field;
 
@@ -21,17 +15,12 @@
 		transition: inherit;
 	}
 
-	//&:-internal-autofill-selected {
-	//	//animation: form-field-autofill both;
-	//	transition-duration: 5000s;
-	//}
-
-	@include invalid {
+	&:--invalid {
 		border-bottom-color: var(--color-danger);
 		color: var(--color-danger);
 	}
 
-	@include disabled {
+	&:--disabled {
 		color: var(--color-disabled);
 		opacity: 0.85;
 	}

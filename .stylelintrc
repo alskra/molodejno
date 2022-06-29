@@ -37,21 +37,11 @@
 			},
 			{
 				"type": "rule",
-				"selector": "&:invalid"
-			},
-			{
-				"type": "at-rule",
-				"name": "include",
-				"parameter": "invalid"
+				"selector": "&:(--)?invalid"
 			},
 			{
 				"type": "rule",
 				"selector": "&:focus"
-			},
-			{
-				"type": "at-rule",
-				"name": "include",
-				"parameter": "focus"
 			},
 			{
 				"type": "rule",
@@ -68,12 +58,7 @@
 			},
 			{
 				"type": "rule",
-				"selector": "&:disabled"
-			},
-			{
-				"type": "at-rule",
-				"name": "include",
-				"parameter": "disabled"
+				"selector": "&:(--)?disabled"
 			},
 			{
 				"type": "rule",
@@ -97,7 +82,7 @@
 			},
 			{
 				"type": "rule",
-				"selector": ".* &"
+				"selector": ".+ &"
 			},
 			{
 				"type": "rule",

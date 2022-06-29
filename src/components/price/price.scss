@@ -15,7 +15,7 @@
 	cursor: default;
 
 	&::before {
-		@include conic-gradient;
+		@include gradient-conic;
 
 		content: "";
 		flex-shrink: 0;

@@ -61,7 +61,7 @@
 
 ul > li:--scope {
 	&::before {
-		@include conic-gradient;
+		@include gradient-conic;
 
 		content: "";
 		position: absolute;

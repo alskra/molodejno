@@ -56,9 +56,8 @@
 }
 
 .section-about__group {
-	@include gradient-section;
-
 	padding: var(--padding-y) 0;
+	background: var(--gradient-section);
 
 	&:not(:last-child) {
 		margin-bottom: var(--gap-3xl);

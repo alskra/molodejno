@@ -1,10 +1,9 @@
 .section-feedback {
-	@include gradient-section;
-
 	position: relative;
 	z-index: 0;
 	overflow: hidden;
 	padding: 90rem 0 var(--gap-3xl);
+	background: var(--gradient-section);
 
 	.app__main > .section:last-child > .section__main:last-child > .content:last-child > &,
 	.app__main > .section-about:last-child > .content:last-child > & {
