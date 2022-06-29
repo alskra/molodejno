@@ -16,5 +16,5 @@ mixin article-nav({primary = false, backUrl = "", items} = {})
 				each item in items
 					a.article-nav__item(
 						href=item.url
-						x-bind:class="{'is-active': $el.hash === hash}"
+						x-bind:class="{'is-active': $el.hash && $el.hash === hash}"
 					)= item.content
