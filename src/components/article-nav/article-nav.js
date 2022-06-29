@@ -2,26 +2,28 @@ import Alpine from 'alpinejs';
 import './article-nav.scss';
 
 Alpine.data('articleNav', () => ({
+	hashes: undefined,
+	targets: undefined,
 	hash: location.hash,
+	border: 0,
+	init() {
+		this.hashes = Array.from(this.$root.querySelectorAll('.article-nav__item')).map((item) => item.hash);
+		this.targets = Array.from(document.querySelectorAll('[id]'))
+			.filter((item) => this.hashes.includes(`#${item.id}`));
+	},
 	update() {
-		let sections = Array.from(document.querySelectorAll('[id]'));
-		let ids = Array.from(this.$root.querySelectorAll('.article-nav__item')).map((item) => item.hash);
+		let currentTarget;
 
-		sections = sections.filter((item) => ids.includes(`#${item.id}`));
+		for (let target of this.targets) {
+			const rect = target.getBoundingClientRect();
 
-		const border = 0;
-		let currentSection;
-
-		for (let i = 0; i < sections.length; i++) {
-			const rect = sections[i].getBoundingClientRect();
-
-			if (Math.floor(rect.top) <= border) {
-				currentSection = sections[i];
+			if (Math.floor(rect.top) <= this.border) {
+				currentTarget = target;
 			}
 		}
 
-		if (currentSection) {
-			history.replaceState(null, null, `#${currentSection.id}`);
+		if (currentTarget) {
+			history.replaceState(null, null, `#${currentTarget.id}`);
 			this.hash = location.hash;
 		}
 	},
