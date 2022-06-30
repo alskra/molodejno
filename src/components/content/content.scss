@@ -8,29 +8,30 @@
 @custom-selector :--heading-5 :is(h5, .h5);
 @custom-selector :--heading-6 :is(h6, .h6);
 @custom-selector :--link :any-link:not([href^="tel:"]);
+@custom-selector :--list :is(ul, ol);
 @custom-selector :--section :is(.subsection, .section-feedback, .section-about__image-4);
 
 :--host:--scope {
+	--list-indent: #{em(65)};
+	--list-marker-size: #{em(10)};
+	--blockquote-font-size: #{em(24)};
+
 	font-size: var(--font-size);
 	line-height: var(--line-height);
-}
 
-:first-child:not(:--host :nth-child(n + 2) *):--scope {
-	// stylelint-disable-next-line
-	margin-block-start: 0 !important;
-}
-
-:last-child:not(:--host :nth-last-child(n + 2) *):--scope {
-	// stylelint-disable-next-line
-	margin-block-end: 0 !important;
+	@include media-breakpoint-down(lg) {
+		--list-indent: #{em(35)};
+		--blockquote-font-size: #{em(18)};
+	}
 }
 
 :--heading:--scope {
-	margin-block: var(--heading-interval-top) var(--heading-interval-bottom);
+	@include margin-block-child(var(--heading-interval-top), var(--heading-interval-bottom));
+
+	margin: 0;
 }
 
-:--heading + :--scope,
-:--heading + * :first-child:not(:--heading + * :nth-child(n + 2) *):--scope {
+:--heading + :--scope {
 	// stylelint-disable-next-line
 	margin-block-start: 0 !important;
 }
@@ -45,14 +46,34 @@
 	}
 }
 
-:is(p, ul, ol, li, dl, dt, dd):--scope {
-	margin-block: var(--paragraph-interval);
+p {
+	@include margin-block-child(var(--paragraph-interval));
+
+	margin: 0;
 }
 
-:is(ul, ol):--scope {
+:--link:--scope {
+	text-decoration: var(--link-text-decoration);
+	color: var(--link-color);
+	transition: color var(--duration);
+
+	@include hover {
+		text-decoration: var(--link-hover-text-decoration, var(--link-text-decoration));
+		color: var(--link-hover-color, var(--link-color));
+	}
+}
+
+:--list:--scope {
+	@include margin-block-child(var(--paragraph-interval));
+
 	position: relative;
 	list-style: none;
+	margin: 0;
 	padding-inline-start: var(--list-indent);
+}
+
+li:--scope {
+	@include margin-block-child(var(--paragraph-interval));
 }
 
 ul > li:--scope {
@@ -86,40 +107,30 @@ ol > li:--scope {
 	}
 }
 
-:--link:--scope {
-	text-decoration: var(--link-text-decoration);
-	color: var(--link-color);
-	transition: color var(--duration);
-
-	@include hover {
-		text-decoration: var(--link-hover-text-decoration, var(--link-text-decoration));
-		color: var(--link-hover-color, var(--link-color));
-	}
-}
-
-:is(blockquote, table, img):--scope {
-	margin-block: var(--embedded-interval);
-}
-
 blockquote:not(.quote):--scope {
+	@include margin-block-child(var(--block-interval));
+
 	position: relative;
+	margin: 0;
 	font-family: var(--heading-font-family);
 	font-weight: 500;
-	font-size: em(24);
+	font-size: var(--blockquote-font-size);
 	line-height: 1.2;
 	padding-inline-start: var(--list-indent);
 
 	&::before {
 		content: "";
 		position: absolute;
-		top: 8rem;
 		height: min(55rem, 100% - 8rem);
 		border-inline-start: 1px solid;
+		inset-block-start: 8rem;
 		inset-inline-start: 0;
 	}
 }
 
 table:--scope {
+	@include margin-block-child(var(--block-interval));
+
 	display: block;
 	overflow: auto;
 }
@@ -155,23 +166,27 @@ td:first-child:--scope {
 }
 
 img:--scope {
+	@include margin-block-child(var(--block-interval));
+
 	display: block;
-	width: 100%;
+	max-width: 100%;
+
+	&:not([width]) {
+		width: 100%;
+	}
 }
 
 :--section:--scope {
-	margin-block: var(--heading-interval-top) var(--embedded-interval);
+	@include margin-block-child(var(--heading-interval-top), var(--block-interval));
 }
 
 @include media-breakpoint-down(lg) {
-	blockquote:not(.quote):--scope {
-		font-size: em(18);
-	}
-
 	img:--scope {
-		margin-right: calc(-1 * var(--content-offset));
-		margin-left: calc(-1 * var(--content-offset));
-		width: var(--app--width);
 		max-width: var(--app--width);
+		margin-inline: calc(-1 * var(--content-offset));
+
+		&:not([width]) {
+			width: var(--app--width);
+		}
 	}
 }

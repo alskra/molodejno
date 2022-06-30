@@ -69,6 +69,26 @@
 	// stylelint-enable
 }
 
+@mixin margin-y-child($top, $bottom: $top) {
+	#{if(&, "&", "")}:not(:first-child) {
+		margin-top: $top;
+	}
+
+	#{if(&, "&", "")}:not(:last-child) {
+		margin-bottom: $bottom;
+	}
+}
+
+@mixin margin-block-child($start, $end: $start) {
+	#{if(&, "&", "")}:not(:first-child) {
+		margin-block-start: $start;
+	}
+
+	#{if(&, "&", "")}:not(:last-child) {
+		margin-block-end: $end;
+	}
+}
+
 @mixin gradient-conic {
 	background: var(--color-primary);
 	// stylelint-disable-next-line

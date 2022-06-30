@@ -30,7 +30,6 @@
 	--line-height: 1.5;
 	--color: var(--color-text);
 	--bg-color: var(--color-bg);
-	--paragraph-interval: #{em(15)};
 	--heading-font-family: var(--font-family-stolzl);
 	--heading-font-weight: 700;
 	--heading-1-font-size: 60rem;
@@ -46,12 +45,11 @@
 	--heading-5-color: var(--color-primary);
 	--heading-interval-top: var(--gap-xxl);
 	--heading-interval-bottom: var(--gap-md);
+	--paragraph-interval: #{em(15)};
 	--link-color: var(--color-primary);
 	--link-text-decoration: none;
 	--link-hover-color: var(--color-primary-hover);
-	--list-indent: #{em(65)};
-	--list-marker-size: #{em(10)};
-	--embedded-interval: var(--gap-lg);
+	--block-interval: var(--gap-lg);
 
 	@include media-breakpoint-down(lg) {
 		--heading-1-font-size: 40rem;
@@ -60,7 +58,6 @@
 		--heading-4-font-size: 25rem;
 		--heading-5-font-size: 20rem;
 		--heading-6-font-size: 15rem;
-		--list-indent: #{em(35)};
 	}
 }
 

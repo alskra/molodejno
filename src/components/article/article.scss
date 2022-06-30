@@ -43,7 +43,7 @@
 	@include media-breakpoint-down(lg) {
 		&::before {
 			top: auto;
-			margin-top: calc(-1 * var(--embedded-interval));
+			margin-top: calc(-1 * var(--block-interval));
 			height: min(350 / 360 * var(--app--width), 100%);
 		}
 	}

@@ -25,7 +25,7 @@
 		}
 	}
 
-	&--guid {
+	&:has(+ [class="footer"]) {
 		padding: var(--gap-md) 0;
 	}
 }

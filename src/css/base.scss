@@ -24,7 +24,7 @@ body {
 	background: var(--bg-color);
 }
 
-:is(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd, blockquote, figure) {
+:is(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, figure) {
 	margin: 0;
 }
 
