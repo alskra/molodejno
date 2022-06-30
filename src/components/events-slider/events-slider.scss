@@ -20,9 +20,9 @@
 
 .events-slider__main-inner {
 	overflow: visible;
-	margin: 0 calc(-0.5 * var(--gap));
+	margin: 0 calc(-0.5 * var(--gap-md));
 }
 
 .events-slider__item {
-	margin: 0 calc(0.5 * var(--gap));
+	margin: 0 calc(0.5 * var(--gap-md));
 }

@@ -1,6 +1,6 @@
 :root {
 	--app--width: var(--body-content-width, 100vw);
-	--app--main-gap-bottom: var(--gap-3xl);
+	--app--main-gap-bottom: var(--gap-xxxl);
 }
 
 .app {
@@ -12,10 +12,21 @@
 
 .app__main {
 	flex: 1;
-	padding-bottom: var(--app--main-gap-bottom);
 
-	&--index {
-		padding: var(--gap) 0;
+	> .section {
+		&:last-child {
+			margin-bottom: var(--app--main-gap-bottom);
+		}
+	}
+
+	> .promo {
+		&:last-child {
+			margin-top: var(--app--main-gap-bottom);
+		}
+	}
+
+	&--guid {
+		padding: var(--gap-md) 0;
 	}
 }
 

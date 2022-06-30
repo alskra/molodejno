@@ -13,7 +13,7 @@
 	overflow: visible;
 
 	&.swiper {
-		margin: 0 calc(-0.5 * var(--gap));
+		margin: 0 calc(-0.5 * var(--gap-md));
 	}
 }
 
@@ -25,7 +25,7 @@
 
 .cards__item {
 	&.swiper-slide {
-		margin: 0 calc(0.5 * var(--gap));
+		margin: 0 calc(0.5 * var(--gap-md));
 		height: auto;
 	}
 

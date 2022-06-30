@@ -8,11 +8,7 @@
 @custom-selector :--heading-5 :is(h5, .h5);
 @custom-selector :--heading-6 :is(h6, .h6);
 @custom-selector :--link :any-link:not([href^="tel:"]);
-@custom-selector :--section :is(.subsection, .subsection-section, .section-feedback, .section-about__image-4);
-
-:root {
-	--content--block-interval: var(--gap-lg);
-}
+@custom-selector :--section :is(.subsection, .section-feedback, .section-about__image-4);
 
 :--host:--scope {
 	font-size: var(--font-size);
@@ -102,7 +98,7 @@ ol > li:--scope {
 }
 
 :is(blockquote, table, img):--scope {
-	margin-block: var(--content--block-interval);
+	margin-block: var(--embedded-interval);
 }
 
 blockquote:not(.quote):--scope {
@@ -143,7 +139,7 @@ tr:last-child :is(th, td):--scope {
 
 :is(th, td):--scope {
 	vertical-align: baseline;
-	padding: calc(0.5 * var(--paragraph-interval)) calc(0.5 * var(--gap));
+	padding: calc(0.5 * var(--paragraph-interval)) calc(0.5 * var(--gap-md));
 }
 
 :is(th, td):first-child:--scope {
@@ -164,7 +160,7 @@ img:--scope {
 }
 
 :--section:--scope {
-	margin-block: var(--heading-interval-top) var(--content--block-interval);
+	margin-block: var(--heading-interval-top) var(--embedded-interval);
 }
 
 @include media-breakpoint-down(lg) {

@@ -27,7 +27,6 @@ mixin subsection({offsetColumn, anchor, type, extType, title} = {})
 							h2.subsection__title!= title
 							if type === 'reviews'
 								+button({content: "'Оставить отзыв'"}).button--height-sm(
-									data-fancybox
 									data-fancybox-modal
 									data-src="#modal-review"
 								)

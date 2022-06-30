@@ -55,6 +55,9 @@ window.addEventListener('scroll', () => {
 }, {passive: true});
 
 // const mutationObserver = new MutationObserver((records) => {
+// 	// eslint-disable-next-line no-console
+// 	// console.log(records);
+//
 // 	records.forEach((record) => {
 // 		if (record.type !== 'attributes' || record.target.getAttribute(record.attributeName) !== record.oldValue) {
 // 			// eslint-disable-next-line no-console

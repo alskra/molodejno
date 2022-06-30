@@ -1,7 +1,7 @@
 .gallery__grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: var(--gap);
+	gap: var(--gap-md);
 }
 
 .gallery__item {

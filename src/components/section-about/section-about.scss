@@ -3,12 +3,12 @@
 	--offset-bottom: 125rem;
 
 	&:not(:last-child) {
-		margin-bottom: var(--gap-3xl);
+		margin-bottom: var(--gap-xxxl);
 	}
 
 	&--offset-bottom {
 		.section-about__group:not(:last-child) {
-			margin-bottom: calc(var(--gap-3xl) + var(--offset-bottom));
+			margin-bottom: calc(var(--gap-xxxl) + var(--offset-bottom));
 		}
 
 		.section-about__container > :last-child {
@@ -16,7 +16,7 @@
 		}
 
 		&:not(:last-child) {
-			margin-bottom: calc(var(--gap-3xl) + var(--offset-bottom));
+			margin-bottom: calc(var(--gap-xxxl) + var(--offset-bottom));
 		}
 	}
 
@@ -60,7 +60,7 @@
 	background: var(--gradient-section);
 
 	&:not(:last-child) {
-		margin-bottom: var(--gap-3xl);
+		margin-bottom: var(--gap-xxxl);
 	}
 }
 
@@ -101,7 +101,7 @@
 	}
 
 	&:not(:last-child) {
-		margin-bottom: var(--gap);
+		margin-bottom: var(--gap-md);
 	}
 
 	@include media-breakpoint-down(lg) {
@@ -189,7 +189,7 @@
 
 .section-about__quote {
 	&:not(:first-child) {
-		margin-top: var(--gap-3xl);
+		margin-top: var(--gap-xxxl);
 	}
 }
 

@@ -4,9 +4,9 @@
 	padding-top: 25rem;
 
 	@include media-breakpoint-down(lg) {
-		column-gap: var(--gap);
+		column-gap: var(--gap-md);
 		align-items: start;
-		grid-template-columns: repeat(auto-fit, minmax(0, 1fr) minmax(0, min((100% - var(--gap)) / 2, 265rem)));
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr) minmax(0, min((100% - var(--gap-md)) / 2, 265rem)));
 		padding-top: 20rem;
 	}
 }

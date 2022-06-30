@@ -9,13 +9,6 @@
 		margin-bottom: var(--gap-xl);
 	}
 
-	.app__main > & {
-		&:last-child {
-			margin-top: var(--app--main-gap-bottom);
-			margin-bottom: calc(-1 * var(--app--main-gap-bottom));
-		}
-	}
-
 	&--header {
 		.promo__body {
 			align-self: end;
@@ -68,7 +61,7 @@
 	grid-template-columns: repeat(4, 1fr);
 	padding-top: var(--padding-y);
 	padding-bottom: var(--padding-y);
-	gap: var(--gap);
+	gap: var(--gap-md);
 
 	@include media-breakpoint-down(lg) {
 		grid-template-columns: repeat(auto-fit, minmax(min(322rem, 100%), 1fr));

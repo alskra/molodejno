@@ -21,7 +21,7 @@
 	display: grid;
 	grid-auto-columns: var(--column-1);
 	grid-template-columns: repeat(auto-fill, var(--column-1));
-	gap: var(--gap);
+	gap: var(--gap-md);
 }
 
 @for $size from 1 through 12 {
@@ -50,7 +50,7 @@
 			display: grid;
 			grid-auto-columns: var(--column-1);
 			grid-template-columns: repeat(auto-fill, var(--column-1));
-			gap: var(--gap);
+			gap: var(--gap-md);
 		}
 
 		@for $size from 1 through 12 {
@@ -81,7 +81,7 @@
 			display: grid;
 			grid-auto-columns: var(--column-1);
 			grid-template-columns: repeat(auto-fill, var(--column-1));
-			gap: var(--gap);
+			gap: var(--gap-md);
 		}
 
 		@for $size from 1 through 12 {

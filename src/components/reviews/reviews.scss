@@ -13,11 +13,11 @@
 
 .reviews__main-inner {
 	overflow: visible;
-	margin: 0 calc(-0.5 * var(--gap));
+	margin: 0 calc(-0.5 * var(--gap-md));
 }
 
 .reviews__item {
-	margin: 0 calc(0.5 * var(--gap));
+	margin: 0 calc(0.5 * var(--gap-md));
 	width: var(--column-6);
 
 	@include media-breakpoint-down(lg) {

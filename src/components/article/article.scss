@@ -43,7 +43,7 @@
 	@include media-breakpoint-down(lg) {
 		&::before {
 			top: auto;
-			margin-top: calc(-1 * var(--content--block-interval));
+			margin-top: calc(-1 * var(--embedded-interval));
 			height: min(350 / 360 * var(--app--width), 100%);
 		}
 	}
@@ -87,13 +87,13 @@
 }
 
 .article__subsection-group {
-	padding: var(--gap-2xl) 0;
+	padding: var(--gap-xxl) 0;
 	background: var(--theme-color);
 }
 
 .article__grid {
 	display: grid;
-	column-gap: var(--gap);
+	column-gap: var(--gap-md);
 	align-items: start;
 
 	@include media-breakpoint-up(lg) {

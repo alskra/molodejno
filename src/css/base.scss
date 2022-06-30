@@ -64,7 +64,8 @@ fieldset {
 }
 
 :focus:not(:focus-visible) {
-	outline: none;
+	// stylelint-disable-next-line
+	outline: none !important;
 }
 
 :focus-visible {

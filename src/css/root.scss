@@ -44,13 +44,14 @@
 	--heading-3-color: var(--color-primary);
 	--heading-4-color: var(--color-primary);
 	--heading-5-color: var(--color-primary);
-	--heading-interval-top: var(--gap-2xl);
-	--heading-interval-bottom: var(--gap);
+	--heading-interval-top: var(--gap-xxl);
+	--heading-interval-bottom: var(--gap-md);
 	--link-color: var(--color-primary);
 	--link-text-decoration: none;
 	--link-hover-color: var(--color-primary-hover);
 	--list-indent: #{em(65)};
 	--list-marker-size: #{em(10)};
+	--embedded-interval: var(--gap-lg);
 
 	@include media-breakpoint-down(lg) {
 		--heading-1-font-size: 40rem;
@@ -71,13 +72,13 @@
 	@for $size from 1 through 12 {
 		$columns: div(12, $size);
 
-		--column-#{$size}: calc((var(--content-width) - #{$columns - 1} * var(--gap)) / #{$columns});
+		--column-#{$size}: calc((var(--content-width) - #{$columns - 1} * var(--gap-md)) / #{$columns});
 	}
 
 	@for $size from 1 through 12 {
 		$columns: div(12, $size);
 
-		--column-offset-#{$size}: calc(var(--column-#{$size}) + var(--gap));
+		--column-offset-#{$size}: calc(var(--column-#{$size}) + var(--gap-md));
 	}
 
 	// stylelint-disable-next-line
@@ -86,9 +87,8 @@
 	--gap-md: 30rem;
 	--gap-lg: 40rem;
 	--gap-xl: 50rem;
-	--gap-2xl: 80rem;
-	--gap-3xl: 100rem;
-	--gap: var(--gap-md);
+	--gap-xxl: 80rem;
+	--gap-xxxl: 100rem;
 
 	@include media-breakpoint-down(lg) {
 		--gap-xs: 10rem;
@@ -96,8 +96,8 @@
 		--gap-md: 20rem;
 		--gap-lg: 25rem;
 		--gap-xl: 30rem;
-		--gap-2xl: 40rem;
-		--gap-3xl: 50rem;
+		--gap-xxl: 40rem;
+		--gap-xxxl: 50rem;
 	}
 }
 

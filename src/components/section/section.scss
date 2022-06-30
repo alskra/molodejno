@@ -315,7 +315,7 @@
 
 .section__grid {
 	display: grid;
-	column-gap: var(--gap);
+	column-gap: var(--gap-md);
 	align-items: start;
 
 	@include media-breakpoint-up(lg) {

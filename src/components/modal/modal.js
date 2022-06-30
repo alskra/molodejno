@@ -3,12 +3,7 @@ import '@fancyapps/ui/dist/fancybox.css';
 import {Fancybox} from '@fancyapps/ui';
 import './modal.scss';
 
-Alpine.data('modal', () => ({
-	show: false,
-	init() {
-		this.$root.alpine = this;
-	},
-}));
+Alpine.data('modal', () => ({}));
 
 Fancybox.bind('[data-fancybox-modal]', {
 	mainClass: 'fancybox__container--modal',
@@ -16,25 +11,13 @@ Fancybox.bind('[data-fancybox-modal]', {
 	template: {
 		closeButton: '',
 	},
-	// Carousel: {
-	// 	touch: false,
-	// 	draggable: false,
-	// 	drag: false,
-	// },
-	// touch: false,
-	// draggable: false,
-	// drag: false,
 	on: {
-		done: (fancybox) => {
-			fancybox.modalEl = fancybox.$container.querySelector('.modal');
-
-			if (fancybox.modalEl) {
-				fancybox.modalEl.alpine.show = true;
-			}
-		},
 		destroy: (fancybox) => {
-			if (fancybox.modalEl) {
-				fancybox.modalEl.alpine.show = false;
+			const formEl = fancybox.$container.querySelector('form');
+
+			if (formEl) {
+				formEl.reset();
+				formEl.querySelectorAll('[type="tel"]').forEach((item) => item.imask.updateValue());
 			}
 		},
 	},

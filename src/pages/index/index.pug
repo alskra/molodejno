@@ -10,10 +10,15 @@ append variables
 block app
 	+header()
 
-	main.app__main.app__main--index
+	main.app__main.app__main--guid
 		+container()
 			+content()
 				h2 Pages
+				p Text
+				+content()
+					h3 Heading 3-1
+					div
+						h3 Heading 3-2
 
 				-
 					const pages = [

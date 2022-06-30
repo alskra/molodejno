@@ -14,15 +14,15 @@
 
 .gallery-slider__main-inner {
 	overflow: visible;
-	margin: 0 calc(-0.5 * var(--gap));
+	margin: 0 calc(-0.5 * var(--gap-md));
 }
 
 .gallery-slider__item {
 	--height: #{cw(500, 825)};
 
 	position: relative;
-	margin: 0 calc(0.5 * var(--gap));
-	width: calc(100% - var(--gap));
+	margin: 0 calc(0.5 * var(--gap-md));
+	width: calc(100% - var(--gap-md));
 
 	&::before {
 		content: "";
@@ -33,7 +33,7 @@
 	@include media-breakpoint-down(lg) {
 		--height: #{cw(250, 340)};
 
-		width: calc(100% - var(--gap) - var(--content-offset));
+		width: calc(100% - var(--gap-md) - var(--content-offset));
 	}
 }
 

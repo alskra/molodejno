@@ -1,20 +1,24 @@
 :root {
-	--modal-padding-y: 64rem;
+	--modal--padding-y: 64rem;
 
 	@include media-breakpoint-down(lg) {
-		--modal-padding-y: 44rem;
+		--modal--padding-y: 44rem;
 	}
 }
 
+.fancybox__content :focus:not(.carousel__button.is-close) {
+	outline: none;
+}
+
 .fancybox__container--modal {
-	--fancybox-bg: #{var(--color-primary)};
+	--fancybox-bg: var(--color-primary);
 	--carousel-button-width: 37rem;
 	--carousel-button-height: 24rem;
 	--fancybox-content-color: #{$color-white};
 	--fancybox-content-bg: transparent;
 
 	.fancybox__slide {
-		padding: var(--modal-padding-y) 0;
+		padding: var(--modal--padding-y) 0;
 	}
 
 	.carousel__button.is-close {

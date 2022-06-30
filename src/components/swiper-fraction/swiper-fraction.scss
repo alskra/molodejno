@@ -1,6 +1,6 @@
 .swiper-fraction__footer {
 	display: flex;
-	column-gap: var(--gap);
+	column-gap: var(--gap-md);
 	align-items: center;
 	justify-content: space-between;
 	margin-top: 35rem;
@@ -32,7 +32,7 @@
 
 .swiper-fraction__navigation {
 	display: flex;
-	column-gap: var(--gap);
+	column-gap: var(--gap-md);
 
 	@include media-breakpoint-down(lg) {
 		display: none;

@@ -19,14 +19,14 @@
 	--gap: 10rem;
 
 	overflow: visible;
-	margin: 0 calc(-0.5 * var(--gap));
+	margin: 0 calc(-0.5 * var(--gap-md));
 }
 
 .tabs__item {
 	@include button;
 
 	flex-shrink: 0;
-	margin: 0 calc(0.5 * var(--gap));
+	margin: 0 calc(0.5 * var(--gap-md));
 	border: 1px solid;
 	border-radius: 32.5rem;
 	padding: 0 30rem;

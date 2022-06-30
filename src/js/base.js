@@ -6,10 +6,10 @@ import '/css/base.scss';
 import '/css/helpers.scss';
 
 // PostCSS Preset Env Polyfills
-import cssBlankPseudo from 'css-blank-pseudo/browser';
-import 'focus-visible';
-import focusWithin from 'focus-within';
-import cssHasPseudo from 'css-has-pseudo/browser';
+import cssBlankPseudo from 'css-blank-pseudo/browser'; // https://github.com/csstools/postcss-plugins/tree/main/plugins/css-blank-pseudo
+import 'focus-visible'; // https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-focus-visible
+import focusWithin from 'focus-within'; // https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-focus-within
+import cssHasPseudo from 'css-has-pseudo/browser'; // https://github.com/csstools/postcss-plugins/tree/main/plugins/css-has-pseudo
 
 // Modules
 import 'ninelines-ua-parser';

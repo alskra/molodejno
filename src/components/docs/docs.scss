@@ -13,13 +13,13 @@
 	overflow: visible;
 
 	@include media-breakpoint-down(lg) {
-		margin: 0 calc(-0.5 * var(--gap));
+		margin: 0 calc(-0.5 * var(--gap-md));
 	}
 }
 
 .docs__item {
 	@include media-breakpoint-down(lg) {
-		margin: 0 calc(0.5 * var(--gap));
+		margin: 0 calc(0.5 * var(--gap-md));
 		height: auto;
 	}
 }

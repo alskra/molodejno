@@ -7,10 +7,10 @@
 		display: flex;
 		flex-flow: column;
 		justify-content: center;
-		margin-top: calc(-1 * var(--modal-padding-y));
-		margin-bottom: calc(-1 * var(--modal-padding-y));
-		padding-top: var(--modal-padding-y);
-		padding-bottom: var(--modal-padding-y);
+		margin-top: calc(-1 * var(--modal--padding-y));
+		margin-bottom: calc(-1 * var(--modal--padding-y));
+		padding-top: var(--modal--padding-y);
+		padding-bottom: var(--modal--padding-y);
 		min-height: vh(100);
 	}
 
@@ -30,7 +30,7 @@
 	z-index: -1;
 	display: flex;
 	flex-flow: column;
-	padding: var(--gap) 0;
+	padding: var(--gap-md) 0;
 	width: 462rem;
 	max-width: none;
 
