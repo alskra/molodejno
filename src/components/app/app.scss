@@ -34,7 +34,7 @@
 	margin-top: 25rem;
 	margin-bottom: 5rem;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		display: none;
 	}
 }

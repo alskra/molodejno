@@ -1,5 +1,5 @@
 .events-slider {
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		.swiper-fraction__footer {
 			display: none;
 		}
@@ -13,7 +13,7 @@
 	padding-right: var(--content-offset);
 	padding-left: var(--content-offset);
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--gap: 3rem;
 	}
 }

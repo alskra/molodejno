@@ -45,7 +45,7 @@
 		background: $color-dolly;
 	}
 
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		&--offset-column-all,
 		&--offset-column-header {
 			@include make-column(header);
@@ -81,7 +81,7 @@
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		&--grid {
 			grid-template-columns: repeat(auto-fit, minmax(min(322rem, 100%), 1fr));
 

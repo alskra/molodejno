@@ -49,7 +49,7 @@
 		--color-hover: var(--color-primary-hover);
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		width: 100%;
 		font-size: 16rem;
 	}

@@ -15,7 +15,7 @@
 	color: var(--color);
 	cursor: default;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--icon-size: 15rem;
 
 		font-size: 20rem;
@@ -68,7 +68,7 @@
 	font-weight: 350;
 	font-size: 16rem;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		font-size: 12rem;
 	}
 }

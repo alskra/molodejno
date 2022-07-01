@@ -5,13 +5,13 @@
 	line-height: var(--heading-line-height);
 	color: var(--heading-color);
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		font-size: var(--heading-1-font-size);
 	}
 }
 
 .form-feedback__main {
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		> div {
 			&:nth-child(2) {
 				margin-right: cw(45, 255);
@@ -31,7 +31,7 @@
 .form-feedback__footer {
 	align-items: center;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		row-gap: 15rem;
 	}
 }

@@ -1,5 +1,5 @@
 .video {
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		row-gap: 15rem;
 	}
 }
@@ -12,13 +12,13 @@
 	line-height: var(--line-height);
 	color: var(--color);
 
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		+ .video__main {
 			grid-column-start: 3;
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		grid-column: 1 / -1;
 		padding-top: 25rem;
 	}
@@ -80,7 +80,7 @@
 		transform: translate(calc(-50% + #{div(10, 120)} * var(--size)), -50%);
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--size: 65rem;
 	}
 }

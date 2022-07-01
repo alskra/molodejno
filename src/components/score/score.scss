@@ -23,7 +23,7 @@
 		background: conic-gradient(from 135deg at 50% 50%, $color-cornflower-blue 0deg, $color-governor-bay-2 360deg);
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		font-size: 14rem;
 
 		&::before {
@@ -40,7 +40,7 @@
 	line-height: 1.25em;
 	white-space: nowrap;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		margin-top: -14rem;
 	}
 }

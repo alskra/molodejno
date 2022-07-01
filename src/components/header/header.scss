@@ -2,7 +2,7 @@
 	--header--height: 140rem;
 	--header--sticky-height: 50rem;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--header--height: min(60rem, 1.2 * 60px);
 		--header--sticky-height: var(--header--height);
 	}
@@ -144,7 +144,7 @@
 }
 
 .header__main {
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		position: fixed;
 		left: 0;
 		right: 0;
@@ -161,7 +161,7 @@
 	grid-template-columns: 202fr 228fr + 250fr + 228fr 202fr;
 	grid-template-rows: calc(var(--header--height) - var(--header--sticky-height)) var(--header--sticky-height);
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		align-items: stretch;
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr auto auto;
@@ -197,7 +197,7 @@
 	align-items: center;
 	grid-template-columns: 228fr 250fr 228fr;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		column-gap: 20rem;
 		grid-template-columns: 1fr 1fr;
 		border-top: 1px solid var(--heading-color);
@@ -225,7 +225,7 @@
 		text-align: right;
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		margin: 0;
 		font-size: 12rem;
 		line-height: 1.5;
@@ -242,7 +242,7 @@
 	width: 250rem;
 	max-width: 100%;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		width: min(180rem, 1.2 * 180px);
 	}
 }
@@ -255,7 +255,7 @@
 	column-gap: 60rem;
 	justify-self: end;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		justify-self: start;
 	}
 }
@@ -264,7 +264,7 @@
 	align-self: stretch;
 	grid-column: span 3;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		grid-column: 1;
 		grid-row: 1;
 		overflow-y: auto;

@@ -3,7 +3,7 @@
 	--container--padding: 15rem;
 	--container--width: min(var(--app--width), var(--container--max-width));
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--container--padding: 19rem;
 		--container--max-width: var(--app--width);
 	}
@@ -45,7 +45,7 @@
 }
 
 @each $name, $value in $breakpoints {
-	@include media-breakpoint-up($name) {
+	@include media-up($name) {
 		.grid-#{$name}-up {
 			display: grid;
 			grid-auto-columns: var(--column-1);
@@ -76,7 +76,7 @@
 }
 
 @each $name, $value in map-reverse($breakpoints) {
-	@include media-breakpoint-down($name) {
+	@include media-down($name) {
 		.grid-#{$name}-down {
 			display: grid;
 			grid-auto-columns: var(--column-1);

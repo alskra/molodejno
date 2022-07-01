@@ -16,7 +16,7 @@
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		padding: 40rem 35rem 20rem;
 		font-size: 18rem;
 	}
@@ -43,7 +43,7 @@
 		height: 34rem;
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		margin-top: 25rem;
 		padding-top: 30rem;
 		font-size: 14rem;

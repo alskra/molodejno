@@ -16,7 +16,7 @@
 	cursor: default;
 	user-select: none;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		margin-top: 30rem;
 	}
 }

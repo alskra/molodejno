@@ -40,7 +40,7 @@
 		background: $color-dolly;
 	}
 
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		&--offset-column {
 			.promo__image {
 				grid-column: 3 / 5;
@@ -63,7 +63,7 @@
 	padding-bottom: var(--padding-y);
 	gap: var(--gap-md);
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		grid-template-columns: repeat(auto-fit, minmax(min(322rem, 100%), 1fr));
 		row-gap: var(--padding-y);
 	}
@@ -82,7 +82,7 @@
 		padding-top: percentage(div(350, 540));
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		grid-column: auto;
 		max-width: 400rem;
 	}
@@ -101,7 +101,7 @@
 	grid-column: 3 / 5;
 	color: var(--color);
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		grid-column: 1;
 		grid-row: 1;
 	}
@@ -118,7 +118,7 @@
 		margin-bottom: 30rem;
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		font-size: 30rem;
 
 		br {

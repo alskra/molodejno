@@ -3,14 +3,14 @@
 	margin: 0 calc(-1 * var(--content-offset)) 25rem;
 	padding: 0 var(--content-offset);
 
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		:is(.section__grid-main, .article__grid-main) & {
 			margin-left: 0;
 			padding-left: 0;
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		margin-bottom: 20rem;
 	}
 }

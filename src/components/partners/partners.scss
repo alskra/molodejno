@@ -10,7 +10,7 @@
 		grid-template-columns: repeat(auto-fill, minmax(calc(4.5 * var(--column-1) + 3.5 * var(--gap-md)), 1fr));
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		&:not(&--general) {
 			grid-template-columns: repeat(auto-fill, var(--column-4));
 		}
@@ -51,7 +51,7 @@
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		&--general {
 			.partners__image {
 				margin: 15rem;
@@ -97,7 +97,7 @@
 	flex: 1;
 	padding: 15rem 0 20rem;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		padding: 10rem 0 15rem;
 	}
 }
@@ -107,7 +107,7 @@
 	font-size: 14rem;
 	line-height: var(--line-height);
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		font-size: 11rem;
 	}
 }

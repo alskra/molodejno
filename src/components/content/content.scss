@@ -19,7 +19,7 @@
 	font-size: var(--font-size);
 	line-height: var(--line-height);
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--list-indent: #{em(35)};
 		--blockquote-font-size: #{em(18)};
 	}
@@ -180,7 +180,7 @@ img:--scope {
 	@include margin-block-child(var(--heading-interval-top), var(--block-interval));
 }
 
-@include media-breakpoint-down(lg) {
+@include media-down(lg) {
 	img:--scope {
 		max-width: var(--app--width);
 		margin-inline: calc(-1 * var(--content-offset));

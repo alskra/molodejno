@@ -3,7 +3,7 @@
 	margin-right: calc(-1 * var(--content-offset));
 	padding-right: var(--content-offset);
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--gap: 3rem;
 
 		margin-left: calc(-1 * var(--content-offset));
@@ -20,11 +20,11 @@
 	margin: 0 calc(0.5 * var(--gap-md));
 	width: var(--column-6);
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		width: var(--column-8);
 	}
 
-	@include media-breakpoint-down(md) {
+	@include media-down(md) {
 		width: var(--column-12);
 	}
 }

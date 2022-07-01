@@ -1,6 +1,13 @@
 @use "../variables" as *;
 
-@mixin media-breakpoint-up($breakpoint) {
+@mixin media-hover {
+	@media (hover: hover), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		// Insert Styles for Hover-Devices and IE11 here.
+		@content;
+	}
+}
+
+@mixin media-up($breakpoint) {
 	@if type-of($breakpoint) == "string" {
 		$breakpoint: map-get($breakpoints, $breakpoint);
 	}
@@ -10,7 +17,7 @@
 	}
 }
 
-@mixin media-breakpoint-down($breakpoint) {
+@mixin media-down($breakpoint) {
 	@if type-of($breakpoint) == "string" {
 		$breakpoint: map-get($breakpoints, $breakpoint);
 	}
@@ -20,7 +27,7 @@
 	}
 }
 
-@mixin media-breakpoint-between($breakpoint-start, $breakpoint-end) {
+@mixin media-between($breakpoint-start, $breakpoint-end) {
 	@if type-of($breakpoint-start) == "string" {
 		$breakpoint-start: map-get($breakpoints, $breakpoint-start);
 	}

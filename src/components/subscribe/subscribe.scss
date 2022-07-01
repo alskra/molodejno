@@ -4,7 +4,7 @@
 	background: var(--color-primary);
 	user-select: none;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		padding-top: 20rem;
 		padding-bottom: 20rem;
 	}
@@ -19,7 +19,7 @@
 	width: 100%;
 	max-width: 730rem;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		max-width: none;
 	}
 }
@@ -58,7 +58,7 @@
 	transform: translateY(-50%);
 	pointer-events: none;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		height: auto;
 		font-size: 16rem;
 		line-height: 1.5;

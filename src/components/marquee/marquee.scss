@@ -19,7 +19,7 @@
 .marquee__container {
 	display: flex;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		display: block;
 	}
 }
@@ -28,7 +28,7 @@
 	display: flex;
 	flex-shrink: 0;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		flex-flow: column;
 		padding: 0 var(--container--padding);
 		row-gap: 22rem;
@@ -69,7 +69,7 @@
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		margin: 0;
 		font-size: 24rem;
 		word-wrap: break-word;

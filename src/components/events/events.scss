@@ -1,5 +1,5 @@
 .events {
-	@include media-breakpoint-up(md) {
+	@include media-up(md) {
 		.cards__main.has-swiper {
 			margin-left: 0;
 			padding-left: 0;
@@ -12,14 +12,14 @@
 }
 
 .events__item {
-	@include media-breakpoint-between(md, lg) {
+	@include media-between(md, lg) {
 		&--main.column-span-9-lg-up {
 			position: sticky;
 			top: var(--header--sticky-height);
 		}
 	}
 
-	@include media-breakpoint-up(md) {
+	@include media-up(md) {
 		&--main:not(.column-span-9-lg-up) {
 			position: sticky;
 			top: var(--header--sticky-height);

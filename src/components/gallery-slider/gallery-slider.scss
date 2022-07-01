@@ -1,11 +1,11 @@
 .gallery-slider__main {
 	overflow: hidden;
 
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		box-shadow: 10rem 10rem var(--color-primary);
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--gap: 3rem;
 
 		margin: 0 calc(-1 * var(--content-offset));
@@ -30,7 +30,7 @@
 		padding-top: min(var(--height), #{vh(100)} - var(--header--sticky-height));
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--height: #{cw(250, 340)};
 
 		width: calc(100% - var(--gap-md) - var(--content-offset));

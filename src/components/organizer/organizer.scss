@@ -14,7 +14,7 @@
 		height: max(calc(var(--line-clamp) * var(--line-height) * 1em), var(--image-height));
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		font-size: 12rem;
 	}
 }

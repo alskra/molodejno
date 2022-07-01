@@ -47,7 +47,7 @@
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		&:not(&--lg) {
 			font-size: 14rem;
 		}

@@ -8,7 +8,7 @@
 		margin-top: var(--gap-xl);
 	}
 
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		grid-template-columns: auto 1fr;
 	}
 }
@@ -35,7 +35,7 @@
 	grid-template-columns: repeat(auto-fill, 135rem);
 	gap: 10rem;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		grid-template-columns: repeat(auto-fill, minmax(135rem, 1fr));
 	}
 }

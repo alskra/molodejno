@@ -23,7 +23,7 @@
 		--theme-color: #{$color-white-pointer};
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--body-padding-top: 0;
 	}
 }
@@ -40,7 +40,7 @@
 		background: linear-gradient(180deg, var(--theme-color) 81.03%, transparent);
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		&::before {
 			top: auto;
 			margin-top: calc(-1 * var(--block-interval));
@@ -58,7 +58,7 @@
 		padding-top: cw(450);
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		margin: 0 calc(-1 * var(--content-offset));
 
 		&::before {
@@ -79,7 +79,7 @@
 .article__body {
 	padding-top: var(--body-padding-top);
 
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		&:not(:first-child) .article__card-details {
 			margin-top: calc(-1 * var(--body-padding-top) - 100rem);
 		}
@@ -96,13 +96,13 @@
 	column-gap: var(--gap-md);
 	align-items: start;
 
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		grid-template-columns: repeat(6, 1fr);
 	}
 }
 
 .article__grid-aside {
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		position: sticky;
 		top: calc(var(--header--sticky-height) + var(--body-padding-top));
 		z-index: 1;
@@ -114,7 +114,7 @@
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		display: none;
 		margin-bottom: 30rem;
 	}
@@ -133,7 +133,7 @@
 		margin-left: calc(-1 * var(--content-offset));
 	}
 
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		grid-column: 2 / 7;
 
 		.article__subsection-group {
@@ -151,7 +151,7 @@
 	position: relative;
 	margin-top: calc(-1 * var(--body-padding-top));
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		margin-right: calc(-1 * var(--content-offset));
 		margin-left: calc(-1 * var(--content-offset));
 	}

@@ -6,7 +6,7 @@
 .contacts__item {
 	align-items: start;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		row-gap: 30rem;
 	}
 }
@@ -21,7 +21,7 @@
 		margin-bottom: 30rem;
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--font-size: 14rem;
 
 		&:not(:last-child) {
@@ -44,7 +44,7 @@
 		padding-top: min(var(--height), #{vh(100)} - var(--header--sticky-height));
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--height: #{cw(250, 322)};
 	}
 }

@@ -14,7 +14,7 @@
 		min-height: vh(100);
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		.modal & {
 			justify-content: flex-start;
 			padding-bottom: 245rem;
@@ -39,7 +39,7 @@
 		height: auto;
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		left: calc(var(--content-offset) - 98rem - 19rem);
 		top: calc(100% - 245rem);
 	}

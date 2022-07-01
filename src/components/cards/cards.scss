@@ -29,19 +29,19 @@
 		height: auto;
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		&.swiper-slide.column-4-lg-down {
 			width: calc(var(--column-4) - 16rem / 3);
 		}
 	}
 
-	@include media-breakpoint-down(md) {
+	@include media-down(md) {
 		&.swiper-slide.column-6-md-down {
 			width: calc(var(--column-6) - 16rem / 2);
 		}
 	}
 
-	@include media-breakpoint-down(sm) {
+	@include media-down(sm) {
 		&.swiper-slide.column-10-sm-down {
 			width: var(--column-10);
 		}

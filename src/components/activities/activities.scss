@@ -21,7 +21,7 @@
 		}
 	}
 
-	@include media-breakpoint-down(md) {
+	@include media-down(md) {
 		padding-top: 15rem;
 	}
 }
@@ -33,7 +33,7 @@
 	transition: color;
 	transition-duration: var(--duration);
 
-	@include media-breakpoint-down(md) {
+	@include media-down(md) {
 		font-size: 20rem;
 	}
 }

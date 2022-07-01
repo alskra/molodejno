@@ -24,7 +24,7 @@
 		height: var(--icon-size);
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--icon-size: 15rem;
 
 		font-size: 20rem;

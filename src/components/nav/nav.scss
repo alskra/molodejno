@@ -6,7 +6,7 @@
 	border-top: 1px solid;
 	box-shadow: 0 1px currentColor;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		flex-flow: column;
 		align-items: stretch;
 		justify-content: flex-start;
@@ -31,7 +31,7 @@
 		color: var(--color-primary);
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		flex-shrink: 0;
 	}
 }

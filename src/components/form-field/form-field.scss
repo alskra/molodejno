@@ -29,7 +29,7 @@
 		min-height: 135rem;
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		padding-top: calc((50rem - 2px - 1.25em) / 2);
 		padding-bottom: calc((50rem - 2px - 1.25em) / 2);
 

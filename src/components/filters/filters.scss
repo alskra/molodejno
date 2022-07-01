@@ -1,7 +1,7 @@
 .filters {
 	overflow: hidden;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		margin-right: calc(-1 * var(--content-offset));
 		margin-left: calc(-1 * var(--content-offset));
 		padding-right: var(--content-offset);
@@ -14,7 +14,7 @@
 
 	overflow: visible;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--gap: 5rem;
 
 		margin: 0 calc(-0.5 * var(--gap-md));
@@ -22,7 +22,7 @@
 }
 
 .filters__grid {
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		display: flex;
 		flex-flow: wrap;
 		gap: var(--gap-md);
@@ -60,7 +60,7 @@
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		flex-shrink: 0;
 		margin: 0 calc(0.5 * var(--gap-md));
 		max-width: calc(100% - var(--gap-md));

@@ -30,7 +30,7 @@
 }
 
 @each $name, $value in $breakpoints {
-	@include media-breakpoint-up($name) {
+	@include media-up($name) {
 		.hidden-#{$name}-up {
 			// stylelint-disable-next-line
 			display: none !important;
@@ -39,7 +39,7 @@
 }
 
 @each $name, $value in map-reverse($breakpoints) {
-	@include media-breakpoint-down($name) {
+	@include media-down($name) {
 		.hidden-#{$name}-down {
 			// stylelint-disable-next-line
 			display: none !important;

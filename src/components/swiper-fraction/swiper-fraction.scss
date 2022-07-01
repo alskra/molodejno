@@ -5,7 +5,7 @@
 	justify-content: space-between;
 	margin-top: 35rem;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		margin-top: 15rem;
 	}
 }
@@ -21,7 +21,7 @@
 	color: var(--color);
 	user-select: none;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		font-size: 16rem;
 	}
 }
@@ -34,7 +34,7 @@
 	display: flex;
 	column-gap: var(--gap-md);
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		display: none;
 	}
 }

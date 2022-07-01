@@ -9,7 +9,7 @@
 	color: var(--color);
 	gap: 5rem 15rem;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		font-size: 12rem;
 	}
 }

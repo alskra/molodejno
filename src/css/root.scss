@@ -2,11 +2,11 @@
 :root {
 	font-size: 1px;
 
-	@include media-breakpoint-down(xl) {
+	@include media-down(xl) {
 		font-size: calc(0.3 / 1200 * 100vw + 0.7px);
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		font-size: calc(0.2 / 360 * 100vw + 0.8px);
 	}
 }
@@ -51,7 +51,7 @@
 	--link-hover-color: var(--color-primary-hover);
 	--block-interval: var(--gap-lg);
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--heading-1-font-size: 40rem;
 		--heading-2-font-size: 35rem;
 		--heading-3-font-size: 30rem;
@@ -87,7 +87,7 @@
 	--gap-xxl: 80rem;
 	--gap-xxxl: 100rem;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--gap-xs: 10rem;
 		--gap-sm: 15rem;
 		--gap-md: 20rem;

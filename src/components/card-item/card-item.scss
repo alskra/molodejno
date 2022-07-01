@@ -32,7 +32,7 @@
 		}
 	}
 
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		&--style-group-4 {
 			&:nth-child(4n + 1) {
 				--image-border-radius: 50% 0 0 50%;
@@ -68,7 +68,7 @@
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		&:nth-child(4n + 1) {
 			--image-border-radius: 50% 0 0 50%;
 		}
@@ -83,7 +83,7 @@
 	flex: 1;
 	padding: 25rem 0;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		padding: 20rem 0;
 	}
 }
@@ -96,7 +96,7 @@
 		margin-bottom: 20rem;
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		&:not(:last-child) {
 			margin-bottom: 15rem;
 		}
@@ -128,7 +128,7 @@
 		margin-bottom: 10rem;
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		font-size: 18rem;
 	}
 }
@@ -147,7 +147,7 @@
 	z-index: 2;
 	font-family: var(--heading-font-family);
 
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		font-size: 13rem;
 	}
 }

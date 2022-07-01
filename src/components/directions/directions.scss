@@ -5,7 +5,7 @@
 .directions__heading {
 	text-align: center;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		text-align: left;
 	}
 }
@@ -15,7 +15,7 @@
 	justify-content: center;
 	margin-top: 30rem;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		justify-content: flex-start;
 		margin-top: 40rem;
 	}

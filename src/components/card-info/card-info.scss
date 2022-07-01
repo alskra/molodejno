@@ -3,7 +3,7 @@
 	border-top: 1px solid var(--color);
 	padding-top: 25rem;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		column-gap: var(--gap-md);
 		align-items: start;
 		grid-template-columns: repeat(auto-fit, minmax(0, 1fr) minmax(0, min((100% - var(--gap-md)) / 2, 265rem)));
@@ -38,11 +38,11 @@
 		text-align: right;
 	}
 
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		text-align: right;
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		grid-column: 1;
 
 		&:not(:last-child) {
@@ -69,13 +69,13 @@
 		padding-top: 100%;
 	}
 
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		&:not(:last-child) {
 			margin-bottom: 25rem;
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		grid-column: 2;
 		grid-row: 1 / span 100;
 	}
@@ -91,12 +91,12 @@
 }
 
 .card-info__tags {
-	@include media-breakpoint-up(lg) {
+	@include media-up(lg) {
 		justify-content: flex-end;
 		text-align: right;
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		grid-column: 1;
 	}
 }

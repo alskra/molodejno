@@ -7,7 +7,7 @@
 	padding-top: 74rem;
 	padding-bottom: 37rem;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		padding-top: 26rem;
 		padding-bottom: 30rem;
 	}
@@ -18,7 +18,7 @@
 	grid-template-columns: repeat(3, 350fr);
 	gap: 24rem 30rem;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		column-gap: 24rem;
 		justify-items: center;
 		grid-template-columns: 1fr;
@@ -77,7 +77,7 @@
 .footer__soc-network {
 	justify-content: center;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		grid-row: 3;
 	}
 }
@@ -116,7 +116,7 @@
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		font-size: 13rem;
 		text-align: center;
 

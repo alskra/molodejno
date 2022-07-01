@@ -6,7 +6,7 @@
 	padding: 40rem 50rem 35rem;
 	background: $color-white;
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		--image-size: 50rem;
 
 		padding: 25rem 35rem 20rem;
@@ -35,7 +35,7 @@
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		&:not(:last-child) {
 			margin-bottom: 10rem;
 		}
@@ -68,7 +68,7 @@
 		height: 19rem;
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		padding-top: 24rem;
 		gap: 5rem 15rem;
 
@@ -92,7 +92,7 @@
 	line-height: 1.25;
 	color: var(--color);
 
-	@include media-breakpoint-down(lg) {
+	@include media-down(lg) {
 		font-size: 16rem;
 	}
 }
