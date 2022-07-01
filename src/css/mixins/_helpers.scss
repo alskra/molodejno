@@ -70,7 +70,7 @@
 	// stylelint-enable
 }
 
-@mixin margin-y-child($top, $bottom: $top) {
+@mixin margin-child-y($top, $bottom: $top) {
 	#{if(&, "&", "")}:not(:first-child) {
 		margin-top: $top;
 	}
@@ -80,7 +80,19 @@
 	}
 }
 
-@mixin margin-block-child($start, $end: $start) {
+@mixin margin-child-top($top) {
+	#{if(&, "&", "")}:not(:first-child) {
+		margin-top: $top;
+	}
+}
+
+@mixin margin-child-bottom($bottom) {
+	#{if(&, "&", "")}:not(:last-child) {
+		margin-bottom: $bottom;
+	}
+}
+
+@mixin margin-child-block($start, $end: $start) {
 	#{if(&, "&", "")}:not(:first-child) {
 		margin-block-start: $start;
 	}

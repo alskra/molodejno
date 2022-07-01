@@ -26,7 +26,7 @@
 }
 
 :--heading:--scope {
-	@include margin-block-child(var(--heading-interval-top), var(--heading-interval-bottom));
+	@include margin-child-block(var(--heading-interval-top), var(--heading-interval-bottom));
 
 	margin: 0;
 }
@@ -47,7 +47,7 @@
 }
 
 p {
-	@include margin-block-child(var(--paragraph-interval));
+	@include margin-child-block(var(--paragraph-interval));
 
 	margin: 0;
 }
@@ -64,7 +64,7 @@ p {
 }
 
 :--list:--scope {
-	@include margin-block-child(var(--paragraph-interval));
+	@include margin-child-block(var(--paragraph-interval));
 
 	position: relative;
 	list-style: none;
@@ -73,7 +73,7 @@ p {
 }
 
 li:--scope {
-	@include margin-block-child(var(--paragraph-interval));
+	@include margin-child-block(var(--paragraph-interval));
 }
 
 ul > li:--scope {
@@ -108,7 +108,7 @@ ol > li:--scope {
 }
 
 blockquote:not(.quote):--scope {
-	@include margin-block-child(var(--block-interval));
+	@include margin-child-block(var(--block-interval));
 
 	position: relative;
 	margin: 0;
@@ -129,7 +129,7 @@ blockquote:not(.quote):--scope {
 }
 
 table:--scope {
-	@include margin-block-child(var(--block-interval));
+	@include margin-child-block(var(--block-interval));
 
 	display: block;
 	overflow: auto;
@@ -166,7 +166,7 @@ td:first-child:--scope {
 }
 
 img:--scope {
-	@include margin-block-child(var(--block-interval));
+	@include margin-child-block(var(--block-interval));
 
 	display: block;
 	max-width: 100%;
@@ -177,7 +177,7 @@ img:--scope {
 }
 
 :--section:--scope {
-	@include margin-block-child(var(--heading-interval-top), var(--block-interval));
+	@include margin-child-block(var(--heading-interval-top), var(--block-interval));
 }
 
 @include media-down(lg) {

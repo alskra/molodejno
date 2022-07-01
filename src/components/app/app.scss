@@ -12,12 +12,6 @@
 .app__main {
 	flex: 1;
 
-	> .section {
-		&:last-child {
-			margin-bottom: var(--app--main-gap-bottom);
-		}
-	}
-
 	> .promo {
 		&:last-child {
 			margin-top: var(--app--main-gap-bottom);
@@ -26,6 +20,10 @@
 
 	&:has(.guide) {
 		padding: var(--gap-md) 0;
+	}
+
+	&:has(> .section:last-child) {
+		padding-bottom: var(--app--main-gap-bottom);
 	}
 }
 
