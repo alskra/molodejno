@@ -15,11 +15,6 @@ module.exports = {
 			},
 		],
 		'@csstools/css-has-pseudo-experimental',
-		[
-			'postcss-sort-media-queries',
-			{
-				sort: 'desktop-first',
-			},
-		],
+		'postcss-sort-media-queries',
 	],
 };
