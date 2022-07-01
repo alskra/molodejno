@@ -182,11 +182,11 @@ img:--scope {
 
 @include media-down(lg) {
 	img:--scope {
-		max-width: var(--app--width);
-		margin-inline: calc(-1 * var(--content-offset));
+		max-width: var(--full-width);
+		margin-inline: calc(-1 * var(--container-content-offset));
 
 		&:not([width]) {
-			width: var(--app--width);
+			width: var(--full-width);
 		}
 	}
 }

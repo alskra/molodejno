@@ -8,7 +8,7 @@
 	@include media-down(lg) {
 		--gap: 3rem;
 
-		margin: 0 calc(-1 * var(--content-offset));
+		margin: 0 calc(-1 * var(--container-content-offset));
 	}
 }
 
@@ -33,7 +33,7 @@
 	@include media-down(lg) {
 		--height: #{cw(250, 340)};
 
-		width: calc(100% - var(--gap-md) - var(--content-offset));
+		width: calc(100% - var(--gap-md) - var(--container-content-offset));
 	}
 }
 

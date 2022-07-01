@@ -4,12 +4,12 @@
 	padding-left: 60rem;
 
 	&.has-swiper {
-		margin-right: calc(-1 * var(--content-offset));
-		padding-right: var(--content-offset);
+		margin-right: calc(-1 * var(--container-content-offset));
+		padding-right: var(--container-content-offset);
 
 		&:not(.infographic--inner) {
-			margin-left: calc(-1 * var(--content-offset));
-			padding-left: var(--content-offset);
+			margin-left: calc(-1 * var(--container-content-offset));
+			padding-left: var(--container-content-offset);
 		}
 	}
 

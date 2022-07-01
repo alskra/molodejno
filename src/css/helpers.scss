@@ -25,8 +25,8 @@
 }
 
 .from-container-to-body {
-	margin-right: calc(-1 * var(--content-offset));
-	margin-left: calc(-1 * var(--content-offset));
+	margin-right: calc(-1 * var(--container-content-offset));
+	margin-left: calc(-1 * var(--container-content-offset));
 }
 
 @each $name, $value in $breakpoints {

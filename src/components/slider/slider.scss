@@ -1,5 +1,5 @@
 .slider {
-	--width: var(--app--width);
+	--width: var(--full-width);
 	--gap-bottom: 52rem;
 	--image-height: clamp(507rem, 507 / 1200 * var(--width), #{vh(100)} - var(--header--height));
 	--body-height: calc(var(--image-height) + var(--gap-bottom));
@@ -73,7 +73,7 @@
 	&::after {
 		content: "";
 		position: absolute;
-		left: calc(-1 * var(--content-offset));
+		left: calc(-1 * var(--container-content-offset));
 		z-index: -1;
 		border-radius: 0 var(--bg-radius) var(--bg-radius) 0;
 	}
@@ -109,7 +109,7 @@
 
 		&::before,
 		&::after {
-			right: calc(-1 * var(--content-offset));
+			right: calc(-1 * var(--container-content-offset));
 			border-radius: 0;
 		}
 

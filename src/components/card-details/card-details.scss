@@ -3,7 +3,7 @@
 	background: $color-white;
 
 	@include media-down(lg) {
-		padding: 25rem var(--container--padding) 30rem;
+		padding: 25rem var(--container-padding) 30rem;
 	}
 }
 

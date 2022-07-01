@@ -1,27 +1,16 @@
-:root {
-	--container--max-width: 1140rem;
-	--container--padding: 15rem;
-	--container--width: min(var(--app--width), var(--container--max-width));
-
-	@include media-down(lg) {
-		--container--padding: 19rem;
-		--container--max-width: var(--app--width);
-	}
-}
-
 .container {
 	margin-right: auto;
 	margin-left: auto;
-	padding-right: var(--container--padding);
-	padding-left: var(--container--padding);
-	width: var(--container--width);
+	padding-right: var(--container-padding);
+	padding-left: var(--container-padding);
+	width: var(--container-width);
 }
 
 .grid {
 	display: grid;
 	grid-auto-columns: var(--column-1);
 	grid-template-columns: repeat(auto-fill, var(--column-1));
-	gap: var(--gap-md);
+	gap: var(--container-gap);
 }
 
 @for $size from 1 through 12 {

@@ -176,9 +176,9 @@
 	}
 
 	@include media-down(lg) {
-		margin-right: calc(-1 * var(--content-offset));
-		margin-left: calc(-1 * var(--content-offset));
-		width: var(--app--width);
+		margin-right: calc(-1 * var(--container-content-offset));
+		margin-left: calc(-1 * var(--container-content-offset));
+		width: var(--full-width);
 		max-width: none;
 
 		&:not(:last-child) {

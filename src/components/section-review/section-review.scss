@@ -24,7 +24,7 @@
 
 .section-review__image {
 	position: absolute;
-	left: calc(var(--content-offset) - 133rem - 45rem);
+	left: calc(var(--container-content-offset) - 133rem - 45rem);
 	top: 0;
 	bottom: 0;
 	z-index: -1;
@@ -40,7 +40,7 @@
 	}
 
 	@include media-down(lg) {
-		left: calc(var(--content-offset) - 98rem - 19rem);
+		left: calc(var(--container-content-offset) - 98rem - 19rem);
 		top: calc(100% - 245rem);
 	}
 }

@@ -18,7 +18,7 @@
 	display: block;
 
 	@include media-down(lg) {
-		margin: 0 calc(-1 * var(--content-offset));
+		margin: 0 calc(-1 * var(--container-content-offset));
 	}
 }
 

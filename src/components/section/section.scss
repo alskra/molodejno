@@ -125,7 +125,7 @@
 .section__bg-el {
 	position: absolute;
 	left: cw(1110 - 763);
-	right: calc(-1 * var(--content-offset));
+	right: calc(-1 * var(--container-content-offset));
 	top: 0;
 	border-radius: 550rem 0 0 550rem;
 	height: 750rem;
@@ -343,15 +343,15 @@
 
 .section__grid-main {
 	.subsection {
-		margin-right: calc(-1 * var(--content-offset));
-		margin-left: calc(-1 * var(--content-offset));
+		margin-right: calc(-1 * var(--container-content-offset));
+		margin-left: calc(-1 * var(--container-content-offset));
 	}
 
 	@include media-up(lg) {
 		grid-column: 2 / 5;
 
 		.subsection {
-			margin-left: calc(-1 * (var(--column-offset-3) + var(--content-offset)));
+			margin-left: calc(-1 * (var(--column-offset-3) + var(--container-content-offset)));
 		}
 	}
 }
