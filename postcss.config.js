@@ -9,8 +9,16 @@ module.exports = {
 					'custom-properties': false,
 					'environment-variables': false,
 					'nesting-rules': false,
+					'has-pseudo-class': false,
 					'logical-properties-and-values': {dir: 'ltr'},
 				},
+			},
+		],
+		'@csstools/css-has-pseudo-experimental',
+		[
+			'postcss-sort-media-queries',
+			{
+				sort: 'desktop-first',
 			},
 		],
 	],
