@@ -7,8 +7,6 @@ module.exports = {
 				features: {
 					'all-property': false,
 					'custom-properties': false,
-					'environment-variables': false,
-					'nesting-rules': false,
 					'has-pseudo-class': false,
 					'logical-properties-and-values': {dir: 'ltr'},
 				},
