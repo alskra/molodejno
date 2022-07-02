@@ -2,19 +2,17 @@ import Alpine from 'alpinejs';
 import './article-nav.scss';
 
 Alpine.data('articleNav', () => ({
-	hashes: undefined,
-	targets: undefined,
+	hashes: [],
 	hash: location.hash,
 	border: 0,
-	init() {
-		this.hashes = Array.from(this.$root.querySelectorAll('.article-nav__item')).map((item) => item.hash);
-		this.targets = Array.from(document.querySelectorAll('[id]'))
+	get targets() {
+		return Array.from(document.querySelectorAll('[id]'))
 			.filter((item) => this.hashes.includes(`#${item.id}`));
 	},
 	update() {
 		let currentTarget;
 
-		for (let target of this.targets) {
+		for (const target of this.targets) {
 			const rect = target.getBoundingClientRect();
 
 			if (Math.floor(rect.top) <= this.border) {
@@ -24,7 +22,13 @@ Alpine.data('articleNav', () => ({
 
 		if (currentTarget) {
 			history.replaceState(null, null, `#${currentTarget.id}`);
-			this.hash = location.hash;
+		} else {
+			history.replaceState(null, null, location.href.replace(/#.*$/, ''));
 		}
+
+		this.hash = location.hash;
+	},
+	init() {
+		this.hashes = Array.from(this.$root.querySelectorAll('.article-nav__item')).map((item) => item.hash);
 	},
 }));

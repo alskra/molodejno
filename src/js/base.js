@@ -1,3 +1,4 @@
+import './test';
 // Styles
 import 'normalize.css';
 import '/css/fonts.scss';
@@ -48,13 +49,13 @@ cssBlankPseudo(document);
 focusWithin(document);
 cssHasPseudo(document);
 
-const start = performance.now();
+// const start = performance.now();
 
 scopedCss();
 
-if (process.env.NODE_ENV === 'development') {
-	// eslint-disable-next-line no-console
-	console.log('`scoped-css` init time is:', performance.now() - start);
-}
+// if (process.env.NODE_ENV === 'development') {
+// 	// eslint-disable-next-line no-console
+// 	console.log('`scoped-css` init time is:', performance.now() - start);
+// }
 
 AOS.init();

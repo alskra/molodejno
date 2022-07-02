@@ -38,6 +38,12 @@ block document
 			meta(http-equiv="x-ua-compatible" content="ie=edge")
 			title= title
 			block head-end
+			script.
+				window.addEventListener('scroll', () => {
+					console.log('scroll', scrollY);
+				});
+				document.addEventListener('DOMContentLoaded', () => console.log('DOMContentLoaded'));
+				window.addEventListener('load', () => console.log('load'));
 
 		body(class=bodyClassList)
 			block body-start
