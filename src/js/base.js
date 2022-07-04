@@ -49,8 +49,11 @@ focusWithin(document);
 cssHasPseudo(document);
 
 viewport({
-	bodySizes: true,
-	boundaryEl: document.querySelector('.header'),
+	sizesProperties: true,
+	scrollOptions: {
+		boundaryEl: document.querySelector('.header'),
+		spy: true,
+	},
 });
 
 // const start = performance.now();
