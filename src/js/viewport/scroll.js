@@ -1,5 +1,5 @@
-export function getElFromHash() {
-	return (location.hash || null) && document.querySelector(location.hash);
+export function getElFromHash(hash) {
+	return document.getElementById(hash.replace('#', ''));
 }
 
 export default function $({boundaryEl, spy = false} = {}) {
@@ -12,7 +12,7 @@ export default function $({boundaryEl, spy = false} = {}) {
 	window.addEventListener('load', () => {
 		setTimeout(() => {
 			if (boundaryEl) {
-				const targetEl = getElFromHash();
+				const targetEl = getElFromHash(location.hash);
 
 				if (targetEl && Math.floor(targetEl.getBoundingClientRect().top) === 0) {
 					scrollBy(0, -getBoundary());
@@ -23,15 +23,32 @@ export default function $({boundaryEl, spy = false} = {}) {
 		});
 	});
 
-	// if (boundaryEl) {
-	// 	window.addEventListener('hashchange', () => {
-	// 		const targetEl = getElFromHash();
-	//
-	// 		if (targetEl) {
-	// 			scrollTo(0, scrollY + targetEl.getBoundingClientRect().top - getBoundary());
-	// 		}
-	// 	});
-	// }
+	if (boundaryEl) {
+		/**
+		 * Change hash or navigation with hash change is emit two events: `popstate` and `hashchange`
+		 */
+		// window.addEventListener('hashchange', () => {
+		// 	const targetEl = getElFromHash(location.hash);
+		//
+		// 	if (targetEl) {
+		// 		scrollTo(0, scrollY + targetEl.getBoundingClientRect().top - getBoundary());
+		// 	}
+		// });
+
+		document.addEventListener('click', (evt) => {
+			if (evt.target.tagName === 'A' &&
+				evt.target.href.replace(/#.*/, '') ===
+				location.href.replace(/#.*/, '')) {
+				evt.preventDefault();
+
+				const targetEl = getElFromHash(evt.target.hash);
+
+				if (targetEl) {
+					scrollTo(0, scrollY + targetEl.getBoundingClientRect().top - getBoundary());
+				}
+			}
+		});
+	}
 
 	if (spy) {
 		let timeoutID;
