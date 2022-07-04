@@ -13,9 +13,7 @@ Alpine.data('articleNav', () => ({
 		let currentTarget;
 
 		for (const target of this.targets) {
-			const rect = target.getBoundingClientRect();
-
-			if (Math.floor(rect.top) <= this.border) {
+			if (Math.floor(target.getBoundingClientRect().top) <= this.border) {
 				currentTarget = target;
 			}
 		}

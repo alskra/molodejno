@@ -1,4 +1,3 @@
-import './test';
 // Styles
 import 'normalize.css';
 import '/css/fonts.scss';
@@ -14,7 +13,7 @@ import cssHasPseudo from '@csstools/css-has-pseudo-experimental/browser';
 
 // Modules
 import 'ninelines-ua-parser';
-import './viewport';
+import viewport from './viewport';
 import scopedCss from './scoped-css';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
@@ -48,6 +47,9 @@ import '/components/form-check/form-check';
 cssBlankPseudo(document);
 focusWithin(document);
 cssHasPseudo(document);
+
+viewport({bodySizes: true});
+// setBoundaryEl(document.querySelector('.header'));
 
 // const start = performance.now();
 
