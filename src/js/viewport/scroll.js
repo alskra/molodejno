@@ -82,11 +82,11 @@ export default function $({boundaryEl = null, spy = false} = {}) {
 
 				if (currentTarget && `#${currentTarget.id}` !== location.hash) {
 					history.replaceState(null, null, `#${currentTarget.id}`);
+					window.dispatchEvent(new Event('scroll-hashchange'));
 				} else if (!currentTarget) {
 					history.replaceState(null, null, stripHash(location.href));
+					window.dispatchEvent(new Event('scroll-hashchange'));
 				}
-
-				window.dispatchEvent(new Event('scroll-hashchange'));
 			}, 100);
 		}, {passive: true});
 	}
