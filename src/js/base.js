@@ -48,8 +48,10 @@ cssBlankPseudo(document);
 focusWithin(document);
 cssHasPseudo(document);
 
-viewport({bodySizes: true});
-// setBoundaryEl(document.querySelector('.header'));
+viewport({
+	bodySizes: true,
+	boundaryEl: document.querySelector('.header'),
+});
 
 // const start = performance.now();
 

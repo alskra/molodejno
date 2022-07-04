@@ -2,24 +2,30 @@ export function getElFromHash() {
 	return (location.hash || null) && document.querySelector(location.hash);
 }
 
-export function setBoundaryEl(boundaryEl) {
+export default function $({scrollBoundaryEl} = {}) {
 	function getBoundary() {
-		return Math.floor(boundaryEl.getBoundingClientRect().bottom);
+		return Math.floor(scrollBoundaryEl.getBoundingClientRect().bottom);
 	}
 
+	document.documentElement.style.scrollBehavior = 'auto';
+
 	window.addEventListener('load', () => {
-		if (boundaryEl) {
-			setTimeout(() => {
+		setTimeout(() => {
+			if (scrollBoundaryEl) {
 				const targetEl = getElFromHash();
 
 				if (targetEl && Math.floor(targetEl.getBoundingClientRect().top) === 0) {
 					scrollBy(0, -getBoundary());
 				}
-			});
-		}
+			}
+
+			document.documentElement.style.scrollBehavior = '';
+		});
 	});
 
-	window.addEventListener('hashchange', () => {
-		scrollTo(0, scrollY + getElFromHash().getBoundingClientRect().top - getBoundary());
-	});
+	if (scrollBoundaryEl) {
+		window.addEventListener('hashchange', () => {
+			scrollTo(0, scrollY + getElFromHash().getBoundingClientRect().top - getBoundary());
+		});
+	}
 }

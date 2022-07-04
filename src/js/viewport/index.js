@@ -1,10 +1,17 @@
 import ResizeObserver from 'resize-observer-polyfill';
-import {setBoundaryEl} from './scroll';
+import $scroll from './scroll';
 
-export {setBoundaryEl};
+export default function $(
+	{
+		vhProperty = true,
+		scrollProperty = false,
+		sizesProperties = false,
+		mutationObserver = false,
+		scrollOptions,
+	} = {}) {
+	$scroll(scrollOptions);
 
-export default function $({vh = true, scroll = false, bodySizes = false, mutationObserver = false} = {}) {
-	if (vh) {
+	if (vhProperty) {
 		$.setVHProperty();
 		window.addEventListener('resize', () => {
 			$.setVHProperty();
@@ -12,7 +19,7 @@ export default function $({vh = true, scroll = false, bodySizes = false, mutatio
 		});
 	}
 
-	if (scroll) {
+	if (scrollProperty) {
 		$.setScrollProperty();
 
 		window.addEventListener('scroll', () => {
@@ -21,8 +28,8 @@ export default function $({vh = true, scroll = false, bodySizes = false, mutatio
 		}, {passive: true});
 	}
 
-	if (bodySizes) {
-		$.setBodySizesProperty();
+	if (sizesProperties) {
+		$.setSizesProperties();
 
 		$.resizeObserver = new ResizeObserver((entries) => {
 			entries.forEach((entry) => {
@@ -32,7 +39,7 @@ export default function $({vh = true, scroll = false, bodySizes = false, mutatio
 					entry.contentRect;
 
 				if (entry.target === $.body) {
-					$.setBodySizesProperty(contentSizes);
+					$.setSizesProperties(contentSizes);
 				}
 			});
 		});
@@ -74,7 +81,7 @@ Object.assign($, {
 	setScrollProperty() {
 		$.root.style.setProperty('--scroll-y', `${scrollY}px`);
 	},
-	setBodySizesProperty(contentSizes) {
+	setSizesProperties(contentSizes) {
 		let contentWidth;
 
 		if (contentSizes) {
