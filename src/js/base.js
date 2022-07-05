@@ -56,13 +56,13 @@ viewport({
 	},
 });
 
-// const start = performance.now();
+const start = performance.now();
 
 scopedCss();
 
-// if (process.env.NODE_ENV === 'development') {
-// 	// eslint-disable-next-line no-console
-// 	console.log('`scoped-css` init time is:', performance.now() - start);
-// }
+if (process.env.NODE_ENV === 'development') {
+	// eslint-disable-next-line no-console
+	console.info('`scoped-css` init time is:', performance.now() - start);
+}
 
 AOS.init();

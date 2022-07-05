@@ -1,5 +1,5 @@
 import ResizeObserver from 'resize-observer-polyfill';
-import $scroll from './scroll';
+import Scroll from './scroll';
 
 export default function $(
 	{
@@ -9,7 +9,7 @@ export default function $(
 		mutationObserver = false,
 		scrollOptions,
 	} = {}) {
-	$scroll(scrollOptions);
+	$.scroll = new Scroll(scrollOptions);
 
 	if (vhProperty) {
 		$.setVHProperty();
