@@ -20,6 +20,7 @@ export default class ViewportScroll {
 				detail: {
 					value,
 					oldValue,
+					delta: value - oldValue,
 					dir: value > oldValue ? 'down' : 'up',
 				},
 			}));
