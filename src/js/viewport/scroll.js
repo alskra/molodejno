@@ -9,6 +9,25 @@ export default class ViewportScroll {
 		return url.href.replace(url.hash, '');
 	}
 
+	static handleScrollDirection() {
+		let value = scrollY;
+		let oldValue = scrollY;
+
+		window.addEventListener('scroll', () => {
+			value = scrollY;
+
+			window.dispatchEvent(new CustomEvent('scroll-change', {
+				detail: {
+					value,
+					oldValue,
+					dir: value > oldValue ? 'down' : 'up',
+				},
+			}));
+
+			oldValue = value;
+		}, {passive: true});
+	}
+
 	getBoundary() {
 		return (this.boundaryEl || 0) && Math.floor(this.boundaryEl.getBoundingClientRect().bottom);
 	}
@@ -66,7 +85,7 @@ export default class ViewportScroll {
 		});
 	}
 
-	handleScroll() {
+	initSpy() {
 		let timeoutID;
 
 		window.addEventListener('scroll', () => {
@@ -83,10 +102,10 @@ export default class ViewportScroll {
 
 				if (currentTarget && `#${currentTarget.id}` !== location.hash) {
 					history.replaceState(null, null, `#${currentTarget.id}`);
-					window.dispatchEvent(new Event('scroll-hashchange'));
+					window.dispatchEvent(new CustomEvent('scroll-hashchange'));
 				} else if (!currentTarget) {
 					history.replaceState(null, null, ViewportScroll.stripHash(location.href));
-					window.dispatchEvent(new Event('scroll-hashchange'));
+					window.dispatchEvent(new CustomEvent('scroll-hashchange'));
 				}
 			}, 100);
 		}, {passive: true});
@@ -98,6 +117,7 @@ export default class ViewportScroll {
 	} = {}) {
 		this.boundaryEl = boundaryEl;
 		this.handleLoad();
+		ViewportScroll.handleScrollDirection();
 
 		if (boundaryEl) {
 			/**
@@ -108,7 +128,7 @@ export default class ViewportScroll {
 		}
 
 		if (spy) {
-			this.handleScroll();
+			this.initSpy();
 		}
 	}
 }
