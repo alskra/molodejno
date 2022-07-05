@@ -13,7 +13,7 @@ import cssHasPseudo from '@csstools/css-has-pseudo-experimental/browser';
 
 // Modules
 import 'ninelines-ua-parser';
-import viewport from './viewport';
+import Viewport from './viewport';
 import scopedCss from './scoped-css';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
@@ -48,7 +48,7 @@ cssBlankPseudo(document);
 focusWithin(document);
 cssHasPseudo(document);
 
-viewport({
+export const viewport = new Viewport({
 	sizesProperties: true,
 	scrollOptions: {
 		boundaryEl: document.querySelector('.header'),
