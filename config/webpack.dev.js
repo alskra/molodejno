@@ -3,6 +3,7 @@ const { merge } = require('webpack-merge');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const paths = require('./paths');
 const common = require('./webpack.common');
+const SVGOConfig = require('../svgo.config');
 
 module.exports = merge(common, {
 	target: 'web',
@@ -57,23 +58,17 @@ module.exports = merge(common, {
 			},
 		],
 	},
-	optimization: {
-		minimizer: [
-			'...',
-			new ImageMinimizerPlugin({
-				test: /\.svg$/i,
-				minimizer: {
-					implementation: ImageMinimizerPlugin.imageminMinify,
-					options: {
-						plugins: [
-							[
-								'svgo',
-								{},
-							],
-						],
-					},
+	plugins: [
+		new ImageMinimizerPlugin({
+			test: /\.svg$/i,
+			minimizer: {
+				implementation: ImageMinimizerPlugin.imageminMinify,
+				options: {
+					plugins: [
+						['svgo', SVGOConfig],
+					],
 				},
-			}),
-		],
-	},
+			},
+		}),
+	],
 });

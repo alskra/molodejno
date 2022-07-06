@@ -1,8 +1,9 @@
-const {merge} = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const common = require('./webpack.common');
+const SVGOConfig = require('../svgo.config');
 
 module.exports = merge(common, {
 	target: 'browserslist',
@@ -16,7 +17,7 @@ module.exports = merge(common, {
 		rules: [
 			{
 				test: /\.s?css$/i,
-				resourceQuery: {not: [/module/]},
+				resourceQuery: { not: [/module/] },
 				use: [
 					{
 						loader: MiniCssExtractPlugin.loader,
@@ -55,53 +56,17 @@ module.exports = merge(common, {
 			chunkFilename: '[id].css',
 		}),
 		new ImageMinimizerPlugin({
-			// test: /\.(jpe?g|png|gif|svg)$/i,
-			test: /\.(jpe?g|gif|svg)$/i,
-			minimizerOptions: {
-				plugins: [
-					[
-						'gifsicle',
-						{interlaced: true},
+			test: /\.(jpe?g|png|gif|svg)$/i,
+			minimizer: {
+				implementation: ImageMinimizerPlugin.imageminMinify,
+				options: {
+					plugins: [
+						['gifsicle', { interlaced: true }],
+						['mozjpeg', { progressive: true, quality: 85 }],
+						['optipng', { optimizationLevel: 5 }],
+						['svgo', SVGOConfig],
 					],
-					[
-						'mozjpeg',
-						{
-							progressive: true,
-							quality: 85,
-						},
-					],
-					[
-						'optipng',
-						{optimizationLevel: 5},
-					],
-					[
-						'svgo',
-						{
-							plugins: [
-								{
-									name: 'preset-default',
-									params: {
-										overrides: {
-											removeUnknownsAndDefaults: false,
-											removeViewBox: false,
-											cleanupIDs: {
-												prefix: {
-													toString() {
-														this.counter = this.counter || 0;
-
-														return `id-${this.counter++}`;
-													},
-												},
-											},
-										},
-									},
-								},
-								'removeDimensions',
-								'sortAttrs',
-							],
-						},
-					],
-				],
+				},
 			},
 		}),
 	],

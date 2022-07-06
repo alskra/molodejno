@@ -19,24 +19,20 @@ const entry = {};
 entry.main = pages.map((page) => `./pages/${page}/${page}.js`);
 entry.main.push('./components/app/app.js');
 
-const htmlPluginEntries = pages.map((page) => {
-	return new HtmlWebpackPlugin({
-		template: `./pages/${page}/${page}.pug`,
-		filename: `${page}.html`,
-		title: 'Webpack Starter',
-		// chunks: [page],
-		minify: false,
-	});
-});
+const htmlPluginEntries = pages.map((page) => new HtmlWebpackPlugin({
+	template: `./pages/${page}/${page}.pug`,
+	filename: `${page}.html`,
+	title: 'Webpack Starter',
+	// chunks: [page],
+	minify: false,
+}));
 
-const htmlPluginEntriesAjax = ajax.map((item) => {
-	return new HtmlWebpackPlugin({
-		template: `./pages/ajax/${item}`,
-		filename: `ajax/${path.basename(item, '.pug')}.html`,
-		minify: false,
-		inject: false,
-	});
-});
+const htmlPluginEntriesAjax = ajax.map((item) => new HtmlWebpackPlugin({
+	template: `./pages/ajax/${item}`,
+	filename: `ajax/${path.basename(item, '.pug')}.html`,
+	minify: false,
+	inject: false,
+}));
 
 module.exports = {
 	context: paths.src,
@@ -116,7 +112,7 @@ module.exports = {
 			},
 			{
 				test: /\.svg$/i,
-				resourceQuery: {not: [/raw/]},
+				resourceQuery: { not: [/raw/] },
 				type: 'asset',
 				generator: {
 					filename: '[path][name][ext][query]',
