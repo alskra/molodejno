@@ -163,7 +163,7 @@ module.exports = {
 			files: '**/*.?(s)css',
 		}),
 		new ESLintPlugin({
-			files: '.',
+			files: '**/*.?(m)js',
 			formatter: 'table',
 		}),
 	],

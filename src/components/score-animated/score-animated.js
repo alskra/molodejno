@@ -1,6 +1,6 @@
 import Alpine from 'alpinejs';
-import {gsap} from 'gsap';
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,6 +25,7 @@ Alpine.data('scoreAnimated', () => ({
 			duration: 1.4,
 			onUpdate() {
 				this.targets().forEach((target) => {
+					// eslint-disable-next-line no-param-reassign
 					target.innerHTML = Math.ceil(target.textContent).toLocaleString('ru');
 				});
 			},

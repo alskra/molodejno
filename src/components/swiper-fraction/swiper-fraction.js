@@ -1,6 +1,6 @@
 import Alpine from 'alpinejs';
 import 'swiper/css/bundle';
-import Swiper, {Navigation, Pagination} from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 import './swiper-fraction.scss';
 
 Alpine.data('swiperFraction', () => {

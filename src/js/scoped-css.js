@@ -13,6 +13,7 @@ function isScopeAttr(attrName) {
 
 function getScopeEl(el) {
 	while (!isHost(el) && el.parentElement) {
+		// eslint-disable-next-line no-param-reassign
 		el = el.parentElement;
 	}
 
@@ -20,12 +21,13 @@ function getScopeEl(el) {
 }
 
 function getScopeName(el) {
-	let name = el.getAttribute(SCOPE_ATTR_NAME) || (el.className.match(HOST_REGEXP) || '');
+	const name = el.getAttribute(SCOPE_ATTR_NAME) || (el.className.match(HOST_REGEXP) || '');
 
 	return (Array.isArray(name) ? name[1] : name).toLowerCase();
 }
 
 function getScope(el) {
+	// eslint-disable-next-line no-param-reassign
 	el = getScopeEl(el);
 
 	return {
@@ -50,6 +52,7 @@ function setData(el, scope) {
 	const oldScopeNames = getScopesFromAttrs(el);
 	const parentScope = el.parentElement && el.parentElement.cssScopes && el.parentElement.cssScopes.at(-1);
 
+	// eslint-disable-next-line no-param-reassign
 	el.cssScopes = [];
 
 	if (parentScope && parentScope.el !== scope.el) {
@@ -59,12 +62,12 @@ function setData(el, scope) {
 	el.cssScopes.push(scope);
 
 	oldScopeNames.forEach((oldScopeName) => {
-		if (!el.cssScopes.find(({name: scopeName}) => oldScopeName === scopeName)) {
+		if (!el.cssScopes.find(({ name: scopeName }) => oldScopeName === scopeName)) {
 			el.removeAttribute(`${SCOPE_ATTR_PREFIX}-${oldScopeName}`);
 		}
 	});
 
-	el.cssScopes.forEach(({el: scopeEl, name: scopeName}) => {
+	el.cssScopes.forEach(({ el: scopeEl, name: scopeName }) => {
 		if (scopeName) {
 			if (scopeEl.hasAttribute(SCOPE_ATTR_NAME)) {
 				if (!oldScopeNames.includes(scopeName)) {
@@ -93,7 +96,13 @@ export default function scopedCss(context = document.documentElement) {
 	setScope(context);
 
 	const observer = new MutationObserver((records) => {
-		records.forEach(({type, target, addedNodes, attributeName, oldValue}) => {
+		records.forEach(({
+			type,
+			target,
+			addedNodes,
+			attributeName,
+			oldValue,
+		}) => {
 			if (addedNodes.length) {
 				addedNodes.forEach((node) => {
 					if (node instanceof Element) {

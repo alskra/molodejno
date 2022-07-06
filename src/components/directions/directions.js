@@ -1,5 +1,5 @@
 import Alpine from 'alpinejs';
-import '../../components/marquee/marquee';
+import '../marquee/marquee';
 import './directions.scss';
 
 Alpine.data('directions', (...marqueeOptionsList) => ({

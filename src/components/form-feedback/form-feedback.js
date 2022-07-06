@@ -9,7 +9,7 @@ Alpine.data('formFeedback', () => ({
 	successTimer: null,
 	validate(obj) {
 		const target = obj.target || obj;
-		const valid = target.validity.valid;
+		const { valid } = target.validity;
 
 		target.classList.toggle('is-invalid', !valid);
 
@@ -18,6 +18,7 @@ Alpine.data('formFeedback', () => ({
 	formValidate() {
 		this.isValid = true;
 
+		// eslint-disable-next-line no-restricted-syntax
 		for (const item of this.$root.querySelectorAll('input, textarea')) {
 			if (!this.validate(item)) {
 				this.isValid = false;

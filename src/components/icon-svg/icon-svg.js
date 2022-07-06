@@ -11,10 +11,10 @@ const icons = {};
 
 const resizeObserver = new ResizeObserver((entries) => {
 	entries.forEach((entry) => {
-		const contentBoxSize = entry.contentBoxSize && entry.contentBoxSize[0] || entry.contentBoxSize;
-		const iconWidth = contentBoxSize && contentBoxSize.inlineSize || entry.contentRect.width;
-		const iconHeight = contentBoxSize && contentBoxSize.blockSize || entry.contentRect.height;
-		const viewBox = `0 0 ${iconWidth / (iconHeight || 1) * entry.target.svgViewBoxHeight} ${entry.target.svgViewBoxHeight}`;
+		const contentBoxSize = (entry.contentBoxSize && entry.contentBoxSize[0]) || entry.contentBoxSize;
+		const iconWidth = (contentBoxSize && contentBoxSize.inlineSize) || entry.contentRect.width;
+		const iconHeight = (contentBoxSize && contentBoxSize.blockSize) || entry.contentRect.height;
+		const viewBox = `0 0 ${(iconWidth / (iconHeight || 1)) * entry.target.svgViewBoxHeight} ${entry.target.svgViewBoxHeight}`;
 
 		entry.target.svgEl.setAttribute('viewBox', viewBox);
 	});
@@ -41,7 +41,7 @@ class IconSvg extends HTMLElement {
 	constructor() {
 		super();
 
-		this.attachShadow({mode: 'open'});
+		this.attachShadow({ mode: 'open' });
 
 		const styleEl = document.createElement('style');
 
@@ -81,4 +81,4 @@ class IconSvg extends HTMLElement {
 customElements.define('icon-svg', IconSvg);
 
 export default IconSvg;
-export {icons};
+export { icons };

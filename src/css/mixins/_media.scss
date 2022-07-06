@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../variables" as *;
 
 @mixin media-hover {
@@ -9,7 +10,7 @@
 
 @mixin media-up($breakpoint) {
 	@if type-of($breakpoint) == "string" {
-		$breakpoint: map-get($breakpoints, $breakpoint);
+		$breakpoint: map.get($breakpoints, $breakpoint);
 	}
 
 	@media (width >= $breakpoint) {
@@ -19,7 +20,7 @@
 
 @mixin media-down($breakpoint) {
 	@if type-of($breakpoint) == "string" {
-		$breakpoint: map-get($breakpoints, $breakpoint);
+		$breakpoint: map.get($breakpoints, $breakpoint);
 	}
 
 	@media (width < $breakpoint) {
@@ -29,11 +30,11 @@
 
 @mixin media-between($breakpoint-start, $breakpoint-end) {
 	@if type-of($breakpoint-start) == "string" {
-		$breakpoint-start: map-get($breakpoints, $breakpoint-start);
+		$breakpoint-start: map.get($breakpoints, $breakpoint-start);
 	}
 
 	@if type-of($breakpoint-end) == "string" {
-		$breakpoint-end: map-get($breakpoints, $breakpoint-end);
+		$breakpoint-end: map.get($breakpoints, $breakpoint-end);
 	}
 
 	@media (width >= $breakpoint-start) and (width < $breakpoint-end) {

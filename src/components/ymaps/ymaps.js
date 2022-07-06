@@ -1,7 +1,7 @@
 import Alpine from 'alpinejs';
 import './ymaps.scss';
 
-Alpine.data('ymaps', ({center = [55.751574, 37.573856], hintContent} = {}) => ({
+Alpine.data('ymaps', ({ center = [55.751574, 37.573856], hintContent } = {}) => ({
 	init() {
 		if (!document.getElementById('ymaps-api')) {
 			const script = document.createElement('script');

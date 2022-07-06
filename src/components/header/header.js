@@ -1,5 +1,5 @@
 import Alpine from 'alpinejs';
-import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import '../soc-network/soc-network';
 import '../nav/nav';
 import './header.scss';
@@ -21,7 +21,7 @@ Alpine.data('header', () => ({
 	},
 	updateStick() {
 		if (this.$store.isDesktop) {
-			this.isSticky = scrollY > 90 / 140 * this.$el.offsetHeight;
+			this.isSticky = scrollY > (90 / 140) * this.$el.offsetHeight;
 		} else {
 			this.isSticky = false;
 		}

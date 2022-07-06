@@ -17,7 +17,7 @@ body {
 	font-size: var(--font-size);
 	line-height: var(--line-height);
 	text-decoration-skip: objects;
-	text-rendering: optimizeLegibility;
+	text-rendering: optimizelegibility;
 	text-size-adjust: 100%;
 	color: var(--color);
 	-webkit-tap-highlight-color: transparent;
@@ -30,7 +30,7 @@ body {
 
 a {
 	text-decoration: none;
-	color: currentColor;
+	color: currentcolor;
 }
 
 img {

@@ -149,7 +149,7 @@
 	font-size: 36rem;
 	line-height: div(43, 36);
 	-webkit-text-fill-color: transparent;
-	-webkit-text-stroke: 0.5px currentColor;
+	-webkit-text-stroke: 0.5px currentcolor;
 
 	@include media-down(lg) {
 		margin-bottom: -4rem;

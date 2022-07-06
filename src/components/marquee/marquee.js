@@ -4,7 +4,7 @@ import './marquee.scss';
 
 let itemHoverEl;
 let itemHoverRect;
-let tooltipCoords = {
+const tooltipCoords = {
 	prevX: 0,
 	prevY: 0,
 	x: 0,

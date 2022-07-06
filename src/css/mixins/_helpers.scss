@@ -25,7 +25,7 @@
 @mixin text-stroke($stroke-width, $stroke-color, $fill-color: transparent) {
 	-webkit-text-stroke: $stroke-width $stroke-color;
 
-	@if ($fill-color == transparent) {
+	@if $fill-color == transparent {
 		-webkit-text-fill-color: $fill-color;
 		color: $stroke-color;
 	} @else {

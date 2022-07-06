@@ -1,16 +1,71 @@
 export default class ViewportScroll {
+	#boundary = undefined;
+
 	static getElFromHash(hash) {
-		return document.getElementById(hash.replace('#', ''));
+		const id = hash.replace(/^#/, '');
+
+		return (id || null) && document.getElementById(id);
 	}
 
-	static stripHash(url) {
-		url = new URL(url);
-
-		return url.href.replace(url.hash, '');
+	get boundary() {
+		return (this.boundaryEl || 0) && Math.floor(this.boundaryEl.getBoundingClientRect().bottom);
 	}
 
-	static handleScrollDirection() {
-		let value = scrollY;
+	set boundary(val) {
+		this.#boundary = val;
+	}
+
+	scrollToTarget(targetEl) {
+		scrollTo(0, scrollY + targetEl.getBoundingClientRect().top - this.boundary);
+	}
+
+	// eslint-disable-next-line class-methods-use-this
+	handleLoad() {
+		// document.documentElement.style.scrollBehavior = 'auto';
+		//
+		// window.addEventListener('load', () => {
+		// 	setTimeout(() => {
+		// 		if (this.boundary) {
+		// 			const targetEl = ViewportScroll.getElFromHash(location.hash);
+		//
+		// 			if (targetEl && Math.floor(targetEl.getBoundingClientRect().top) === 0) {
+		// 				scrollBy(0, -this.boundary);
+		// 			}
+		// 		}
+		// 	});
+		// });
+		//
+		window.addEventListener('scroll', () => {
+			// eslint-disable-next-line no-console
+			console.log('scroll', scrollY);
+		});
+		//
+		// window.addEventListener('popstate', () => {
+		// 	// eslint-disable-next-line no-console
+		// 	console.log('popstate');
+		// });
+	}
+
+	handleHashChange() {
+		window.addEventListener('hashchange', () => {
+			// eslint-disable-next-line no-console
+			console.log('hashchange');
+
+			if (!history.state) {
+				history.replaceState(history.scrollRestoration, null);
+
+				const targetEl = ViewportScroll.getElFromHash(location.hash);
+
+				if (targetEl) {
+					this.scrollToTarget(targetEl);
+				}
+			}
+		});
+	}
+
+	// eslint-disable-next-line class-methods-use-this
+	handleScrollDirection() {
+		let value;
 		let oldValue = scrollY;
 
 		window.addEventListener('scroll', () => {
@@ -26,60 +81,19 @@ export default class ViewportScroll {
 			}));
 
 			oldValue = value;
-		}, {passive: true});
-	}
-
-	getBoundary() {
-		return (this.boundaryEl || 0) && Math.floor(this.boundaryEl.getBoundingClientRect().bottom);
-	}
-
-	scrollToTarget(targetEl) {
-		scrollTo(0, scrollY + targetEl.getBoundingClientRect().top - this.getBoundary());
-	}
-
-	handleLoad() {
-		document.documentElement.style.scrollBehavior = 'auto';
-
-		window.addEventListener('load', () => {
-			setTimeout(() => {
-				if (this.boundaryEl) {
-					const targetEl = ViewportScroll.getElFromHash(location.hash);
-
-					if (targetEl && Math.floor(targetEl.getBoundingClientRect().top) === 0) {
-						scrollBy(0, -this.getBoundary());
-					}
-				}
-
-				document.documentElement.style.scrollBehavior = '';
-			});
-		});
-	}
-
-	handleHashChange() {
-		window.addEventListener('hashchange', () => {
-			const targetEl = ViewportScroll.getElFromHash(location.hash);
-
-			if (targetEl) {
-				this.scrollToTarget(targetEl);
-			}
-		});
+		}, { passive: true });
 	}
 
 	handleAnchors() {
 		document.addEventListener('click', (evt) => {
-			if (evt.target.tagName === 'A' && ViewportScroll.stripHash(evt.target.href) === ViewportScroll.stripHash(location.href)) {
+			const anchorEl = evt.target.closest('a');
+
+			if (anchorEl && anchorEl.href === location.href) {
 				evt.preventDefault();
 
-				const targetEl = ViewportScroll.getElFromHash(evt.target.hash);
+				const targetEl = ViewportScroll.getElFromHash(anchorEl.hash);
 
 				if (targetEl) {
-					/**
-					 * Push a state if target element is existed
-					 */
-					if (evt.target.hash !== location.hash) {
-						history.pushState(null, null, evt.target.hash);
-					}
-
 					this.scrollToTarget(targetEl);
 				}
 			}
@@ -96,7 +110,7 @@ export default class ViewportScroll {
 				let currentTarget;
 
 				document.querySelectorAll('[data-scroll]').forEach((targetEl) => {
-					if (Math.floor(targetEl.getBoundingClientRect().top) <= this.getBoundary()) {
+					if (Math.floor(targetEl.getBoundingClientRect().top) <= this.boundary) {
 						currentTarget = targetEl;
 					}
 				});
@@ -105,28 +119,23 @@ export default class ViewportScroll {
 					history.replaceState(null, null, `#${currentTarget.id}`);
 					window.dispatchEvent(new CustomEvent('scroll-hashchange'));
 				} else if (!currentTarget) {
-					history.replaceState(null, null, ViewportScroll.stripHash(location.href));
+					history.replaceState(null, null, '#');
 					window.dispatchEvent(new CustomEvent('scroll-hashchange'));
 				}
 			}, 100);
-		}, {passive: true});
+		}, { passive: true });
 	}
 
 	constructor({
-		boundaryEl = null,
+		// eslint-disable-next-line no-unused-vars
+		boundary = 0,
 		spy = false,
 	} = {}) {
-		this.boundaryEl = boundaryEl;
+		// this.boundaryEl = boundaryEl;
 		this.handleLoad();
-		ViewportScroll.handleScrollDirection();
-
-		if (boundaryEl) {
-			/**
-			 * Change hash or navigation with hash change is emit two events: `popstate` and `hashchange`
-			 */
-			// this.handleHashChange();
-			this.handleAnchors();
-		}
+		this.handleHashChange();
+		this.handleScrollDirection();
+		this.handleAnchors();
 
 		if (spy) {
 			this.initSpy();

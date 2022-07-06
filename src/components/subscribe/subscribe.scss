@@ -28,7 +28,7 @@
 	position: relative;
 }
 
-%subscribe__input {
+%subscribe-input {
 	@include form-field;
 
 	border-left: 1px solid $color-white;
@@ -41,13 +41,13 @@
 }
 
 .subscribe__input-el {
-	@extend %subscribe__input;
+	@extend %subscribe-input;
 
 	font-weight: 700;
 }
 
 .subscribe__input-placeholder {
-	@extend %subscribe__input;
+	@extend %subscribe-input;
 
 	position: absolute;
 	left: 0;

@@ -89,7 +89,7 @@
 }
 
 .event-item__location {
-	--color: currentColor;
+	--color: currentcolor;
 	--icon-stroke-width: 1px;
 	--icon-stroke-color: var(--color);
 
@@ -102,7 +102,7 @@
 }
 
 .event-item__tags {
-	--color: currentColor;
+	--color: currentcolor;
 	--color-hover: var(--color);
 
 	position: relative;
@@ -128,7 +128,7 @@
 
 .event-item__date {
 	margin-left: auto;
-	color: currentColor;
+	color: currentcolor;
 }
 
 .event-item__title {

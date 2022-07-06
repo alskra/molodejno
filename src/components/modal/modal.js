@@ -1,6 +1,6 @@
 import Alpine from 'alpinejs';
 import '@fancyapps/ui/dist/fancybox.css';
-import {Fancybox} from '@fancyapps/ui';
+import { Fancybox } from '@fancyapps/ui';
 import './modal.scss';
 
 Alpine.data('modal', () => ({}));

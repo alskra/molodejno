@@ -48,6 +48,7 @@ cssBlankPseudo(document);
 focusWithin(document);
 cssHasPseudo(document);
 
+// eslint-disable-next-line import/prefer-default-export
 export const viewport = new Viewport({
 	sizesProperties: true,
 	scrollOptions: {

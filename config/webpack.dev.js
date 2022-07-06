@@ -1,5 +1,5 @@
 const path = require('path');
-const {merge} = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const paths = require('./paths');
 const common = require('./webpack.common');
@@ -9,8 +9,8 @@ module.exports = merge(common, {
 	mode: 'development',
 	devtool: 'eval-source-map',
 	devServer: {
-		'port': 8080,
-		'static': [
+		port: 8080,
+		static: [
 			paths.build,
 			// Fallback for templates resources
 			{
@@ -19,17 +19,17 @@ module.exports = merge(common, {
 			},
 		],
 		// Watch templates
-		'watchFiles': path.resolve(paths.src, '**/*.pug'),
-		'historyApiFallback': true,
-		'open': true,
-		'compress': true,
-		'hot': true,
+		watchFiles: path.resolve(paths.src, '**/*.pug'),
+		historyApiFallback: true,
+		open: true,
+		compress: true,
+		hot: true,
 	},
 	module: {
 		rules: [
 			{
 				test: /\.s?css$/i,
-				resourceQuery: {not: [/module/]},
+				resourceQuery: { not: [/module/] },
 				use: [
 					'style-loader',
 					{
@@ -57,40 +57,23 @@ module.exports = merge(common, {
 			},
 		],
 	},
-	plugins: [
-		new ImageMinimizerPlugin({
-			test: /\.svg$/i,
-			minimizerOptions: {
-				plugins: [
-					[
-						'svgo',
-						{
-							plugins: [
-								{
-									name: 'preset-default',
-									params: {
-										overrides: {
-											removeUnknownsAndDefaults: false,
-											removeViewBox: false,
-											cleanupIDs: {
-												prefix: {
-													toString() {
-														this.counter = this.counter || 0;
-
-														return `id-${this.counter++}`;
-													},
-												},
-											},
-										},
-									},
-								},
-								'removeDimensions',
-								'sortAttrs',
+	optimization: {
+		minimizer: [
+			'...',
+			new ImageMinimizerPlugin({
+				test: /\.svg$/i,
+				minimizer: {
+					implementation: ImageMinimizerPlugin.imageminMinify,
+					options: {
+						plugins: [
+							[
+								'svgo',
+								{},
 							],
-						},
-					],
-				],
-			},
-		}),
-	],
+						],
+					},
+				},
+			}),
+		],
+	},
 });

@@ -1,6 +1,6 @@
 import Alpine from 'alpinejs';
 import 'swiper/css/bundle';
-import Swiper, {EffectFade, Navigation, Autoplay} from 'swiper';
+import Swiper, { EffectFade, Navigation, Autoplay } from 'swiper';
 import './slider.scss';
 
 Alpine.data('slider', () => ({

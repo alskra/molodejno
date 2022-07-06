@@ -3,7 +3,9 @@ import ViewportScroll from './scroll';
 
 export default class Viewport {
 	root = document.documentElement;
+
 	body = document.body;
+
 	callbacks = [];
 
 	setVHProperty() {
@@ -50,7 +52,7 @@ export default class Viewport {
 			window.addEventListener('scroll', () => {
 				this.setScrollProperty();
 				this.callbacks.forEach((callback) => callback());
-			}, {passive: true});
+			}, { passive: true });
 		}
 
 		if (sizesProperties) {
@@ -59,9 +61,9 @@ export default class Viewport {
 			this.resizeObserver = new ResizeObserver((entries) => {
 				entries.forEach((entry) => {
 					// eslint-disable-next-line no-nested-ternary
-					const contentSizes = entry.contentBoxSize ?
-						entry.contentBoxSize[0] ? entry.contentBoxSize[0] : entry.contentBoxSize :
-						entry.contentRect;
+					const contentSizes = entry.contentBoxSize
+						? entry.contentBoxSize[0] ? entry.contentBoxSize[0] : entry.contentBoxSize
+						: entry.contentRect;
 
 					if (entry.target === this.body) {
 						this.setSizesProperties(contentSizes);

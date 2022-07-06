@@ -1,6 +1,6 @@
 import Alpine from 'alpinejs';
 import 'swiper/css/bundle';
-import Swiper, {FreeMode} from 'swiper';
+import Swiper, { FreeMode } from 'swiper';
 
 Alpine.data('swiperFree', (onlyMobile = true) => {
 	let inst;

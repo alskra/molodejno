@@ -3,16 +3,26 @@
 @forward "variables";
 @forward "functions";
 @forward "mixins";
-
 @use "variables" as *;
 
+// Custom selectors
 @custom-selector :--disabled :is(:disabled, [disabled], .is-disabled);
 @custom-selector :--invalid .is-invalid;
 
 @each $name, $value in $breakpoints {
+	// stylelint-disable-next-line
 	@custom-media --up-#{$name} (width >= #{$value});
 }
 
 @each $name, $value in $breakpoints {
+	// stylelint-disable-next-line
 	@custom-media --down-#{$name} (width < #{$value});
+}
+
+:--foo:--scope {
+	content: "gf";
+}
+
+h1:--scope {
+	content: "fgdas";
 }
