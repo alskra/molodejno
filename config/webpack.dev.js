@@ -7,7 +7,6 @@ const SVGOConfig = require('../svgo.config');
 
 module.exports = merge(common, {
 	target: 'web',
-	mode: 'development',
 	devtool: 'eval-source-map',
 	devServer: {
 		port: 8080,

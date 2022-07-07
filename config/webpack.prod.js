@@ -7,8 +7,6 @@ const SVGOConfig = require('../svgo.config');
 
 module.exports = merge(common, {
 	target: 'browserslist',
-	mode: 'production',
-	devtool: false,
 	output: {
 		filename: 'js/[name].js',
 		publicPath: '',
