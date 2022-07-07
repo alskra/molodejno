@@ -6,7 +6,7 @@ import '/css/base.scss';
 import '/css/helpers.scss';
 
 // PostCSS Preset Env Polyfills
-import './postcss-preset-env-polyfills';
+import './postcss-polyfills';
 
 // Modules
 import 'ninelines-ua-parser';
