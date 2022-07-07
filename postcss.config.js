@@ -8,7 +8,7 @@ module.exports = {
 					'all-property': false,
 					'custom-properties': false,
 					'has-pseudo-class': false,
-					'logical-properties-and-values': {dir: 'ltr'},
+					'logical-properties-and-values': { dir: 'ltr' },
 				},
 			},
 		],

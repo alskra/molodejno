@@ -10,7 +10,6 @@
 		"no-descending-specificity": null,
 		"scss/no-global-function-names": null,
 		"scss/double-slash-comment-empty-line-before": null,
-		"scss/double-slash-comment-whitespace-inside": null,
 		"order/order": [
 			{
 				"type": "at-rule",

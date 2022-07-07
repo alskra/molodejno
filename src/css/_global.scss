@@ -18,11 +18,3 @@
 	// stylelint-disable-next-line
 	@custom-media --down-#{$name} (width < #{$value});
 }
-
-:--foo:--scope {
-	content: "gf";
-}
-
-h1:--scope {
-	content: "fgdas";
-}

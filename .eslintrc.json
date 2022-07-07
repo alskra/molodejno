@@ -41,6 +41,7 @@
 		"import/no-unresolved": "off",
 		"import/extensions": "off",
 		"import/no-absolute-path": "off",
-		"import/order": "off"
+		"import/order": "off",
+		"import/prefer-default-export": "off"
 	}
 }
