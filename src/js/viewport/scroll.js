@@ -8,7 +8,7 @@ export default class ViewportScroll {
 	}
 
 	get boundary() {
-		return (this.boundaryEl || 0) && Math.floor(this.boundaryEl.getBoundingClientRect().bottom);
+		return (this.#boundary || 0) && Math.floor(this.#boundary.getBoundingClientRect().bottom);
 	}
 
 	set boundary(val) {
