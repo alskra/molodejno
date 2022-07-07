@@ -92,7 +92,9 @@ function setScope(el, scope = getScope(el)) {
 	});
 }
 
-export default function scopedCss(context = document.documentElement) {
+export default function scopedCss(context = document.documentElement, { debug = false } = {}) {
+	const startTimeStamp = performance.now();
+
 	setScope(context);
 
 	const observer = new MutationObserver((records) => {
@@ -122,6 +124,11 @@ export default function scopedCss(context = document.documentElement) {
 		childList: true,
 		attributeFilter: ['class', SCOPE_ATTR_NAME],
 	});
+
+	if (debug) {
+		// eslint-disable-next-line no-console
+		console.log(`\`scoped-css\` initialized in ${performance.now() - startTimeStamp} ms`);
+	}
 
 	return context;
 }

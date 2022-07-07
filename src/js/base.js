@@ -5,13 +5,11 @@ import '/css/root.scss';
 import '/css/base.scss';
 import '/css/helpers.scss';
 
-// PostCSS Preset Env Polyfills
-import './postcss-polyfills';
-
 // Modules
+import './postcss-polyfills';
 import 'ninelines-ua-parser';
-import Viewport from './viewport';
 import scopedCss from './scoped-css';
+import Viewport from './viewport';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
@@ -40,6 +38,8 @@ import '/components/video/video';
 import '/components/form-field/form-field';
 import '/components/form-check/form-check';
 
+scopedCss(undefined, { debug: true });
+
 export const viewport = new Viewport({
 	sizesProperties: true,
 	scrollOptions: {
@@ -47,14 +47,5 @@ export const viewport = new Viewport({
 		spy: true,
 	},
 });
-
-const start = performance.now();
-
-scopedCss();
-
-if (process.env.NODE_ENV === 'development') {
-	// eslint-disable-next-line no-console
-	console.info('`scoped-css` init time is:', performance.now() - start);
-}
 
 AOS.init();

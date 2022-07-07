@@ -37,7 +37,7 @@ export default class ViewportScroll {
 		//
 		window.addEventListener('scroll', () => {
 			// eslint-disable-next-line no-console
-			console.log('scroll', scrollY);
+			// console.log('scroll', scrollY);
 		});
 		//
 		// window.addEventListener('popstate', () => {
