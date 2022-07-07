@@ -6,10 +6,7 @@ import '/css/base.scss';
 import '/css/helpers.scss';
 
 // PostCSS Preset Env Polyfills
-import cssBlankPseudo from 'css-blank-pseudo/browser';
-import 'focus-visible';
-import focusWithin from 'focus-within';
-import cssHasPseudo from '@csstools/css-has-pseudo-experimental/browser';
+import './postcss-preset-env-polyfills';
 
 // Modules
 import 'ninelines-ua-parser';
@@ -42,11 +39,6 @@ import '/components/integration/integration';
 import '/components/video/video';
 import '/components/form-field/form-field';
 import '/components/form-check/form-check';
-
-// PostCSS Preset Env Polyfills
-cssBlankPseudo(document);
-focusWithin(document);
-cssHasPseudo(document);
 
 export const viewport = new Viewport({
 	sizesProperties: true,
