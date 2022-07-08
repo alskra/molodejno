@@ -53,7 +53,7 @@ module.exports = {
 						loader: 'html-loader',
 						options: {
 							sources: {
-								urlFilter: (attribute, value) => !/^\/|(^|.*\/)media\//.test(value),
+								urlFilter: (attribute, value) => !/^\/|^(.*\/)?media\//.test(value),
 							},
 							minimize: false,
 						},
