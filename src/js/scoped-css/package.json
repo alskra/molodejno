@@ -9,6 +9,6 @@
     ".": "./scoped-css.js",
     "./css": "./scoped-css.css"
   },
-  "author": "krasnoyurchenko.a.s@gmail.com",
+  "author": "Alexander Krasnoyurchenko <krasnoyurchenko.a.s@gmail.com>",
   "license": "ISC"
 }
