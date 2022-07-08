@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const paths = require('./paths');
+const cssLoaders = require('./css-loaders');
 
 const pages = fs.readdirSync(path.resolve(paths.src, 'pages'))
 	.filter((item) => item !== 'ajax');
@@ -69,29 +70,7 @@ module.exports = {
 			{
 				test: /\.s?css$/i,
 				resourceQuery: /module/,
-				use: [
-					{
-						loader: 'css-loader',
-						options: {
-							url: {
-								filter: (url) => !/^\//.test(url),
-							},
-							importLoaders: 3,
-						},
-					},
-					'postcss-loader',
-					'resolve-url-loader',
-					{
-						loader: 'sass-loader',
-						options: {
-							sassOptions: {
-								outputStyle: 'expanded',
-							},
-							sourceMap: true,
-							additionalData: '@use "/css/global" as *;\n\n',
-						},
-					},
-				],
+				use: cssLoaders,
 			},
 			{
 				test: /\.m?js$/i,
@@ -164,10 +143,16 @@ module.exports = {
 		}),
 	],
 	resolve: {
-		modules: ['node_modules'],
+		modules: [path.resolve(paths.src, 'js'), 'node_modules'],
 		extensions: ['...', '.css', '.scss'],
 		alias: {
 			'@': paths.src,
+			'@components': path.resolve(paths.src, 'components'),
+			'@css': path.resolve(paths.src, 'css'),
+			'@fonts': path.resolve(paths.src, 'fonts'),
+			'@images': path.resolve(paths.src, 'images'),
+			'@js': path.resolve(paths.src, 'js'),
+			'@pug': path.resolve(paths.src, 'pug'),
 		},
 	},
 };

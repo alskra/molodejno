@@ -92,10 +92,16 @@ function setScope(el, scope = getScope(el)) {
 	});
 }
 
-export default function scopedCss(context = document.documentElement, { debug = false } = {}) {
+export default function scopedCss(context = document.body, { debug = false } = {}) {
 	const startTimeStamp = performance.now();
 
 	setScope(context);
+	document.documentElement.classList.add('scoped-css-initialized');
+
+	if (debug) {
+		// eslint-disable-next-line no-console
+		console.log(`\`scoped-css\` initialized in ${performance.now() - startTimeStamp} ms`);
+	}
 
 	const observer = new MutationObserver((records) => {
 		records.forEach(({
@@ -124,11 +130,6 @@ export default function scopedCss(context = document.documentElement, { debug = 
 		childList: true,
 		attributeFilter: ['class', SCOPE_ATTR_NAME],
 	});
-
-	if (debug) {
-		// eslint-disable-next-line no-console
-		console.log(`\`scoped-css\` initialized in ${performance.now() - startTimeStamp} ms`);
-	}
 
 	return context;
 }

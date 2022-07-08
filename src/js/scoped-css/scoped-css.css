@@ -1,0 +1,3 @@
+[data-scoped-css]:not(.scoped-css-initialized *) {
+	display: none !important;
+}
