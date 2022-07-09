@@ -99,7 +99,7 @@ export default function scopedCss(context = document.body, { debug = false } = {
 	// context.classList.add('scoped-css-init');
 	requestAnimationFrame(() => {
 		context.classList.add('scoped-css-init');
-		window.dispatchEvent(new CustomEvent('scoped-css-init', { detail: context }));
+		window.dispatchEvent(new CustomEvent('scoped-css-init', { detail: { context } }));
 	});
 
 	if (debug) {

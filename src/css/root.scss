@@ -63,7 +63,7 @@
 
 // Layout
 :root {
-	--full-width: var(--body-content-width, 100vw);
+	--full-width: var(--body-content-width, calc(100vw - 20px));
 	--gap-xs: 15rem;
 	--gap-sm: 20rem;
 	--gap-md: 30rem;
