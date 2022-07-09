@@ -18,6 +18,8 @@
 
 	font-size: var(--font-size);
 	line-height: var(--line-height);
+	background: red;
+	transition: background-color 2s;
 
 	@include media-down(lg) {
 		--list-indent: #{em(35)};

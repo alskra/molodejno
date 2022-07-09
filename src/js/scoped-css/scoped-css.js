@@ -96,7 +96,11 @@ export default function scopedCss(context = document.body, { debug = false } = {
 	const startTimeStamp = performance.now();
 
 	setScope(context);
-	document.documentElement.classList.add('scoped-css-initialized');
+	// context.classList.add('scoped-css-init');
+	requestAnimationFrame(() => {
+		context.classList.add('scoped-css-init');
+		window.dispatchEvent(new CustomEvent('scoped-css-init', { detail: context }));
+	});
 
 	if (debug) {
 		// eslint-disable-next-line no-console

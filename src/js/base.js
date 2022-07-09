@@ -8,7 +8,7 @@ import '@css/helpers.scss';
 // Modules
 import 'ninelines-ua-parser';
 import '@js/postcss-polyfills';
-// import 'scoped-css/css';
+import 'scoped-css/css';
 import scopedCss from 'scoped-css';
 import Viewport from '@js/viewport';
 import 'aos/dist/aos.css';
