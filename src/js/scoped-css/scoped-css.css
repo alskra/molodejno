@@ -1,9 +1,9 @@
-[data-scoped-css]:not(.scoped-css-init, .scoped-css-init *),
-[data-scoped-css]:not(.scoped-css-init, .scoped-css-init *)::before,
-[data-scoped-css]:not(.scoped-css-init, .scoped-css-init *)::after,
-[data-scoped-css]:not(.scoped-css-init, .scoped-css-init *) *,
-[data-scoped-css]:not(.scoped-css-init, .scoped-css-init *) ::before,
-[data-scoped-css]:not(.scoped-css-init, .scoped-css-init *) ::after {
+[data-scoped-css]:not([data-scoped-css-context], [data-scoped-css-context] *),
+[data-scoped-css]:not([data-scoped-css-context], [data-scoped-css-context] *)::before,
+[data-scoped-css]:not([data-scoped-css-context], [data-scoped-css-context] *)::after,
+[data-scoped-css]:not([data-scoped-css-context], [data-scoped-css-context] *) *,
+[data-scoped-css]:not([data-scoped-css-context], [data-scoped-css-context] *) ::before,
+[data-scoped-css]:not([data-scoped-css-context], [data-scoped-css-context] *) ::after {
 	visibility: hidden !important;
 	transition: none !important;
 	animation: none !important;

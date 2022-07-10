@@ -96,9 +96,9 @@ export default function scopedCss(context = document.body, { debug = false } = {
 	const startTimeStamp = performance.now();
 
 	setScope(context);
-	// context.classList.add('scoped-css-init');
+	// context.setAttribute('data-scoped-css-context', '');
 	requestAnimationFrame(() => {
-		context.classList.add('scoped-css-init');
+		context.setAttribute('data-scoped-css-context', '');
 		window.dispatchEvent(new CustomEvent('scoped-css-init', { detail: { context } }));
 	});
 
