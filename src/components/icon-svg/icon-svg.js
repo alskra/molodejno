@@ -2,7 +2,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 import style from './icon-svg.scss?module';
 
 const requireIcon = require.context(
-	'../../images/icons/svg?raw',
+	'@images/icons/svg?raw',
 	false,
 	/\.svg$/,
 );
