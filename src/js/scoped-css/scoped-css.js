@@ -3,6 +3,7 @@ const INIT_ATTR = 'data-scoped-css-init';
 const ENABLE_ATTR = 'data-scoped-css';
 const SCOPE_ATTR_PREFIX = 'data-s';
 const SCOPE_ATTR_PREFIX_REGEXP = new RegExp(`^${SCOPE_ATTR_PREFIX}-`);
+const EVENT_INIT = 'scoped-css-init';
 
 function isScopeEl(el) {
 	return SCOPE_EL_CLASSNAME_REGEXP.test(el.className);
@@ -38,20 +39,20 @@ function getScope(el) {
 	};
 }
 
-function getScopesFromAttrs(el) {
-	const scopes = [];
+function getScopeNamesFromAttrs(el) {
+	const scopeNames = [];
 
 	el.getAttributeNames().forEach((attrName) => {
 		if (isScopeAttr(attrName)) {
-			scopes.push(attrName.replace(SCOPE_ATTR_PREFIX_REGEXP, ''));
+			scopeNames.push(attrName.replace(SCOPE_ATTR_PREFIX_REGEXP, ''));
 		}
 	});
 
-	return scopes;
+	return scopeNames;
 }
 
 function setData(el, scope) {
-	const oldScopeNames = getScopesFromAttrs(el);
+	const oldScopeNames = getScopeNamesFromAttrs(el);
 	const parentScope = el.parentElement && el.parentElement.cssScopes && el.parentElement.cssScopes.at(-1);
 
 	// eslint-disable-next-line no-param-reassign
@@ -106,7 +107,7 @@ export default function scopedCss(el = document.body, { debug = false } = {}) {
 
 	requestAnimationFrame(() => {
 		el.setAttribute(INIT_ATTR, '');
-		window.dispatchEvent(new CustomEvent('scoped-css-init', { detail: { el } }));
+		el.dispatchEvent(new CustomEvent(EVENT_INIT, { bubbles: true, detail: { el } }));
 	});
 
 	const observer = new MutationObserver((records) => {

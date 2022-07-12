@@ -7,6 +7,10 @@ export default class ViewportScroll {
 		return (id || null) && document.getElementById(id);
 	}
 
+	static stripHash(url) {
+		return url.replace(/#.*/, '');
+	}
+
 	get boundary() {
 		return (this.#boundary || 0) && Math.floor(this.#boundary.getBoundingClientRect().bottom);
 	}
@@ -119,7 +123,7 @@ export default class ViewportScroll {
 					history.replaceState(null, null, `#${currentTarget.id}`);
 					window.dispatchEvent(new CustomEvent('scroll-hashchange'));
 				} else if (!currentTarget) {
-					history.replaceState(null, null, '#');
+					history.replaceState(null, null, ViewportScroll.stripHash(location.href));
 					window.dispatchEvent(new CustomEvent('scroll-hashchange'));
 				}
 			}, 100);
