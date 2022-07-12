@@ -1,7 +1,8 @@
+const CONTEXT_ATTR_NAME = 'data-scoped-css-context';
 const SCOPE_ATTR_NAME = 'data-scoped-css';
 const SCOPE_ATTR_PREFIX = 'data-s';
 const SCOPE_ATTR_PREFIX_REGEXP = new RegExp(`^${SCOPE_ATTR_PREFIX}-`);
-const HOST_REGEXP = /^([a-z0-9]+(?:-[a-z0-9]+)*)(?:\s|$)/i;
+const HOST_REGEXP = /^([a-z\d]+(?:-[a-z\d]+)*)(?:\s|$)/i;
 
 function isHost(el) {
 	return HOST_REGEXP.test(el.className);
@@ -92,20 +93,20 @@ function setScope(el, scope = getScope(el)) {
 	});
 }
 
-export default function scopedCss(context = document.body, { debug = false } = {}) {
+export default function scopedCss(el = document.body, { debug = false } = {}) {
 	const startTimeStamp = performance.now();
 
-	setScope(context);
-	// context.setAttribute('data-scoped-css-context', '');
-	requestAnimationFrame(() => {
-		context.setAttribute('data-scoped-css-context', '');
-		window.dispatchEvent(new CustomEvent('scoped-css-init', { detail: { context } }));
-	});
+	setScope(el);
 
 	if (debug) {
 		// eslint-disable-next-line no-console
 		console.log(`\`scoped-css\` initialized in ${performance.now() - startTimeStamp} ms`);
 	}
+
+	requestAnimationFrame(() => {
+		el.setAttribute(CONTEXT_ATTR_NAME, '');
+		window.dispatchEvent(new CustomEvent('scoped-css-init', { detail: { el } }));
+	});
 
 	const observer = new MutationObserver((records) => {
 		records.forEach(({
@@ -129,11 +130,11 @@ export default function scopedCss(context = document.body, { debug = false } = {
 		});
 	});
 
-	observer.observe(context, {
+	observer.observe(el, {
 		subtree: true,
 		childList: true,
 		attributeFilter: ['class', SCOPE_ATTR_NAME],
 	});
 
-	return context;
+	return el;
 }
