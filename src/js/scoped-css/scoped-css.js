@@ -1,39 +1,40 @@
-const CONTEXT_ATTR_NAME = 'data-scoped-css-context';
-const SCOPE_ATTR_NAME = 'data-scoped-css';
+const SCOPE_EL_CLASSNAME_REGEXP = /^([a-z\d]+(?:-[a-z\d]+)*)(?:\s|$)/i;
+const INIT_ATTR = 'data-scoped-css-init';
+const ENABLE_ATTR = 'data-scoped-css';
 const SCOPE_ATTR_PREFIX = 'data-s';
 const SCOPE_ATTR_PREFIX_REGEXP = new RegExp(`^${SCOPE_ATTR_PREFIX}-`);
-const HOST_REGEXP = /^([a-z\d]+(?:-[a-z\d]+)*)(?:\s|$)/i;
 
-function isHost(el) {
-	return HOST_REGEXP.test(el.className);
+function isScopeEl(el) {
+	return SCOPE_EL_CLASSNAME_REGEXP.test(el.className);
 }
 
 function isScopeAttr(attrName) {
-	return attrName !== SCOPE_ATTR_NAME && SCOPE_ATTR_PREFIX_REGEXP.test(attrName);
+	return SCOPE_ATTR_PREFIX_REGEXP.test(attrName);
 }
 
 function getScopeEl(el) {
-	while (!isHost(el) && el.parentElement) {
-		// eslint-disable-next-line no-param-reassign
-		el = el.parentElement;
+	let scopeEl = el;
+
+	while (!isScopeEl(scopeEl) && scopeEl.parentElement) {
+		scopeEl = scopeEl.parentElement;
 	}
 
-	return el;
+	return scopeEl;
 }
 
 function getScopeName(el) {
-	const name = el.getAttribute(SCOPE_ATTR_NAME) || (el.className.match(HOST_REGEXP) || '');
+	const name = el.getAttribute(ENABLE_ATTR) || (el.className.match(SCOPE_EL_CLASSNAME_REGEXP) || '');
 
 	return (Array.isArray(name) ? name[1] : name).toLowerCase();
 }
 
 function getScope(el) {
-	// eslint-disable-next-line no-param-reassign
-	el = getScopeEl(el);
+	const scopeEl = getScopeEl(el);
+	const scopeName = getScopeName(scopeEl);
 
 	return {
-		el,
-		name: getScopeName(el),
+		el: scopeEl,
+		name: scopeName,
 	};
 }
 
@@ -70,7 +71,7 @@ function setData(el, scope) {
 
 	el.cssScopes.forEach(({ el: scopeEl, name: scopeName }) => {
 		if (scopeName) {
-			if (scopeEl.hasAttribute(SCOPE_ATTR_NAME)) {
+			if (scopeEl.hasAttribute(ENABLE_ATTR)) {
 				if (!oldScopeNames.includes(scopeName)) {
 					el.setAttribute(`${SCOPE_ATTR_PREFIX}-${scopeName}`, '');
 				}
@@ -85,7 +86,7 @@ function setScope(el, scope = getScope(el)) {
 	setData(el, scope);
 
 	Array.from(el.children).forEach((childEl) => {
-		if (isHost(childEl)) {
+		if (isScopeEl(childEl)) {
 			setScope(childEl);
 		} else {
 			setScope(childEl, scope);
@@ -100,11 +101,11 @@ export default function scopedCss(el = document.body, { debug = false } = {}) {
 
 	if (debug) {
 		// eslint-disable-next-line no-console
-		console.log(`\`scoped-css\` initialized in ${performance.now() - startTimeStamp} ms`);
+		console.log(`\`scoped-css\` initialized in ${Math.round(performance.now() - startTimeStamp)} ms`);
 	}
 
 	requestAnimationFrame(() => {
-		el.setAttribute(CONTEXT_ATTR_NAME, '');
+		el.setAttribute(INIT_ATTR, '');
 		window.dispatchEvent(new CustomEvent('scoped-css-init', { detail: { el } }));
 	});
 
@@ -133,7 +134,7 @@ export default function scopedCss(el = document.body, { debug = false } = {}) {
 	observer.observe(el, {
 		subtree: true,
 		childList: true,
-		attributeFilter: ['class', SCOPE_ATTR_NAME],
+		attributeFilter: ['class', ENABLE_ATTR],
 	});
 
 	return el;
