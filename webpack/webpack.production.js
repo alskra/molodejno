@@ -2,7 +2,7 @@ const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-const common = require('./webpack.common');
+const common = require('./webpack.config');
 const cssLoaders = require('./css-loaders');
 const SVGOConfig = require('../svgo.config');
 

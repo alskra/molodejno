@@ -2,7 +2,7 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const paths = require('./paths');
-const common = require('./webpack.common');
+const common = require('./webpack.config');
 const cssLoaders = require('./css-loaders');
 const SVGOConfig = require('../svgo.config');
 
