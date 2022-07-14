@@ -2,11 +2,41 @@ const path = require('path');
 
 module.exports = {
 	// Source files
-	src: path.resolve(__dirname, '../src'),
+	get src() {
+		return path.resolve(__dirname, '../src');
+	},
+	get components() {
+		return path.join(this.src, 'components');
+	},
+	get css() {
+		return path.join(this.src, 'css');
+	},
+	get fonts() {
+		return path.join(this.src, 'fonts');
+	},
+	get images() {
+		return path.join(this.src, 'images');
+	},
+	get js() {
+		return path.join(this.src, 'js');
+	},
+	get pages() {
+		return path.join(this.src, 'pages');
+	},
+	get pug() {
+		return path.join(this.src, 'pug');
+	},
 
 	// Production build files
-	build: path.resolve(__dirname, '../dist'),
+	get build() {
+		return path.resolve(__dirname, '../dist');
+	},
 
-	// Static files that get copied to build folder
-	public: path.resolve(__dirname, '../public'),
+	// Static files that get copied to build directory
+	get public() {
+		return path.resolve(__dirname, '../public');
+	},
+	get media() {
+		return path.join(this.public, 'media');
+	},
 };

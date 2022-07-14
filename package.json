@@ -8,9 +8,8 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.production.js",
     "stylelint": "stylelint **/*.?(s)css",
     "eslint": "eslint **/*.?(m)js",
-    "imagemin-webp": "node imagemin-webp.mjs",
-    "foo": "node foo.js",
-    "multiple": "cross-env NODE_ENV=development run-p imagemin-webp webpack serve --config webpack/webpack.development.js"
+    "webp": "node webp.config.mjs",
+    "multiple": "cross-env NODE_ENV=development run-p webp"
   },
   "author": "Alexander Krasnoyurchenko <krasnoyurchenko.a.s@gmail.com>",
   "license": "ISC",

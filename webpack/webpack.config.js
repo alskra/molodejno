@@ -8,9 +8,8 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const paths = require('./paths');
 const cssLoaders = require('./css-loaders');
 
-const pages = fs.readdirSync(path.resolve(paths.src, 'pages'))
-	.filter((item) => item !== 'ajax');
-const ajax = fs.readdirSync(path.resolve(paths.src, 'pages/ajax'));
+const pages = fs.readdirSync(paths.pages).filter((item) => !['ajax'].includes(item));
+const ajax = fs.readdirSync(path.join(paths.pages, 'ajax'));
 const entry = {};
 
 // pages.forEach((page) => {
@@ -143,16 +142,17 @@ module.exports = {
 		}),
 	],
 	resolve: {
-		modules: [path.resolve(paths.src, 'js'), 'node_modules'],
+		modules: [paths.js, 'node_modules'],
 		extensions: ['...', '.css', '.scss'],
 		alias: {
 			'@': paths.src,
-			'@components': path.resolve(paths.src, 'components'),
-			'@css': path.resolve(paths.src, 'css'),
-			'@fonts': path.resolve(paths.src, 'fonts'),
-			'@images': path.resolve(paths.src, 'images'),
-			'@js': path.resolve(paths.src, 'js'),
-			'@pug': path.resolve(paths.src, 'pug'),
+			'@components': paths.components,
+			'@css': paths.css,
+			'@fonts': paths.fonts,
+			'@images': paths.images,
+			'@js': paths.js,
+			'@pages': paths.pages,
+			'@pug': paths.pug,
 		},
 	},
 };
