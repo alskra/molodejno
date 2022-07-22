@@ -4,12 +4,15 @@
   "description": "Webpack Starter",
   "main": "dist/index.html",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.development.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.production.js",
-    "stylelint": "stylelint **/*.?(s)css",
-    "eslint": "eslint **/*.?(m)js",
+    "start": "cross-env NODE_ENV=development run-s webp webpack-serve-webp-watch",
+    "build": "cross-env NODE_ENV=production run-s webp webpack",
+    "webpack-serve": "webpack serve --config webpack/webpack.development.js",
+    "webpack": "webpack --config webpack/webpack.production.js",
     "webp": "node webp.config.mjs",
-    "multiple": "cross-env NODE_ENV=development run-p webp"
+    "webp-watch": "node webp.config.mjs --watch --no-initial",
+    "webpack-serve-webp-watch": "run-p webpack-serve webp-watch",
+    "stylelint": "stylelint **/*.?(s)css",
+    "eslint": "eslint **/*.?(m)js"
   },
   "author": "Alexander Krasnoyurchenko <krasnoyurchenko.a.s@gmail.com>",
   "license": "ISC",
