@@ -3,7 +3,7 @@ import fs from 'fs';
 import chokidar from 'chokidar';
 import imagemin from 'imagemin';
 import imageminWebp from 'imagemin-webp';
-import paths from './webpack/paths.js';
+import paths from './webpack/utils/paths.js';
 
 const basePaths = [
 	// paths.images,
@@ -13,10 +13,10 @@ const basePaths = [
 const watch = process.argv.includes('--watch');
 const initial = !process.argv.includes('--no-initial');
 
-/* eslint-disable no-console */
-const log = console.log.bind(console, '\x1b[92mWebP:\x1b[0m');
-const error = console.error.bind(console);
-/* eslint-enable no-console */
+/* eslint-disable */
+const log = console.log.bind(console, '\x1b[1;92m%s\x1b[0m', '[WebP]');
+const error = console.error.bind(console, '\x1b[1;31m[WebP Error]\x1b[22m %s\x1b[0m');
+/* eslint-enable */
 
 let initialArr = [];
 

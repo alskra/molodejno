@@ -6,10 +6,10 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development run-s webp webpack-serve-webp-watch",
     "build": "cross-env NODE_ENV=production run-s webp webpack",
-    "webpack-serve": "webpack serve --config webpack/webpack.development.js",
-    "webpack": "webpack --config webpack/webpack.production.js",
-    "webp": "node webp.config.mjs",
-    "webp-watch": "node webp.config.mjs --watch --no-initial",
+    "webpack-serve": "webpack serve --config webpack/webpack.development.config.js",
+    "webpack": "webpack --config webpack/webpack.production.config.js",
+    "webp": "node webp.mjs",
+    "webp-watch": "node webp.mjs --watch --no-initial",
     "webpack-serve-webp-watch": "run-p webpack-serve webp-watch",
     "stylelint": "stylelint **/*.?(s)css",
     "eslint": "eslint **/*.?(m)js"

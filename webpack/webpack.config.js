@@ -1,12 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 const svgToMiniDataURI = require('mini-svg-data-uri');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HTMLPlugin = require('html-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
-const paths = require('./paths');
-const cssLoaders = require('./css-loaders');
+const paths = require('./utils/paths');
+const cssLoaders = require('./utils/css-loaders');
 
 const pages = fs.readdirSync(paths.pages).filter((item) => !['ajax'].includes(item));
 const ajax = fs.readdirSync(path.join(paths.pages, 'ajax'));
@@ -19,7 +18,7 @@ const entry = {};
 entry.main = pages.map((page) => `./pages/${page}/${page}.js`);
 entry.main.push('./components/app/app.js');
 
-const htmlPluginEntries = pages.map((page) => new HtmlWebpackPlugin({
+const htmlPluginEntries = pages.map((page) => new HTMLPlugin({
 	template: `./pages/${page}/${page}.pug`,
 	filename: `${page}.html`,
 	title: 'Webpack Starter',
@@ -27,7 +26,7 @@ const htmlPluginEntries = pages.map((page) => new HtmlWebpackPlugin({
 	minify: false,
 }));
 
-const htmlPluginEntriesAjax = ajax.map((item) => new HtmlWebpackPlugin({
+const htmlPluginEntriesAjax = ajax.map((item) => new HTMLPlugin({
 	template: `./pages/ajax/${item}`,
 	filename: `ajax/${path.basename(item, '.pug')}.html`,
 	minify: false,
@@ -38,10 +37,9 @@ module.exports = {
 	context: paths.src,
 	entry,
 	output: {
-		filename: 'js/[name].js',
 		path: paths.build,
 		publicPath: '/',
-		clean: true,
+		filename: 'js/[name].js',
 	},
 	module: {
 		rules: [
@@ -118,21 +116,6 @@ module.exports = {
 	plugins: [
 		...htmlPluginEntries,
 		...htmlPluginEntriesAjax,
-		new CopyWebpackPlugin({
-			patterns: [
-				{
-					from: paths.public,
-					to: '',
-					globOptions: {
-						ignore: [
-							'**/.gitkeep',
-							'**/.DS_Store',
-						],
-					},
-					noErrorOnMissing: true,
-				},
-			],
-		}),
 		new StylelintPlugin({
 			files: '**/*.?(s)css',
 		}),
@@ -154,5 +137,10 @@ module.exports = {
 			'@pages': paths.pages,
 			'@pug': paths.pug,
 		},
+	},
+	performance: {
+		hints: 'warning',
+		// maxEntrypointSize: 512000,
+		// maxAssetSize: 512000,
 	},
 };
