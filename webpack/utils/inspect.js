@@ -5,7 +5,7 @@ const configProduction = require('../webpack.production.config');
 /* eslint-disable */
 const log = console.log.bind(console);
 const error = console.error.bind(console);
-const dir = (...args) => console.dir(...args/*, { depth: null }*/);
+const dir = (...args) => console.dir(...args, { depth: null });
 /* eslint-enable */
 
 const parseArgv = () => {
