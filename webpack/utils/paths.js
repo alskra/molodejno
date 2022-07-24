@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
 	// Source files
 	get src() {
-		return path.join(__dirname, '../src');
+		return path.join(__dirname, '../../src');
 	},
 	get components() {
 		return path.join(this.src, 'components');
@@ -29,12 +29,12 @@ module.exports = {
 
 	// Production build files
 	get build() {
-		return path.join(__dirname, '../dist');
+		return path.join(__dirname, '../../dist');
 	},
 
 	// Static files that get copied to build directory
 	get public() {
-		return path.join(__dirname, '../public');
+		return path.join(__dirname, '../../public');
 	},
 	get media() {
 		return path.join(this.public, 'media');
