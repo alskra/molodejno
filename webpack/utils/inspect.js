@@ -9,23 +9,45 @@ const dir = (...args) => console.dir(...args, { depth: null });
 /* eslint-enable */
 
 const parseArgv = () => {
-	const argv = {};
-	const regStr = '(?:^|\\s)-{1,2}(\\w[\\w-]*)(?:[=\\s]([\\w\\[\\]/.][\\w-\\[\\]/.]*))?';
-	const options = process.argv.join(' ').match(new RegExp(regStr, 'g'));
+	const argv = [];
+	let prop = null;
 
-	if (options) {
-		options.forEach((option) => {
-			const match = option.match(new RegExp(regStr));
+	const setProp = (val) => {
+		if (typeof argv[prop] === 'string' || Array.isArray(argv[prop])) {
+			argv[prop] = [].concat(argv[prop], val);
+		} else {
+			argv[prop] = val;
+		}
+	};
 
-			if (match) {
-				if (argv[match[1]]) {
-					argv[match[1]] = [argv[match[1]], match[2]];
-				} else {
-					argv[match[1]] = match[2] || true;
-				}
+	process.argv.slice(2).forEach((arg) => {
+		if (/^-/.test(arg)) {
+			prop = arg.split('=')[0].replace(/^-{1,2}/, '');
+
+			const val = arg.split('=')[1];
+
+			if (/^no-/.test(prop)) {
+				prop = prop.replace(/^no-/, '');
+
+				argv[prop] = false;
+				prop = null;
+			} else if (val) {
+				setProp(val);
+				prop = null;
+			} else {
+				argv[prop] = argv[prop] || true;
 			}
-		});
-	}
+		}
+
+		if (/^[^-].*/.test(arg)) {
+			if (prop) {
+				setProp(arg);
+				prop = null;
+			} else {
+				argv.push(arg);
+			}
+		}
+	});
 
 	return argv;
 };
@@ -60,11 +82,13 @@ const dirOptions = (options) => {
 	}
 };
 
-log('Development Default:');
-dirOptions(optionsDevelopmentDefault);
-log('Development Applied:');
-dirOptions(optionsDevelopment);
-log('Production Default:');
-dirOptions(optionsProductionDefault);
-log('Production Applied:');
-dirOptions(optionsProduction);
+log(process.argv.slice(2));
+log(argv, argv.length);
+// log('Development Default:');
+// dirOptions(optionsDevelopmentDefault);
+// log('Development Applied:');
+// dirOptions(optionsDevelopment);
+// log('Production Default:');
+// dirOptions(optionsProductionDefault);
+// log('Production Applied:');
+// dirOptions(optionsProduction);
