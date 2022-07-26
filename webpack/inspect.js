@@ -38,10 +38,6 @@ const dirOptions = (options) => {
 	}
 };
 
-// log('log msg', 'start');
-// error('error msg', 'start');
-// dir('dir msg', 'start');
-
 const logMsg = (mode) => {
 	const option = typeof argv.option === 'string' ? `\x1b[93m${argv.option}\x1b[39m option` : 'options';
 

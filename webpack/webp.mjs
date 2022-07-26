@@ -4,18 +4,19 @@ import chokidar from 'chokidar';
 import imagemin from 'imagemin';
 import imageminWebp from 'imagemin-webp';
 import paths from './utils/paths.js';
+import argv from './utils/parse-argv.js';
 
 const basePaths = [
 	// paths.images,
 	paths.media,
 ];
 
-const watch = process.argv.includes('--watch');
-const initial = !process.argv.includes('--no-initial');
+const { watch, initial } = argv;
 
 /* eslint-disable */
-const log = console.log.bind(console, '\x1b[1;92m%s\x1b[0m', '[WebP]');
-const error = console.error.bind(console, '\x1b[1;31m[WebP Error]\x1b[22m %s\x1b[0m');
+const log = (...args) => console.log('\x1b[92;1m[WebP]\x1b[0m', ...args);
+const error = (...args) => console.error('\x1b[31;1m[WebP Error]\x1b[22m %s\x1b[39m', args.join(' '));
+const dir = (...args) => console.dir(...args, { depth: null });
 /* eslint-enable */
 
 let initialArr = [];
