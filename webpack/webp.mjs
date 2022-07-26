@@ -3,7 +3,7 @@ import fs from 'fs';
 import chokidar from 'chokidar';
 import imagemin from 'imagemin';
 import imageminWebp from 'imagemin-webp';
-import paths from './webpack/utils/paths.js';
+import paths from './utils/paths.js';
 
 const basePaths = [
 	// paths.images,
