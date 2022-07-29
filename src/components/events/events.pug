@@ -32,4 +32,4 @@ mixin events({columns = 1, type, slice, tags = true, pagination = true, cards} =
 				)
 
 		if pagination
-			+pagination({multipage: false})(x-data=`pagination('ajax/${type}.html', gridEl)`)
+			+pagination({multipage: false})(x-data=`pagination('data/${type}.html', gridEl)`)

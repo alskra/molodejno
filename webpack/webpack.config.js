@@ -1,37 +1,9 @@
-const fs = require('fs');
-const path = require('path');
 const svgToMiniDataURI = require('mini-svg-data-uri');
-const HTMLPlugin = require('html-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const paths = require('./utils/paths');
-const cssLoaders = require('./utils/css-loaders');
-
-const pages = fs.readdirSync(paths.pages).filter((item) => !['ajax'].includes(item));
-const ajax = fs.readdirSync(path.join(paths.pages, 'ajax'));
-const entry = {};
-
-// pages.forEach((page) => {
-// 	entry[page] = [`./pages/${page}/${page}.js`, './components/app/app.js'];
-// });
-
-entry.main = pages.map((page) => `./pages/${page}/${page}.js`);
-entry.main.push('./components/app/app.js');
-
-const htmlPluginEntries = pages.map((page) => new HTMLPlugin({
-	template: `./pages/${page}/${page}.pug`,
-	filename: `${page}.html`,
-	title: 'Webpack Starter',
-	// chunks: [page],
-	minify: false,
-}));
-
-const htmlPluginEntriesAjax = ajax.map((item) => new HTMLPlugin({
-	template: `./pages/ajax/${item}`,
-	filename: `ajax/${path.basename(item, '.pug')}.html`,
-	minify: false,
-	inject: false,
-}));
+const { entry, htmlPluginEntries, htmlPluginChunks } = require('./entry');
+const cssLoaders = require('./loaders/css');
 
 module.exports = {
 	context: paths.src,
@@ -115,7 +87,7 @@ module.exports = {
 	},
 	plugins: [
 		...htmlPluginEntries,
-		...htmlPluginEntriesAjax,
+		...htmlPluginChunks,
 		new StylelintPlugin({
 			files: '**/*.?(s)css',
 		}),

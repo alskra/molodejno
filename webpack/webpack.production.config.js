@@ -5,7 +5,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const paths = require('./utils/paths');
 const common = require('./webpack.config');
-const cssLoaders = require('./utils/css-loaders');
+const cssLoaders = require('./loaders/css');
 const svgoConfig = require('../svgo.config');
 
 module.exports = merge(common, {
