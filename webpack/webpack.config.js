@@ -50,7 +50,18 @@ module.exports = {
 				test: /\.(jpe?g|png|gif|webp)$/i,
 				type: 'asset',
 				generator: {
-					filename: '[path][name][ext][query]',
+					filename: (pathData) => {
+						const { query } = pathData.module.resourceResolveData;
+
+						if (/webp/i.test(query)) {
+							// eslint-disable-next-line no-param-reassign
+							pathData.module.resourceResolveData.query = query.replace(/webp/i, '');
+
+							return '[path][name].webp[query]';
+						}
+
+						return '[path][name][ext][query]';
+					},
 				},
 				parser: {
 					dataUrlCondition: {
@@ -109,10 +120,5 @@ module.exports = {
 			'@pages': paths.pages,
 			'@pug': paths.pug,
 		},
-	},
-	performance: {
-		hints: 'warning',
-		// maxEntrypointSize: 512000,
-		// maxAssetSize: 512000,
 	},
 };

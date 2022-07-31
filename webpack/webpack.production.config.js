@@ -34,7 +34,7 @@ module.exports = merge(common, {
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].css',
-			chunkFilename: '[id].css',
+			chunkFilename: 'css/[id].css',
 		}),
 		new CopyPlugin({
 			patterns: [
@@ -75,7 +75,7 @@ module.exports = merge(common, {
 		runtimeChunk: 'single',
 		splitChunks: {
 			cacheGroups: {
-				vendor: {
+				vendors: {
 					test: /[\\/]node_modules[\\/]/,
 					name: 'vendors',
 					chunks: 'all',
@@ -84,7 +84,5 @@ module.exports = merge(common, {
 			},
 		},
 	},
-	performance: {
-		hints: 'error',
-	},
+	performance: false,
 });
