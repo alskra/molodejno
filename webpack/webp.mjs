@@ -11,7 +11,7 @@ const basePaths = [
 	paths.media,
 ];
 
-const { watch, initial } = argv;
+const { watch = false, initial = true } = argv;
 
 /* eslint-disable */
 const log = (...args) => console.log('\x1b[92;1m[WebP]\x1b[0m', ...args);

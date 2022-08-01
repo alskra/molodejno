@@ -4,13 +4,12 @@
   "description": "Webpack Starter",
   "main": "dist/index.html",
   "scripts": {
-    "start": "cross-env NODE_ENV=development run-s webp webpack-serve-webp-watch",
+    "start": "cross-env NODE_ENV=development run-p webp-watch webpack-serve",
     "build": "cross-env NODE_ENV=production run-s webp webpack",
-    "webpack-serve": "webpack serve --config webpack/webpack.development.config.js",
     "webpack": "webpack --config webpack/webpack.production.config.js",
+    "webpack-serve": "webpack serve --config webpack/webpack.development.config.js",
     "webp": "node webpack/webp.mjs",
-    "webp-watch": "node webpack/webp.mjs --watch --no-initial",
-    "webpack-serve-webp-watch": "run-p webpack-serve webp-watch",
+    "webp-watch": "node webpack/webp.mjs --watch",
     "stylelint": "stylelint **/*.?(s)css",
     "eslint": "eslint **/*.?(m)js"
   },
