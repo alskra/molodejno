@@ -35,16 +35,24 @@ module.exports = merge(webpackConfig, {
 		minimize: true,
 		minimizer: [
 			new ImageMinimizerPlugin({
-				test: /\.(jpe?g|png|gif|svg)$/i,
+				test: /\.svg$/i,
 				minimizer: {
 					implementation: ImageMinimizerPlugin.imageminMinify,
 					options: {
-						plugins: [
-							['svgo', svgoConfig],
-							'webp',
-						],
+						plugins: [['svgo', svgoConfig]],
 					},
 				},
+			}),
+			new ImageMinimizerPlugin({
+				generator: [
+					{
+						preset: 'webp',
+						implementation: ImageMinimizerPlugin.imageminGenerate,
+						options: {
+							plugins: ['webp'],
+						},
+					},
+				],
 			}),
 		],
 	},

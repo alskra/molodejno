@@ -4,6 +4,8 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const paths = require('./utils/paths');
 const { entry, htmlPluginEntries, htmlPluginChunks } = require('./entry');
 const cssLoaders = require('./loaders/css');
+const HTMLPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 module.exports = {
 	context: paths.src,
@@ -51,13 +53,11 @@ module.exports = {
 				type: 'asset',
 				generator: {
 					filename: (pathData) => {
-						const { query } = pathData.module.resourceResolveData;
-
-						if (/webp/i.test(query)) {
-							// eslint-disable-next-line no-param-reassign
-							pathData.module.resourceResolveData.query = query.replace(/webp/i, '');
-
-							return '[path][name].webp[query]';
+						if (/as=webp/.test(pathData.filename)) {
+							return pathData.filename
+								.replace(/\\/g, '/')
+								.replace(/as=webp/, '')
+								.replace(/\?$/, '');
 						}
 
 						return '[path][name][ext][query]';
@@ -97,8 +97,15 @@ module.exports = {
 		],
 	},
 	plugins: [
-		...htmlPluginEntries,
-		...htmlPluginChunks,
+		// ...htmlPluginEntries,
+		// ...htmlPluginChunks,
+		new HTMLPlugin({
+			template: path.join(paths.pages, 'index/index.pug'),
+			filename: 'index.html',
+			chunks: 'all',
+			title: 'Webpack Starter',
+			minify: false,
+		}),
 		new StylelintPlugin({
 			files: '**/*.?(s)css',
 		}),
